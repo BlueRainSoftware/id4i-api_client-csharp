@@ -1,4 +1,4 @@
-# DE.ID4i.Model.CreateLogisticCollectionRequest
+# .CreateLogisticCollectionRequest
 ## Properties
 
 Name | Type | Description | Notes

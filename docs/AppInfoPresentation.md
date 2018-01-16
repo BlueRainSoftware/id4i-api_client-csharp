@@ -1,4 +1,4 @@
-# DE.ID4i.Model.AppInfoPresentation
+# .AppInfoPresentation
 ## Properties
 
 Name | Type | Description | Notes

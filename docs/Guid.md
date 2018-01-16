@@ -1,4 +1,4 @@
-# DE.ID4i.Model.Guid
+# .Guid
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# DE.ID4i.Model.PaginatedResponseApiKeyPrivilegeInfo
+# .PaginatedResponseApiKeyPrivilegeInfo
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# DE.ID4i.Model.CompleteUserRegistrationRequest
+# .CompleteUserRegistrationRequest
 ## Properties
 
 Name | Type | Description | Notes

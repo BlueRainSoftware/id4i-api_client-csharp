@@ -1,4 +1,4 @@
-# DE.ID4i..AliasApi
+# .AliasApi
 
 All URIs are relative to *https://backend.id4i.de*
 
@@ -23,7 +23,7 @@ Adds or replaces aliases for single GUIDs (alias type item and mapp) or groups o
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -93,7 +93,7 @@ Remove the alias of the given type
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -161,7 +161,7 @@ Retrieve this list to find out all alias types to use with alias search and chan
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -225,7 +225,7 @@ Looks up the alias for each alias type (group and single GUID) and returns all f
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -289,7 +289,7 @@ Search for GUIDs by alias
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 

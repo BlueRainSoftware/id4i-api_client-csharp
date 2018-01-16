@@ -1,4 +1,4 @@
-# DE.ID4i.Model.ApiKeyChangeRequest
+# .ApiKeyChangeRequest
 ## Properties
 
 Name | Type | Description | Notes

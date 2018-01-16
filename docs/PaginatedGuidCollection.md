@@ -1,4 +1,4 @@
-# DE.ID4i.Model.PaginatedGuidCollection
+# .PaginatedGuidCollection
 ## Properties
 
 Name | Type | Description | Notes

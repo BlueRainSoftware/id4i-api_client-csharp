@@ -1,4 +1,4 @@
-# DE.ID4i.Model.AddApiKeyPrivilegeRequest
+# .AddApiKeyPrivilegeRequest
 ## Properties
 
 Name | Type | Description | Notes

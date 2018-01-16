@@ -1,4 +1,4 @@
-# DE.ID4i.Model.Timestamp
+# .Timestamp
 ## Properties
 
 Name | Type | Description | Notes

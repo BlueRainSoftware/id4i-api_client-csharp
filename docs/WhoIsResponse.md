@@ -1,4 +1,4 @@
-# DE.ID4i.Model.WhoIsResponse
+# .WhoIsResponse
 ## Properties
 
 Name | Type | Description | Notes

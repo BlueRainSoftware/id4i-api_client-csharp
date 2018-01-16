@@ -1,4 +1,4 @@
-# DE.ID4i..PublicServicesApi
+# .PublicServicesApi
 
 All URIs are relative to *https://backend.id4i.de*
 
@@ -21,7 +21,7 @@ Forwarding to the designated route defined in the routing,
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -85,7 +85,7 @@ Resolve image
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -149,7 +149,7 @@ Resolve owner of id4n
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 

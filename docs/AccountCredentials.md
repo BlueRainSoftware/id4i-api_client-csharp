@@ -1,4 +1,4 @@
-# DE.ID4i.Model.AccountCredentials
+# .AccountCredentials
 ## Properties
 
 Name | Type | Description | Notes

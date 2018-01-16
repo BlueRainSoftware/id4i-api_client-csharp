@@ -1,4 +1,4 @@
-# DE.ID4i..AccountsApi
+# .AccountsApi
 
 All URIs are relative to *https://backend.id4i.de*
 
@@ -34,7 +34,7 @@ Completing a registration e.g. for invited users. Finish registration with a use
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -98,7 +98,7 @@ Find by username
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -162,7 +162,7 @@ Find users
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -232,7 +232,7 @@ Listing users and their roles in a paginated manner.
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -300,7 +300,7 @@ Retrieve organizations of user
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -368,7 +368,7 @@ Get user roles by username
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -440,7 +440,7 @@ Finding users in the specified organization in a paginated manner.
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -508,7 +508,7 @@ Invite Users
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -576,7 +576,7 @@ Listing of roles.
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -646,7 +646,7 @@ ID4i API Login
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -706,7 +706,7 @@ Registering a new user.
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -770,7 +770,7 @@ Remove role(s) from user
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -840,7 +840,7 @@ Requesting a reset for a new password.
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -904,7 +904,7 @@ Add role(s) to user
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -974,7 +974,7 @@ Setting a new password and verifying the request to set the password.
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -1040,7 +1040,7 @@ Verifies a new user registration.
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 

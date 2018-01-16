@@ -1,4 +1,4 @@
-# DE.ID4i.Model.RoleResponse
+# .RoleResponse
 ## Properties
 
 Name | Type | Description | Notes

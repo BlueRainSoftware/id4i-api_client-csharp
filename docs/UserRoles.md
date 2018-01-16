@@ -1,4 +1,4 @@
-# DE.ID4i.Model.UserRoles
+# .UserRoles
 ## Properties
 
 Name | Type | Description | Notes

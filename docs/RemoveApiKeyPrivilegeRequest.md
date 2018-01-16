@@ -1,4 +1,4 @@
-# DE.ID4i.Model.RemoveApiKeyPrivilegeRequest
+# .RemoveApiKeyPrivilegeRequest
 ## Properties
 
 Name | Type | Description | Notes

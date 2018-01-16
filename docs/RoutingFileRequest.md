@@ -1,4 +1,4 @@
-# DE.ID4i.Model.RoutingFileRequest
+# .RoutingFileRequest
 ## Properties
 
 Name | Type | Description | Notes

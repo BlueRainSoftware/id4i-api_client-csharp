@@ -1,4 +1,4 @@
-# DE.ID4i..MetaInformationApi
+# .MetaInformationApi
 
 All URIs are relative to *https://backend.id4i.de*
 
@@ -19,7 +19,7 @@ Retrieving version information about ID4i.
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 

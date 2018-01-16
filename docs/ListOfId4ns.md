@@ -1,4 +1,4 @@
-# DE.ID4i.Model.ListOfId4ns
+# .ListOfId4ns
 ## Properties
 
 Name | Type | Description | Notes

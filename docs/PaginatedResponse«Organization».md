@@ -1,4 +1,4 @@
-# DE.ID4i.Model.PaginatedResponseOrganization
+# .PaginatedResponseOrganization
 ## Properties
 
 Name | Type | Description | Notes

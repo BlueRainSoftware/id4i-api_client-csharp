@@ -1,4 +1,4 @@
-# DE.ID4i.Model.PaginatedResponseUserRoles
+# .PaginatedResponseUserRoles
 ## Properties
 
 Name | Type | Description | Notes

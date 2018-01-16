@@ -1,4 +1,4 @@
-# DE.ID4i.Model.UserRegistrationResponse
+# .UserRegistrationResponse
 ## Properties
 
 Name | Type | Description | Notes

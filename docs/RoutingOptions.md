@@ -1,4 +1,4 @@
-# DE.ID4i.Model.RoutingOptions
+# .RoutingOptions
 ## Properties
 
 Name | Type | Description | Notes

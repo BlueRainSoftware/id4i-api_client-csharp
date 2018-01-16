@@ -1,4 +1,4 @@
-# DE.ID4i..OrganizationsApi
+# .OrganizationsApi
 
 All URIs are relative to *https://backend.id4i.de*
 
@@ -38,7 +38,7 @@ Creating a new organization.
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -102,7 +102,7 @@ Delete organization
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -166,7 +166,7 @@ Remove billing address
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -230,7 +230,7 @@ Delete organization logo
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -296,7 +296,7 @@ Returns a single organization.
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -360,7 +360,7 @@ Retrieve address
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -424,7 +424,7 @@ Retrieve billing address
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -490,7 +490,7 @@ Retrieving all collections of an organization in a paginated manner.
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -566,7 +566,7 @@ Listing users and their roles in a paginated manner.
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -634,7 +634,7 @@ Retrieve organizations of user
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -702,7 +702,7 @@ Get user roles by username
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -774,7 +774,7 @@ Finding users in the specified organization in a paginated manner.
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -842,7 +842,7 @@ Invite Users
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -908,7 +908,7 @@ List countries
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -974,7 +974,7 @@ Remove role(s) from user
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -1042,7 +1042,7 @@ Update organization
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -1108,7 +1108,7 @@ Store address
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -1174,7 +1174,7 @@ Store billing address
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -1242,7 +1242,7 @@ Updating an organization logo using a multipart file upload.
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -1308,7 +1308,7 @@ Add role(s) to user
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 

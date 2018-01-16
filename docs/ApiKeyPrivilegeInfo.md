@@ -1,4 +1,4 @@
-# DE.ID4i.Model.ApiKeyPrivilegeInfo
+# .ApiKeyPrivilegeInfo
 ## Properties
 
 Name | Type | Description | Notes

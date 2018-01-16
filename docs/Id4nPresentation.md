@@ -1,4 +1,4 @@
-# DE.ID4i.Model.Id4nPresentation
+# .Id4nPresentation
 ## Properties
 
 Name | Type | Description | Notes

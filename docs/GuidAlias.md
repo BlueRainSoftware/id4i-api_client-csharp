@@ -1,4 +1,4 @@
-# DE.ID4i.Model.GuidAlias
+# .GuidAlias
 ## Properties
 
 Name | Type | Description | Notes

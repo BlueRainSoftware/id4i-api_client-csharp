@@ -1,4 +1,4 @@
-# DE.ID4i.Model.CreateLabelledCollectionRequest
+# .CreateLabelledCollectionRequest
 ## Properties
 
 Name | Type | Description | Notes

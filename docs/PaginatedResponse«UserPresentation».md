@@ -1,4 +1,4 @@
-# DE.ID4i.Model.PaginatedResponseUserPresentation
+# .PaginatedResponseUserPresentation
 ## Properties
 
 Name | Type | Description | Notes

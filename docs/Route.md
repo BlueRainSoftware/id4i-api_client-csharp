@@ -1,4 +1,4 @@
-# DE.ID4i.Model.Route
+# .Route
 ## Properties
 
 Name | Type | Description | Notes

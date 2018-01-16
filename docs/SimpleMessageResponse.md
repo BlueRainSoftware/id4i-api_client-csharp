@@ -1,4 +1,4 @@
-# DE.ID4i.Model.SimpleMessageResponse
+# .SimpleMessageResponse
 ## Properties
 
 Name | Type | Description | Notes

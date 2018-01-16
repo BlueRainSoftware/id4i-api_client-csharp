@@ -1,4 +1,4 @@
-# DE.ID4i..ApiKeysApi
+# .ApiKeysApi
 
 All URIs are relative to *https://backend.id4i.de*
 
@@ -28,7 +28,7 @@ Add privilege
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -94,7 +94,7 @@ Add ID4ns of a privilege
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -164,7 +164,7 @@ Creation of a new API key.
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -230,7 +230,7 @@ Deletion of an API key.
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -296,7 +296,7 @@ Showing the details of an API key.
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -362,7 +362,7 @@ Listing all possible API key privileges.
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -432,7 +432,7 @@ Finding all API key assigned to the specified organization in a paginated manner
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -500,7 +500,7 @@ List privileges
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -570,7 +570,7 @@ Listing ID4ns of a id4n concerning privilege
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -640,7 +640,7 @@ Remove privilege
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -706,7 +706,7 @@ Remove id4ns of a privilege
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -776,7 +776,7 @@ API keys can be updated with new labels, and be activated and deactivated. The s
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 

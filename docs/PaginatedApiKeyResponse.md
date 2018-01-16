@@ -1,4 +1,4 @@
-# DE.ID4i.Model.PaginatedApiKeyResponse
+# .PaginatedApiKeyResponse
 ## Properties
 
 Name | Type | Description | Notes

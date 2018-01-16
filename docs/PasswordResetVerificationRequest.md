@@ -1,4 +1,4 @@
-# DE.ID4i.Model.PasswordResetVerificationRequest
+# .PasswordResetVerificationRequest
 ## Properties
 
 Name | Type | Description | Notes

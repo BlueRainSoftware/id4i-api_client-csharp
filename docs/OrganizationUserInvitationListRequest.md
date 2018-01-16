@@ -1,4 +1,4 @@
-# DE.ID4i.Model.OrganizationUserInvitationListRequest
+# .OrganizationUserInvitationListRequest
 ## Properties
 
 Name | Type | Description | Notes

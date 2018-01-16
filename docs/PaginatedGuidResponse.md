@@ -1,4 +1,4 @@
-# DE.ID4i.Model.PaginatedGuidResponse
+# .PaginatedGuidResponse
 ## Properties
 
 Name | Type | Description | Notes

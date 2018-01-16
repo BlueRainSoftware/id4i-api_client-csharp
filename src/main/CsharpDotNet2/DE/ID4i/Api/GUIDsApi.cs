@@ -4,7 +4,7 @@ using RestSharp;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
-namespace DE.ID4i.Api
+namespace 
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints

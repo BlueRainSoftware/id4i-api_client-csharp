@@ -1,4 +1,4 @@
-# DE.ID4i.Model.Country
+# .Country
 ## Properties
 
 Name | Type | Description | Notes

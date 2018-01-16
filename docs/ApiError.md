@@ -1,4 +1,4 @@
-# DE.ID4i.Model.ApiError
+# .ApiError
 ## Properties
 
 Name | Type | Description | Notes

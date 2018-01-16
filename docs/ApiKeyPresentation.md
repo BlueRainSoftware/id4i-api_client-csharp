@@ -1,4 +1,4 @@
-# DE.ID4i.Model.ApiKeyPresentation
+# .ApiKeyPresentation
 ## Properties
 
 Name | Type | Description | Notes

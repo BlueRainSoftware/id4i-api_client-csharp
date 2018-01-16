@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace DE.ID4i.Model {
+namespace  {
 
   /// <summary>
   /// A list of id4ns

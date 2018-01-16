@@ -1,4 +1,4 @@
-# DE.ID4i.Model.OrganizationAddress
+# .OrganizationAddress
 ## Properties
 
 Name | Type | Description | Notes

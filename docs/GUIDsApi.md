@@ -1,4 +1,4 @@
-# DE.ID4i..GUIDsApi
+# .GUIDsApi
 
 All URIs are relative to *https://backend.id4i.de*
 
@@ -25,7 +25,7 @@ Adds or replaces aliases for single GUIDs (alias type item and mapp) or groups o
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -95,7 +95,7 @@ Remove the alias of the given type
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -163,7 +163,7 @@ Creating one or more GUIDs with a specified length.
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -227,7 +227,7 @@ Retrieve GUID information
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -293,7 +293,7 @@ Looks up the alias for each alias type (group and single GUID) and returns all f
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -357,7 +357,7 @@ Retrieve GUIDs not in any collection
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -427,7 +427,7 @@ Allows ownership transfer.
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 

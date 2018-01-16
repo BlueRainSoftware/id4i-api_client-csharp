@@ -1,4 +1,4 @@
-# DE.ID4i.Model.PaginatedResponseCountry
+# .PaginatedResponseCountry
 ## Properties
 
 Name | Type | Description | Notes

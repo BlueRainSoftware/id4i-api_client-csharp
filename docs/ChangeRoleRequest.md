@@ -1,4 +1,4 @@
-# DE.ID4i.Model.ChangeRoleRequest
+# .ChangeRoleRequest
 ## Properties
 
 Name | Type | Description | Notes

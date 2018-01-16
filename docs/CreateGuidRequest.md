@@ -1,4 +1,4 @@
-# DE.ID4i.Model.CreateGuidRequest
+# .CreateGuidRequest
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# DE.ID4i..RoutingApi
+# .RoutingApi
 
 All URIs are relative to *https://backend.id4i.de*
 
@@ -19,7 +19,7 @@ Retrieve current route of a GUID (or ID4N)
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -89,7 +89,7 @@ Retrieve routing file
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 
@@ -155,7 +155,7 @@ Store routing file
 ```csharp
 using System;
 using System.Diagnostics;
-using DE.ID4i.Api;
+using ;
 using DE.ID4i.Client;
 using DE.ID4i.Model;
 

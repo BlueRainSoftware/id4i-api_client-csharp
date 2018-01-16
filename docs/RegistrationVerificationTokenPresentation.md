@@ -1,4 +1,4 @@
-# DE.ID4i.Model.RegistrationVerificationTokenPresentation
+# .RegistrationVerificationTokenPresentation
 ## Properties
 
 Name | Type | Description | Notes
