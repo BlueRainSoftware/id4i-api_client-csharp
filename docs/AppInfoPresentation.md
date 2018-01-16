@@ -1,0 +1,12 @@
+# DE.ID4i.Model.AppInfoPresentation
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Branch** | **string** |  | [optional] 
+**CommitTime** | **string** |  | [optional] 
+**Name** | **string** |  | [optional] 
+**Revision** | **string** |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
