@@ -31,6 +31,13 @@ namespace DE.ID4i.Api
         /// <returns>ApiError</returns>
         ApiError AddGuidAlias1 (string id4n, string aliasType, string authorization, string acceptLanguage);
         /// <summary>
+        /// List all supported alias types Retrieve this list to find out all alias types to use with alias search and change operations
+        /// </summary>
+        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="acceptLanguage">Requested language</param>
+        /// <returns>List&lt;string&gt;</returns>
+        List<string> GetGuidAliasTypes (string authorization, string acceptLanguage);
+        /// <summary>
         /// Get all aliases for the given GUID Looks up the alias for each alias type (group and single GUID) and returns all found ones
         /// </summary>
         /// <param name="id4n">The GUID to operate on</param>
@@ -199,6 +206,42 @@ path = path.Replace("{" + "aliasType" + "}", ApiClient.ParameterToString(aliasTy
                 throw new ApiException ((int)response.StatusCode, "Error calling AddGuidAlias1: " + response.ErrorMessage, response.ErrorMessage);
     
             return (ApiError) ApiClient.Deserialize(response.Content, typeof(ApiError), response.Headers);
+        }
+    
+        /// <summary>
+        /// List all supported alias types Retrieve this list to find out all alias types to use with alias search and change operations
+        /// </summary>
+        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="acceptLanguage">Requested language</param> 
+        /// <returns>List&lt;string&gt;</returns>            
+        public List<string> GetGuidAliasTypes (string authorization, string acceptLanguage)
+        {
+            
+    
+            var path = "/api/v1/search/guids/aliases/types";
+            path = path.Replace("{format}", "json");
+                
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+    
+                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
+ if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
+                            
+            // authentication setting, if any
+            String[] authSettings = new String[] {  };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+    
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling GetGuidAliasTypes: " + response.Content, response.Content);
+            else if (((int)response.StatusCode) == 0)
+                throw new ApiException ((int)response.StatusCode, "Error calling GetGuidAliasTypes: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return (List<string>) ApiClient.Deserialize(response.Content, typeof(List<string>), response.Headers);
         }
     
         /// <summary>

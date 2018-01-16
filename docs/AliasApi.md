@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**AddGuidAlias**](AliasApi.md#addguidalias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
 [**AddGuidAlias1**](AliasApi.md#addguidalias1) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
+[**GetGuidAliasTypes**](AliasApi.md#getguidaliastypes) | **GET** /api/v1/search/guids/aliases/types | List all supported alias types
 [**GetGuidAliases**](AliasApi.md#getguidaliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
 [**SearchByAlias**](AliasApi.md#searchbyalias) | **GET** /api/v1/search/guids | Search for GUIDs by alias
 
@@ -136,6 +137,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiError**](ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getguidaliastypes"></a>
+# **GetGuidAliasTypes**
+> List<string> GetGuidAliasTypes (string authorization, string acceptLanguage)
+
+List all supported alias types
+
+Retrieve this list to find out all alias types to use with alias search and change operations
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using DE.ID4i.Api;
+using DE.ID4i.Client;
+using DE.ID4i.Model;
+
+namespace Example
+{
+    public class GetGuidAliasTypesExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new AliasApi();
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
+
+            try
+            {
+                // List all supported alias types
+                List&lt;string&gt; result = apiInstance.GetGuidAliasTypes(authorization, acceptLanguage);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling AliasApi.GetGuidAliasTypes: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **acceptLanguage** | **string**| Requested language | [optional] 
+
+### Return type
+
+**List<string>**
 
 ### Authorization
 
