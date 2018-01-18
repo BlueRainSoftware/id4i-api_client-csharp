@@ -12,6 +12,16 @@ namespace
     public interface IAccountsApi
     {
         /// <summary>
+        /// Add role(s) to user 
+        /// </summary>
+        /// <param name="organizationId">organizationId</param>
+        /// <param name="username">username</param>
+        /// <param name="changeRoleRequest">changeRoleRequest</param>
+        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="acceptLanguage">Requested language</param>
+        /// <returns>ApiError</returns>
+        ApiError AddUserRoles (long? organizationId, string username, ChangeRoleRequest changeRoleRequest, string authorization, string acceptLanguage);
+        /// <summary>
         /// Complete registration Completing a registration e.g. for invited users. Finish registration with a username and a password.
         /// </summary>
         /// <param name="completeRegistration">Contains the verification token, the username and the initial password.</param>
@@ -130,16 +140,6 @@ namespace
         /// <returns>SimpleMessageResponse</returns>
         SimpleMessageResponse RequestPasswordReset (PasswordResetRequest resetRequest, string authorization, string acceptLanguage);
         /// <summary>
-        /// Add role(s) to user 
-        /// </summary>
-        /// <param name="organizationId">organizationId</param>
-        /// <param name="username">username</param>
-        /// <param name="changeRoleRequest">changeRoleRequest</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
-        /// <param name="acceptLanguage">Requested language</param>
-        /// <returns>ApiError</returns>
-        ApiError UpdateUserRoles (long? organizationId, string username, ChangeRoleRequest changeRoleRequest, string authorization, string acceptLanguage);
-        /// <summary>
         /// Verify password reset Setting a new password and verifying the request to set the password.
         /// </summary>
         /// <param name="verificationRequest">Contains the new password and the verification token to set the new password.</param>
@@ -209,6 +209,57 @@ namespace
         /// </summary>
         /// <value>An instance of the ApiClient</value>
         public ApiClient ApiClient {get; set;}
+    
+        /// <summary>
+        /// Add role(s) to user 
+        /// </summary>
+        /// <param name="organizationId">organizationId</param> 
+        /// <param name="username">username</param> 
+        /// <param name="changeRoleRequest">changeRoleRequest</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="acceptLanguage">Requested language</param> 
+        /// <returns>ApiError</returns>            
+        public ApiError AddUserRoles (long? organizationId, string username, ChangeRoleRequest changeRoleRequest, string authorization, string acceptLanguage)
+        {
+            
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null) throw new ApiException(400, "Missing required parameter 'organizationId' when calling AddUserRoles");
+            
+            // verify the required parameter 'username' is set
+            if (username == null) throw new ApiException(400, "Missing required parameter 'username' when calling AddUserRoles");
+            
+            // verify the required parameter 'changeRoleRequest' is set
+            if (changeRoleRequest == null) throw new ApiException(400, "Missing required parameter 'changeRoleRequest' when calling AddUserRoles");
+            
+    
+            var path = "/api/v1/organizations/{organizationId}/users/{username}/roles";
+            path = path.Replace("{format}", "json");
+            path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
+path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username));
+    
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+    
+                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
+ if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
+                        postBody = ApiClient.Serialize(changeRoleRequest); // http body (model) parameter
+    
+            // authentication setting, if any
+            String[] authSettings = new String[] {  };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+    
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling AddUserRoles: " + response.Content, response.Content);
+            else if (((int)response.StatusCode) == 0)
+                throw new ApiException ((int)response.StatusCode, "Error calling AddUserRoles: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return (ApiError) ApiClient.Deserialize(response.Content, typeof(ApiError), response.Headers);
+        }
     
         /// <summary>
         /// Complete registration Completing a registration e.g. for invited users. Finish registration with a username and a password.
@@ -775,57 +826,6 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
                 throw new ApiException ((int)response.StatusCode, "Error calling RequestPasswordReset: " + response.ErrorMessage, response.ErrorMessage);
     
             return (SimpleMessageResponse) ApiClient.Deserialize(response.Content, typeof(SimpleMessageResponse), response.Headers);
-        }
-    
-        /// <summary>
-        /// Add role(s) to user 
-        /// </summary>
-        /// <param name="organizationId">organizationId</param> 
-        /// <param name="username">username</param> 
-        /// <param name="changeRoleRequest">changeRoleRequest</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
-        /// <returns>ApiError</returns>            
-        public ApiError UpdateUserRoles (long? organizationId, string username, ChangeRoleRequest changeRoleRequest, string authorization, string acceptLanguage)
-        {
-            
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null) throw new ApiException(400, "Missing required parameter 'organizationId' when calling UpdateUserRoles");
-            
-            // verify the required parameter 'username' is set
-            if (username == null) throw new ApiException(400, "Missing required parameter 'username' when calling UpdateUserRoles");
-            
-            // verify the required parameter 'changeRoleRequest' is set
-            if (changeRoleRequest == null) throw new ApiException(400, "Missing required parameter 'changeRoleRequest' when calling UpdateUserRoles");
-            
-    
-            var path = "/api/v1/organizations/{organizationId}/users/{username}/roles";
-            path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
-path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username));
-    
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(changeRoleRequest); // http body (model) parameter
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling UpdateUserRoles: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling UpdateUserRoles: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (ApiError) ApiClient.Deserialize(response.Content, typeof(ApiError), response.Headers);
         }
     
         /// <summary>

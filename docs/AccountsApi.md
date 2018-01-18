@@ -4,6 +4,7 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**AddUserRoles**](AccountsApi.md#adduserroles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 [**CompleteRegistration**](AccountsApi.md#completeregistration) | **PUT** /account/registration | Complete registration
 [**FindUserByUsername**](AccountsApi.md#finduserbyusername) | **GET** /api/v1/users/{username} | Find by username
 [**FindUsers**](AccountsApi.md#findusers) | **GET** /api/v1/users | Find users
@@ -17,10 +18,77 @@ Method | HTTP request | Description
 [**RegisterUser**](AccountsApi.md#registeruser) | **POST** /account/registration | Register user
 [**RemoveUserRoles**](AccountsApi.md#removeuserroles) | **DELETE** /api/v1/organizations/{organizationId}/users/{username}/roles | Remove role(s) from user
 [**RequestPasswordReset**](AccountsApi.md#requestpasswordreset) | **POST** /account/password | Request password reset
-[**UpdateUserRoles**](AccountsApi.md#updateuserroles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 [**VerifyPasswordReset**](AccountsApi.md#verifypasswordreset) | **PUT** /account/password | Verify password reset
 [**VerifyUserRegistration**](AccountsApi.md#verifyuserregistration) | **POST** /account/verification | Verify registration
 
+
+<a name="adduserroles"></a>
+# **AddUserRoles**
+> ApiError AddUserRoles (long? organizationId, string username, ChangeRoleRequest changeRoleRequest, string authorization, string acceptLanguage)
+
+Add role(s) to user
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using ;
+using DE.ID4i.Client;
+using DE.ID4i.Model;
+
+namespace Example
+{
+    public class AddUserRolesExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new AccountsApi();
+            var organizationId = 789;  // long? | organizationId
+            var username = username_example;  // string | username
+            var changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
+
+            try
+            {
+                // Add role(s) to user
+                ApiError result = apiInstance.AddUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling AccountsApi.AddUserRoles: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **long?**| organizationId | 
+ **username** | **string**| username | 
+ **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
+ **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **acceptLanguage** | **string**| Requested language | [optional] 
+
+### Return type
+
+[**ApiError**](ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="completeregistration"></a>
 # **CompleteRegistration**
@@ -882,74 +950,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SimpleMessageResponse**](SimpleMessageResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="updateuserroles"></a>
-# **UpdateUserRoles**
-> ApiError UpdateUserRoles (long? organizationId, string username, ChangeRoleRequest changeRoleRequest, string authorization, string acceptLanguage)
-
-Add role(s) to user
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
-
-namespace Example
-{
-    public class UpdateUserRolesExample
-    {
-        public void main()
-        {
-            
-            var apiInstance = new AccountsApi();
-            var organizationId = 789;  // long? | organizationId
-            var username = username_example;  // string | username
-            var changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
-
-            try
-            {
-                // Add role(s) to user
-                ApiError result = apiInstance.UpdateUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling AccountsApi.UpdateUserRoles: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
- **username** | **string**| username | 
- **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
 
 ### Authorization
 
