@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Elements** | **List&lt;string&gt;** |  | [optional] 
+**Elements** | **List&lt;string&gt;** |  | 
 **Limit** | **int?** |  | 
 **Offset** | **int?** |  | 
 **Total** | **int?** |  | [optional] 

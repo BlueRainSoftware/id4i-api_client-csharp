@@ -40,7 +40,7 @@ namespace Example
             var id4n = id4n_example;  // string | The GUID to operate on
             var aliasType = aliasType_example;  // string | Alias type, see the corresponding API model
             var alias = new GuidAlias(); // GuidAlias | The alias to add or update
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
  **id4n** | **string**| The GUID to operate on | 
  **aliasType** | **string**| Alias type, see the corresponding API model | 
  **alias** | [**GuidAlias**](GuidAlias.md)| The alias to add or update | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -109,7 +109,7 @@ namespace Example
             var apiInstance = new GUIDsApi();
             var id4n = id4n_example;  // string | The GUID to operate on
             var aliasType = aliasType_example;  // string | Alias type, see the corresponding API model
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| The GUID to operate on | 
  **aliasType** | **string**| Alias type, see the corresponding API model | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -176,7 +176,7 @@ namespace Example
             
             var apiInstance = new GUIDsApi();
             var createGUIDInfo = new CreateGuidRequest(); // CreateGuidRequest | createGUIDInfo
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -199,7 +199,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createGUIDInfo** | [**CreateGuidRequest**](CreateGuidRequest.md)| createGUIDInfo | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -240,7 +240,7 @@ namespace Example
             
             var apiInstance = new GUIDsApi();
             var id4n = id4n_example;  // string | The GUID number
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -263,7 +263,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| The GUID number | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -306,7 +306,7 @@ namespace Example
             
             var apiInstance = new GUIDsApi();
             var id4n = id4n_example;  // string | The GUID to operate on
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -329,7 +329,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| The GUID to operate on | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -370,7 +370,7 @@ namespace Example
             
             var apiInstance = new GUIDsApi();
             var organizationId = 789;  // long? | Organization to search GUIDs for (required).
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var offset = 56;  // int? | Start with the n-th element.  (optional) 
             var limit = 56;  // int? | The maximum count of returned elements. (optional) 
@@ -395,7 +395,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **long?**| Organization to search GUIDs for (required). | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
  **offset** | **int?**| Start with the n-th element.  | [optional] 
  **limit** | **int?**| The maximum count of returned elements. | [optional] 
@@ -441,7 +441,7 @@ namespace Example
             var apiInstance = new GUIDsApi();
             var id4n = id4n_example;  // string | The GUID number
             var request = new Guid(); // Guid | request
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -465,7 +465,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| The GUID number | 
  **request** | [**Guid**](Guid.md)| request | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type

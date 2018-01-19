@@ -66,7 +66,7 @@ namespace Example
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
             var elementGuid = elementGuid_example;  // string | elementGuid
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
  **elementGuid** | **string**| elementGuid | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -132,7 +132,7 @@ namespace Example
             var apiInstance = new CollectionsApi();
             var collectionId4n = collectionId4n_example;  // string | collectionId4n
             var elementGuid = elementGuid_example;  // string | elementGuid
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **string**| collectionId4n | 
  **elementGuid** | **string**| elementGuid | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -198,7 +198,7 @@ namespace Example
             var apiInstance = new CollectionsApi();
             var collectionId4n = collectionId4n_example;  // string | collectionId4n
             var guid = guid_example;  // string | guid
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **string**| collectionId4n | 
  **guid** | **string**| guid | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -264,7 +264,7 @@ namespace Example
             var apiInstance = new CollectionsApi();
             var collectionId4n = collectionId4n_example;  // string | collectionId4n
             var guid = guid_example;  // string | guid
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -288,7 +288,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **string**| collectionId4n | 
  **guid** | **string**| guid | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -330,7 +330,7 @@ namespace Example
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
             var listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -396,7 +396,7 @@ namespace Example
             var apiInstance = new CollectionsApi();
             var collectionId4n = collectionId4n_example;  // string | collectionId4n
             var listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **string**| collectionId4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -462,7 +462,7 @@ namespace Example
             var apiInstance = new CollectionsApi();
             var collectionId4n = collectionId4n_example;  // string | collectionId4n
             var listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -486,7 +486,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **string**| collectionId4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -528,7 +528,7 @@ namespace Example
             var apiInstance = new CollectionsApi();
             var collectionId4n = collectionId4n_example;  // string | collectionId4n
             var listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -552,7 +552,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **string**| collectionId4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -593,7 +593,7 @@ namespace Example
             
             var apiInstance = new CollectionsApi();
             var createInfo = new CreateLabelledCollectionRequest(); // CreateLabelledCollectionRequest | createInfo
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -616,7 +616,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createInfo** | [**CreateLabelledCollectionRequest**](CreateLabelledCollectionRequest.md)| createInfo | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -657,7 +657,7 @@ namespace Example
             
             var apiInstance = new CollectionsApi();
             var createInfo = new CreateLogisticCollectionRequest(); // CreateLogisticCollectionRequest | createInfo
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -680,7 +680,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createInfo** | [**CreateLogisticCollectionRequest**](CreateLogisticCollectionRequest.md)| createInfo | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -721,7 +721,7 @@ namespace Example
             
             var apiInstance = new CollectionsApi();
             var createInfo = new CreateRoutingCollectionRequest(); // CreateRoutingCollectionRequest | createInfo
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -744,7 +744,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createInfo** | [**CreateRoutingCollectionRequest**](CreateRoutingCollectionRequest.md)| createInfo | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -785,7 +785,7 @@ namespace Example
             
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -808,7 +808,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -849,7 +849,7 @@ namespace Example
             
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -872,7 +872,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -913,7 +913,7 @@ namespace Example
             
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -936,7 +936,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -977,7 +977,7 @@ namespace Example
             
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -1000,7 +1000,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -1041,7 +1041,7 @@ namespace Example
             
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -1064,7 +1064,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -1105,7 +1105,7 @@ namespace Example
             
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -1128,7 +1128,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -1169,7 +1169,7 @@ namespace Example
             
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -1192,7 +1192,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -1233,7 +1233,7 @@ namespace Example
             
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -1256,7 +1256,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -1299,7 +1299,7 @@ namespace Example
             
             var apiInstance = new CollectionsApi();
             var organizationId = 789;  // long? | organizationId
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var offset = 56;  // int? | Start with the n-th element.  (optional) 
             var limit = 56;  // int? | The maximum count of returned elements. (optional) 
@@ -1327,7 +1327,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **long?**| organizationId | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
  **offset** | **int?**| Start with the n-th element.  | [optional] 
  **limit** | **int?**| The maximum count of returned elements. | [optional] 
@@ -1373,7 +1373,7 @@ namespace Example
             
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var offset = 56;  // int? | Start with the n-th element.  (optional) 
             var limit = 56;  // int? | The maximum count of returned elements. (optional) 
@@ -1398,7 +1398,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
  **offset** | **int?**| Start with the n-th element.  | [optional] 
  **limit** | **int?**| The maximum count of returned elements. | [optional] 
@@ -1441,7 +1441,7 @@ namespace Example
             
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var offset = 56;  // int? | Start with the n-th element.  (optional) 
             var limit = 56;  // int? | The maximum count of returned elements. (optional) 
@@ -1466,7 +1466,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
  **offset** | **int?**| Start with the n-th element.  | [optional] 
  **limit** | **int?**| The maximum count of returned elements. | [optional] 
@@ -1509,7 +1509,7 @@ namespace Example
             
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var offset = 56;  // int? | Start with the n-th element.  (optional) 
             var limit = 56;  // int? | The maximum count of returned elements. (optional) 
@@ -1534,7 +1534,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
  **offset** | **int?**| Start with the n-th element.  | [optional] 
  **limit** | **int?**| The maximum count of returned elements. | [optional] 
@@ -1577,7 +1577,7 @@ namespace Example
             
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var offset = 56;  // int? | Start with the n-th element.  (optional) 
             var limit = 56;  // int? | The maximum count of returned elements. (optional) 
@@ -1602,7 +1602,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
  **offset** | **int?**| Start with the n-th element.  | [optional] 
  **limit** | **int?**| The maximum count of returned elements. | [optional] 
@@ -1646,7 +1646,7 @@ namespace Example
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
             var elementGuid = elementGuid_example;  // string | elementGuid
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -1670,7 +1670,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
  **elementGuid** | **string**| elementGuid | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -1712,7 +1712,7 @@ namespace Example
             var apiInstance = new CollectionsApi();
             var collectionId4n = collectionId4n_example;  // string | collectionId4n
             var elementGuid = elementGuid_example;  // string | elementGuid
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -1736,7 +1736,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **string**| collectionId4n | 
  **elementGuid** | **string**| elementGuid | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -1778,7 +1778,7 @@ namespace Example
             var apiInstance = new CollectionsApi();
             var collectionId4n = collectionId4n_example;  // string | collectionId4n
             var guid = guid_example;  // string | guid
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -1802,7 +1802,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **string**| collectionId4n | 
  **guid** | **string**| guid | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -1844,7 +1844,7 @@ namespace Example
             var apiInstance = new CollectionsApi();
             var collectionId4n = collectionId4n_example;  // string | collectionId4n
             var guid = guid_example;  // string | guid
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -1868,7 +1868,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **string**| collectionId4n | 
  **guid** | **string**| guid | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -1910,7 +1910,7 @@ namespace Example
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
             var listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -1934,7 +1934,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -1976,7 +1976,7 @@ namespace Example
             var apiInstance = new CollectionsApi();
             var collectionId4n = collectionId4n_example;  // string | collectionId4n
             var listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -2000,7 +2000,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **string**| collectionId4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -2042,7 +2042,7 @@ namespace Example
             var apiInstance = new CollectionsApi();
             var collectionId4n = collectionId4n_example;  // string | collectionId4n
             var listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -2066,7 +2066,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **string**| collectionId4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -2108,7 +2108,7 @@ namespace Example
             var apiInstance = new CollectionsApi();
             var collectionId4n = collectionId4n_example;  // string | collectionId4n
             var listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -2132,7 +2132,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **string**| collectionId4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -2174,7 +2174,7 @@ namespace Example
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
             var request = new GuidCollection(); // GuidCollection | request
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -2198,7 +2198,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
  **request** | [**GuidCollection**](GuidCollection.md)| request | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -2240,7 +2240,7 @@ namespace Example
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
             var request = new GuidCollection(); // GuidCollection | request
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -2264,7 +2264,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
  **request** | [**GuidCollection**](GuidCollection.md)| request | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -2306,7 +2306,7 @@ namespace Example
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
             var request = new GuidCollection(); // GuidCollection | request
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -2330,7 +2330,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
  **request** | [**GuidCollection**](GuidCollection.md)| request | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -2372,7 +2372,7 @@ namespace Example
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
             var request = new GuidCollection(); // GuidCollection | request
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -2396,7 +2396,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
  **request** | [**GuidCollection**](GuidCollection.md)| request | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type

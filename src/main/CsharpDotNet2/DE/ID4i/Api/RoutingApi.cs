@@ -16,7 +16,7 @@ namespace
         /// </summary>
         /// <param name="id4n">id4n</param>
         /// <param name="type">The type of route you want to have</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <param name="privateRoutes">privateRoutes</param>
         /// <param name="publicRoutes">publicRoutes</param>
@@ -26,7 +26,7 @@ namespace
         /// Retrieve routing file 
         /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <param name="organizationId">organizationId</param>
         /// <returns>RoutingFile</returns>
@@ -36,7 +36,7 @@ namespace
         /// </summary>
         /// <param name="rfr">rfr</param>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError UpdateRoutingFile (RoutingFileRequest rfr, string id4n, string authorization, string acceptLanguage);
@@ -100,7 +100,7 @@ namespace
         /// </summary>
         /// <param name="id4n">id4n</param> 
         /// <param name="type">The type of route you want to have</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="privateRoutes">privateRoutes</param> 
         /// <param name="publicRoutes">publicRoutes</param> 
@@ -149,7 +149,7 @@ path = path.Replace("{" + "type" + "}", ApiClient.ParameterToString(type));
         /// Retrieve routing file 
         /// </summary>
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="organizationId">organizationId</param> 
         /// <returns>RoutingFile</returns>            
@@ -193,7 +193,7 @@ path = path.Replace("{" + "type" + "}", ApiClient.ParameterToString(type));
         /// </summary>
         /// <param name="rfr">rfr</param> 
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError UpdateRoutingFile (RoutingFileRequest rfr, string id4n, string authorization, string acceptLanguage)

@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Elements** | [**List&lt;ApiKeyPrivilege&gt;**](ApiKeyPrivilege.md) |  | [optional] 
+**Elements** | [**List&lt;ApiKeyPrivilege&gt;**](ApiKeyPrivilege.md) |  | 
 **Limit** | **int?** |  | 
 **Offset** | **int?** |  | 
 **Total** | **int?** |  | [optional] 

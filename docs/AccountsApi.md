@@ -47,7 +47,7 @@ namespace Example
             var organizationId = 789;  // long? | organizationId
             var username = username_example;  // string | username
             var changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
  **organizationId** | **long?**| organizationId | 
  **username** | **string**| username | 
  **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -115,7 +115,7 @@ namespace Example
             
             var apiInstance = new AccountsApi();
             var completeRegistration = new CompleteUserRegistrationRequest(); // CompleteUserRegistrationRequest | Contains the verification token, the username and the initial password.
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -138,7 +138,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **completeRegistration** | [**CompleteUserRegistrationRequest**](CompleteUserRegistrationRequest.md)| Contains the verification token, the username and the initial password. | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -179,7 +179,7 @@ namespace Example
             
             var apiInstance = new AccountsApi();
             var username = username_example;  // string | username
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -202,7 +202,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **string**| username | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -243,7 +243,7 @@ namespace Example
             
             var apiInstance = new AccountsApi();
             var usernamePrefix = usernamePrefix_example;  // string | Find users starting with this prefix.
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var offset = 56;  // int? | Start with the n-th element.  (optional) 
             var limit = 56;  // int? | The maximum count of returned elements. (optional) 
@@ -268,7 +268,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **usernamePrefix** | **string**| Find users starting with this prefix. | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
  **offset** | **int?**| Start with the n-th element.  | [optional] 
  **limit** | **int?**| The maximum count of returned elements. | [optional] 
@@ -313,7 +313,7 @@ namespace Example
             
             var apiInstance = new AccountsApi();
             var organizationId = 789;  // long? | organizationId
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var offset = 56;  // int? | Start with the n-th element.  (optional) 
             var limit = 56;  // int? | The maximum count of returned elements. (optional) 
@@ -338,7 +338,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **long?**| organizationId | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
  **offset** | **int?**| Start with the n-th element.  | [optional] 
  **limit** | **int?**| The maximum count of returned elements. | [optional] 
@@ -380,7 +380,7 @@ namespace Example
         {
             
             var apiInstance = new AccountsApi();
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var role = role_example;  // string | role (optional) 
             var offset = 56;  // int? | Start with the n-th element.  (optional) 
@@ -405,7 +405,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
  **role** | **string**| role | [optional] 
  **offset** | **int?**| Start with the n-th element.  | [optional] 
@@ -450,7 +450,7 @@ namespace Example
             var apiInstance = new AccountsApi();
             var organizationId = 789;  // long? | organizationId
             var username = username_example;  // string | username
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var offset = 56;  // int? | Start with the n-th element.  (optional) 
             var limit = 56;  // int? | The maximum count of returned elements. (optional) 
@@ -476,7 +476,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **long?**| organizationId | 
  **username** | **string**| username | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
  **offset** | **int?**| Start with the n-th element.  | [optional] 
  **limit** | **int?**| The maximum count of returned elements. | [optional] 
@@ -521,7 +521,7 @@ namespace Example
             
             var apiInstance = new AccountsApi();
             var organizationId = 789;  // long? | organizationId
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var offset = 56;  // int? | Start with the n-th element.  (optional) 
             var limit = 56;  // int? | The maximum count of returned elements. (optional) 
@@ -546,7 +546,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **long?**| organizationId | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
  **offset** | **int?**| Start with the n-th element.  | [optional] 
  **limit** | **int?**| The maximum count of returned elements. | [optional] 
@@ -590,7 +590,7 @@ namespace Example
             var apiInstance = new AccountsApi();
             var organizationId = 789;  // long? | organizationId
             var invitationList = new OrganizationUserInvitationListRequest(); // OrganizationUserInvitationListRequest | invitationList
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -614,7 +614,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **long?**| organizationId | 
  **invitationList** | [**OrganizationUserInvitationListRequest**](OrganizationUserInvitationListRequest.md)| invitationList | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -656,7 +656,7 @@ namespace Example
         {
             
             var apiInstance = new AccountsApi();
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var privilege = privilege_example;  // string | If specified the roles will be filtered containing that privilege. (optional) 
             var offset = 56;  // int? | Start with the n-th element.  (optional) 
@@ -681,7 +681,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
  **privilege** | **string**| If specified the roles will be filtered containing that privilege. | [optional] 
  **offset** | **int?**| Start with the n-th element.  | [optional] 
@@ -787,7 +787,7 @@ namespace Example
             
             var apiInstance = new AccountsApi();
             var userRegistration = new UserRegistrationRequest(); // UserRegistrationRequest | The user information about the new created user.
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -810,7 +810,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userRegistration** | [**UserRegistrationRequest**](UserRegistrationRequest.md)| The user information about the new created user. | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -853,7 +853,7 @@ namespace Example
             var organizationId = 789;  // long? | organizationId
             var username = username_example;  // string | username
             var changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -878,7 +878,7 @@ Name | Type | Description  | Notes
  **organizationId** | **long?**| organizationId | 
  **username** | **string**| username | 
  **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -921,7 +921,7 @@ namespace Example
             
             var apiInstance = new AccountsApi();
             var resetRequest = new PasswordResetRequest(); // PasswordResetRequest | Contains the required information to request a new password.
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -944,7 +944,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **resetRequest** | [**PasswordResetRequest**](PasswordResetRequest.md)| Contains the required information to request a new password. | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -987,7 +987,7 @@ namespace Example
             
             var apiInstance = new AccountsApi();
             var verificationRequest = new PasswordResetVerificationRequest(); // PasswordResetVerificationRequest | Contains the new password and the verification token to set the new password.
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -1010,7 +1010,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **verificationRequest** | [**PasswordResetVerificationRequest**](PasswordResetVerificationRequest.md)| Contains the new password and the verification token to set the new password. | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -1053,7 +1053,7 @@ namespace Example
             
             var apiInstance = new AccountsApi();
             var token = new RegistrationVerificationTokenPresentation(); // RegistrationVerificationTokenPresentation | The token for user verification.
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -1076,7 +1076,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | [**RegistrationVerificationTokenPresentation**](RegistrationVerificationTokenPresentation.md)| The token for user verification. | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type

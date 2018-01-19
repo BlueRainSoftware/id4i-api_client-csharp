@@ -15,7 +15,7 @@ namespace
         /// Resolve image 
         /// </summary>
         /// <param name="imageID">The id of the image to be resolved.</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>byte[]</returns>
         byte[] ResolveImageUsingGET (string imageID, string authorization, string acceptLanguage);
@@ -78,7 +78,7 @@ namespace
         /// Resolve image 
         /// </summary>
         /// <param name="imageID">The id of the image to be resolved.</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>byte[]</returns>            
         public byte[] ResolveImageUsingGET (string imageID, string authorization, string acceptLanguage)

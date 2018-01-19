@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Elements** | [**List&lt;Country&gt;**](Country.md) |  | [optional] 
+**Elements** | [**List&lt;Country&gt;**](Country.md) |  | 
 **Limit** | **int?** |  | 
 **Offset** | **int?** |  | 
 **Total** | **int?** |  | [optional] 

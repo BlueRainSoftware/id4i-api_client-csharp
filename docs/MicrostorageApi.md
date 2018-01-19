@@ -32,7 +32,7 @@ namespace Example
             var apiInstance = new MicrostorageApi();
             var organization = 789;  // long? | organization
             var id4n = id4n_example;  // string | id4n
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization** | **long?**| organization | 
  **id4n** | **string**| id4n | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -98,7 +98,7 @@ namespace Example
             var apiInstance = new MicrostorageApi();
             var organization = 789;  // long? | organization
             var id4n = id4n_example;  // string | id4n
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var contentType = contentType_example;  // string | Content-Type (optional) 
             var contentLength = 789;  // long? | Content-Length (optional) 
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization** | **long?**| organization | 
  **id4n** | **string**| id4n | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
  **contentType** | **string**| Content-Type | [optional] 
  **contentLength** | **long?**| Content-Length | [optional] 
@@ -139,7 +139,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, */*, application/json;charset=UTF-8
+ - **Content-Type**: */*
  - **Accept**: application/xml, application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -51,7 +51,7 @@ namespace Example
             var organizationId = 789;  // long? | organizationId
             var username = username_example;  // string | username
             var changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
  **organizationId** | **long?**| organizationId | 
  **username** | **string**| username | 
  **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -119,7 +119,7 @@ namespace Example
             
             var apiInstance = new OrganizationsApi();
             var organization = new Organization(); // Organization | Organization to be created
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -142,7 +142,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization** | [**Organization**](Organization.md)| Organization to be created | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -183,7 +183,7 @@ namespace Example
             
             var apiInstance = new OrganizationsApi();
             var organizationId = 789;  // long? | The id of the organization to be deleted.
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -206,7 +206,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **long?**| The id of the organization to be deleted. | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -247,7 +247,7 @@ namespace Example
             
             var apiInstance = new OrganizationsApi();
             var organizationId = 789;  // long? | organizationId
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -270,7 +270,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **long?**| organizationId | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -311,7 +311,7 @@ namespace Example
             
             var apiInstance = new OrganizationsApi();
             var organizationId = 789;  // long? | The id of the organization where the logo should be deleted.
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -334,7 +334,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **long?**| The id of the organization where the logo should be deleted. | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -377,7 +377,7 @@ namespace Example
             
             var apiInstance = new OrganizationsApi();
             var organizationId = 789;  // long? | The id of the organization to be retrieved.
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -400,7 +400,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **long?**| The id of the organization to be retrieved. | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -441,7 +441,7 @@ namespace Example
             
             var apiInstance = new OrganizationsApi();
             var organizationId = 789;  // long? | organizationId
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -464,7 +464,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **long?**| organizationId | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -505,7 +505,7 @@ namespace Example
             
             var apiInstance = new OrganizationsApi();
             var organizationId = 789;  // long? | organizationId
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -528,7 +528,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **long?**| organizationId | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -571,7 +571,7 @@ namespace Example
             
             var apiInstance = new OrganizationsApi();
             var organizationId = 789;  // long? | organizationId
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var offset = 56;  // int? | Start with the n-th element.  (optional) 
             var limit = 56;  // int? | The maximum count of returned elements. (optional) 
@@ -599,7 +599,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **long?**| organizationId | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
  **offset** | **int?**| Start with the n-th element.  | [optional] 
  **limit** | **int?**| The maximum count of returned elements. | [optional] 
@@ -647,7 +647,7 @@ namespace Example
             
             var apiInstance = new OrganizationsApi();
             var organizationId = 789;  // long? | organizationId
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var offset = 56;  // int? | Start with the n-th element.  (optional) 
             var limit = 56;  // int? | The maximum count of returned elements. (optional) 
@@ -672,7 +672,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **long?**| organizationId | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
  **offset** | **int?**| Start with the n-th element.  | [optional] 
  **limit** | **int?**| The maximum count of returned elements. | [optional] 
@@ -714,7 +714,7 @@ namespace Example
         {
             
             var apiInstance = new OrganizationsApi();
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var role = role_example;  // string | role (optional) 
             var offset = 56;  // int? | Start with the n-th element.  (optional) 
@@ -739,7 +739,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
  **role** | **string**| role | [optional] 
  **offset** | **int?**| Start with the n-th element.  | [optional] 
@@ -784,7 +784,7 @@ namespace Example
             var apiInstance = new OrganizationsApi();
             var organizationId = 789;  // long? | organizationId
             var username = username_example;  // string | username
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var offset = 56;  // int? | Start with the n-th element.  (optional) 
             var limit = 56;  // int? | The maximum count of returned elements. (optional) 
@@ -810,7 +810,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **long?**| organizationId | 
  **username** | **string**| username | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
  **offset** | **int?**| Start with the n-th element.  | [optional] 
  **limit** | **int?**| The maximum count of returned elements. | [optional] 
@@ -855,7 +855,7 @@ namespace Example
             
             var apiInstance = new OrganizationsApi();
             var organizationId = 789;  // long? | organizationId
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var offset = 56;  // int? | Start with the n-th element.  (optional) 
             var limit = 56;  // int? | The maximum count of returned elements. (optional) 
@@ -880,7 +880,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **long?**| organizationId | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
  **offset** | **int?**| Start with the n-th element.  | [optional] 
  **limit** | **int?**| The maximum count of returned elements. | [optional] 
@@ -924,7 +924,7 @@ namespace Example
             var apiInstance = new OrganizationsApi();
             var organizationId = 789;  // long? | organizationId
             var invitationList = new OrganizationUserInvitationListRequest(); // OrganizationUserInvitationListRequest | invitationList
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -948,7 +948,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **long?**| organizationId | 
  **invitationList** | [**OrganizationUserInvitationListRequest**](OrganizationUserInvitationListRequest.md)| invitationList | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -988,7 +988,7 @@ namespace Example
         {
             
             var apiInstance = new OrganizationsApi();
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var offset = 56;  // int? | Start with the n-th element.  (optional) 
             var limit = 56;  // int? | The maximum count of returned elements. (optional) 
@@ -1012,7 +1012,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
  **offset** | **int?**| Start with the n-th element.  | [optional] 
  **limit** | **int?**| The maximum count of returned elements. | [optional] 
@@ -1057,7 +1057,7 @@ namespace Example
             var organizationId = 789;  // long? | organizationId
             var username = username_example;  // string | username
             var changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -1082,7 +1082,7 @@ Name | Type | Description  | Notes
  **organizationId** | **long?**| organizationId | 
  **username** | **string**| username | 
  **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -1124,7 +1124,7 @@ namespace Example
             var apiInstance = new OrganizationsApi();
             var organizationId = 789;  // long? | The id of the organization to be updated.
             var organization = new Organization(); // Organization | Updated organization object
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -1148,7 +1148,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **long?**| The id of the organization to be updated. | 
  **organization** | [**Organization**](Organization.md)| Updated organization object | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -1190,7 +1190,7 @@ namespace Example
             var apiInstance = new OrganizationsApi();
             var organizationId = 789;  // long? | organizationId
             var addressResource = new OrganizationAddress(); // OrganizationAddress | addressResource
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -1214,7 +1214,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **long?**| organizationId | 
  **addressResource** | [**OrganizationAddress**](OrganizationAddress.md)| addressResource | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -1256,7 +1256,7 @@ namespace Example
             var apiInstance = new OrganizationsApi();
             var organizationId = 789;  // long? | organizationId
             var addressResource = new OrganizationAddress(); // OrganizationAddress | addressResource
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -1280,7 +1280,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **long?**| organizationId | 
  **addressResource** | [**OrganizationAddress**](OrganizationAddress.md)| addressResource | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
@@ -1324,7 +1324,7 @@ namespace Example
             var apiInstance = new OrganizationsApi();
             var organizationId = 789;  // long? | The id of the organization where the logo should be updated.
             var file = new System.IO.Stream(); // System.IO.Stream | An image containing the new logo.
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token as returned from /login (optional) 
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
@@ -1348,7 +1348,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **long?**| The id of the organization where the logo should be updated. | 
  **file** | **System.IO.Stream**| An image containing the new logo. | 
- **authorization** | **string**| Authorization JWT Bearer Token as returned from /login | [optional] 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type

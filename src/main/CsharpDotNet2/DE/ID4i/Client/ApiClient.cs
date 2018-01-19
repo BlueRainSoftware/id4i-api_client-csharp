@@ -257,6 +257,10 @@ namespace DE.ID4i.Client
                 // determine which one to use
                 switch(auth)
                 {
+                    case "Authorization":
+                        headerParams["Authorization"] = GetApiKeyWithPrefix("Authorization");
+                        
+                        break;
                     default:
                         //TODO show warning about security definition not found
                         break;

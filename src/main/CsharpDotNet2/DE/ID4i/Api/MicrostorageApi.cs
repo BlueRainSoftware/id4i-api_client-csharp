@@ -16,7 +16,7 @@ namespace
         /// </summary>
         /// <param name="organization">organization</param>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>InputStreamResource</returns>
         InputStreamResource Read (long? organization, string id4n, string authorization, string acceptLanguage);
@@ -25,7 +25,7 @@ namespace
         /// </summary>
         /// <param name="organization">organization</param>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <param name="contentType">Content-Type</param>
         /// <param name="contentLength">Content-Length</param>
@@ -91,7 +91,7 @@ namespace
         /// </summary>
         /// <param name="organization">organization</param> 
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>InputStreamResource</returns>            
         public InputStreamResource Read (long? organization, string id4n, string authorization, string acceptLanguage)
@@ -137,7 +137,7 @@ path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
         /// </summary>
         /// <param name="organization">organization</param> 
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="contentType">Content-Type</param> 
         /// <param name="contentLength">Content-Length</param> 

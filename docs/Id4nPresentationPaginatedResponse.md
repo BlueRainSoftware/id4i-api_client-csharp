@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Elements** | [**List&lt;Id4nPresentation&gt;**](Id4nPresentation.md) |  | [optional] 
+**Elements** | [**List&lt;Id4nPresentation&gt;**](Id4nPresentation.md) |  | 
 **Limit** | **int?** |  | 
 **Offset** | **int?** |  | 
 **Total** | **int?** |  | [optional] 
