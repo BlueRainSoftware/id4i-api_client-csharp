@@ -40,6 +40,13 @@ namespace  {
     [JsonProperty(PropertyName = "revision")]
     public string Revision { get; set; }
 
+    /// <summary>
+    /// Gets or Sets Version
+    /// </summary>
+    [DataMember(Name="version", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "version")]
+    public string Version { get; set; }
+
 
     /// <summary>
     /// Get the string presentation of the object
@@ -52,6 +59,7 @@ namespace  {
       sb.Append("  CommitTime: ").Append(CommitTime).Append("\n");
       sb.Append("  Name: ").Append(Name).Append("\n");
       sb.Append("  Revision: ").Append(Revision).Append("\n");
+      sb.Append("  Version: ").Append(Version).Append("\n");
       sb.Append("}\n");
       return sb.ToString();
     }
