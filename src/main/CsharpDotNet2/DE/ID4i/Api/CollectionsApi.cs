@@ -16,7 +16,7 @@ namespace
         /// </summary>
         /// <param name="id4n">id4n</param>
         /// <param name="elementGuid">elementGuid</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError AddElementToCollection (string id4n, string elementGuid, string authorization, string acceptLanguage);
@@ -25,7 +25,7 @@ namespace
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param>
         /// <param name="elementGuid">elementGuid</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError AddElementToLabelledCollection (string collectionId4n, string elementGuid, string authorization, string acceptLanguage);
@@ -34,7 +34,7 @@ namespace
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param>
         /// <param name="guid">guid</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError AddElementToLogisticCollection (string collectionId4n, string guid, string authorization, string acceptLanguage);
@@ -43,7 +43,7 @@ namespace
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param>
         /// <param name="guid">guid</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError AddElementToRoutingCollection (string collectionId4n, string guid, string authorization, string acceptLanguage);
@@ -52,7 +52,7 @@ namespace
         /// </summary>
         /// <param name="id4n">id4n</param>
         /// <param name="listOfGuids">listOfGuids</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError AddElementsToCollection (string id4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage);
@@ -61,7 +61,7 @@ namespace
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param>
         /// <param name="listOfGuids">listOfGuids</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError AddElementsToLabelledCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage);
@@ -70,7 +70,7 @@ namespace
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param>
         /// <param name="listOfGuids">listOfGuids</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError AddElementsToLogisticCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage);
@@ -79,7 +79,7 @@ namespace
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param>
         /// <param name="listOfGuids">listOfGuids</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError AddElementsToRoutingCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage);
@@ -87,7 +87,7 @@ namespace
         /// Create labelled collection 
         /// </summary>
         /// <param name="createInfo">createInfo</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>Id4n</returns>
         Id4n CreateLabelledCollection (CreateLabelledCollectionRequest createInfo, string authorization, string acceptLanguage);
@@ -95,7 +95,7 @@ namespace
         /// Create logistic collection 
         /// </summary>
         /// <param name="createInfo">createInfo</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>Id4n</returns>
         Id4n CreateLogisticCollection (CreateLogisticCollectionRequest createInfo, string authorization, string acceptLanguage);
@@ -103,7 +103,7 @@ namespace
         /// Create routing collecton 
         /// </summary>
         /// <param name="createInfo">createInfo</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>Id4n</returns>
         Id4n CreateRoutingCollection (CreateRoutingCollectionRequest createInfo, string authorization, string acceptLanguage);
@@ -111,7 +111,7 @@ namespace
         /// Delete collection 
         /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError DeleteCollection (string id4n, string authorization, string acceptLanguage);
@@ -119,7 +119,7 @@ namespace
         /// Delete labelled collection 
         /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError DeleteLabelledCollection (string id4n, string authorization, string acceptLanguage);
@@ -127,7 +127,7 @@ namespace
         /// Delete logistic collection 
         /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>Object</returns>
         Object DeleteLogisticCollection (string id4n, string authorization, string acceptLanguage);
@@ -135,7 +135,7 @@ namespace
         /// Delete routing collection 
         /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError DeleteRoutingCollection (string id4n, string authorization, string acceptLanguage);
@@ -143,7 +143,7 @@ namespace
         /// Find collection 
         /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>GuidCollection</returns>
         GuidCollection FindCollection (string id4n, string authorization, string acceptLanguage);
@@ -151,7 +151,7 @@ namespace
         /// Find labelled collection 
         /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>GuidCollection</returns>
         GuidCollection FindLabelledCollection (string id4n, string authorization, string acceptLanguage);
@@ -159,7 +159,7 @@ namespace
         /// Find logistic collection 
         /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>GuidCollection</returns>
         GuidCollection FindLogisticCollection (string id4n, string authorization, string acceptLanguage);
@@ -167,7 +167,7 @@ namespace
         /// Find routing collection 
         /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>GuidCollection</returns>
         GuidCollection FindRoutingCollection (string id4n, string authorization, string acceptLanguage);
@@ -175,7 +175,7 @@ namespace
         /// Get collections of organization Retrieving all collections of an organization in a paginated manner.
         /// </summary>
         /// <param name="organizationId">organizationId</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <param name="offset">Start with the n-th element. </param>
         /// <param name="limit">The maximum count of returned elements.</param>
@@ -188,7 +188,7 @@ namespace
         /// List contents of the collection 
         /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <param name="offset">Start with the n-th element. </param>
         /// <param name="limit">The maximum count of returned elements.</param>
@@ -198,7 +198,7 @@ namespace
         /// List contents of the collection 
         /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <param name="offset">Start with the n-th element. </param>
         /// <param name="limit">The maximum count of returned elements.</param>
@@ -208,7 +208,7 @@ namespace
         /// List contents of the collection 
         /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <param name="offset">Start with the n-th element. </param>
         /// <param name="limit">The maximum count of returned elements.</param>
@@ -218,7 +218,7 @@ namespace
         /// List contents of the collection 
         /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <param name="offset">Start with the n-th element. </param>
         /// <param name="limit">The maximum count of returned elements.</param>
@@ -229,7 +229,7 @@ namespace
         /// </summary>
         /// <param name="id4n">id4n</param>
         /// <param name="elementGuid">elementGuid</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError RemoveElementFromCollection (string id4n, string elementGuid, string authorization, string acceptLanguage);
@@ -238,7 +238,7 @@ namespace
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param>
         /// <param name="elementGuid">elementGuid</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError RemoveElementFromLabelledCollection (string collectionId4n, string elementGuid, string authorization, string acceptLanguage);
@@ -247,7 +247,7 @@ namespace
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param>
         /// <param name="guid">guid</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError RemoveElementFromLogisticCollection (string collectionId4n, string guid, string authorization, string acceptLanguage);
@@ -256,7 +256,7 @@ namespace
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param>
         /// <param name="guid">guid</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError RemoveElementFromRoutingCollection (string collectionId4n, string guid, string authorization, string acceptLanguage);
@@ -265,7 +265,7 @@ namespace
         /// </summary>
         /// <param name="id4n">id4n</param>
         /// <param name="listOfGuids">listOfGuids</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError RemoveElementsFromCollection (string id4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage);
@@ -274,7 +274,7 @@ namespace
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param>
         /// <param name="listOfGuids">listOfGuids</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError RemoveElementsFromLabelledCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage);
@@ -283,7 +283,7 @@ namespace
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param>
         /// <param name="listOfGuids">listOfGuids</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError RemoveElementsFromLogisticCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage);
@@ -292,7 +292,7 @@ namespace
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param>
         /// <param name="listOfGuids">listOfGuids</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError RemoveElementsFromRoutingCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage);
@@ -301,7 +301,7 @@ namespace
         /// </summary>
         /// <param name="id4n">id4n</param>
         /// <param name="request">request</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>Object</returns>
         Object UpdateCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage);
@@ -310,7 +310,7 @@ namespace
         /// </summary>
         /// <param name="id4n">id4n</param>
         /// <param name="request">request</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>Object</returns>
         Object UpdateLabelledCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage);
@@ -319,7 +319,7 @@ namespace
         /// </summary>
         /// <param name="id4n">id4n</param>
         /// <param name="request">request</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>Object</returns>
         Object UpdateLogisticCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage);
@@ -328,7 +328,7 @@ namespace
         /// </summary>
         /// <param name="id4n">id4n</param>
         /// <param name="request">request</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>Object</returns>
         Object UpdateRoutingCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage);
@@ -392,7 +392,7 @@ namespace
         /// </summary>
         /// <param name="id4n">id4n</param> 
         /// <param name="elementGuid">elementGuid</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError AddElementToCollection (string id4n, string elementGuid, string authorization, string acceptLanguage)
@@ -438,7 +438,7 @@ path = path.Replace("{" + "elementGuid" + "}", ApiClient.ParameterToString(eleme
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param> 
         /// <param name="elementGuid">elementGuid</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError AddElementToLabelledCollection (string collectionId4n, string elementGuid, string authorization, string acceptLanguage)
@@ -484,7 +484,7 @@ path = path.Replace("{" + "elementGuid" + "}", ApiClient.ParameterToString(eleme
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param> 
         /// <param name="guid">guid</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError AddElementToLogisticCollection (string collectionId4n, string guid, string authorization, string acceptLanguage)
@@ -530,7 +530,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param> 
         /// <param name="guid">guid</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError AddElementToRoutingCollection (string collectionId4n, string guid, string authorization, string acceptLanguage)
@@ -576,7 +576,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// </summary>
         /// <param name="id4n">id4n</param> 
         /// <param name="listOfGuids">listOfGuids</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError AddElementsToCollection (string id4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage)
@@ -622,7 +622,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param> 
         /// <param name="listOfGuids">listOfGuids</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError AddElementsToLabelledCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage)
@@ -668,7 +668,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param> 
         /// <param name="listOfGuids">listOfGuids</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError AddElementsToLogisticCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage)
@@ -714,7 +714,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param> 
         /// <param name="listOfGuids">listOfGuids</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError AddElementsToRoutingCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage)
@@ -759,7 +759,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// Create labelled collection 
         /// </summary>
         /// <param name="createInfo">createInfo</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>Id4n</returns>            
         public Id4n CreateLabelledCollection (CreateLabelledCollectionRequest createInfo, string authorization, string acceptLanguage)
@@ -800,7 +800,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// Create logistic collection 
         /// </summary>
         /// <param name="createInfo">createInfo</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>Id4n</returns>            
         public Id4n CreateLogisticCollection (CreateLogisticCollectionRequest createInfo, string authorization, string acceptLanguage)
@@ -841,7 +841,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// Create routing collecton 
         /// </summary>
         /// <param name="createInfo">createInfo</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>Id4n</returns>            
         public Id4n CreateRoutingCollection (CreateRoutingCollectionRequest createInfo, string authorization, string acceptLanguage)
@@ -882,7 +882,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// Delete collection 
         /// </summary>
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError DeleteCollection (string id4n, string authorization, string acceptLanguage)
@@ -923,7 +923,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// Delete labelled collection 
         /// </summary>
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError DeleteLabelledCollection (string id4n, string authorization, string acceptLanguage)
@@ -964,7 +964,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// Delete logistic collection 
         /// </summary>
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>Object</returns>            
         public Object DeleteLogisticCollection (string id4n, string authorization, string acceptLanguage)
@@ -1005,7 +1005,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// Delete routing collection 
         /// </summary>
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError DeleteRoutingCollection (string id4n, string authorization, string acceptLanguage)
@@ -1046,7 +1046,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// Find collection 
         /// </summary>
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>GuidCollection</returns>            
         public GuidCollection FindCollection (string id4n, string authorization, string acceptLanguage)
@@ -1087,7 +1087,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// Find labelled collection 
         /// </summary>
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>GuidCollection</returns>            
         public GuidCollection FindLabelledCollection (string id4n, string authorization, string acceptLanguage)
@@ -1128,7 +1128,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// Find logistic collection 
         /// </summary>
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>GuidCollection</returns>            
         public GuidCollection FindLogisticCollection (string id4n, string authorization, string acceptLanguage)
@@ -1169,7 +1169,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// Find routing collection 
         /// </summary>
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>GuidCollection</returns>            
         public GuidCollection FindRoutingCollection (string id4n, string authorization, string acceptLanguage)
@@ -1210,7 +1210,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// Get collections of organization Retrieving all collections of an organization in a paginated manner.
         /// </summary>
         /// <param name="organizationId">organizationId</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="offset">Start with the n-th element. </param> 
         /// <param name="limit">The maximum count of returned elements.</param> 
@@ -1261,7 +1261,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// List contents of the collection 
         /// </summary>
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="offset">Start with the n-th element. </param> 
         /// <param name="limit">The maximum count of returned elements.</param> 
@@ -1306,7 +1306,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// List contents of the collection 
         /// </summary>
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="offset">Start with the n-th element. </param> 
         /// <param name="limit">The maximum count of returned elements.</param> 
@@ -1351,7 +1351,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// List contents of the collection 
         /// </summary>
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="offset">Start with the n-th element. </param> 
         /// <param name="limit">The maximum count of returned elements.</param> 
@@ -1396,7 +1396,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// List contents of the collection 
         /// </summary>
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="offset">Start with the n-th element. </param> 
         /// <param name="limit">The maximum count of returned elements.</param> 
@@ -1442,7 +1442,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// </summary>
         /// <param name="id4n">id4n</param> 
         /// <param name="elementGuid">elementGuid</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError RemoveElementFromCollection (string id4n, string elementGuid, string authorization, string acceptLanguage)
@@ -1488,7 +1488,7 @@ path = path.Replace("{" + "elementGuid" + "}", ApiClient.ParameterToString(eleme
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param> 
         /// <param name="elementGuid">elementGuid</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError RemoveElementFromLabelledCollection (string collectionId4n, string elementGuid, string authorization, string acceptLanguage)
@@ -1534,7 +1534,7 @@ path = path.Replace("{" + "elementGuid" + "}", ApiClient.ParameterToString(eleme
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param> 
         /// <param name="guid">guid</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError RemoveElementFromLogisticCollection (string collectionId4n, string guid, string authorization, string acceptLanguage)
@@ -1580,7 +1580,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param> 
         /// <param name="guid">guid</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError RemoveElementFromRoutingCollection (string collectionId4n, string guid, string authorization, string acceptLanguage)
@@ -1626,7 +1626,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// </summary>
         /// <param name="id4n">id4n</param> 
         /// <param name="listOfGuids">listOfGuids</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError RemoveElementsFromCollection (string id4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage)
@@ -1672,7 +1672,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param> 
         /// <param name="listOfGuids">listOfGuids</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError RemoveElementsFromLabelledCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage)
@@ -1718,7 +1718,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param> 
         /// <param name="listOfGuids">listOfGuids</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError RemoveElementsFromLogisticCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage)
@@ -1764,7 +1764,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param> 
         /// <param name="listOfGuids">listOfGuids</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError RemoveElementsFromRoutingCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage)
@@ -1810,7 +1810,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// </summary>
         /// <param name="id4n">id4n</param> 
         /// <param name="request">request</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>Object</returns>            
         public Object UpdateCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
@@ -1856,7 +1856,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// </summary>
         /// <param name="id4n">id4n</param> 
         /// <param name="request">request</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>Object</returns>            
         public Object UpdateLabelledCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
@@ -1902,7 +1902,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// </summary>
         /// <param name="id4n">id4n</param> 
         /// <param name="request">request</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>Object</returns>            
         public Object UpdateLogisticCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
@@ -1948,7 +1948,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// </summary>
         /// <param name="id4n">id4n</param> 
         /// <param name="request">request</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>Object</returns>            
         public Object UpdateRoutingCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)

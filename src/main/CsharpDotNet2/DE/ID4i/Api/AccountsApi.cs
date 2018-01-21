@@ -17,7 +17,7 @@ namespace
         /// <param name="organizationId">organizationId</param>
         /// <param name="username">username</param>
         /// <param name="changeRoleRequest">changeRoleRequest</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError AddUserRoles (long? organizationId, string username, ChangeRoleRequest changeRoleRequest, string authorization, string acceptLanguage);
@@ -25,7 +25,7 @@ namespace
         /// Complete registration Completing a registration e.g. for invited users. Finish registration with a username and a password.
         /// </summary>
         /// <param name="completeRegistration">Contains the verification token, the username and the initial password.</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError CompleteRegistration (CompleteUserRegistrationRequest completeRegistration, string authorization, string acceptLanguage);
@@ -33,7 +33,7 @@ namespace
         /// Find by username 
         /// </summary>
         /// <param name="username">username</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>UserPresentation</returns>
         UserPresentation FindUserByUsername (string username, string authorization, string acceptLanguage);
@@ -41,7 +41,7 @@ namespace
         /// Find users 
         /// </summary>
         /// <param name="usernamePrefix">Find users starting with this prefix.</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <param name="offset">Start with the n-th element. </param>
         /// <param name="limit">The maximum count of returned elements.</param>
@@ -51,7 +51,7 @@ namespace
         /// List users and their roles Listing users and their roles in a paginated manner.
         /// </summary>
         /// <param name="organizationId">organizationId</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <param name="offset">Start with the n-th element. </param>
         /// <param name="limit">The maximum count of returned elements.</param>
@@ -60,7 +60,7 @@ namespace
         /// <summary>
         /// Retrieve organizations of user 
         /// </summary>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <param name="role">role</param>
         /// <param name="offset">Start with the n-th element. </param>
@@ -72,7 +72,7 @@ namespace
         /// </summary>
         /// <param name="organizationId">organizationId</param>
         /// <param name="username">username</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <param name="offset">Start with the n-th element. </param>
         /// <param name="limit">The maximum count of returned elements.</param>
@@ -82,7 +82,7 @@ namespace
         /// Find users in organization Finding users in the specified organization in a paginated manner.
         /// </summary>
         /// <param name="organizationId">organizationId</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <param name="offset">Start with the n-th element. </param>
         /// <param name="limit">The maximum count of returned elements.</param>
@@ -93,14 +93,14 @@ namespace
         /// </summary>
         /// <param name="organizationId">organizationId</param>
         /// <param name="invitationList">invitationList</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError InviteUsers (long? organizationId, OrganizationUserInvitationListRequest invitationList, string authorization, string acceptLanguage);
         /// <summary>
         /// List roles Listing of roles.
         /// </summary>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <param name="privilege">If specified the roles will be filtered containing that privilege.</param>
         /// <param name="offset">Start with the n-th element. </param>
@@ -117,7 +117,7 @@ namespace
         /// Register user Registering a new user.
         /// </summary>
         /// <param name="userRegistration">The user information about the new created user.</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>UserRegistrationResponse</returns>
         UserRegistrationResponse RegisterUser (UserRegistrationRequest userRegistration, string authorization, string acceptLanguage);
@@ -127,7 +127,7 @@ namespace
         /// <param name="organizationId">organizationId</param>
         /// <param name="username">username</param>
         /// <param name="changeRoleRequest">changeRoleRequest</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError RemoveUserRoles (long? organizationId, string username, ChangeRoleRequest changeRoleRequest, string authorization, string acceptLanguage);
@@ -135,7 +135,7 @@ namespace
         /// Request password reset Requesting a reset for a new password. 
         /// </summary>
         /// <param name="resetRequest">Contains the required information to request a new password.</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>SimpleMessageResponse</returns>
         SimpleMessageResponse RequestPasswordReset (PasswordResetRequest resetRequest, string authorization, string acceptLanguage);
@@ -143,7 +143,7 @@ namespace
         /// Verify password reset Setting a new password and verifying the request to set the password.
         /// </summary>
         /// <param name="verificationRequest">Contains the new password and the verification token to set the new password.</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>SimpleMessageResponse</returns>
         SimpleMessageResponse VerifyPasswordReset (PasswordResetVerificationRequest verificationRequest, string authorization, string acceptLanguage);
@@ -151,7 +151,7 @@ namespace
         /// Verify registration Verifies a new user registration.
         /// </summary>
         /// <param name="token">The token for user verification.</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError VerifyUserRegistration (RegistrationVerificationTokenPresentation token, string authorization, string acceptLanguage);
@@ -216,7 +216,7 @@ namespace
         /// <param name="organizationId">organizationId</param> 
         /// <param name="username">username</param> 
         /// <param name="changeRoleRequest">changeRoleRequest</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError AddUserRoles (long? organizationId, string username, ChangeRoleRequest changeRoleRequest, string authorization, string acceptLanguage)
@@ -265,7 +265,7 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// Complete registration Completing a registration e.g. for invited users. Finish registration with a username and a password.
         /// </summary>
         /// <param name="completeRegistration">Contains the verification token, the username and the initial password.</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError CompleteRegistration (CompleteUserRegistrationRequest completeRegistration, string authorization, string acceptLanguage)
@@ -306,7 +306,7 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// Find by username 
         /// </summary>
         /// <param name="username">username</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>UserPresentation</returns>            
         public UserPresentation FindUserByUsername (string username, string authorization, string acceptLanguage)
@@ -347,7 +347,7 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// Find users 
         /// </summary>
         /// <param name="usernamePrefix">Find users starting with this prefix.</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="offset">Start with the n-th element. </param> 
         /// <param name="limit">The maximum count of returned elements.</param> 
@@ -392,7 +392,7 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// List users and their roles Listing users and their roles in a paginated manner.
         /// </summary>
         /// <param name="organizationId">organizationId</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="offset">Start with the n-th element. </param> 
         /// <param name="limit">The maximum count of returned elements.</param> 
@@ -436,7 +436,7 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// <summary>
         /// Retrieve organizations of user 
         /// </summary>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="role">role</param> 
         /// <param name="offset">Start with the n-th element. </param> 
@@ -480,7 +480,7 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// </summary>
         /// <param name="organizationId">organizationId</param> 
         /// <param name="username">username</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="offset">Start with the n-th element. </param> 
         /// <param name="limit">The maximum count of returned elements.</param> 
@@ -529,7 +529,7 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// Find users in organization Finding users in the specified organization in a paginated manner.
         /// </summary>
         /// <param name="organizationId">organizationId</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="offset">Start with the n-th element. </param> 
         /// <param name="limit">The maximum count of returned elements.</param> 
@@ -575,7 +575,7 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// </summary>
         /// <param name="organizationId">organizationId</param> 
         /// <param name="invitationList">invitationList</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError InviteUsers (long? organizationId, OrganizationUserInvitationListRequest invitationList, string authorization, string acceptLanguage)
@@ -619,7 +619,7 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// <summary>
         /// List roles Listing of roles.
         /// </summary>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="privilege">If specified the roles will be filtered containing that privilege.</param> 
         /// <param name="offset">Start with the n-th element. </param> 
@@ -699,7 +699,7 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// Register user Registering a new user.
         /// </summary>
         /// <param name="userRegistration">The user information about the new created user.</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>UserRegistrationResponse</returns>            
         public UserRegistrationResponse RegisterUser (UserRegistrationRequest userRegistration, string authorization, string acceptLanguage)
@@ -742,7 +742,7 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// <param name="organizationId">organizationId</param> 
         /// <param name="username">username</param> 
         /// <param name="changeRoleRequest">changeRoleRequest</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError RemoveUserRoles (long? organizationId, string username, ChangeRoleRequest changeRoleRequest, string authorization, string acceptLanguage)
@@ -791,7 +791,7 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// Request password reset Requesting a reset for a new password. 
         /// </summary>
         /// <param name="resetRequest">Contains the required information to request a new password.</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>SimpleMessageResponse</returns>            
         public SimpleMessageResponse RequestPasswordReset (PasswordResetRequest resetRequest, string authorization, string acceptLanguage)
@@ -832,7 +832,7 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// Verify password reset Setting a new password and verifying the request to set the password.
         /// </summary>
         /// <param name="verificationRequest">Contains the new password and the verification token to set the new password.</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>SimpleMessageResponse</returns>            
         public SimpleMessageResponse VerifyPasswordReset (PasswordResetVerificationRequest verificationRequest, string authorization, string acceptLanguage)
@@ -873,7 +873,7 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// Verify registration Verifies a new user registration.
         /// </summary>
         /// <param name="token">The token for user verification.</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError VerifyUserRegistration (RegistrationVerificationTokenPresentation token, string authorization, string acceptLanguage)

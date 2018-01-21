@@ -16,7 +16,7 @@ namespace
         /// </summary>
         /// <param name="key">key</param>
         /// <param name="addApiKeyPrivilegeRequest">addApiKeyPrivilegeRequest</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError AddApiKeyPrivilege (string key, AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest, string authorization, string acceptLanguage);
@@ -26,7 +26,7 @@ namespace
         /// <param name="key">key</param>
         /// <param name="privilege">privilege</param>
         /// <param name="id4ns">id4ns</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError AddApiKeyPrivilegeForId4ns (string key, string privilege, ListOfId4ns id4ns, string authorization, string acceptLanguage);
@@ -34,7 +34,7 @@ namespace
         /// Create API key Creation of a new API key.
         /// </summary>
         /// <param name="creationRequest">API key to be created.</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiKeyPresentation</returns>
         ApiKeyPresentation CreateNewApiKey (ApiKeyCreationRequest creationRequest, string authorization, string acceptLanguage);
@@ -42,7 +42,7 @@ namespace
         /// Delete API key Deletion of an API key.
         /// </summary>
         /// <param name="key">The API key to delete.</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError DeleteApiKey (string key, string authorization, string acceptLanguage);
@@ -50,14 +50,14 @@ namespace
         /// Show API key Showing the details of an API key.
         /// </summary>
         /// <param name="key">The API key to show.</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiKeyPresentation</returns>
         ApiKeyPresentation GetApiKey (string key, string authorization, string acceptLanguage);
         /// <summary>
         /// List all privileges Listing all possible API key privileges.
         /// </summary>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <param name="id4nConcerning">id4nConcerning</param>
         /// <param name="offset">Start with the n-th element. </param>
@@ -68,7 +68,7 @@ namespace
         /// Find API key by organization Finding all API key assigned to the specified organization in a paginated manner.
         /// </summary>
         /// <param name="organizationId">The id of the organization to search in.</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <param name="offset">Start with the n-th element. </param>
         /// <param name="limit">The maximum count of returned elements.</param>
@@ -78,7 +78,7 @@ namespace
         /// List privileges 
         /// </summary>
         /// <param name="key">key</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <param name="offset">Start with the n-th element. </param>
         /// <param name="limit">The maximum count of returned elements.</param>
@@ -89,7 +89,7 @@ namespace
         /// </summary>
         /// <param name="key">key</param>
         /// <param name="privilege">privilege</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <param name="offset">Start with the n-th element. </param>
         /// <param name="limit">The maximum count of returned elements.</param>
@@ -100,7 +100,7 @@ namespace
         /// </summary>
         /// <param name="key">key</param>
         /// <param name="removeApiKeyPrivilegeRequest">removeApiKeyPrivilegeRequest</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError RemoveApiKeyPrivilege (string key, RemoveApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest, string authorization, string acceptLanguage);
@@ -110,7 +110,7 @@ namespace
         /// <param name="key">key</param>
         /// <param name="privilege">privilege</param>
         /// <param name="id4ns">id4ns</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError RemoveApiKeyPrivilegeForId4ns (string key, string privilege, ListOfId4ns id4ns, string authorization, string acceptLanguage);
@@ -119,7 +119,7 @@ namespace
         /// </summary>
         /// <param name="key">The API key to be updated.</param>
         /// <param name="apiKeyChange">The new values to apply.</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError UpdateApiKey (string key, ApiKeyChangeRequest apiKeyChange, string authorization, string acceptLanguage);
@@ -183,7 +183,7 @@ namespace
         /// </summary>
         /// <param name="key">key</param> 
         /// <param name="addApiKeyPrivilegeRequest">addApiKeyPrivilegeRequest</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError AddApiKeyPrivilege (string key, AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest, string authorization, string acceptLanguage)
@@ -230,7 +230,7 @@ namespace
         /// <param name="key">key</param> 
         /// <param name="privilege">privilege</param> 
         /// <param name="id4ns">id4ns</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError AddApiKeyPrivilegeForId4ns (string key, string privilege, ListOfId4ns id4ns, string authorization, string acceptLanguage)
@@ -279,7 +279,7 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
         /// Create API key Creation of a new API key.
         /// </summary>
         /// <param name="creationRequest">API key to be created.</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiKeyPresentation</returns>            
         public ApiKeyPresentation CreateNewApiKey (ApiKeyCreationRequest creationRequest, string authorization, string acceptLanguage)
@@ -320,7 +320,7 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
         /// Delete API key Deletion of an API key.
         /// </summary>
         /// <param name="key">The API key to delete.</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError DeleteApiKey (string key, string authorization, string acceptLanguage)
@@ -361,7 +361,7 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
         /// Show API key Showing the details of an API key.
         /// </summary>
         /// <param name="key">The API key to show.</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiKeyPresentation</returns>            
         public ApiKeyPresentation GetApiKey (string key, string authorization, string acceptLanguage)
@@ -401,7 +401,7 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
         /// <summary>
         /// List all privileges Listing all possible API key privileges.
         /// </summary>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="id4nConcerning">id4nConcerning</param> 
         /// <param name="offset">Start with the n-th element. </param> 
@@ -444,7 +444,7 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
         /// Find API key by organization Finding all API key assigned to the specified organization in a paginated manner.
         /// </summary>
         /// <param name="organizationId">The id of the organization to search in.</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="offset">Start with the n-th element. </param> 
         /// <param name="limit">The maximum count of returned elements.</param> 
@@ -489,7 +489,7 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
         /// List privileges 
         /// </summary>
         /// <param name="key">key</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="offset">Start with the n-th element. </param> 
         /// <param name="limit">The maximum count of returned elements.</param> 
@@ -535,7 +535,7 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
         /// </summary>
         /// <param name="key">key</param> 
         /// <param name="privilege">privilege</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="offset">Start with the n-th element. </param> 
         /// <param name="limit">The maximum count of returned elements.</param> 
@@ -585,7 +585,7 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
         /// </summary>
         /// <param name="key">key</param> 
         /// <param name="removeApiKeyPrivilegeRequest">removeApiKeyPrivilegeRequest</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError RemoveApiKeyPrivilege (string key, RemoveApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest, string authorization, string acceptLanguage)
@@ -632,7 +632,7 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
         /// <param name="key">key</param> 
         /// <param name="privilege">privilege</param> 
         /// <param name="id4ns">id4ns</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError RemoveApiKeyPrivilegeForId4ns (string key, string privilege, ListOfId4ns id4ns, string authorization, string acceptLanguage)
@@ -682,7 +682,7 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
         /// </summary>
         /// <param name="key">The API key to be updated.</param> 
         /// <param name="apiKeyChange">The new values to apply.</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError UpdateApiKey (string key, ApiKeyChangeRequest apiKeyChange, string authorization, string acceptLanguage)

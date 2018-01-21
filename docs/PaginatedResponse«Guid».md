@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Elements** | [**List&lt;Guid&gt;**](Guid.md) |  | [optional] 
+**Elements** | [**List&lt;Guid&gt;**](Guid.md) |  | 
 **Limit** | **int?** |  | 
 **Offset** | **int?** |  | 
 **Total** | **int?** |  | [optional] 

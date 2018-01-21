@@ -123,7 +123,7 @@ namespace DE.ID4i.Client
                      .GetExecutingAssembly()
                      .GetReferencedAssemblies()
                      .Where(x => x.Name == "System.Core").First().Version.ToString()  + "\n";
-            report += "    Version of the API: 0.0.1-alpha\n";
+            report += "    Version of the API: 0.1.2\n";
             report += "    SDK Package Version: 1.0.0\n";
   
             return report;

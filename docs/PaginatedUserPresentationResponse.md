@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Elements** | [**List&lt;UserPresentation&gt;**](UserPresentation.md) |  | [optional] 
+**Elements** | [**List&lt;UserPresentation&gt;**](UserPresentation.md) |  | 
 **Limit** | **int?** |  | 
 **Offset** | **int?** |  | 
 **Total** | **int?** |  | [optional] 

@@ -17,7 +17,7 @@ namespace
         /// <param name="id4n">The GUID to operate on</param>
         /// <param name="aliasType">Alias type, see the corresponding API model</param>
         /// <param name="alias">The alias to add or update</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError AddGuidAlias (string id4n, string aliasType, GuidAlias alias, string authorization, string acceptLanguage);
@@ -26,14 +26,14 @@ namespace
         /// </summary>
         /// <param name="id4n">The GUID to operate on</param>
         /// <param name="aliasType">Alias type, see the corresponding API model</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
         ApiError AddGuidAlias1 (string id4n, string aliasType, string authorization, string acceptLanguage);
         /// <summary>
         /// List all supported alias types Retrieve this list to find out all alias types to use with alias search and change operations
         /// </summary>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>List&lt;string&gt;</returns>
         List<string> GetGuidAliasTypes (string authorization, string acceptLanguage);
@@ -41,7 +41,7 @@ namespace
         /// Get all aliases for the given GUID Looks up the alias for each alias type (group and single GUID) and returns all found ones
         /// </summary>
         /// <param name="id4n">The GUID to operate on</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>Dictionary&lt;string, string&gt;</returns>
         Dictionary<string, string> GetGuidAliases (string id4n, string authorization, string acceptLanguage);
@@ -50,7 +50,7 @@ namespace
         /// </summary>
         /// <param name="alias">The alias to search for</param>
         /// <param name="aliasType">Alias type type to search for</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <param name="offset">Start with the n-th element. </param>
         /// <param name="limit">The maximum count of returned elements.</param>
@@ -117,7 +117,7 @@ namespace
         /// <param name="id4n">The GUID to operate on</param> 
         /// <param name="aliasType">Alias type, see the corresponding API model</param> 
         /// <param name="alias">The alias to add or update</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError AddGuidAlias (string id4n, string aliasType, GuidAlias alias, string authorization, string acceptLanguage)
@@ -167,7 +167,7 @@ path = path.Replace("{" + "aliasType" + "}", ApiClient.ParameterToString(aliasTy
         /// </summary>
         /// <param name="id4n">The GUID to operate on</param> 
         /// <param name="aliasType">Alias type, see the corresponding API model</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
         public ApiError AddGuidAlias1 (string id4n, string aliasType, string authorization, string acceptLanguage)
@@ -211,7 +211,7 @@ path = path.Replace("{" + "aliasType" + "}", ApiClient.ParameterToString(aliasTy
         /// <summary>
         /// List all supported alias types Retrieve this list to find out all alias types to use with alias search and change operations
         /// </summary>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>List&lt;string&gt;</returns>            
         public List<string> GetGuidAliasTypes (string authorization, string acceptLanguage)
@@ -248,7 +248,7 @@ path = path.Replace("{" + "aliasType" + "}", ApiClient.ParameterToString(aliasTy
         /// Get all aliases for the given GUID Looks up the alias for each alias type (group and single GUID) and returns all found ones
         /// </summary>
         /// <param name="id4n">The GUID to operate on</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>Dictionary&lt;string, string&gt;</returns>            
         public Dictionary<string, string> GetGuidAliases (string id4n, string authorization, string acceptLanguage)
@@ -290,7 +290,7 @@ path = path.Replace("{" + "aliasType" + "}", ApiClient.ParameterToString(aliasTy
         /// </summary>
         /// <param name="alias">The alias to search for</param> 
         /// <param name="aliasType">Alias type type to search for</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="offset">Start with the n-th element. </param> 
         /// <param name="limit">The maximum count of returned elements.</param> 

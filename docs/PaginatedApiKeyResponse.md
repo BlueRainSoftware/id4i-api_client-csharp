@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Elements** | [**List&lt;ApiKeyPresentation&gt;**](ApiKeyPresentation.md) |  | [optional] 
+**Elements** | [**List&lt;ApiKeyPresentation&gt;**](ApiKeyPresentation.md) |  | 
 **Limit** | **int?** |  | 
 **Offset** | **int?** |  | 
 **Total** | **int?** |  | [optional] 

@@ -14,7 +14,7 @@ namespace
         /// <summary>
         /// Retrieve version information about ID4i Retrieving version information about ID4i.
         /// </summary>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>AppInfoPresentation</returns>
         AppInfoPresentation ApplicationInfo (string authorization, string acceptLanguage);
@@ -76,7 +76,7 @@ namespace
         /// <summary>
         /// Retrieve version information about ID4i Retrieving version information about ID4i.
         /// </summary>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>AppInfoPresentation</returns>            
         public AppInfoPresentation ApplicationInfo (string authorization, string acceptLanguage)

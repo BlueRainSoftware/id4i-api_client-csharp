@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Elements** | [**List&lt;UserRoles&gt;**](UserRoles.md) |  | [optional] 
+**Elements** | [**List&lt;UserRoles&gt;**](UserRoles.md) |  | 
 **Limit** | **int?** |  | 
 **Offset** | **int?** |  | 
 **Total** | **int?** |  | [optional] 

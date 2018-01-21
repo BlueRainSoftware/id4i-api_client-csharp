@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **_Params** | **Dictionary&lt;string, string&gt;** |  | 
 **Priority** | **int?** |  | [optional] 
-**_Public** | **bool?** |  | [optional] 
+**_Public** | **bool?** |  | 
 **Type** | **string** |  | 
 **ValidUntil** | **long?** |  | [optional] 
 

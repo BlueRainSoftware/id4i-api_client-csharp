@@ -15,7 +15,7 @@ namespace
         /// Resolve owner of id4n 
         /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>WhoIsResponse</returns>
         WhoIsResponse ResolveWhoIsEntry (string id4n, string authorization, string acceptLanguage);
@@ -78,7 +78,7 @@ namespace
         /// Resolve owner of id4n 
         /// </summary>
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token as returned from /login</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>WhoIsResponse</returns>            
         public WhoIsResponse ResolveWhoIsEntry (string id4n, string authorization, string acceptLanguage)
