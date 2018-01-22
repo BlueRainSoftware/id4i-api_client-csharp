@@ -146,7 +146,7 @@ namespace
         /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>GuidCollection</returns>
-        GuidCollection FindCollection (string id4n, string authorization, string acceptLanguage);
+        GuidCollection FindCollection1 (string id4n, string authorization, string acceptLanguage);
         /// <summary>
         /// Find labelled collection 
         /// </summary>
@@ -1049,11 +1049,11 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>GuidCollection</returns>            
-        public GuidCollection FindCollection (string id4n, string authorization, string acceptLanguage)
+        public GuidCollection FindCollection1 (string id4n, string authorization, string acceptLanguage)
         {
             
             // verify the required parameter 'id4n' is set
-            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling FindCollection");
+            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling FindCollection1");
             
     
             var path = "/api/v1/collections/{id4n}";
@@ -1076,9 +1076,9 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling FindCollection: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling FindCollection1: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling FindCollection: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling FindCollection1: " + response.ErrorMessage, response.ErrorMessage);
     
             return (GuidCollection) ApiClient.Deserialize(response.Content, typeof(GuidCollection), response.Headers);
         }

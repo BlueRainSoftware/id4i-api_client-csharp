@@ -19,7 +19,7 @@ Method | HTTP request | Description
 [**DeleteLabelledCollection**](CollectionsApi.md#deletelabelledcollection) | **DELETE** /api/v1/collections/labelled/{id4n} | Delete labelled collection
 [**DeleteLogisticCollection**](CollectionsApi.md#deletelogisticcollection) | **DELETE** /api/v1/collections/logistic/{id4n} | Delete logistic collection
 [**DeleteRoutingCollection**](CollectionsApi.md#deleteroutingcollection) | **DELETE** /api/v1/collections/routing/{id4n} | Delete routing collection
-[**FindCollection**](CollectionsApi.md#findcollection) | **GET** /api/v1/collections/{id4n} | Find collection
+[**FindCollection1**](CollectionsApi.md#findcollection1) | **GET** /api/v1/collections/{id4n} | Find collection
 [**FindLabelledCollection**](CollectionsApi.md#findlabelledcollection) | **GET** /api/v1/collections/labelled/{id4n} | Find labelled collection
 [**FindLogisticCollection**](CollectionsApi.md#findlogisticcollection) | **GET** /api/v1/collections/logistic/{id4n} | Find logistic collection
 [**FindRoutingCollection**](CollectionsApi.md#findroutingcollection) | **GET** /api/v1/collections/routing/{id4n} | Find routing collection
@@ -1018,9 +1018,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="findcollection"></a>
-# **FindCollection**
-> GuidCollection FindCollection (string id4n, string authorization, string acceptLanguage)
+<a name="findcollection1"></a>
+# **FindCollection1**
+> GuidCollection FindCollection1 (string id4n, string authorization, string acceptLanguage)
 
 Find collection
 
@@ -1034,7 +1034,7 @@ using DE.ID4i.Model;
 
 namespace Example
 {
-    public class FindCollectionExample
+    public class FindCollection1Example
     {
         public void main()
         {
@@ -1047,12 +1047,12 @@ namespace Example
             try
             {
                 // Find collection
-                GuidCollection result = apiInstance.FindCollection(id4n, authorization, acceptLanguage);
+                GuidCollection result = apiInstance.FindCollection1(id4n, authorization, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling CollectionsApi.FindCollection: " + e.Message );
+                Debug.Print("Exception when calling CollectionsApi.FindCollection1: " + e.Message );
             }
         }
     }
