@@ -18,7 +18,7 @@ namespace
         /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ServiceCosts</returns>
-        ServiceCosts FindCollection (long? organizationId, string authorization, string acceptLanguage);
+        ServiceCosts GetSumForOrganization (long? organizationId, string authorization, string acceptLanguage);
     }
   
     /// <summary>
@@ -81,11 +81,11 @@ namespace
         /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ServiceCosts</returns>            
-        public ServiceCosts FindCollection (long? organizationId, string authorization, string acceptLanguage)
+        public ServiceCosts GetSumForOrganization (long? organizationId, string authorization, string acceptLanguage)
         {
             
             // verify the required parameter 'organizationId' is set
-            if (organizationId == null) throw new ApiException(400, "Missing required parameter 'organizationId' when calling FindCollection");
+            if (organizationId == null) throw new ApiException(400, "Missing required parameter 'organizationId' when calling GetSumForOrganization");
             
     
             var path = "/api/v1/billing/{organizationId}";
@@ -108,9 +108,9 @@ namespace
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling FindCollection: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling GetSumForOrganization: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling FindCollection: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling GetSumForOrganization: " + response.ErrorMessage, response.ErrorMessage);
     
             return (ServiceCosts) ApiClient.Deserialize(response.Content, typeof(ServiceCosts), response.Headers);
         }

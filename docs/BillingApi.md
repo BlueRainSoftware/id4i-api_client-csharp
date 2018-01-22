@@ -4,12 +4,12 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**FindCollection**](BillingApi.md#findcollection) | **GET** /api/v1/billing/{organizationId} | Get billing amount of services for a given organization
+[**GetSumForOrganization**](BillingApi.md#getsumfororganization) | **GET** /api/v1/billing/{organizationId} | Get billing amount of services for a given organization
 
 
-<a name="findcollection"></a>
-# **FindCollection**
-> ServiceCosts FindCollection (long? organizationId, string authorization, string acceptLanguage)
+<a name="getsumfororganization"></a>
+# **GetSumForOrganization**
+> ServiceCosts GetSumForOrganization (long? organizationId, string authorization, string acceptLanguage)
 
 Get billing amount of services for a given organization
 
@@ -23,7 +23,7 @@ using DE.ID4i.Model;
 
 namespace Example
 {
-    public class FindCollectionExample
+    public class GetSumForOrganizationExample
     {
         public void main()
         {
@@ -36,12 +36,12 @@ namespace Example
             try
             {
                 // Get billing amount of services for a given organization
-                ServiceCosts result = apiInstance.FindCollection(organizationId, authorization, acceptLanguage);
+                ServiceCosts result = apiInstance.GetSumForOrganization(organizationId, authorization, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling BillingApi.FindCollection: " + e.Message );
+                Debug.Print("Exception when calling BillingApi.GetSumForOrganization: " + e.Message );
             }
         }
     }
