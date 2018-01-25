@@ -20,13 +20,6 @@ namespace  {
     public string Email { get; set; }
 
     /// <summary>
-    /// Gets or Sets Id
-    /// </summary>
-    [DataMember(Name="id", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "id")]
-    public long? Id { get; set; }
-
-    /// <summary>
     /// Gets or Sets Message
     /// </summary>
     [DataMember(Name="message", EmitDefaultValue=false)]
@@ -49,7 +42,6 @@ namespace  {
       var sb = new StringBuilder();
       sb.Append("class UserRegistrationResponse {\n");
       sb.Append("  Email: ").Append(Email).Append("\n");
-      sb.Append("  Id: ").Append(Id).Append("\n");
       sb.Append("  Message: ").Append(Message).Append("\n");
       sb.Append("  Username: ").Append(Username).Append("\n");
       sb.Append("}\n");
