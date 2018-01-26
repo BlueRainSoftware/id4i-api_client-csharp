@@ -36,10 +36,14 @@ Method | HTTP request | Description
 [**RemoveElementsFromLabelledCollection**](CollectionsApi.md#removeelementsfromlabelledcollection) | **DELETE** /api/v1/collections/labelled/{collectionId4n}/elements | Remove elements from labelled collection
 [**RemoveElementsFromLogisticCollection**](CollectionsApi.md#removeelementsfromlogisticcollection) | **DELETE** /api/v1/collections/logistic/{collectionId4n}/elements | Remove elements from logistic collection
 [**RemoveElementsFromRoutingCollection**](CollectionsApi.md#removeelementsfromroutingcollection) | **DELETE** /api/v1/collections/routing/{collectionId4n}/elements | Remove elements from routing collection
-[**UpdateCollection**](CollectionsApi.md#updatecollection) | **PUT** /api/v1/collections/{id4n} | Alter collection
-[**UpdateLabelledCollection**](CollectionsApi.md#updatelabelledcollection) | **PUT** /api/v1/collections/labelled/{id4n} | Rename labelled collection
-[**UpdateLogisticCollection**](CollectionsApi.md#updatelogisticcollection) | **PUT** /api/v1/collections/logistic/{id4n} | Update logistic collection
-[**UpdateRoutingCollection**](CollectionsApi.md#updateroutingcollection) | **PUT** /api/v1/collections/routing/{id4n} | Update routing collection
+[**SetCollection**](CollectionsApi.md#setcollection) | **PUT** /api/v1/collections/{id4n} | Set collection
+[**SetLabelledCollection**](CollectionsApi.md#setlabelledcollection) | **PUT** /api/v1/collections/labelled/{id4n} | Set labelled collection values
+[**SetLogisticCollection**](CollectionsApi.md#setlogisticcollection) | **PUT** /api/v1/collections/logistic/{id4n} | Replace logistic collection
+[**SetRoutingCollection**](CollectionsApi.md#setroutingcollection) | **PUT** /api/v1/collections/routing/{id4n} | Update routing collection
+[**UpdateCollection**](CollectionsApi.md#updatecollection) | **PATCH** /api/v1/collections/{id4n} | Update collection
+[**UpdateLabelledCollection**](CollectionsApi.md#updatelabelledcollection) | **PATCH** /api/v1/collections/labelled/{id4n} | Update labelled collection
+[**UpdateLogisticCollection**](CollectionsApi.md#updatelogisticcollection) | **PATCH** /api/v1/collections/logistic/{id4n} | Update logistic collection
+[**UpdateRoutingCollection**](CollectionsApi.md#updateroutingcollection) | **PATCH** /api/v1/collections/routing/{id4n} | Update routing collection
 
 
 <a name="addelementtocollection"></a>
@@ -2150,11 +2154,283 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="setcollection"></a>
+# **SetCollection**
+> Object SetCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
+
+Set collection
+
+Update collection replacing all values but the ID
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using ;
+using DE.ID4i.Client;
+using DE.ID4i.Model;
+
+namespace Example
+{
+    public class SetCollectionExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new CollectionsApi();
+            var id4n = id4n_example;  // string | id4n
+            var request = new GuidCollection(); // GuidCollection | request
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
+            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
+
+            try
+            {
+                // Set collection
+                Object result = apiInstance.SetCollection(id4n, request, authorization, acceptLanguage);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling CollectionsApi.SetCollection: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| id4n | 
+ **request** | [**GuidCollection**](GuidCollection.md)| request | 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **string**| Requested language | [optional] 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="setlabelledcollection"></a>
+# **SetLabelledCollection**
+> Object SetLabelledCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
+
+Set labelled collection values
+
+Update labelled collection replacing all values but the ID
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using ;
+using DE.ID4i.Client;
+using DE.ID4i.Model;
+
+namespace Example
+{
+    public class SetLabelledCollectionExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new CollectionsApi();
+            var id4n = id4n_example;  // string | id4n
+            var request = new GuidCollection(); // GuidCollection | request
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
+            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
+
+            try
+            {
+                // Set labelled collection values
+                Object result = apiInstance.SetLabelledCollection(id4n, request, authorization, acceptLanguage);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling CollectionsApi.SetLabelledCollection: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| id4n | 
+ **request** | [**GuidCollection**](GuidCollection.md)| request | 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **string**| Requested language | [optional] 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="setlogisticcollection"></a>
+# **SetLogisticCollection**
+> Object SetLogisticCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
+
+Replace logistic collection
+
+Update logistic collection replacing all values but the ID
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using ;
+using DE.ID4i.Client;
+using DE.ID4i.Model;
+
+namespace Example
+{
+    public class SetLogisticCollectionExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new CollectionsApi();
+            var id4n = id4n_example;  // string | id4n
+            var request = new GuidCollection(); // GuidCollection | request
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
+            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
+
+            try
+            {
+                // Replace logistic collection
+                Object result = apiInstance.SetLogisticCollection(id4n, request, authorization, acceptLanguage);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling CollectionsApi.SetLogisticCollection: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| id4n | 
+ **request** | [**GuidCollection**](GuidCollection.md)| request | 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **string**| Requested language | [optional] 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="setroutingcollection"></a>
+# **SetRoutingCollection**
+> Object SetRoutingCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
+
+Update routing collection
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using ;
+using DE.ID4i.Client;
+using DE.ID4i.Model;
+
+namespace Example
+{
+    public class SetRoutingCollectionExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new CollectionsApi();
+            var id4n = id4n_example;  // string | id4n
+            var request = new GuidCollection(); // GuidCollection | request
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
+            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
+
+            try
+            {
+                // Update routing collection
+                Object result = apiInstance.SetRoutingCollection(id4n, request, authorization, acceptLanguage);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling CollectionsApi.SetRoutingCollection: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| id4n | 
+ **request** | [**GuidCollection**](GuidCollection.md)| request | 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **string**| Requested language | [optional] 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="updatecollection"></a>
 # **UpdateCollection**
 > Object UpdateCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
 
-Alter collection
+Update collection
+
+Update collection changing only the given values
 
 ### Example
 ```csharp
@@ -2179,7 +2455,7 @@ namespace Example
 
             try
             {
-                // Alter collection
+                // Update collection
                 Object result = apiInstance.UpdateCollection(id4n, request, authorization, acceptLanguage);
                 Debug.WriteLine(result);
             }
@@ -2220,7 +2496,9 @@ No authorization required
 # **UpdateLabelledCollection**
 > Object UpdateLabelledCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
 
-Rename labelled collection
+Update labelled collection
+
+Update labelled collection updating only the given values
 
 ### Example
 ```csharp
@@ -2245,7 +2523,7 @@ namespace Example
 
             try
             {
-                // Rename labelled collection
+                // Update labelled collection
                 Object result = apiInstance.UpdateLabelledCollection(id4n, request, authorization, acceptLanguage);
                 Debug.WriteLine(result);
             }
@@ -2287,6 +2565,8 @@ No authorization required
 > Object UpdateLogisticCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
 
 Update logistic collection
+
+Update logistic collection updating only the given values
 
 ### Example
 ```csharp
@@ -2353,6 +2633,8 @@ No authorization required
 > Object UpdateRoutingCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
 
 Update routing collection
+
+Update routing collection updating only the given values
 
 ### Example
 ```csharp

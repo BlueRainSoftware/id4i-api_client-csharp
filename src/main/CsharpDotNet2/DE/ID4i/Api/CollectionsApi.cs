@@ -297,7 +297,43 @@ namespace
         /// <returns>ApiError</returns>
         ApiError RemoveElementsFromRoutingCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage);
         /// <summary>
-        /// Alter collection 
+        /// Set collection Update collection replacing all values but the ID
+        /// </summary>
+        /// <param name="id4n">id4n</param>
+        /// <param name="request">request</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
+        /// <param name="acceptLanguage">Requested language</param>
+        /// <returns>Object</returns>
+        Object SetCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage);
+        /// <summary>
+        /// Set labelled collection values Update labelled collection replacing all values but the ID
+        /// </summary>
+        /// <param name="id4n">id4n</param>
+        /// <param name="request">request</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
+        /// <param name="acceptLanguage">Requested language</param>
+        /// <returns>Object</returns>
+        Object SetLabelledCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage);
+        /// <summary>
+        /// Replace logistic collection Update logistic collection replacing all values but the ID
+        /// </summary>
+        /// <param name="id4n">id4n</param>
+        /// <param name="request">request</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
+        /// <param name="acceptLanguage">Requested language</param>
+        /// <returns>Object</returns>
+        Object SetLogisticCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage);
+        /// <summary>
+        /// Update routing collection 
+        /// </summary>
+        /// <param name="id4n">id4n</param>
+        /// <param name="request">request</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
+        /// <param name="acceptLanguage">Requested language</param>
+        /// <returns>Object</returns>
+        Object SetRoutingCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage);
+        /// <summary>
+        /// Update collection Update collection changing only the given values
         /// </summary>
         /// <param name="id4n">id4n</param>
         /// <param name="request">request</param>
@@ -306,7 +342,7 @@ namespace
         /// <returns>Object</returns>
         Object UpdateCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage);
         /// <summary>
-        /// Rename labelled collection 
+        /// Update labelled collection Update labelled collection updating only the given values
         /// </summary>
         /// <param name="id4n">id4n</param>
         /// <param name="request">request</param>
@@ -315,7 +351,7 @@ namespace
         /// <returns>Object</returns>
         Object UpdateLabelledCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage);
         /// <summary>
-        /// Update logistic collection 
+        /// Update logistic collection Update logistic collection updating only the given values
         /// </summary>
         /// <param name="id4n">id4n</param>
         /// <param name="request">request</param>
@@ -324,7 +360,7 @@ namespace
         /// <returns>Object</returns>
         Object UpdateLogisticCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage);
         /// <summary>
-        /// Update routing collection 
+        /// Update routing collection Update routing collection updating only the given values
         /// </summary>
         /// <param name="id4n">id4n</param>
         /// <param name="request">request</param>
@@ -1806,7 +1842,191 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         }
     
         /// <summary>
-        /// Alter collection 
+        /// Set collection Update collection replacing all values but the ID
+        /// </summary>
+        /// <param name="id4n">id4n</param> 
+        /// <param name="request">request</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
+        /// <param name="acceptLanguage">Requested language</param> 
+        /// <returns>Object</returns>            
+        public Object SetCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
+        {
+            
+            // verify the required parameter 'id4n' is set
+            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling SetCollection");
+            
+            // verify the required parameter 'request' is set
+            if (request == null) throw new ApiException(400, "Missing required parameter 'request' when calling SetCollection");
+            
+    
+            var path = "/api/v1/collections/{id4n}";
+            path = path.Replace("{format}", "json");
+            path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
+    
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+    
+                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
+ if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
+                        postBody = ApiClient.Serialize(request); // http body (model) parameter
+    
+            // authentication setting, if any
+            String[] authSettings = new String[] {  };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+    
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling SetCollection: " + response.Content, response.Content);
+            else if (((int)response.StatusCode) == 0)
+                throw new ApiException ((int)response.StatusCode, "Error calling SetCollection: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return (Object) ApiClient.Deserialize(response.Content, typeof(Object), response.Headers);
+        }
+    
+        /// <summary>
+        /// Set labelled collection values Update labelled collection replacing all values but the ID
+        /// </summary>
+        /// <param name="id4n">id4n</param> 
+        /// <param name="request">request</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
+        /// <param name="acceptLanguage">Requested language</param> 
+        /// <returns>Object</returns>            
+        public Object SetLabelledCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
+        {
+            
+            // verify the required parameter 'id4n' is set
+            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling SetLabelledCollection");
+            
+            // verify the required parameter 'request' is set
+            if (request == null) throw new ApiException(400, "Missing required parameter 'request' when calling SetLabelledCollection");
+            
+    
+            var path = "/api/v1/collections/labelled/{id4n}";
+            path = path.Replace("{format}", "json");
+            path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
+    
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+    
+                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
+ if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
+                        postBody = ApiClient.Serialize(request); // http body (model) parameter
+    
+            // authentication setting, if any
+            String[] authSettings = new String[] {  };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+    
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling SetLabelledCollection: " + response.Content, response.Content);
+            else if (((int)response.StatusCode) == 0)
+                throw new ApiException ((int)response.StatusCode, "Error calling SetLabelledCollection: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return (Object) ApiClient.Deserialize(response.Content, typeof(Object), response.Headers);
+        }
+    
+        /// <summary>
+        /// Replace logistic collection Update logistic collection replacing all values but the ID
+        /// </summary>
+        /// <param name="id4n">id4n</param> 
+        /// <param name="request">request</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
+        /// <param name="acceptLanguage">Requested language</param> 
+        /// <returns>Object</returns>            
+        public Object SetLogisticCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
+        {
+            
+            // verify the required parameter 'id4n' is set
+            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling SetLogisticCollection");
+            
+            // verify the required parameter 'request' is set
+            if (request == null) throw new ApiException(400, "Missing required parameter 'request' when calling SetLogisticCollection");
+            
+    
+            var path = "/api/v1/collections/logistic/{id4n}";
+            path = path.Replace("{format}", "json");
+            path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
+    
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+    
+                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
+ if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
+                        postBody = ApiClient.Serialize(request); // http body (model) parameter
+    
+            // authentication setting, if any
+            String[] authSettings = new String[] {  };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+    
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling SetLogisticCollection: " + response.Content, response.Content);
+            else if (((int)response.StatusCode) == 0)
+                throw new ApiException ((int)response.StatusCode, "Error calling SetLogisticCollection: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return (Object) ApiClient.Deserialize(response.Content, typeof(Object), response.Headers);
+        }
+    
+        /// <summary>
+        /// Update routing collection 
+        /// </summary>
+        /// <param name="id4n">id4n</param> 
+        /// <param name="request">request</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
+        /// <param name="acceptLanguage">Requested language</param> 
+        /// <returns>Object</returns>            
+        public Object SetRoutingCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
+        {
+            
+            // verify the required parameter 'id4n' is set
+            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling SetRoutingCollection");
+            
+            // verify the required parameter 'request' is set
+            if (request == null) throw new ApiException(400, "Missing required parameter 'request' when calling SetRoutingCollection");
+            
+    
+            var path = "/api/v1/collections/routing/{id4n}";
+            path = path.Replace("{format}", "json");
+            path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
+    
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+    
+                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
+ if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
+                        postBody = ApiClient.Serialize(request); // http body (model) parameter
+    
+            // authentication setting, if any
+            String[] authSettings = new String[] {  };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+    
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling SetRoutingCollection: " + response.Content, response.Content);
+            else if (((int)response.StatusCode) == 0)
+                throw new ApiException ((int)response.StatusCode, "Error calling SetRoutingCollection: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return (Object) ApiClient.Deserialize(response.Content, typeof(Object), response.Headers);
+        }
+    
+        /// <summary>
+        /// Update collection Update collection changing only the given values
         /// </summary>
         /// <param name="id4n">id4n</param> 
         /// <param name="request">request</param> 
@@ -1841,7 +2061,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
             String[] authSettings = new String[] {  };
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PATCH, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateCollection: " + response.Content, response.Content);
@@ -1852,7 +2072,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         }
     
         /// <summary>
-        /// Rename labelled collection 
+        /// Update labelled collection Update labelled collection updating only the given values
         /// </summary>
         /// <param name="id4n">id4n</param> 
         /// <param name="request">request</param> 
@@ -1887,7 +2107,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
             String[] authSettings = new String[] {  };
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PATCH, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateLabelledCollection: " + response.Content, response.Content);
@@ -1898,7 +2118,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         }
     
         /// <summary>
-        /// Update logistic collection 
+        /// Update logistic collection Update logistic collection updating only the given values
         /// </summary>
         /// <param name="id4n">id4n</param> 
         /// <param name="request">request</param> 
@@ -1933,7 +2153,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
             String[] authSettings = new String[] {  };
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PATCH, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateLogisticCollection: " + response.Content, response.Content);
@@ -1944,7 +2164,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
         }
     
         /// <summary>
-        /// Update routing collection 
+        /// Update routing collection Update routing collection updating only the given values
         /// </summary>
         /// <param name="id4n">id4n</param> 
         /// <param name="request">request</param> 
@@ -1979,7 +2199,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
             String[] authSettings = new String[] {  };
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PATCH, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateRoutingCollection: " + response.Content, response.Content);
