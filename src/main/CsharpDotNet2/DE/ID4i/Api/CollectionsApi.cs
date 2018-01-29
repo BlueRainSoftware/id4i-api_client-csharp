@@ -12,42 +12,6 @@ namespace
     public interface ICollectionsApi
     {
         /// <summary>
-        /// Add element to collection 
-        /// </summary>
-        /// <param name="id4n">id4n</param>
-        /// <param name="elementGuid">elementGuid</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
-        /// <returns>ApiError</returns>
-        ApiError AddElementToCollection (string id4n, string elementGuid, string authorization, string acceptLanguage);
-        /// <summary>
-        /// Add element to labelled collection 
-        /// </summary>
-        /// <param name="collectionId4n">collectionId4n</param>
-        /// <param name="elementGuid">elementGuid</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
-        /// <returns>ApiError</returns>
-        ApiError AddElementToLabelledCollection (string collectionId4n, string elementGuid, string authorization, string acceptLanguage);
-        /// <summary>
-        /// Add element to logistic collection 
-        /// </summary>
-        /// <param name="collectionId4n">collectionId4n</param>
-        /// <param name="guid">guid</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
-        /// <returns>ApiError</returns>
-        ApiError AddElementToLogisticCollection (string collectionId4n, string guid, string authorization, string acceptLanguage);
-        /// <summary>
-        /// Add element to routing collection 
-        /// </summary>
-        /// <param name="collectionId4n">collectionId4n</param>
-        /// <param name="guid">guid</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
-        /// <returns>ApiError</returns>
-        ApiError AddElementToRoutingCollection (string collectionId4n, string guid, string authorization, string acceptLanguage);
-        /// <summary>
         /// Add elements to collection 
         /// </summary>
         /// <param name="id4n">id4n</param>
@@ -225,42 +189,6 @@ namespace
         /// <returns>PaginatedGuidResponse</returns>
         PaginatedGuidResponse ListElementsOfRoutingCollection (string id4n, string authorization, string acceptLanguage, int? offset, int? limit);
         /// <summary>
-        /// Remove element from collection 
-        /// </summary>
-        /// <param name="id4n">id4n</param>
-        /// <param name="elementGuid">elementGuid</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
-        /// <returns>ApiError</returns>
-        ApiError RemoveElementFromCollection (string id4n, string elementGuid, string authorization, string acceptLanguage);
-        /// <summary>
-        /// Remove element from labelled collection 
-        /// </summary>
-        /// <param name="collectionId4n">collectionId4n</param>
-        /// <param name="elementGuid">elementGuid</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
-        /// <returns>ApiError</returns>
-        ApiError RemoveElementFromLabelledCollection (string collectionId4n, string elementGuid, string authorization, string acceptLanguage);
-        /// <summary>
-        /// Remove element from logistic collection 
-        /// </summary>
-        /// <param name="collectionId4n">collectionId4n</param>
-        /// <param name="guid">guid</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
-        /// <returns>ApiError</returns>
-        ApiError RemoveElementFromLogisticCollection (string collectionId4n, string guid, string authorization, string acceptLanguage);
-        /// <summary>
-        /// Remove element from routing collection 
-        /// </summary>
-        /// <param name="collectionId4n">collectionId4n</param>
-        /// <param name="guid">guid</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
-        /// <returns>ApiError</returns>
-        ApiError RemoveElementFromRoutingCollection (string collectionId4n, string guid, string authorization, string acceptLanguage);
-        /// <summary>
         /// Remove elements from collection 
         /// </summary>
         /// <param name="id4n">id4n</param>
@@ -424,190 +352,6 @@ namespace
         public ApiClient ApiClient {get; set;}
     
         /// <summary>
-        /// Add element to collection 
-        /// </summary>
-        /// <param name="id4n">id4n</param> 
-        /// <param name="elementGuid">elementGuid</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
-        /// <returns>ApiError</returns>            
-        public ApiError AddElementToCollection (string id4n, string elementGuid, string authorization, string acceptLanguage)
-        {
-            
-            // verify the required parameter 'id4n' is set
-            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling AddElementToCollection");
-            
-            // verify the required parameter 'elementGuid' is set
-            if (elementGuid == null) throw new ApiException(400, "Missing required parameter 'elementGuid' when calling AddElementToCollection");
-            
-    
-            var path = "/api/v1/collections/{id4n}/elements/{elementGuid}";
-            path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
-path = path.Replace("{" + "elementGuid" + "}", ApiClient.ParameterToString(elementGuid));
-    
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling AddElementToCollection: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling AddElementToCollection: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (ApiError) ApiClient.Deserialize(response.Content, typeof(ApiError), response.Headers);
-        }
-    
-        /// <summary>
-        /// Add element to labelled collection 
-        /// </summary>
-        /// <param name="collectionId4n">collectionId4n</param> 
-        /// <param name="elementGuid">elementGuid</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
-        /// <returns>ApiError</returns>            
-        public ApiError AddElementToLabelledCollection (string collectionId4n, string elementGuid, string authorization, string acceptLanguage)
-        {
-            
-            // verify the required parameter 'collectionId4n' is set
-            if (collectionId4n == null) throw new ApiException(400, "Missing required parameter 'collectionId4n' when calling AddElementToLabelledCollection");
-            
-            // verify the required parameter 'elementGuid' is set
-            if (elementGuid == null) throw new ApiException(400, "Missing required parameter 'elementGuid' when calling AddElementToLabelledCollection");
-            
-    
-            var path = "/api/v1/collections/labelled/{collectionId4n}/elements/{elementGuid}";
-            path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "collectionId4n" + "}", ApiClient.ParameterToString(collectionId4n));
-path = path.Replace("{" + "elementGuid" + "}", ApiClient.ParameterToString(elementGuid));
-    
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling AddElementToLabelledCollection: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling AddElementToLabelledCollection: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (ApiError) ApiClient.Deserialize(response.Content, typeof(ApiError), response.Headers);
-        }
-    
-        /// <summary>
-        /// Add element to logistic collection 
-        /// </summary>
-        /// <param name="collectionId4n">collectionId4n</param> 
-        /// <param name="guid">guid</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
-        /// <returns>ApiError</returns>            
-        public ApiError AddElementToLogisticCollection (string collectionId4n, string guid, string authorization, string acceptLanguage)
-        {
-            
-            // verify the required parameter 'collectionId4n' is set
-            if (collectionId4n == null) throw new ApiException(400, "Missing required parameter 'collectionId4n' when calling AddElementToLogisticCollection");
-            
-            // verify the required parameter 'guid' is set
-            if (guid == null) throw new ApiException(400, "Missing required parameter 'guid' when calling AddElementToLogisticCollection");
-            
-    
-            var path = "/api/v1/collections/logistic/{collectionId4n}/elements/{guid}";
-            path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "collectionId4n" + "}", ApiClient.ParameterToString(collectionId4n));
-path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
-    
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling AddElementToLogisticCollection: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling AddElementToLogisticCollection: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (ApiError) ApiClient.Deserialize(response.Content, typeof(ApiError), response.Headers);
-        }
-    
-        /// <summary>
-        /// Add element to routing collection 
-        /// </summary>
-        /// <param name="collectionId4n">collectionId4n</param> 
-        /// <param name="guid">guid</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
-        /// <returns>ApiError</returns>            
-        public ApiError AddElementToRoutingCollection (string collectionId4n, string guid, string authorization, string acceptLanguage)
-        {
-            
-            // verify the required parameter 'collectionId4n' is set
-            if (collectionId4n == null) throw new ApiException(400, "Missing required parameter 'collectionId4n' when calling AddElementToRoutingCollection");
-            
-            // verify the required parameter 'guid' is set
-            if (guid == null) throw new ApiException(400, "Missing required parameter 'guid' when calling AddElementToRoutingCollection");
-            
-    
-            var path = "/api/v1/collections/routing/{collectionId4n}/elements/{guid}";
-            path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "collectionId4n" + "}", ApiClient.ParameterToString(collectionId4n));
-path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
-    
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling AddElementToRoutingCollection: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling AddElementToRoutingCollection: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (ApiError) ApiClient.Deserialize(response.Content, typeof(ApiError), response.Headers);
-        }
-    
-        /// <summary>
         /// Add elements to collection 
         /// </summary>
         /// <param name="id4n">id4n</param> 
@@ -643,7 +387,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
             String[] authSettings = new String[] {  };
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
                 throw new ApiException ((int)response.StatusCode, "Error calling AddElementsToCollection: " + response.Content, response.Content);
@@ -689,7 +433,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
             String[] authSettings = new String[] {  };
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
                 throw new ApiException ((int)response.StatusCode, "Error calling AddElementsToLabelledCollection: " + response.Content, response.Content);
@@ -735,7 +479,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
             String[] authSettings = new String[] {  };
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
                 throw new ApiException ((int)response.StatusCode, "Error calling AddElementsToLogisticCollection: " + response.Content, response.Content);
@@ -781,7 +525,7 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
             String[] authSettings = new String[] {  };
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
                 throw new ApiException ((int)response.StatusCode, "Error calling AddElementsToRoutingCollection: " + response.Content, response.Content);
@@ -1471,190 +1215,6 @@ path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
                 throw new ApiException ((int)response.StatusCode, "Error calling ListElementsOfRoutingCollection: " + response.ErrorMessage, response.ErrorMessage);
     
             return (PaginatedGuidResponse) ApiClient.Deserialize(response.Content, typeof(PaginatedGuidResponse), response.Headers);
-        }
-    
-        /// <summary>
-        /// Remove element from collection 
-        /// </summary>
-        /// <param name="id4n">id4n</param> 
-        /// <param name="elementGuid">elementGuid</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
-        /// <returns>ApiError</returns>            
-        public ApiError RemoveElementFromCollection (string id4n, string elementGuid, string authorization, string acceptLanguage)
-        {
-            
-            // verify the required parameter 'id4n' is set
-            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling RemoveElementFromCollection");
-            
-            // verify the required parameter 'elementGuid' is set
-            if (elementGuid == null) throw new ApiException(400, "Missing required parameter 'elementGuid' when calling RemoveElementFromCollection");
-            
-    
-            var path = "/api/v1/collections/{id4n}/elements/{elementGuid}";
-            path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
-path = path.Replace("{" + "elementGuid" + "}", ApiClient.ParameterToString(elementGuid));
-    
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling RemoveElementFromCollection: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling RemoveElementFromCollection: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (ApiError) ApiClient.Deserialize(response.Content, typeof(ApiError), response.Headers);
-        }
-    
-        /// <summary>
-        /// Remove element from labelled collection 
-        /// </summary>
-        /// <param name="collectionId4n">collectionId4n</param> 
-        /// <param name="elementGuid">elementGuid</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
-        /// <returns>ApiError</returns>            
-        public ApiError RemoveElementFromLabelledCollection (string collectionId4n, string elementGuid, string authorization, string acceptLanguage)
-        {
-            
-            // verify the required parameter 'collectionId4n' is set
-            if (collectionId4n == null) throw new ApiException(400, "Missing required parameter 'collectionId4n' when calling RemoveElementFromLabelledCollection");
-            
-            // verify the required parameter 'elementGuid' is set
-            if (elementGuid == null) throw new ApiException(400, "Missing required parameter 'elementGuid' when calling RemoveElementFromLabelledCollection");
-            
-    
-            var path = "/api/v1/collections/labelled/{collectionId4n}/elements/{elementGuid}";
-            path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "collectionId4n" + "}", ApiClient.ParameterToString(collectionId4n));
-path = path.Replace("{" + "elementGuid" + "}", ApiClient.ParameterToString(elementGuid));
-    
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling RemoveElementFromLabelledCollection: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling RemoveElementFromLabelledCollection: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (ApiError) ApiClient.Deserialize(response.Content, typeof(ApiError), response.Headers);
-        }
-    
-        /// <summary>
-        /// Remove element from logistic collection 
-        /// </summary>
-        /// <param name="collectionId4n">collectionId4n</param> 
-        /// <param name="guid">guid</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
-        /// <returns>ApiError</returns>            
-        public ApiError RemoveElementFromLogisticCollection (string collectionId4n, string guid, string authorization, string acceptLanguage)
-        {
-            
-            // verify the required parameter 'collectionId4n' is set
-            if (collectionId4n == null) throw new ApiException(400, "Missing required parameter 'collectionId4n' when calling RemoveElementFromLogisticCollection");
-            
-            // verify the required parameter 'guid' is set
-            if (guid == null) throw new ApiException(400, "Missing required parameter 'guid' when calling RemoveElementFromLogisticCollection");
-            
-    
-            var path = "/api/v1/collections/logistic/{collectionId4n}/elements/{elementId4n}";
-            path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "collectionId4n" + "}", ApiClient.ParameterToString(collectionId4n));
-path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
-    
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling RemoveElementFromLogisticCollection: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling RemoveElementFromLogisticCollection: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (ApiError) ApiClient.Deserialize(response.Content, typeof(ApiError), response.Headers);
-        }
-    
-        /// <summary>
-        /// Remove element from routing collection 
-        /// </summary>
-        /// <param name="collectionId4n">collectionId4n</param> 
-        /// <param name="guid">guid</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
-        /// <returns>ApiError</returns>            
-        public ApiError RemoveElementFromRoutingCollection (string collectionId4n, string guid, string authorization, string acceptLanguage)
-        {
-            
-            // verify the required parameter 'collectionId4n' is set
-            if (collectionId4n == null) throw new ApiException(400, "Missing required parameter 'collectionId4n' when calling RemoveElementFromRoutingCollection");
-            
-            // verify the required parameter 'guid' is set
-            if (guid == null) throw new ApiException(400, "Missing required parameter 'guid' when calling RemoveElementFromRoutingCollection");
-            
-    
-            var path = "/api/v1/collections/routing/{collectionId4n}/elements/{guid}";
-            path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "collectionId4n" + "}", ApiClient.ParameterToString(collectionId4n));
-path = path.Replace("{" + "guid" + "}", ApiClient.ParameterToString(guid));
-    
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling RemoveElementFromRoutingCollection: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling RemoveElementFromRoutingCollection: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (ApiError) ApiClient.Deserialize(response.Content, typeof(ApiError), response.Headers);
         }
     
         /// <summary>
