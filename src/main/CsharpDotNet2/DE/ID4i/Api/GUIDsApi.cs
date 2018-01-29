@@ -72,7 +72,16 @@ namespace
         /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>Object</returns>
-        Object UpdateGuid (string id4n, Guid request, string authorization, string acceptLanguage);
+        Object SetGuid (string id4n, Guid request, string authorization, string acceptLanguage);
+        /// <summary>
+        /// Change GUID information. Allows ownership transfer.
+        /// </summary>
+        /// <param name="id4n">The GUID number</param>
+        /// <param name="request">request</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
+        /// <param name="acceptLanguage">Requested language</param>
+        /// <returns>Object</returns>
+        Object SetGuid1 (string id4n, Guid request, string authorization, string acceptLanguage);
     }
   
     /// <summary>
@@ -401,14 +410,14 @@ path = path.Replace("{" + "aliasType" + "}", ApiClient.ParameterToString(aliasTy
         /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>Object</returns>            
-        public Object UpdateGuid (string id4n, Guid request, string authorization, string acceptLanguage)
+        public Object SetGuid (string id4n, Guid request, string authorization, string acceptLanguage)
         {
             
             // verify the required parameter 'id4n' is set
-            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling UpdateGuid");
+            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling SetGuid");
             
             // verify the required parameter 'request' is set
-            if (request == null) throw new ApiException(400, "Missing required parameter 'request' when calling UpdateGuid");
+            if (request == null) throw new ApiException(400, "Missing required parameter 'request' when calling SetGuid");
             
     
             var path = "/api/v1/guids/{id4n}";
@@ -432,9 +441,55 @@ path = path.Replace("{" + "aliasType" + "}", ApiClient.ParameterToString(aliasTy
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling UpdateGuid: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling SetGuid: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling UpdateGuid: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling SetGuid: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return (Object) ApiClient.Deserialize(response.Content, typeof(Object), response.Headers);
+        }
+    
+        /// <summary>
+        /// Change GUID information. Allows ownership transfer.
+        /// </summary>
+        /// <param name="id4n">The GUID number</param> 
+        /// <param name="request">request</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
+        /// <param name="acceptLanguage">Requested language</param> 
+        /// <returns>Object</returns>            
+        public Object SetGuid1 (string id4n, Guid request, string authorization, string acceptLanguage)
+        {
+            
+            // verify the required parameter 'id4n' is set
+            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling SetGuid1");
+            
+            // verify the required parameter 'request' is set
+            if (request == null) throw new ApiException(400, "Missing required parameter 'request' when calling SetGuid1");
+            
+    
+            var path = "/api/v1/guids/{id4n}";
+            path = path.Replace("{format}", "json");
+            path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
+    
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+    
+                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
+ if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
+                        postBody = ApiClient.Serialize(request); // http body (model) parameter
+    
+            // authentication setting, if any
+            String[] authSettings = new String[] {  };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PATCH, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+    
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling SetGuid1: " + response.Content, response.Content);
+            else if (((int)response.StatusCode) == 0)
+                throw new ApiException ((int)response.StatusCode, "Error calling SetGuid1: " + response.ErrorMessage, response.ErrorMessage);
     
             return (Object) ApiClient.Deserialize(response.Content, typeof(Object), response.Headers);
         }

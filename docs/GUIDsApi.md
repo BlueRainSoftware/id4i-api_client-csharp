@@ -10,7 +10,8 @@ Method | HTTP request | Description
 [**GetGuid**](GUIDsApi.md#getguid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
 [**GetGuidAliases**](GUIDsApi.md#getguidaliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
 [**GetGuidsWithoutCollection**](GUIDsApi.md#getguidswithoutcollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
-[**UpdateGuid**](GUIDsApi.md#updateguid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
+[**SetGuid**](GUIDsApi.md#setguid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
+[**SetGuid1**](GUIDsApi.md#setguid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 
 
 <a name="addguidalias"></a>
@@ -415,9 +416,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updateguid"></a>
-# **UpdateGuid**
-> Object UpdateGuid (string id4n, Guid request, string authorization, string acceptLanguage)
+<a name="setguid"></a>
+# **SetGuid**
+> Object SetGuid (string id4n, Guid request, string authorization, string acceptLanguage)
 
 Change GUID information.
 
@@ -433,7 +434,7 @@ using DE.ID4i.Model;
 
 namespace Example
 {
-    public class UpdateGuidExample
+    public class SetGuidExample
     {
         public void main()
         {
@@ -447,12 +448,80 @@ namespace Example
             try
             {
                 // Change GUID information.
-                Object result = apiInstance.UpdateGuid(id4n, request, authorization, acceptLanguage);
+                Object result = apiInstance.SetGuid(id4n, request, authorization, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling GUIDsApi.UpdateGuid: " + e.Message );
+                Debug.Print("Exception when calling GUIDsApi.SetGuid: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| The GUID number | 
+ **request** | [**Guid**](Guid.md)| request | 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **string**| Requested language | [optional] 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="setguid1"></a>
+# **SetGuid1**
+> Object SetGuid1 (string id4n, Guid request, string authorization, string acceptLanguage)
+
+Change GUID information.
+
+Allows ownership transfer.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using ;
+using DE.ID4i.Client;
+using DE.ID4i.Model;
+
+namespace Example
+{
+    public class SetGuid1Example
+    {
+        public void main()
+        {
+            
+            var apiInstance = new GUIDsApi();
+            var id4n = id4n_example;  // string | The GUID number
+            var request = new Guid(); // Guid | request
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
+            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
+
+            try
+            {
+                // Change GUID information.
+                Object result = apiInstance.SetGuid1(id4n, request, authorization, acceptLanguage);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling GUIDsApi.SetGuid1: " + e.Message );
             }
         }
     }
