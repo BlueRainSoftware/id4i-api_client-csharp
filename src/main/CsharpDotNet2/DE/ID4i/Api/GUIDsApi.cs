@@ -65,6 +65,14 @@ namespace
         /// <returns>PaginatedResponseGuid</returns>
         PaginatedResponseGuid GetGuidsWithoutCollection (long? organizationId, string authorization, string acceptLanguage, int? offset, int? limit);
         /// <summary>
+        /// Retrieve ID4n information Retrieving basic information about an ID like the type and the creation time.
+        /// </summary>
+        /// <param name="id4n">The ID to resolve to</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
+        /// <param name="acceptLanguage">Requested language</param>
+        /// <returns>Id4nPresentation</returns>
+        Id4nPresentation GetId4n (string id4n, string authorization, string acceptLanguage);
+        /// <summary>
         /// Change GUID information. Allows ownership transfer.
         /// </summary>
         /// <param name="id4n">The GUID number</param>
@@ -400,6 +408,47 @@ path = path.Replace("{" + "aliasType" + "}", ApiClient.ParameterToString(aliasTy
                 throw new ApiException ((int)response.StatusCode, "Error calling GetGuidsWithoutCollection: " + response.ErrorMessage, response.ErrorMessage);
     
             return (PaginatedResponseGuid) ApiClient.Deserialize(response.Content, typeof(PaginatedResponseGuid), response.Headers);
+        }
+    
+        /// <summary>
+        /// Retrieve ID4n information Retrieving basic information about an ID like the type and the creation time.
+        /// </summary>
+        /// <param name="id4n">The ID to resolve to</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
+        /// <param name="acceptLanguage">Requested language</param> 
+        /// <returns>Id4nPresentation</returns>            
+        public Id4nPresentation GetId4n (string id4n, string authorization, string acceptLanguage)
+        {
+            
+            // verify the required parameter 'id4n' is set
+            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling GetId4n");
+            
+    
+            var path = "/api/v1/id4ns/{id4n}";
+            path = path.Replace("{format}", "json");
+            path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
+    
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+    
+                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
+ if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
+                            
+            // authentication setting, if any
+            String[] authSettings = new String[] {  };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+    
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling GetId4n: " + response.Content, response.Content);
+            else if (((int)response.StatusCode) == 0)
+                throw new ApiException ((int)response.StatusCode, "Error calling GetId4n: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return (Id4nPresentation) ApiClient.Deserialize(response.Content, typeof(Id4nPresentation), response.Headers);
         }
     
         /// <summary>

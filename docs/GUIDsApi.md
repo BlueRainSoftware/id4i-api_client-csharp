@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**GetGuid**](GUIDsApi.md#getguid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
 [**GetGuidAliases**](GUIDsApi.md#getguidaliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
 [**GetGuidsWithoutCollection**](GUIDsApi.md#getguidswithoutcollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
+[**GetId4n**](GUIDsApi.md#getid4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
 [**SetGuid**](GUIDsApi.md#setguid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
 [**SetGuid1**](GUIDsApi.md#setguid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 
@@ -404,6 +405,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PaginatedResponseGuid**](PaginatedResponseGuid.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getid4n"></a>
+# **GetId4n**
+> Id4nPresentation GetId4n (string id4n, string authorization, string acceptLanguage)
+
+Retrieve ID4n information
+
+Retrieving basic information about an ID like the type and the creation time.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using ;
+using DE.ID4i.Client;
+using DE.ID4i.Model;
+
+namespace Example
+{
+    public class GetId4nExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new GUIDsApi();
+            var id4n = id4n_example;  // string | The ID to resolve to
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
+            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
+
+            try
+            {
+                // Retrieve ID4n information
+                Id4nPresentation result = apiInstance.GetId4n(id4n, authorization, acceptLanguage);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling GUIDsApi.GetId4n: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| The ID to resolve to | 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **string**| Requested language | [optional] 
+
+### Return type
+
+[**Id4nPresentation**](Id4nPresentation.md)
 
 ### Authorization
 
