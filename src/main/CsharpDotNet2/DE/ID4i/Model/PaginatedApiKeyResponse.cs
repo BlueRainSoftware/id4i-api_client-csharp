@@ -20,22 +20,25 @@ namespace  {
     public List<ApiKeyPresentation> Elements { get; set; }
 
     /// <summary>
-    /// Gets or Sets Limit
+    /// The number of returned elements
     /// </summary>
+    /// <value>The number of returned elements</value>
     [DataMember(Name="limit", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "limit")]
     public int? Limit { get; set; }
 
     /// <summary>
-    /// Gets or Sets Offset
+    /// Starting with the n-th element
     /// </summary>
+    /// <value>Starting with the n-th element</value>
     [DataMember(Name="offset", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "offset")]
     public int? Offset { get; set; }
 
     /// <summary>
-    /// Gets or Sets Total
+    /// The total number of elements
     /// </summary>
+    /// <value>The total number of elements</value>
     [DataMember(Name="total", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "total")]
     public int? Total { get; set; }

@@ -60,8 +60,8 @@ namespace
         /// <param name="organizationId">Organization to search GUIDs for (required).</param>
         /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
-        /// <param name="offset">Start with the n-th element. </param>
-        /// <param name="limit">The maximum count of returned elements.</param>
+        /// <param name="offset">Start with the n-th element</param>
+        /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>PaginatedResponseGuid</returns>
         PaginatedResponseGuid GetGuidsWithoutCollection (long? organizationId, string authorization, string acceptLanguage, int? offset, int? limit);
         /// <summary>
@@ -371,8 +371,8 @@ path = path.Replace("{" + "aliasType" + "}", ApiClient.ParameterToString(aliasTy
         /// <param name="organizationId">Organization to search GUIDs for (required).</param> 
         /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
-        /// <param name="offset">Start with the n-th element. </param> 
-        /// <param name="limit">The maximum count of returned elements.</param> 
+        /// <param name="offset">Start with the n-th element</param> 
+        /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>PaginatedResponseGuid</returns>            
         public PaginatedResponseGuid GetGuidsWithoutCollection (long? organizationId, string authorization, string acceptLanguage, int? offset, int? limit)
         {

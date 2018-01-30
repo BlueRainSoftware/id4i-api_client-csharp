@@ -60,8 +60,8 @@ namespace
         /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <param name="id4nConcerning">id4nConcerning</param>
-        /// <param name="offset">Start with the n-th element. </param>
-        /// <param name="limit">The maximum count of returned elements.</param>
+        /// <param name="offset">Start with the n-th element</param>
+        /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>ApiKeyPrivilegeInfoResponse</returns>
         ApiKeyPrivilegeInfoResponse ListAllApiKeyPrivileges (string authorization, string acceptLanguage, bool? id4nConcerning, int? offset, int? limit);
         /// <summary>
@@ -70,8 +70,8 @@ namespace
         /// <param name="organizationId">The id of the organization to search in.</param>
         /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
-        /// <param name="offset">Start with the n-th element. </param>
-        /// <param name="limit">The maximum count of returned elements.</param>
+        /// <param name="offset">Start with the n-th element</param>
+        /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>PaginatedApiKeyResponse</returns>
         PaginatedApiKeyResponse ListAllApiKeysOfOrganization (long? organizationId, string authorization, string acceptLanguage, int? offset, int? limit);
         /// <summary>
@@ -80,8 +80,8 @@ namespace
         /// <param name="key">key</param>
         /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
-        /// <param name="offset">Start with the n-th element. </param>
-        /// <param name="limit">The maximum count of returned elements.</param>
+        /// <param name="offset">Start with the n-th element</param>
+        /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>ApiKeyPrivilegePaginatedResponse</returns>
         ApiKeyPrivilegePaginatedResponse ListApiKeyPrivileges (string key, string authorization, string acceptLanguage, int? offset, int? limit);
         /// <summary>
@@ -91,8 +91,8 @@ namespace
         /// <param name="privilege">privilege</param>
         /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
-        /// <param name="offset">Start with the n-th element. </param>
-        /// <param name="limit">The maximum count of returned elements.</param>
+        /// <param name="offset">Start with the n-th element</param>
+        /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>Id4nPresentationPaginatedResponse</returns>
         Id4nPresentationPaginatedResponse ListId4ns (string key, string privilege, string authorization, string acceptLanguage, int? offset, int? limit);
         /// <summary>
@@ -404,8 +404,8 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
         /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="id4nConcerning">id4nConcerning</param> 
-        /// <param name="offset">Start with the n-th element. </param> 
-        /// <param name="limit">The maximum count of returned elements.</param> 
+        /// <param name="offset">Start with the n-th element</param> 
+        /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>ApiKeyPrivilegeInfoResponse</returns>            
         public ApiKeyPrivilegeInfoResponse ListAllApiKeyPrivileges (string authorization, string acceptLanguage, bool? id4nConcerning, int? offset, int? limit)
         {
@@ -446,8 +446,8 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
         /// <param name="organizationId">The id of the organization to search in.</param> 
         /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
-        /// <param name="offset">Start with the n-th element. </param> 
-        /// <param name="limit">The maximum count of returned elements.</param> 
+        /// <param name="offset">Start with the n-th element</param> 
+        /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>PaginatedApiKeyResponse</returns>            
         public PaginatedApiKeyResponse ListAllApiKeysOfOrganization (long? organizationId, string authorization, string acceptLanguage, int? offset, int? limit)
         {
@@ -491,8 +491,8 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
         /// <param name="key">key</param> 
         /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
-        /// <param name="offset">Start with the n-th element. </param> 
-        /// <param name="limit">The maximum count of returned elements.</param> 
+        /// <param name="offset">Start with the n-th element</param> 
+        /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>ApiKeyPrivilegePaginatedResponse</returns>            
         public ApiKeyPrivilegePaginatedResponse ListApiKeyPrivileges (string key, string authorization, string acceptLanguage, int? offset, int? limit)
         {
@@ -537,8 +537,8 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
         /// <param name="privilege">privilege</param> 
         /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
-        /// <param name="offset">Start with the n-th element. </param> 
-        /// <param name="limit">The maximum count of returned elements.</param> 
+        /// <param name="offset">Start with the n-th element</param> 
+        /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>Id4nPresentationPaginatedResponse</returns>            
         public Id4nPresentationPaginatedResponse ListId4ns (string key, string privilege, string authorization, string acceptLanguage, int? offset, int? limit)
         {

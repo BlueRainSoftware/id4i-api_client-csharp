@@ -43,8 +43,8 @@ namespace
         /// <param name="usernamePrefix">Find users starting with this prefix.</param>
         /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
-        /// <param name="offset">Start with the n-th element. </param>
-        /// <param name="limit">The maximum count of returned elements.</param>
+        /// <param name="offset">Start with the n-th element</param>
+        /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>PaginatedUserPresentationResponse</returns>
         PaginatedUserPresentationResponse FindUsers (string usernamePrefix, string authorization, string acceptLanguage, int? offset, int? limit);
         /// <summary>
@@ -53,8 +53,8 @@ namespace
         /// <param name="organizationId">organizationId</param>
         /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
-        /// <param name="offset">Start with the n-th element. </param>
-        /// <param name="limit">The maximum count of returned elements.</param>
+        /// <param name="offset">Start with the n-th element</param>
+        /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>PaginatedUserRolesResponse</returns>
         PaginatedUserRolesResponse GetAllOrganizationRoles (long? organizationId, string authorization, string acceptLanguage, int? offset, int? limit);
         /// <summary>
@@ -63,8 +63,8 @@ namespace
         /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <param name="role">role</param>
-        /// <param name="offset">Start with the n-th element. </param>
-        /// <param name="limit">The maximum count of returned elements.</param>
+        /// <param name="offset">Start with the n-th element</param>
+        /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>PaginatedOrganizationResponse</returns>
         PaginatedOrganizationResponse GetOrganizationsOfUser (string authorization, string acceptLanguage, string role, int? offset, int? limit);
         /// <summary>
@@ -74,8 +74,8 @@ namespace
         /// <param name="username">username</param>
         /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
-        /// <param name="offset">Start with the n-th element. </param>
-        /// <param name="limit">The maximum count of returned elements.</param>
+        /// <param name="offset">Start with the n-th element</param>
+        /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>PaginatedStringResponse</returns>
         PaginatedStringResponse GetUserRoles (long? organizationId, string username, string authorization, string acceptLanguage, int? offset, int? limit);
         /// <summary>
@@ -84,8 +84,8 @@ namespace
         /// <param name="organizationId">organizationId</param>
         /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
-        /// <param name="offset">Start with the n-th element. </param>
-        /// <param name="limit">The maximum count of returned elements.</param>
+        /// <param name="offset">Start with the n-th element</param>
+        /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>PaginatedUserPresentationResponse</returns>
         PaginatedUserPresentationResponse GetUsersOfOrganization (long? organizationId, string authorization, string acceptLanguage, int? offset, int? limit);
         /// <summary>
@@ -103,8 +103,8 @@ namespace
         /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
         /// <param name="privilege">If specified the roles will be filtered containing that privilege.</param>
-        /// <param name="offset">Start with the n-th element. </param>
-        /// <param name="limit">The maximum count of returned elements.</param>
+        /// <param name="offset">Start with the n-th element</param>
+        /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>RoleResponse</returns>
         RoleResponse ListAllRoles (string authorization, string acceptLanguage, string privilege, int? offset, int? limit);
         /// <summary>
@@ -349,8 +349,8 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// <param name="usernamePrefix">Find users starting with this prefix.</param> 
         /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
-        /// <param name="offset">Start with the n-th element. </param> 
-        /// <param name="limit">The maximum count of returned elements.</param> 
+        /// <param name="offset">Start with the n-th element</param> 
+        /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>PaginatedUserPresentationResponse</returns>            
         public PaginatedUserPresentationResponse FindUsers (string usernamePrefix, string authorization, string acceptLanguage, int? offset, int? limit)
         {
@@ -394,8 +394,8 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// <param name="organizationId">organizationId</param> 
         /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
-        /// <param name="offset">Start with the n-th element. </param> 
-        /// <param name="limit">The maximum count of returned elements.</param> 
+        /// <param name="offset">Start with the n-th element</param> 
+        /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>PaginatedUserRolesResponse</returns>            
         public PaginatedUserRolesResponse GetAllOrganizationRoles (long? organizationId, string authorization, string acceptLanguage, int? offset, int? limit)
         {
@@ -439,8 +439,8 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="role">role</param> 
-        /// <param name="offset">Start with the n-th element. </param> 
-        /// <param name="limit">The maximum count of returned elements.</param> 
+        /// <param name="offset">Start with the n-th element</param> 
+        /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>PaginatedOrganizationResponse</returns>            
         public PaginatedOrganizationResponse GetOrganizationsOfUser (string authorization, string acceptLanguage, string role, int? offset, int? limit)
         {
@@ -482,8 +482,8 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// <param name="username">username</param> 
         /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
-        /// <param name="offset">Start with the n-th element. </param> 
-        /// <param name="limit">The maximum count of returned elements.</param> 
+        /// <param name="offset">Start with the n-th element</param> 
+        /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>PaginatedStringResponse</returns>            
         public PaginatedStringResponse GetUserRoles (long? organizationId, string username, string authorization, string acceptLanguage, int? offset, int? limit)
         {
@@ -531,8 +531,8 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// <param name="organizationId">organizationId</param> 
         /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
-        /// <param name="offset">Start with the n-th element. </param> 
-        /// <param name="limit">The maximum count of returned elements.</param> 
+        /// <param name="offset">Start with the n-th element</param> 
+        /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>PaginatedUserPresentationResponse</returns>            
         public PaginatedUserPresentationResponse GetUsersOfOrganization (long? organizationId, string authorization, string acceptLanguage, int? offset, int? limit)
         {
@@ -622,8 +622,8 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="privilege">If specified the roles will be filtered containing that privilege.</param> 
-        /// <param name="offset">Start with the n-th element. </param> 
-        /// <param name="limit">The maximum count of returned elements.</param> 
+        /// <param name="offset">Start with the n-th element</param> 
+        /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>RoleResponse</returns>            
         public RoleResponse ListAllRoles (string authorization, string acceptLanguage, string privilege, int? offset, int? limit)
         {

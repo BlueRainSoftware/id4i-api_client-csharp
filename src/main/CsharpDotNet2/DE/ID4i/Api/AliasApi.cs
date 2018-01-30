@@ -52,8 +52,8 @@ namespace
         /// <param name="aliasType">Alias type type to search for</param>
         /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
-        /// <param name="offset">Start with the n-th element. </param>
-        /// <param name="limit">The maximum count of returned elements.</param>
+        /// <param name="offset">Start with the n-th element</param>
+        /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>PaginatedGuidResponse</returns>
         PaginatedGuidResponse SearchByAlias (string alias, string aliasType, string authorization, string acceptLanguage, int? offset, int? limit);
     }
@@ -292,8 +292,8 @@ path = path.Replace("{" + "aliasType" + "}", ApiClient.ParameterToString(aliasTy
         /// <param name="aliasType">Alias type type to search for</param> 
         /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
-        /// <param name="offset">Start with the n-th element. </param> 
-        /// <param name="limit">The maximum count of returned elements.</param> 
+        /// <param name="offset">Start with the n-th element</param> 
+        /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>PaginatedGuidResponse</returns>            
         public PaginatedGuidResponse SearchByAlias (string alias, string aliasType, string authorization, string acceptLanguage, int? offset, int? limit)
         {

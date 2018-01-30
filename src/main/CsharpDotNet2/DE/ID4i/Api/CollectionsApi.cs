@@ -141,8 +141,8 @@ namespace
         /// <param name="organizationId">organizationId</param>
         /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
-        /// <param name="offset">Start with the n-th element. </param>
-        /// <param name="limit">The maximum count of returned elements.</param>
+        /// <param name="offset">Start with the n-th element</param>
+        /// <param name="limit">The maximum count of returned elements</param>
         /// <param name="type">Filter by this type</param>
         /// <param name="label">Filter by this label</param>
         /// <param name="labelPrefix">Filter by this label prefix</param>
@@ -154,8 +154,8 @@ namespace
         /// <param name="id4n">id4n</param>
         /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
-        /// <param name="offset">Start with the n-th element. </param>
-        /// <param name="limit">The maximum count of returned elements.</param>
+        /// <param name="offset">Start with the n-th element</param>
+        /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>PaginatedGuidResponse</returns>
         PaginatedGuidResponse ListElementsOfCollection (string id4n, string authorization, string acceptLanguage, int? offset, int? limit);
         /// <summary>
@@ -164,8 +164,8 @@ namespace
         /// <param name="id4n">id4n</param>
         /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
-        /// <param name="offset">Start with the n-th element. </param>
-        /// <param name="limit">The maximum count of returned elements.</param>
+        /// <param name="offset">Start with the n-th element</param>
+        /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>PaginatedGuidResponse</returns>
         PaginatedGuidResponse ListElementsOfLabelledCollection (string id4n, string authorization, string acceptLanguage, int? offset, int? limit);
         /// <summary>
@@ -174,8 +174,8 @@ namespace
         /// <param name="id4n">id4n</param>
         /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
-        /// <param name="offset">Start with the n-th element. </param>
-        /// <param name="limit">The maximum count of returned elements.</param>
+        /// <param name="offset">Start with the n-th element</param>
+        /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>PaginatedGuidResponse</returns>
         PaginatedGuidResponse ListElementsOfLogisticCollection (string id4n, string authorization, string acceptLanguage, int? offset, int? limit);
         /// <summary>
@@ -184,8 +184,8 @@ namespace
         /// <param name="id4n">id4n</param>
         /// <param name="authorization">Authorization JWT Bearer Token</param>
         /// <param name="acceptLanguage">Requested language</param>
-        /// <param name="offset">Start with the n-th element. </param>
-        /// <param name="limit">The maximum count of returned elements.</param>
+        /// <param name="offset">Start with the n-th element</param>
+        /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>PaginatedGuidResponse</returns>
         PaginatedGuidResponse ListElementsOfRoutingCollection (string id4n, string authorization, string acceptLanguage, int? offset, int? limit);
         /// <summary>
@@ -992,8 +992,8 @@ namespace
         /// <param name="organizationId">organizationId</param> 
         /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
-        /// <param name="offset">Start with the n-th element. </param> 
-        /// <param name="limit">The maximum count of returned elements.</param> 
+        /// <param name="offset">Start with the n-th element</param> 
+        /// <param name="limit">The maximum count of returned elements</param> 
         /// <param name="type">Filter by this type</param> 
         /// <param name="label">Filter by this label</param> 
         /// <param name="labelPrefix">Filter by this label prefix</param> 
@@ -1043,8 +1043,8 @@ namespace
         /// <param name="id4n">id4n</param> 
         /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
-        /// <param name="offset">Start with the n-th element. </param> 
-        /// <param name="limit">The maximum count of returned elements.</param> 
+        /// <param name="offset">Start with the n-th element</param> 
+        /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>PaginatedGuidResponse</returns>            
         public PaginatedGuidResponse ListElementsOfCollection (string id4n, string authorization, string acceptLanguage, int? offset, int? limit)
         {
@@ -1088,8 +1088,8 @@ namespace
         /// <param name="id4n">id4n</param> 
         /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
-        /// <param name="offset">Start with the n-th element. </param> 
-        /// <param name="limit">The maximum count of returned elements.</param> 
+        /// <param name="offset">Start with the n-th element</param> 
+        /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>PaginatedGuidResponse</returns>            
         public PaginatedGuidResponse ListElementsOfLabelledCollection (string id4n, string authorization, string acceptLanguage, int? offset, int? limit)
         {
@@ -1133,8 +1133,8 @@ namespace
         /// <param name="id4n">id4n</param> 
         /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
-        /// <param name="offset">Start with the n-th element. </param> 
-        /// <param name="limit">The maximum count of returned elements.</param> 
+        /// <param name="offset">Start with the n-th element</param> 
+        /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>PaginatedGuidResponse</returns>            
         public PaginatedGuidResponse ListElementsOfLogisticCollection (string id4n, string authorization, string acceptLanguage, int? offset, int? limit)
         {
@@ -1178,8 +1178,8 @@ namespace
         /// <param name="id4n">id4n</param> 
         /// <param name="authorization">Authorization JWT Bearer Token</param> 
         /// <param name="acceptLanguage">Requested language</param> 
-        /// <param name="offset">Start with the n-th element. </param> 
-        /// <param name="limit">The maximum count of returned elements.</param> 
+        /// <param name="offset">Start with the n-th element</param> 
+        /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>PaginatedGuidResponse</returns>            
         public PaginatedGuidResponse ListElementsOfRoutingCollection (string id4n, string authorization, string acceptLanguage, int? offset, int? limit)
         {
