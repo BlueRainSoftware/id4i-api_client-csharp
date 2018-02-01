@@ -1,4 +1,4 @@
-# .Id4n
+# BlueRain.ID4i.Model.Id4n
 ## Properties
 
 Name | Type | Description | Notes

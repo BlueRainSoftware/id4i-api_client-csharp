@@ -1,4 +1,4 @@
-# .Timestamp
+# BlueRain.ID4i.Model.Timestamp
 ## Properties
 
 Name | Type | Description | Notes

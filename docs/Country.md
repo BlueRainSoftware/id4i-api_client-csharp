@@ -1,4 +1,4 @@
-# .Country
+# BlueRain.ID4i.Model.Country
 ## Properties
 
 Name | Type | Description | Notes

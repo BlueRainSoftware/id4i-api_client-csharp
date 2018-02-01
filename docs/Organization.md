@@ -1,4 +1,4 @@
-# .Organization
+# BlueRain.ID4i.Model.Organization
 ## Properties
 
 Name | Type | Description | Notes

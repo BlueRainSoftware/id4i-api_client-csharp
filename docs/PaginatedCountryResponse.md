@@ -1,4 +1,4 @@
-# .PaginatedCountryResponse
+# BlueRain.ID4i.Model.PaginatedCountryResponse
 ## Properties
 
 Name | Type | Description | Notes

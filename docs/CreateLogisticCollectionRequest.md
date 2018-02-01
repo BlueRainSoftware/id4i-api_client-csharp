@@ -1,4 +1,4 @@
-# .CreateLogisticCollectionRequest
+# BlueRain.ID4i.Model.CreateLogisticCollectionRequest
 ## Properties
 
 Name | Type | Description | Notes

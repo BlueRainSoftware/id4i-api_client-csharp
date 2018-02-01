@@ -1,4 +1,4 @@
-# .RoleResponse
+# BlueRain.ID4i.Model.RoleResponse
 ## Properties
 
 Name | Type | Description | Notes

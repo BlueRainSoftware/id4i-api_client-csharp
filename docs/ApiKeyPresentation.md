@@ -1,4 +1,4 @@
-# .ApiKeyPresentation
+# BlueRain.ID4i.Model.ApiKeyPresentation
 ## Properties
 
 Name | Type | Description | Notes

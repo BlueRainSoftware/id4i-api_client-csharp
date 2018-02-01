@@ -1,4 +1,4 @@
-# .UserPresentation
+# BlueRain.ID4i.Model.UserPresentation
 ## Properties
 
 Name | Type | Description | Notes

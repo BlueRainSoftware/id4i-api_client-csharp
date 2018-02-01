@@ -1,4 +1,4 @@
-# .PaginatedGuidResponse
+# BlueRain.ID4i.Model.PaginatedGuidResponse
 ## Properties
 
 Name | Type | Description | Notes

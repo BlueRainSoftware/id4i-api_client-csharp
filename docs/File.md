@@ -1,4 +1,4 @@
-# .File
+# BlueRain.ID4i.Model.File
 ## Properties
 
 Name | Type | Description | Notes

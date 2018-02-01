@@ -1,4 +1,4 @@
-# .DocumentUpdate
+# BlueRain.ID4i.Model.DocumentUpdate
 ## Properties
 
 Name | Type | Description | Notes

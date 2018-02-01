@@ -1,4 +1,4 @@
-# .ApiKeyPrivilegePaginatedResponse
+# BlueRain.ID4i.Model.ApiKeyPrivilegePaginatedResponse
 ## Properties
 
 Name | Type | Description | Notes

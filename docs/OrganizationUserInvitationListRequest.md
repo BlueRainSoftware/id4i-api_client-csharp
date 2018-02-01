@@ -1,4 +1,4 @@
-# .OrganizationUserInvitationListRequest
+# BlueRain.ID4i.Model.OrganizationUserInvitationListRequest
 ## Properties
 
 Name | Type | Description | Notes

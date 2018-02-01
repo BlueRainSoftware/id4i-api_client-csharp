@@ -1,4 +1,4 @@
-# .WhoIsApi
+# BlueRain.ID4i.Api.WhoIsApi
 
 All URIs are relative to *https://backend.id4i.de*
 
@@ -17,9 +17,9 @@ Resolve owner of id4n
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {

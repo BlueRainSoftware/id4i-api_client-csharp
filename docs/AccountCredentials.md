@@ -1,4 +1,4 @@
-# .AccountCredentials
+# BlueRain.ID4i.Model.AccountCredentials
 ## Properties
 
 Name | Type | Description | Notes

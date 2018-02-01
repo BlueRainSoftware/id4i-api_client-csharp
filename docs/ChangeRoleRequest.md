@@ -1,4 +1,4 @@
-# .ChangeRoleRequest
+# BlueRain.ID4i.Model.ChangeRoleRequest
 ## Properties
 
 Name | Type | Description | Notes

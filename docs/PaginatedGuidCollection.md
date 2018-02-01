@@ -1,4 +1,4 @@
-# .PaginatedGuidCollection
+# BlueRain.ID4i.Model.PaginatedGuidCollection
 ## Properties
 
 Name | Type | Description | Notes

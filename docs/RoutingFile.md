@@ -1,4 +1,4 @@
-# .RoutingFile
+# BlueRain.ID4i.Model.RoutingFile
 ## Properties
 
 Name | Type | Description | Notes

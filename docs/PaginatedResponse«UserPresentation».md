@@ -1,4 +1,4 @@
-# .PaginatedResponseUserPresentation
+# BlueRain.ID4i.Model.PaginatedResponseUserPresentation
 ## Properties
 
 Name | Type | Description | Notes

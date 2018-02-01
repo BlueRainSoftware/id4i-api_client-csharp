@@ -1,4 +1,4 @@
-# .Guid
+# BlueRain.ID4i.Model.Guid
 ## Properties
 
 Name | Type | Description | Notes

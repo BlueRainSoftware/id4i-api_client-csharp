@@ -1,4 +1,4 @@
-# .OwnedDocument
+# BlueRain.ID4i.Model.OwnedDocument
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# .CreateGuidRequest
+# BlueRain.ID4i.Model.CreateGuidRequest
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# .PaginatedOrganizationResponse
+# BlueRain.ID4i.Model.PaginatedOrganizationResponse
 ## Properties
 
 Name | Type | Description | Notes

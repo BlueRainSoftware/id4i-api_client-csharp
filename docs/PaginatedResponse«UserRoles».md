@@ -1,4 +1,4 @@
-# .PaginatedResponseUserRoles
+# BlueRain.ID4i.Model.PaginatedResponseUserRoles
 ## Properties
 
 Name | Type | Description | Notes

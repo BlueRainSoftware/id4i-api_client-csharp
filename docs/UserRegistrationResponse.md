@@ -1,4 +1,4 @@
-# .UserRegistrationResponse
+# BlueRain.ID4i.Model.UserRegistrationResponse
 ## Properties
 
 Name | Type | Description | Notes

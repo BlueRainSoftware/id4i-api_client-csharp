@@ -1,4 +1,4 @@
-# .CreateRoutingCollectionRequest
+# BlueRain.ID4i.Model.CreateRoutingCollectionRequest
 ## Properties
 
 Name | Type | Description | Notes

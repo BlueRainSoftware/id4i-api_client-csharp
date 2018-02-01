@@ -1,4 +1,4 @@
-# .ApiKeyPrivilegeInfoResponse
+# BlueRain.ID4i.Model.ApiKeyPrivilegeInfoResponse
 ## Properties
 
 Name | Type | Description | Notes
