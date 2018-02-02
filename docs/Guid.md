@@ -3,8 +3,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CreatedTimestamp** | **long?** |  | [optional] 
-**Id4n** | **string** |  | [optional] 
+**CreatedTimestamp** | **long?** | The UTC unix timestamp of when this GUID has been created | [optional] 
+**Id4n** | **string** | The ID | [optional] 
 **NextScanOwnership** | **bool?** |  | [optional] 
 **OwnerOrganizationId** | **long?** |  | [optional] 
 

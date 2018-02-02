@@ -13,8 +13,9 @@ namespace BlueRain.ID4i.Model {
   [DataContract]
   public class Id4n {
     /// <summary>
-    /// Gets or Sets _Id4n
+    /// The ID
     /// </summary>
+    /// <value>The ID</value>
     [DataMember(Name="id4n", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "id4n")]
     public string _Id4n { get; set; }

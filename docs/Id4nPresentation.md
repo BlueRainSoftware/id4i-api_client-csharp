@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CreatedTimestamp** | **long?** | A unix timestamp of when this ID has been created | 
+**CreatedTimestamp** | **long?** | The UTC unix timestamp of when this ID has been created | 
 **Id4n** | **string** | The ID | 
 **Label** | **string** |  | [optional] 
 **NextScanOwnership** | **bool?** | Indicates if next scan ownership is active or not. If privileges are missing or the type of object doesn&#39;t support NSO this value is null. | [optional] 

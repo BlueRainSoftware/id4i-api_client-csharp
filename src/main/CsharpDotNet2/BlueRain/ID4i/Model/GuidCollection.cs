@@ -13,15 +13,17 @@ namespace BlueRain.ID4i.Model {
   [DataContract]
   public class GuidCollection {
     /// <summary>
-    /// Gets or Sets CreatedTimestamp
+    /// The UTC unix timestamp of when this collection has been created
     /// </summary>
+    /// <value>The UTC unix timestamp of when this collection has been created</value>
     [DataMember(Name="createdTimestamp", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "createdTimestamp")]
     public long? CreatedTimestamp { get; set; }
 
     /// <summary>
-    /// Gets or Sets Id4n
+    /// The ID
     /// </summary>
+    /// <value>The ID</value>
     [DataMember(Name="id4n", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "id4n")]
     public string Id4n { get; set; }

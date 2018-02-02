@@ -13,9 +13,9 @@ namespace BlueRain.ID4i.Model {
   [DataContract]
   public class Id4nPresentation {
     /// <summary>
-    /// A unix timestamp of when this ID has been created
+    /// The UTC unix timestamp of when this ID has been created
     /// </summary>
-    /// <value>A unix timestamp of when this ID has been created</value>
+    /// <value>The UTC unix timestamp of when this ID has been created</value>
     [DataMember(Name="createdTimestamp", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "createdTimestamp")]
     public long? CreatedTimestamp { get; set; }
