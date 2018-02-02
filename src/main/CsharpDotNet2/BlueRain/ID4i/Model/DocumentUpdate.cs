@@ -31,9 +31,9 @@ namespace BlueRain.ID4i.Model {
     /// Document is readable by these organizations
     /// </summary>
     /// <value>Document is readable by these organizations</value>
-    [DataMember(Name="visibleByOrganizationIds", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "visibleByOrganizationIds")]
-    public List<long?> VisibleByOrganizationIds { get; set; }
+    [DataMember(Name="sharedWithOrganizationIds", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "sharedWithOrganizationIds")]
+    public List<long?> SharedWithOrganizationIds { get; set; }
 
 
     /// <summary>
@@ -45,7 +45,7 @@ namespace BlueRain.ID4i.Model {
       sb.Append("class DocumentUpdate {\n");
       sb.Append("  Filename: ").Append(Filename).Append("\n");
       sb.Append("  PublicVisibility: ").Append(PublicVisibility).Append("\n");
-      sb.Append("  VisibleByOrganizationIds: ").Append(VisibleByOrganizationIds).Append("\n");
+      sb.Append("  SharedWithOrganizationIds: ").Append(SharedWithOrganizationIds).Append("\n");
       sb.Append("}\n");
       return sb.ToString();
     }
