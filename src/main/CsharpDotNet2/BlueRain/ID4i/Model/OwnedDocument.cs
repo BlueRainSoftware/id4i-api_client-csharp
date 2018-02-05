@@ -28,20 +28,12 @@ namespace BlueRain.ID4i.Model {
     public long? OwnerOrganizationId { get; set; }
 
     /// <summary>
-    /// Document is publicly readable
+    /// Visibility configuration
     /// </summary>
-    /// <value>Document is publicly readable</value>
-    [DataMember(Name="publicVisibility", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "publicVisibility")]
-    public bool? PublicVisibility { get; set; }
-
-    /// <summary>
-    /// Document is readable by these organizations
-    /// </summary>
-    /// <value>Document is readable by these organizations</value>
-    [DataMember(Name="sharedWithOrganizationIds", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "sharedWithOrganizationIds")]
-    public List<long?> SharedWithOrganizationIds { get; set; }
+    /// <value>Visibility configuration</value>
+    [DataMember(Name="visibility", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "visibility")]
+    public Visibility Visibility { get; set; }
 
 
     /// <summary>
@@ -53,8 +45,7 @@ namespace BlueRain.ID4i.Model {
       sb.Append("class OwnedDocument {\n");
       sb.Append("  Filename: ").Append(Filename).Append("\n");
       sb.Append("  OwnerOrganizationId: ").Append(OwnerOrganizationId).Append("\n");
-      sb.Append("  PublicVisibility: ").Append(PublicVisibility).Append("\n");
-      sb.Append("  SharedWithOrganizationIds: ").Append(SharedWithOrganizationIds).Append("\n");
+      sb.Append("  Visibility: ").Append(Visibility).Append("\n");
       sb.Append("}\n");
       return sb.ToString();
     }
