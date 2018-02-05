@@ -161,6 +161,15 @@ namespace BlueRain.ID4i.Api
         /// <returns>ApiError</returns>
         ApiError RemoveUserRoles (long? organizationId, string username, ChangeRoleRequest changeRoleRequest, string authorization, string acceptLanguage);
         /// <summary>
+        /// Update organization logo Updating an organization logo using a multipart file upload.
+        /// </summary>
+        /// <param name="organizationId">The id of the organization where the logo should be updated.</param>
+        /// <param name="file">An image containing the new logo.</param>
+        /// <param name="authorization">Authorization JWT Bearer Token</param>
+        /// <param name="acceptLanguage">Requested language</param>
+        /// <returns>PublicImagePresentation</returns>
+        PublicImagePresentation SetOrganizationLogo (long? organizationId, System.IO.Stream file, string authorization, string acceptLanguage);
+        /// <summary>
         /// Update organization 
         /// </summary>
         /// <param name="organizationId">The id of the organization to be updated.</param>
@@ -187,15 +196,6 @@ namespace BlueRain.ID4i.Api
         /// <param name="acceptLanguage">Requested language</param>
         /// <returns>OrganizationAddress</returns>
         OrganizationAddress UpdateOrganizationBillingAddress (long? organizationId, OrganizationAddress addressResource, string authorization, string acceptLanguage);
-        /// <summary>
-        /// Update organization logo Updating an organization logo using a multipart file upload.
-        /// </summary>
-        /// <param name="organizationId">The id of the organization where the logo should be updated.</param>
-        /// <param name="file">An image containing the new logo.</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
-        /// <returns>ApiError</returns>
-        ApiError UpdateOrganizationLogo (long? organizationId, System.IO.Stream file, string authorization, string acceptLanguage);
     }
   
     /// <summary>
@@ -960,6 +960,52 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         }
     
         /// <summary>
+        /// Update organization logo Updating an organization logo using a multipart file upload.
+        /// </summary>
+        /// <param name="organizationId">The id of the organization where the logo should be updated.</param> 
+        /// <param name="file">An image containing the new logo.</param> 
+        /// <param name="authorization">Authorization JWT Bearer Token</param> 
+        /// <param name="acceptLanguage">Requested language</param> 
+        /// <returns>PublicImagePresentation</returns>            
+        public PublicImagePresentation SetOrganizationLogo (long? organizationId, System.IO.Stream file, string authorization, string acceptLanguage)
+        {
+            
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null) throw new ApiException(400, "Missing required parameter 'organizationId' when calling SetOrganizationLogo");
+            
+            // verify the required parameter 'file' is set
+            if (file == null) throw new ApiException(400, "Missing required parameter 'file' when calling SetOrganizationLogo");
+            
+    
+            var path = "/api/v1/organizations/{organizationId}/logo";
+            path = path.Replace("{format}", "json");
+            path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
+    
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+    
+                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
+ if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
+            if (file != null) fileParams.Add("file", ApiClient.ParameterToFile("file", file));
+                
+            // authentication setting, if any
+            String[] authSettings = new String[] {  };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+    
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling SetOrganizationLogo: " + response.Content, response.Content);
+            else if (((int)response.StatusCode) == 0)
+                throw new ApiException ((int)response.StatusCode, "Error calling SetOrganizationLogo: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return (PublicImagePresentation) ApiClient.Deserialize(response.Content, typeof(PublicImagePresentation), response.Headers);
+        }
+    
+        /// <summary>
         /// Update organization 
         /// </summary>
         /// <param name="organizationId">The id of the organization to be updated.</param> 
@@ -1095,52 +1141,6 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdateOrganizationBillingAddress: " + response.ErrorMessage, response.ErrorMessage);
     
             return (OrganizationAddress) ApiClient.Deserialize(response.Content, typeof(OrganizationAddress), response.Headers);
-        }
-    
-        /// <summary>
-        /// Update organization logo Updating an organization logo using a multipart file upload.
-        /// </summary>
-        /// <param name="organizationId">The id of the organization where the logo should be updated.</param> 
-        /// <param name="file">An image containing the new logo.</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
-        /// <returns>ApiError</returns>            
-        public ApiError UpdateOrganizationLogo (long? organizationId, System.IO.Stream file, string authorization, string acceptLanguage)
-        {
-            
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null) throw new ApiException(400, "Missing required parameter 'organizationId' when calling UpdateOrganizationLogo");
-            
-            // verify the required parameter 'file' is set
-            if (file == null) throw new ApiException(400, "Missing required parameter 'file' when calling UpdateOrganizationLogo");
-            
-    
-            var path = "/api/v1/organizations/{organizationId}/logo";
-            path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
-    
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-            if (file != null) fileParams.Add("file", ApiClient.ParameterToFile("file", file));
-                
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling UpdateOrganizationLogo: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling UpdateOrganizationLogo: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (ApiError) ApiClient.Deserialize(response.Content, typeof(ApiError), response.Headers);
         }
     
     }

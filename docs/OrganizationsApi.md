@@ -20,10 +20,10 @@ Method | HTTP request | Description
 [**InviteUsers**](OrganizationsApi.md#inviteusers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
 [**ListCountries**](OrganizationsApi.md#listcountries) | **GET** /api/v1/countries | List countries
 [**RemoveUserRoles**](OrganizationsApi.md#removeuserroles) | **DELETE** /api/v1/organizations/{organizationId}/users/{username}/roles | Remove role(s) from user
+[**SetOrganizationLogo**](OrganizationsApi.md#setorganizationlogo) | **POST** /api/v1/organizations/{organizationId}/logo | Update organization logo
 [**UpdateOrganization**](OrganizationsApi.md#updateorganization) | **PUT** /api/v1/organizations/{organizationId} | Update organization
 [**UpdateOrganizationAddress**](OrganizationsApi.md#updateorganizationaddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
 [**UpdateOrganizationBillingAddress**](OrganizationsApi.md#updateorganizationbillingaddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/billing | Store billing address
-[**UpdateOrganizationLogo**](OrganizationsApi.md#updateorganizationlogo) | **POST** /api/v1/organizations/{organizationId}/logo | Update organization logo
 
 
 <a name="adduserroles"></a>
@@ -1100,6 +1100,74 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="setorganizationlogo"></a>
+# **SetOrganizationLogo**
+> PublicImagePresentation SetOrganizationLogo (long? organizationId, System.IO.Stream file, string authorization, string acceptLanguage)
+
+Update organization logo
+
+Updating an organization logo using a multipart file upload.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
+
+namespace Example
+{
+    public class SetOrganizationLogoExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new OrganizationsApi();
+            var organizationId = 789;  // long? | The id of the organization where the logo should be updated.
+            var file = new System.IO.Stream(); // System.IO.Stream | An image containing the new logo.
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
+            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
+
+            try
+            {
+                // Update organization logo
+                PublicImagePresentation result = apiInstance.SetOrganizationLogo(organizationId, file, authorization, acceptLanguage);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling OrganizationsApi.SetOrganizationLogo: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **long?**| The id of the organization where the logo should be updated. | 
+ **file** | **System.IO.Stream**| An image containing the new logo. | 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **string**| Requested language | [optional] 
+
+### Return type
+
+[**PublicImagePresentation**](PublicImagePresentation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="updateorganization"></a>
 # **UpdateOrganization**
 > Organization UpdateOrganization (long? organizationId, Organization organization, string authorization, string acceptLanguage)
@@ -1294,74 +1362,6 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="updateorganizationlogo"></a>
-# **UpdateOrganizationLogo**
-> ApiError UpdateOrganizationLogo (long? organizationId, System.IO.Stream file, string authorization, string acceptLanguage)
-
-Update organization logo
-
-Updating an organization logo using a multipart file upload.
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using BlueRain.ID4i.Api;
-using BlueRain.ID4i.Client;
-using BlueRain.ID4i.Model;
-
-namespace Example
-{
-    public class UpdateOrganizationLogoExample
-    {
-        public void main()
-        {
-            
-            var apiInstance = new OrganizationsApi();
-            var organizationId = 789;  // long? | The id of the organization where the logo should be updated.
-            var file = new System.IO.Stream(); // System.IO.Stream | An image containing the new logo.
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
-
-            try
-            {
-                // Update organization logo
-                ApiError result = apiInstance.UpdateOrganizationLogo(organizationId, file, authorization, acceptLanguage);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling OrganizationsApi.UpdateOrganizationLogo: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| The id of the organization where the logo should be updated. | 
- **file** | **System.IO.Stream**| An image containing the new logo. | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data
  - **Accept**: application/xml, application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
