@@ -1,4 +1,4 @@
-# .UserRoles
+# BlueRain.ID4i.Model.UserRoles
 ## Properties
 
 Name | Type | Description | Notes

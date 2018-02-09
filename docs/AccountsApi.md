@@ -1,4 +1,4 @@
-# .AccountsApi
+# BlueRain.ID4i.Api.AccountsApi
 
 All URIs are relative to *https://backend.id4i.de*
 
@@ -32,9 +32,9 @@ Add role(s) to user
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -102,9 +102,9 @@ Completing a registration e.g. for invited users. Finish registration with a use
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -166,9 +166,9 @@ Find by username
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -230,9 +230,9 @@ Find users
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -245,8 +245,8 @@ namespace Example
             var usernamePrefix = usernamePrefix_example;  // string | Find users starting with this prefix.
             var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
-            var offset = 56;  // int? | Start with the n-th element.  (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements. (optional) 
+            var offset = 56;  // int? | Start with the n-th element (optional) 
+            var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
@@ -270,8 +270,8 @@ Name | Type | Description  | Notes
  **usernamePrefix** | **string**| Find users starting with this prefix. | 
  **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
- **offset** | **int?**| Start with the n-th element.  | [optional] 
- **limit** | **int?**| The maximum count of returned elements. | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -300,9 +300,9 @@ Listing users and their roles in a paginated manner.
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -315,8 +315,8 @@ namespace Example
             var organizationId = 789;  // long? | organizationId
             var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
-            var offset = 56;  // int? | Start with the n-th element.  (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements. (optional) 
+            var offset = 56;  // int? | Start with the n-th element (optional) 
+            var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
@@ -340,8 +340,8 @@ Name | Type | Description  | Notes
  **organizationId** | **long?**| organizationId | 
  **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
- **offset** | **int?**| Start with the n-th element.  | [optional] 
- **limit** | **int?**| The maximum count of returned elements. | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -368,9 +368,9 @@ Retrieve organizations of user
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -383,8 +383,8 @@ namespace Example
             var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var role = role_example;  // string | role (optional) 
-            var offset = 56;  // int? | Start with the n-th element.  (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements. (optional) 
+            var offset = 56;  // int? | Start with the n-th element (optional) 
+            var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
@@ -408,8 +408,8 @@ Name | Type | Description  | Notes
  **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
  **role** | **string**| role | [optional] 
- **offset** | **int?**| Start with the n-th element.  | [optional] 
- **limit** | **int?**| The maximum count of returned elements. | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -436,9 +436,9 @@ Get user roles by username
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -452,8 +452,8 @@ namespace Example
             var username = username_example;  // string | username
             var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
-            var offset = 56;  // int? | Start with the n-th element.  (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements. (optional) 
+            var offset = 56;  // int? | Start with the n-th element (optional) 
+            var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
@@ -478,8 +478,8 @@ Name | Type | Description  | Notes
  **username** | **string**| username | 
  **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
- **offset** | **int?**| Start with the n-th element.  | [optional] 
- **limit** | **int?**| The maximum count of returned elements. | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -508,9 +508,9 @@ Finding users in the specified organization in a paginated manner.
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -523,8 +523,8 @@ namespace Example
             var organizationId = 789;  // long? | organizationId
             var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
-            var offset = 56;  // int? | Start with the n-th element.  (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements. (optional) 
+            var offset = 56;  // int? | Start with the n-th element (optional) 
+            var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
@@ -548,8 +548,8 @@ Name | Type | Description  | Notes
  **organizationId** | **long?**| organizationId | 
  **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
- **offset** | **int?**| Start with the n-th element.  | [optional] 
- **limit** | **int?**| The maximum count of returned elements. | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -576,9 +576,9 @@ Invite Users
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -644,9 +644,9 @@ Listing of roles.
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -659,8 +659,8 @@ namespace Example
             var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var privilege = privilege_example;  // string | If specified the roles will be filtered containing that privilege. (optional) 
-            var offset = 56;  // int? | Start with the n-th element.  (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements. (optional) 
+            var offset = 56;  // int? | Start with the n-th element (optional) 
+            var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
@@ -684,8 +684,8 @@ Name | Type | Description  | Notes
  **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
  **privilege** | **string**| If specified the roles will be filtered containing that privilege. | [optional] 
- **offset** | **int?**| Start with the n-th element.  | [optional] 
- **limit** | **int?**| The maximum count of returned elements. | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -714,9 +714,9 @@ ID4i API Login
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -774,9 +774,9 @@ Registering a new user.
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -838,9 +838,9 @@ Remove role(s) from user
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -908,9 +908,9 @@ Requesting a reset for a new password.
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -974,9 +974,9 @@ Setting a new password and verifying the request to set the password.
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -1040,9 +1040,9 @@ Verifies a new user registration.
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {

@@ -1,4 +1,4 @@
-# .ApiKeysApi
+# BlueRain.ID4i.Api.ApiKeysApi
 
 All URIs are relative to *https://backend.id4i.de*
 
@@ -28,9 +28,9 @@ Add privilege
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -94,9 +94,9 @@ Add ID4ns of a privilege
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -164,9 +164,9 @@ Creation of a new API key.
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -230,9 +230,9 @@ Deletion of an API key.
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -296,9 +296,9 @@ Showing the details of an API key.
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -362,9 +362,9 @@ Listing all possible API key privileges.
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -377,8 +377,8 @@ namespace Example
             var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var id4nConcerning = true;  // bool? | id4nConcerning (optional) 
-            var offset = 56;  // int? | Start with the n-th element.  (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements. (optional) 
+            var offset = 56;  // int? | Start with the n-th element (optional) 
+            var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
@@ -402,8 +402,8 @@ Name | Type | Description  | Notes
  **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
  **id4nConcerning** | **bool?**| id4nConcerning | [optional] 
- **offset** | **int?**| Start with the n-th element.  | [optional] 
- **limit** | **int?**| The maximum count of returned elements. | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -432,9 +432,9 @@ Finding all API key assigned to the specified organization in a paginated manner
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -447,8 +447,8 @@ namespace Example
             var organizationId = 789;  // long? | The id of the organization to search in.
             var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
-            var offset = 56;  // int? | Start with the n-th element.  (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements. (optional) 
+            var offset = 56;  // int? | Start with the n-th element (optional) 
+            var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
@@ -472,8 +472,8 @@ Name | Type | Description  | Notes
  **organizationId** | **long?**| The id of the organization to search in. | 
  **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
- **offset** | **int?**| Start with the n-th element.  | [optional] 
- **limit** | **int?**| The maximum count of returned elements. | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -500,9 +500,9 @@ List privileges
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -515,8 +515,8 @@ namespace Example
             var key = key_example;  // string | key
             var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
-            var offset = 56;  // int? | Start with the n-th element.  (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements. (optional) 
+            var offset = 56;  // int? | Start with the n-th element (optional) 
+            var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
@@ -540,8 +540,8 @@ Name | Type | Description  | Notes
  **key** | **string**| key | 
  **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
- **offset** | **int?**| Start with the n-th element.  | [optional] 
- **limit** | **int?**| The maximum count of returned elements. | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -570,9 +570,9 @@ Listing ID4ns of a id4n concerning privilege
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -586,8 +586,8 @@ namespace Example
             var privilege = privilege_example;  // string | privilege
             var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
-            var offset = 56;  // int? | Start with the n-th element.  (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements. (optional) 
+            var offset = 56;  // int? | Start with the n-th element (optional) 
+            var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
@@ -612,8 +612,8 @@ Name | Type | Description  | Notes
  **privilege** | **string**| privilege | 
  **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
- **offset** | **int?**| Start with the n-th element.  | [optional] 
- **limit** | **int?**| The maximum count of returned elements. | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -640,9 +640,9 @@ Remove privilege
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -706,9 +706,9 @@ Remove id4ns of a privilege
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -776,9 +776,9 @@ API keys can be updated with new labels, and be activated and deactivated. The s
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {

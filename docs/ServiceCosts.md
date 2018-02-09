@@ -1,4 +1,4 @@
-# .ServiceCosts
+# BlueRain.ID4i.Model.ServiceCosts
 ## Properties
 
 Name | Type | Description | Notes

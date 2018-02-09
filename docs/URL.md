@@ -1,4 +1,4 @@
-# .URL
+# BlueRain.ID4i.Model.URL
 ## Properties
 
 Name | Type | Description | Notes

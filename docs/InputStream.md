@@ -1,4 +1,4 @@
-# .InputStream
+# BlueRain.ID4i.Model.InputStream
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# .RoutingFileRequest
+# BlueRain.ID4i.Model.RoutingFileRequest
 ## Properties
 
 Name | Type | Description | Notes

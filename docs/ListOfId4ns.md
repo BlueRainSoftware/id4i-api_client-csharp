@@ -1,4 +1,4 @@
-# .ListOfId4ns
+# BlueRain.ID4i.Model.ListOfId4ns
 ## Properties
 
 Name | Type | Description | Notes

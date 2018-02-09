@@ -1,4 +1,4 @@
-# .GUIDsApi
+# BlueRain.ID4i.Api.GUIDsApi
 
 All URIs are relative to *https://backend.id4i.de*
 
@@ -10,7 +10,9 @@ Method | HTTP request | Description
 [**GetGuid**](GUIDsApi.md#getguid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
 [**GetGuidAliases**](GUIDsApi.md#getguidaliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
 [**GetGuidsWithoutCollection**](GUIDsApi.md#getguidswithoutcollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
-[**UpdateGuid**](GUIDsApi.md#updateguid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
+[**GetId4n**](GUIDsApi.md#getid4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
+[**SetGuid**](GUIDsApi.md#setguid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
+[**SetGuid1**](GUIDsApi.md#setguid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 
 
 <a name="addguidalias"></a>
@@ -25,9 +27,9 @@ Adds or replaces aliases for single GUIDs (alias type item and mapp) or groups o
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -95,9 +97,9 @@ Remove the alias of the given type
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -163,9 +165,9 @@ Creating one or more GUIDs with a specified length.
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -227,9 +229,9 @@ Retrieve GUID information
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -293,9 +295,9 @@ Looks up the alias for each alias type (group and single GUID) and returns all f
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -357,9 +359,9 @@ Retrieve GUIDs not in any collection
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -372,8 +374,8 @@ namespace Example
             var organizationId = 789;  // long? | Organization to search GUIDs for (required).
             var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
-            var offset = 56;  // int? | Start with the n-th element.  (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements. (optional) 
+            var offset = 56;  // int? | Start with the n-th element (optional) 
+            var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
@@ -397,8 +399,8 @@ Name | Type | Description  | Notes
  **organizationId** | **long?**| Organization to search GUIDs for (required). | 
  **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
- **offset** | **int?**| Start with the n-th element.  | [optional] 
- **limit** | **int?**| The maximum count of returned elements. | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -415,9 +417,75 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updateguid"></a>
-# **UpdateGuid**
-> Object UpdateGuid (string id4n, Guid request, string authorization, string acceptLanguage)
+<a name="getid4n"></a>
+# **GetId4n**
+> Id4nPresentation GetId4n (string id4n, string authorization, string acceptLanguage)
+
+Retrieve ID4n information
+
+Retrieving basic information about an ID like the type and the creation time.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
+
+namespace Example
+{
+    public class GetId4nExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new GUIDsApi();
+            var id4n = id4n_example;  // string | The ID to resolve to
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
+            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
+
+            try
+            {
+                // Retrieve ID4n information
+                Id4nPresentation result = apiInstance.GetId4n(id4n, authorization, acceptLanguage);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling GUIDsApi.GetId4n: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| The ID to resolve to | 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **string**| Requested language | [optional] 
+
+### Return type
+
+[**Id4nPresentation**](Id4nPresentation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="setguid"></a>
+# **SetGuid**
+> Object SetGuid (string id4n, Guid request, string authorization, string acceptLanguage)
 
 Change GUID information.
 
@@ -427,13 +495,13 @@ Allows ownership transfer.
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
-    public class UpdateGuidExample
+    public class SetGuidExample
     {
         public void main()
         {
@@ -447,12 +515,80 @@ namespace Example
             try
             {
                 // Change GUID information.
-                Object result = apiInstance.UpdateGuid(id4n, request, authorization, acceptLanguage);
+                Object result = apiInstance.SetGuid(id4n, request, authorization, acceptLanguage);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling GUIDsApi.UpdateGuid: " + e.Message );
+                Debug.Print("Exception when calling GUIDsApi.SetGuid: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| The GUID number | 
+ **request** | [**Guid**](Guid.md)| request | 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **string**| Requested language | [optional] 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="setguid1"></a>
+# **SetGuid1**
+> Object SetGuid1 (string id4n, Guid request, string authorization, string acceptLanguage)
+
+Change GUID information.
+
+Allows ownership transfer.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
+
+namespace Example
+{
+    public class SetGuid1Example
+    {
+        public void main()
+        {
+            
+            var apiInstance = new GUIDsApi();
+            var id4n = id4n_example;  // string | The GUID number
+            var request = new Guid(); // Guid | request
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
+            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
+
+            try
+            {
+                // Change GUID information.
+                Object result = apiInstance.SetGuid1(id4n, request, authorization, acceptLanguage);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling GUIDsApi.SetGuid1: " + e.Message );
             }
         }
     }

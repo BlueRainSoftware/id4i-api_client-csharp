@@ -1,4 +1,4 @@
-# .AppInfoPresentation
+# BlueRain.ID4i.Model.AppInfoPresentation
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# .SimpleMessageResponse
+# BlueRain.ID4i.Model.SimpleMessageResponse
 ## Properties
 
 Name | Type | Description | Notes

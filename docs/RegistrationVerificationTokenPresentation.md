@@ -1,4 +1,4 @@
-# .RegistrationVerificationTokenPresentation
+# BlueRain.ID4i.Model.RegistrationVerificationTokenPresentation
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# .PasswordResetVerificationRequest
+# BlueRain.ID4i.Model.PasswordResetVerificationRequest
 ## Properties
 
 Name | Type | Description | Notes

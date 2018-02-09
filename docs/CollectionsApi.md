@@ -1,17 +1,13 @@
-# .CollectionsApi
+# BlueRain.ID4i.Api.CollectionsApi
 
 All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddElementToCollection**](CollectionsApi.md#addelementtocollection) | **PUT** /api/v1/collections/{id4n}/elements/{elementGuid} | Add element to collection
-[**AddElementToLabelledCollection**](CollectionsApi.md#addelementtolabelledcollection) | **PUT** /api/v1/collections/labelled/{collectionId4n}/elements/{elementGuid} | Add element to labelled collection
-[**AddElementToLogisticCollection**](CollectionsApi.md#addelementtologisticcollection) | **PUT** /api/v1/collections/logistic/{collectionId4n}/elements/{guid} | Add element to logistic collection
-[**AddElementToRoutingCollection**](CollectionsApi.md#addelementtoroutingcollection) | **PUT** /api/v1/collections/routing/{collectionId4n}/elements/{guid} | Add element to routing collection
-[**AddElementsToCollection**](CollectionsApi.md#addelementstocollection) | **PUT** /api/v1/collections/{id4n}/elements | Add elements to collection
-[**AddElementsToLabelledCollection**](CollectionsApi.md#addelementstolabelledcollection) | **PUT** /api/v1/collections/labelled/{collectionId4n}/elements | Add elements to labelled collection
-[**AddElementsToLogisticCollection**](CollectionsApi.md#addelementstologisticcollection) | **PUT** /api/v1/collections/logistic/{collectionId4n}/elements | Add elements to logistic collection
-[**AddElementsToRoutingCollection**](CollectionsApi.md#addelementstoroutingcollection) | **PUT** /api/v1/collections/routing/{collectionId4n}/elements | Add element to routing collection
+[**AddElementsToCollection**](CollectionsApi.md#addelementstocollection) | **POST** /api/v1/collections/{id4n}/elements | Add elements to collection
+[**AddElementsToLabelledCollection**](CollectionsApi.md#addelementstolabelledcollection) | **POST** /api/v1/collections/labelled/{collectionId4n}/elements | Add elements to labelled collection
+[**AddElementsToLogisticCollection**](CollectionsApi.md#addelementstologisticcollection) | **POST** /api/v1/collections/logistic/{collectionId4n}/elements | Add elements to logistic collection
+[**AddElementsToRoutingCollection**](CollectionsApi.md#addelementstoroutingcollection) | **POST** /api/v1/collections/routing/{collectionId4n}/elements | Add element to routing collection
 [**CreateLabelledCollection**](CollectionsApi.md#createlabelledcollection) | **POST** /api/v1/collections/labelled | Create labelled collection
 [**CreateLogisticCollection**](CollectionsApi.md#createlogisticcollection) | **POST** /api/v1/collections/logistic | Create logistic collection
 [**CreateRoutingCollection**](CollectionsApi.md#createroutingcollection) | **POST** /api/v1/collections/routing | Create routing collecton
@@ -28,283 +24,19 @@ Method | HTTP request | Description
 [**ListElementsOfLabelledCollection**](CollectionsApi.md#listelementsoflabelledcollection) | **GET** /api/v1/collections/labelled/{id4n}/elements | List contents of the collection
 [**ListElementsOfLogisticCollection**](CollectionsApi.md#listelementsoflogisticcollection) | **GET** /api/v1/collections/logistic/{id4n}/elements | List contents of the collection
 [**ListElementsOfRoutingCollection**](CollectionsApi.md#listelementsofroutingcollection) | **GET** /api/v1/collections/routing/{id4n}/elements | List contents of the collection
-[**RemoveElementFromCollection**](CollectionsApi.md#removeelementfromcollection) | **DELETE** /api/v1/collections/{id4n}/elements/{elementGuid} | Remove element from collection
-[**RemoveElementFromLabelledCollection**](CollectionsApi.md#removeelementfromlabelledcollection) | **DELETE** /api/v1/collections/labelled/{collectionId4n}/elements/{elementGuid} | Remove element from labelled collection
-[**RemoveElementFromLogisticCollection**](CollectionsApi.md#removeelementfromlogisticcollection) | **DELETE** /api/v1/collections/logistic/{collectionId4n}/elements/{elementId4n} | Remove element from logistic collection
-[**RemoveElementFromRoutingCollection**](CollectionsApi.md#removeelementfromroutingcollection) | **DELETE** /api/v1/collections/routing/{collectionId4n}/elements/{guid} | Remove element from routing collection
 [**RemoveElementsFromCollection**](CollectionsApi.md#removeelementsfromcollection) | **DELETE** /api/v1/collections/{id4n}/elements | Remove elements from collection
 [**RemoveElementsFromLabelledCollection**](CollectionsApi.md#removeelementsfromlabelledcollection) | **DELETE** /api/v1/collections/labelled/{collectionId4n}/elements | Remove elements from labelled collection
 [**RemoveElementsFromLogisticCollection**](CollectionsApi.md#removeelementsfromlogisticcollection) | **DELETE** /api/v1/collections/logistic/{collectionId4n}/elements | Remove elements from logistic collection
 [**RemoveElementsFromRoutingCollection**](CollectionsApi.md#removeelementsfromroutingcollection) | **DELETE** /api/v1/collections/routing/{collectionId4n}/elements | Remove elements from routing collection
-[**UpdateCollection**](CollectionsApi.md#updatecollection) | **PUT** /api/v1/collections/{id4n} | Alter collection
-[**UpdateLabelledCollection**](CollectionsApi.md#updatelabelledcollection) | **PUT** /api/v1/collections/labelled/{id4n} | Rename labelled collection
-[**UpdateLogisticCollection**](CollectionsApi.md#updatelogisticcollection) | **PUT** /api/v1/collections/logistic/{id4n} | Update logistic collection
-[**UpdateRoutingCollection**](CollectionsApi.md#updateroutingcollection) | **PUT** /api/v1/collections/routing/{id4n} | Update routing collection
+[**SetCollection**](CollectionsApi.md#setcollection) | **PUT** /api/v1/collections/{id4n} | Set collection
+[**SetLabelledCollection**](CollectionsApi.md#setlabelledcollection) | **PUT** /api/v1/collections/labelled/{id4n} | Set labelled collection values
+[**SetLogisticCollection**](CollectionsApi.md#setlogisticcollection) | **PUT** /api/v1/collections/logistic/{id4n} | Replace logistic collection
+[**SetRoutingCollection**](CollectionsApi.md#setroutingcollection) | **PUT** /api/v1/collections/routing/{id4n} | Update routing collection
+[**UpdateCollection**](CollectionsApi.md#updatecollection) | **PATCH** /api/v1/collections/{id4n} | Update collection
+[**UpdateLabelledCollection**](CollectionsApi.md#updatelabelledcollection) | **PATCH** /api/v1/collections/labelled/{id4n} | Update labelled collection
+[**UpdateLogisticCollection**](CollectionsApi.md#updatelogisticcollection) | **PATCH** /api/v1/collections/logistic/{id4n} | Update logistic collection
+[**UpdateRoutingCollection**](CollectionsApi.md#updateroutingcollection) | **PATCH** /api/v1/collections/routing/{id4n} | Update routing collection
 
-
-<a name="addelementtocollection"></a>
-# **AddElementToCollection**
-> ApiError AddElementToCollection (string id4n, string elementGuid, string authorization, string acceptLanguage)
-
-Add element to collection
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
-
-namespace Example
-{
-    public class AddElementToCollectionExample
-    {
-        public void main()
-        {
-            
-            var apiInstance = new CollectionsApi();
-            var id4n = id4n_example;  // string | id4n
-            var elementGuid = elementGuid_example;  // string | elementGuid
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
-
-            try
-            {
-                // Add element to collection
-                ApiError result = apiInstance.AddElementToCollection(id4n, elementGuid, authorization, acceptLanguage);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling CollectionsApi.AddElementToCollection: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **string**| id4n | 
- **elementGuid** | **string**| elementGuid | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="addelementtolabelledcollection"></a>
-# **AddElementToLabelledCollection**
-> ApiError AddElementToLabelledCollection (string collectionId4n, string elementGuid, string authorization, string acceptLanguage)
-
-Add element to labelled collection
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
-
-namespace Example
-{
-    public class AddElementToLabelledCollectionExample
-    {
-        public void main()
-        {
-            
-            var apiInstance = new CollectionsApi();
-            var collectionId4n = collectionId4n_example;  // string | collectionId4n
-            var elementGuid = elementGuid_example;  // string | elementGuid
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
-
-            try
-            {
-                // Add element to labelled collection
-                ApiError result = apiInstance.AddElementToLabelledCollection(collectionId4n, elementGuid, authorization, acceptLanguage);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling CollectionsApi.AddElementToLabelledCollection: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId4n** | **string**| collectionId4n | 
- **elementGuid** | **string**| elementGuid | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="addelementtologisticcollection"></a>
-# **AddElementToLogisticCollection**
-> ApiError AddElementToLogisticCollection (string collectionId4n, string guid, string authorization, string acceptLanguage)
-
-Add element to logistic collection
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
-
-namespace Example
-{
-    public class AddElementToLogisticCollectionExample
-    {
-        public void main()
-        {
-            
-            var apiInstance = new CollectionsApi();
-            var collectionId4n = collectionId4n_example;  // string | collectionId4n
-            var guid = guid_example;  // string | guid
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
-
-            try
-            {
-                // Add element to logistic collection
-                ApiError result = apiInstance.AddElementToLogisticCollection(collectionId4n, guid, authorization, acceptLanguage);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling CollectionsApi.AddElementToLogisticCollection: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId4n** | **string**| collectionId4n | 
- **guid** | **string**| guid | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="addelementtoroutingcollection"></a>
-# **AddElementToRoutingCollection**
-> ApiError AddElementToRoutingCollection (string collectionId4n, string guid, string authorization, string acceptLanguage)
-
-Add element to routing collection
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
-
-namespace Example
-{
-    public class AddElementToRoutingCollectionExample
-    {
-        public void main()
-        {
-            
-            var apiInstance = new CollectionsApi();
-            var collectionId4n = collectionId4n_example;  // string | collectionId4n
-            var guid = guid_example;  // string | guid
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
-
-            try
-            {
-                // Add element to routing collection
-                ApiError result = apiInstance.AddElementToRoutingCollection(collectionId4n, guid, authorization, acceptLanguage);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling CollectionsApi.AddElementToRoutingCollection: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId4n** | **string**| collectionId4n | 
- **guid** | **string**| guid | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="addelementstocollection"></a>
 # **AddElementsToCollection**
@@ -316,9 +48,9 @@ Add elements to collection
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -382,9 +114,9 @@ Add elements to labelled collection
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -448,9 +180,9 @@ Add elements to logistic collection
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -514,9 +246,9 @@ Add element to routing collection
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -580,9 +312,9 @@ Create labelled collection
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -644,9 +376,9 @@ Create logistic collection
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -708,9 +440,9 @@ Create routing collecton
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -772,9 +504,9 @@ Delete collection
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -836,9 +568,9 @@ Delete labelled collection
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -900,9 +632,9 @@ Delete logistic collection
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -964,9 +696,9 @@ Delete routing collection
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -1028,9 +760,9 @@ Find collection
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -1092,9 +824,9 @@ Find labelled collection
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -1156,9 +888,9 @@ Find logistic collection
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -1220,9 +952,9 @@ Find routing collection
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -1286,9 +1018,9 @@ Retrieving all collections of an organization in a paginated manner.
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -1301,8 +1033,8 @@ namespace Example
             var organizationId = 789;  // long? | organizationId
             var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
-            var offset = 56;  // int? | Start with the n-th element.  (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements. (optional) 
+            var offset = 56;  // int? | Start with the n-th element (optional) 
+            var limit = 56;  // int? | The maximum count of returned elements (optional) 
             var type = type_example;  // string | Filter by this type (optional) 
             var label = label_example;  // string | Filter by this label (optional) 
             var labelPrefix = labelPrefix_example;  // string | Filter by this label prefix (optional) 
@@ -1329,8 +1061,8 @@ Name | Type | Description  | Notes
  **organizationId** | **long?**| organizationId | 
  **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
- **offset** | **int?**| Start with the n-th element.  | [optional] 
- **limit** | **int?**| The maximum count of returned elements. | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
  **type** | **string**| Filter by this type | [optional] 
  **label** | **string**| Filter by this label | [optional] 
  **labelPrefix** | **string**| Filter by this label prefix | [optional] 
@@ -1360,9 +1092,9 @@ List contents of the collection
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -1375,8 +1107,8 @@ namespace Example
             var id4n = id4n_example;  // string | id4n
             var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
-            var offset = 56;  // int? | Start with the n-th element.  (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements. (optional) 
+            var offset = 56;  // int? | Start with the n-th element (optional) 
+            var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
@@ -1400,8 +1132,8 @@ Name | Type | Description  | Notes
  **id4n** | **string**| id4n | 
  **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
- **offset** | **int?**| Start with the n-th element.  | [optional] 
- **limit** | **int?**| The maximum count of returned elements. | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -1428,9 +1160,9 @@ List contents of the collection
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -1443,8 +1175,8 @@ namespace Example
             var id4n = id4n_example;  // string | id4n
             var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
-            var offset = 56;  // int? | Start with the n-th element.  (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements. (optional) 
+            var offset = 56;  // int? | Start with the n-th element (optional) 
+            var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
@@ -1468,8 +1200,8 @@ Name | Type | Description  | Notes
  **id4n** | **string**| id4n | 
  **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
- **offset** | **int?**| Start with the n-th element.  | [optional] 
- **limit** | **int?**| The maximum count of returned elements. | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -1496,9 +1228,9 @@ List contents of the collection
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -1511,8 +1243,8 @@ namespace Example
             var id4n = id4n_example;  // string | id4n
             var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
-            var offset = 56;  // int? | Start with the n-th element.  (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements. (optional) 
+            var offset = 56;  // int? | Start with the n-th element (optional) 
+            var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
@@ -1536,8 +1268,8 @@ Name | Type | Description  | Notes
  **id4n** | **string**| id4n | 
  **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
- **offset** | **int?**| Start with the n-th element.  | [optional] 
- **limit** | **int?**| The maximum count of returned elements. | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -1564,9 +1296,9 @@ List contents of the collection
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -1579,8 +1311,8 @@ namespace Example
             var id4n = id4n_example;  // string | id4n
             var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
-            var offset = 56;  // int? | Start with the n-th element.  (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements. (optional) 
+            var offset = 56;  // int? | Start with the n-th element (optional) 
+            var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
@@ -1604,276 +1336,12 @@ Name | Type | Description  | Notes
  **id4n** | **string**| id4n | 
  **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
- **offset** | **int?**| Start with the n-th element.  | [optional] 
- **limit** | **int?**| The maximum count of returned elements. | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
 [**PaginatedGuidResponse**](PaginatedGuidResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="removeelementfromcollection"></a>
-# **RemoveElementFromCollection**
-> ApiError RemoveElementFromCollection (string id4n, string elementGuid, string authorization, string acceptLanguage)
-
-Remove element from collection
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
-
-namespace Example
-{
-    public class RemoveElementFromCollectionExample
-    {
-        public void main()
-        {
-            
-            var apiInstance = new CollectionsApi();
-            var id4n = id4n_example;  // string | id4n
-            var elementGuid = elementGuid_example;  // string | elementGuid
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
-
-            try
-            {
-                // Remove element from collection
-                ApiError result = apiInstance.RemoveElementFromCollection(id4n, elementGuid, authorization, acceptLanguage);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling CollectionsApi.RemoveElementFromCollection: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **string**| id4n | 
- **elementGuid** | **string**| elementGuid | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="removeelementfromlabelledcollection"></a>
-# **RemoveElementFromLabelledCollection**
-> ApiError RemoveElementFromLabelledCollection (string collectionId4n, string elementGuid, string authorization, string acceptLanguage)
-
-Remove element from labelled collection
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
-
-namespace Example
-{
-    public class RemoveElementFromLabelledCollectionExample
-    {
-        public void main()
-        {
-            
-            var apiInstance = new CollectionsApi();
-            var collectionId4n = collectionId4n_example;  // string | collectionId4n
-            var elementGuid = elementGuid_example;  // string | elementGuid
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
-
-            try
-            {
-                // Remove element from labelled collection
-                ApiError result = apiInstance.RemoveElementFromLabelledCollection(collectionId4n, elementGuid, authorization, acceptLanguage);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling CollectionsApi.RemoveElementFromLabelledCollection: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId4n** | **string**| collectionId4n | 
- **elementGuid** | **string**| elementGuid | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="removeelementfromlogisticcollection"></a>
-# **RemoveElementFromLogisticCollection**
-> ApiError RemoveElementFromLogisticCollection (string collectionId4n, string guid, string authorization, string acceptLanguage)
-
-Remove element from logistic collection
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
-
-namespace Example
-{
-    public class RemoveElementFromLogisticCollectionExample
-    {
-        public void main()
-        {
-            
-            var apiInstance = new CollectionsApi();
-            var collectionId4n = collectionId4n_example;  // string | collectionId4n
-            var guid = guid_example;  // string | guid
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
-
-            try
-            {
-                // Remove element from logistic collection
-                ApiError result = apiInstance.RemoveElementFromLogisticCollection(collectionId4n, guid, authorization, acceptLanguage);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling CollectionsApi.RemoveElementFromLogisticCollection: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId4n** | **string**| collectionId4n | 
- **guid** | **string**| guid | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="removeelementfromroutingcollection"></a>
-# **RemoveElementFromRoutingCollection**
-> ApiError RemoveElementFromRoutingCollection (string collectionId4n, string guid, string authorization, string acceptLanguage)
-
-Remove element from routing collection
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
-
-namespace Example
-{
-    public class RemoveElementFromRoutingCollectionExample
-    {
-        public void main()
-        {
-            
-            var apiInstance = new CollectionsApi();
-            var collectionId4n = collectionId4n_example;  // string | collectionId4n
-            var guid = guid_example;  // string | guid
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
-
-            try
-            {
-                // Remove element from routing collection
-                ApiError result = apiInstance.RemoveElementFromRoutingCollection(collectionId4n, guid, authorization, acceptLanguage);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling CollectionsApi.RemoveElementFromRoutingCollection: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId4n** | **string**| collectionId4n | 
- **guid** | **string**| guid | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -1896,9 +1364,9 @@ Remove elements from collection
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -1962,9 +1430,9 @@ Remove elements from labelled collection
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -2028,9 +1496,9 @@ Remove elements from logistic collection
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -2094,9 +1562,9 @@ Remove elements from routing collection
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -2150,19 +1618,291 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updatecollection"></a>
-# **UpdateCollection**
-> Object UpdateCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
+<a name="setcollection"></a>
+# **SetCollection**
+> Object SetCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
 
-Alter collection
+Set collection
+
+Update collection replacing all values but the ID
 
 ### Example
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
+
+namespace Example
+{
+    public class SetCollectionExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new CollectionsApi();
+            var id4n = id4n_example;  // string | id4n
+            var request = new GuidCollection(); // GuidCollection | request
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
+            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
+
+            try
+            {
+                // Set collection
+                Object result = apiInstance.SetCollection(id4n, request, authorization, acceptLanguage);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling CollectionsApi.SetCollection: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| id4n | 
+ **request** | [**GuidCollection**](GuidCollection.md)| request | 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **string**| Requested language | [optional] 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="setlabelledcollection"></a>
+# **SetLabelledCollection**
+> Object SetLabelledCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
+
+Set labelled collection values
+
+Update labelled collection replacing all values but the ID
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
+
+namespace Example
+{
+    public class SetLabelledCollectionExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new CollectionsApi();
+            var id4n = id4n_example;  // string | id4n
+            var request = new GuidCollection(); // GuidCollection | request
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
+            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
+
+            try
+            {
+                // Set labelled collection values
+                Object result = apiInstance.SetLabelledCollection(id4n, request, authorization, acceptLanguage);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling CollectionsApi.SetLabelledCollection: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| id4n | 
+ **request** | [**GuidCollection**](GuidCollection.md)| request | 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **string**| Requested language | [optional] 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="setlogisticcollection"></a>
+# **SetLogisticCollection**
+> Object SetLogisticCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
+
+Replace logistic collection
+
+Update logistic collection replacing all values but the ID
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
+
+namespace Example
+{
+    public class SetLogisticCollectionExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new CollectionsApi();
+            var id4n = id4n_example;  // string | id4n
+            var request = new GuidCollection(); // GuidCollection | request
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
+            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
+
+            try
+            {
+                // Replace logistic collection
+                Object result = apiInstance.SetLogisticCollection(id4n, request, authorization, acceptLanguage);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling CollectionsApi.SetLogisticCollection: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| id4n | 
+ **request** | [**GuidCollection**](GuidCollection.md)| request | 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **string**| Requested language | [optional] 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="setroutingcollection"></a>
+# **SetRoutingCollection**
+> Object SetRoutingCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
+
+Update routing collection
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
+
+namespace Example
+{
+    public class SetRoutingCollectionExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new CollectionsApi();
+            var id4n = id4n_example;  // string | id4n
+            var request = new GuidCollection(); // GuidCollection | request
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
+            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
+
+            try
+            {
+                // Update routing collection
+                Object result = apiInstance.SetRoutingCollection(id4n, request, authorization, acceptLanguage);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling CollectionsApi.SetRoutingCollection: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| id4n | 
+ **request** | [**GuidCollection**](GuidCollection.md)| request | 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **string**| Requested language | [optional] 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="updatecollection"></a>
+# **UpdateCollection**
+> Object UpdateCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
+
+Update collection
+
+Update collection changing only the given values
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -2179,7 +1919,7 @@ namespace Example
 
             try
             {
-                // Alter collection
+                // Update collection
                 Object result = apiInstance.UpdateCollection(id4n, request, authorization, acceptLanguage);
                 Debug.WriteLine(result);
             }
@@ -2220,15 +1960,17 @@ No authorization required
 # **UpdateLabelledCollection**
 > Object UpdateLabelledCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
 
-Rename labelled collection
+Update labelled collection
+
+Update labelled collection updating only the given values
 
 ### Example
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -2245,7 +1987,7 @@ namespace Example
 
             try
             {
-                // Rename labelled collection
+                // Update labelled collection
                 Object result = apiInstance.UpdateLabelledCollection(id4n, request, authorization, acceptLanguage);
                 Debug.WriteLine(result);
             }
@@ -2288,13 +2030,15 @@ No authorization required
 
 Update logistic collection
 
+Update logistic collection updating only the given values
+
 ### Example
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -2354,13 +2098,15 @@ No authorization required
 
 Update routing collection
 
+Update routing collection updating only the given values
+
 ### Example
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {

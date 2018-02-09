@@ -1,4 +1,4 @@
-# .OrganizationsApi
+# BlueRain.ID4i.Api.OrganizationsApi
 
 All URIs are relative to *https://backend.id4i.de*
 
@@ -20,10 +20,10 @@ Method | HTTP request | Description
 [**InviteUsers**](OrganizationsApi.md#inviteusers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
 [**ListCountries**](OrganizationsApi.md#listcountries) | **GET** /api/v1/countries | List countries
 [**RemoveUserRoles**](OrganizationsApi.md#removeuserroles) | **DELETE** /api/v1/organizations/{organizationId}/users/{username}/roles | Remove role(s) from user
+[**SetOrganizationLogo**](OrganizationsApi.md#setorganizationlogo) | **POST** /api/v1/organizations/{organizationId}/logo | Update organization logo
 [**UpdateOrganization**](OrganizationsApi.md#updateorganization) | **PUT** /api/v1/organizations/{organizationId} | Update organization
 [**UpdateOrganizationAddress**](OrganizationsApi.md#updateorganizationaddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
 [**UpdateOrganizationBillingAddress**](OrganizationsApi.md#updateorganizationbillingaddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/billing | Store billing address
-[**UpdateOrganizationLogo**](OrganizationsApi.md#updateorganizationlogo) | **POST** /api/v1/organizations/{organizationId}/logo | Update organization logo
 
 
 <a name="adduserroles"></a>
@@ -36,9 +36,9 @@ Add role(s) to user
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -106,9 +106,9 @@ Creating a new organization.
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -170,9 +170,9 @@ Delete organization
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -234,9 +234,9 @@ Remove billing address
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -298,9 +298,9 @@ Delete organization logo
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -364,9 +364,9 @@ Returns a single organization.
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -428,9 +428,9 @@ Retrieve address
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -492,9 +492,9 @@ Retrieve billing address
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -558,9 +558,9 @@ Retrieving all collections of an organization in a paginated manner.
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -573,8 +573,8 @@ namespace Example
             var organizationId = 789;  // long? | organizationId
             var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
-            var offset = 56;  // int? | Start with the n-th element.  (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements. (optional) 
+            var offset = 56;  // int? | Start with the n-th element (optional) 
+            var limit = 56;  // int? | The maximum count of returned elements (optional) 
             var type = type_example;  // string | Filter by this type (optional) 
             var label = label_example;  // string | Filter by this label (optional) 
             var labelPrefix = labelPrefix_example;  // string | Filter by this label prefix (optional) 
@@ -601,8 +601,8 @@ Name | Type | Description  | Notes
  **organizationId** | **long?**| organizationId | 
  **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
- **offset** | **int?**| Start with the n-th element.  | [optional] 
- **limit** | **int?**| The maximum count of returned elements. | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
  **type** | **string**| Filter by this type | [optional] 
  **label** | **string**| Filter by this label | [optional] 
  **labelPrefix** | **string**| Filter by this label prefix | [optional] 
@@ -634,9 +634,9 @@ Listing users and their roles in a paginated manner.
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -649,8 +649,8 @@ namespace Example
             var organizationId = 789;  // long? | organizationId
             var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
-            var offset = 56;  // int? | Start with the n-th element.  (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements. (optional) 
+            var offset = 56;  // int? | Start with the n-th element (optional) 
+            var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
@@ -674,8 +674,8 @@ Name | Type | Description  | Notes
  **organizationId** | **long?**| organizationId | 
  **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
- **offset** | **int?**| Start with the n-th element.  | [optional] 
- **limit** | **int?**| The maximum count of returned elements. | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -702,9 +702,9 @@ Retrieve organizations of user
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -717,8 +717,8 @@ namespace Example
             var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var role = role_example;  // string | role (optional) 
-            var offset = 56;  // int? | Start with the n-th element.  (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements. (optional) 
+            var offset = 56;  // int? | Start with the n-th element (optional) 
+            var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
@@ -742,8 +742,8 @@ Name | Type | Description  | Notes
  **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
  **role** | **string**| role | [optional] 
- **offset** | **int?**| Start with the n-th element.  | [optional] 
- **limit** | **int?**| The maximum count of returned elements. | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -770,9 +770,9 @@ Get user roles by username
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -786,8 +786,8 @@ namespace Example
             var username = username_example;  // string | username
             var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
-            var offset = 56;  // int? | Start with the n-th element.  (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements. (optional) 
+            var offset = 56;  // int? | Start with the n-th element (optional) 
+            var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
@@ -812,8 +812,8 @@ Name | Type | Description  | Notes
  **username** | **string**| username | 
  **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
- **offset** | **int?**| Start with the n-th element.  | [optional] 
- **limit** | **int?**| The maximum count of returned elements. | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -842,9 +842,9 @@ Finding users in the specified organization in a paginated manner.
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -857,8 +857,8 @@ namespace Example
             var organizationId = 789;  // long? | organizationId
             var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
-            var offset = 56;  // int? | Start with the n-th element.  (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements. (optional) 
+            var offset = 56;  // int? | Start with the n-th element (optional) 
+            var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
@@ -882,8 +882,8 @@ Name | Type | Description  | Notes
  **organizationId** | **long?**| organizationId | 
  **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
- **offset** | **int?**| Start with the n-th element.  | [optional] 
- **limit** | **int?**| The maximum count of returned elements. | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -910,9 +910,9 @@ Invite Users
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -976,9 +976,9 @@ List countries
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -990,8 +990,8 @@ namespace Example
             var apiInstance = new OrganizationsApi();
             var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
             var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
-            var offset = 56;  // int? | Start with the n-th element.  (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements. (optional) 
+            var offset = 56;  // int? | Start with the n-th element (optional) 
+            var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
@@ -1014,8 +1014,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
  **acceptLanguage** | **string**| Requested language | [optional] 
- **offset** | **int?**| Start with the n-th element.  | [optional] 
- **limit** | **int?**| The maximum count of returned elements. | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -1042,9 +1042,9 @@ Remove role(s) from user
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -1100,6 +1100,74 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="setorganizationlogo"></a>
+# **SetOrganizationLogo**
+> PublicImagePresentation SetOrganizationLogo (long? organizationId, System.IO.Stream file, string authorization, string acceptLanguage)
+
+Update organization logo
+
+Updating an organization logo using a multipart file upload.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
+
+namespace Example
+{
+    public class SetOrganizationLogoExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new OrganizationsApi();
+            var organizationId = 789;  // long? | The id of the organization where the logo should be updated.
+            var file = new System.IO.Stream(); // System.IO.Stream | An image containing the new logo.
+            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
+            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
+
+            try
+            {
+                // Update organization logo
+                PublicImagePresentation result = apiInstance.SetOrganizationLogo(organizationId, file, authorization, acceptLanguage);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling OrganizationsApi.SetOrganizationLogo: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **long?**| The id of the organization where the logo should be updated. | 
+ **file** | **System.IO.Stream**| An image containing the new logo. | 
+ **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
+ **acceptLanguage** | **string**| Requested language | [optional] 
+
+### Return type
+
+[**PublicImagePresentation**](PublicImagePresentation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="updateorganization"></a>
 # **UpdateOrganization**
 > Organization UpdateOrganization (long? organizationId, Organization organization, string authorization, string acceptLanguage)
@@ -1110,9 +1178,9 @@ Update organization
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -1176,9 +1244,9 @@ Store address
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -1242,9 +1310,9 @@ Store billing address
 ```csharp
 using System;
 using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
 
 namespace Example
 {
@@ -1294,74 +1362,6 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="updateorganizationlogo"></a>
-# **UpdateOrganizationLogo**
-> ApiError UpdateOrganizationLogo (long? organizationId, System.IO.Stream file, string authorization, string acceptLanguage)
-
-Update organization logo
-
-Updating an organization logo using a multipart file upload.
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using ;
-using DE.ID4i.Client;
-using DE.ID4i.Model;
-
-namespace Example
-{
-    public class UpdateOrganizationLogoExample
-    {
-        public void main()
-        {
-            
-            var apiInstance = new OrganizationsApi();
-            var organizationId = 789;  // long? | The id of the organization where the logo should be updated.
-            var file = new System.IO.Stream(); // System.IO.Stream | An image containing the new logo.
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
-
-            try
-            {
-                // Update organization logo
-                ApiError result = apiInstance.UpdateOrganizationLogo(organizationId, file, authorization, acceptLanguage);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling OrganizationsApi.UpdateOrganizationLogo: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| The id of the organization where the logo should be updated. | 
- **file** | **System.IO.Stream**| An image containing the new logo. | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data
  - **Accept**: application/xml, application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

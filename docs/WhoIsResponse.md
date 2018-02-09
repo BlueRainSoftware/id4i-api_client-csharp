@@ -1,4 +1,4 @@
-# .WhoIsResponse
+# BlueRain.ID4i.Model.WhoIsResponse
 ## Properties
 
 Name | Type | Description | Notes

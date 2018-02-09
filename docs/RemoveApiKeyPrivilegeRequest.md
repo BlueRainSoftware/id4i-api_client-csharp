@@ -1,4 +1,4 @@
-# .RemoveApiKeyPrivilegeRequest
+# BlueRain.ID4i.Model.RemoveApiKeyPrivilegeRequest
 ## Properties
 
 Name | Type | Description | Notes

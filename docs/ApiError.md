@@ -1,4 +1,4 @@
-# .ApiError
+# BlueRain.ID4i.Model.ApiError
 ## Properties
 
 Name | Type | Description | Notes

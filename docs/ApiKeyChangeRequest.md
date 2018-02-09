@@ -1,4 +1,4 @@
-# .ApiKeyChangeRequest
+# BlueRain.ID4i.Model.ApiKeyChangeRequest
 ## Properties
 
 Name | Type | Description | Notes

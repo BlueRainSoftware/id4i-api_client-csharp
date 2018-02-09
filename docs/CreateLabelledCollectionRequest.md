@@ -1,4 +1,4 @@
-# .CreateLabelledCollectionRequest
+# BlueRain.ID4i.Model.CreateLabelledCollectionRequest
 ## Properties
 
 Name | Type | Description | Notes

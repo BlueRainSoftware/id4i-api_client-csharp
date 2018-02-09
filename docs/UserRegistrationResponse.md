@@ -1,9 +1,10 @@
-# .UserRegistrationResponse
+# BlueRain.ID4i.Model.UserRegistrationResponse
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Email** | **string** |  | [optional] 
+**Id** | **long?** |  | [optional] 
 **Message** | **string** |  | [optional] 
 **Username** | **string** |  | [optional] 
 

@@ -1,4 +1,4 @@
-# .Route
+# BlueRain.ID4i.Model.Route
 ## Properties
 
 Name | Type | Description | Notes
