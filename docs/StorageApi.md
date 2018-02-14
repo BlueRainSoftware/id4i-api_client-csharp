@@ -36,7 +36,7 @@ Method | HTTP request | Description
 
 <a name="createdocument"></a>
 # **CreateDocument**
-> Object CreateDocument (string id4n, long? organizationId, Document document, string mimeType)
+> Document CreateDocument (string id4n, long? organizationId, Document document, string mimeType)
 
 Create an empty document for an id4n
 
@@ -71,7 +71,7 @@ namespace Example
             try
             {
                 // Create an empty document for an id4n
-                Object result = apiInstance.CreateDocument(id4n, organizationId, document, mimeType);
+                Document result = apiInstance.CreateDocument(id4n, organizationId, document, mimeType);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**Document**](Document.md)
 
 ### Authorization
 
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 
 <a name="createdocument1"></a>
 # **CreateDocument1**
-> Object CreateDocument1 (string id4n, long? organizationId, Document document, string mimeType)
+> Document CreateDocument1 (string id4n, long? organizationId, Document document, string mimeType)
 
 Create an empty document for an id4n
 
@@ -144,7 +144,7 @@ namespace Example
             try
             {
                 // Create an empty document for an id4n
-                Object result = apiInstance.CreateDocument1(id4n, organizationId, document, mimeType);
+                Document result = apiInstance.CreateDocument1(id4n, organizationId, document, mimeType);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**Document**](Document.md)
 
 ### Authorization
 
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 <a name="deletedocument"></a>
 # **DeleteDocument**
-> Object DeleteDocument (long? organizationId, string id4n, string fileName)
+> ResponseEntity DeleteDocument (long? organizationId, string id4n, string fileName)
 
 Delete a document
 
@@ -214,7 +214,7 @@ namespace Example
             try
             {
                 // Delete a document
-                Object result = apiInstance.DeleteDocument(organizationId, id4n, fileName);
+                ResponseEntity result = apiInstance.DeleteDocument(organizationId, id4n, fileName);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**ResponseEntity**](ResponseEntity.md)
 
 ### Authorization
 
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 
 <a name="deletedocument1"></a>
 # **DeleteDocument1**
-> Object DeleteDocument1 (long? organizationId, string id4n, string fileName)
+> ResponseEntity DeleteDocument1 (long? organizationId, string id4n, string fileName)
 
 Delete a document
 
@@ -283,7 +283,7 @@ namespace Example
             try
             {
                 // Delete a document
-                Object result = apiInstance.DeleteDocument1(organizationId, id4n, fileName);
+                ResponseEntity result = apiInstance.DeleteDocument1(organizationId, id4n, fileName);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**ResponseEntity**](ResponseEntity.md)
 
 ### Authorization
 
@@ -1870,7 +1870,7 @@ Name | Type | Description  | Notes
 
 <a name="writedocument"></a>
 # **WriteDocument**
-> Object WriteDocument (long? organizationId, string id4n, string fileName, string contentType, long? contentLength)
+> ResponseEntity WriteDocument (long? organizationId, string id4n, string fileName, string contentType, long? contentLength)
 
 Write document contents
 
@@ -1904,7 +1904,7 @@ namespace Example
             try
             {
                 // Write document contents
-                Object result = apiInstance.WriteDocument(organizationId, id4n, fileName, contentType, contentLength);
+                ResponseEntity result = apiInstance.WriteDocument(organizationId, id4n, fileName, contentType, contentLength);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1928,7 +1928,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**ResponseEntity**](ResponseEntity.md)
 
 ### Authorization
 
@@ -1943,7 +1943,7 @@ Name | Type | Description  | Notes
 
 <a name="writedocument1"></a>
 # **WriteDocument1**
-> Object WriteDocument1 (long? organizationId, string id4n, string fileName, string contentType, long? contentLength)
+> ResponseEntity WriteDocument1 (long? organizationId, string id4n, string fileName, string contentType, long? contentLength)
 
 Write document contents
 
@@ -1977,7 +1977,7 @@ namespace Example
             try
             {
                 // Write document contents
-                Object result = apiInstance.WriteDocument1(organizationId, id4n, fileName, contentType, contentLength);
+                ResponseEntity result = apiInstance.WriteDocument1(organizationId, id4n, fileName, contentType, contentLength);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -2001,7 +2001,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**ResponseEntity**](ResponseEntity.md)
 
 ### Authorization
 

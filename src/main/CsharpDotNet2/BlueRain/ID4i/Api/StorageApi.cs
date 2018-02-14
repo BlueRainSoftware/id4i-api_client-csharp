@@ -19,8 +19,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">organizationId</param>
         /// <param name="document">document</param>
         /// <param name="mimeType">mimeType</param>
-        /// <returns>Object</returns>
-        Object CreateDocument (string id4n, long? organizationId, Document document, string mimeType);
+        /// <returns>Document</returns>
+        Document CreateDocument (string id4n, long? organizationId, Document document, string mimeType);
         /// <summary>
         /// Create an empty document for an id4n The document is created empty, mime-type defaults to text/plain
         /// </summary>
@@ -28,24 +28,24 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">organizationId</param>
         /// <param name="document">document</param>
         /// <param name="mimeType">mimeType</param>
-        /// <returns>Object</returns>
-        Object CreateDocument1 (string id4n, long? organizationId, Document document, string mimeType);
+        /// <returns>Document</returns>
+        Document CreateDocument1 (string id4n, long? organizationId, Document document, string mimeType);
         /// <summary>
         /// Delete a document 
         /// </summary>
         /// <param name="organizationId">organizationId</param>
         /// <param name="id4n">id4n</param>
         /// <param name="fileName">fileName</param>
-        /// <returns>Object</returns>
-        Object DeleteDocument (long? organizationId, string id4n, string fileName);
+        /// <returns>ResponseEntity</returns>
+        ResponseEntity DeleteDocument (long? organizationId, string id4n, string fileName);
         /// <summary>
         /// Delete a document 
         /// </summary>
         /// <param name="organizationId">organizationId</param>
         /// <param name="id4n">id4n</param>
         /// <param name="fileName">fileName</param>
-        /// <returns>Object</returns>
-        Object DeleteDocument1 (long? organizationId, string id4n, string fileName);
+        /// <returns>ResponseEntity</returns>
+        ResponseEntity DeleteDocument1 (long? organizationId, string id4n, string fileName);
         /// <summary>
         /// Retrieve a document (meta-data only, no content) 
         /// </summary>
@@ -238,8 +238,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="fileName">fileName</param>
         /// <param name="contentType">Content-Type</param>
         /// <param name="contentLength">Content-Length</param>
-        /// <returns>Object</returns>
-        Object WriteDocument (long? organizationId, string id4n, string fileName, string contentType, long? contentLength);
+        /// <returns>ResponseEntity</returns>
+        ResponseEntity WriteDocument (long? organizationId, string id4n, string fileName, string contentType, long? contentLength);
         /// <summary>
         /// Write document contents 
         /// </summary>
@@ -248,8 +248,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="fileName">fileName</param>
         /// <param name="contentType">Content-Type</param>
         /// <param name="contentLength">Content-Length</param>
-        /// <returns>Object</returns>
-        Object WriteDocument1 (long? organizationId, string id4n, string fileName, string contentType, long? contentLength);
+        /// <returns>ResponseEntity</returns>
+        ResponseEntity WriteDocument1 (long? organizationId, string id4n, string fileName, string contentType, long? contentLength);
     }
   
     /// <summary>
@@ -312,8 +312,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">organizationId</param> 
         /// <param name="document">document</param> 
         /// <param name="mimeType">mimeType</param> 
-        /// <returns>Object</returns>            
-        public Object CreateDocument (string id4n, long? organizationId, Document document, string mimeType)
+        /// <returns>Document</returns>            
+        public Document CreateDocument (string id4n, long? organizationId, Document document, string mimeType)
         {
             
             // verify the required parameter 'id4n' is set
@@ -351,7 +351,7 @@ path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(or
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateDocument: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (Object) ApiClient.Deserialize(response.Content, typeof(Object), response.Headers);
+            return (Document) ApiClient.Deserialize(response.Content, typeof(Document), response.Headers);
         }
     
         /// <summary>
@@ -361,8 +361,8 @@ path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(or
         /// <param name="organizationId">organizationId</param> 
         /// <param name="document">document</param> 
         /// <param name="mimeType">mimeType</param> 
-        /// <returns>Object</returns>            
-        public Object CreateDocument1 (string id4n, long? organizationId, Document document, string mimeType)
+        /// <returns>Document</returns>            
+        public Document CreateDocument1 (string id4n, long? organizationId, Document document, string mimeType)
         {
             
             // verify the required parameter 'id4n' is set
@@ -400,7 +400,7 @@ path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(or
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateDocument1: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (Object) ApiClient.Deserialize(response.Content, typeof(Object), response.Headers);
+            return (Document) ApiClient.Deserialize(response.Content, typeof(Document), response.Headers);
         }
     
         /// <summary>
@@ -409,8 +409,8 @@ path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(or
         /// <param name="organizationId">organizationId</param> 
         /// <param name="id4n">id4n</param> 
         /// <param name="fileName">fileName</param> 
-        /// <returns>Object</returns>            
-        public Object DeleteDocument (long? organizationId, string id4n, string fileName)
+        /// <returns>ResponseEntity</returns>            
+        public ResponseEntity DeleteDocument (long? organizationId, string id4n, string fileName)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -447,7 +447,7 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling DeleteDocument: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (Object) ApiClient.Deserialize(response.Content, typeof(Object), response.Headers);
+            return (ResponseEntity) ApiClient.Deserialize(response.Content, typeof(ResponseEntity), response.Headers);
         }
     
         /// <summary>
@@ -456,8 +456,8 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
         /// <param name="organizationId">organizationId</param> 
         /// <param name="id4n">id4n</param> 
         /// <param name="fileName">fileName</param> 
-        /// <returns>Object</returns>            
-        public Object DeleteDocument1 (long? organizationId, string id4n, string fileName)
+        /// <returns>ResponseEntity</returns>            
+        public ResponseEntity DeleteDocument1 (long? organizationId, string id4n, string fileName)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -494,7 +494,7 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling DeleteDocument1: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (Object) ApiClient.Deserialize(response.Content, typeof(Object), response.Headers);
+            return (ResponseEntity) ApiClient.Deserialize(response.Content, typeof(ResponseEntity), response.Headers);
         }
     
         /// <summary>
@@ -1513,8 +1513,8 @@ path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
         /// <param name="fileName">fileName</param> 
         /// <param name="contentType">Content-Type</param> 
         /// <param name="contentLength">Content-Length</param> 
-        /// <returns>Object</returns>            
-        public Object WriteDocument (long? organizationId, string id4n, string fileName, string contentType, long? contentLength)
+        /// <returns>ResponseEntity</returns>            
+        public ResponseEntity WriteDocument (long? organizationId, string id4n, string fileName, string contentType, long? contentLength)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -1553,7 +1553,7 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling WriteDocument: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (Object) ApiClient.Deserialize(response.Content, typeof(Object), response.Headers);
+            return (ResponseEntity) ApiClient.Deserialize(response.Content, typeof(ResponseEntity), response.Headers);
         }
     
         /// <summary>
@@ -1564,8 +1564,8 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
         /// <param name="fileName">fileName</param> 
         /// <param name="contentType">Content-Type</param> 
         /// <param name="contentLength">Content-Length</param> 
-        /// <returns>Object</returns>            
-        public Object WriteDocument1 (long? organizationId, string id4n, string fileName, string contentType, long? contentLength)
+        /// <returns>ResponseEntity</returns>            
+        public ResponseEntity WriteDocument1 (long? organizationId, string id4n, string fileName, string contentType, long? contentLength)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -1604,7 +1604,7 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling WriteDocument1: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (Object) ApiClient.Deserialize(response.Content, typeof(Object), response.Headers);
+            return (ResponseEntity) ApiClient.Deserialize(response.Content, typeof(ResponseEntity), response.Headers);
         }
     
     }
