@@ -40,7 +40,7 @@ Method | HTTP request | Description
 
 <a name="addelementstocollection"></a>
 # **AddElementsToCollection**
-> ApiError AddElementsToCollection (string id4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage)
+> ApiError AddElementsToCollection (string id4n, ListOfId4ns listOfGuids)
 
 Add elements to collection
 
@@ -59,16 +59,19 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
             var listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Add elements to collection
-                ApiError result = apiInstance.AddElementsToCollection(id4n, listOfGuids, authorization, acceptLanguage);
+                ApiError result = apiInstance.AddElementsToCollection(id4n, listOfGuids);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -86,8 +89,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -95,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -106,7 +107,7 @@ No authorization required
 
 <a name="addelementstolabelledcollection"></a>
 # **AddElementsToLabelledCollection**
-> ApiError AddElementsToLabelledCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage)
+> ApiError AddElementsToLabelledCollection (string collectionId4n, ListOfId4ns listOfGuids)
 
 Add elements to labelled collection
 
@@ -125,16 +126,19 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var collectionId4n = collectionId4n_example;  // string | collectionId4n
             var listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Add elements to labelled collection
-                ApiError result = apiInstance.AddElementsToLabelledCollection(collectionId4n, listOfGuids, authorization, acceptLanguage);
+                ApiError result = apiInstance.AddElementsToLabelledCollection(collectionId4n, listOfGuids);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -152,8 +156,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **string**| collectionId4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -161,7 +163,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -172,7 +174,7 @@ No authorization required
 
 <a name="addelementstologisticcollection"></a>
 # **AddElementsToLogisticCollection**
-> ApiError AddElementsToLogisticCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage)
+> ApiError AddElementsToLogisticCollection (string collectionId4n, ListOfId4ns listOfGuids)
 
 Add elements to logistic collection
 
@@ -191,16 +193,19 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var collectionId4n = collectionId4n_example;  // string | collectionId4n
             var listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Add elements to logistic collection
-                ApiError result = apiInstance.AddElementsToLogisticCollection(collectionId4n, listOfGuids, authorization, acceptLanguage);
+                ApiError result = apiInstance.AddElementsToLogisticCollection(collectionId4n, listOfGuids);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -218,8 +223,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **string**| collectionId4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -227,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -238,7 +241,7 @@ No authorization required
 
 <a name="addelementstoroutingcollection"></a>
 # **AddElementsToRoutingCollection**
-> ApiError AddElementsToRoutingCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage)
+> ApiError AddElementsToRoutingCollection (string collectionId4n, ListOfId4ns listOfGuids)
 
 Add element to routing collection
 
@@ -257,16 +260,19 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var collectionId4n = collectionId4n_example;  // string | collectionId4n
             var listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Add element to routing collection
-                ApiError result = apiInstance.AddElementsToRoutingCollection(collectionId4n, listOfGuids, authorization, acceptLanguage);
+                ApiError result = apiInstance.AddElementsToRoutingCollection(collectionId4n, listOfGuids);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -284,8 +290,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **string**| collectionId4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -293,7 +297,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -304,7 +308,7 @@ No authorization required
 
 <a name="createlabelledcollection"></a>
 # **CreateLabelledCollection**
-> Id4n CreateLabelledCollection (CreateLabelledCollectionRequest createInfo, string authorization, string acceptLanguage)
+> Id4n CreateLabelledCollection (CreateLabelledCollectionRequest createInfo)
 
 Create labelled collection
 
@@ -323,15 +327,18 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var createInfo = new CreateLabelledCollectionRequest(); // CreateLabelledCollectionRequest | createInfo
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Create labelled collection
-                Id4n result = apiInstance.CreateLabelledCollection(createInfo, authorization, acceptLanguage);
+                Id4n result = apiInstance.CreateLabelledCollection(createInfo);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -348,8 +355,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createInfo** | [**CreateLabelledCollectionRequest**](CreateLabelledCollectionRequest.md)| createInfo | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -357,7 +362,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -368,7 +373,7 @@ No authorization required
 
 <a name="createlogisticcollection"></a>
 # **CreateLogisticCollection**
-> Id4n CreateLogisticCollection (CreateLogisticCollectionRequest createInfo, string authorization, string acceptLanguage)
+> Id4n CreateLogisticCollection (CreateLogisticCollectionRequest createInfo)
 
 Create logistic collection
 
@@ -387,15 +392,18 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var createInfo = new CreateLogisticCollectionRequest(); // CreateLogisticCollectionRequest | createInfo
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Create logistic collection
-                Id4n result = apiInstance.CreateLogisticCollection(createInfo, authorization, acceptLanguage);
+                Id4n result = apiInstance.CreateLogisticCollection(createInfo);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -412,8 +420,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createInfo** | [**CreateLogisticCollectionRequest**](CreateLogisticCollectionRequest.md)| createInfo | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -421,7 +427,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -432,7 +438,7 @@ No authorization required
 
 <a name="createroutingcollection"></a>
 # **CreateRoutingCollection**
-> Id4n CreateRoutingCollection (CreateRoutingCollectionRequest createInfo, string authorization, string acceptLanguage)
+> Id4n CreateRoutingCollection (CreateRoutingCollectionRequest createInfo)
 
 Create routing collecton
 
@@ -451,15 +457,18 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var createInfo = new CreateRoutingCollectionRequest(); // CreateRoutingCollectionRequest | createInfo
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Create routing collecton
-                Id4n result = apiInstance.CreateRoutingCollection(createInfo, authorization, acceptLanguage);
+                Id4n result = apiInstance.CreateRoutingCollection(createInfo);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -476,8 +485,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createInfo** | [**CreateRoutingCollectionRequest**](CreateRoutingCollectionRequest.md)| createInfo | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -485,7 +492,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -496,7 +503,7 @@ No authorization required
 
 <a name="deletecollection"></a>
 # **DeleteCollection**
-> ApiError DeleteCollection (string id4n, string authorization, string acceptLanguage)
+> ApiError DeleteCollection (string id4n)
 
 Delete collection
 
@@ -515,15 +522,18 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Delete collection
-                ApiError result = apiInstance.DeleteCollection(id4n, authorization, acceptLanguage);
+                ApiError result = apiInstance.DeleteCollection(id4n);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -540,8 +550,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -549,7 +557,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -560,7 +568,7 @@ No authorization required
 
 <a name="deletelabelledcollection"></a>
 # **DeleteLabelledCollection**
-> ApiError DeleteLabelledCollection (string id4n, string authorization, string acceptLanguage)
+> ApiError DeleteLabelledCollection (string id4n)
 
 Delete labelled collection
 
@@ -579,15 +587,18 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Delete labelled collection
-                ApiError result = apiInstance.DeleteLabelledCollection(id4n, authorization, acceptLanguage);
+                ApiError result = apiInstance.DeleteLabelledCollection(id4n);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -604,8 +615,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -613,7 +622,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -624,7 +633,7 @@ No authorization required
 
 <a name="deletelogisticcollection"></a>
 # **DeleteLogisticCollection**
-> Object DeleteLogisticCollection (string id4n, string authorization, string acceptLanguage)
+> Object DeleteLogisticCollection (string id4n)
 
 Delete logistic collection
 
@@ -643,15 +652,18 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Delete logistic collection
-                Object result = apiInstance.DeleteLogisticCollection(id4n, authorization, acceptLanguage);
+                Object result = apiInstance.DeleteLogisticCollection(id4n);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -668,8 +680,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -677,7 +687,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -688,7 +698,7 @@ No authorization required
 
 <a name="deleteroutingcollection"></a>
 # **DeleteRoutingCollection**
-> ApiError DeleteRoutingCollection (string id4n, string authorization, string acceptLanguage)
+> ApiError DeleteRoutingCollection (string id4n)
 
 Delete routing collection
 
@@ -707,15 +717,18 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Delete routing collection
-                ApiError result = apiInstance.DeleteRoutingCollection(id4n, authorization, acceptLanguage);
+                ApiError result = apiInstance.DeleteRoutingCollection(id4n);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -732,8 +745,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -741,7 +752,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -752,7 +763,7 @@ No authorization required
 
 <a name="findcollection"></a>
 # **FindCollection**
-> GuidCollection FindCollection (string id4n, string authorization, string acceptLanguage)
+> GuidCollection FindCollection (string id4n)
 
 Find collection
 
@@ -771,15 +782,18 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Find collection
-                GuidCollection result = apiInstance.FindCollection(id4n, authorization, acceptLanguage);
+                GuidCollection result = apiInstance.FindCollection(id4n);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -796,8 +810,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -805,7 +817,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -816,7 +828,7 @@ No authorization required
 
 <a name="findlabelledcollection"></a>
 # **FindLabelledCollection**
-> GuidCollection FindLabelledCollection (string id4n, string authorization, string acceptLanguage)
+> GuidCollection FindLabelledCollection (string id4n)
 
 Find labelled collection
 
@@ -835,15 +847,18 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Find labelled collection
-                GuidCollection result = apiInstance.FindLabelledCollection(id4n, authorization, acceptLanguage);
+                GuidCollection result = apiInstance.FindLabelledCollection(id4n);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -860,8 +875,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -869,7 +882,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -880,7 +893,7 @@ No authorization required
 
 <a name="findlogisticcollection"></a>
 # **FindLogisticCollection**
-> GuidCollection FindLogisticCollection (string id4n, string authorization, string acceptLanguage)
+> GuidCollection FindLogisticCollection (string id4n)
 
 Find logistic collection
 
@@ -899,15 +912,18 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Find logistic collection
-                GuidCollection result = apiInstance.FindLogisticCollection(id4n, authorization, acceptLanguage);
+                GuidCollection result = apiInstance.FindLogisticCollection(id4n);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -924,8 +940,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -933,7 +947,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -944,7 +958,7 @@ No authorization required
 
 <a name="findroutingcollection"></a>
 # **FindRoutingCollection**
-> GuidCollection FindRoutingCollection (string id4n, string authorization, string acceptLanguage)
+> GuidCollection FindRoutingCollection (string id4n)
 
 Find routing collection
 
@@ -963,15 +977,18 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Find routing collection
-                GuidCollection result = apiInstance.FindRoutingCollection(id4n, authorization, acceptLanguage);
+                GuidCollection result = apiInstance.FindRoutingCollection(id4n);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -988,8 +1005,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -997,7 +1012,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1008,7 +1023,7 @@ No authorization required
 
 <a name="getallcollectionsoforganization"></a>
 # **GetAllCollectionsOfOrganization**
-> PaginatedGuidCollection GetAllCollectionsOfOrganization (long? organizationId, string authorization, string acceptLanguage, int? offset, int? limit, string type, string label, string labelPrefix)
+> PaginatedGuidCollection GetAllCollectionsOfOrganization (long? organizationId, int? offset, int? limit, string type, string label, string labelPrefix)
 
 Get collections of organization
 
@@ -1029,10 +1044,13 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var organizationId = 789;  // long? | organizationId
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var offset = 56;  // int? | Start with the n-th element (optional) 
             var limit = 56;  // int? | The maximum count of returned elements (optional) 
             var type = type_example;  // string | Filter by this type (optional) 
@@ -1042,7 +1060,7 @@ namespace Example
             try
             {
                 // Get collections of organization
-                PaginatedGuidCollection result = apiInstance.GetAllCollectionsOfOrganization(organizationId, authorization, acceptLanguage, offset, limit, type, label, labelPrefix);
+                PaginatedGuidCollection result = apiInstance.GetAllCollectionsOfOrganization(organizationId, offset, limit, type, label, labelPrefix);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1059,8 +1077,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **long?**| organizationId | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
  **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
  **type** | **string**| Filter by this type | [optional] 
@@ -1073,7 +1089,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1084,7 +1100,7 @@ No authorization required
 
 <a name="listelementsofcollection"></a>
 # **ListElementsOfCollection**
-> PaginatedGuidResponse ListElementsOfCollection (string id4n, string authorization, string acceptLanguage, int? offset, int? limit)
+> PaginatedGuidResponse ListElementsOfCollection (string id4n, int? offset, int? limit)
 
 List contents of the collection
 
@@ -1103,17 +1119,20 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var offset = 56;  // int? | Start with the n-th element (optional) 
             var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
                 // List contents of the collection
-                PaginatedGuidResponse result = apiInstance.ListElementsOfCollection(id4n, authorization, acceptLanguage, offset, limit);
+                PaginatedGuidResponse result = apiInstance.ListElementsOfCollection(id4n, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1130,8 +1149,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
  **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
 
@@ -1141,7 +1158,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1152,7 +1169,7 @@ No authorization required
 
 <a name="listelementsoflabelledcollection"></a>
 # **ListElementsOfLabelledCollection**
-> PaginatedGuidResponse ListElementsOfLabelledCollection (string id4n, string authorization, string acceptLanguage, int? offset, int? limit)
+> PaginatedGuidResponse ListElementsOfLabelledCollection (string id4n, int? offset, int? limit)
 
 List contents of the collection
 
@@ -1171,17 +1188,20 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var offset = 56;  // int? | Start with the n-th element (optional) 
             var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
                 // List contents of the collection
-                PaginatedGuidResponse result = apiInstance.ListElementsOfLabelledCollection(id4n, authorization, acceptLanguage, offset, limit);
+                PaginatedGuidResponse result = apiInstance.ListElementsOfLabelledCollection(id4n, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1198,8 +1218,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
  **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
 
@@ -1209,7 +1227,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1220,7 +1238,7 @@ No authorization required
 
 <a name="listelementsoflogisticcollection"></a>
 # **ListElementsOfLogisticCollection**
-> PaginatedGuidResponse ListElementsOfLogisticCollection (string id4n, string authorization, string acceptLanguage, int? offset, int? limit)
+> PaginatedGuidResponse ListElementsOfLogisticCollection (string id4n, int? offset, int? limit)
 
 List contents of the collection
 
@@ -1239,17 +1257,20 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var offset = 56;  // int? | Start with the n-th element (optional) 
             var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
                 // List contents of the collection
-                PaginatedGuidResponse result = apiInstance.ListElementsOfLogisticCollection(id4n, authorization, acceptLanguage, offset, limit);
+                PaginatedGuidResponse result = apiInstance.ListElementsOfLogisticCollection(id4n, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1266,8 +1287,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
  **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
 
@@ -1277,7 +1296,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1288,7 +1307,7 @@ No authorization required
 
 <a name="listelementsofroutingcollection"></a>
 # **ListElementsOfRoutingCollection**
-> PaginatedGuidResponse ListElementsOfRoutingCollection (string id4n, string authorization, string acceptLanguage, int? offset, int? limit)
+> PaginatedGuidResponse ListElementsOfRoutingCollection (string id4n, int? offset, int? limit)
 
 List contents of the collection
 
@@ -1307,17 +1326,20 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var offset = 56;  // int? | Start with the n-th element (optional) 
             var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
                 // List contents of the collection
-                PaginatedGuidResponse result = apiInstance.ListElementsOfRoutingCollection(id4n, authorization, acceptLanguage, offset, limit);
+                PaginatedGuidResponse result = apiInstance.ListElementsOfRoutingCollection(id4n, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1334,8 +1356,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
  **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
 
@@ -1345,7 +1365,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1356,7 +1376,7 @@ No authorization required
 
 <a name="removeelementsfromcollection"></a>
 # **RemoveElementsFromCollection**
-> ApiError RemoveElementsFromCollection (string id4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage)
+> ApiError RemoveElementsFromCollection (string id4n, ListOfId4ns listOfGuids)
 
 Remove elements from collection
 
@@ -1375,16 +1395,19 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
             var listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Remove elements from collection
-                ApiError result = apiInstance.RemoveElementsFromCollection(id4n, listOfGuids, authorization, acceptLanguage);
+                ApiError result = apiInstance.RemoveElementsFromCollection(id4n, listOfGuids);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1402,8 +1425,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -1411,7 +1432,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1422,7 +1443,7 @@ No authorization required
 
 <a name="removeelementsfromlabelledcollection"></a>
 # **RemoveElementsFromLabelledCollection**
-> ApiError RemoveElementsFromLabelledCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage)
+> ApiError RemoveElementsFromLabelledCollection (string collectionId4n, ListOfId4ns listOfGuids)
 
 Remove elements from labelled collection
 
@@ -1441,16 +1462,19 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var collectionId4n = collectionId4n_example;  // string | collectionId4n
             var listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Remove elements from labelled collection
-                ApiError result = apiInstance.RemoveElementsFromLabelledCollection(collectionId4n, listOfGuids, authorization, acceptLanguage);
+                ApiError result = apiInstance.RemoveElementsFromLabelledCollection(collectionId4n, listOfGuids);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1468,8 +1492,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **string**| collectionId4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -1477,7 +1499,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1488,7 +1510,7 @@ No authorization required
 
 <a name="removeelementsfromlogisticcollection"></a>
 # **RemoveElementsFromLogisticCollection**
-> ApiError RemoveElementsFromLogisticCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage)
+> ApiError RemoveElementsFromLogisticCollection (string collectionId4n, ListOfId4ns listOfGuids)
 
 Remove elements from logistic collection
 
@@ -1507,16 +1529,19 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var collectionId4n = collectionId4n_example;  // string | collectionId4n
             var listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Remove elements from logistic collection
-                ApiError result = apiInstance.RemoveElementsFromLogisticCollection(collectionId4n, listOfGuids, authorization, acceptLanguage);
+                ApiError result = apiInstance.RemoveElementsFromLogisticCollection(collectionId4n, listOfGuids);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1534,8 +1559,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **string**| collectionId4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -1543,7 +1566,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1554,7 +1577,7 @@ No authorization required
 
 <a name="removeelementsfromroutingcollection"></a>
 # **RemoveElementsFromRoutingCollection**
-> ApiError RemoveElementsFromRoutingCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage)
+> ApiError RemoveElementsFromRoutingCollection (string collectionId4n, ListOfId4ns listOfGuids)
 
 Remove elements from routing collection
 
@@ -1573,16 +1596,19 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var collectionId4n = collectionId4n_example;  // string | collectionId4n
             var listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Remove elements from routing collection
-                ApiError result = apiInstance.RemoveElementsFromRoutingCollection(collectionId4n, listOfGuids, authorization, acceptLanguage);
+                ApiError result = apiInstance.RemoveElementsFromRoutingCollection(collectionId4n, listOfGuids);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1600,8 +1626,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **string**| collectionId4n | 
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -1609,7 +1633,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1620,7 +1644,7 @@ No authorization required
 
 <a name="setcollection"></a>
 # **SetCollection**
-> Object SetCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
+> Object SetCollection (string id4n, GuidCollection request)
 
 Set collection
 
@@ -1641,16 +1665,19 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
             var request = new GuidCollection(); // GuidCollection | request
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Set collection
-                Object result = apiInstance.SetCollection(id4n, request, authorization, acceptLanguage);
+                Object result = apiInstance.SetCollection(id4n, request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1668,8 +1695,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
  **request** | [**GuidCollection**](GuidCollection.md)| request | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -1677,7 +1702,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1688,7 +1713,7 @@ No authorization required
 
 <a name="setlabelledcollection"></a>
 # **SetLabelledCollection**
-> Object SetLabelledCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
+> Object SetLabelledCollection (string id4n, GuidCollection request)
 
 Set labelled collection values
 
@@ -1709,16 +1734,19 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
             var request = new GuidCollection(); // GuidCollection | request
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Set labelled collection values
-                Object result = apiInstance.SetLabelledCollection(id4n, request, authorization, acceptLanguage);
+                Object result = apiInstance.SetLabelledCollection(id4n, request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1736,8 +1764,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
  **request** | [**GuidCollection**](GuidCollection.md)| request | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -1745,7 +1771,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1756,7 +1782,7 @@ No authorization required
 
 <a name="setlogisticcollection"></a>
 # **SetLogisticCollection**
-> Object SetLogisticCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
+> Object SetLogisticCollection (string id4n, GuidCollection request)
 
 Replace logistic collection
 
@@ -1777,16 +1803,19 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
             var request = new GuidCollection(); // GuidCollection | request
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Replace logistic collection
-                Object result = apiInstance.SetLogisticCollection(id4n, request, authorization, acceptLanguage);
+                Object result = apiInstance.SetLogisticCollection(id4n, request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1804,8 +1833,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
  **request** | [**GuidCollection**](GuidCollection.md)| request | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -1813,7 +1840,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1824,7 +1851,7 @@ No authorization required
 
 <a name="setroutingcollection"></a>
 # **SetRoutingCollection**
-> Object SetRoutingCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
+> Object SetRoutingCollection (string id4n, GuidCollection request)
 
 Update routing collection
 
@@ -1843,16 +1870,19 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
             var request = new GuidCollection(); // GuidCollection | request
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Update routing collection
-                Object result = apiInstance.SetRoutingCollection(id4n, request, authorization, acceptLanguage);
+                Object result = apiInstance.SetRoutingCollection(id4n, request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1870,8 +1900,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
  **request** | [**GuidCollection**](GuidCollection.md)| request | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -1879,7 +1907,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1890,7 +1918,7 @@ No authorization required
 
 <a name="updatecollection"></a>
 # **UpdateCollection**
-> Object UpdateCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
+> Object UpdateCollection (string id4n, GuidCollection request)
 
 Update collection
 
@@ -1911,16 +1939,19 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
             var request = new GuidCollection(); // GuidCollection | request
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Update collection
-                Object result = apiInstance.UpdateCollection(id4n, request, authorization, acceptLanguage);
+                Object result = apiInstance.UpdateCollection(id4n, request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1938,8 +1969,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
  **request** | [**GuidCollection**](GuidCollection.md)| request | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -1947,7 +1976,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1958,7 +1987,7 @@ No authorization required
 
 <a name="updatelabelledcollection"></a>
 # **UpdateLabelledCollection**
-> Object UpdateLabelledCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
+> Object UpdateLabelledCollection (string id4n, GuidCollection request)
 
 Update labelled collection
 
@@ -1979,16 +2008,19 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
             var request = new GuidCollection(); // GuidCollection | request
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Update labelled collection
-                Object result = apiInstance.UpdateLabelledCollection(id4n, request, authorization, acceptLanguage);
+                Object result = apiInstance.UpdateLabelledCollection(id4n, request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -2006,8 +2038,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
  **request** | [**GuidCollection**](GuidCollection.md)| request | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -2015,7 +2045,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -2026,7 +2056,7 @@ No authorization required
 
 <a name="updatelogisticcollection"></a>
 # **UpdateLogisticCollection**
-> Object UpdateLogisticCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
+> Object UpdateLogisticCollection (string id4n, GuidCollection request)
 
 Update logistic collection
 
@@ -2047,16 +2077,19 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
             var request = new GuidCollection(); // GuidCollection | request
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Update logistic collection
-                Object result = apiInstance.UpdateLogisticCollection(id4n, request, authorization, acceptLanguage);
+                Object result = apiInstance.UpdateLogisticCollection(id4n, request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -2074,8 +2107,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
  **request** | [**GuidCollection**](GuidCollection.md)| request | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -2083,7 +2114,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -2094,7 +2125,7 @@ No authorization required
 
 <a name="updateroutingcollection"></a>
 # **UpdateRoutingCollection**
-> Object UpdateRoutingCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
+> Object UpdateRoutingCollection (string id4n, GuidCollection request)
 
 Update routing collection
 
@@ -2115,16 +2146,19 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
             var request = new GuidCollection(); // GuidCollection | request
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Update routing collection
-                Object result = apiInstance.UpdateRoutingCollection(id4n, request, authorization, acceptLanguage);
+                Object result = apiInstance.UpdateRoutingCollection(id4n, request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -2142,8 +2176,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
  **request** | [**GuidCollection**](GuidCollection.md)| request | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -2151,7 +2183,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 

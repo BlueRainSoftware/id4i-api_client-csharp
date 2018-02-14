@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="resolveimageusingget"></a>
 # **ResolveImageUsingGET**
-> byte[] ResolveImageUsingGET (string imageID, string authorization, string acceptLanguage)
+> byte[] ResolveImageUsingGET (string imageID)
 
 Resolve image
 
@@ -28,15 +28,18 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new ImagesApi();
             var imageID = imageID_example;  // string | The id of the image to be resolved.
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Resolve image
-                byte[] result = apiInstance.ResolveImageUsingGET(imageID, authorization, acceptLanguage);
+                byte[] result = apiInstance.ResolveImageUsingGET(imageID);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -53,8 +56,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **imageID** | **string**| The id of the image to be resolved. | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -62,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 

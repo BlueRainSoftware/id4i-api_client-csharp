@@ -17,113 +17,89 @@ namespace BlueRain.ID4i.Api
         /// </summary>
         /// <param name="key">key</param>
         /// <param name="addApiKeyPrivilegeRequest">addApiKeyPrivilegeRequest</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
-        ApiError AddApiKeyPrivilege (string key, AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest, string authorization, string acceptLanguage);
+        ApiError AddApiKeyPrivilege (string key, AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest);
         /// <summary>
         /// Add ID4ns of a privilege 
         /// </summary>
         /// <param name="key">key</param>
         /// <param name="privilege">privilege</param>
         /// <param name="id4ns">id4ns</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
-        ApiError AddApiKeyPrivilegeForId4ns (string key, string privilege, ListOfId4ns id4ns, string authorization, string acceptLanguage);
+        ApiError AddApiKeyPrivilegeForId4ns (string key, string privilege, ListOfId4ns id4ns);
         /// <summary>
         /// Create API key Creation of a new API key.
         /// </summary>
         /// <param name="creationRequest">API key to be created.</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiKeyPresentation</returns>
-        ApiKeyPresentation CreateNewApiKey (ApiKeyCreationRequest creationRequest, string authorization, string acceptLanguage);
+        ApiKeyPresentation CreateNewApiKey (ApiKeyCreationRequest creationRequest);
         /// <summary>
         /// Delete API key Deletion of an API key.
         /// </summary>
         /// <param name="key">The API key to delete.</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
-        ApiError DeleteApiKey (string key, string authorization, string acceptLanguage);
+        ApiError DeleteApiKey (string key);
         /// <summary>
         /// Show API key Showing the details of an API key.
         /// </summary>
         /// <param name="key">The API key to show.</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiKeyPresentation</returns>
-        ApiKeyPresentation GetApiKey (string key, string authorization, string acceptLanguage);
+        ApiKeyPresentation GetApiKey (string key);
         /// <summary>
         /// List all privileges Listing all possible API key privileges.
         /// </summary>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <param name="id4nConcerning">id4nConcerning</param>
         /// <param name="offset">Start with the n-th element</param>
         /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>ApiKeyPrivilegeInfoResponse</returns>
-        ApiKeyPrivilegeInfoResponse ListAllApiKeyPrivileges (string authorization, string acceptLanguage, bool? id4nConcerning, int? offset, int? limit);
+        ApiKeyPrivilegeInfoResponse ListAllApiKeyPrivileges (bool? id4nConcerning, int? offset, int? limit);
         /// <summary>
         /// Find API key by organization Finding all API key assigned to the specified organization in a paginated manner.
         /// </summary>
         /// <param name="organizationId">The id of the organization to search in.</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <param name="offset">Start with the n-th element</param>
         /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>PaginatedApiKeyResponse</returns>
-        PaginatedApiKeyResponse ListAllApiKeysOfOrganization (long? organizationId, string authorization, string acceptLanguage, int? offset, int? limit);
+        PaginatedApiKeyResponse ListAllApiKeysOfOrganization (long? organizationId, int? offset, int? limit);
         /// <summary>
         /// List privileges 
         /// </summary>
         /// <param name="key">key</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <param name="offset">Start with the n-th element</param>
         /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>ApiKeyPrivilegePaginatedResponse</returns>
-        ApiKeyPrivilegePaginatedResponse ListApiKeyPrivileges (string key, string authorization, string acceptLanguage, int? offset, int? limit);
+        ApiKeyPrivilegePaginatedResponse ListApiKeyPrivileges (string key, int? offset, int? limit);
         /// <summary>
         /// ID4ns of a privilege Listing ID4ns of a id4n concerning privilege
         /// </summary>
         /// <param name="key">key</param>
         /// <param name="privilege">privilege</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <param name="offset">Start with the n-th element</param>
         /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>Id4nPresentationPaginatedResponse</returns>
-        Id4nPresentationPaginatedResponse ListId4ns (string key, string privilege, string authorization, string acceptLanguage, int? offset, int? limit);
+        Id4nPresentationPaginatedResponse ListId4ns (string key, string privilege, int? offset, int? limit);
         /// <summary>
         /// Remove privilege 
         /// </summary>
         /// <param name="key">key</param>
         /// <param name="removeApiKeyPrivilegeRequest">removeApiKeyPrivilegeRequest</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
-        ApiError RemoveApiKeyPrivilege (string key, RemoveApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest, string authorization, string acceptLanguage);
+        ApiError RemoveApiKeyPrivilege (string key, RemoveApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest);
         /// <summary>
         /// Remove id4ns of a privilege 
         /// </summary>
         /// <param name="key">key</param>
         /// <param name="privilege">privilege</param>
         /// <param name="id4ns">id4ns</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
-        ApiError RemoveApiKeyPrivilegeForId4ns (string key, string privilege, ListOfId4ns id4ns, string authorization, string acceptLanguage);
+        ApiError RemoveApiKeyPrivilegeForId4ns (string key, string privilege, ListOfId4ns id4ns);
         /// <summary>
         /// Update API keys API keys can be updated with new labels, and be activated and deactivated. The secret or UUID cannot be changed.
         /// </summary>
         /// <param name="key">The API key to be updated.</param>
         /// <param name="apiKeyChange">The new values to apply.</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
-        ApiError UpdateApiKey (string key, ApiKeyChangeRequest apiKeyChange, string authorization, string acceptLanguage);
+        ApiError UpdateApiKey (string key, ApiKeyChangeRequest apiKeyChange);
     }
   
     /// <summary>
@@ -184,10 +160,8 @@ namespace BlueRain.ID4i.Api
         /// </summary>
         /// <param name="key">key</param> 
         /// <param name="addApiKeyPrivilegeRequest">addApiKeyPrivilegeRequest</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
-        public ApiError AddApiKeyPrivilege (string key, AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest, string authorization, string acceptLanguage)
+        public ApiError AddApiKeyPrivilege (string key, AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest)
         {
             
             // verify the required parameter 'key' is set
@@ -207,12 +181,10 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(addApiKeyPrivilegeRequest); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(addApiKeyPrivilegeRequest); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -231,10 +203,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="key">key</param> 
         /// <param name="privilege">privilege</param> 
         /// <param name="id4ns">id4ns</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
-        public ApiError AddApiKeyPrivilegeForId4ns (string key, string privilege, ListOfId4ns id4ns, string authorization, string acceptLanguage)
+        public ApiError AddApiKeyPrivilegeForId4ns (string key, string privilege, ListOfId4ns id4ns)
         {
             
             // verify the required parameter 'key' is set
@@ -258,12 +228,10 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(id4ns); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(id4ns); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -280,10 +248,8 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
         /// Create API key Creation of a new API key.
         /// </summary>
         /// <param name="creationRequest">API key to be created.</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiKeyPresentation</returns>            
-        public ApiKeyPresentation CreateNewApiKey (ApiKeyCreationRequest creationRequest, string authorization, string acceptLanguage)
+        public ApiKeyPresentation CreateNewApiKey (ApiKeyCreationRequest creationRequest)
         {
             
             // verify the required parameter 'creationRequest' is set
@@ -299,12 +265,10 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(creationRequest); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(creationRequest); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -321,10 +285,8 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
         /// Delete API key Deletion of an API key.
         /// </summary>
         /// <param name="key">The API key to delete.</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
-        public ApiError DeleteApiKey (string key, string authorization, string acceptLanguage)
+        public ApiError DeleteApiKey (string key)
         {
             
             // verify the required parameter 'key' is set
@@ -341,11 +303,9 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                                    
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -362,10 +322,8 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
         /// Show API key Showing the details of an API key.
         /// </summary>
         /// <param name="key">The API key to show.</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiKeyPresentation</returns>            
-        public ApiKeyPresentation GetApiKey (string key, string authorization, string acceptLanguage)
+        public ApiKeyPresentation GetApiKey (string key)
         {
             
             // verify the required parameter 'key' is set
@@ -382,11 +340,9 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                                    
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -402,13 +358,11 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
         /// <summary>
         /// List all privileges Listing all possible API key privileges.
         /// </summary>
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="id4nConcerning">id4nConcerning</param> 
         /// <param name="offset">Start with the n-th element</param> 
         /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>ApiKeyPrivilegeInfoResponse</returns>            
-        public ApiKeyPrivilegeInfoResponse ListAllApiKeyPrivileges (string authorization, string acceptLanguage, bool? id4nConcerning, int? offset, int? limit)
+        public ApiKeyPrivilegeInfoResponse ListAllApiKeyPrivileges (bool? id4nConcerning, int? offset, int? limit)
         {
             
     
@@ -424,11 +378,9 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
              if (id4nConcerning != null) queryParams.Add("id4nConcerning", ApiClient.ParameterToString(id4nConcerning)); // query parameter
  if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
  if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
-             if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                        
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -445,12 +397,10 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
         /// Find API key by organization Finding all API key assigned to the specified organization in a paginated manner.
         /// </summary>
         /// <param name="organizationId">The id of the organization to search in.</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="offset">Start with the n-th element</param> 
         /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>PaginatedApiKeyResponse</returns>            
-        public PaginatedApiKeyResponse ListAllApiKeysOfOrganization (long? organizationId, string authorization, string acceptLanguage, int? offset, int? limit)
+        public PaginatedApiKeyResponse ListAllApiKeysOfOrganization (long? organizationId, int? offset, int? limit)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -469,11 +419,9 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
              if (organizationId != null) queryParams.Add("organizationId", ApiClient.ParameterToString(organizationId)); // query parameter
  if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
  if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
-             if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                        
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -490,12 +438,10 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
         /// List privileges 
         /// </summary>
         /// <param name="key">key</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="offset">Start with the n-th element</param> 
         /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>ApiKeyPrivilegePaginatedResponse</returns>            
-        public ApiKeyPrivilegePaginatedResponse ListApiKeyPrivileges (string key, string authorization, string acceptLanguage, int? offset, int? limit)
+        public ApiKeyPrivilegePaginatedResponse ListApiKeyPrivileges (string key, int? offset, int? limit)
         {
             
             // verify the required parameter 'key' is set
@@ -514,11 +460,9 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
     
              if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
  if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
-             if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                        
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -536,12 +480,10 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
         /// </summary>
         /// <param name="key">key</param> 
         /// <param name="privilege">privilege</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="offset">Start with the n-th element</param> 
         /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>Id4nPresentationPaginatedResponse</returns>            
-        public Id4nPresentationPaginatedResponse ListId4ns (string key, string privilege, string authorization, string acceptLanguage, int? offset, int? limit)
+        public Id4nPresentationPaginatedResponse ListId4ns (string key, string privilege, int? offset, int? limit)
         {
             
             // verify the required parameter 'key' is set
@@ -564,11 +506,9 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
     
              if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
  if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
-             if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                        
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -586,10 +526,8 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
         /// </summary>
         /// <param name="key">key</param> 
         /// <param name="removeApiKeyPrivilegeRequest">removeApiKeyPrivilegeRequest</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
-        public ApiError RemoveApiKeyPrivilege (string key, RemoveApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest, string authorization, string acceptLanguage)
+        public ApiError RemoveApiKeyPrivilege (string key, RemoveApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest)
         {
             
             // verify the required parameter 'key' is set
@@ -609,12 +547,10 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(removeApiKeyPrivilegeRequest); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(removeApiKeyPrivilegeRequest); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -633,10 +569,8 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
         /// <param name="key">key</param> 
         /// <param name="privilege">privilege</param> 
         /// <param name="id4ns">id4ns</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
-        public ApiError RemoveApiKeyPrivilegeForId4ns (string key, string privilege, ListOfId4ns id4ns, string authorization, string acceptLanguage)
+        public ApiError RemoveApiKeyPrivilegeForId4ns (string key, string privilege, ListOfId4ns id4ns)
         {
             
             // verify the required parameter 'key' is set
@@ -660,12 +594,10 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(id4ns); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(id4ns); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -683,10 +615,8 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
         /// </summary>
         /// <param name="key">The API key to be updated.</param> 
         /// <param name="apiKeyChange">The new values to apply.</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
-        public ApiError UpdateApiKey (string key, ApiKeyChangeRequest apiKeyChange, string authorization, string acceptLanguage)
+        public ApiError UpdateApiKey (string key, ApiKeyChangeRequest apiKeyChange)
         {
             
             // verify the required parameter 'key' is set
@@ -706,12 +636,10 @@ path = path.Replace("{" + "privilege" + "}", ApiClient.ParameterToString(privile
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(apiKeyChange); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(apiKeyChange); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);

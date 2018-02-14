@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getsumfororganization"></a>
 # **GetSumForOrganization**
-> ServiceCosts GetSumForOrganization (long? organizationId, string authorization, string acceptLanguage)
+> ServiceCosts GetSumForOrganization (long? organizationId)
 
 Get billing amount of services for a given organization
 
@@ -28,15 +28,18 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new BillingApi();
             var organizationId = 789;  // long? | The organization to compute the billing information for
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Get billing amount of services for a given organization
-                ServiceCosts result = apiInstance.GetSumForOrganization(organizationId, authorization, acceptLanguage);
+                ServiceCosts result = apiInstance.GetSumForOrganization(organizationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -53,8 +56,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **long?**| The organization to compute the billing information for | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -62,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 

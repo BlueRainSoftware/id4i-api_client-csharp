@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="getroute"></a>
 # **GetRoute**
-> Route GetRoute (string id4n, string type, string authorization, string acceptLanguage, bool? privateRoutes, bool? publicRoutes)
+> Route GetRoute (string id4n, string type, bool? privateRoutes, bool? publicRoutes)
 
 Retrieve current route of a GUID (or ID4N)
 
@@ -30,18 +30,21 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new RoutingApi();
             var id4n = id4n_example;  // string | id4n
             var type = type_example;  // string | The type of route you want to have
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var privateRoutes = true;  // bool? | privateRoutes (optional) 
             var publicRoutes = true;  // bool? | publicRoutes (optional) 
 
             try
             {
                 // Retrieve current route of a GUID (or ID4N)
-                Route result = apiInstance.GetRoute(id4n, type, authorization, acceptLanguage, privateRoutes, publicRoutes);
+                Route result = apiInstance.GetRoute(id4n, type, privateRoutes, publicRoutes);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -59,8 +62,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
  **type** | **string**| The type of route you want to have | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
  **privateRoutes** | **bool?**| privateRoutes | [optional] 
  **publicRoutes** | **bool?**| publicRoutes | [optional] 
 
@@ -70,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -81,7 +82,7 @@ No authorization required
 
 <a name="getroutingfile"></a>
 # **GetRoutingFile**
-> RoutingFile GetRoutingFile (string id4n, string authorization, string acceptLanguage, long? organizationId)
+> RoutingFile GetRoutingFile (string id4n, long? organizationId)
 
 Retrieve routing file
 
@@ -100,16 +101,19 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new RoutingApi();
             var id4n = id4n_example;  // string | id4n
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var organizationId = 789;  // long? | organizationId (optional) 
 
             try
             {
                 // Retrieve routing file
-                RoutingFile result = apiInstance.GetRoutingFile(id4n, authorization, acceptLanguage, organizationId);
+                RoutingFile result = apiInstance.GetRoutingFile(id4n, organizationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -126,8 +130,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
  **organizationId** | **long?**| organizationId | [optional] 
 
 ### Return type
@@ -136,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -147,7 +149,7 @@ No authorization required
 
 <a name="updateroutingfile"></a>
 # **UpdateRoutingFile**
-> ApiError UpdateRoutingFile (RoutingFileRequest rfr, string id4n, string authorization, string acceptLanguage)
+> ApiError UpdateRoutingFile (RoutingFileRequest rfr, string id4n)
 
 Store routing file
 
@@ -166,16 +168,19 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new RoutingApi();
             var rfr = new RoutingFileRequest(); // RoutingFileRequest | rfr
             var id4n = id4n_example;  // string | id4n
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Store routing file
-                ApiError result = apiInstance.UpdateRoutingFile(rfr, id4n, authorization, acceptLanguage);
+                ApiError result = apiInstance.UpdateRoutingFile(rfr, id4n);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -193,8 +198,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **rfr** | [**RoutingFileRequest**](RoutingFileRequest.md)| rfr | 
  **id4n** | **string**| id4n | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -202,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 

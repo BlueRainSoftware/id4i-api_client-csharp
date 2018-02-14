@@ -18,184 +18,144 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">organizationId</param>
         /// <param name="username">username</param>
         /// <param name="changeRoleRequest">changeRoleRequest</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
-        ApiError AddUserRoles (long? organizationId, string username, ChangeRoleRequest changeRoleRequest, string authorization, string acceptLanguage);
+        ApiError AddUserRoles (long? organizationId, string username, ChangeRoleRequest changeRoleRequest);
         /// <summary>
         /// Create organization Creating a new organization.
         /// </summary>
         /// <param name="organization">Organization to be created</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>Organization</returns>
-        Organization CreateOrganization (Organization organization, string authorization, string acceptLanguage);
+        Organization CreateOrganization (Organization organization);
         /// <summary>
         /// Delete organization 
         /// </summary>
         /// <param name="organizationId">The id of the organization to be deleted.</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
-        ApiError DeleteOrganization (long? organizationId, string authorization, string acceptLanguage);
+        ApiError DeleteOrganization (long? organizationId);
         /// <summary>
         /// Remove billing address 
         /// </summary>
         /// <param name="organizationId">organizationId</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
-        ApiError DeleteOrganizationBillingAddress (long? organizationId, string authorization, string acceptLanguage);
+        ApiError DeleteOrganizationBillingAddress (long? organizationId);
         /// <summary>
         /// Delete organization logo 
         /// </summary>
         /// <param name="organizationId">The id of the organization where the logo should be deleted.</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
-        ApiError DeleteOrganizationLogo (long? organizationId, string authorization, string acceptLanguage);
+        ApiError DeleteOrganizationLogo (long? organizationId);
         /// <summary>
         /// Find organization by id Returns a single organization.
         /// </summary>
         /// <param name="organizationId">The id of the organization to be retrieved.</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>Organization</returns>
-        Organization FindOrganization (long? organizationId, string authorization, string acceptLanguage);
+        Organization FindOrganization (long? organizationId);
         /// <summary>
         /// Retrieve address 
         /// </summary>
         /// <param name="organizationId">organizationId</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>OrganizationAddress</returns>
-        OrganizationAddress FindOrganizationAddress (long? organizationId, string authorization, string acceptLanguage);
+        OrganizationAddress FindOrganizationAddress (long? organizationId);
         /// <summary>
         /// Retrieve billing address 
         /// </summary>
         /// <param name="organizationId">organizationId</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>OrganizationAddress</returns>
-        OrganizationAddress FindOrganizationBillingAddress (long? organizationId, string authorization, string acceptLanguage);
+        OrganizationAddress FindOrganizationBillingAddress (long? organizationId);
         /// <summary>
         /// Get collections of organization Retrieving all collections of an organization in a paginated manner.
         /// </summary>
         /// <param name="organizationId">organizationId</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <param name="offset">Start with the n-th element</param>
         /// <param name="limit">The maximum count of returned elements</param>
         /// <param name="type">Filter by this type</param>
         /// <param name="label">Filter by this label</param>
         /// <param name="labelPrefix">Filter by this label prefix</param>
         /// <returns>PaginatedGuidCollection</returns>
-        PaginatedGuidCollection GetAllCollectionsOfOrganization (long? organizationId, string authorization, string acceptLanguage, int? offset, int? limit, string type, string label, string labelPrefix);
+        PaginatedGuidCollection GetAllCollectionsOfOrganization (long? organizationId, int? offset, int? limit, string type, string label, string labelPrefix);
         /// <summary>
         /// List users and their roles Listing users and their roles in a paginated manner.
         /// </summary>
         /// <param name="organizationId">organizationId</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <param name="offset">Start with the n-th element</param>
         /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>PaginatedUserRolesResponse</returns>
-        PaginatedUserRolesResponse GetAllOrganizationRoles (long? organizationId, string authorization, string acceptLanguage, int? offset, int? limit);
+        PaginatedUserRolesResponse GetAllOrganizationRoles (long? organizationId, int? offset, int? limit);
         /// <summary>
         /// Retrieve organizations of user 
         /// </summary>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <param name="role">role</param>
         /// <param name="offset">Start with the n-th element</param>
         /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>PaginatedOrganizationResponse</returns>
-        PaginatedOrganizationResponse GetOrganizationsOfUser (string authorization, string acceptLanguage, string role, int? offset, int? limit);
+        PaginatedOrganizationResponse GetOrganizationsOfUser (string role, int? offset, int? limit);
         /// <summary>
         /// Get user roles by username 
         /// </summary>
         /// <param name="organizationId">organizationId</param>
         /// <param name="username">username</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <param name="offset">Start with the n-th element</param>
         /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>PaginatedStringResponse</returns>
-        PaginatedStringResponse GetUserRoles (long? organizationId, string username, string authorization, string acceptLanguage, int? offset, int? limit);
+        PaginatedStringResponse GetUserRoles (long? organizationId, string username, int? offset, int? limit);
         /// <summary>
         /// Find users in organization Finding users in the specified organization in a paginated manner.
         /// </summary>
         /// <param name="organizationId">organizationId</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <param name="offset">Start with the n-th element</param>
         /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>PaginatedUserPresentationResponse</returns>
-        PaginatedUserPresentationResponse GetUsersOfOrganization (long? organizationId, string authorization, string acceptLanguage, int? offset, int? limit);
+        PaginatedUserPresentationResponse GetUsersOfOrganization (long? organizationId, int? offset, int? limit);
         /// <summary>
         /// Invite Users 
         /// </summary>
         /// <param name="organizationId">organizationId</param>
         /// <param name="invitationList">invitationList</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
-        ApiError InviteUsers (long? organizationId, OrganizationUserInvitationListRequest invitationList, string authorization, string acceptLanguage);
+        ApiError InviteUsers (long? organizationId, OrganizationUserInvitationListRequest invitationList);
         /// <summary>
         /// List countries 
         /// </summary>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <param name="offset">Start with the n-th element</param>
         /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>PaginatedCountryResponse</returns>
-        PaginatedCountryResponse ListCountries (string authorization, string acceptLanguage, int? offset, int? limit);
+        PaginatedCountryResponse ListCountries (int? offset, int? limit);
         /// <summary>
         /// Remove role(s) from user 
         /// </summary>
         /// <param name="organizationId">organizationId</param>
         /// <param name="username">username</param>
         /// <param name="changeRoleRequest">changeRoleRequest</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
-        ApiError RemoveUserRoles (long? organizationId, string username, ChangeRoleRequest changeRoleRequest, string authorization, string acceptLanguage);
+        ApiError RemoveUserRoles (long? organizationId, string username, ChangeRoleRequest changeRoleRequest);
         /// <summary>
         /// Update organization logo Updating an organization logo using a multipart file upload.
         /// </summary>
         /// <param name="organizationId">The id of the organization where the logo should be updated.</param>
         /// <param name="file">An image containing the new logo.</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>PublicImagePresentation</returns>
-        PublicImagePresentation SetOrganizationLogo (long? organizationId, System.IO.Stream file, string authorization, string acceptLanguage);
+        PublicImagePresentation SetOrganizationLogo (long? organizationId, System.IO.Stream file);
         /// <summary>
         /// Update organization 
         /// </summary>
         /// <param name="organizationId">The id of the organization to be updated.</param>
         /// <param name="organization">Updated organization object</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>Organization</returns>
-        Organization UpdateOrganization (long? organizationId, Organization organization, string authorization, string acceptLanguage);
+        Organization UpdateOrganization (long? organizationId, Organization organization);
         /// <summary>
         /// Store address 
         /// </summary>
         /// <param name="organizationId">organizationId</param>
         /// <param name="addressResource">addressResource</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>OrganizationAddress</returns>
-        OrganizationAddress UpdateOrganizationAddress (long? organizationId, OrganizationAddress addressResource, string authorization, string acceptLanguage);
+        OrganizationAddress UpdateOrganizationAddress (long? organizationId, OrganizationAddress addressResource);
         /// <summary>
         /// Store billing address 
         /// </summary>
         /// <param name="organizationId">organizationId</param>
         /// <param name="addressResource">addressResource</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>OrganizationAddress</returns>
-        OrganizationAddress UpdateOrganizationBillingAddress (long? organizationId, OrganizationAddress addressResource, string authorization, string acceptLanguage);
+        OrganizationAddress UpdateOrganizationBillingAddress (long? organizationId, OrganizationAddress addressResource);
     }
   
     /// <summary>
@@ -257,10 +217,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">organizationId</param> 
         /// <param name="username">username</param> 
         /// <param name="changeRoleRequest">changeRoleRequest</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
-        public ApiError AddUserRoles (long? organizationId, string username, ChangeRoleRequest changeRoleRequest, string authorization, string acceptLanguage)
+        public ApiError AddUserRoles (long? organizationId, string username, ChangeRoleRequest changeRoleRequest)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -284,12 +242,10 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(changeRoleRequest); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(changeRoleRequest); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -306,10 +262,8 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// Create organization Creating a new organization.
         /// </summary>
         /// <param name="organization">Organization to be created</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>Organization</returns>            
-        public Organization CreateOrganization (Organization organization, string authorization, string acceptLanguage)
+        public Organization CreateOrganization (Organization organization)
         {
             
             // verify the required parameter 'organization' is set
@@ -325,12 +279,10 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(organization); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(organization); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -347,10 +299,8 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// Delete organization 
         /// </summary>
         /// <param name="organizationId">The id of the organization to be deleted.</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
-        public ApiError DeleteOrganization (long? organizationId, string authorization, string acceptLanguage)
+        public ApiError DeleteOrganization (long? organizationId)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -367,11 +317,9 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                                    
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -388,10 +336,8 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// Remove billing address 
         /// </summary>
         /// <param name="organizationId">organizationId</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
-        public ApiError DeleteOrganizationBillingAddress (long? organizationId, string authorization, string acceptLanguage)
+        public ApiError DeleteOrganizationBillingAddress (long? organizationId)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -408,11 +354,9 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                                    
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -429,10 +373,8 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// Delete organization logo 
         /// </summary>
         /// <param name="organizationId">The id of the organization where the logo should be deleted.</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
-        public ApiError DeleteOrganizationLogo (long? organizationId, string authorization, string acceptLanguage)
+        public ApiError DeleteOrganizationLogo (long? organizationId)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -449,11 +391,9 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                                    
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -470,10 +410,8 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// Find organization by id Returns a single organization.
         /// </summary>
         /// <param name="organizationId">The id of the organization to be retrieved.</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>Organization</returns>            
-        public Organization FindOrganization (long? organizationId, string authorization, string acceptLanguage)
+        public Organization FindOrganization (long? organizationId)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -490,11 +428,9 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                                    
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -511,10 +447,8 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// Retrieve address 
         /// </summary>
         /// <param name="organizationId">organizationId</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>OrganizationAddress</returns>            
-        public OrganizationAddress FindOrganizationAddress (long? organizationId, string authorization, string acceptLanguage)
+        public OrganizationAddress FindOrganizationAddress (long? organizationId)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -531,11 +465,9 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                                    
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -552,10 +484,8 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// Retrieve billing address 
         /// </summary>
         /// <param name="organizationId">organizationId</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>OrganizationAddress</returns>            
-        public OrganizationAddress FindOrganizationBillingAddress (long? organizationId, string authorization, string acceptLanguage)
+        public OrganizationAddress FindOrganizationBillingAddress (long? organizationId)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -572,11 +502,9 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                                    
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -593,15 +521,13 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// Get collections of organization Retrieving all collections of an organization in a paginated manner.
         /// </summary>
         /// <param name="organizationId">organizationId</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="offset">Start with the n-th element</param> 
         /// <param name="limit">The maximum count of returned elements</param> 
         /// <param name="type">Filter by this type</param> 
         /// <param name="label">Filter by this label</param> 
         /// <param name="labelPrefix">Filter by this label prefix</param> 
         /// <returns>PaginatedGuidCollection</returns>            
-        public PaginatedGuidCollection GetAllCollectionsOfOrganization (long? organizationId, string authorization, string acceptLanguage, int? offset, int? limit, string type, string label, string labelPrefix)
+        public PaginatedGuidCollection GetAllCollectionsOfOrganization (long? organizationId, int? offset, int? limit, string type, string label, string labelPrefix)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -623,11 +549,9 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
  if (type != null) queryParams.Add("type", ApiClient.ParameterToString(type)); // query parameter
  if (label != null) queryParams.Add("label", ApiClient.ParameterToString(label)); // query parameter
  if (labelPrefix != null) queryParams.Add("labelPrefix", ApiClient.ParameterToString(labelPrefix)); // query parameter
-             if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                        
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -644,12 +568,10 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// List users and their roles Listing users and their roles in a paginated manner.
         /// </summary>
         /// <param name="organizationId">organizationId</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="offset">Start with the n-th element</param> 
         /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>PaginatedUserRolesResponse</returns>            
-        public PaginatedUserRolesResponse GetAllOrganizationRoles (long? organizationId, string authorization, string acceptLanguage, int? offset, int? limit)
+        public PaginatedUserRolesResponse GetAllOrganizationRoles (long? organizationId, int? offset, int? limit)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -668,11 +590,9 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
     
              if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
  if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
-             if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                        
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -688,13 +608,11 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// <summary>
         /// Retrieve organizations of user 
         /// </summary>
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="role">role</param> 
         /// <param name="offset">Start with the n-th element</param> 
         /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>PaginatedOrganizationResponse</returns>            
-        public PaginatedOrganizationResponse GetOrganizationsOfUser (string authorization, string acceptLanguage, string role, int? offset, int? limit)
+        public PaginatedOrganizationResponse GetOrganizationsOfUser (string role, int? offset, int? limit)
         {
             
     
@@ -710,11 +628,9 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
              if (role != null) queryParams.Add("role", ApiClient.ParameterToString(role)); // query parameter
  if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
  if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
-             if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                        
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -732,12 +648,10 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// </summary>
         /// <param name="organizationId">organizationId</param> 
         /// <param name="username">username</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="offset">Start with the n-th element</param> 
         /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>PaginatedStringResponse</returns>            
-        public PaginatedStringResponse GetUserRoles (long? organizationId, string username, string authorization, string acceptLanguage, int? offset, int? limit)
+        public PaginatedStringResponse GetUserRoles (long? organizationId, string username, int? offset, int? limit)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -760,11 +674,9 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
     
              if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
  if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
-             if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                        
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -781,12 +693,10 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// Find users in organization Finding users in the specified organization in a paginated manner.
         /// </summary>
         /// <param name="organizationId">organizationId</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="offset">Start with the n-th element</param> 
         /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>PaginatedUserPresentationResponse</returns>            
-        public PaginatedUserPresentationResponse GetUsersOfOrganization (long? organizationId, string authorization, string acceptLanguage, int? offset, int? limit)
+        public PaginatedUserPresentationResponse GetUsersOfOrganization (long? organizationId, int? offset, int? limit)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -805,11 +715,9 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
     
              if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
  if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
-             if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                        
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -827,10 +735,8 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// </summary>
         /// <param name="organizationId">organizationId</param> 
         /// <param name="invitationList">invitationList</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
-        public ApiError InviteUsers (long? organizationId, OrganizationUserInvitationListRequest invitationList, string authorization, string acceptLanguage)
+        public ApiError InviteUsers (long? organizationId, OrganizationUserInvitationListRequest invitationList)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -850,12 +756,10 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(invitationList); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(invitationList); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -871,12 +775,10 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// <summary>
         /// List countries 
         /// </summary>
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="offset">Start with the n-th element</param> 
         /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>PaginatedCountryResponse</returns>            
-        public PaginatedCountryResponse ListCountries (string authorization, string acceptLanguage, int? offset, int? limit)
+        public PaginatedCountryResponse ListCountries (int? offset, int? limit)
         {
             
     
@@ -891,11 +793,9 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
     
              if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
  if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
-             if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                        
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -914,10 +814,8 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// <param name="organizationId">organizationId</param> 
         /// <param name="username">username</param> 
         /// <param name="changeRoleRequest">changeRoleRequest</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
-        public ApiError RemoveUserRoles (long? organizationId, string username, ChangeRoleRequest changeRoleRequest, string authorization, string acceptLanguage)
+        public ApiError RemoveUserRoles (long? organizationId, string username, ChangeRoleRequest changeRoleRequest)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -941,12 +839,10 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(changeRoleRequest); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(changeRoleRequest); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -964,10 +860,8 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// </summary>
         /// <param name="organizationId">The id of the organization where the logo should be updated.</param> 
         /// <param name="file">An image containing the new logo.</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>PublicImagePresentation</returns>            
-        public PublicImagePresentation SetOrganizationLogo (long? organizationId, System.IO.Stream file, string authorization, string acceptLanguage)
+        public PublicImagePresentation SetOrganizationLogo (long? organizationId, System.IO.Stream file)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -987,12 +881,10 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-            if (file != null) fileParams.Add("file", ApiClient.ParameterToFile("file", file));
+                                    if (file != null) fileParams.Add("file", ApiClient.ParameterToFile("file", file));
                 
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -1010,10 +902,8 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// </summary>
         /// <param name="organizationId">The id of the organization to be updated.</param> 
         /// <param name="organization">Updated organization object</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>Organization</returns>            
-        public Organization UpdateOrganization (long? organizationId, Organization organization, string authorization, string acceptLanguage)
+        public Organization UpdateOrganization (long? organizationId, Organization organization)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -1033,12 +923,10 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(organization); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(organization); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -1056,10 +944,8 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// </summary>
         /// <param name="organizationId">organizationId</param> 
         /// <param name="addressResource">addressResource</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>OrganizationAddress</returns>            
-        public OrganizationAddress UpdateOrganizationAddress (long? organizationId, OrganizationAddress addressResource, string authorization, string acceptLanguage)
+        public OrganizationAddress UpdateOrganizationAddress (long? organizationId, OrganizationAddress addressResource)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -1079,12 +965,10 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(addressResource); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(addressResource); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -1102,10 +986,8 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
         /// </summary>
         /// <param name="organizationId">organizationId</param> 
         /// <param name="addressResource">addressResource</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>OrganizationAddress</returns>            
-        public OrganizationAddress UpdateOrganizationBillingAddress (long? organizationId, OrganizationAddress addressResource, string authorization, string acceptLanguage)
+        public OrganizationAddress UpdateOrganizationBillingAddress (long? organizationId, OrganizationAddress addressResource)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -1125,12 +1007,10 @@ path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(addressResource); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(addressResource); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);

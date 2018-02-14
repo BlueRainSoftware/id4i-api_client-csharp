@@ -17,30 +17,24 @@ namespace BlueRain.ID4i.Api
         /// </summary>
         /// <param name="id4n">id4n</param>
         /// <param name="type">The type of route you want to have</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <param name="privateRoutes">privateRoutes</param>
         /// <param name="publicRoutes">publicRoutes</param>
         /// <returns>Route</returns>
-        Route GetRoute (string id4n, string type, string authorization, string acceptLanguage, bool? privateRoutes, bool? publicRoutes);
+        Route GetRoute (string id4n, string type, bool? privateRoutes, bool? publicRoutes);
         /// <summary>
         /// Retrieve routing file 
         /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <param name="organizationId">organizationId</param>
         /// <returns>RoutingFile</returns>
-        RoutingFile GetRoutingFile (string id4n, string authorization, string acceptLanguage, long? organizationId);
+        RoutingFile GetRoutingFile (string id4n, long? organizationId);
         /// <summary>
         /// Store routing file 
         /// </summary>
         /// <param name="rfr">rfr</param>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
-        ApiError UpdateRoutingFile (RoutingFileRequest rfr, string id4n, string authorization, string acceptLanguage);
+        ApiError UpdateRoutingFile (RoutingFileRequest rfr, string id4n);
     }
   
     /// <summary>
@@ -101,12 +95,10 @@ namespace BlueRain.ID4i.Api
         /// </summary>
         /// <param name="id4n">id4n</param> 
         /// <param name="type">The type of route you want to have</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="privateRoutes">privateRoutes</param> 
         /// <param name="publicRoutes">publicRoutes</param> 
         /// <returns>Route</returns>            
-        public Route GetRoute (string id4n, string type, string authorization, string acceptLanguage, bool? privateRoutes, bool? publicRoutes)
+        public Route GetRoute (string id4n, string type, bool? privateRoutes, bool? publicRoutes)
         {
             
             // verify the required parameter 'id4n' is set
@@ -129,11 +121,9 @@ path = path.Replace("{" + "type" + "}", ApiClient.ParameterToString(type));
     
              if (privateRoutes != null) queryParams.Add("privateRoutes", ApiClient.ParameterToString(privateRoutes)); // query parameter
  if (publicRoutes != null) queryParams.Add("publicRoutes", ApiClient.ParameterToString(publicRoutes)); // query parameter
-             if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                        
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -150,11 +140,9 @@ path = path.Replace("{" + "type" + "}", ApiClient.ParameterToString(type));
         /// Retrieve routing file 
         /// </summary>
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="organizationId">organizationId</param> 
         /// <returns>RoutingFile</returns>            
-        public RoutingFile GetRoutingFile (string id4n, string authorization, string acceptLanguage, long? organizationId)
+        public RoutingFile GetRoutingFile (string id4n, long? organizationId)
         {
             
             // verify the required parameter 'id4n' is set
@@ -171,12 +159,10 @@ path = path.Replace("{" + "type" + "}", ApiClient.ParameterToString(type));
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(organizationId); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(organizationId); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -194,10 +180,8 @@ path = path.Replace("{" + "type" + "}", ApiClient.ParameterToString(type));
         /// </summary>
         /// <param name="rfr">rfr</param> 
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
-        public ApiError UpdateRoutingFile (RoutingFileRequest rfr, string id4n, string authorization, string acceptLanguage)
+        public ApiError UpdateRoutingFile (RoutingFileRequest rfr, string id4n)
         {
             
             // verify the required parameter 'rfr' is set
@@ -217,12 +201,10 @@ path = path.Replace("{" + "type" + "}", ApiClient.ParameterToString(type));
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(rfr); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(rfr); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);

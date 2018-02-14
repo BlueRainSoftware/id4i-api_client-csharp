@@ -18,45 +18,35 @@ namespace BlueRain.ID4i.Api
         /// <param name="id4n">The GUID to operate on</param>
         /// <param name="aliasType">Alias type, see the corresponding API model</param>
         /// <param name="alias">The alias to add or update</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
-        ApiError AddGuidAlias (string id4n, string aliasType, GuidAlias alias, string authorization, string acceptLanguage);
+        ApiError AddGuidAlias (string id4n, string aliasType, GuidAlias alias);
         /// <summary>
         /// Remove aliases from GUIDs Remove the alias of the given type
         /// </summary>
         /// <param name="id4n">The GUID to operate on</param>
         /// <param name="aliasType">Alias type, see the corresponding API model</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
-        ApiError AddGuidAlias1 (string id4n, string aliasType, string authorization, string acceptLanguage);
+        ApiError AddGuidAlias1 (string id4n, string aliasType);
         /// <summary>
         /// List all supported alias types Retrieve this list to find out all alias types to use with alias search and change operations
         /// </summary>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>List&lt;string&gt;</returns>
-        List<string> GetGuidAliasTypes (string authorization, string acceptLanguage);
+        List<string> GetGuidAliasTypes ();
         /// <summary>
         /// Get all aliases for the given GUID Looks up the alias for each alias type (group and single GUID) and returns all found ones
         /// </summary>
         /// <param name="id4n">The GUID to operate on</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>Dictionary&lt;string, string&gt;</returns>
-        Dictionary<string, string> GetGuidAliases (string id4n, string authorization, string acceptLanguage);
+        Dictionary<string, string> GetGuidAliases (string id4n);
         /// <summary>
         /// Search for GUIDs by alias 
         /// </summary>
         /// <param name="alias">The alias to search for</param>
         /// <param name="aliasType">Alias type type to search for</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <param name="offset">Start with the n-th element</param>
         /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>PaginatedGuidResponse</returns>
-        PaginatedGuidResponse SearchByAlias (string alias, string aliasType, string authorization, string acceptLanguage, int? offset, int? limit);
+        PaginatedGuidResponse SearchByAlias (string alias, string aliasType, int? offset, int? limit);
     }
   
     /// <summary>
@@ -118,10 +108,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="id4n">The GUID to operate on</param> 
         /// <param name="aliasType">Alias type, see the corresponding API model</param> 
         /// <param name="alias">The alias to add or update</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
-        public ApiError AddGuidAlias (string id4n, string aliasType, GuidAlias alias, string authorization, string acceptLanguage)
+        public ApiError AddGuidAlias (string id4n, string aliasType, GuidAlias alias)
         {
             
             // verify the required parameter 'id4n' is set
@@ -145,12 +133,10 @@ path = path.Replace("{" + "aliasType" + "}", ApiClient.ParameterToString(aliasTy
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(alias); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(alias); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -168,10 +154,8 @@ path = path.Replace("{" + "aliasType" + "}", ApiClient.ParameterToString(aliasTy
         /// </summary>
         /// <param name="id4n">The GUID to operate on</param> 
         /// <param name="aliasType">Alias type, see the corresponding API model</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
-        public ApiError AddGuidAlias1 (string id4n, string aliasType, string authorization, string acceptLanguage)
+        public ApiError AddGuidAlias1 (string id4n, string aliasType)
         {
             
             // verify the required parameter 'id4n' is set
@@ -192,11 +176,9 @@ path = path.Replace("{" + "aliasType" + "}", ApiClient.ParameterToString(aliasTy
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                                    
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -212,10 +194,8 @@ path = path.Replace("{" + "aliasType" + "}", ApiClient.ParameterToString(aliasTy
         /// <summary>
         /// List all supported alias types Retrieve this list to find out all alias types to use with alias search and change operations
         /// </summary>
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>List&lt;string&gt;</returns>            
-        public List<string> GetGuidAliasTypes (string authorization, string acceptLanguage)
+        public List<string> GetGuidAliasTypes ()
         {
             
     
@@ -228,11 +208,9 @@ path = path.Replace("{" + "aliasType" + "}", ApiClient.ParameterToString(aliasTy
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                                    
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -249,10 +227,8 @@ path = path.Replace("{" + "aliasType" + "}", ApiClient.ParameterToString(aliasTy
         /// Get all aliases for the given GUID Looks up the alias for each alias type (group and single GUID) and returns all found ones
         /// </summary>
         /// <param name="id4n">The GUID to operate on</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>Dictionary&lt;string, string&gt;</returns>            
-        public Dictionary<string, string> GetGuidAliases (string id4n, string authorization, string acceptLanguage)
+        public Dictionary<string, string> GetGuidAliases (string id4n)
         {
             
             // verify the required parameter 'id4n' is set
@@ -269,11 +245,9 @@ path = path.Replace("{" + "aliasType" + "}", ApiClient.ParameterToString(aliasTy
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                                    
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -291,12 +265,10 @@ path = path.Replace("{" + "aliasType" + "}", ApiClient.ParameterToString(aliasTy
         /// </summary>
         /// <param name="alias">The alias to search for</param> 
         /// <param name="aliasType">Alias type type to search for</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="offset">Start with the n-th element</param> 
         /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>PaginatedGuidResponse</returns>            
-        public PaginatedGuidResponse SearchByAlias (string alias, string aliasType, string authorization, string acceptLanguage, int? offset, int? limit)
+        public PaginatedGuidResponse SearchByAlias (string alias, string aliasType, int? offset, int? limit)
         {
             
             // verify the required parameter 'alias' is set
@@ -319,11 +291,9 @@ path = path.Replace("{" + "aliasType" + "}", ApiClient.ParameterToString(aliasTy
  if (aliasType != null) queryParams.Add("aliasType", ApiClient.ParameterToString(aliasType)); // query parameter
  if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
  if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
-             if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                        
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
