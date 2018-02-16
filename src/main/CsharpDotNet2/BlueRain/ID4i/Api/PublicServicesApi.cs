@@ -21,14 +21,6 @@ namespace BlueRain.ID4i.Api
         /// <returns>Document</returns>
         Document GetPublicDocument (long? organizationId, string id4n, string fileName);
         /// <summary>
-        /// Retrieve a document (meta-data only, no content) 
-        /// </summary>
-        /// <param name="organizationId">organizationId</param>
-        /// <param name="id4n">id4n</param>
-        /// <param name="fileName">fileName</param>
-        /// <returns>Document</returns>
-        Document GetPublicDocument1 (long? organizationId, string id4n, string fileName);
-        /// <summary>
         /// Forward Forwarding to the designated route defined in the routing,
         /// </summary>
         /// <param name="guid">guid</param>
@@ -46,15 +38,6 @@ namespace BlueRain.ID4i.Api
         /// <summary>
         /// List organization specific documents Listing documents of an id4n owned by a specified organization
         /// </summary>
-        /// <param name="id4n">id4n</param>
-        /// <param name="organizationId">organizationId</param>
-        /// <param name="offset">Start with the n-th element</param>
-        /// <param name="limit">The maximum count of returned elements</param>
-        /// <returns>PaginatedOwnedDocumentResponse</returns>
-        PaginatedOwnedDocumentResponse ListAllPublicDocuments1 (string id4n, long? organizationId, int? offset, int? limit);
-        /// <summary>
-        /// List organization specific documents Listing documents of an id4n owned by a specified organization
-        /// </summary>
         /// <param name="organizationId">organizationId</param>
         /// <param name="id4n">id4n</param>
         /// <param name="offset">Start with the n-th element</param>
@@ -62,30 +45,13 @@ namespace BlueRain.ID4i.Api
         /// <returns>PaginatedDocumentResponse</returns>
         PaginatedDocumentResponse ListPublicDocuments (long? organizationId, string id4n, int? offset, int? limit);
         /// <summary>
-        /// List organization specific documents Listing documents of an id4n owned by a specified organization
-        /// </summary>
-        /// <param name="organizationId">organizationId</param>
-        /// <param name="id4n">id4n</param>
-        /// <param name="offset">Start with the n-th element</param>
-        /// <param name="limit">The maximum count of returned elements</param>
-        /// <returns>PaginatedDocumentResponse</returns>
-        PaginatedDocumentResponse ListPublicDocuments1 (long? organizationId, string id4n, int? offset, int? limit);
-        /// <summary>
         /// Read document contents 
         /// </summary>
         /// <param name="organizationId">organizationId</param>
         /// <param name="id4n">id4n</param>
         /// <param name="fileName">fileName</param>
-        /// <returns>InputStreamResource</returns>
-        InputStreamResource ReadPublicDocument (long? organizationId, string id4n, string fileName);
-        /// <summary>
-        /// Read document contents 
-        /// </summary>
-        /// <param name="organizationId">organizationId</param>
-        /// <param name="id4n">id4n</param>
-        /// <param name="fileName">fileName</param>
-        /// <returns>InputStreamResource</returns>
-        InputStreamResource ReadPublicDocument1 (long? organizationId, string id4n, string fileName);
+        /// <returns>System.IO.Stream</returns>
+        System.IO.Stream ReadPublicDocument (long? organizationId, string id4n, string fileName);
         /// <summary>
         /// Resolve image 
         /// </summary>
@@ -173,7 +139,7 @@ namespace BlueRain.ID4i.Api
             if (fileName == null) throw new ApiException(400, "Missing required parameter 'fileName' when calling GetPublicDocument");
             
     
-            var path = "/api/v1/public/collections/{id4n}/documents/{organizationId}/{fileName}";
+            var path = "/api/v1/public/documents/{id4n}/{organizationId}/{fileName}";
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
 path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
@@ -196,53 +162,6 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
                 throw new ApiException ((int)response.StatusCode, "Error calling GetPublicDocument: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling GetPublicDocument: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (Document) ApiClient.Deserialize(response.Content, typeof(Document), response.Headers);
-        }
-    
-        /// <summary>
-        /// Retrieve a document (meta-data only, no content) 
-        /// </summary>
-        /// <param name="organizationId">organizationId</param> 
-        /// <param name="id4n">id4n</param> 
-        /// <param name="fileName">fileName</param> 
-        /// <returns>Document</returns>            
-        public Document GetPublicDocument1 (long? organizationId, string id4n, string fileName)
-        {
-            
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null) throw new ApiException(400, "Missing required parameter 'organizationId' when calling GetPublicDocument1");
-            
-            // verify the required parameter 'id4n' is set
-            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling GetPublicDocument1");
-            
-            // verify the required parameter 'fileName' is set
-            if (fileName == null) throw new ApiException(400, "Missing required parameter 'fileName' when calling GetPublicDocument1");
-            
-    
-            var path = "/api/v1/public/guids/{id4n}/documents/{organizationId}/{fileName}";
-            path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
-path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
-path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName));
-    
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-                                                    
-            // authentication setting, if any
-            String[] authSettings = new String[] { "Authorization" };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling GetPublicDocument1: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling GetPublicDocument1: " + response.ErrorMessage, response.ErrorMessage);
     
             return (Document) ApiClient.Deserialize(response.Content, typeof(Document), response.Headers);
         }
@@ -299,7 +218,7 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling ListAllPublicDocuments");
             
     
-            var path = "/api/v1/public/collections/{id4n}/documents";
+            var path = "/api/v1/public/documents/{id4n}";
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
     
@@ -330,49 +249,6 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
         /// <summary>
         /// List organization specific documents Listing documents of an id4n owned by a specified organization
         /// </summary>
-        /// <param name="id4n">id4n</param> 
-        /// <param name="organizationId">organizationId</param> 
-        /// <param name="offset">Start with the n-th element</param> 
-        /// <param name="limit">The maximum count of returned elements</param> 
-        /// <returns>PaginatedOwnedDocumentResponse</returns>            
-        public PaginatedOwnedDocumentResponse ListAllPublicDocuments1 (string id4n, long? organizationId, int? offset, int? limit)
-        {
-            
-            // verify the required parameter 'id4n' is set
-            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling ListAllPublicDocuments1");
-            
-    
-            var path = "/api/v1/public/guids/{id4n}/documents";
-            path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
-    
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-             if (organizationId != null) queryParams.Add("organizationId", ApiClient.ParameterToString(organizationId)); // query parameter
- if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
- if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
-                                        
-            // authentication setting, if any
-            String[] authSettings = new String[] { "Authorization" };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling ListAllPublicDocuments1: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling ListAllPublicDocuments1: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (PaginatedOwnedDocumentResponse) ApiClient.Deserialize(response.Content, typeof(PaginatedOwnedDocumentResponse), response.Headers);
-        }
-    
-        /// <summary>
-        /// List organization specific documents Listing documents of an id4n owned by a specified organization
-        /// </summary>
         /// <param name="organizationId">organizationId</param> 
         /// <param name="id4n">id4n</param> 
         /// <param name="offset">Start with the n-th element</param> 
@@ -388,7 +264,7 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling ListPublicDocuments");
             
     
-            var path = "/api/v1/public/collections/{id4n}/documents/{organizationId}";
+            var path = "/api/v1/public/documents/{id4n}/{organizationId}";
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
 path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
@@ -417,59 +293,13 @@ path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
         }
     
         /// <summary>
-        /// List organization specific documents Listing documents of an id4n owned by a specified organization
-        /// </summary>
-        /// <param name="organizationId">organizationId</param> 
-        /// <param name="id4n">id4n</param> 
-        /// <param name="offset">Start with the n-th element</param> 
-        /// <param name="limit">The maximum count of returned elements</param> 
-        /// <returns>PaginatedDocumentResponse</returns>            
-        public PaginatedDocumentResponse ListPublicDocuments1 (long? organizationId, string id4n, int? offset, int? limit)
-        {
-            
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null) throw new ApiException(400, "Missing required parameter 'organizationId' when calling ListPublicDocuments1");
-            
-            // verify the required parameter 'id4n' is set
-            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling ListPublicDocuments1");
-            
-    
-            var path = "/api/v1/public/guids/{id4n}/documents/{organizationId}";
-            path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
-path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
-    
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-             if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
- if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
-                                        
-            // authentication setting, if any
-            String[] authSettings = new String[] { "Authorization" };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling ListPublicDocuments1: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling ListPublicDocuments1: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (PaginatedDocumentResponse) ApiClient.Deserialize(response.Content, typeof(PaginatedDocumentResponse), response.Headers);
-        }
-    
-        /// <summary>
         /// Read document contents 
         /// </summary>
         /// <param name="organizationId">organizationId</param> 
         /// <param name="id4n">id4n</param> 
         /// <param name="fileName">fileName</param> 
-        /// <returns>InputStreamResource</returns>            
-        public InputStreamResource ReadPublicDocument (long? organizationId, string id4n, string fileName)
+        /// <returns>System.IO.Stream</returns>            
+        public System.IO.Stream ReadPublicDocument (long? organizationId, string id4n, string fileName)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -482,7 +312,7 @@ path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
             if (fileName == null) throw new ApiException(400, "Missing required parameter 'fileName' when calling ReadPublicDocument");
             
     
-            var path = "/api/v1/public/collections/{id4n}/documents/{organizationId}/{fileName}/content";
+            var path = "/api/v1/public/documents/{id4n}/{organizationId}/{fileName}/content";
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
 path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
@@ -506,54 +336,7 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling ReadPublicDocument: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (InputStreamResource) ApiClient.Deserialize(response.Content, typeof(InputStreamResource), response.Headers);
-        }
-    
-        /// <summary>
-        /// Read document contents 
-        /// </summary>
-        /// <param name="organizationId">organizationId</param> 
-        /// <param name="id4n">id4n</param> 
-        /// <param name="fileName">fileName</param> 
-        /// <returns>InputStreamResource</returns>            
-        public InputStreamResource ReadPublicDocument1 (long? organizationId, string id4n, string fileName)
-        {
-            
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null) throw new ApiException(400, "Missing required parameter 'organizationId' when calling ReadPublicDocument1");
-            
-            // verify the required parameter 'id4n' is set
-            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling ReadPublicDocument1");
-            
-            // verify the required parameter 'fileName' is set
-            if (fileName == null) throw new ApiException(400, "Missing required parameter 'fileName' when calling ReadPublicDocument1");
-            
-    
-            var path = "/api/v1/public/guids/{id4n}/documents/{organizationId}/{fileName}/content";
-            path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
-path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
-path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName));
-    
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-                                                    
-            // authentication setting, if any
-            String[] authSettings = new String[] { "Authorization" };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling ReadPublicDocument1: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling ReadPublicDocument1: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (InputStreamResource) ApiClient.Deserialize(response.Content, typeof(InputStreamResource), response.Headers);
+            return (System.IO.Stream) ApiClient.Deserialize(response.Content, typeof(System.IO.Stream), response.Headers);
         }
     
         /// <summary>

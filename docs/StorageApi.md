@@ -4,39 +4,25 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateDocument**](StorageApi.md#createdocument) | **PUT** /api/v1/collections/{id4n}/documents/{organizationId} | Create an empty document for an id4n
-[**CreateDocument1**](StorageApi.md#createdocument1) | **PUT** /api/v1/guids/{id4n}/documents/{organizationId} | Create an empty document for an id4n
-[**DeleteDocument**](StorageApi.md#deletedocument) | **DELETE** /api/v1/collections/{id4n}/documents/{organizationId}/{fileName} | Delete a document
-[**DeleteDocument1**](StorageApi.md#deletedocument1) | **DELETE** /api/v1/guids/{id4n}/documents/{organizationId}/{fileName} | Delete a document
-[**GetDocument**](StorageApi.md#getdocument) | **GET** /api/v1/collections/{id4n}/documents/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
-[**GetDocument1**](StorageApi.md#getdocument1) | **GET** /api/v1/guids/{id4n}/documents/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
-[**GetPublicDocument**](StorageApi.md#getpublicdocument) | **GET** /api/v1/public/collections/{id4n}/documents/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
-[**GetPublicDocument1**](StorageApi.md#getpublicdocument1) | **GET** /api/v1/public/guids/{id4n}/documents/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
-[**ListAllDocuments**](StorageApi.md#listalldocuments) | **GET** /api/v1/collections/{id4n}/documents | List documents
-[**ListAllDocuments1**](StorageApi.md#listalldocuments1) | **GET** /api/v1/guids/{id4n}/documents | List documents
-[**ListAllPublicDocuments**](StorageApi.md#listallpublicdocuments) | **GET** /api/v1/public/collections/{id4n}/documents | List organization specific documents
-[**ListAllPublicDocuments1**](StorageApi.md#listallpublicdocuments1) | **GET** /api/v1/public/guids/{id4n}/documents | List organization specific documents
-[**ListDocuments**](StorageApi.md#listdocuments) | **GET** /api/v1/collections/{id4n}/documents/{organizationId} | List organization specific documents
-[**ListDocuments1**](StorageApi.md#listdocuments1) | **GET** /api/v1/guids/{id4n}/documents/{organizationId} | List organization specific documents
-[**ListPublicDocuments**](StorageApi.md#listpublicdocuments) | **GET** /api/v1/public/collections/{id4n}/documents/{organizationId} | List organization specific documents
-[**ListPublicDocuments1**](StorageApi.md#listpublicdocuments1) | **GET** /api/v1/public/guids/{id4n}/documents/{organizationId} | List organization specific documents
-[**Read**](StorageApi.md#read) | **GET** /api/v1/collections/{id4n}/micro/{organization} | Read data from microstorage
-[**Read1**](StorageApi.md#read1) | **GET** /api/v1/guids/{id4n}/micro/{organization} | Read data from microstorage
-[**ReadDocument**](StorageApi.md#readdocument) | **GET** /api/v1/collections/{id4n}/documents/{organizationId}/{fileName}/content | Read document contents
-[**ReadDocument1**](StorageApi.md#readdocument1) | **GET** /api/v1/guids/{id4n}/documents/{organizationId}/{fileName}/content | Read document contents
-[**ReadPublicDocument**](StorageApi.md#readpublicdocument) | **GET** /api/v1/public/collections/{id4n}/documents/{organizationId}/{fileName}/content | Read document contents
-[**ReadPublicDocument1**](StorageApi.md#readpublicdocument1) | **GET** /api/v1/public/guids/{id4n}/documents/{organizationId}/{fileName}/content | Read document contents
-[**UpdateDocument**](StorageApi.md#updatedocument) | **PATCH** /api/v1/collections/{id4n}/documents/{organizationId}/{fileName} | Update a document
-[**UpdateDocument1**](StorageApi.md#updatedocument1) | **PATCH** /api/v1/guids/{id4n}/documents/{organizationId}/{fileName} | Update a document
-[**Write**](StorageApi.md#write) | **PUT** /api/v1/collections/{id4n}/micro/{organization} | Write data to microstorage
-[**Write1**](StorageApi.md#write1) | **PUT** /api/v1/guids/{id4n}/micro/{organization} | Write data to microstorage
-[**WriteDocument**](StorageApi.md#writedocument) | **PUT** /api/v1/collections/{id4n}/documents/{organizationId}/{fileName}/content | Write document contents
-[**WriteDocument1**](StorageApi.md#writedocument1) | **PUT** /api/v1/guids/{id4n}/documents/{organizationId}/{fileName}/content | Write document contents
+[**CreateDocument**](StorageApi.md#createdocument) | **PUT** /api/v1/documents/{id4n}/{organizationId} | Create an empty document for an id4n
+[**DeleteDocument**](StorageApi.md#deletedocument) | **DELETE** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Delete a document
+[**GetDocument**](StorageApi.md#getdocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
+[**GetPublicDocument**](StorageApi.md#getpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
+[**ListAllDocuments**](StorageApi.md#listalldocuments) | **GET** /api/v1/documents/{id4n} | List documents
+[**ListAllPublicDocuments**](StorageApi.md#listallpublicdocuments) | **GET** /api/v1/public/documents/{id4n} | List organization specific documents
+[**ListDocuments**](StorageApi.md#listdocuments) | **GET** /api/v1/documents/{id4n}/{organizationId} | List organization specific documents
+[**ListPublicDocuments**](StorageApi.md#listpublicdocuments) | **GET** /api/v1/public/documents/{id4n}/{organizationId} | List organization specific documents
+[**ReadDocument**](StorageApi.md#readdocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName}/content | Read document contents
+[**ReadFromMicrostorage**](StorageApi.md#readfrommicrostorage) | **GET** /api/v1/microstorage/{id4n}/{organization} | Read data from microstorage
+[**ReadPublicDocument**](StorageApi.md#readpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/content | Read document contents
+[**UpdateDocument**](StorageApi.md#updatedocument) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Update a document
+[**WriteDocument**](StorageApi.md#writedocument) | **PUT** /api/v1/documents/{id4n}/{organizationId}/{fileName}/content | Write document contents
+[**WriteToMicrostorage**](StorageApi.md#writetomicrostorage) | **PUT** /api/v1/microstorage/{id4n}/{organization} | Write data to microstorage
 
 
 <a name="createdocument"></a>
 # **CreateDocument**
-> Document CreateDocument (string id4n, long? organizationId, Document document, string mimeType)
+> Document CreateDocument (long? organizationId, string id4n, Document document, string mimeType)
 
 Create an empty document for an id4n
 
@@ -63,15 +49,15 @@ namespace Example
             // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
 
             var apiInstance = new StorageApi();
-            var id4n = id4n_example;  // string | id4n
             var organizationId = 789;  // long? | organizationId
+            var id4n = id4n_example;  // string | id4n
             var document = new Document(); // Document | document
             var mimeType = mimeType_example;  // string | mimeType (optional) 
 
             try
             {
                 // Create an empty document for an id4n
-                Document result = apiInstance.CreateDocument(id4n, organizationId, document, mimeType);
+                Document result = apiInstance.CreateDocument(organizationId, id4n, document, mimeType);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -87,81 +73,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **string**| id4n | 
  **organizationId** | **long?**| organizationId | 
- **document** | [**Document**](Document.md)| document | 
- **mimeType** | **string**| mimeType | [optional] 
-
-### Return type
-
-[**Document**](Document.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="createdocument1"></a>
-# **CreateDocument1**
-> Document CreateDocument1 (string id4n, long? organizationId, Document document, string mimeType)
-
-Create an empty document for an id4n
-
-The document is created empty, mime-type defaults to text/plain
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using BlueRain.ID4i.Api;
-using BlueRain.ID4i.Client;
-using BlueRain.ID4i.Model;
-
-namespace Example
-{
-    public class CreateDocument1Example
-    {
-        public void main()
-        {
-            
-            // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
-
-            var apiInstance = new StorageApi();
-            var id4n = id4n_example;  // string | id4n
-            var organizationId = 789;  // long? | organizationId
-            var document = new Document(); // Document | document
-            var mimeType = mimeType_example;  // string | mimeType (optional) 
-
-            try
-            {
-                // Create an empty document for an id4n
-                Document result = apiInstance.CreateDocument1(id4n, organizationId, document, mimeType);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling StorageApi.CreateDocument1: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **organizationId** | **long?**| organizationId | 
  **document** | [**Document**](Document.md)| document | 
  **mimeType** | **string**| mimeType | [optional] 
 
@@ -220,75 +133,6 @@ namespace Example
             catch (Exception e)
             {
                 Debug.Print("Exception when calling StorageApi.DeleteDocument: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
- **id4n** | **string**| id4n | 
- **fileName** | **string**| fileName | 
-
-### Return type
-
-[**ResponseEntity**](ResponseEntity.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="deletedocument1"></a>
-# **DeleteDocument1**
-> ResponseEntity DeleteDocument1 (long? organizationId, string id4n, string fileName)
-
-Delete a document
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using BlueRain.ID4i.Api;
-using BlueRain.ID4i.Client;
-using BlueRain.ID4i.Model;
-
-namespace Example
-{
-    public class DeleteDocument1Example
-    {
-        public void main()
-        {
-            
-            // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
-
-            var apiInstance = new StorageApi();
-            var organizationId = 789;  // long? | organizationId
-            var id4n = id4n_example;  // string | id4n
-            var fileName = fileName_example;  // string | fileName
-
-            try
-            {
-                // Delete a document
-                ResponseEntity result = apiInstance.DeleteDocument1(organizationId, id4n, fileName);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling StorageApi.DeleteDocument1: " + e.Message );
             }
         }
     }
@@ -387,75 +231,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getdocument1"></a>
-# **GetDocument1**
-> Document GetDocument1 (long? organizationId, string id4n, string fileName)
-
-Retrieve a document (meta-data only, no content)
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using BlueRain.ID4i.Api;
-using BlueRain.ID4i.Client;
-using BlueRain.ID4i.Model;
-
-namespace Example
-{
-    public class GetDocument1Example
-    {
-        public void main()
-        {
-            
-            // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
-
-            var apiInstance = new StorageApi();
-            var organizationId = 789;  // long? | organizationId
-            var id4n = id4n_example;  // string | id4n
-            var fileName = fileName_example;  // string | fileName
-
-            try
-            {
-                // Retrieve a document (meta-data only, no content)
-                Document result = apiInstance.GetDocument1(organizationId, id4n, fileName);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling StorageApi.GetDocument1: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
- **id4n** | **string**| id4n | 
- **fileName** | **string**| fileName | 
-
-### Return type
-
-[**Document**](Document.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="getpublicdocument"></a>
 # **GetPublicDocument**
 > Document GetPublicDocument (long? organizationId, string id4n, string fileName)
@@ -496,75 +271,6 @@ namespace Example
             catch (Exception e)
             {
                 Debug.Print("Exception when calling StorageApi.GetPublicDocument: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
- **id4n** | **string**| id4n | 
- **fileName** | **string**| fileName | 
-
-### Return type
-
-[**Document**](Document.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="getpublicdocument1"></a>
-# **GetPublicDocument1**
-> Document GetPublicDocument1 (long? organizationId, string id4n, string fileName)
-
-Retrieve a document (meta-data only, no content)
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using BlueRain.ID4i.Api;
-using BlueRain.ID4i.Client;
-using BlueRain.ID4i.Model;
-
-namespace Example
-{
-    public class GetPublicDocument1Example
-    {
-        public void main()
-        {
-            
-            // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
-
-            var apiInstance = new StorageApi();
-            var organizationId = 789;  // long? | organizationId
-            var id4n = id4n_example;  // string | id4n
-            var fileName = fileName_example;  // string | fileName
-
-            try
-            {
-                // Retrieve a document (meta-data only, no content)
-                Document result = apiInstance.GetPublicDocument1(organizationId, id4n, fileName);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling StorageApi.GetPublicDocument1: " + e.Message );
             }
         }
     }
@@ -665,77 +371,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="listalldocuments1"></a>
-# **ListAllDocuments1**
-> PaginatedOwnedDocumentResponse ListAllDocuments1 (string id4n, int? offset, int? limit)
-
-List documents
-
-Listing all documents of an id4n
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using BlueRain.ID4i.Api;
-using BlueRain.ID4i.Client;
-using BlueRain.ID4i.Model;
-
-namespace Example
-{
-    public class ListAllDocuments1Example
-    {
-        public void main()
-        {
-            
-            // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
-
-            var apiInstance = new StorageApi();
-            var id4n = id4n_example;  // string | id4n
-            var offset = 56;  // int? | Start with the n-th element (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements (optional) 
-
-            try
-            {
-                // List documents
-                PaginatedOwnedDocumentResponse result = apiInstance.ListAllDocuments1(id4n, offset, limit);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling StorageApi.ListAllDocuments1: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **string**| id4n | 
- **offset** | **int?**| Start with the n-th element | [optional] 
- **limit** | **int?**| The maximum count of returned elements | [optional] 
-
-### Return type
-
-[**PaginatedOwnedDocumentResponse**](PaginatedOwnedDocumentResponse.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="listallpublicdocuments"></a>
 # **ListAllPublicDocuments**
 > PaginatedOwnedDocumentResponse ListAllPublicDocuments (string id4n, long? organizationId, int? offset, int? limit)
@@ -779,79 +414,6 @@ namespace Example
             catch (Exception e)
             {
                 Debug.Print("Exception when calling StorageApi.ListAllPublicDocuments: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **string**| id4n | 
- **organizationId** | **long?**| organizationId | [optional] 
- **offset** | **int?**| Start with the n-th element | [optional] 
- **limit** | **int?**| The maximum count of returned elements | [optional] 
-
-### Return type
-
-[**PaginatedOwnedDocumentResponse**](PaginatedOwnedDocumentResponse.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="listallpublicdocuments1"></a>
-# **ListAllPublicDocuments1**
-> PaginatedOwnedDocumentResponse ListAllPublicDocuments1 (string id4n, long? organizationId, int? offset, int? limit)
-
-List organization specific documents
-
-Listing documents of an id4n owned by a specified organization
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using BlueRain.ID4i.Api;
-using BlueRain.ID4i.Client;
-using BlueRain.ID4i.Model;
-
-namespace Example
-{
-    public class ListAllPublicDocuments1Example
-    {
-        public void main()
-        {
-            
-            // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
-
-            var apiInstance = new StorageApi();
-            var id4n = id4n_example;  // string | id4n
-            var organizationId = 789;  // long? | organizationId (optional) 
-            var offset = 56;  // int? | Start with the n-th element (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements (optional) 
-
-            try
-            {
-                // List organization specific documents
-                PaginatedOwnedDocumentResponse result = apiInstance.ListAllPublicDocuments1(id4n, organizationId, offset, limit);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling StorageApi.ListAllPublicDocuments1: " + e.Message );
             }
         }
     }
@@ -955,79 +517,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="listdocuments1"></a>
-# **ListDocuments1**
-> PaginatedDocumentResponse ListDocuments1 (long? organizationId, string id4n, int? offset, int? limit)
-
-List organization specific documents
-
-Listing documents of an id4n owned by a specified organization
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using BlueRain.ID4i.Api;
-using BlueRain.ID4i.Client;
-using BlueRain.ID4i.Model;
-
-namespace Example
-{
-    public class ListDocuments1Example
-    {
-        public void main()
-        {
-            
-            // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
-
-            var apiInstance = new StorageApi();
-            var organizationId = 789;  // long? | organizationId
-            var id4n = id4n_example;  // string | id4n
-            var offset = 56;  // int? | Start with the n-th element (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements (optional) 
-
-            try
-            {
-                // List organization specific documents
-                PaginatedDocumentResponse result = apiInstance.ListDocuments1(organizationId, id4n, offset, limit);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling StorageApi.ListDocuments1: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
- **id4n** | **string**| id4n | 
- **offset** | **int?**| Start with the n-th element | [optional] 
- **limit** | **int?**| The maximum count of returned elements | [optional] 
-
-### Return type
-
-[**PaginatedDocumentResponse**](PaginatedDocumentResponse.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="listpublicdocuments"></a>
 # **ListPublicDocuments**
 > PaginatedDocumentResponse ListPublicDocuments (long? organizationId, string id4n, int? offset, int? limit)
@@ -1101,216 +590,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="listpublicdocuments1"></a>
-# **ListPublicDocuments1**
-> PaginatedDocumentResponse ListPublicDocuments1 (long? organizationId, string id4n, int? offset, int? limit)
-
-List organization specific documents
-
-Listing documents of an id4n owned by a specified organization
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using BlueRain.ID4i.Api;
-using BlueRain.ID4i.Client;
-using BlueRain.ID4i.Model;
-
-namespace Example
-{
-    public class ListPublicDocuments1Example
-    {
-        public void main()
-        {
-            
-            // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
-
-            var apiInstance = new StorageApi();
-            var organizationId = 789;  // long? | organizationId
-            var id4n = id4n_example;  // string | id4n
-            var offset = 56;  // int? | Start with the n-th element (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements (optional) 
-
-            try
-            {
-                // List organization specific documents
-                PaginatedDocumentResponse result = apiInstance.ListPublicDocuments1(organizationId, id4n, offset, limit);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling StorageApi.ListPublicDocuments1: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
- **id4n** | **string**| id4n | 
- **offset** | **int?**| Start with the n-th element | [optional] 
- **limit** | **int?**| The maximum count of returned elements | [optional] 
-
-### Return type
-
-[**PaginatedDocumentResponse**](PaginatedDocumentResponse.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="read"></a>
-# **Read**
-> InputStreamResource Read (long? organization, string id4n)
-
-Read data from microstorage
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using BlueRain.ID4i.Api;
-using BlueRain.ID4i.Client;
-using BlueRain.ID4i.Model;
-
-namespace Example
-{
-    public class ReadExample
-    {
-        public void main()
-        {
-            
-            // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
-
-            var apiInstance = new StorageApi();
-            var organization = 789;  // long? | organization
-            var id4n = id4n_example;  // string | id4n
-
-            try
-            {
-                // Read data from microstorage
-                InputStreamResource result = apiInstance.Read(organization, id4n);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling StorageApi.Read: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization** | **long?**| organization | 
- **id4n** | **string**| id4n | 
-
-### Return type
-
-[**InputStreamResource**](InputStreamResource.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="read1"></a>
-# **Read1**
-> InputStreamResource Read1 (long? organization, string id4n)
-
-Read data from microstorage
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using BlueRain.ID4i.Api;
-using BlueRain.ID4i.Client;
-using BlueRain.ID4i.Model;
-
-namespace Example
-{
-    public class Read1Example
-    {
-        public void main()
-        {
-            
-            // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
-
-            var apiInstance = new StorageApi();
-            var organization = 789;  // long? | organization
-            var id4n = id4n_example;  // string | id4n
-
-            try
-            {
-                // Read data from microstorage
-                InputStreamResource result = apiInstance.Read1(organization, id4n);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling StorageApi.Read1: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization** | **long?**| organization | 
- **id4n** | **string**| id4n | 
-
-### Return type
-
-[**InputStreamResource**](InputStreamResource.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="readdocument"></a>
 # **ReadDocument**
-> InputStreamResource ReadDocument (long? organizationId, string id4n, string fileName)
+> System.IO.Stream ReadDocument (long? organizationId, string id4n, string fileName)
 
 Read document contents
 
@@ -1342,7 +624,7 @@ namespace Example
             try
             {
                 // Read document contents
-                InputStreamResource result = apiInstance.ReadDocument(organizationId, id4n, fileName);
+                System.IO.Stream result = apiInstance.ReadDocument(organizationId, id4n, fileName);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1364,7 +646,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InputStreamResource**](InputStreamResource.md)
+**System.IO.Stream**
 
 ### Authorization
 
@@ -1377,11 +659,11 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="readdocument1"></a>
-# **ReadDocument1**
-> InputStreamResource ReadDocument1 (long? organizationId, string id4n, string fileName)
+<a name="readfrommicrostorage"></a>
+# **ReadFromMicrostorage**
+> string ReadFromMicrostorage (long? organization, string id4n)
 
-Read document contents
+Read data from microstorage
 
 ### Example
 ```csharp
@@ -1393,7 +675,7 @@ using BlueRain.ID4i.Model;
 
 namespace Example
 {
-    public class ReadDocument1Example
+    public class ReadFromMicrostorageExample
     {
         public void main()
         {
@@ -1404,19 +686,18 @@ namespace Example
             // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
 
             var apiInstance = new StorageApi();
-            var organizationId = 789;  // long? | organizationId
+            var organization = 789;  // long? | organization
             var id4n = id4n_example;  // string | id4n
-            var fileName = fileName_example;  // string | fileName
 
             try
             {
-                // Read document contents
-                InputStreamResource result = apiInstance.ReadDocument1(organizationId, id4n, fileName);
+                // Read data from microstorage
+                string result = apiInstance.ReadFromMicrostorage(organization, id4n);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling StorageApi.ReadDocument1: " + e.Message );
+                Debug.Print("Exception when calling StorageApi.ReadFromMicrostorage: " + e.Message );
             }
         }
     }
@@ -1427,13 +708,12 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
+ **organization** | **long?**| organization | 
  **id4n** | **string**| id4n | 
- **fileName** | **string**| fileName | 
 
 ### Return type
 
-[**InputStreamResource**](InputStreamResource.md)
+**string**
 
 ### Authorization
 
@@ -1448,7 +728,7 @@ Name | Type | Description  | Notes
 
 <a name="readpublicdocument"></a>
 # **ReadPublicDocument**
-> InputStreamResource ReadPublicDocument (long? organizationId, string id4n, string fileName)
+> System.IO.Stream ReadPublicDocument (long? organizationId, string id4n, string fileName)
 
 Read document contents
 
@@ -1480,7 +760,7 @@ namespace Example
             try
             {
                 // Read document contents
-                InputStreamResource result = apiInstance.ReadPublicDocument(organizationId, id4n, fileName);
+                System.IO.Stream result = apiInstance.ReadPublicDocument(organizationId, id4n, fileName);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1502,76 +782,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InputStreamResource**](InputStreamResource.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="readpublicdocument1"></a>
-# **ReadPublicDocument1**
-> InputStreamResource ReadPublicDocument1 (long? organizationId, string id4n, string fileName)
-
-Read document contents
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using BlueRain.ID4i.Api;
-using BlueRain.ID4i.Client;
-using BlueRain.ID4i.Model;
-
-namespace Example
-{
-    public class ReadPublicDocument1Example
-    {
-        public void main()
-        {
-            
-            // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
-
-            var apiInstance = new StorageApi();
-            var organizationId = 789;  // long? | organizationId
-            var id4n = id4n_example;  // string | id4n
-            var fileName = fileName_example;  // string | fileName
-
-            try
-            {
-                // Read document contents
-                InputStreamResource result = apiInstance.ReadPublicDocument1(organizationId, id4n, fileName);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling StorageApi.ReadPublicDocument1: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
- **id4n** | **string**| id4n | 
- **fileName** | **string**| fileName | 
-
-### Return type
-
-[**InputStreamResource**](InputStreamResource.md)
+**System.IO.Stream**
 
 ### Authorization
 
@@ -1655,222 +866,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="updatedocument1"></a>
-# **UpdateDocument1**
-> Document UpdateDocument1 (long? organizationId, string id4n, string fileName, DocumentUpdate document)
-
-Update a document
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using BlueRain.ID4i.Api;
-using BlueRain.ID4i.Client;
-using BlueRain.ID4i.Model;
-
-namespace Example
-{
-    public class UpdateDocument1Example
-    {
-        public void main()
-        {
-            
-            // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
-
-            var apiInstance = new StorageApi();
-            var organizationId = 789;  // long? | organizationId
-            var id4n = id4n_example;  // string | id4n
-            var fileName = fileName_example;  // string | fileName
-            var document = new DocumentUpdate(); // DocumentUpdate | document
-
-            try
-            {
-                // Update a document
-                Document result = apiInstance.UpdateDocument1(organizationId, id4n, fileName, document);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling StorageApi.UpdateDocument1: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
- **id4n** | **string**| id4n | 
- **fileName** | **string**| fileName | 
- **document** | [**DocumentUpdate**](DocumentUpdate.md)| document | 
-
-### Return type
-
-[**Document**](Document.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="write"></a>
-# **Write**
-> Object Write (long? organization, string id4n, string contentType, long? contentLength)
-
-Write data to microstorage
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using BlueRain.ID4i.Api;
-using BlueRain.ID4i.Client;
-using BlueRain.ID4i.Model;
-
-namespace Example
-{
-    public class WriteExample
-    {
-        public void main()
-        {
-            
-            // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
-
-            var apiInstance = new StorageApi();
-            var organization = 789;  // long? | organization
-            var id4n = id4n_example;  // string | id4n
-            var contentType = contentType_example;  // string | Content-Type (optional) 
-            var contentLength = 789;  // long? | Content-Length (optional) 
-
-            try
-            {
-                // Write data to microstorage
-                Object result = apiInstance.Write(organization, id4n, contentType, contentLength);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling StorageApi.Write: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization** | **long?**| organization | 
- **id4n** | **string**| id4n | 
- **contentType** | **string**| Content-Type | [optional] 
- **contentLength** | **long?**| Content-Length | [optional] 
-
-### Return type
-
-**Object**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: */*
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="write1"></a>
-# **Write1**
-> Object Write1 (long? organization, string id4n, string contentType, long? contentLength)
-
-Write data to microstorage
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using BlueRain.ID4i.Api;
-using BlueRain.ID4i.Client;
-using BlueRain.ID4i.Model;
-
-namespace Example
-{
-    public class Write1Example
-    {
-        public void main()
-        {
-            
-            // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
-
-            var apiInstance = new StorageApi();
-            var organization = 789;  // long? | organization
-            var id4n = id4n_example;  // string | id4n
-            var contentType = contentType_example;  // string | Content-Type (optional) 
-            var contentLength = 789;  // long? | Content-Length (optional) 
-
-            try
-            {
-                // Write data to microstorage
-                Object result = apiInstance.Write1(organization, id4n, contentType, contentLength);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling StorageApi.Write1: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organization** | **long?**| organization | 
- **id4n** | **string**| id4n | 
- **contentType** | **string**| Content-Type | [optional] 
- **contentLength** | **long?**| Content-Length | [optional] 
-
-### Return type
-
-**Object**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: */*
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="writedocument"></a>
 # **WriteDocument**
-> ResponseEntity WriteDocument (long? organizationId, string id4n, string fileName, string contentType, long? contentLength)
+> ResponseEntity WriteDocument (long? organizationId, string id4n, string fileName, File body, string contentType, long? contentLength)
 
 Write document contents
 
@@ -1898,13 +896,14 @@ namespace Example
             var organizationId = 789;  // long? | organizationId
             var id4n = id4n_example;  // string | id4n
             var fileName = fileName_example;  // string | fileName
+            var body = new File(); // File | binary data
             var contentType = contentType_example;  // string | Content-Type (optional) 
             var contentLength = 789;  // long? | Content-Length (optional) 
 
             try
             {
                 // Write document contents
-                ResponseEntity result = apiInstance.WriteDocument(organizationId, id4n, fileName, contentType, contentLength);
+                ResponseEntity result = apiInstance.WriteDocument(organizationId, id4n, fileName, body, contentType, contentLength);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1923,6 +922,7 @@ Name | Type | Description  | Notes
  **organizationId** | **long?**| organizationId | 
  **id4n** | **string**| id4n | 
  **fileName** | **string**| fileName | 
+ **body** | [**File**](File.md)| binary data | 
  **contentType** | **string**| Content-Type | [optional] 
  **contentLength** | **long?**| Content-Length | [optional] 
 
@@ -1941,11 +941,11 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="writedocument1"></a>
-# **WriteDocument1**
-> ResponseEntity WriteDocument1 (long? organizationId, string id4n, string fileName, string contentType, long? contentLength)
+<a name="writetomicrostorage"></a>
+# **WriteToMicrostorage**
+> Object WriteToMicrostorage (long? organization, string id4n, string body, string contentType, long? contentLength)
 
-Write document contents
+Write data to microstorage
 
 ### Example
 ```csharp
@@ -1957,7 +957,7 @@ using BlueRain.ID4i.Model;
 
 namespace Example
 {
-    public class WriteDocument1Example
+    public class WriteToMicrostorageExample
     {
         public void main()
         {
@@ -1968,21 +968,21 @@ namespace Example
             // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
 
             var apiInstance = new StorageApi();
-            var organizationId = 789;  // long? | organizationId
+            var organization = 789;  // long? | organization
             var id4n = id4n_example;  // string | id4n
-            var fileName = fileName_example;  // string | fileName
+            var body = body_example;  // string | binary data
             var contentType = contentType_example;  // string | Content-Type (optional) 
             var contentLength = 789;  // long? | Content-Length (optional) 
 
             try
             {
-                // Write document contents
-                ResponseEntity result = apiInstance.WriteDocument1(organizationId, id4n, fileName, contentType, contentLength);
+                // Write data to microstorage
+                Object result = apiInstance.WriteToMicrostorage(organization, id4n, body, contentType, contentLength);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling StorageApi.WriteDocument1: " + e.Message );
+                Debug.Print("Exception when calling StorageApi.WriteToMicrostorage: " + e.Message );
             }
         }
     }
@@ -1993,15 +993,15 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
+ **organization** | **long?**| organization | 
  **id4n** | **string**| id4n | 
- **fileName** | **string**| fileName | 
+ **body** | **string**| binary data | 
  **contentType** | **string**| Content-Type | [optional] 
  **contentLength** | **long?**| Content-Length | [optional] 
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+**Object**
 
 ### Authorization
 
