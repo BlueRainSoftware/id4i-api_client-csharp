@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 <a name="addapikeyprivilege"></a>
 # **AddApiKeyPrivilege**
-> ApiError AddApiKeyPrivilege (string key, AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest, string authorization, string acceptLanguage)
+> ApiError AddApiKeyPrivilege (string key, AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest)
 
 Add privilege
 
@@ -39,16 +39,19 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new ApiKeysApi();
             var key = key_example;  // string | key
             var addApiKeyPrivilegeRequest = new AddApiKeyPrivilegeRequest(); // AddApiKeyPrivilegeRequest | addApiKeyPrivilegeRequest
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Add privilege
-                ApiError result = apiInstance.AddApiKeyPrivilege(key, addApiKeyPrivilegeRequest, authorization, acceptLanguage);
+                ApiError result = apiInstance.AddApiKeyPrivilege(key, addApiKeyPrivilegeRequest);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -66,8 +69,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **string**| key | 
  **addApiKeyPrivilegeRequest** | [**AddApiKeyPrivilegeRequest**](AddApiKeyPrivilegeRequest.md)| addApiKeyPrivilegeRequest | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -75,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -86,7 +87,7 @@ No authorization required
 
 <a name="addapikeyprivilegeforid4ns"></a>
 # **AddApiKeyPrivilegeForId4ns**
-> ApiError AddApiKeyPrivilegeForId4ns (string key, string privilege, ListOfId4ns id4ns, string authorization, string acceptLanguage)
+> ApiError AddApiKeyPrivilegeForId4ns (string key, string privilege, ListOfId4ns id4ns)
 
 Add ID4ns of a privilege
 
@@ -105,17 +106,20 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new ApiKeysApi();
             var key = key_example;  // string | key
             var privilege = privilege_example;  // string | privilege
             var id4ns = new ListOfId4ns(); // ListOfId4ns | id4ns
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Add ID4ns of a privilege
-                ApiError result = apiInstance.AddApiKeyPrivilegeForId4ns(key, privilege, id4ns, authorization, acceptLanguage);
+                ApiError result = apiInstance.AddApiKeyPrivilegeForId4ns(key, privilege, id4ns);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -134,8 +138,6 @@ Name | Type | Description  | Notes
  **key** | **string**| key | 
  **privilege** | **string**| privilege | 
  **id4ns** | [**ListOfId4ns**](ListOfId4ns.md)| id4ns | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -143,7 +145,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -154,7 +156,7 @@ No authorization required
 
 <a name="createnewapikey"></a>
 # **CreateNewApiKey**
-> ApiKeyPresentation CreateNewApiKey (ApiKeyCreationRequest creationRequest, string authorization, string acceptLanguage)
+> ApiKeyPresentation CreateNewApiKey (ApiKeyCreationRequest creationRequest)
 
 Create API key
 
@@ -175,15 +177,18 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new ApiKeysApi();
             var creationRequest = new ApiKeyCreationRequest(); // ApiKeyCreationRequest | API key to be created.
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Create API key
-                ApiKeyPresentation result = apiInstance.CreateNewApiKey(creationRequest, authorization, acceptLanguage);
+                ApiKeyPresentation result = apiInstance.CreateNewApiKey(creationRequest);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -200,8 +205,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **creationRequest** | [**ApiKeyCreationRequest**](ApiKeyCreationRequest.md)| API key to be created. | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -209,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -220,7 +223,7 @@ No authorization required
 
 <a name="deleteapikey"></a>
 # **DeleteApiKey**
-> ApiError DeleteApiKey (string key, string authorization, string acceptLanguage)
+> ApiError DeleteApiKey (string key)
 
 Delete API key
 
@@ -241,15 +244,18 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new ApiKeysApi();
             var key = key_example;  // string | The API key to delete.
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Delete API key
-                ApiError result = apiInstance.DeleteApiKey(key, authorization, acceptLanguage);
+                ApiError result = apiInstance.DeleteApiKey(key);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -266,8 +272,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **string**| The API key to delete. | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -275,7 +279,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -286,7 +290,7 @@ No authorization required
 
 <a name="getapikey"></a>
 # **GetApiKey**
-> ApiKeyPresentation GetApiKey (string key, string authorization, string acceptLanguage)
+> ApiKeyPresentation GetApiKey (string key)
 
 Show API key
 
@@ -307,15 +311,18 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new ApiKeysApi();
             var key = key_example;  // string | The API key to show.
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Show API key
-                ApiKeyPresentation result = apiInstance.GetApiKey(key, authorization, acceptLanguage);
+                ApiKeyPresentation result = apiInstance.GetApiKey(key);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -332,8 +339,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **string**| The API key to show. | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -341,7 +346,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -352,7 +357,7 @@ No authorization required
 
 <a name="listallapikeyprivileges"></a>
 # **ListAllApiKeyPrivileges**
-> ApiKeyPrivilegeInfoResponse ListAllApiKeyPrivileges (string authorization, string acceptLanguage, bool? id4nConcerning, int? offset, int? limit)
+> ApiKeyPrivilegeInfoResponse ListAllApiKeyPrivileges (bool? id4nConcerning, int? offset, int? limit)
 
 List all privileges
 
@@ -373,9 +378,12 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new ApiKeysApi();
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var id4nConcerning = true;  // bool? | id4nConcerning (optional) 
             var offset = 56;  // int? | Start with the n-th element (optional) 
             var limit = 56;  // int? | The maximum count of returned elements (optional) 
@@ -383,7 +391,7 @@ namespace Example
             try
             {
                 // List all privileges
-                ApiKeyPrivilegeInfoResponse result = apiInstance.ListAllApiKeyPrivileges(authorization, acceptLanguage, id4nConcerning, offset, limit);
+                ApiKeyPrivilegeInfoResponse result = apiInstance.ListAllApiKeyPrivileges(id4nConcerning, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -399,8 +407,6 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
  **id4nConcerning** | **bool?**| id4nConcerning | [optional] 
  **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
@@ -411,7 +417,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -422,7 +428,7 @@ No authorization required
 
 <a name="listallapikeysoforganization"></a>
 # **ListAllApiKeysOfOrganization**
-> PaginatedApiKeyResponse ListAllApiKeysOfOrganization (long? organizationId, string authorization, string acceptLanguage, int? offset, int? limit)
+> PaginatedApiKeyResponse ListAllApiKeysOfOrganization (long? organizationId, int? offset, int? limit)
 
 Find API key by organization
 
@@ -443,17 +449,20 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new ApiKeysApi();
             var organizationId = 789;  // long? | The id of the organization to search in.
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var offset = 56;  // int? | Start with the n-th element (optional) 
             var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
                 // Find API key by organization
-                PaginatedApiKeyResponse result = apiInstance.ListAllApiKeysOfOrganization(organizationId, authorization, acceptLanguage, offset, limit);
+                PaginatedApiKeyResponse result = apiInstance.ListAllApiKeysOfOrganization(organizationId, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -470,8 +479,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **long?**| The id of the organization to search in. | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
  **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
 
@@ -481,7 +488,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -492,7 +499,7 @@ No authorization required
 
 <a name="listapikeyprivileges"></a>
 # **ListApiKeyPrivileges**
-> ApiKeyPrivilegePaginatedResponse ListApiKeyPrivileges (string key, string authorization, string acceptLanguage, int? offset, int? limit)
+> ApiKeyPrivilegePaginatedResponse ListApiKeyPrivileges (string key, int? offset, int? limit)
 
 List privileges
 
@@ -511,17 +518,20 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new ApiKeysApi();
             var key = key_example;  // string | key
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var offset = 56;  // int? | Start with the n-th element (optional) 
             var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
                 // List privileges
-                ApiKeyPrivilegePaginatedResponse result = apiInstance.ListApiKeyPrivileges(key, authorization, acceptLanguage, offset, limit);
+                ApiKeyPrivilegePaginatedResponse result = apiInstance.ListApiKeyPrivileges(key, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -538,8 +548,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **string**| key | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
  **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
 
@@ -549,7 +557,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -560,7 +568,7 @@ No authorization required
 
 <a name="listid4ns"></a>
 # **ListId4ns**
-> Id4nPresentationPaginatedResponse ListId4ns (string key, string privilege, string authorization, string acceptLanguage, int? offset, int? limit)
+> Id4nPresentationPaginatedResponse ListId4ns (string key, string privilege, int? offset, int? limit)
 
 ID4ns of a privilege
 
@@ -581,18 +589,21 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new ApiKeysApi();
             var key = key_example;  // string | key
             var privilege = privilege_example;  // string | privilege
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var offset = 56;  // int? | Start with the n-th element (optional) 
             var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
                 // ID4ns of a privilege
-                Id4nPresentationPaginatedResponse result = apiInstance.ListId4ns(key, privilege, authorization, acceptLanguage, offset, limit);
+                Id4nPresentationPaginatedResponse result = apiInstance.ListId4ns(key, privilege, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -610,8 +621,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **string**| key | 
  **privilege** | **string**| privilege | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
  **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
 
@@ -621,7 +630,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -632,7 +641,7 @@ No authorization required
 
 <a name="removeapikeyprivilege"></a>
 # **RemoveApiKeyPrivilege**
-> ApiError RemoveApiKeyPrivilege (string key, RemoveApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest, string authorization, string acceptLanguage)
+> ApiError RemoveApiKeyPrivilege (string key, RemoveApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest)
 
 Remove privilege
 
@@ -651,16 +660,19 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new ApiKeysApi();
             var key = key_example;  // string | key
             var removeApiKeyPrivilegeRequest = new RemoveApiKeyPrivilegeRequest(); // RemoveApiKeyPrivilegeRequest | removeApiKeyPrivilegeRequest
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Remove privilege
-                ApiError result = apiInstance.RemoveApiKeyPrivilege(key, removeApiKeyPrivilegeRequest, authorization, acceptLanguage);
+                ApiError result = apiInstance.RemoveApiKeyPrivilege(key, removeApiKeyPrivilegeRequest);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -678,8 +690,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **string**| key | 
  **removeApiKeyPrivilegeRequest** | [**RemoveApiKeyPrivilegeRequest**](RemoveApiKeyPrivilegeRequest.md)| removeApiKeyPrivilegeRequest | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -687,7 +697,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -698,7 +708,7 @@ No authorization required
 
 <a name="removeapikeyprivilegeforid4ns"></a>
 # **RemoveApiKeyPrivilegeForId4ns**
-> ApiError RemoveApiKeyPrivilegeForId4ns (string key, string privilege, ListOfId4ns id4ns, string authorization, string acceptLanguage)
+> ApiError RemoveApiKeyPrivilegeForId4ns (string key, string privilege, ListOfId4ns id4ns)
 
 Remove id4ns of a privilege
 
@@ -717,17 +727,20 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new ApiKeysApi();
             var key = key_example;  // string | key
             var privilege = privilege_example;  // string | privilege
             var id4ns = new ListOfId4ns(); // ListOfId4ns | id4ns
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Remove id4ns of a privilege
-                ApiError result = apiInstance.RemoveApiKeyPrivilegeForId4ns(key, privilege, id4ns, authorization, acceptLanguage);
+                ApiError result = apiInstance.RemoveApiKeyPrivilegeForId4ns(key, privilege, id4ns);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -746,8 +759,6 @@ Name | Type | Description  | Notes
  **key** | **string**| key | 
  **privilege** | **string**| privilege | 
  **id4ns** | [**ListOfId4ns**](ListOfId4ns.md)| id4ns | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -755,7 +766,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -766,7 +777,7 @@ No authorization required
 
 <a name="updateapikey"></a>
 # **UpdateApiKey**
-> ApiError UpdateApiKey (string key, ApiKeyChangeRequest apiKeyChange, string authorization, string acceptLanguage)
+> ApiError UpdateApiKey (string key, ApiKeyChangeRequest apiKeyChange)
 
 Update API keys
 
@@ -787,16 +798,19 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new ApiKeysApi();
             var key = key_example;  // string | The API key to be updated.
             var apiKeyChange = new ApiKeyChangeRequest(); // ApiKeyChangeRequest | The new values to apply.
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Update API keys
-                ApiError result = apiInstance.UpdateApiKey(key, apiKeyChange, authorization, acceptLanguage);
+                ApiError result = apiInstance.UpdateApiKey(key, apiKeyChange);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -814,8 +828,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **string**| The API key to be updated. | 
  **apiKeyChange** | [**ApiKeyChangeRequest**](ApiKeyChangeRequest.md)| The new values to apply. | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -823,7 +835,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 

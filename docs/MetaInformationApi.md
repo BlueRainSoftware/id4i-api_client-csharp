@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="applicationinfo"></a>
 # **ApplicationInfo**
-> AppInfoPresentation ApplicationInfo (string authorization, string acceptLanguage)
+> AppInfoPresentation ApplicationInfo ()
 
 Retrieve version information about ID4i
 
@@ -30,14 +30,17 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new MetaInformationApi();
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Retrieve version information about ID4i
-                AppInfoPresentation result = apiInstance.ApplicationInfo(authorization, acceptLanguage);
+                AppInfoPresentation result = apiInstance.ApplicationInfo();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -50,11 +53,7 @@ namespace Example
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -62,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 

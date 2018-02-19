@@ -15,10 +15,8 @@ namespace BlueRain.ID4i.Api
         /// <summary>
         /// Retrieve version information about ID4i Retrieving version information about ID4i.
         /// </summary>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>AppInfoPresentation</returns>
-        AppInfoPresentation ApplicationInfo (string authorization, string acceptLanguage);
+        AppInfoPresentation ApplicationInfo ();
     }
   
     /// <summary>
@@ -77,10 +75,8 @@ namespace BlueRain.ID4i.Api
         /// <summary>
         /// Retrieve version information about ID4i Retrieving version information about ID4i.
         /// </summary>
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>AppInfoPresentation</returns>            
-        public AppInfoPresentation ApplicationInfo (string authorization, string acceptLanguage)
+        public AppInfoPresentation ApplicationInfo ()
         {
             
     
@@ -93,11 +89,9 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                                    
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);

@@ -16,10 +16,8 @@ namespace BlueRain.ID4i.Api
         /// Resolve owner of id4n 
         /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>WhoIsResponse</returns>
-        WhoIsResponse ResolveWhoIsEntry (string id4n, string authorization, string acceptLanguage);
+        WhoIsResponse ResolveWhoIsEntry (string id4n);
     }
   
     /// <summary>
@@ -79,10 +77,8 @@ namespace BlueRain.ID4i.Api
         /// Resolve owner of id4n 
         /// </summary>
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>WhoIsResponse</returns>            
-        public WhoIsResponse ResolveWhoIsEntry (string id4n, string authorization, string acceptLanguage)
+        public WhoIsResponse ResolveWhoIsEntry (string id4n)
         {
             
             // verify the required parameter 'id4n' is set
@@ -99,9 +95,7 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                                    
             // authentication setting, if any
             String[] authSettings = new String[] {  };
     

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="addguidalias"></a>
 # **AddGuidAlias**
-> ApiError AddGuidAlias (string id4n, string aliasType, GuidAlias alias, string authorization, string acceptLanguage)
+> ApiError AddGuidAlias (string id4n, string aliasType, GuidAlias alias)
 
 Add alias for GUIDs
 
@@ -34,17 +34,20 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new AliasApi();
             var id4n = id4n_example;  // string | The GUID to operate on
             var aliasType = aliasType_example;  // string | Alias type, see the corresponding API model
             var alias = new GuidAlias(); // GuidAlias | The alias to add or update
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Add alias for GUIDs
-                ApiError result = apiInstance.AddGuidAlias(id4n, aliasType, alias, authorization, acceptLanguage);
+                ApiError result = apiInstance.AddGuidAlias(id4n, aliasType, alias);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -63,8 +66,6 @@ Name | Type | Description  | Notes
  **id4n** | **string**| The GUID to operate on | 
  **aliasType** | **string**| Alias type, see the corresponding API model | 
  **alias** | [**GuidAlias**](GuidAlias.md)| The alias to add or update | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -72,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -83,7 +84,7 @@ No authorization required
 
 <a name="addguidalias1"></a>
 # **AddGuidAlias1**
-> ApiError AddGuidAlias1 (string id4n, string aliasType, string authorization, string acceptLanguage)
+> ApiError AddGuidAlias1 (string id4n, string aliasType)
 
 Remove aliases from GUIDs
 
@@ -104,16 +105,19 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new AliasApi();
             var id4n = id4n_example;  // string | The GUID to operate on
             var aliasType = aliasType_example;  // string | Alias type, see the corresponding API model
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Remove aliases from GUIDs
-                ApiError result = apiInstance.AddGuidAlias1(id4n, aliasType, authorization, acceptLanguage);
+                ApiError result = apiInstance.AddGuidAlias1(id4n, aliasType);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -131,8 +135,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| The GUID to operate on | 
  **aliasType** | **string**| Alias type, see the corresponding API model | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -140,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -151,7 +153,7 @@ No authorization required
 
 <a name="getguidaliastypes"></a>
 # **GetGuidAliasTypes**
-> List<string> GetGuidAliasTypes (string authorization, string acceptLanguage)
+> List<string> GetGuidAliasTypes ()
 
 List all supported alias types
 
@@ -172,14 +174,17 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new AliasApi();
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // List all supported alias types
-                List&lt;string&gt; result = apiInstance.GetGuidAliasTypes(authorization, acceptLanguage);
+                List&lt;string&gt; result = apiInstance.GetGuidAliasTypes();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -192,11 +197,7 @@ namespace Example
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -204,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -215,7 +216,7 @@ No authorization required
 
 <a name="getguidaliases"></a>
 # **GetGuidAliases**
-> Dictionary<string, string> GetGuidAliases (string id4n, string authorization, string acceptLanguage)
+> Dictionary<string, string> GetGuidAliases (string id4n)
 
 Get all aliases for the given GUID
 
@@ -236,15 +237,18 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new AliasApi();
             var id4n = id4n_example;  // string | The GUID to operate on
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
 
             try
             {
                 // Get all aliases for the given GUID
-                Dictionary&lt;string, string&gt; result = apiInstance.GetGuidAliases(id4n, authorization, acceptLanguage);
+                Dictionary&lt;string, string&gt; result = apiInstance.GetGuidAliases(id4n);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -261,8 +265,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| The GUID to operate on | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
 
 ### Return type
 
@@ -270,7 +272,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -281,7 +283,7 @@ No authorization required
 
 <a name="searchbyalias"></a>
 # **SearchByAlias**
-> PaginatedGuidResponse SearchByAlias (string alias, string aliasType, string authorization, string acceptLanguage, int? offset, int? limit)
+> PaginatedGuidResponse SearchByAlias (string alias, string aliasType, int? offset, int? limit)
 
 Search for GUIDs by alias
 
@@ -300,18 +302,21 @@ namespace Example
         public void main()
         {
             
+            // Configure API key authorization: Authorization
+            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+
             var apiInstance = new AliasApi();
             var alias = alias_example;  // string | The alias to search for
             var aliasType = aliasType_example;  // string | Alias type type to search for
-            var authorization = authorization_example;  // string | Authorization JWT Bearer Token (optional) 
-            var acceptLanguage = acceptLanguage_example;  // string | Requested language (optional) 
             var offset = 56;  // int? | Start with the n-th element (optional) 
             var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
                 // Search for GUIDs by alias
-                PaginatedGuidResponse result = apiInstance.SearchByAlias(alias, aliasType, authorization, acceptLanguage, offset, limit);
+                PaginatedGuidResponse result = apiInstance.SearchByAlias(alias, aliasType, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -329,8 +334,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **alias** | **string**| The alias to search for | 
  **aliasType** | **string**| Alias type type to search for | 
- **authorization** | **string**| Authorization JWT Bearer Token | [optional] 
- **acceptLanguage** | **string**| Requested language | [optional] 
  **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
 
@@ -340,7 +343,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 

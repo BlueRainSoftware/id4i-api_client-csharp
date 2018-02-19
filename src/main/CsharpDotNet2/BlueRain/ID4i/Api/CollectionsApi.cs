@@ -17,286 +17,222 @@ namespace BlueRain.ID4i.Api
         /// </summary>
         /// <param name="id4n">id4n</param>
         /// <param name="listOfGuids">listOfGuids</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
-        ApiError AddElementsToCollection (string id4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage);
+        ApiError AddElementsToCollection (string id4n, ListOfId4ns listOfGuids);
         /// <summary>
         /// Add elements to labelled collection 
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param>
         /// <param name="listOfGuids">listOfGuids</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
-        ApiError AddElementsToLabelledCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage);
+        ApiError AddElementsToLabelledCollection (string collectionId4n, ListOfId4ns listOfGuids);
         /// <summary>
         /// Add elements to logistic collection 
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param>
         /// <param name="listOfGuids">listOfGuids</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
-        ApiError AddElementsToLogisticCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage);
+        ApiError AddElementsToLogisticCollection (string collectionId4n, ListOfId4ns listOfGuids);
         /// <summary>
         /// Add element to routing collection 
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param>
         /// <param name="listOfGuids">listOfGuids</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
-        ApiError AddElementsToRoutingCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage);
+        ApiError AddElementsToRoutingCollection (string collectionId4n, ListOfId4ns listOfGuids);
         /// <summary>
         /// Create labelled collection 
         /// </summary>
         /// <param name="createInfo">createInfo</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>Id4n</returns>
-        Id4n CreateLabelledCollection (CreateLabelledCollectionRequest createInfo, string authorization, string acceptLanguage);
+        Id4n CreateLabelledCollection (CreateLabelledCollectionRequest createInfo);
         /// <summary>
         /// Create logistic collection 
         /// </summary>
         /// <param name="createInfo">createInfo</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>Id4n</returns>
-        Id4n CreateLogisticCollection (CreateLogisticCollectionRequest createInfo, string authorization, string acceptLanguage);
+        Id4n CreateLogisticCollection (CreateLogisticCollectionRequest createInfo);
         /// <summary>
         /// Create routing collecton 
         /// </summary>
         /// <param name="createInfo">createInfo</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>Id4n</returns>
-        Id4n CreateRoutingCollection (CreateRoutingCollectionRequest createInfo, string authorization, string acceptLanguage);
+        Id4n CreateRoutingCollection (CreateRoutingCollectionRequest createInfo);
         /// <summary>
         /// Delete collection 
         /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
-        ApiError DeleteCollection (string id4n, string authorization, string acceptLanguage);
+        ApiError DeleteCollection (string id4n);
         /// <summary>
         /// Delete labelled collection 
         /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
-        ApiError DeleteLabelledCollection (string id4n, string authorization, string acceptLanguage);
+        ApiError DeleteLabelledCollection (string id4n);
         /// <summary>
         /// Delete logistic collection 
         /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>Object</returns>
-        Object DeleteLogisticCollection (string id4n, string authorization, string acceptLanguage);
+        Object DeleteLogisticCollection (string id4n);
         /// <summary>
         /// Delete routing collection 
         /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
-        ApiError DeleteRoutingCollection (string id4n, string authorization, string acceptLanguage);
+        ApiError DeleteRoutingCollection (string id4n);
         /// <summary>
         /// Find collection 
         /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>GuidCollection</returns>
-        GuidCollection FindCollection (string id4n, string authorization, string acceptLanguage);
+        GuidCollection FindCollection (string id4n);
         /// <summary>
         /// Find labelled collection 
         /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>GuidCollection</returns>
-        GuidCollection FindLabelledCollection (string id4n, string authorization, string acceptLanguage);
+        GuidCollection FindLabelledCollection (string id4n);
         /// <summary>
         /// Find logistic collection 
         /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>GuidCollection</returns>
-        GuidCollection FindLogisticCollection (string id4n, string authorization, string acceptLanguage);
+        GuidCollection FindLogisticCollection (string id4n);
         /// <summary>
         /// Find routing collection 
         /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>GuidCollection</returns>
-        GuidCollection FindRoutingCollection (string id4n, string authorization, string acceptLanguage);
+        GuidCollection FindRoutingCollection (string id4n);
         /// <summary>
         /// Get collections of organization Retrieving all collections of an organization in a paginated manner.
         /// </summary>
         /// <param name="organizationId">organizationId</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <param name="offset">Start with the n-th element</param>
         /// <param name="limit">The maximum count of returned elements</param>
         /// <param name="type">Filter by this type</param>
         /// <param name="label">Filter by this label</param>
         /// <param name="labelPrefix">Filter by this label prefix</param>
         /// <returns>PaginatedGuidCollection</returns>
-        PaginatedGuidCollection GetAllCollectionsOfOrganization (long? organizationId, string authorization, string acceptLanguage, int? offset, int? limit, string type, string label, string labelPrefix);
+        PaginatedGuidCollection GetAllCollectionsOfOrganization (long? organizationId, int? offset, int? limit, string type, string label, string labelPrefix);
         /// <summary>
         /// List contents of the collection 
         /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <param name="offset">Start with the n-th element</param>
         /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>PaginatedGuidResponse</returns>
-        PaginatedGuidResponse ListElementsOfCollection (string id4n, string authorization, string acceptLanguage, int? offset, int? limit);
+        PaginatedGuidResponse ListElementsOfCollection (string id4n, int? offset, int? limit);
         /// <summary>
         /// List contents of the collection 
         /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <param name="offset">Start with the n-th element</param>
         /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>PaginatedGuidResponse</returns>
-        PaginatedGuidResponse ListElementsOfLabelledCollection (string id4n, string authorization, string acceptLanguage, int? offset, int? limit);
+        PaginatedGuidResponse ListElementsOfLabelledCollection (string id4n, int? offset, int? limit);
         /// <summary>
         /// List contents of the collection 
         /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <param name="offset">Start with the n-th element</param>
         /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>PaginatedGuidResponse</returns>
-        PaginatedGuidResponse ListElementsOfLogisticCollection (string id4n, string authorization, string acceptLanguage, int? offset, int? limit);
+        PaginatedGuidResponse ListElementsOfLogisticCollection (string id4n, int? offset, int? limit);
         /// <summary>
         /// List contents of the collection 
         /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <param name="offset">Start with the n-th element</param>
         /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>PaginatedGuidResponse</returns>
-        PaginatedGuidResponse ListElementsOfRoutingCollection (string id4n, string authorization, string acceptLanguage, int? offset, int? limit);
+        PaginatedGuidResponse ListElementsOfRoutingCollection (string id4n, int? offset, int? limit);
         /// <summary>
         /// Remove elements from collection 
         /// </summary>
         /// <param name="id4n">id4n</param>
         /// <param name="listOfGuids">listOfGuids</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
-        ApiError RemoveElementsFromCollection (string id4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage);
+        ApiError RemoveElementsFromCollection (string id4n, ListOfId4ns listOfGuids);
         /// <summary>
         /// Remove elements from labelled collection 
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param>
         /// <param name="listOfGuids">listOfGuids</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
-        ApiError RemoveElementsFromLabelledCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage);
+        ApiError RemoveElementsFromLabelledCollection (string collectionId4n, ListOfId4ns listOfGuids);
         /// <summary>
         /// Remove elements from logistic collection 
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param>
         /// <param name="listOfGuids">listOfGuids</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
-        ApiError RemoveElementsFromLogisticCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage);
+        ApiError RemoveElementsFromLogisticCollection (string collectionId4n, ListOfId4ns listOfGuids);
         /// <summary>
         /// Remove elements from routing collection 
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param>
         /// <param name="listOfGuids">listOfGuids</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ApiError</returns>
-        ApiError RemoveElementsFromRoutingCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage);
+        ApiError RemoveElementsFromRoutingCollection (string collectionId4n, ListOfId4ns listOfGuids);
         /// <summary>
         /// Set collection Update collection replacing all values but the ID
         /// </summary>
         /// <param name="id4n">id4n</param>
         /// <param name="request">request</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>Object</returns>
-        Object SetCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage);
+        Object SetCollection (string id4n, GuidCollection request);
         /// <summary>
         /// Set labelled collection values Update labelled collection replacing all values but the ID
         /// </summary>
         /// <param name="id4n">id4n</param>
         /// <param name="request">request</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>Object</returns>
-        Object SetLabelledCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage);
+        Object SetLabelledCollection (string id4n, GuidCollection request);
         /// <summary>
         /// Replace logistic collection Update logistic collection replacing all values but the ID
         /// </summary>
         /// <param name="id4n">id4n</param>
         /// <param name="request">request</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>Object</returns>
-        Object SetLogisticCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage);
+        Object SetLogisticCollection (string id4n, GuidCollection request);
         /// <summary>
         /// Update routing collection 
         /// </summary>
         /// <param name="id4n">id4n</param>
         /// <param name="request">request</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>Object</returns>
-        Object SetRoutingCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage);
+        Object SetRoutingCollection (string id4n, GuidCollection request);
         /// <summary>
         /// Update collection Update collection changing only the given values
         /// </summary>
         /// <param name="id4n">id4n</param>
         /// <param name="request">request</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>Object</returns>
-        Object UpdateCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage);
+        Object UpdateCollection (string id4n, GuidCollection request);
         /// <summary>
         /// Update labelled collection Update labelled collection updating only the given values
         /// </summary>
         /// <param name="id4n">id4n</param>
         /// <param name="request">request</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>Object</returns>
-        Object UpdateLabelledCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage);
+        Object UpdateLabelledCollection (string id4n, GuidCollection request);
         /// <summary>
         /// Update logistic collection Update logistic collection updating only the given values
         /// </summary>
         /// <param name="id4n">id4n</param>
         /// <param name="request">request</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>Object</returns>
-        Object UpdateLogisticCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage);
+        Object UpdateLogisticCollection (string id4n, GuidCollection request);
         /// <summary>
         /// Update routing collection Update routing collection updating only the given values
         /// </summary>
         /// <param name="id4n">id4n</param>
         /// <param name="request">request</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>Object</returns>
-        Object UpdateRoutingCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage);
+        Object UpdateRoutingCollection (string id4n, GuidCollection request);
     }
   
     /// <summary>
@@ -357,10 +293,8 @@ namespace BlueRain.ID4i.Api
         /// </summary>
         /// <param name="id4n">id4n</param> 
         /// <param name="listOfGuids">listOfGuids</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
-        public ApiError AddElementsToCollection (string id4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage)
+        public ApiError AddElementsToCollection (string id4n, ListOfId4ns listOfGuids)
         {
             
             // verify the required parameter 'id4n' is set
@@ -380,12 +314,10 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(listOfGuids); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(listOfGuids); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -403,10 +335,8 @@ namespace BlueRain.ID4i.Api
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param> 
         /// <param name="listOfGuids">listOfGuids</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
-        public ApiError AddElementsToLabelledCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage)
+        public ApiError AddElementsToLabelledCollection (string collectionId4n, ListOfId4ns listOfGuids)
         {
             
             // verify the required parameter 'collectionId4n' is set
@@ -426,12 +356,10 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(listOfGuids); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(listOfGuids); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -449,10 +377,8 @@ namespace BlueRain.ID4i.Api
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param> 
         /// <param name="listOfGuids">listOfGuids</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
-        public ApiError AddElementsToLogisticCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage)
+        public ApiError AddElementsToLogisticCollection (string collectionId4n, ListOfId4ns listOfGuids)
         {
             
             // verify the required parameter 'collectionId4n' is set
@@ -472,12 +398,10 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(listOfGuids); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(listOfGuids); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -495,10 +419,8 @@ namespace BlueRain.ID4i.Api
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param> 
         /// <param name="listOfGuids">listOfGuids</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
-        public ApiError AddElementsToRoutingCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage)
+        public ApiError AddElementsToRoutingCollection (string collectionId4n, ListOfId4ns listOfGuids)
         {
             
             // verify the required parameter 'collectionId4n' is set
@@ -518,12 +440,10 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(listOfGuids); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(listOfGuids); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -540,10 +460,8 @@ namespace BlueRain.ID4i.Api
         /// Create labelled collection 
         /// </summary>
         /// <param name="createInfo">createInfo</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>Id4n</returns>            
-        public Id4n CreateLabelledCollection (CreateLabelledCollectionRequest createInfo, string authorization, string acceptLanguage)
+        public Id4n CreateLabelledCollection (CreateLabelledCollectionRequest createInfo)
         {
             
             // verify the required parameter 'createInfo' is set
@@ -559,12 +477,10 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(createInfo); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(createInfo); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -581,10 +497,8 @@ namespace BlueRain.ID4i.Api
         /// Create logistic collection 
         /// </summary>
         /// <param name="createInfo">createInfo</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>Id4n</returns>            
-        public Id4n CreateLogisticCollection (CreateLogisticCollectionRequest createInfo, string authorization, string acceptLanguage)
+        public Id4n CreateLogisticCollection (CreateLogisticCollectionRequest createInfo)
         {
             
             // verify the required parameter 'createInfo' is set
@@ -600,12 +514,10 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(createInfo); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(createInfo); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -622,10 +534,8 @@ namespace BlueRain.ID4i.Api
         /// Create routing collecton 
         /// </summary>
         /// <param name="createInfo">createInfo</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>Id4n</returns>            
-        public Id4n CreateRoutingCollection (CreateRoutingCollectionRequest createInfo, string authorization, string acceptLanguage)
+        public Id4n CreateRoutingCollection (CreateRoutingCollectionRequest createInfo)
         {
             
             // verify the required parameter 'createInfo' is set
@@ -641,12 +551,10 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(createInfo); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(createInfo); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -663,10 +571,8 @@ namespace BlueRain.ID4i.Api
         /// Delete collection 
         /// </summary>
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
-        public ApiError DeleteCollection (string id4n, string authorization, string acceptLanguage)
+        public ApiError DeleteCollection (string id4n)
         {
             
             // verify the required parameter 'id4n' is set
@@ -683,11 +589,9 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                                    
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -704,10 +608,8 @@ namespace BlueRain.ID4i.Api
         /// Delete labelled collection 
         /// </summary>
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
-        public ApiError DeleteLabelledCollection (string id4n, string authorization, string acceptLanguage)
+        public ApiError DeleteLabelledCollection (string id4n)
         {
             
             // verify the required parameter 'id4n' is set
@@ -724,11 +626,9 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                                    
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -745,10 +645,8 @@ namespace BlueRain.ID4i.Api
         /// Delete logistic collection 
         /// </summary>
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>Object</returns>            
-        public Object DeleteLogisticCollection (string id4n, string authorization, string acceptLanguage)
+        public Object DeleteLogisticCollection (string id4n)
         {
             
             // verify the required parameter 'id4n' is set
@@ -765,11 +663,9 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                                    
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -786,10 +682,8 @@ namespace BlueRain.ID4i.Api
         /// Delete routing collection 
         /// </summary>
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
-        public ApiError DeleteRoutingCollection (string id4n, string authorization, string acceptLanguage)
+        public ApiError DeleteRoutingCollection (string id4n)
         {
             
             // verify the required parameter 'id4n' is set
@@ -806,11 +700,9 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                                    
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -827,10 +719,8 @@ namespace BlueRain.ID4i.Api
         /// Find collection 
         /// </summary>
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>GuidCollection</returns>            
-        public GuidCollection FindCollection (string id4n, string authorization, string acceptLanguage)
+        public GuidCollection FindCollection (string id4n)
         {
             
             // verify the required parameter 'id4n' is set
@@ -847,11 +737,9 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                                    
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -868,10 +756,8 @@ namespace BlueRain.ID4i.Api
         /// Find labelled collection 
         /// </summary>
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>GuidCollection</returns>            
-        public GuidCollection FindLabelledCollection (string id4n, string authorization, string acceptLanguage)
+        public GuidCollection FindLabelledCollection (string id4n)
         {
             
             // verify the required parameter 'id4n' is set
@@ -888,11 +774,9 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                                    
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -909,10 +793,8 @@ namespace BlueRain.ID4i.Api
         /// Find logistic collection 
         /// </summary>
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>GuidCollection</returns>            
-        public GuidCollection FindLogisticCollection (string id4n, string authorization, string acceptLanguage)
+        public GuidCollection FindLogisticCollection (string id4n)
         {
             
             // verify the required parameter 'id4n' is set
@@ -929,11 +811,9 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                                    
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -950,10 +830,8 @@ namespace BlueRain.ID4i.Api
         /// Find routing collection 
         /// </summary>
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>GuidCollection</returns>            
-        public GuidCollection FindRoutingCollection (string id4n, string authorization, string acceptLanguage)
+        public GuidCollection FindRoutingCollection (string id4n)
         {
             
             // verify the required parameter 'id4n' is set
@@ -970,11 +848,9 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                                    
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -991,15 +867,13 @@ namespace BlueRain.ID4i.Api
         /// Get collections of organization Retrieving all collections of an organization in a paginated manner.
         /// </summary>
         /// <param name="organizationId">organizationId</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="offset">Start with the n-th element</param> 
         /// <param name="limit">The maximum count of returned elements</param> 
         /// <param name="type">Filter by this type</param> 
         /// <param name="label">Filter by this label</param> 
         /// <param name="labelPrefix">Filter by this label prefix</param> 
         /// <returns>PaginatedGuidCollection</returns>            
-        public PaginatedGuidCollection GetAllCollectionsOfOrganization (long? organizationId, string authorization, string acceptLanguage, int? offset, int? limit, string type, string label, string labelPrefix)
+        public PaginatedGuidCollection GetAllCollectionsOfOrganization (long? organizationId, int? offset, int? limit, string type, string label, string labelPrefix)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -1021,11 +895,9 @@ namespace BlueRain.ID4i.Api
  if (type != null) queryParams.Add("type", ApiClient.ParameterToString(type)); // query parameter
  if (label != null) queryParams.Add("label", ApiClient.ParameterToString(label)); // query parameter
  if (labelPrefix != null) queryParams.Add("labelPrefix", ApiClient.ParameterToString(labelPrefix)); // query parameter
-             if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                        
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -1042,12 +914,10 @@ namespace BlueRain.ID4i.Api
         /// List contents of the collection 
         /// </summary>
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="offset">Start with the n-th element</param> 
         /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>PaginatedGuidResponse</returns>            
-        public PaginatedGuidResponse ListElementsOfCollection (string id4n, string authorization, string acceptLanguage, int? offset, int? limit)
+        public PaginatedGuidResponse ListElementsOfCollection (string id4n, int? offset, int? limit)
         {
             
             // verify the required parameter 'id4n' is set
@@ -1066,11 +936,9 @@ namespace BlueRain.ID4i.Api
     
              if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
  if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
-             if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                        
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -1087,12 +955,10 @@ namespace BlueRain.ID4i.Api
         /// List contents of the collection 
         /// </summary>
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="offset">Start with the n-th element</param> 
         /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>PaginatedGuidResponse</returns>            
-        public PaginatedGuidResponse ListElementsOfLabelledCollection (string id4n, string authorization, string acceptLanguage, int? offset, int? limit)
+        public PaginatedGuidResponse ListElementsOfLabelledCollection (string id4n, int? offset, int? limit)
         {
             
             // verify the required parameter 'id4n' is set
@@ -1111,11 +977,9 @@ namespace BlueRain.ID4i.Api
     
              if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
  if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
-             if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                        
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -1132,12 +996,10 @@ namespace BlueRain.ID4i.Api
         /// List contents of the collection 
         /// </summary>
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="offset">Start with the n-th element</param> 
         /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>PaginatedGuidResponse</returns>            
-        public PaginatedGuidResponse ListElementsOfLogisticCollection (string id4n, string authorization, string acceptLanguage, int? offset, int? limit)
+        public PaginatedGuidResponse ListElementsOfLogisticCollection (string id4n, int? offset, int? limit)
         {
             
             // verify the required parameter 'id4n' is set
@@ -1156,11 +1018,9 @@ namespace BlueRain.ID4i.Api
     
              if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
  if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
-             if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                        
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -1177,12 +1037,10 @@ namespace BlueRain.ID4i.Api
         /// List contents of the collection 
         /// </summary>
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="offset">Start with the n-th element</param> 
         /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>PaginatedGuidResponse</returns>            
-        public PaginatedGuidResponse ListElementsOfRoutingCollection (string id4n, string authorization, string acceptLanguage, int? offset, int? limit)
+        public PaginatedGuidResponse ListElementsOfRoutingCollection (string id4n, int? offset, int? limit)
         {
             
             // verify the required parameter 'id4n' is set
@@ -1201,11 +1059,9 @@ namespace BlueRain.ID4i.Api
     
              if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
  if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
-             if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                        
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -1223,10 +1079,8 @@ namespace BlueRain.ID4i.Api
         /// </summary>
         /// <param name="id4n">id4n</param> 
         /// <param name="listOfGuids">listOfGuids</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
-        public ApiError RemoveElementsFromCollection (string id4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage)
+        public ApiError RemoveElementsFromCollection (string id4n, ListOfId4ns listOfGuids)
         {
             
             // verify the required parameter 'id4n' is set
@@ -1246,12 +1100,10 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(listOfGuids); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(listOfGuids); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -1269,10 +1121,8 @@ namespace BlueRain.ID4i.Api
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param> 
         /// <param name="listOfGuids">listOfGuids</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
-        public ApiError RemoveElementsFromLabelledCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage)
+        public ApiError RemoveElementsFromLabelledCollection (string collectionId4n, ListOfId4ns listOfGuids)
         {
             
             // verify the required parameter 'collectionId4n' is set
@@ -1292,12 +1142,10 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(listOfGuids); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(listOfGuids); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -1315,10 +1163,8 @@ namespace BlueRain.ID4i.Api
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param> 
         /// <param name="listOfGuids">listOfGuids</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
-        public ApiError RemoveElementsFromLogisticCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage)
+        public ApiError RemoveElementsFromLogisticCollection (string collectionId4n, ListOfId4ns listOfGuids)
         {
             
             // verify the required parameter 'collectionId4n' is set
@@ -1338,12 +1184,10 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(listOfGuids); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(listOfGuids); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -1361,10 +1205,8 @@ namespace BlueRain.ID4i.Api
         /// </summary>
         /// <param name="collectionId4n">collectionId4n</param> 
         /// <param name="listOfGuids">listOfGuids</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ApiError</returns>            
-        public ApiError RemoveElementsFromRoutingCollection (string collectionId4n, ListOfId4ns listOfGuids, string authorization, string acceptLanguage)
+        public ApiError RemoveElementsFromRoutingCollection (string collectionId4n, ListOfId4ns listOfGuids)
         {
             
             // verify the required parameter 'collectionId4n' is set
@@ -1384,12 +1226,10 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(listOfGuids); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(listOfGuids); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -1407,10 +1247,8 @@ namespace BlueRain.ID4i.Api
         /// </summary>
         /// <param name="id4n">id4n</param> 
         /// <param name="request">request</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>Object</returns>            
-        public Object SetCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
+        public Object SetCollection (string id4n, GuidCollection request)
         {
             
             // verify the required parameter 'id4n' is set
@@ -1430,12 +1268,10 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(request); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(request); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -1453,10 +1289,8 @@ namespace BlueRain.ID4i.Api
         /// </summary>
         /// <param name="id4n">id4n</param> 
         /// <param name="request">request</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>Object</returns>            
-        public Object SetLabelledCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
+        public Object SetLabelledCollection (string id4n, GuidCollection request)
         {
             
             // verify the required parameter 'id4n' is set
@@ -1476,12 +1310,10 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(request); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(request); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -1499,10 +1331,8 @@ namespace BlueRain.ID4i.Api
         /// </summary>
         /// <param name="id4n">id4n</param> 
         /// <param name="request">request</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>Object</returns>            
-        public Object SetLogisticCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
+        public Object SetLogisticCollection (string id4n, GuidCollection request)
         {
             
             // verify the required parameter 'id4n' is set
@@ -1522,12 +1352,10 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(request); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(request); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -1545,10 +1373,8 @@ namespace BlueRain.ID4i.Api
         /// </summary>
         /// <param name="id4n">id4n</param> 
         /// <param name="request">request</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>Object</returns>            
-        public Object SetRoutingCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
+        public Object SetRoutingCollection (string id4n, GuidCollection request)
         {
             
             // verify the required parameter 'id4n' is set
@@ -1568,12 +1394,10 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(request); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(request); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -1591,10 +1415,8 @@ namespace BlueRain.ID4i.Api
         /// </summary>
         /// <param name="id4n">id4n</param> 
         /// <param name="request">request</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>Object</returns>            
-        public Object UpdateCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
+        public Object UpdateCollection (string id4n, GuidCollection request)
         {
             
             // verify the required parameter 'id4n' is set
@@ -1614,12 +1436,10 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(request); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(request); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PATCH, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -1637,10 +1457,8 @@ namespace BlueRain.ID4i.Api
         /// </summary>
         /// <param name="id4n">id4n</param> 
         /// <param name="request">request</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>Object</returns>            
-        public Object UpdateLabelledCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
+        public Object UpdateLabelledCollection (string id4n, GuidCollection request)
         {
             
             // verify the required parameter 'id4n' is set
@@ -1660,12 +1478,10 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(request); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(request); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PATCH, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -1683,10 +1499,8 @@ namespace BlueRain.ID4i.Api
         /// </summary>
         /// <param name="id4n">id4n</param> 
         /// <param name="request">request</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>Object</returns>            
-        public Object UpdateLogisticCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
+        public Object UpdateLogisticCollection (string id4n, GuidCollection request)
         {
             
             // verify the required parameter 'id4n' is set
@@ -1706,12 +1520,10 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(request); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(request); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PATCH, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -1729,10 +1541,8 @@ namespace BlueRain.ID4i.Api
         /// </summary>
         /// <param name="id4n">id4n</param> 
         /// <param name="request">request</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>Object</returns>            
-        public Object UpdateRoutingCollection (string id4n, GuidCollection request, string authorization, string acceptLanguage)
+        public Object UpdateRoutingCollection (string id4n, GuidCollection request)
         {
             
             // verify the required parameter 'id4n' is set
@@ -1752,12 +1562,10 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(request); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(request); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PATCH, queryParams, postBody, headerParams, formParams, fileParams, authSettings);

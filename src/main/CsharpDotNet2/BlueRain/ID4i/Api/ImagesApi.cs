@@ -16,10 +16,8 @@ namespace BlueRain.ID4i.Api
         /// Resolve image 
         /// </summary>
         /// <param name="imageID">The id of the image to be resolved.</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>byte[]</returns>
-        byte[] ResolveImageUsingGET (string imageID, string authorization, string acceptLanguage);
+        byte[] ResolveImageUsingGET (string imageID);
     }
   
     /// <summary>
@@ -79,10 +77,8 @@ namespace BlueRain.ID4i.Api
         /// Resolve image 
         /// </summary>
         /// <param name="imageID">The id of the image to be resolved.</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>byte[]</returns>            
-        public byte[] ResolveImageUsingGET (string imageID, string authorization, string acceptLanguage)
+        public byte[] ResolveImageUsingGET (string imageID)
         {
             
             // verify the required parameter 'imageID' is set
@@ -99,11 +95,9 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                                    
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);

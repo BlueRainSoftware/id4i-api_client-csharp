@@ -15,229 +15,94 @@ namespace BlueRain.ID4i.Api
         /// <summary>
         /// Create an empty document for an id4n The document is created empty, mime-type defaults to text/plain
         /// </summary>
-        /// <param name="id4n">id4n</param>
         /// <param name="organizationId">organizationId</param>
-        /// <param name="document">document</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
-        /// <param name="mimeType">mimeType</param>
-        /// <returns>Object</returns>
-        Object CreateDocument (string id4n, long? organizationId, Document document, string authorization, string acceptLanguage, string mimeType);
-        /// <summary>
-        /// Create an empty document for an id4n The document is created empty, mime-type defaults to text/plain
-        /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="organizationId">organizationId</param>
         /// <param name="document">document</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <param name="mimeType">mimeType</param>
-        /// <returns>Object</returns>
-        Object CreateDocument1 (string id4n, long? organizationId, Document document, string authorization, string acceptLanguage, string mimeType);
+        /// <returns>Document</returns>
+        Document CreateDocument (long? organizationId, string id4n, Document document, string mimeType);
         /// <summary>
         /// Delete a document 
         /// </summary>
         /// <param name="organizationId">organizationId</param>
         /// <param name="id4n">id4n</param>
         /// <param name="fileName">fileName</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
-        /// <returns>Object</returns>
-        Object DeleteDocument (long? organizationId, string id4n, string fileName, string authorization, string acceptLanguage);
-        /// <summary>
-        /// Delete a document 
-        /// </summary>
-        /// <param name="organizationId">organizationId</param>
-        /// <param name="id4n">id4n</param>
-        /// <param name="fileName">fileName</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
-        /// <returns>Object</returns>
-        Object DeleteDocument1 (long? organizationId, string id4n, string fileName, string authorization, string acceptLanguage);
+        /// <returns>ResponseEntity</returns>
+        ResponseEntity DeleteDocument (long? organizationId, string id4n, string fileName);
         /// <summary>
         /// Retrieve a document (meta-data only, no content) 
         /// </summary>
         /// <param name="organizationId">organizationId</param>
         /// <param name="id4n">id4n</param>
         /// <param name="fileName">fileName</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>Document</returns>
-        Document GetDocument (long? organizationId, string id4n, string fileName, string authorization, string acceptLanguage);
+        Document GetDocument (long? organizationId, string id4n, string fileName);
         /// <summary>
         /// Retrieve a document (meta-data only, no content) 
         /// </summary>
         /// <param name="organizationId">organizationId</param>
         /// <param name="id4n">id4n</param>
         /// <param name="fileName">fileName</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>Document</returns>
-        Document GetDocument1 (long? organizationId, string id4n, string fileName, string authorization, string acceptLanguage);
-        /// <summary>
-        /// Retrieve a document (meta-data only, no content) 
-        /// </summary>
-        /// <param name="organizationId">organizationId</param>
-        /// <param name="id4n">id4n</param>
-        /// <param name="fileName">fileName</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
-        /// <returns>Document</returns>
-        Document GetPublicDocument (long? organizationId, string id4n, string fileName, string authorization, string acceptLanguage);
-        /// <summary>
-        /// Retrieve a document (meta-data only, no content) 
-        /// </summary>
-        /// <param name="organizationId">organizationId</param>
-        /// <param name="id4n">id4n</param>
-        /// <param name="fileName">fileName</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
-        /// <returns>Document</returns>
-        Document GetPublicDocument1 (long? organizationId, string id4n, string fileName, string authorization, string acceptLanguage);
+        Document GetPublicDocument (long? organizationId, string id4n, string fileName);
         /// <summary>
         /// List documents Listing all documents of an id4n
         /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <param name="offset">Start with the n-th element</param>
         /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>PaginatedOwnedDocumentResponse</returns>
-        PaginatedOwnedDocumentResponse ListAllDocuments (string id4n, string authorization, string acceptLanguage, int? offset, int? limit);
-        /// <summary>
-        /// List documents Listing all documents of an id4n
-        /// </summary>
-        /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
-        /// <param name="offset">Start with the n-th element</param>
-        /// <param name="limit">The maximum count of returned elements</param>
-        /// <returns>PaginatedOwnedDocumentResponse</returns>
-        PaginatedOwnedDocumentResponse ListAllDocuments1 (string id4n, string authorization, string acceptLanguage, int? offset, int? limit);
+        PaginatedOwnedDocumentResponse ListAllDocuments (string id4n, int? offset, int? limit);
         /// <summary>
         /// List organization specific documents Listing documents of an id4n owned by a specified organization
         /// </summary>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <param name="organizationId">organizationId</param>
         /// <param name="offset">Start with the n-th element</param>
         /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>PaginatedOwnedDocumentResponse</returns>
-        PaginatedOwnedDocumentResponse ListAllPublicDocuments (string id4n, string authorization, string acceptLanguage, long? organizationId, int? offset, int? limit);
-        /// <summary>
-        /// List organization specific documents Listing documents of an id4n owned by a specified organization
-        /// </summary>
-        /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
-        /// <param name="organizationId">organizationId</param>
-        /// <param name="offset">Start with the n-th element</param>
-        /// <param name="limit">The maximum count of returned elements</param>
-        /// <returns>PaginatedOwnedDocumentResponse</returns>
-        PaginatedOwnedDocumentResponse ListAllPublicDocuments1 (string id4n, string authorization, string acceptLanguage, long? organizationId, int? offset, int? limit);
+        PaginatedOwnedDocumentResponse ListAllPublicDocuments (string id4n, long? organizationId, int? offset, int? limit);
         /// <summary>
         /// List organization specific documents Listing documents of an id4n owned by a specified organization
         /// </summary>
         /// <param name="organizationId">organizationId</param>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <param name="offset">Start with the n-th element</param>
         /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>PaginatedDocumentResponse</returns>
-        PaginatedDocumentResponse ListDocuments (long? organizationId, string id4n, string authorization, string acceptLanguage, int? offset, int? limit);
+        PaginatedDocumentResponse ListDocuments (long? organizationId, string id4n, int? offset, int? limit);
         /// <summary>
         /// List organization specific documents Listing documents of an id4n owned by a specified organization
         /// </summary>
         /// <param name="organizationId">organizationId</param>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <param name="offset">Start with the n-th element</param>
         /// <param name="limit">The maximum count of returned elements</param>
         /// <returns>PaginatedDocumentResponse</returns>
-        PaginatedDocumentResponse ListDocuments1 (long? organizationId, string id4n, string authorization, string acceptLanguage, int? offset, int? limit);
+        PaginatedDocumentResponse ListPublicDocuments (long? organizationId, string id4n, int? offset, int? limit);
         /// <summary>
-        /// List organization specific documents Listing documents of an id4n owned by a specified organization
+        /// Read document contents 
         /// </summary>
         /// <param name="organizationId">organizationId</param>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
-        /// <param name="offset">Start with the n-th element</param>
-        /// <param name="limit">The maximum count of returned elements</param>
-        /// <returns>PaginatedDocumentResponse</returns>
-        PaginatedDocumentResponse ListPublicDocuments (long? organizationId, string id4n, string authorization, string acceptLanguage, int? offset, int? limit);
-        /// <summary>
-        /// List organization specific documents Listing documents of an id4n owned by a specified organization
-        /// </summary>
-        /// <param name="organizationId">organizationId</param>
-        /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
-        /// <param name="offset">Start with the n-th element</param>
-        /// <param name="limit">The maximum count of returned elements</param>
-        /// <returns>PaginatedDocumentResponse</returns>
-        PaginatedDocumentResponse ListPublicDocuments1 (long? organizationId, string id4n, string authorization, string acceptLanguage, int? offset, int? limit);
+        /// <param name="fileName">fileName</param>
+        /// <returns>System.IO.Stream</returns>
+        System.IO.Stream ReadDocument (long? organizationId, string id4n, string fileName);
         /// <summary>
         /// Read data from microstorage 
         /// </summary>
         /// <param name="organization">organization</param>
         /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
-        /// <returns>InputStreamResource</returns>
-        InputStreamResource Read (long? organization, string id4n, string authorization, string acceptLanguage);
-        /// <summary>
-        /// Read data from microstorage 
-        /// </summary>
-        /// <param name="organization">organization</param>
-        /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
-        /// <returns>InputStreamResource</returns>
-        InputStreamResource Read1 (long? organization, string id4n, string authorization, string acceptLanguage);
+        /// <returns>string</returns>
+        string ReadFromMicrostorage (long? organization, string id4n);
         /// <summary>
         /// Read document contents 
         /// </summary>
         /// <param name="organizationId">organizationId</param>
         /// <param name="id4n">id4n</param>
         /// <param name="fileName">fileName</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
-        /// <returns>InputStreamResource</returns>
-        InputStreamResource ReadDocument (long? organizationId, string id4n, string fileName, string authorization, string acceptLanguage);
-        /// <summary>
-        /// Read document contents 
-        /// </summary>
-        /// <param name="organizationId">organizationId</param>
-        /// <param name="id4n">id4n</param>
-        /// <param name="fileName">fileName</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
-        /// <returns>InputStreamResource</returns>
-        InputStreamResource ReadDocument1 (long? organizationId, string id4n, string fileName, string authorization, string acceptLanguage);
-        /// <summary>
-        /// Read document contents 
-        /// </summary>
-        /// <param name="organizationId">organizationId</param>
-        /// <param name="id4n">id4n</param>
-        /// <param name="fileName">fileName</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
-        /// <returns>InputStreamResource</returns>
-        InputStreamResource ReadPublicDocument (long? organizationId, string id4n, string fileName, string authorization, string acceptLanguage);
-        /// <summary>
-        /// Read document contents 
-        /// </summary>
-        /// <param name="organizationId">organizationId</param>
-        /// <param name="id4n">id4n</param>
-        /// <param name="fileName">fileName</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
-        /// <returns>InputStreamResource</returns>
-        InputStreamResource ReadPublicDocument1 (long? organizationId, string id4n, string fileName, string authorization, string acceptLanguage);
+        /// <returns>System.IO.Stream</returns>
+        System.IO.Stream ReadPublicDocument (long? organizationId, string id4n, string fileName);
         /// <summary>
         /// Update a document 
         /// </summary>
@@ -245,67 +110,29 @@ namespace BlueRain.ID4i.Api
         /// <param name="id4n">id4n</param>
         /// <param name="fileName">fileName</param>
         /// <param name="document">document</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>Document</returns>
-        Document UpdateDocument (long? organizationId, string id4n, string fileName, DocumentUpdate document, string authorization, string acceptLanguage);
-        /// <summary>
-        /// Update a document 
-        /// </summary>
-        /// <param name="organizationId">organizationId</param>
-        /// <param name="id4n">id4n</param>
-        /// <param name="fileName">fileName</param>
-        /// <param name="document">document</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
-        /// <returns>Document</returns>
-        Document UpdateDocument1 (long? organizationId, string id4n, string fileName, DocumentUpdate document, string authorization, string acceptLanguage);
-        /// <summary>
-        /// Write data to microstorage 
-        /// </summary>
-        /// <param name="organization">organization</param>
-        /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
-        /// <param name="contentType">Content-Type</param>
-        /// <param name="contentLength">Content-Length</param>
-        /// <returns>Object</returns>
-        Object Write (long? organization, string id4n, string authorization, string acceptLanguage, string contentType, long? contentLength);
-        /// <summary>
-        /// Write data to microstorage 
-        /// </summary>
-        /// <param name="organization">organization</param>
-        /// <param name="id4n">id4n</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
-        /// <param name="contentType">Content-Type</param>
-        /// <param name="contentLength">Content-Length</param>
-        /// <returns>Object</returns>
-        Object Write1 (long? organization, string id4n, string authorization, string acceptLanguage, string contentType, long? contentLength);
+        Document UpdateDocument (long? organizationId, string id4n, string fileName, DocumentUpdate document);
         /// <summary>
         /// Write document contents 
         /// </summary>
         /// <param name="organizationId">organizationId</param>
         /// <param name="id4n">id4n</param>
         /// <param name="fileName">fileName</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
+        /// <param name="body">binary data</param>
         /// <param name="contentType">Content-Type</param>
         /// <param name="contentLength">Content-Length</param>
-        /// <returns>Object</returns>
-        Object WriteDocument (long? organizationId, string id4n, string fileName, string authorization, string acceptLanguage, string contentType, long? contentLength);
+        /// <returns>ResponseEntity</returns>
+        ResponseEntity WriteDocument (long? organizationId, string id4n, string fileName, File body, string contentType, long? contentLength);
         /// <summary>
-        /// Write document contents 
+        /// Write data to microstorage 
         /// </summary>
-        /// <param name="organizationId">organizationId</param>
+        /// <param name="organization">organization</param>
         /// <param name="id4n">id4n</param>
-        /// <param name="fileName">fileName</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
+        /// <param name="body">binary data</param>
         /// <param name="contentType">Content-Type</param>
         /// <param name="contentLength">Content-Length</param>
         /// <returns>Object</returns>
-        Object WriteDocument1 (long? organizationId, string id4n, string fileName, string authorization, string acceptLanguage, string contentType, long? contentLength);
+        Object WriteToMicrostorage (long? organization, string id4n, string body, string contentType, long? contentLength);
     }
   
     /// <summary>
@@ -364,30 +191,28 @@ namespace BlueRain.ID4i.Api
         /// <summary>
         /// Create an empty document for an id4n The document is created empty, mime-type defaults to text/plain
         /// </summary>
-        /// <param name="id4n">id4n</param> 
         /// <param name="organizationId">organizationId</param> 
+        /// <param name="id4n">id4n</param> 
         /// <param name="document">document</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="mimeType">mimeType</param> 
-        /// <returns>Object</returns>            
-        public Object CreateDocument (string id4n, long? organizationId, Document document, string authorization, string acceptLanguage, string mimeType)
+        /// <returns>Document</returns>            
+        public Document CreateDocument (long? organizationId, string id4n, Document document, string mimeType)
         {
-            
-            // verify the required parameter 'id4n' is set
-            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling CreateDocument");
             
             // verify the required parameter 'organizationId' is set
             if (organizationId == null) throw new ApiException(400, "Missing required parameter 'organizationId' when calling CreateDocument");
+            
+            // verify the required parameter 'id4n' is set
+            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling CreateDocument");
             
             // verify the required parameter 'document' is set
             if (document == null) throw new ApiException(400, "Missing required parameter 'document' when calling CreateDocument");
             
     
-            var path = "/api/v1/collections/{id4n}/documents/{organizationId}";
+            var path = "/api/v1/documents/{id4n}/{organizationId}";
             path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
-path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
+            path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
+path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
     
             var queryParams = new Dictionary<String, String>();
             var headerParams = new Dictionary<String, String>();
@@ -396,12 +221,10 @@ path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(or
             String postBody = null;
     
              if (mimeType != null) queryParams.Add("mimeType", ApiClient.ParameterToString(mimeType)); // query parameter
-             if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(document); // http body (model) parameter
+                                    postBody = ApiClient.Serialize(document); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -411,60 +234,7 @@ path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(or
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling CreateDocument: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (Object) ApiClient.Deserialize(response.Content, typeof(Object), response.Headers);
-        }
-    
-        /// <summary>
-        /// Create an empty document for an id4n The document is created empty, mime-type defaults to text/plain
-        /// </summary>
-        /// <param name="id4n">id4n</param> 
-        /// <param name="organizationId">organizationId</param> 
-        /// <param name="document">document</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
-        /// <param name="mimeType">mimeType</param> 
-        /// <returns>Object</returns>            
-        public Object CreateDocument1 (string id4n, long? organizationId, Document document, string authorization, string acceptLanguage, string mimeType)
-        {
-            
-            // verify the required parameter 'id4n' is set
-            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling CreateDocument1");
-            
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null) throw new ApiException(400, "Missing required parameter 'organizationId' when calling CreateDocument1");
-            
-            // verify the required parameter 'document' is set
-            if (document == null) throw new ApiException(400, "Missing required parameter 'document' when calling CreateDocument1");
-            
-    
-            var path = "/api/v1/guids/{id4n}/documents/{organizationId}";
-            path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
-path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
-    
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-             if (mimeType != null) queryParams.Add("mimeType", ApiClient.ParameterToString(mimeType)); // query parameter
-             if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(document); // http body (model) parameter
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling CreateDocument1: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling CreateDocument1: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (Object) ApiClient.Deserialize(response.Content, typeof(Object), response.Headers);
+            return (Document) ApiClient.Deserialize(response.Content, typeof(Document), response.Headers);
         }
     
         /// <summary>
@@ -473,10 +243,8 @@ path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(or
         /// <param name="organizationId">organizationId</param> 
         /// <param name="id4n">id4n</param> 
         /// <param name="fileName">fileName</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
-        /// <returns>Object</returns>            
-        public Object DeleteDocument (long? organizationId, string id4n, string fileName, string authorization, string acceptLanguage)
+        /// <returns>ResponseEntity</returns>            
+        public ResponseEntity DeleteDocument (long? organizationId, string id4n, string fileName)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -489,7 +257,7 @@ path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(or
             if (fileName == null) throw new ApiException(400, "Missing required parameter 'fileName' when calling DeleteDocument");
             
     
-            var path = "/api/v1/collections/{id4n}/documents/{organizationId}/{fileName}";
+            var path = "/api/v1/documents/{id4n}/{organizationId}/{fileName}";
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
 path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
@@ -501,11 +269,9 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                                    
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -515,58 +281,7 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling DeleteDocument: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (Object) ApiClient.Deserialize(response.Content, typeof(Object), response.Headers);
-        }
-    
-        /// <summary>
-        /// Delete a document 
-        /// </summary>
-        /// <param name="organizationId">organizationId</param> 
-        /// <param name="id4n">id4n</param> 
-        /// <param name="fileName">fileName</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
-        /// <returns>Object</returns>            
-        public Object DeleteDocument1 (long? organizationId, string id4n, string fileName, string authorization, string acceptLanguage)
-        {
-            
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null) throw new ApiException(400, "Missing required parameter 'organizationId' when calling DeleteDocument1");
-            
-            // verify the required parameter 'id4n' is set
-            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling DeleteDocument1");
-            
-            // verify the required parameter 'fileName' is set
-            if (fileName == null) throw new ApiException(400, "Missing required parameter 'fileName' when calling DeleteDocument1");
-            
-    
-            var path = "/api/v1/guids/{id4n}/documents/{organizationId}/{fileName}";
-            path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
-path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
-path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName));
-    
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling DeleteDocument1: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling DeleteDocument1: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (Object) ApiClient.Deserialize(response.Content, typeof(Object), response.Headers);
+            return (ResponseEntity) ApiClient.Deserialize(response.Content, typeof(ResponseEntity), response.Headers);
         }
     
         /// <summary>
@@ -575,10 +290,8 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
         /// <param name="organizationId">organizationId</param> 
         /// <param name="id4n">id4n</param> 
         /// <param name="fileName">fileName</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>Document</returns>            
-        public Document GetDocument (long? organizationId, string id4n, string fileName, string authorization, string acceptLanguage)
+        public Document GetDocument (long? organizationId, string id4n, string fileName)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -591,7 +304,7 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             if (fileName == null) throw new ApiException(400, "Missing required parameter 'fileName' when calling GetDocument");
             
     
-            var path = "/api/v1/collections/{id4n}/documents/{organizationId}/{fileName}";
+            var path = "/api/v1/documents/{id4n}/{organizationId}/{fileName}";
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
 path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
@@ -603,11 +316,9 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                                    
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -626,61 +337,8 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
         /// <param name="organizationId">organizationId</param> 
         /// <param name="id4n">id4n</param> 
         /// <param name="fileName">fileName</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>Document</returns>            
-        public Document GetDocument1 (long? organizationId, string id4n, string fileName, string authorization, string acceptLanguage)
-        {
-            
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null) throw new ApiException(400, "Missing required parameter 'organizationId' when calling GetDocument1");
-            
-            // verify the required parameter 'id4n' is set
-            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling GetDocument1");
-            
-            // verify the required parameter 'fileName' is set
-            if (fileName == null) throw new ApiException(400, "Missing required parameter 'fileName' when calling GetDocument1");
-            
-    
-            var path = "/api/v1/guids/{id4n}/documents/{organizationId}/{fileName}";
-            path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
-path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
-path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName));
-    
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling GetDocument1: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling GetDocument1: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (Document) ApiClient.Deserialize(response.Content, typeof(Document), response.Headers);
-        }
-    
-        /// <summary>
-        /// Retrieve a document (meta-data only, no content) 
-        /// </summary>
-        /// <param name="organizationId">organizationId</param> 
-        /// <param name="id4n">id4n</param> 
-        /// <param name="fileName">fileName</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
-        /// <returns>Document</returns>            
-        public Document GetPublicDocument (long? organizationId, string id4n, string fileName, string authorization, string acceptLanguage)
+        public Document GetPublicDocument (long? organizationId, string id4n, string fileName)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -693,7 +351,7 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             if (fileName == null) throw new ApiException(400, "Missing required parameter 'fileName' when calling GetPublicDocument");
             
     
-            var path = "/api/v1/public/collections/{id4n}/documents/{organizationId}/{fileName}";
+            var path = "/api/v1/public/documents/{id4n}/{organizationId}/{fileName}";
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
 path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
@@ -705,11 +363,9 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                                    
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -723,73 +379,20 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
         }
     
         /// <summary>
-        /// Retrieve a document (meta-data only, no content) 
-        /// </summary>
-        /// <param name="organizationId">organizationId</param> 
-        /// <param name="id4n">id4n</param> 
-        /// <param name="fileName">fileName</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
-        /// <returns>Document</returns>            
-        public Document GetPublicDocument1 (long? organizationId, string id4n, string fileName, string authorization, string acceptLanguage)
-        {
-            
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null) throw new ApiException(400, "Missing required parameter 'organizationId' when calling GetPublicDocument1");
-            
-            // verify the required parameter 'id4n' is set
-            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling GetPublicDocument1");
-            
-            // verify the required parameter 'fileName' is set
-            if (fileName == null) throw new ApiException(400, "Missing required parameter 'fileName' when calling GetPublicDocument1");
-            
-    
-            var path = "/api/v1/public/guids/{id4n}/documents/{organizationId}/{fileName}";
-            path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
-path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
-path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName));
-    
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling GetPublicDocument1: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling GetPublicDocument1: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (Document) ApiClient.Deserialize(response.Content, typeof(Document), response.Headers);
-        }
-    
-        /// <summary>
         /// List documents Listing all documents of an id4n
         /// </summary>
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="offset">Start with the n-th element</param> 
         /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>PaginatedOwnedDocumentResponse</returns>            
-        public PaginatedOwnedDocumentResponse ListAllDocuments (string id4n, string authorization, string acceptLanguage, int? offset, int? limit)
+        public PaginatedOwnedDocumentResponse ListAllDocuments (string id4n, int? offset, int? limit)
         {
             
             // verify the required parameter 'id4n' is set
             if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling ListAllDocuments");
             
     
-            var path = "/api/v1/collections/{id4n}/documents";
+            var path = "/api/v1/documents/{id4n}";
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
     
@@ -801,11 +404,9 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
     
              if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
  if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
-             if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                        
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -819,68 +420,21 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
         }
     
         /// <summary>
-        /// List documents Listing all documents of an id4n
-        /// </summary>
-        /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
-        /// <param name="offset">Start with the n-th element</param> 
-        /// <param name="limit">The maximum count of returned elements</param> 
-        /// <returns>PaginatedOwnedDocumentResponse</returns>            
-        public PaginatedOwnedDocumentResponse ListAllDocuments1 (string id4n, string authorization, string acceptLanguage, int? offset, int? limit)
-        {
-            
-            // verify the required parameter 'id4n' is set
-            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling ListAllDocuments1");
-            
-    
-            var path = "/api/v1/guids/{id4n}/documents";
-            path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
-    
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-             if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
- if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
-             if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling ListAllDocuments1: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling ListAllDocuments1: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (PaginatedOwnedDocumentResponse) ApiClient.Deserialize(response.Content, typeof(PaginatedOwnedDocumentResponse), response.Headers);
-        }
-    
-        /// <summary>
         /// List organization specific documents Listing documents of an id4n owned by a specified organization
         /// </summary>
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="organizationId">organizationId</param> 
         /// <param name="offset">Start with the n-th element</param> 
         /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>PaginatedOwnedDocumentResponse</returns>            
-        public PaginatedOwnedDocumentResponse ListAllPublicDocuments (string id4n, string authorization, string acceptLanguage, long? organizationId, int? offset, int? limit)
+        public PaginatedOwnedDocumentResponse ListAllPublicDocuments (string id4n, long? organizationId, int? offset, int? limit)
         {
             
             // verify the required parameter 'id4n' is set
             if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling ListAllPublicDocuments");
             
     
-            var path = "/api/v1/public/collections/{id4n}/documents";
+            var path = "/api/v1/public/documents/{id4n}";
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
     
@@ -893,11 +447,9 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
              if (organizationId != null) queryParams.Add("organizationId", ApiClient.ParameterToString(organizationId)); // query parameter
  if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
  if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
-             if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                        
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -913,61 +465,12 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
         /// <summary>
         /// List organization specific documents Listing documents of an id4n owned by a specified organization
         /// </summary>
-        /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
-        /// <param name="organizationId">organizationId</param> 
-        /// <param name="offset">Start with the n-th element</param> 
-        /// <param name="limit">The maximum count of returned elements</param> 
-        /// <returns>PaginatedOwnedDocumentResponse</returns>            
-        public PaginatedOwnedDocumentResponse ListAllPublicDocuments1 (string id4n, string authorization, string acceptLanguage, long? organizationId, int? offset, int? limit)
-        {
-            
-            // verify the required parameter 'id4n' is set
-            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling ListAllPublicDocuments1");
-            
-    
-            var path = "/api/v1/public/guids/{id4n}/documents";
-            path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
-    
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-             if (organizationId != null) queryParams.Add("organizationId", ApiClient.ParameterToString(organizationId)); // query parameter
- if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
- if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
-             if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling ListAllPublicDocuments1: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling ListAllPublicDocuments1: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (PaginatedOwnedDocumentResponse) ApiClient.Deserialize(response.Content, typeof(PaginatedOwnedDocumentResponse), response.Headers);
-        }
-    
-        /// <summary>
-        /// List organization specific documents Listing documents of an id4n owned by a specified organization
-        /// </summary>
         /// <param name="organizationId">organizationId</param> 
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="offset">Start with the n-th element</param> 
         /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>PaginatedDocumentResponse</returns>            
-        public PaginatedDocumentResponse ListDocuments (long? organizationId, string id4n, string authorization, string acceptLanguage, int? offset, int? limit)
+        public PaginatedDocumentResponse ListDocuments (long? organizationId, string id4n, int? offset, int? limit)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -977,7 +480,7 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling ListDocuments");
             
     
-            var path = "/api/v1/collections/{id4n}/documents/{organizationId}";
+            var path = "/api/v1/documents/{id4n}/{organizationId}";
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
 path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
@@ -990,11 +493,9 @@ path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
     
              if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
  if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
-             if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                        
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -1012,62 +513,10 @@ path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
         /// </summary>
         /// <param name="organizationId">organizationId</param> 
         /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <param name="offset">Start with the n-th element</param> 
         /// <param name="limit">The maximum count of returned elements</param> 
         /// <returns>PaginatedDocumentResponse</returns>            
-        public PaginatedDocumentResponse ListDocuments1 (long? organizationId, string id4n, string authorization, string acceptLanguage, int? offset, int? limit)
-        {
-            
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null) throw new ApiException(400, "Missing required parameter 'organizationId' when calling ListDocuments1");
-            
-            // verify the required parameter 'id4n' is set
-            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling ListDocuments1");
-            
-    
-            var path = "/api/v1/guids/{id4n}/documents/{organizationId}";
-            path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
-path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
-    
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-             if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
- if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
-             if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling ListDocuments1: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling ListDocuments1: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (PaginatedDocumentResponse) ApiClient.Deserialize(response.Content, typeof(PaginatedDocumentResponse), response.Headers);
-        }
-    
-        /// <summary>
-        /// List organization specific documents Listing documents of an id4n owned by a specified organization
-        /// </summary>
-        /// <param name="organizationId">organizationId</param> 
-        /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
-        /// <param name="offset">Start with the n-th element</param> 
-        /// <param name="limit">The maximum count of returned elements</param> 
-        /// <returns>PaginatedDocumentResponse</returns>            
-        public PaginatedDocumentResponse ListPublicDocuments (long? organizationId, string id4n, string authorization, string acceptLanguage, int? offset, int? limit)
+        public PaginatedDocumentResponse ListPublicDocuments (long? organizationId, string id4n, int? offset, int? limit)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -1077,7 +526,7 @@ path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
             if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling ListPublicDocuments");
             
     
-            var path = "/api/v1/public/collections/{id4n}/documents/{organizationId}";
+            var path = "/api/v1/public/documents/{id4n}/{organizationId}";
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
 path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
@@ -1090,11 +539,9 @@ path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
     
              if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
  if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
-             if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                        
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -1108,157 +555,13 @@ path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
         }
     
         /// <summary>
-        /// List organization specific documents Listing documents of an id4n owned by a specified organization
-        /// </summary>
-        /// <param name="organizationId">organizationId</param> 
-        /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
-        /// <param name="offset">Start with the n-th element</param> 
-        /// <param name="limit">The maximum count of returned elements</param> 
-        /// <returns>PaginatedDocumentResponse</returns>            
-        public PaginatedDocumentResponse ListPublicDocuments1 (long? organizationId, string id4n, string authorization, string acceptLanguage, int? offset, int? limit)
-        {
-            
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null) throw new ApiException(400, "Missing required parameter 'organizationId' when calling ListPublicDocuments1");
-            
-            // verify the required parameter 'id4n' is set
-            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling ListPublicDocuments1");
-            
-    
-            var path = "/api/v1/public/guids/{id4n}/documents/{organizationId}";
-            path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
-path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
-    
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-             if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
- if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
-             if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling ListPublicDocuments1: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling ListPublicDocuments1: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (PaginatedDocumentResponse) ApiClient.Deserialize(response.Content, typeof(PaginatedDocumentResponse), response.Headers);
-        }
-    
-        /// <summary>
-        /// Read data from microstorage 
-        /// </summary>
-        /// <param name="organization">organization</param> 
-        /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
-        /// <returns>InputStreamResource</returns>            
-        public InputStreamResource Read (long? organization, string id4n, string authorization, string acceptLanguage)
-        {
-            
-            // verify the required parameter 'organization' is set
-            if (organization == null) throw new ApiException(400, "Missing required parameter 'organization' when calling Read");
-            
-            // verify the required parameter 'id4n' is set
-            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling Read");
-            
-    
-            var path = "/api/v1/collections/{id4n}/micro/{organization}";
-            path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "organization" + "}", ApiClient.ParameterToString(organization));
-path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
-    
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling Read: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling Read: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (InputStreamResource) ApiClient.Deserialize(response.Content, typeof(InputStreamResource), response.Headers);
-        }
-    
-        /// <summary>
-        /// Read data from microstorage 
-        /// </summary>
-        /// <param name="organization">organization</param> 
-        /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
-        /// <returns>InputStreamResource</returns>            
-        public InputStreamResource Read1 (long? organization, string id4n, string authorization, string acceptLanguage)
-        {
-            
-            // verify the required parameter 'organization' is set
-            if (organization == null) throw new ApiException(400, "Missing required parameter 'organization' when calling Read1");
-            
-            // verify the required parameter 'id4n' is set
-            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling Read1");
-            
-    
-            var path = "/api/v1/guids/{id4n}/micro/{organization}";
-            path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "organization" + "}", ApiClient.ParameterToString(organization));
-path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
-    
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling Read1: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling Read1: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (InputStreamResource) ApiClient.Deserialize(response.Content, typeof(InputStreamResource), response.Headers);
-        }
-    
-        /// <summary>
         /// Read document contents 
         /// </summary>
         /// <param name="organizationId">organizationId</param> 
         /// <param name="id4n">id4n</param> 
         /// <param name="fileName">fileName</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
-        /// <returns>InputStreamResource</returns>            
-        public InputStreamResource ReadDocument (long? organizationId, string id4n, string fileName, string authorization, string acceptLanguage)
+        /// <returns>System.IO.Stream</returns>            
+        public System.IO.Stream ReadDocument (long? organizationId, string id4n, string fileName)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -1271,7 +574,7 @@ path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
             if (fileName == null) throw new ApiException(400, "Missing required parameter 'fileName' when calling ReadDocument");
             
     
-            var path = "/api/v1/collections/{id4n}/documents/{organizationId}/{fileName}/content";
+            var path = "/api/v1/documents/{id4n}/{organizationId}/{fileName}/content";
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
 path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
@@ -1283,11 +586,9 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                                    
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -1297,36 +598,29 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling ReadDocument: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (InputStreamResource) ApiClient.Deserialize(response.Content, typeof(InputStreamResource), response.Headers);
+            return (System.IO.Stream) ApiClient.Deserialize(response.Content, typeof(System.IO.Stream), response.Headers);
         }
     
         /// <summary>
-        /// Read document contents 
+        /// Read data from microstorage 
         /// </summary>
-        /// <param name="organizationId">organizationId</param> 
+        /// <param name="organization">organization</param> 
         /// <param name="id4n">id4n</param> 
-        /// <param name="fileName">fileName</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
-        /// <returns>InputStreamResource</returns>            
-        public InputStreamResource ReadDocument1 (long? organizationId, string id4n, string fileName, string authorization, string acceptLanguage)
+        /// <returns>string</returns>            
+        public string ReadFromMicrostorage (long? organization, string id4n)
         {
             
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null) throw new ApiException(400, "Missing required parameter 'organizationId' when calling ReadDocument1");
+            // verify the required parameter 'organization' is set
+            if (organization == null) throw new ApiException(400, "Missing required parameter 'organization' when calling ReadFromMicrostorage");
             
             // verify the required parameter 'id4n' is set
-            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling ReadDocument1");
-            
-            // verify the required parameter 'fileName' is set
-            if (fileName == null) throw new ApiException(400, "Missing required parameter 'fileName' when calling ReadDocument1");
+            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling ReadFromMicrostorage");
             
     
-            var path = "/api/v1/guids/{id4n}/documents/{organizationId}/{fileName}/content";
+            var path = "/api/v1/microstorage/{id4n}/{organization}";
             path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
+            path = path.Replace("{" + "organization" + "}", ApiClient.ParameterToString(organization));
 path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
-path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName));
     
             var queryParams = new Dictionary<String, String>();
             var headerParams = new Dictionary<String, String>();
@@ -1334,21 +628,19 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                                    
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling ReadDocument1: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling ReadFromMicrostorage: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling ReadDocument1: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling ReadFromMicrostorage: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (InputStreamResource) ApiClient.Deserialize(response.Content, typeof(InputStreamResource), response.Headers);
+            return (string) ApiClient.Deserialize(response.Content, typeof(string), response.Headers);
         }
     
         /// <summary>
@@ -1357,10 +649,8 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
         /// <param name="organizationId">organizationId</param> 
         /// <param name="id4n">id4n</param> 
         /// <param name="fileName">fileName</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
-        /// <returns>InputStreamResource</returns>            
-        public InputStreamResource ReadPublicDocument (long? organizationId, string id4n, string fileName, string authorization, string acceptLanguage)
+        /// <returns>System.IO.Stream</returns>            
+        public System.IO.Stream ReadPublicDocument (long? organizationId, string id4n, string fileName)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -1373,7 +663,7 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             if (fileName == null) throw new ApiException(400, "Missing required parameter 'fileName' when calling ReadPublicDocument");
             
     
-            var path = "/api/v1/public/collections/{id4n}/documents/{organizationId}/{fileName}/content";
+            var path = "/api/v1/public/documents/{id4n}/{organizationId}/{fileName}/content";
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
 path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
@@ -1385,11 +675,9 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                                    
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -1399,58 +687,7 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling ReadPublicDocument: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (InputStreamResource) ApiClient.Deserialize(response.Content, typeof(InputStreamResource), response.Headers);
-        }
-    
-        /// <summary>
-        /// Read document contents 
-        /// </summary>
-        /// <param name="organizationId">organizationId</param> 
-        /// <param name="id4n">id4n</param> 
-        /// <param name="fileName">fileName</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
-        /// <returns>InputStreamResource</returns>            
-        public InputStreamResource ReadPublicDocument1 (long? organizationId, string id4n, string fileName, string authorization, string acceptLanguage)
-        {
-            
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null) throw new ApiException(400, "Missing required parameter 'organizationId' when calling ReadPublicDocument1");
-            
-            // verify the required parameter 'id4n' is set
-            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling ReadPublicDocument1");
-            
-            // verify the required parameter 'fileName' is set
-            if (fileName == null) throw new ApiException(400, "Missing required parameter 'fileName' when calling ReadPublicDocument1");
-            
-    
-            var path = "/api/v1/public/guids/{id4n}/documents/{organizationId}/{fileName}/content";
-            path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
-path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
-path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName));
-    
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling ReadPublicDocument1: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling ReadPublicDocument1: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (InputStreamResource) ApiClient.Deserialize(response.Content, typeof(InputStreamResource), response.Headers);
+            return (System.IO.Stream) ApiClient.Deserialize(response.Content, typeof(System.IO.Stream), response.Headers);
         }
     
         /// <summary>
@@ -1460,10 +697,8 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
         /// <param name="id4n">id4n</param> 
         /// <param name="fileName">fileName</param> 
         /// <param name="document">document</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>Document</returns>            
-        public Document UpdateDocument (long? organizationId, string id4n, string fileName, DocumentUpdate document, string authorization, string acceptLanguage)
+        public Document UpdateDocument (long? organizationId, string id4n, string fileName, DocumentUpdate document)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -1479,7 +714,7 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             if (document == null) throw new ApiException(400, "Missing required parameter 'document' when calling UpdateDocument");
             
     
-            var path = "/api/v1/collections/{id4n}/documents/{organizationId}/{fileName}";
+            var path = "/api/v1/documents/{id4n}/{organizationId}/{fileName}";
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
 path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
@@ -1491,12 +726,10 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(document); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(document); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PATCH, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -1510,173 +743,16 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
         }
     
         /// <summary>
-        /// Update a document 
-        /// </summary>
-        /// <param name="organizationId">organizationId</param> 
-        /// <param name="id4n">id4n</param> 
-        /// <param name="fileName">fileName</param> 
-        /// <param name="document">document</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
-        /// <returns>Document</returns>            
-        public Document UpdateDocument1 (long? organizationId, string id4n, string fileName, DocumentUpdate document, string authorization, string acceptLanguage)
-        {
-            
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null) throw new ApiException(400, "Missing required parameter 'organizationId' when calling UpdateDocument1");
-            
-            // verify the required parameter 'id4n' is set
-            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling UpdateDocument1");
-            
-            // verify the required parameter 'fileName' is set
-            if (fileName == null) throw new ApiException(400, "Missing required parameter 'fileName' when calling UpdateDocument1");
-            
-            // verify the required parameter 'document' is set
-            if (document == null) throw new ApiException(400, "Missing required parameter 'document' when calling UpdateDocument1");
-            
-    
-            var path = "/api/v1/guids/{id4n}/documents/{organizationId}/{fileName}";
-            path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
-path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
-path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName));
-    
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                        postBody = ApiClient.Serialize(document); // http body (model) parameter
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PATCH, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling UpdateDocument1: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling UpdateDocument1: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (Document) ApiClient.Deserialize(response.Content, typeof(Document), response.Headers);
-        }
-    
-        /// <summary>
-        /// Write data to microstorage 
-        /// </summary>
-        /// <param name="organization">organization</param> 
-        /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
-        /// <param name="contentType">Content-Type</param> 
-        /// <param name="contentLength">Content-Length</param> 
-        /// <returns>Object</returns>            
-        public Object Write (long? organization, string id4n, string authorization, string acceptLanguage, string contentType, long? contentLength)
-        {
-            
-            // verify the required parameter 'organization' is set
-            if (organization == null) throw new ApiException(400, "Missing required parameter 'organization' when calling Write");
-            
-            // verify the required parameter 'id4n' is set
-            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling Write");
-            
-    
-            var path = "/api/v1/collections/{id4n}/micro/{organization}";
-            path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "organization" + "}", ApiClient.ParameterToString(organization));
-path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
-    
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
- if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
- if (contentLength != null) headerParams.Add("Content-Length", ApiClient.ParameterToString(contentLength)); // header parameter
-                            
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling Write: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling Write: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (Object) ApiClient.Deserialize(response.Content, typeof(Object), response.Headers);
-        }
-    
-        /// <summary>
-        /// Write data to microstorage 
-        /// </summary>
-        /// <param name="organization">organization</param> 
-        /// <param name="id4n">id4n</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
-        /// <param name="contentType">Content-Type</param> 
-        /// <param name="contentLength">Content-Length</param> 
-        /// <returns>Object</returns>            
-        public Object Write1 (long? organization, string id4n, string authorization, string acceptLanguage, string contentType, long? contentLength)
-        {
-            
-            // verify the required parameter 'organization' is set
-            if (organization == null) throw new ApiException(400, "Missing required parameter 'organization' when calling Write1");
-            
-            // verify the required parameter 'id4n' is set
-            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling Write1");
-            
-    
-            var path = "/api/v1/guids/{id4n}/micro/{organization}";
-            path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "organization" + "}", ApiClient.ParameterToString(organization));
-path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
-    
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
- if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
- if (contentLength != null) headerParams.Add("Content-Length", ApiClient.ParameterToString(contentLength)); // header parameter
-                            
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling Write1: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling Write1: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (Object) ApiClient.Deserialize(response.Content, typeof(Object), response.Headers);
-        }
-    
-        /// <summary>
         /// Write document contents 
         /// </summary>
         /// <param name="organizationId">organizationId</param> 
         /// <param name="id4n">id4n</param> 
         /// <param name="fileName">fileName</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
+        /// <param name="body">binary data</param> 
         /// <param name="contentType">Content-Type</param> 
         /// <param name="contentLength">Content-Length</param> 
-        /// <returns>Object</returns>            
-        public Object WriteDocument (long? organizationId, string id4n, string fileName, string authorization, string acceptLanguage, string contentType, long? contentLength)
+        /// <returns>ResponseEntity</returns>            
+        public ResponseEntity WriteDocument (long? organizationId, string id4n, string fileName, File body, string contentType, long? contentLength)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -1688,8 +764,11 @@ path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
             // verify the required parameter 'fileName' is set
             if (fileName == null) throw new ApiException(400, "Missing required parameter 'fileName' when calling WriteDocument");
             
+            // verify the required parameter 'body' is set
+            if (body == null) throw new ApiException(400, "Missing required parameter 'body' when calling WriteDocument");
+            
     
-            var path = "/api/v1/collections/{id4n}/documents/{organizationId}/{fileName}/content";
+            var path = "/api/v1/documents/{id4n}/{organizationId}/{fileName}/content";
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
 path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
@@ -1701,13 +780,12 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
- if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
+                         if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
  if (contentLength != null) headerParams.Add("Content-Length", ApiClient.ParameterToString(contentLength)); // header parameter
-                            
+                        postBody = ApiClient.Serialize(body); // http body (model) parameter
+    
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -1717,38 +795,35 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling WriteDocument: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (Object) ApiClient.Deserialize(response.Content, typeof(Object), response.Headers);
+            return (ResponseEntity) ApiClient.Deserialize(response.Content, typeof(ResponseEntity), response.Headers);
         }
     
         /// <summary>
-        /// Write document contents 
+        /// Write data to microstorage 
         /// </summary>
-        /// <param name="organizationId">organizationId</param> 
+        /// <param name="organization">organization</param> 
         /// <param name="id4n">id4n</param> 
-        /// <param name="fileName">fileName</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
+        /// <param name="body">binary data</param> 
         /// <param name="contentType">Content-Type</param> 
         /// <param name="contentLength">Content-Length</param> 
         /// <returns>Object</returns>            
-        public Object WriteDocument1 (long? organizationId, string id4n, string fileName, string authorization, string acceptLanguage, string contentType, long? contentLength)
+        public Object WriteToMicrostorage (long? organization, string id4n, string body, string contentType, long? contentLength)
         {
             
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null) throw new ApiException(400, "Missing required parameter 'organizationId' when calling WriteDocument1");
+            // verify the required parameter 'organization' is set
+            if (organization == null) throw new ApiException(400, "Missing required parameter 'organization' when calling WriteToMicrostorage");
             
             // verify the required parameter 'id4n' is set
-            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling WriteDocument1");
+            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling WriteToMicrostorage");
             
-            // verify the required parameter 'fileName' is set
-            if (fileName == null) throw new ApiException(400, "Missing required parameter 'fileName' when calling WriteDocument1");
+            // verify the required parameter 'body' is set
+            if (body == null) throw new ApiException(400, "Missing required parameter 'body' when calling WriteToMicrostorage");
             
     
-            var path = "/api/v1/guids/{id4n}/documents/{organizationId}/{fileName}/content";
+            var path = "/api/v1/microstorage/{id4n}/{organization}";
             path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
+            path = path.Replace("{" + "organization" + "}", ApiClient.ParameterToString(organization));
 path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
-path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName));
     
             var queryParams = new Dictionary<String, String>();
             var headerParams = new Dictionary<String, String>();
@@ -1756,21 +831,20 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
- if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
+                         if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
  if (contentLength != null) headerParams.Add("Content-Length", ApiClient.ParameterToString(contentLength)); // header parameter
-                            
+                        postBody = ApiClient.Serialize(body); // http body (model) parameter
+    
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling WriteDocument1: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling WriteToMicrostorage: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling WriteDocument1: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling WriteToMicrostorage: " + response.ErrorMessage, response.ErrorMessage);
     
             return (Object) ApiClient.Deserialize(response.Content, typeof(Object), response.Headers);
         }

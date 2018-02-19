@@ -16,10 +16,8 @@ namespace BlueRain.ID4i.Api
         /// Get billing amount of services for a given organization 
         /// </summary>
         /// <param name="organizationId">The organization to compute the billing information for</param>
-        /// <param name="authorization">Authorization JWT Bearer Token</param>
-        /// <param name="acceptLanguage">Requested language</param>
         /// <returns>ServiceCosts</returns>
-        ServiceCosts GetSumForOrganization (long? organizationId, string authorization, string acceptLanguage);
+        ServiceCosts GetSumForOrganization (long? organizationId);
     }
   
     /// <summary>
@@ -79,10 +77,8 @@ namespace BlueRain.ID4i.Api
         /// Get billing amount of services for a given organization 
         /// </summary>
         /// <param name="organizationId">The organization to compute the billing information for</param> 
-        /// <param name="authorization">Authorization JWT Bearer Token</param> 
-        /// <param name="acceptLanguage">Requested language</param> 
         /// <returns>ServiceCosts</returns>            
-        public ServiceCosts GetSumForOrganization (long? organizationId, string authorization, string acceptLanguage)
+        public ServiceCosts GetSumForOrganization (long? organizationId)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -99,11 +95,9 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
- if (acceptLanguage != null) headerParams.Add("Accept-Language", ApiClient.ParameterToString(acceptLanguage)); // header parameter
-                            
+                                                    
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "Authorization" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
