@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="getroute"></a>
 # **GetRoute**
-> Route GetRoute (string id4n, string type, bool? privateRoutes, bool? publicRoutes)
+> Route GetRoute (string id4n, string type, bool? privateRoutes, bool? publicRoutes, bool? interpolate)
 
 Retrieve current route of a GUID (or ID4N)
 
@@ -40,11 +40,12 @@ namespace Example
             var type = type_example;  // string | The type of route you want to have
             var privateRoutes = true;  // bool? | privateRoutes (optional) 
             var publicRoutes = true;  // bool? | publicRoutes (optional) 
+            var interpolate = true;  // bool? | interpolate (optional) 
 
             try
             {
                 // Retrieve current route of a GUID (or ID4N)
-                Route result = apiInstance.GetRoute(id4n, type, privateRoutes, publicRoutes);
+                Route result = apiInstance.GetRoute(id4n, type, privateRoutes, publicRoutes, interpolate);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -64,6 +65,7 @@ Name | Type | Description  | Notes
  **type** | **string**| The type of route you want to have | 
  **privateRoutes** | **bool?**| privateRoutes | [optional] 
  **publicRoutes** | **bool?**| publicRoutes | [optional] 
+ **interpolate** | **bool?**| interpolate | [optional] 
 
 ### Return type
 
