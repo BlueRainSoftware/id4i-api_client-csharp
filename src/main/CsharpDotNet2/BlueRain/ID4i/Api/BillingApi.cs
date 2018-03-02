@@ -13,6 +13,12 @@ namespace BlueRain.ID4i.Api
     public interface IBillingApi
     {
         /// <summary>
+        /// Get billing positions for a given organization 
+        /// </summary>
+        /// <param name="organizationId">The organization to compute the billing information for</param>
+        /// <returns>List&lt;BillingPosition&gt;</returns>
+        List<BillingPosition> GetPositionsForOrganization (long? organizationId);
+        /// <summary>
         /// Get billing amount of services for a given organization 
         /// </summary>
         /// <param name="organizationId">The organization to compute the billing information for</param>
@@ -72,6 +78,43 @@ namespace BlueRain.ID4i.Api
         /// </summary>
         /// <value>An instance of the ApiClient</value>
         public ApiClient ApiClient {get; set;}
+    
+        /// <summary>
+        /// Get billing positions for a given organization 
+        /// </summary>
+        /// <param name="organizationId">The organization to compute the billing information for</param> 
+        /// <returns>List&lt;BillingPosition&gt;</returns>            
+        public List<BillingPosition> GetPositionsForOrganization (long? organizationId)
+        {
+            
+            // verify the required parameter 'organizationId' is set
+            if (organizationId == null) throw new ApiException(400, "Missing required parameter 'organizationId' when calling GetPositionsForOrganization");
+            
+    
+            var path = "/api/v1/billing/{organizationId}/positions";
+            path = path.Replace("{format}", "json");
+            path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
+    
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+    
+                                                    
+            // authentication setting, if any
+            String[] authSettings = new String[] { "Authorization" };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+    
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling GetPositionsForOrganization: " + response.Content, response.Content);
+            else if (((int)response.StatusCode) == 0)
+                throw new ApiException ((int)response.StatusCode, "Error calling GetPositionsForOrganization: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return (List<BillingPosition>) ApiClient.Deserialize(response.Content, typeof(List<BillingPosition>), response.Headers);
+        }
     
         /// <summary>
         /// Get billing amount of services for a given organization 

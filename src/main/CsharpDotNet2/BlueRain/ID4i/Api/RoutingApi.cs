@@ -19,8 +19,9 @@ namespace BlueRain.ID4i.Api
         /// <param name="type">The type of route you want to have</param>
         /// <param name="privateRoutes">privateRoutes</param>
         /// <param name="publicRoutes">publicRoutes</param>
+        /// <param name="interpolate">interpolate</param>
         /// <returns>Route</returns>
-        Route GetRoute (string id4n, string type, bool? privateRoutes, bool? publicRoutes);
+        Route GetRoute (string id4n, string type, bool? privateRoutes, bool? publicRoutes, bool? interpolate);
         /// <summary>
         /// Retrieve routing file 
         /// </summary>
@@ -97,8 +98,9 @@ namespace BlueRain.ID4i.Api
         /// <param name="type">The type of route you want to have</param> 
         /// <param name="privateRoutes">privateRoutes</param> 
         /// <param name="publicRoutes">publicRoutes</param> 
+        /// <param name="interpolate">interpolate</param> 
         /// <returns>Route</returns>            
-        public Route GetRoute (string id4n, string type, bool? privateRoutes, bool? publicRoutes)
+        public Route GetRoute (string id4n, string type, bool? privateRoutes, bool? publicRoutes, bool? interpolate)
         {
             
             // verify the required parameter 'id4n' is set
@@ -121,6 +123,7 @@ path = path.Replace("{" + "type" + "}", ApiClient.ParameterToString(type));
     
              if (privateRoutes != null) queryParams.Add("privateRoutes", ApiClient.ParameterToString(privateRoutes)); // query parameter
  if (publicRoutes != null) queryParams.Add("publicRoutes", ApiClient.ParameterToString(publicRoutes)); // query parameter
+ if (interpolate != null) queryParams.Add("interpolate", ApiClient.ParameterToString(interpolate)); // query parameter
                                         
             // authentication setting, if any
             String[] authSettings = new String[] { "Authorization" };
