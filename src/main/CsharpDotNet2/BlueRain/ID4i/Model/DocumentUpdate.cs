@@ -13,11 +13,20 @@ namespace BlueRain.ID4i.Model {
   [DataContract]
   public class DocumentUpdate {
     /// <summary>
-    /// Gets or Sets Filename
+    /// File Name
     /// </summary>
+    /// <value>File Name</value>
     [DataMember(Name="filename", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "filename")]
     public string Filename { get; set; }
+
+    /// <summary>
+    /// Mime Type
+    /// </summary>
+    /// <value>Mime Type</value>
+    [DataMember(Name="mimeType", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "mimeType")]
+    public string MimeType { get; set; }
 
     /// <summary>
     /// Visibility configuration
@@ -36,6 +45,7 @@ namespace BlueRain.ID4i.Model {
       var sb = new StringBuilder();
       sb.Append("class DocumentUpdate {\n");
       sb.Append("  Filename: ").Append(Filename).Append("\n");
+      sb.Append("  MimeType: ").Append(MimeType).Append("\n");
       sb.Append("  Visibility: ").Append(Visibility).Append("\n");
       sb.Append("}\n");
       return sb.ToString();

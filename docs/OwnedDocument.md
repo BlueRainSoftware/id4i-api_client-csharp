@@ -3,7 +3,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Filename** | **string** |  | [optional] 
+**Filename** | **string** | File Name | [optional] 
+**MimeType** | **string** | Mime Type | [optional] 
 **OwnerOrganizationId** | **long?** | The organization&#39;s id which owns the document | [optional] 
 **Visibility** | [**Visibility**](Visibility.md) | Visibility configuration | [optional] 
 
