@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getpositionsfororganization"></a>
 # **GetPositionsForOrganization**
-> List<BillingPosition> GetPositionsForOrganization (long? organizationId)
+> List<BillingPosition> GetPositionsForOrganization (long? organizationId, DateTime? fromDate, DateTime? toDate)
 
 Get billing positions for a given organization
 
@@ -36,11 +36,13 @@ namespace Example
 
             var apiInstance = new BillingApi();
             var organizationId = 789;  // long? | The organization to compute the billing information for
+            var fromDate = 2013-10-20T19:20:30+01:00;  // DateTime? | Billing start date (optional) 
+            var toDate = 2013-10-20T19:20:30+01:00;  // DateTime? | Billing end date (optional) 
 
             try
             {
                 // Get billing positions for a given organization
-                List&lt;BillingPosition&gt; result = apiInstance.GetPositionsForOrganization(organizationId);
+                List&lt;BillingPosition&gt; result = apiInstance.GetPositionsForOrganization(organizationId, fromDate, toDate);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -57,6 +59,8 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **long?**| The organization to compute the billing information for | 
+ **fromDate** | **DateTime?**| Billing start date | [optional] 
+ **toDate** | **DateTime?**| Billing end date | [optional] 
 
 ### Return type
 
@@ -75,7 +79,7 @@ Name | Type | Description  | Notes
 
 <a name="getsumfororganization"></a>
 # **GetSumForOrganization**
-> ServiceCosts GetSumForOrganization (long? organizationId)
+> ServiceCosts GetSumForOrganization (long? organizationId, DateTime? fromDate, DateTime? toDate)
 
 Get billing amount of services for a given organization
 
@@ -101,11 +105,13 @@ namespace Example
 
             var apiInstance = new BillingApi();
             var organizationId = 789;  // long? | The organization to compute the billing information for
+            var fromDate = 2013-10-20T19:20:30+01:00;  // DateTime? | Billing start date (optional) 
+            var toDate = 2013-10-20T19:20:30+01:00;  // DateTime? | Billing end date (optional) 
 
             try
             {
                 // Get billing amount of services for a given organization
-                ServiceCosts result = apiInstance.GetSumForOrganization(organizationId);
+                ServiceCosts result = apiInstance.GetSumForOrganization(organizationId, fromDate, toDate);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -122,6 +128,8 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **long?**| The organization to compute the billing information for | 
+ **fromDate** | **DateTime?**| Billing start date | [optional] 
+ **toDate** | **DateTime?**| Billing end date | [optional] 
 
 ### Return type
 

@@ -16,14 +16,18 @@ namespace BlueRain.ID4i.Api
         /// Get billing positions for a given organization 
         /// </summary>
         /// <param name="organizationId">The organization to compute the billing information for</param>
+        /// <param name="fromDate">Billing start date</param>
+        /// <param name="toDate">Billing end date</param>
         /// <returns>List&lt;BillingPosition&gt;</returns>
-        List<BillingPosition> GetPositionsForOrganization (long? organizationId);
+        List<BillingPosition> GetPositionsForOrganization (long? organizationId, DateTime? fromDate, DateTime? toDate);
         /// <summary>
         /// Get billing amount of services for a given organization 
         /// </summary>
         /// <param name="organizationId">The organization to compute the billing information for</param>
+        /// <param name="fromDate">Billing start date</param>
+        /// <param name="toDate">Billing end date</param>
         /// <returns>ServiceCosts</returns>
-        ServiceCosts GetSumForOrganization (long? organizationId);
+        ServiceCosts GetSumForOrganization (long? organizationId, DateTime? fromDate, DateTime? toDate);
     }
   
     /// <summary>
@@ -83,8 +87,10 @@ namespace BlueRain.ID4i.Api
         /// Get billing positions for a given organization 
         /// </summary>
         /// <param name="organizationId">The organization to compute the billing information for</param> 
+        /// <param name="fromDate">Billing start date</param> 
+        /// <param name="toDate">Billing end date</param> 
         /// <returns>List&lt;BillingPosition&gt;</returns>            
-        public List<BillingPosition> GetPositionsForOrganization (long? organizationId)
+        public List<BillingPosition> GetPositionsForOrganization (long? organizationId, DateTime? fromDate, DateTime? toDate)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -101,7 +107,9 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                                                    
+             if (fromDate != null) queryParams.Add("fromDate", ApiClient.ParameterToString(fromDate)); // query parameter
+ if (toDate != null) queryParams.Add("toDate", ApiClient.ParameterToString(toDate)); // query parameter
+                                        
             // authentication setting, if any
             String[] authSettings = new String[] { "Authorization" };
     
@@ -120,8 +128,10 @@ namespace BlueRain.ID4i.Api
         /// Get billing amount of services for a given organization 
         /// </summary>
         /// <param name="organizationId">The organization to compute the billing information for</param> 
+        /// <param name="fromDate">Billing start date</param> 
+        /// <param name="toDate">Billing end date</param> 
         /// <returns>ServiceCosts</returns>            
-        public ServiceCosts GetSumForOrganization (long? organizationId)
+        public ServiceCosts GetSumForOrganization (long? organizationId, DateTime? fromDate, DateTime? toDate)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -138,7 +148,9 @@ namespace BlueRain.ID4i.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
     
-                                                    
+             if (fromDate != null) queryParams.Add("fromDate", ApiClient.ParameterToString(fromDate)); // query parameter
+ if (toDate != null) queryParams.Add("toDate", ApiClient.ParameterToString(toDate)); // query parameter
+                                        
             // authentication setting, if any
             String[] authSettings = new String[] { "Authorization" };
     
