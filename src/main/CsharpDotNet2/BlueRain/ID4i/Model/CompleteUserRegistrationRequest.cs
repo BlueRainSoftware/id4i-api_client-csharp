@@ -13,11 +13,11 @@ namespace BlueRain.ID4i.Model {
   [DataContract]
   public class CompleteUserRegistrationRequest {
     /// <summary>
-    /// Gets or Sets VerificationToken
+    /// Gets or Sets Password
     /// </summary>
-    [DataMember(Name="verificationToken", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "verificationToken")]
-    public string VerificationToken { get; set; }
+    [DataMember(Name="password", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "password")]
+    public string Password { get; set; }
 
     /// <summary>
     /// Gets or Sets Username
@@ -27,11 +27,11 @@ namespace BlueRain.ID4i.Model {
     public string Username { get; set; }
 
     /// <summary>
-    /// Gets or Sets Password
+    /// Gets or Sets VerificationToken
     /// </summary>
-    [DataMember(Name="password", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "password")]
-    public string Password { get; set; }
+    [DataMember(Name="verificationToken", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "verificationToken")]
+    public string VerificationToken { get; set; }
 
 
     /// <summary>
@@ -41,9 +41,9 @@ namespace BlueRain.ID4i.Model {
     public override string ToString()  {
       var sb = new StringBuilder();
       sb.Append("class CompleteUserRegistrationRequest {\n");
-      sb.Append("  VerificationToken: ").Append(VerificationToken).Append("\n");
-      sb.Append("  Username: ").Append(Username).Append("\n");
       sb.Append("  Password: ").Append(Password).Append("\n");
+      sb.Append("  Username: ").Append(Username).Append("\n");
+      sb.Append("  VerificationToken: ").Append(VerificationToken).Append("\n");
       sb.Append("}\n");
       return sb.ToString();
     }

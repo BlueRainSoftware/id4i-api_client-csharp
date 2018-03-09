@@ -13,18 +13,18 @@ namespace BlueRain.ID4i.Model {
   [DataContract]
   public class RoutingFileRequest {
     /// <summary>
-    /// Gets or Sets Routing
-    /// </summary>
-    [DataMember(Name="routing", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "routing")]
-    public RoutingFile Routing { get; set; }
-
-    /// <summary>
     /// Gets or Sets OrganizationId
     /// </summary>
     [DataMember(Name="organizationId", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "organizationId")]
     public long? OrganizationId { get; set; }
+
+    /// <summary>
+    /// Gets or Sets Routing
+    /// </summary>
+    [DataMember(Name="routing", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "routing")]
+    public RoutingFile Routing { get; set; }
 
 
     /// <summary>
@@ -34,8 +34,8 @@ namespace BlueRain.ID4i.Model {
     public override string ToString()  {
       var sb = new StringBuilder();
       sb.Append("class RoutingFileRequest {\n");
-      sb.Append("  Routing: ").Append(Routing).Append("\n");
       sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
+      sb.Append("  Routing: ").Append(Routing).Append("\n");
       sb.Append("}\n");
       return sb.ToString();
     }

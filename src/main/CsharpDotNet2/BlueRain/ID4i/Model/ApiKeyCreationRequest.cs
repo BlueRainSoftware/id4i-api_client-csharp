@@ -20,18 +20,18 @@ namespace BlueRain.ID4i.Model {
     public string Label { get; set; }
 
     /// <summary>
-    /// Gets or Sets Secret
-    /// </summary>
-    [DataMember(Name="secret", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "secret")]
-    public string Secret { get; set; }
-
-    /// <summary>
     /// Gets or Sets OrganizationId
     /// </summary>
     [DataMember(Name="organizationId", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "organizationId")]
     public long? OrganizationId { get; set; }
+
+    /// <summary>
+    /// Gets or Sets Secret
+    /// </summary>
+    [DataMember(Name="secret", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "secret")]
+    public string Secret { get; set; }
 
 
     /// <summary>
@@ -42,8 +42,8 @@ namespace BlueRain.ID4i.Model {
       var sb = new StringBuilder();
       sb.Append("class ApiKeyCreationRequest {\n");
       sb.Append("  Label: ").Append(Label).Append("\n");
-      sb.Append("  Secret: ").Append(Secret).Append("\n");
       sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
+      sb.Append("  Secret: ").Append(Secret).Append("\n");
       sb.Append("}\n");
       return sb.ToString();
     }

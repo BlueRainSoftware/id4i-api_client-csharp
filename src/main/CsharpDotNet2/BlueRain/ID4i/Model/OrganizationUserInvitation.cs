@@ -20,18 +20,18 @@ namespace BlueRain.ID4i.Model {
     public string Email { get; set; }
 
     /// <summary>
-    /// Gets or Sets UserName
-    /// </summary>
-    [DataMember(Name="userName", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "userName")]
-    public string UserName { get; set; }
-
-    /// <summary>
     /// Gets or Sets Roles
     /// </summary>
     [DataMember(Name="roles", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "roles")]
     public List<string> Roles { get; set; }
+
+    /// <summary>
+    /// Gets or Sets UserName
+    /// </summary>
+    [DataMember(Name="userName", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "userName")]
+    public string UserName { get; set; }
 
 
     /// <summary>
@@ -42,8 +42,8 @@ namespace BlueRain.ID4i.Model {
       var sb = new StringBuilder();
       sb.Append("class OrganizationUserInvitation {\n");
       sb.Append("  Email: ").Append(Email).Append("\n");
-      sb.Append("  UserName: ").Append(UserName).Append("\n");
       sb.Append("  Roles: ").Append(Roles).Append("\n");
+      sb.Append("  UserName: ").Append(UserName).Append("\n");
       sb.Append("}\n");
       return sb.ToString();
     }
