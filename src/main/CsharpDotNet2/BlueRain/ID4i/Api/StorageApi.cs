@@ -13,15 +13,6 @@ namespace BlueRain.ID4i.Api
     public interface IStorageApi
     {
         /// <summary>
-        /// Create an empty document for an id4n The document is created empty, mime-type defaults to text/plain
-        /// </summary>
-        /// <param name="organizationId">organizationId</param>
-        /// <param name="id4n">id4n</param>
-        /// <param name="document">document</param>
-        /// <param name="mimeType">mimeType</param>
-        /// <returns>Document</returns>
-        Document CreateDocument (long? organizationId, string id4n, Document document, string mimeType);
-        /// <summary>
         /// Delete a document 
         /// </summary>
         /// <param name="organizationId">organizationId</param>
@@ -86,23 +77,23 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">organizationId</param>
         /// <param name="id4n">id4n</param>
         /// <param name="fileName">fileName</param>
-        /// <returns>System.IO.Stream</returns>
-        System.IO.Stream ReadDocument (long? organizationId, string id4n, string fileName);
+        /// <returns>byte[]</returns>
+        byte[] ReadDocument (long? organizationId, string id4n, string fileName);
         /// <summary>
         /// Read data from microstorage 
         /// </summary>
         /// <param name="organization">organization</param>
         /// <param name="id4n">id4n</param>
-        /// <returns>string</returns>
-        string ReadFromMicrostorage (long? organization, string id4n);
+        /// <returns>byte[]</returns>
+        byte[] ReadFromMicrostorage (long? organization, string id4n);
         /// <summary>
         /// Read document contents 
         /// </summary>
         /// <param name="organizationId">organizationId</param>
         /// <param name="id4n">id4n</param>
         /// <param name="fileName">fileName</param>
-        /// <returns>System.IO.Stream</returns>
-        System.IO.Stream ReadPublicDocument (long? organizationId, string id4n, string fileName);
+        /// <returns>byte[]</returns>
+        byte[] ReadPublicDocument (long? organizationId, string id4n, string fileName);
         /// <summary>
         /// Update a document 
         /// </summary>
@@ -111,24 +102,13 @@ namespace BlueRain.ID4i.Api
         /// <param name="fileName">fileName</param>
         /// <param name="document">document</param>
         /// <returns>Document</returns>
-        Document UpdateDocument (long? organizationId, string id4n, string fileName, DocumentUpdate document);
-        /// <summary>
-        /// Write document contents 
-        /// </summary>
-        /// <param name="organizationId">organizationId</param>
-        /// <param name="id4n">id4n</param>
-        /// <param name="fileName">fileName</param>
-        /// <param name="body">binary data</param>
-        /// <param name="contentType">Content-Type</param>
-        /// <param name="contentLength">Content-Length</param>
-        /// <returns>ResponseEntity</returns>
-        ResponseEntity WriteDocument (long? organizationId, string id4n, string fileName, File body, string contentType, long? contentLength);
+        Document UpdateDocumentMetadata (long? organizationId, string id4n, string fileName, DocumentUpdate document);
         /// <summary>
         /// Write data to microstorage 
         /// </summary>
         /// <param name="organization">organization</param>
         /// <param name="id4n">id4n</param>
-        /// <param name="body">binary data</param>
+        /// <param name="body"></param>
         /// <param name="contentType">Content-Type</param>
         /// <param name="contentLength">Content-Length</param>
         /// <returns>Object</returns>
@@ -187,55 +167,6 @@ namespace BlueRain.ID4i.Api
         /// </summary>
         /// <value>An instance of the ApiClient</value>
         public ApiClient ApiClient {get; set;}
-    
-        /// <summary>
-        /// Create an empty document for an id4n The document is created empty, mime-type defaults to text/plain
-        /// </summary>
-        /// <param name="organizationId">organizationId</param> 
-        /// <param name="id4n">id4n</param> 
-        /// <param name="document">document</param> 
-        /// <param name="mimeType">mimeType</param> 
-        /// <returns>Document</returns>            
-        public Document CreateDocument (long? organizationId, string id4n, Document document, string mimeType)
-        {
-            
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null) throw new ApiException(400, "Missing required parameter 'organizationId' when calling CreateDocument");
-            
-            // verify the required parameter 'id4n' is set
-            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling CreateDocument");
-            
-            // verify the required parameter 'document' is set
-            if (document == null) throw new ApiException(400, "Missing required parameter 'document' when calling CreateDocument");
-            
-    
-            var path = "/api/v1/documents/{id4n}/{organizationId}";
-            path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
-path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
-    
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-             if (mimeType != null) queryParams.Add("mimeType", ApiClient.ParameterToString(mimeType)); // query parameter
-                                    postBody = ApiClient.Serialize(document); // http body (model) parameter
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] { "Authorization" };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling CreateDocument: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling CreateDocument: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (Document) ApiClient.Deserialize(response.Content, typeof(Document), response.Headers);
-        }
     
         /// <summary>
         /// Delete a document 
@@ -304,7 +235,7 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             if (fileName == null) throw new ApiException(400, "Missing required parameter 'fileName' when calling GetDocument");
             
     
-            var path = "/api/v1/documents/{id4n}/{organizationId}/{fileName}";
+            var path = "/api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata";
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
 path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
@@ -351,7 +282,7 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             if (fileName == null) throw new ApiException(400, "Missing required parameter 'fileName' when calling GetPublicDocument");
             
     
-            var path = "/api/v1/public/documents/{id4n}/{organizationId}/{fileName}";
+            var path = "/api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata";
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
 path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
@@ -560,8 +491,8 @@ path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
         /// <param name="organizationId">organizationId</param> 
         /// <param name="id4n">id4n</param> 
         /// <param name="fileName">fileName</param> 
-        /// <returns>System.IO.Stream</returns>            
-        public System.IO.Stream ReadDocument (long? organizationId, string id4n, string fileName)
+        /// <returns>byte[]</returns>            
+        public byte[] ReadDocument (long? organizationId, string id4n, string fileName)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -574,7 +505,7 @@ path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
             if (fileName == null) throw new ApiException(400, "Missing required parameter 'fileName' when calling ReadDocument");
             
     
-            var path = "/api/v1/documents/{id4n}/{organizationId}/{fileName}/content";
+            var path = "/api/v1/documents/{id4n}/{organizationId}/{fileName}";
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
 path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
@@ -598,7 +529,7 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling ReadDocument: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (System.IO.Stream) ApiClient.Deserialize(response.Content, typeof(System.IO.Stream), response.Headers);
+            return (byte[]) ApiClient.Deserialize(response.Content, typeof(byte[]), response.Headers);
         }
     
         /// <summary>
@@ -606,8 +537,8 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
         /// </summary>
         /// <param name="organization">organization</param> 
         /// <param name="id4n">id4n</param> 
-        /// <returns>string</returns>            
-        public string ReadFromMicrostorage (long? organization, string id4n)
+        /// <returns>byte[]</returns>            
+        public byte[] ReadFromMicrostorage (long? organization, string id4n)
         {
             
             // verify the required parameter 'organization' is set
@@ -640,7 +571,7 @@ path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling ReadFromMicrostorage: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (string) ApiClient.Deserialize(response.Content, typeof(string), response.Headers);
+            return (byte[]) ApiClient.Deserialize(response.Content, typeof(byte[]), response.Headers);
         }
     
         /// <summary>
@@ -649,8 +580,8 @@ path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
         /// <param name="organizationId">organizationId</param> 
         /// <param name="id4n">id4n</param> 
         /// <param name="fileName">fileName</param> 
-        /// <returns>System.IO.Stream</returns>            
-        public System.IO.Stream ReadPublicDocument (long? organizationId, string id4n, string fileName)
+        /// <returns>byte[]</returns>            
+        public byte[] ReadPublicDocument (long? organizationId, string id4n, string fileName)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -663,7 +594,7 @@ path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
             if (fileName == null) throw new ApiException(400, "Missing required parameter 'fileName' when calling ReadPublicDocument");
             
     
-            var path = "/api/v1/public/documents/{id4n}/{organizationId}/{fileName}/content";
+            var path = "/api/v1/public/documents/{id4n}/{organizationId}/{fileName}";
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
 path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
@@ -687,7 +618,7 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling ReadPublicDocument: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (System.IO.Stream) ApiClient.Deserialize(response.Content, typeof(System.IO.Stream), response.Headers);
+            return (byte[]) ApiClient.Deserialize(response.Content, typeof(byte[]), response.Headers);
         }
     
         /// <summary>
@@ -698,20 +629,20 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
         /// <param name="fileName">fileName</param> 
         /// <param name="document">document</param> 
         /// <returns>Document</returns>            
-        public Document UpdateDocument (long? organizationId, string id4n, string fileName, DocumentUpdate document)
+        public Document UpdateDocumentMetadata (long? organizationId, string id4n, string fileName, DocumentUpdate document)
         {
             
             // verify the required parameter 'organizationId' is set
-            if (organizationId == null) throw new ApiException(400, "Missing required parameter 'organizationId' when calling UpdateDocument");
+            if (organizationId == null) throw new ApiException(400, "Missing required parameter 'organizationId' when calling UpdateDocumentMetadata");
             
             // verify the required parameter 'id4n' is set
-            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling UpdateDocument");
+            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling UpdateDocumentMetadata");
             
             // verify the required parameter 'fileName' is set
-            if (fileName == null) throw new ApiException(400, "Missing required parameter 'fileName' when calling UpdateDocument");
+            if (fileName == null) throw new ApiException(400, "Missing required parameter 'fileName' when calling UpdateDocumentMetadata");
             
             // verify the required parameter 'document' is set
-            if (document == null) throw new ApiException(400, "Missing required parameter 'document' when calling UpdateDocument");
+            if (document == null) throw new ApiException(400, "Missing required parameter 'document' when calling UpdateDocumentMetadata");
             
     
             var path = "/api/v1/documents/{id4n}/{organizationId}/{fileName}";
@@ -735,67 +666,11 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PATCH, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling UpdateDocument: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling UpdateDocumentMetadata: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling UpdateDocument: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling UpdateDocumentMetadata: " + response.ErrorMessage, response.ErrorMessage);
     
             return (Document) ApiClient.Deserialize(response.Content, typeof(Document), response.Headers);
-        }
-    
-        /// <summary>
-        /// Write document contents 
-        /// </summary>
-        /// <param name="organizationId">organizationId</param> 
-        /// <param name="id4n">id4n</param> 
-        /// <param name="fileName">fileName</param> 
-        /// <param name="body">binary data</param> 
-        /// <param name="contentType">Content-Type</param> 
-        /// <param name="contentLength">Content-Length</param> 
-        /// <returns>ResponseEntity</returns>            
-        public ResponseEntity WriteDocument (long? organizationId, string id4n, string fileName, File body, string contentType, long? contentLength)
-        {
-            
-            // verify the required parameter 'organizationId' is set
-            if (organizationId == null) throw new ApiException(400, "Missing required parameter 'organizationId' when calling WriteDocument");
-            
-            // verify the required parameter 'id4n' is set
-            if (id4n == null) throw new ApiException(400, "Missing required parameter 'id4n' when calling WriteDocument");
-            
-            // verify the required parameter 'fileName' is set
-            if (fileName == null) throw new ApiException(400, "Missing required parameter 'fileName' when calling WriteDocument");
-            
-            // verify the required parameter 'body' is set
-            if (body == null) throw new ApiException(400, "Missing required parameter 'body' when calling WriteDocument");
-            
-    
-            var path = "/api/v1/documents/{id4n}/{organizationId}/{fileName}/content";
-            path = path.Replace("{format}", "json");
-            path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
-path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
-path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName));
-    
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-                         if (contentType != null) headerParams.Add("Content-Type", ApiClient.ParameterToString(contentType)); // header parameter
- if (contentLength != null) headerParams.Add("Content-Length", ApiClient.ParameterToString(contentLength)); // header parameter
-                        postBody = ApiClient.Serialize(body); // http body (model) parameter
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] { "Authorization" };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling WriteDocument: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling WriteDocument: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (ResponseEntity) ApiClient.Deserialize(response.Content, typeof(ResponseEntity), response.Headers);
         }
     
         /// <summary>
@@ -803,7 +678,7 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
         /// </summary>
         /// <param name="organization">organization</param> 
         /// <param name="id4n">id4n</param> 
-        /// <param name="body">binary data</param> 
+        /// <param name="body"></param> 
         /// <param name="contentType">Content-Type</param> 
         /// <param name="contentLength">Content-Length</param> 
         /// <returns>Object</returns>            

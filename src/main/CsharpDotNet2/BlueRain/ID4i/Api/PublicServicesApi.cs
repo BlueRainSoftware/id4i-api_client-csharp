@@ -50,8 +50,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">organizationId</param>
         /// <param name="id4n">id4n</param>
         /// <param name="fileName">fileName</param>
-        /// <returns>System.IO.Stream</returns>
-        System.IO.Stream ReadPublicDocument (long? organizationId, string id4n, string fileName);
+        /// <returns>byte[]</returns>
+        byte[] ReadPublicDocument (long? organizationId, string id4n, string fileName);
         /// <summary>
         /// Resolve image 
         /// </summary>
@@ -139,7 +139,7 @@ namespace BlueRain.ID4i.Api
             if (fileName == null) throw new ApiException(400, "Missing required parameter 'fileName' when calling GetPublicDocument");
             
     
-            var path = "/api/v1/public/documents/{id4n}/{organizationId}/{fileName}";
+            var path = "/api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata";
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
 path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
@@ -298,8 +298,8 @@ path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
         /// <param name="organizationId">organizationId</param> 
         /// <param name="id4n">id4n</param> 
         /// <param name="fileName">fileName</param> 
-        /// <returns>System.IO.Stream</returns>            
-        public System.IO.Stream ReadPublicDocument (long? organizationId, string id4n, string fileName)
+        /// <returns>byte[]</returns>            
+        public byte[] ReadPublicDocument (long? organizationId, string id4n, string fileName)
         {
             
             // verify the required parameter 'organizationId' is set
@@ -312,7 +312,7 @@ path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
             if (fileName == null) throw new ApiException(400, "Missing required parameter 'fileName' when calling ReadPublicDocument");
             
     
-            var path = "/api/v1/public/documents/{id4n}/{organizationId}/{fileName}/content";
+            var path = "/api/v1/public/documents/{id4n}/{organizationId}/{fileName}";
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "organizationId" + "}", ApiClient.ParameterToString(organizationId));
 path = path.Replace("{" + "id4n" + "}", ApiClient.ParameterToString(id4n));
@@ -336,7 +336,7 @@ path = path.Replace("{" + "fileName" + "}", ApiClient.ParameterToString(fileName
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling ReadPublicDocument: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (System.IO.Stream) ApiClient.Deserialize(response.Content, typeof(System.IO.Stream), response.Headers);
+            return (byte[]) ApiClient.Deserialize(response.Content, typeof(byte[]), response.Headers);
         }
     
         /// <summary>
