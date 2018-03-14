@@ -81,7 +81,7 @@ Contact: info@bluerain.de
   <Import Project="$(MsBuildToolsPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
       <ProjectReference Include="..\BlueRain.ID4i\BlueRain.ID4i.csproj">
-          <Project>{21B5504A-97FB-42E1-8EBB-4097A55B89E2}</Project>
+          <Project>{A8216145-CB69-47F0-AEBB-734E5D8598CD}</Project>
           <Name>BlueRain.ID4i</Name>
       </ProjectReference>
   </ItemGroup>
