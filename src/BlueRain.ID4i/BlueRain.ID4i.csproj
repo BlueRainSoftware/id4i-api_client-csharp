@@ -12,7 +12,7 @@ Contact: info@bluerain.de
     
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{37098C5B-84E4-4A11-9E15-2CC757001198}</ProjectGuid>
+    <ProjectGuid>{21B5504A-97FB-42E1-8EBB-4097A55B89E2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BlueRain.ID4i</RootNamespace>
