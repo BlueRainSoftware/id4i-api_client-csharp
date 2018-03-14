@@ -4,7 +4,7 @@ ID4i API
 
 ID4i HTTP API
 
-OpenAPI spec version: 0.2.4
+OpenAPI spec version: 0.2.5-SNAPSHOT
 Contact: info@bluerain.de
 -->
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -81,7 +81,7 @@ Contact: info@bluerain.de
   <Import Project="$(MsBuildToolsPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
       <ProjectReference Include="..\BlueRain.ID4i\BlueRain.ID4i.csproj">
-          <Project>{FB5357EB-6E7C-44DB-9F07-8897DA54BBD4}</Project>
+          <Project>{0D5C8883-A5BA-45E7-A81F-6B8693D04C30}</Project>
           <Name>BlueRain.ID4i</Name>
       </ProjectReference>
   </ItemGroup>

@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>BlueRain.ID4i</id>
-        <version>0.2.4</version>
+        <version>0.2.5</version>
 
         <title>ID4i API Client</title>
         <description>ID4i API Client for C# .NET</description>
