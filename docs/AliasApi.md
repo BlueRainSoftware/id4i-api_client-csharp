@@ -5,15 +5,15 @@ All URIs are relative to *https://backend.id4i.de*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**AddGuidAlias**](AliasApi.md#addguidalias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
-[**AddGuidAlias1**](AliasApi.md#addguidalias1) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
 [**GetGuidAliasTypes**](AliasApi.md#getguidaliastypes) | **GET** /api/v1/search/guids/aliases/types | List all supported alias types
 [**GetGuidAliases**](AliasApi.md#getguidaliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
+[**RemoveGuidAlias**](AliasApi.md#removeguidalias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
 [**SearchByAlias**](AliasApi.md#searchbyalias) | **GET** /api/v1/search/guids | Search for GUIDs by alias
 
 
 <a name="addguidalias"></a>
 # **AddGuidAlias**
-> ApiError AddGuidAlias (string id4n, string aliasType, GuidAlias alias)
+> void AddGuidAlias (string id4n, string aliasType, GuidAlias alias)
 
 Add alias for GUIDs
 
@@ -33,11 +33,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new AliasApi();
             var id4n = id4n_example;  // string | The GUID to operate on
@@ -47,8 +46,7 @@ namespace Example
             try
             {
                 // Add alias for GUIDs
-                ApiError result = apiInstance.AddGuidAlias(id4n, aliasType, alias);
-                Debug.WriteLine(result);
+                apiInstance.AddGuidAlias(id4n, aliasType, alias);
             }
             catch (Exception e)
             {
@@ -69,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -77,77 +75,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="addguidalias1"></a>
-# **AddGuidAlias1**
-> ApiError AddGuidAlias1 (string id4n, string aliasType)
-
-Remove aliases from GUIDs
-
-Remove the alias of the given type
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using BlueRain.ID4i.Api;
-using BlueRain.ID4i.Client;
-using BlueRain.ID4i.Model;
-
-namespace Example
-{
-    public class AddGuidAlias1Example
-    {
-        public void main()
-        {
-            
-            // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
-
-            var apiInstance = new AliasApi();
-            var id4n = id4n_example;  // string | The GUID to operate on
-            var aliasType = aliasType_example;  // string | Alias type, see the corresponding API model
-
-            try
-            {
-                // Remove aliases from GUIDs
-                ApiError result = apiInstance.AddGuidAlias1(id4n, aliasType);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling AliasApi.AddGuidAlias1: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **string**| The GUID to operate on | 
- **aliasType** | **string**| Alias type, see the corresponding API model | 
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -173,11 +102,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new AliasApi();
 
@@ -209,8 +137,8 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -236,11 +164,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new AliasApi();
             var id4n = id4n_example;  // string | The GUID to operate on
@@ -276,14 +203,81 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="removeguidalias"></a>
+# **RemoveGuidAlias**
+> void RemoveGuidAlias (string id4n, string aliasType)
+
+Remove aliases from GUIDs
+
+Remove the alias of the given type
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
+
+namespace Example
+{
+    public class RemoveGuidAliasExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: Authorization
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new AliasApi();
+            var id4n = id4n_example;  // string | The GUID to operate on
+            var aliasType = aliasType_example;  // string | Alias type, see the corresponding API model
+
+            try
+            {
+                // Remove aliases from GUIDs
+                apiInstance.RemoveGuidAlias(id4n, aliasType);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling AliasApi.RemoveGuidAlias: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| The GUID to operate on | 
+ **aliasType** | **string**| Alias type, see the corresponding API model | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="searchbyalias"></a>
 # **SearchByAlias**
-> PaginatedGuidResponse SearchByAlias (string alias, string aliasType, int? offset, int? limit)
+> PaginatedGuidResponse SearchByAlias (string alias, string aliasType, int? offset = null, int? limit = null)
 
 Search for GUIDs by alias
 
@@ -301,11 +295,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new AliasApi();
             var alias = alias_example;  // string | The alias to search for
@@ -347,8 +340,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

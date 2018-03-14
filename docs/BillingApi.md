@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getpositionsfororganization"></a>
 # **GetPositionsForOrganization**
-> List<BillingPosition> GetPositionsForOrganization (long? organizationId)
+> List<BillingPosition> GetPositionsForOrganization (long? organizationId, DateTime? fromDate = null, DateTime? toDate = null)
 
 Get billing positions for a given organization
 
@@ -28,19 +28,20 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new BillingApi();
             var organizationId = 789;  // long? | The organization to compute the billing information for
+            var fromDate = 2013-10-20T19:20:30+01:00;  // DateTime? | Billing start date (optional) 
+            var toDate = 2013-10-20T19:20:30+01:00;  // DateTime? | Billing end date (optional) 
 
             try
             {
                 // Get billing positions for a given organization
-                List&lt;BillingPosition&gt; result = apiInstance.GetPositionsForOrganization(organizationId);
+                List&lt;BillingPosition&gt; result = apiInstance.GetPositionsForOrganization(organizationId, fromDate, toDate);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -57,6 +58,8 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **long?**| The organization to compute the billing information for | 
+ **fromDate** | **DateTime?**| Billing start date | [optional] 
+ **toDate** | **DateTime?**| Billing end date | [optional] 
 
 ### Return type
 
@@ -68,14 +71,14 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getsumfororganization"></a>
 # **GetSumForOrganization**
-> ServiceCosts GetSumForOrganization (long? organizationId)
+> ServiceCosts GetSumForOrganization (long? organizationId, DateTime? fromDate = null, DateTime? toDate = null)
 
 Get billing amount of services for a given organization
 
@@ -93,19 +96,20 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new BillingApi();
             var organizationId = 789;  // long? | The organization to compute the billing information for
+            var fromDate = 2013-10-20T19:20:30+01:00;  // DateTime? | Billing start date (optional) 
+            var toDate = 2013-10-20T19:20:30+01:00;  // DateTime? | Billing end date (optional) 
 
             try
             {
                 // Get billing amount of services for a given organization
-                ServiceCosts result = apiInstance.GetSumForOrganization(organizationId);
+                ServiceCosts result = apiInstance.GetSumForOrganization(organizationId, fromDate, toDate);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -122,6 +126,8 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **long?**| The organization to compute the billing information for | 
+ **fromDate** | **DateTime?**| Billing start date | [optional] 
+ **toDate** | **DateTime?**| Billing end date | [optional] 
 
 ### Return type
 
@@ -133,8 +139,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

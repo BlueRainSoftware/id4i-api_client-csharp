@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="getroute"></a>
 # **GetRoute**
-> Route GetRoute (string id4n, string type, bool? privateRoutes, bool? publicRoutes, bool? interpolate)
+> Route GetRoute (string id4n, string type, bool? privateRoutes = null, bool? publicRoutes = null, bool? interpolate = null)
 
 Retrieve current route of a GUID (or ID4N)
 
@@ -29,11 +29,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new RoutingApi();
             var id4n = id4n_example;  // string | id4n
@@ -77,14 +76,14 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getroutingfile"></a>
 # **GetRoutingFile**
-> RoutingFile GetRoutingFile (string id4n, long? organizationId)
+> RoutingFile GetRoutingFile (string id4n, long? organizationId = null)
 
 Retrieve routing file
 
@@ -102,11 +101,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new RoutingApi();
             var id4n = id4n_example;  // string | id4n
@@ -144,14 +142,14 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="updateroutingfile"></a>
 # **UpdateRoutingFile**
-> ApiError UpdateRoutingFile (RoutingFileRequest rfr, string id4n)
+> void UpdateRoutingFile (RoutingFileRequest rfr, string id4n)
 
 Store routing file
 
@@ -169,11 +167,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new RoutingApi();
             var rfr = new RoutingFileRequest(); // RoutingFileRequest | rfr
@@ -182,8 +179,7 @@ namespace Example
             try
             {
                 // Store routing file
-                ApiError result = apiInstance.UpdateRoutingFile(rfr, id4n);
-                Debug.WriteLine(result);
+                apiInstance.UpdateRoutingFile(rfr, id4n);
             }
             catch (Exception e)
             {
@@ -203,7 +199,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -211,8 +207,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

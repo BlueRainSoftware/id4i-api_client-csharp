@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 <a name="addapikeyprivilege"></a>
 # **AddApiKeyPrivilege**
-> ApiError AddApiKeyPrivilege (string key, AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest)
+> void AddApiKeyPrivilege (string key, AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest)
 
 Add privilege
 
@@ -38,11 +38,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ApiKeysApi();
             var key = key_example;  // string | key
@@ -51,8 +50,7 @@ namespace Example
             try
             {
                 // Add privilege
-                ApiError result = apiInstance.AddApiKeyPrivilege(key, addApiKeyPrivilegeRequest);
-                Debug.WriteLine(result);
+                apiInstance.AddApiKeyPrivilege(key, addApiKeyPrivilegeRequest);
             }
             catch (Exception e)
             {
@@ -72,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -80,14 +78,14 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="addapikeyprivilegeforid4ns"></a>
 # **AddApiKeyPrivilegeForId4ns**
-> ApiError AddApiKeyPrivilegeForId4ns (string key, string privilege, ListOfId4ns id4ns)
+> void AddApiKeyPrivilegeForId4ns (string key, string privilege, ListOfId4ns id4ns)
 
 Add ID4ns of a privilege
 
@@ -105,11 +103,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ApiKeysApi();
             var key = key_example;  // string | key
@@ -119,8 +116,7 @@ namespace Example
             try
             {
                 // Add ID4ns of a privilege
-                ApiError result = apiInstance.AddApiKeyPrivilegeForId4ns(key, privilege, id4ns);
-                Debug.WriteLine(result);
+                apiInstance.AddApiKeyPrivilegeForId4ns(key, privilege, id4ns);
             }
             catch (Exception e)
             {
@@ -141,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -149,8 +145,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -176,11 +172,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ApiKeysApi();
             var creationRequest = new ApiKeyCreationRequest(); // ApiKeyCreationRequest | API key to be created.
@@ -216,14 +211,14 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="deleteapikey"></a>
 # **DeleteApiKey**
-> ApiError DeleteApiKey (string key)
+> void DeleteApiKey (string key)
 
 Delete API key
 
@@ -243,11 +238,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ApiKeysApi();
             var key = key_example;  // string | The API key to delete.
@@ -255,8 +249,7 @@ namespace Example
             try
             {
                 // Delete API key
-                ApiError result = apiInstance.DeleteApiKey(key);
-                Debug.WriteLine(result);
+                apiInstance.DeleteApiKey(key);
             }
             catch (Exception e)
             {
@@ -275,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -283,8 +276,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -310,11 +303,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ApiKeysApi();
             var key = key_example;  // string | The API key to show.
@@ -350,14 +342,14 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="listallapikeyprivileges"></a>
 # **ListAllApiKeyPrivileges**
-> ApiKeyPrivilegeInfoResponse ListAllApiKeyPrivileges (bool? id4nConcerning, int? offset, int? limit)
+> ApiKeyPrivilegeInfoResponse ListAllApiKeyPrivileges (bool? id4nConcerning = null, int? offset = null, int? limit = null)
 
 List all privileges
 
@@ -377,11 +369,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ApiKeysApi();
             var id4nConcerning = true;  // bool? | id4nConcerning (optional) 
@@ -421,14 +412,14 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="listallapikeysoforganization"></a>
 # **ListAllApiKeysOfOrganization**
-> PaginatedApiKeyResponse ListAllApiKeysOfOrganization (long? organizationId, int? offset, int? limit)
+> PaginatedApiKeyResponse ListAllApiKeysOfOrganization (long? organizationId, int? offset = null, int? limit = null)
 
 Find API key by organization
 
@@ -448,11 +439,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ApiKeysApi();
             var organizationId = 789;  // long? | The id of the organization to search in.
@@ -492,14 +482,14 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="listapikeyprivileges"></a>
 # **ListApiKeyPrivileges**
-> ApiKeyPrivilegePaginatedResponse ListApiKeyPrivileges (string key, int? offset, int? limit)
+> ApiKeyPrivilegePaginatedResponse ListApiKeyPrivileges (string key, int? offset = null, int? limit = null)
 
 List privileges
 
@@ -517,11 +507,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ApiKeysApi();
             var key = key_example;  // string | key
@@ -561,14 +550,14 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="listid4ns"></a>
 # **ListId4ns**
-> Id4nPresentationPaginatedResponse ListId4ns (string key, string privilege, int? offset, int? limit)
+> Id4nPresentationPaginatedResponse ListId4ns (string key, string privilege, int? offset = null, int? limit = null)
 
 ID4ns of a privilege
 
@@ -588,11 +577,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ApiKeysApi();
             var key = key_example;  // string | key
@@ -634,14 +622,14 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="removeapikeyprivilege"></a>
 # **RemoveApiKeyPrivilege**
-> ApiError RemoveApiKeyPrivilege (string key, RemoveApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest)
+> void RemoveApiKeyPrivilege (string key, RemoveApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest)
 
 Remove privilege
 
@@ -659,11 +647,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ApiKeysApi();
             var key = key_example;  // string | key
@@ -672,8 +659,7 @@ namespace Example
             try
             {
                 // Remove privilege
-                ApiError result = apiInstance.RemoveApiKeyPrivilege(key, removeApiKeyPrivilegeRequest);
-                Debug.WriteLine(result);
+                apiInstance.RemoveApiKeyPrivilege(key, removeApiKeyPrivilegeRequest);
             }
             catch (Exception e)
             {
@@ -693,7 +679,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -701,14 +687,14 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="removeapikeyprivilegeforid4ns"></a>
 # **RemoveApiKeyPrivilegeForId4ns**
-> ApiError RemoveApiKeyPrivilegeForId4ns (string key, string privilege, ListOfId4ns id4ns)
+> void RemoveApiKeyPrivilegeForId4ns (string key, string privilege, ListOfId4ns id4ns)
 
 Remove id4ns of a privilege
 
@@ -726,11 +712,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ApiKeysApi();
             var key = key_example;  // string | key
@@ -740,8 +725,7 @@ namespace Example
             try
             {
                 // Remove id4ns of a privilege
-                ApiError result = apiInstance.RemoveApiKeyPrivilegeForId4ns(key, privilege, id4ns);
-                Debug.WriteLine(result);
+                apiInstance.RemoveApiKeyPrivilegeForId4ns(key, privilege, id4ns);
             }
             catch (Exception e)
             {
@@ -762,7 +746,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -770,14 +754,14 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="updateapikey"></a>
 # **UpdateApiKey**
-> ApiError UpdateApiKey (string key, ApiKeyChangeRequest apiKeyChange)
+> void UpdateApiKey (string key, ApiKeyChangeRequest apiKeyChange)
 
 Update API keys
 
@@ -797,11 +781,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ApiKeysApi();
             var key = key_example;  // string | The API key to be updated.
@@ -810,8 +793,7 @@ namespace Example
             try
             {
                 // Update API keys
-                ApiError result = apiInstance.UpdateApiKey(key, apiKeyChange);
-                Debug.WriteLine(result);
+                apiInstance.UpdateApiKey(key, apiKeyChange);
             }
             catch (Exception e)
             {
@@ -831,7 +813,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -839,8 +821,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
