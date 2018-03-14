@@ -33,11 +33,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new PublicServicesApi();
             var organizationId = 789;  // long? | organizationId
@@ -84,7 +83,7 @@ Name | Type | Description  | Notes
 
 <a name="go"></a>
 # **Go**
-> ApiError Go (string guid)
+> void Go (string guid)
 
 Forward
 
@@ -104,15 +103,13 @@ namespace Example
     {
         public void main()
         {
-            
             var apiInstance = new PublicServicesApi();
             var guid = guid_example;  // string | guid
 
             try
             {
                 // Forward
-                ApiError result = apiInstance.Go(guid);
-                Debug.WriteLine(result);
+                apiInstance.Go(guid);
             }
             catch (Exception e)
             {
@@ -131,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -146,7 +143,7 @@ No authorization required
 
 <a name="listallpublicdocuments"></a>
 # **ListAllPublicDocuments**
-> PaginatedOwnedDocumentResponse ListAllPublicDocuments (string id4n, long? organizationId, int? offset, int? limit)
+> PaginatedOwnedDocumentResponse ListAllPublicDocuments (string id4n, long? organizationId = null, int? offset = null, int? limit = null)
 
 List organization specific documents
 
@@ -166,11 +163,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new PublicServicesApi();
             var id4n = id4n_example;  // string | id4n
@@ -219,7 +215,7 @@ Name | Type | Description  | Notes
 
 <a name="listpublicdocuments"></a>
 # **ListPublicDocuments**
-> PaginatedDocumentResponse ListPublicDocuments (long? organizationId, string id4n, int? offset, int? limit)
+> PaginatedDocumentResponse ListPublicDocuments (long? organizationId, string id4n, int? offset = null, int? limit = null)
 
 List organization specific documents
 
@@ -239,11 +235,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new PublicServicesApi();
             var organizationId = 789;  // long? | organizationId
@@ -310,11 +305,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new PublicServicesApi();
             var organizationId = 789;  // long? | organizationId
@@ -379,11 +373,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new PublicServicesApi();
             var imageID = imageID_example;  // string | The id of the image to be resolved.
@@ -444,7 +437,6 @@ namespace Example
     {
         public void main()
         {
-            
             var apiInstance = new PublicServicesApi();
             var id4n = id4n_example;  // string | id4n
 

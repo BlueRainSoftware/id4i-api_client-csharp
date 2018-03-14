@@ -40,7 +40,7 @@ Method | HTTP request | Description
 
 <a name="addelementstocollection"></a>
 # **AddElementsToCollection**
-> ApiError AddElementsToCollection (string id4n, ListOfId4ns listOfGuids)
+> void AddElementsToCollection (string id4n, ListOfId4ns listOfGuids)
 
 Add elements to collection
 
@@ -58,11 +58,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
@@ -71,8 +70,7 @@ namespace Example
             try
             {
                 // Add elements to collection
-                ApiError result = apiInstance.AddElementsToCollection(id4n, listOfGuids);
-                Debug.WriteLine(result);
+                apiInstance.AddElementsToCollection(id4n, listOfGuids);
             }
             catch (Exception e)
             {
@@ -92,7 +90,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -107,7 +105,7 @@ Name | Type | Description  | Notes
 
 <a name="addelementstolabelledcollection"></a>
 # **AddElementsToLabelledCollection**
-> ApiError AddElementsToLabelledCollection (string collectionId4n, ListOfId4ns listOfGuids)
+> void AddElementsToLabelledCollection (string collectionId4n, ListOfId4ns listOfGuids)
 
 Add elements to labelled collection
 
@@ -125,11 +123,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var collectionId4n = collectionId4n_example;  // string | collectionId4n
@@ -138,8 +135,7 @@ namespace Example
             try
             {
                 // Add elements to labelled collection
-                ApiError result = apiInstance.AddElementsToLabelledCollection(collectionId4n, listOfGuids);
-                Debug.WriteLine(result);
+                apiInstance.AddElementsToLabelledCollection(collectionId4n, listOfGuids);
             }
             catch (Exception e)
             {
@@ -159,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -174,7 +170,7 @@ Name | Type | Description  | Notes
 
 <a name="addelementstologisticcollection"></a>
 # **AddElementsToLogisticCollection**
-> ApiError AddElementsToLogisticCollection (string collectionId4n, ListOfId4ns listOfGuids)
+> void AddElementsToLogisticCollection (string collectionId4n, ListOfId4ns listOfGuids)
 
 Add elements to logistic collection
 
@@ -192,11 +188,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var collectionId4n = collectionId4n_example;  // string | collectionId4n
@@ -205,8 +200,7 @@ namespace Example
             try
             {
                 // Add elements to logistic collection
-                ApiError result = apiInstance.AddElementsToLogisticCollection(collectionId4n, listOfGuids);
-                Debug.WriteLine(result);
+                apiInstance.AddElementsToLogisticCollection(collectionId4n, listOfGuids);
             }
             catch (Exception e)
             {
@@ -226,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -241,7 +235,7 @@ Name | Type | Description  | Notes
 
 <a name="addelementstoroutingcollection"></a>
 # **AddElementsToRoutingCollection**
-> ApiError AddElementsToRoutingCollection (string collectionId4n, ListOfId4ns listOfGuids)
+> void AddElementsToRoutingCollection (string collectionId4n, ListOfId4ns listOfGuids)
 
 Add element to routing collection
 
@@ -259,11 +253,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var collectionId4n = collectionId4n_example;  // string | collectionId4n
@@ -272,8 +265,7 @@ namespace Example
             try
             {
                 // Add element to routing collection
-                ApiError result = apiInstance.AddElementsToRoutingCollection(collectionId4n, listOfGuids);
-                Debug.WriteLine(result);
+                apiInstance.AddElementsToRoutingCollection(collectionId4n, listOfGuids);
             }
             catch (Exception e)
             {
@@ -293,7 +285,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -326,11 +318,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var createInfo = new CreateLabelledCollectionRequest(); // CreateLabelledCollectionRequest | createInfo
@@ -391,11 +382,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var createInfo = new CreateLogisticCollectionRequest(); // CreateLogisticCollectionRequest | createInfo
@@ -456,11 +446,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var createInfo = new CreateRoutingCollectionRequest(); // CreateRoutingCollectionRequest | createInfo
@@ -503,7 +492,7 @@ Name | Type | Description  | Notes
 
 <a name="deletecollection"></a>
 # **DeleteCollection**
-> ApiError DeleteCollection (string id4n)
+> void DeleteCollection (string id4n)
 
 Delete collection
 
@@ -521,11 +510,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
@@ -533,8 +521,7 @@ namespace Example
             try
             {
                 // Delete collection
-                ApiError result = apiInstance.DeleteCollection(id4n);
-                Debug.WriteLine(result);
+                apiInstance.DeleteCollection(id4n);
             }
             catch (Exception e)
             {
@@ -553,7 +540,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -568,7 +555,7 @@ Name | Type | Description  | Notes
 
 <a name="deletelabelledcollection"></a>
 # **DeleteLabelledCollection**
-> ApiError DeleteLabelledCollection (string id4n)
+> void DeleteLabelledCollection (string id4n)
 
 Delete labelled collection
 
@@ -586,11 +573,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
@@ -598,8 +584,7 @@ namespace Example
             try
             {
                 // Delete labelled collection
-                ApiError result = apiInstance.DeleteLabelledCollection(id4n);
-                Debug.WriteLine(result);
+                apiInstance.DeleteLabelledCollection(id4n);
             }
             catch (Exception e)
             {
@@ -618,7 +603,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -651,11 +636,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
@@ -698,7 +682,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteroutingcollection"></a>
 # **DeleteRoutingCollection**
-> ApiError DeleteRoutingCollection (string id4n)
+> void DeleteRoutingCollection (string id4n)
 
 Delete routing collection
 
@@ -716,11 +700,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
@@ -728,8 +711,7 @@ namespace Example
             try
             {
                 // Delete routing collection
-                ApiError result = apiInstance.DeleteRoutingCollection(id4n);
-                Debug.WriteLine(result);
+                apiInstance.DeleteRoutingCollection(id4n);
             }
             catch (Exception e)
             {
@@ -748,7 +730,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -781,11 +763,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
@@ -846,11 +827,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
@@ -911,11 +891,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
@@ -976,11 +955,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
@@ -1023,7 +1001,7 @@ Name | Type | Description  | Notes
 
 <a name="getallcollectionsoforganization"></a>
 # **GetAllCollectionsOfOrganization**
-> PaginatedGuidCollection GetAllCollectionsOfOrganization (long? organizationId, int? offset, int? limit, string type, string label, string labelPrefix)
+> PaginatedGuidCollection GetAllCollectionsOfOrganization (long? organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null)
 
 Get collections of organization
 
@@ -1043,11 +1021,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var organizationId = 789;  // long? | organizationId
@@ -1100,7 +1077,7 @@ Name | Type | Description  | Notes
 
 <a name="listelementsofcollection"></a>
 # **ListElementsOfCollection**
-> PaginatedGuidResponse ListElementsOfCollection (string id4n, int? offset, int? limit)
+> PaginatedGuidResponse ListElementsOfCollection (string id4n, int? offset = null, int? limit = null)
 
 List contents of the collection
 
@@ -1118,11 +1095,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
@@ -1169,7 +1145,7 @@ Name | Type | Description  | Notes
 
 <a name="listelementsoflabelledcollection"></a>
 # **ListElementsOfLabelledCollection**
-> PaginatedGuidResponse ListElementsOfLabelledCollection (string id4n, int? offset, int? limit)
+> PaginatedGuidResponse ListElementsOfLabelledCollection (string id4n, int? offset = null, int? limit = null)
 
 List contents of the collection
 
@@ -1187,11 +1163,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
@@ -1238,7 +1213,7 @@ Name | Type | Description  | Notes
 
 <a name="listelementsoflogisticcollection"></a>
 # **ListElementsOfLogisticCollection**
-> PaginatedGuidResponse ListElementsOfLogisticCollection (string id4n, int? offset, int? limit)
+> PaginatedGuidResponse ListElementsOfLogisticCollection (string id4n, int? offset = null, int? limit = null)
 
 List contents of the collection
 
@@ -1256,11 +1231,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
@@ -1307,7 +1281,7 @@ Name | Type | Description  | Notes
 
 <a name="listelementsofroutingcollection"></a>
 # **ListElementsOfRoutingCollection**
-> PaginatedGuidResponse ListElementsOfRoutingCollection (string id4n, int? offset, int? limit)
+> PaginatedGuidResponse ListElementsOfRoutingCollection (string id4n, int? offset = null, int? limit = null)
 
 List contents of the collection
 
@@ -1325,11 +1299,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
@@ -1376,7 +1349,7 @@ Name | Type | Description  | Notes
 
 <a name="removeelementsfromcollection"></a>
 # **RemoveElementsFromCollection**
-> ApiError RemoveElementsFromCollection (string id4n, ListOfId4ns listOfGuids)
+> void RemoveElementsFromCollection (string id4n, ListOfId4ns listOfGuids)
 
 Remove elements from collection
 
@@ -1394,11 +1367,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
@@ -1407,8 +1379,7 @@ namespace Example
             try
             {
                 // Remove elements from collection
-                ApiError result = apiInstance.RemoveElementsFromCollection(id4n, listOfGuids);
-                Debug.WriteLine(result);
+                apiInstance.RemoveElementsFromCollection(id4n, listOfGuids);
             }
             catch (Exception e)
             {
@@ -1428,7 +1399,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -1443,7 +1414,7 @@ Name | Type | Description  | Notes
 
 <a name="removeelementsfromlabelledcollection"></a>
 # **RemoveElementsFromLabelledCollection**
-> ApiError RemoveElementsFromLabelledCollection (string collectionId4n, ListOfId4ns listOfGuids)
+> void RemoveElementsFromLabelledCollection (string collectionId4n, ListOfId4ns listOfGuids)
 
 Remove elements from labelled collection
 
@@ -1461,11 +1432,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var collectionId4n = collectionId4n_example;  // string | collectionId4n
@@ -1474,8 +1444,7 @@ namespace Example
             try
             {
                 // Remove elements from labelled collection
-                ApiError result = apiInstance.RemoveElementsFromLabelledCollection(collectionId4n, listOfGuids);
-                Debug.WriteLine(result);
+                apiInstance.RemoveElementsFromLabelledCollection(collectionId4n, listOfGuids);
             }
             catch (Exception e)
             {
@@ -1495,7 +1464,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -1510,7 +1479,7 @@ Name | Type | Description  | Notes
 
 <a name="removeelementsfromlogisticcollection"></a>
 # **RemoveElementsFromLogisticCollection**
-> ApiError RemoveElementsFromLogisticCollection (string collectionId4n, ListOfId4ns listOfGuids)
+> void RemoveElementsFromLogisticCollection (string collectionId4n, ListOfId4ns listOfGuids)
 
 Remove elements from logistic collection
 
@@ -1528,11 +1497,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var collectionId4n = collectionId4n_example;  // string | collectionId4n
@@ -1541,8 +1509,7 @@ namespace Example
             try
             {
                 // Remove elements from logistic collection
-                ApiError result = apiInstance.RemoveElementsFromLogisticCollection(collectionId4n, listOfGuids);
-                Debug.WriteLine(result);
+                apiInstance.RemoveElementsFromLogisticCollection(collectionId4n, listOfGuids);
             }
             catch (Exception e)
             {
@@ -1562,7 +1529,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -1577,7 +1544,7 @@ Name | Type | Description  | Notes
 
 <a name="removeelementsfromroutingcollection"></a>
 # **RemoveElementsFromRoutingCollection**
-> ApiError RemoveElementsFromRoutingCollection (string collectionId4n, ListOfId4ns listOfGuids)
+> void RemoveElementsFromRoutingCollection (string collectionId4n, ListOfId4ns listOfGuids)
 
 Remove elements from routing collection
 
@@ -1595,11 +1562,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var collectionId4n = collectionId4n_example;  // string | collectionId4n
@@ -1608,8 +1574,7 @@ namespace Example
             try
             {
                 // Remove elements from routing collection
-                ApiError result = apiInstance.RemoveElementsFromRoutingCollection(collectionId4n, listOfGuids);
-                Debug.WriteLine(result);
+                apiInstance.RemoveElementsFromRoutingCollection(collectionId4n, listOfGuids);
             }
             catch (Exception e)
             {
@@ -1629,7 +1594,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+void (empty response body)
 
 ### Authorization
 
@@ -1664,11 +1629,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
@@ -1733,11 +1697,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
@@ -1802,11 +1765,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
@@ -1869,11 +1831,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
@@ -1938,11 +1899,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
@@ -2007,11 +1967,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
@@ -2076,11 +2035,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
@@ -2145,11 +2103,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n

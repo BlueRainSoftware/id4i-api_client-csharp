@@ -27,7 +27,6 @@ namespace Example
     {
         public void main()
         {
-            
             var apiInstance = new WhoIsApi();
             var id4n = id4n_example;  // string | id4n
 

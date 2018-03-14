@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getpositionsfororganization"></a>
 # **GetPositionsForOrganization**
-> List<BillingPosition> GetPositionsForOrganization (long? organizationId, DateTime? fromDate, DateTime? toDate)
+> List<BillingPosition> GetPositionsForOrganization (long? organizationId, DateTime? fromDate = null, DateTime? toDate = null)
 
 Get billing positions for a given organization
 
@@ -28,11 +28,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new BillingApi();
             var organizationId = 789;  // long? | The organization to compute the billing information for
@@ -79,7 +78,7 @@ Name | Type | Description  | Notes
 
 <a name="getsumfororganization"></a>
 # **GetSumForOrganization**
-> ServiceCosts GetSumForOrganization (long? organizationId, DateTime? fromDate, DateTime? toDate)
+> ServiceCosts GetSumForOrganization (long? organizationId, DateTime? fromDate = null, DateTime? toDate = null)
 
 Get billing amount of services for a given organization
 
@@ -97,11 +96,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new BillingApi();
             var organizationId = 789;  // long? | The organization to compute the billing information for

@@ -38,11 +38,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new StorageApi();
             var organizationId = 789;  // long? | organizationId
@@ -107,11 +106,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new StorageApi();
             var organizationId = 789;  // long? | organizationId
@@ -176,11 +174,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new StorageApi();
             var organizationId = 789;  // long? | organizationId
@@ -227,7 +224,7 @@ Name | Type | Description  | Notes
 
 <a name="listalldocuments"></a>
 # **ListAllDocuments**
-> PaginatedOwnedDocumentResponse ListAllDocuments (string id4n, int? offset, int? limit)
+> PaginatedOwnedDocumentResponse ListAllDocuments (string id4n, int? offset = null, int? limit = null)
 
 List documents
 
@@ -247,11 +244,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new StorageApi();
             var id4n = id4n_example;  // string | id4n
@@ -298,7 +294,7 @@ Name | Type | Description  | Notes
 
 <a name="listallpublicdocuments"></a>
 # **ListAllPublicDocuments**
-> PaginatedOwnedDocumentResponse ListAllPublicDocuments (string id4n, long? organizationId, int? offset, int? limit)
+> PaginatedOwnedDocumentResponse ListAllPublicDocuments (string id4n, long? organizationId = null, int? offset = null, int? limit = null)
 
 List organization specific documents
 
@@ -318,11 +314,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new StorageApi();
             var id4n = id4n_example;  // string | id4n
@@ -371,7 +366,7 @@ Name | Type | Description  | Notes
 
 <a name="listdocuments"></a>
 # **ListDocuments**
-> PaginatedDocumentResponse ListDocuments (long? organizationId, string id4n, int? offset, int? limit)
+> PaginatedDocumentResponse ListDocuments (long? organizationId, string id4n, int? offset = null, int? limit = null)
 
 List organization specific documents
 
@@ -391,11 +386,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new StorageApi();
             var organizationId = 789;  // long? | organizationId
@@ -444,7 +438,7 @@ Name | Type | Description  | Notes
 
 <a name="listpublicdocuments"></a>
 # **ListPublicDocuments**
-> PaginatedDocumentResponse ListPublicDocuments (long? organizationId, string id4n, int? offset, int? limit)
+> PaginatedDocumentResponse ListPublicDocuments (long? organizationId, string id4n, int? offset = null, int? limit = null)
 
 List organization specific documents
 
@@ -464,11 +458,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new StorageApi();
             var organizationId = 789;  // long? | organizationId
@@ -535,11 +528,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new StorageApi();
             var organizationId = 789;  // long? | organizationId
@@ -604,11 +596,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new StorageApi();
             var organization = 789;  // long? | organization
@@ -671,11 +662,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new StorageApi();
             var organizationId = 789;  // long? | organizationId
@@ -740,11 +730,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new StorageApi();
             var organizationId = 789;  // long? | organizationId
@@ -793,7 +782,7 @@ Name | Type | Description  | Notes
 
 <a name="writetomicrostorage"></a>
 # **WriteToMicrostorage**
-> Object WriteToMicrostorage (long? organization, string id4n, string body, string contentType, long? contentLength)
+> Object WriteToMicrostorage (long? organization, string id4n, string body, string contentType = null, long? contentLength = null)
 
 Write data to microstorage
 
@@ -811,11 +800,10 @@ namespace Example
     {
         public void main()
         {
-            
             // Configure API key authorization: Authorization
-            Configuration.Default.ApiKey.Add("Authorization", "YOUR_API_KEY");
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new StorageApi();
             var organization = 789;  // long? | organization
