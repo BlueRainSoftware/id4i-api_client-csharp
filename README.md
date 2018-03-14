@@ -1,7 +1,7 @@
 # ID4i API Client Library - C#
 
 This library allows developers to interact with the http://id4i.de HTTP API.
-Typically you won't have to build it yourselves, you can just pull in the dependency from http://nuget.org.
+Typically you won't have to build it yourselves, you can just pull in the dependency from https://www.nuget.org/packages/BlueRain.ID4i/.
 
 Feel free to look at the sources and the documentation contained in this repository.
 
