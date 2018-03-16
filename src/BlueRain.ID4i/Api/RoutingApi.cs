@@ -12,7 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-    using RestSharp;
+    using RestSharp.Portable;
 using BlueRain.ID4i.Client;
 using BlueRain.ID4i.Model;
 using Guid = BlueRain.ID4i.Model.Guid;
@@ -312,7 +312,7 @@ namespace BlueRain.ID4i.Api
                     if (type == null)
                     throw new ApiException(400, "Missing required parameter 'type' when calling RoutingApi->GetRoute");
 
-            var localVarPath = "/api/v1/routingfiles/{id4n}/route/{type}";
+            var localVarPath = "./api/v1/routingfiles/{id4n}/route/{type}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -362,7 +362,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Route>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Route) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Route)));
             }
 
@@ -402,7 +402,7 @@ namespace BlueRain.ID4i.Api
                         if (type == null)
                         throw new ApiException(400, "Missing required parameter 'type' when calling RoutingApi->GetRoute");
 
-                var localVarPath = "/api/v1/routingfiles/{id4n}/route/{type}";
+                var localVarPath = "./api/v1/routingfiles/{id4n}/route/{type}";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -452,7 +452,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Route>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (Route) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Route)));
                 }
 
@@ -482,7 +482,7 @@ namespace BlueRain.ID4i.Api
                     if (id4n == null)
                     throw new ApiException(400, "Missing required parameter 'id4n' when calling RoutingApi->GetRoutingFile");
 
-            var localVarPath = "/api/v1/routingfiles/{id4n}";
+            var localVarPath = "./api/v1/routingfiles/{id4n}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -536,7 +536,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<RoutingFile>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (RoutingFile) Configuration.ApiClient.Deserialize(localVarResponse, typeof(RoutingFile)));
             }
 
@@ -567,7 +567,7 @@ namespace BlueRain.ID4i.Api
                         if (id4n == null)
                         throw new ApiException(400, "Missing required parameter 'id4n' when calling RoutingApi->GetRoutingFile");
 
-                var localVarPath = "/api/v1/routingfiles/{id4n}";
+                var localVarPath = "./api/v1/routingfiles/{id4n}";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -621,7 +621,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<RoutingFile>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (RoutingFile) Configuration.ApiClient.Deserialize(localVarResponse, typeof(RoutingFile)));
                 }
 
@@ -653,7 +653,7 @@ namespace BlueRain.ID4i.Api
                     if (id4n == null)
                     throw new ApiException(400, "Missing required parameter 'id4n' when calling RoutingApi->UpdateRoutingFile");
 
-            var localVarPath = "/api/v1/routingfiles/{id4n}";
+            var localVarPath = "./api/v1/routingfiles/{id4n}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -707,7 +707,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
             }
 
@@ -740,7 +740,7 @@ namespace BlueRain.ID4i.Api
                         if (id4n == null)
                         throw new ApiException(400, "Missing required parameter 'id4n' when calling RoutingApi->UpdateRoutingFile");
 
-                var localVarPath = "/api/v1/routingfiles/{id4n}";
+                var localVarPath = "./api/v1/routingfiles/{id4n}";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -794,7 +794,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     null);
                 }
 

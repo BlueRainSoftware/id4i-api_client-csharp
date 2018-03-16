@@ -12,7 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-    using RestSharp;
+    using RestSharp.Portable;
 using BlueRain.ID4i.Client;
 using BlueRain.ID4i.Model;
 using Guid = BlueRain.ID4i.Model.Guid;
@@ -1615,7 +1615,7 @@ namespace BlueRain.ID4i.Api
                     if (listOfGuids == null)
                     throw new ApiException(400, "Missing required parameter 'listOfGuids' when calling CollectionsApi->AddElementsToCollection");
 
-            var localVarPath = "/api/v1/collections/{id4n}/elements";
+            var localVarPath = "./api/v1/collections/{id4n}/elements";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1669,7 +1669,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
             }
 
@@ -1702,7 +1702,7 @@ namespace BlueRain.ID4i.Api
                         if (listOfGuids == null)
                         throw new ApiException(400, "Missing required parameter 'listOfGuids' when calling CollectionsApi->AddElementsToCollection");
 
-                var localVarPath = "/api/v1/collections/{id4n}/elements";
+                var localVarPath = "./api/v1/collections/{id4n}/elements";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1756,7 +1756,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     null);
                 }
 
@@ -1788,7 +1788,7 @@ namespace BlueRain.ID4i.Api
                     if (listOfGuids == null)
                     throw new ApiException(400, "Missing required parameter 'listOfGuids' when calling CollectionsApi->AddElementsToLabelledCollection");
 
-            var localVarPath = "/api/v1/collections/labelled/{collectionId4n}/elements";
+            var localVarPath = "./api/v1/collections/labelled/{collectionId4n}/elements";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1842,7 +1842,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
             }
 
@@ -1875,7 +1875,7 @@ namespace BlueRain.ID4i.Api
                         if (listOfGuids == null)
                         throw new ApiException(400, "Missing required parameter 'listOfGuids' when calling CollectionsApi->AddElementsToLabelledCollection");
 
-                var localVarPath = "/api/v1/collections/labelled/{collectionId4n}/elements";
+                var localVarPath = "./api/v1/collections/labelled/{collectionId4n}/elements";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1929,7 +1929,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     null);
                 }
 
@@ -1961,7 +1961,7 @@ namespace BlueRain.ID4i.Api
                     if (listOfGuids == null)
                     throw new ApiException(400, "Missing required parameter 'listOfGuids' when calling CollectionsApi->AddElementsToLogisticCollection");
 
-            var localVarPath = "/api/v1/collections/logistic/{collectionId4n}/elements";
+            var localVarPath = "./api/v1/collections/logistic/{collectionId4n}/elements";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2015,7 +2015,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
             }
 
@@ -2048,7 +2048,7 @@ namespace BlueRain.ID4i.Api
                         if (listOfGuids == null)
                         throw new ApiException(400, "Missing required parameter 'listOfGuids' when calling CollectionsApi->AddElementsToLogisticCollection");
 
-                var localVarPath = "/api/v1/collections/logistic/{collectionId4n}/elements";
+                var localVarPath = "./api/v1/collections/logistic/{collectionId4n}/elements";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2102,7 +2102,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     null);
                 }
 
@@ -2134,7 +2134,7 @@ namespace BlueRain.ID4i.Api
                     if (listOfGuids == null)
                     throw new ApiException(400, "Missing required parameter 'listOfGuids' when calling CollectionsApi->AddElementsToRoutingCollection");
 
-            var localVarPath = "/api/v1/collections/routing/{collectionId4n}/elements";
+            var localVarPath = "./api/v1/collections/routing/{collectionId4n}/elements";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2188,7 +2188,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
             }
 
@@ -2221,7 +2221,7 @@ namespace BlueRain.ID4i.Api
                         if (listOfGuids == null)
                         throw new ApiException(400, "Missing required parameter 'listOfGuids' when calling CollectionsApi->AddElementsToRoutingCollection");
 
-                var localVarPath = "/api/v1/collections/routing/{collectionId4n}/elements";
+                var localVarPath = "./api/v1/collections/routing/{collectionId4n}/elements";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2275,7 +2275,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     null);
                 }
 
@@ -2303,7 +2303,7 @@ namespace BlueRain.ID4i.Api
                     if (createInfo == null)
                     throw new ApiException(400, "Missing required parameter 'createInfo' when calling CollectionsApi->CreateLabelledCollection");
 
-            var localVarPath = "/api/v1/collections/labelled";
+            var localVarPath = "./api/v1/collections/labelled";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2356,7 +2356,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Id4n>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Id4n) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Id4n)));
             }
 
@@ -2385,7 +2385,7 @@ namespace BlueRain.ID4i.Api
                         if (createInfo == null)
                         throw new ApiException(400, "Missing required parameter 'createInfo' when calling CollectionsApi->CreateLabelledCollection");
 
-                var localVarPath = "/api/v1/collections/labelled";
+                var localVarPath = "./api/v1/collections/labelled";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2438,7 +2438,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Id4n>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (Id4n) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Id4n)));
                 }
 
@@ -2466,7 +2466,7 @@ namespace BlueRain.ID4i.Api
                     if (createInfo == null)
                     throw new ApiException(400, "Missing required parameter 'createInfo' when calling CollectionsApi->CreateLogisticCollection");
 
-            var localVarPath = "/api/v1/collections/logistic";
+            var localVarPath = "./api/v1/collections/logistic";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2519,7 +2519,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Id4n>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Id4n) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Id4n)));
             }
 
@@ -2548,7 +2548,7 @@ namespace BlueRain.ID4i.Api
                         if (createInfo == null)
                         throw new ApiException(400, "Missing required parameter 'createInfo' when calling CollectionsApi->CreateLogisticCollection");
 
-                var localVarPath = "/api/v1/collections/logistic";
+                var localVarPath = "./api/v1/collections/logistic";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2601,7 +2601,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Id4n>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (Id4n) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Id4n)));
                 }
 
@@ -2629,7 +2629,7 @@ namespace BlueRain.ID4i.Api
                     if (createInfo == null)
                     throw new ApiException(400, "Missing required parameter 'createInfo' when calling CollectionsApi->CreateRoutingCollection");
 
-            var localVarPath = "/api/v1/collections/routing";
+            var localVarPath = "./api/v1/collections/routing";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2682,7 +2682,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Id4n>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Id4n) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Id4n)));
             }
 
@@ -2711,7 +2711,7 @@ namespace BlueRain.ID4i.Api
                         if (createInfo == null)
                         throw new ApiException(400, "Missing required parameter 'createInfo' when calling CollectionsApi->CreateRoutingCollection");
 
-                var localVarPath = "/api/v1/collections/routing";
+                var localVarPath = "./api/v1/collections/routing";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2764,7 +2764,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Id4n>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (Id4n) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Id4n)));
                 }
 
@@ -2791,7 +2791,7 @@ namespace BlueRain.ID4i.Api
                     if (id4n == null)
                     throw new ApiException(400, "Missing required parameter 'id4n' when calling CollectionsApi->DeleteCollection");
 
-            var localVarPath = "/api/v1/collections/{id4n}";
+            var localVarPath = "./api/v1/collections/{id4n}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2837,7 +2837,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
             }
 
@@ -2865,7 +2865,7 @@ namespace BlueRain.ID4i.Api
                         if (id4n == null)
                         throw new ApiException(400, "Missing required parameter 'id4n' when calling CollectionsApi->DeleteCollection");
 
-                var localVarPath = "/api/v1/collections/{id4n}";
+                var localVarPath = "./api/v1/collections/{id4n}";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2911,7 +2911,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     null);
                 }
 
@@ -2938,7 +2938,7 @@ namespace BlueRain.ID4i.Api
                     if (id4n == null)
                     throw new ApiException(400, "Missing required parameter 'id4n' when calling CollectionsApi->DeleteLabelledCollection");
 
-            var localVarPath = "/api/v1/collections/labelled/{id4n}";
+            var localVarPath = "./api/v1/collections/labelled/{id4n}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2984,7 +2984,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
             }
 
@@ -3012,7 +3012,7 @@ namespace BlueRain.ID4i.Api
                         if (id4n == null)
                         throw new ApiException(400, "Missing required parameter 'id4n' when calling CollectionsApi->DeleteLabelledCollection");
 
-                var localVarPath = "/api/v1/collections/labelled/{id4n}";
+                var localVarPath = "./api/v1/collections/labelled/{id4n}";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -3058,7 +3058,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     null);
                 }
 
@@ -3086,7 +3086,7 @@ namespace BlueRain.ID4i.Api
                     if (id4n == null)
                     throw new ApiException(400, "Missing required parameter 'id4n' when calling CollectionsApi->DeleteLogisticCollection");
 
-            var localVarPath = "/api/v1/collections/logistic/{id4n}";
+            var localVarPath = "./api/v1/collections/logistic/{id4n}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -3132,7 +3132,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
             }
 
@@ -3161,7 +3161,7 @@ namespace BlueRain.ID4i.Api
                         if (id4n == null)
                         throw new ApiException(400, "Missing required parameter 'id4n' when calling CollectionsApi->DeleteLogisticCollection");
 
-                var localVarPath = "/api/v1/collections/logistic/{id4n}";
+                var localVarPath = "./api/v1/collections/logistic/{id4n}";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -3207,7 +3207,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
                 }
 
@@ -3234,7 +3234,7 @@ namespace BlueRain.ID4i.Api
                     if (id4n == null)
                     throw new ApiException(400, "Missing required parameter 'id4n' when calling CollectionsApi->DeleteRoutingCollection");
 
-            var localVarPath = "/api/v1/collections/routing/{id4n}";
+            var localVarPath = "./api/v1/collections/routing/{id4n}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -3280,7 +3280,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
             }
 
@@ -3308,7 +3308,7 @@ namespace BlueRain.ID4i.Api
                         if (id4n == null)
                         throw new ApiException(400, "Missing required parameter 'id4n' when calling CollectionsApi->DeleteRoutingCollection");
 
-                var localVarPath = "/api/v1/collections/routing/{id4n}";
+                var localVarPath = "./api/v1/collections/routing/{id4n}";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -3354,7 +3354,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     null);
                 }
 
@@ -3382,7 +3382,7 @@ namespace BlueRain.ID4i.Api
                     if (id4n == null)
                     throw new ApiException(400, "Missing required parameter 'id4n' when calling CollectionsApi->FindCollection");
 
-            var localVarPath = "/api/v1/collections/{id4n}";
+            var localVarPath = "./api/v1/collections/{id4n}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -3428,7 +3428,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<GuidCollection>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (GuidCollection) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GuidCollection)));
             }
 
@@ -3457,7 +3457,7 @@ namespace BlueRain.ID4i.Api
                         if (id4n == null)
                         throw new ApiException(400, "Missing required parameter 'id4n' when calling CollectionsApi->FindCollection");
 
-                var localVarPath = "/api/v1/collections/{id4n}";
+                var localVarPath = "./api/v1/collections/{id4n}";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -3503,7 +3503,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<GuidCollection>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (GuidCollection) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GuidCollection)));
                 }
 
@@ -3531,7 +3531,7 @@ namespace BlueRain.ID4i.Api
                     if (id4n == null)
                     throw new ApiException(400, "Missing required parameter 'id4n' when calling CollectionsApi->FindLabelledCollection");
 
-            var localVarPath = "/api/v1/collections/labelled/{id4n}";
+            var localVarPath = "./api/v1/collections/labelled/{id4n}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -3577,7 +3577,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<GuidCollection>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (GuidCollection) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GuidCollection)));
             }
 
@@ -3606,7 +3606,7 @@ namespace BlueRain.ID4i.Api
                         if (id4n == null)
                         throw new ApiException(400, "Missing required parameter 'id4n' when calling CollectionsApi->FindLabelledCollection");
 
-                var localVarPath = "/api/v1/collections/labelled/{id4n}";
+                var localVarPath = "./api/v1/collections/labelled/{id4n}";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -3652,7 +3652,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<GuidCollection>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (GuidCollection) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GuidCollection)));
                 }
 
@@ -3680,7 +3680,7 @@ namespace BlueRain.ID4i.Api
                     if (id4n == null)
                     throw new ApiException(400, "Missing required parameter 'id4n' when calling CollectionsApi->FindLogisticCollection");
 
-            var localVarPath = "/api/v1/collections/logistic/{id4n}";
+            var localVarPath = "./api/v1/collections/logistic/{id4n}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -3726,7 +3726,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<GuidCollection>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (GuidCollection) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GuidCollection)));
             }
 
@@ -3755,7 +3755,7 @@ namespace BlueRain.ID4i.Api
                         if (id4n == null)
                         throw new ApiException(400, "Missing required parameter 'id4n' when calling CollectionsApi->FindLogisticCollection");
 
-                var localVarPath = "/api/v1/collections/logistic/{id4n}";
+                var localVarPath = "./api/v1/collections/logistic/{id4n}";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -3801,7 +3801,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<GuidCollection>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (GuidCollection) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GuidCollection)));
                 }
 
@@ -3829,7 +3829,7 @@ namespace BlueRain.ID4i.Api
                     if (id4n == null)
                     throw new ApiException(400, "Missing required parameter 'id4n' when calling CollectionsApi->FindRoutingCollection");
 
-            var localVarPath = "/api/v1/collections/routing/{id4n}";
+            var localVarPath = "./api/v1/collections/routing/{id4n}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -3875,7 +3875,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<GuidCollection>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (GuidCollection) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GuidCollection)));
             }
 
@@ -3904,7 +3904,7 @@ namespace BlueRain.ID4i.Api
                         if (id4n == null)
                         throw new ApiException(400, "Missing required parameter 'id4n' when calling CollectionsApi->FindRoutingCollection");
 
-                var localVarPath = "/api/v1/collections/routing/{id4n}";
+                var localVarPath = "./api/v1/collections/routing/{id4n}";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -3950,7 +3950,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<GuidCollection>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (GuidCollection) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GuidCollection)));
                 }
 
@@ -3988,7 +3988,7 @@ namespace BlueRain.ID4i.Api
                     if (organizationId == null)
                     throw new ApiException(400, "Missing required parameter 'organizationId' when calling CollectionsApi->GetAllCollectionsOfOrganization");
 
-            var localVarPath = "/api/v1/organizations/{organizationId}/collections";
+            var localVarPath = "./api/v1/organizations/{organizationId}/collections";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -4039,7 +4039,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<PaginatedGuidCollection>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (PaginatedGuidCollection) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedGuidCollection)));
             }
 
@@ -4078,7 +4078,7 @@ namespace BlueRain.ID4i.Api
                         if (organizationId == null)
                         throw new ApiException(400, "Missing required parameter 'organizationId' when calling CollectionsApi->GetAllCollectionsOfOrganization");
 
-                var localVarPath = "/api/v1/organizations/{organizationId}/collections";
+                var localVarPath = "./api/v1/organizations/{organizationId}/collections";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -4129,7 +4129,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<PaginatedGuidCollection>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (PaginatedGuidCollection) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedGuidCollection)));
                 }
 
@@ -4161,7 +4161,7 @@ namespace BlueRain.ID4i.Api
                     if (id4n == null)
                     throw new ApiException(400, "Missing required parameter 'id4n' when calling CollectionsApi->ListElementsOfCollection");
 
-            var localVarPath = "/api/v1/collections/{id4n}/elements";
+            var localVarPath = "./api/v1/collections/{id4n}/elements";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -4209,7 +4209,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<PaginatedGuidResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (PaginatedGuidResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedGuidResponse)));
             }
 
@@ -4242,7 +4242,7 @@ namespace BlueRain.ID4i.Api
                         if (id4n == null)
                         throw new ApiException(400, "Missing required parameter 'id4n' when calling CollectionsApi->ListElementsOfCollection");
 
-                var localVarPath = "/api/v1/collections/{id4n}/elements";
+                var localVarPath = "./api/v1/collections/{id4n}/elements";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -4290,7 +4290,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<PaginatedGuidResponse>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (PaginatedGuidResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedGuidResponse)));
                 }
 
@@ -4322,7 +4322,7 @@ namespace BlueRain.ID4i.Api
                     if (id4n == null)
                     throw new ApiException(400, "Missing required parameter 'id4n' when calling CollectionsApi->ListElementsOfLabelledCollection");
 
-            var localVarPath = "/api/v1/collections/labelled/{id4n}/elements";
+            var localVarPath = "./api/v1/collections/labelled/{id4n}/elements";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -4370,7 +4370,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<PaginatedGuidResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (PaginatedGuidResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedGuidResponse)));
             }
 
@@ -4403,7 +4403,7 @@ namespace BlueRain.ID4i.Api
                         if (id4n == null)
                         throw new ApiException(400, "Missing required parameter 'id4n' when calling CollectionsApi->ListElementsOfLabelledCollection");
 
-                var localVarPath = "/api/v1/collections/labelled/{id4n}/elements";
+                var localVarPath = "./api/v1/collections/labelled/{id4n}/elements";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -4451,7 +4451,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<PaginatedGuidResponse>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (PaginatedGuidResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedGuidResponse)));
                 }
 
@@ -4483,7 +4483,7 @@ namespace BlueRain.ID4i.Api
                     if (id4n == null)
                     throw new ApiException(400, "Missing required parameter 'id4n' when calling CollectionsApi->ListElementsOfLogisticCollection");
 
-            var localVarPath = "/api/v1/collections/logistic/{id4n}/elements";
+            var localVarPath = "./api/v1/collections/logistic/{id4n}/elements";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -4531,7 +4531,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<PaginatedGuidResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (PaginatedGuidResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedGuidResponse)));
             }
 
@@ -4564,7 +4564,7 @@ namespace BlueRain.ID4i.Api
                         if (id4n == null)
                         throw new ApiException(400, "Missing required parameter 'id4n' when calling CollectionsApi->ListElementsOfLogisticCollection");
 
-                var localVarPath = "/api/v1/collections/logistic/{id4n}/elements";
+                var localVarPath = "./api/v1/collections/logistic/{id4n}/elements";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -4612,7 +4612,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<PaginatedGuidResponse>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (PaginatedGuidResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedGuidResponse)));
                 }
 
@@ -4644,7 +4644,7 @@ namespace BlueRain.ID4i.Api
                     if (id4n == null)
                     throw new ApiException(400, "Missing required parameter 'id4n' when calling CollectionsApi->ListElementsOfRoutingCollection");
 
-            var localVarPath = "/api/v1/collections/routing/{id4n}/elements";
+            var localVarPath = "./api/v1/collections/routing/{id4n}/elements";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -4692,7 +4692,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<PaginatedGuidResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (PaginatedGuidResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedGuidResponse)));
             }
 
@@ -4725,7 +4725,7 @@ namespace BlueRain.ID4i.Api
                         if (id4n == null)
                         throw new ApiException(400, "Missing required parameter 'id4n' when calling CollectionsApi->ListElementsOfRoutingCollection");
 
-                var localVarPath = "/api/v1/collections/routing/{id4n}/elements";
+                var localVarPath = "./api/v1/collections/routing/{id4n}/elements";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -4773,7 +4773,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<PaginatedGuidResponse>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (PaginatedGuidResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedGuidResponse)));
                 }
 
@@ -4805,7 +4805,7 @@ namespace BlueRain.ID4i.Api
                     if (listOfGuids == null)
                     throw new ApiException(400, "Missing required parameter 'listOfGuids' when calling CollectionsApi->RemoveElementsFromCollection");
 
-            var localVarPath = "/api/v1/collections/{id4n}/elements";
+            var localVarPath = "./api/v1/collections/{id4n}/elements";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -4859,7 +4859,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
             }
 
@@ -4892,7 +4892,7 @@ namespace BlueRain.ID4i.Api
                         if (listOfGuids == null)
                         throw new ApiException(400, "Missing required parameter 'listOfGuids' when calling CollectionsApi->RemoveElementsFromCollection");
 
-                var localVarPath = "/api/v1/collections/{id4n}/elements";
+                var localVarPath = "./api/v1/collections/{id4n}/elements";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -4946,7 +4946,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     null);
                 }
 
@@ -4978,7 +4978,7 @@ namespace BlueRain.ID4i.Api
                     if (listOfGuids == null)
                     throw new ApiException(400, "Missing required parameter 'listOfGuids' when calling CollectionsApi->RemoveElementsFromLabelledCollection");
 
-            var localVarPath = "/api/v1/collections/labelled/{collectionId4n}/elements";
+            var localVarPath = "./api/v1/collections/labelled/{collectionId4n}/elements";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -5032,7 +5032,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
             }
 
@@ -5065,7 +5065,7 @@ namespace BlueRain.ID4i.Api
                         if (listOfGuids == null)
                         throw new ApiException(400, "Missing required parameter 'listOfGuids' when calling CollectionsApi->RemoveElementsFromLabelledCollection");
 
-                var localVarPath = "/api/v1/collections/labelled/{collectionId4n}/elements";
+                var localVarPath = "./api/v1/collections/labelled/{collectionId4n}/elements";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -5119,7 +5119,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     null);
                 }
 
@@ -5151,7 +5151,7 @@ namespace BlueRain.ID4i.Api
                     if (listOfGuids == null)
                     throw new ApiException(400, "Missing required parameter 'listOfGuids' when calling CollectionsApi->RemoveElementsFromLogisticCollection");
 
-            var localVarPath = "/api/v1/collections/logistic/{collectionId4n}/elements";
+            var localVarPath = "./api/v1/collections/logistic/{collectionId4n}/elements";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -5205,7 +5205,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
             }
 
@@ -5238,7 +5238,7 @@ namespace BlueRain.ID4i.Api
                         if (listOfGuids == null)
                         throw new ApiException(400, "Missing required parameter 'listOfGuids' when calling CollectionsApi->RemoveElementsFromLogisticCollection");
 
-                var localVarPath = "/api/v1/collections/logistic/{collectionId4n}/elements";
+                var localVarPath = "./api/v1/collections/logistic/{collectionId4n}/elements";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -5292,7 +5292,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     null);
                 }
 
@@ -5324,7 +5324,7 @@ namespace BlueRain.ID4i.Api
                     if (listOfGuids == null)
                     throw new ApiException(400, "Missing required parameter 'listOfGuids' when calling CollectionsApi->RemoveElementsFromRoutingCollection");
 
-            var localVarPath = "/api/v1/collections/routing/{collectionId4n}/elements";
+            var localVarPath = "./api/v1/collections/routing/{collectionId4n}/elements";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -5378,7 +5378,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
             }
 
@@ -5411,7 +5411,7 @@ namespace BlueRain.ID4i.Api
                         if (listOfGuids == null)
                         throw new ApiException(400, "Missing required parameter 'listOfGuids' when calling CollectionsApi->RemoveElementsFromRoutingCollection");
 
-                var localVarPath = "/api/v1/collections/routing/{collectionId4n}/elements";
+                var localVarPath = "./api/v1/collections/routing/{collectionId4n}/elements";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -5465,7 +5465,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     null);
                 }
 
@@ -5498,7 +5498,7 @@ namespace BlueRain.ID4i.Api
                     if (request == null)
                     throw new ApiException(400, "Missing required parameter 'request' when calling CollectionsApi->SetCollection");
 
-            var localVarPath = "/api/v1/collections/{id4n}";
+            var localVarPath = "./api/v1/collections/{id4n}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -5552,7 +5552,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
             }
 
@@ -5586,7 +5586,7 @@ namespace BlueRain.ID4i.Api
                         if (request == null)
                         throw new ApiException(400, "Missing required parameter 'request' when calling CollectionsApi->SetCollection");
 
-                var localVarPath = "/api/v1/collections/{id4n}";
+                var localVarPath = "./api/v1/collections/{id4n}";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -5640,7 +5640,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
                 }
 
@@ -5673,7 +5673,7 @@ namespace BlueRain.ID4i.Api
                     if (request == null)
                     throw new ApiException(400, "Missing required parameter 'request' when calling CollectionsApi->SetLabelledCollection");
 
-            var localVarPath = "/api/v1/collections/labelled/{id4n}";
+            var localVarPath = "./api/v1/collections/labelled/{id4n}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -5727,7 +5727,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
             }
 
@@ -5761,7 +5761,7 @@ namespace BlueRain.ID4i.Api
                         if (request == null)
                         throw new ApiException(400, "Missing required parameter 'request' when calling CollectionsApi->SetLabelledCollection");
 
-                var localVarPath = "/api/v1/collections/labelled/{id4n}";
+                var localVarPath = "./api/v1/collections/labelled/{id4n}";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -5815,7 +5815,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
                 }
 
@@ -5848,7 +5848,7 @@ namespace BlueRain.ID4i.Api
                     if (request == null)
                     throw new ApiException(400, "Missing required parameter 'request' when calling CollectionsApi->SetLogisticCollection");
 
-            var localVarPath = "/api/v1/collections/logistic/{id4n}";
+            var localVarPath = "./api/v1/collections/logistic/{id4n}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -5902,7 +5902,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
             }
 
@@ -5936,7 +5936,7 @@ namespace BlueRain.ID4i.Api
                         if (request == null)
                         throw new ApiException(400, "Missing required parameter 'request' when calling CollectionsApi->SetLogisticCollection");
 
-                var localVarPath = "/api/v1/collections/logistic/{id4n}";
+                var localVarPath = "./api/v1/collections/logistic/{id4n}";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -5990,7 +5990,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
                 }
 
@@ -6023,7 +6023,7 @@ namespace BlueRain.ID4i.Api
                     if (request == null)
                     throw new ApiException(400, "Missing required parameter 'request' when calling CollectionsApi->SetRoutingCollection");
 
-            var localVarPath = "/api/v1/collections/routing/{id4n}";
+            var localVarPath = "./api/v1/collections/routing/{id4n}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -6077,7 +6077,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
             }
 
@@ -6111,7 +6111,7 @@ namespace BlueRain.ID4i.Api
                         if (request == null)
                         throw new ApiException(400, "Missing required parameter 'request' when calling CollectionsApi->SetRoutingCollection");
 
-                var localVarPath = "/api/v1/collections/routing/{id4n}";
+                var localVarPath = "./api/v1/collections/routing/{id4n}";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -6165,7 +6165,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
                 }
 
@@ -6198,7 +6198,7 @@ namespace BlueRain.ID4i.Api
                     if (request == null)
                     throw new ApiException(400, "Missing required parameter 'request' when calling CollectionsApi->UpdateCollection");
 
-            var localVarPath = "/api/v1/collections/{id4n}";
+            var localVarPath = "./api/v1/collections/{id4n}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -6252,7 +6252,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
             }
 
@@ -6286,7 +6286,7 @@ namespace BlueRain.ID4i.Api
                         if (request == null)
                         throw new ApiException(400, "Missing required parameter 'request' when calling CollectionsApi->UpdateCollection");
 
-                var localVarPath = "/api/v1/collections/{id4n}";
+                var localVarPath = "./api/v1/collections/{id4n}";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -6340,7 +6340,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
                 }
 
@@ -6373,7 +6373,7 @@ namespace BlueRain.ID4i.Api
                     if (request == null)
                     throw new ApiException(400, "Missing required parameter 'request' when calling CollectionsApi->UpdateLabelledCollection");
 
-            var localVarPath = "/api/v1/collections/labelled/{id4n}";
+            var localVarPath = "./api/v1/collections/labelled/{id4n}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -6427,7 +6427,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
             }
 
@@ -6461,7 +6461,7 @@ namespace BlueRain.ID4i.Api
                         if (request == null)
                         throw new ApiException(400, "Missing required parameter 'request' when calling CollectionsApi->UpdateLabelledCollection");
 
-                var localVarPath = "/api/v1/collections/labelled/{id4n}";
+                var localVarPath = "./api/v1/collections/labelled/{id4n}";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -6515,7 +6515,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
                 }
 
@@ -6548,7 +6548,7 @@ namespace BlueRain.ID4i.Api
                     if (request == null)
                     throw new ApiException(400, "Missing required parameter 'request' when calling CollectionsApi->UpdateLogisticCollection");
 
-            var localVarPath = "/api/v1/collections/logistic/{id4n}";
+            var localVarPath = "./api/v1/collections/logistic/{id4n}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -6602,7 +6602,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
             }
 
@@ -6636,7 +6636,7 @@ namespace BlueRain.ID4i.Api
                         if (request == null)
                         throw new ApiException(400, "Missing required parameter 'request' when calling CollectionsApi->UpdateLogisticCollection");
 
-                var localVarPath = "/api/v1/collections/logistic/{id4n}";
+                var localVarPath = "./api/v1/collections/logistic/{id4n}";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -6690,7 +6690,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
                 }
 
@@ -6723,7 +6723,7 @@ namespace BlueRain.ID4i.Api
                     if (request == null)
                     throw new ApiException(400, "Missing required parameter 'request' when calling CollectionsApi->UpdateRoutingCollection");
 
-            var localVarPath = "/api/v1/collections/routing/{id4n}";
+            var localVarPath = "./api/v1/collections/routing/{id4n}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -6777,7 +6777,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
             }
 
@@ -6811,7 +6811,7 @@ namespace BlueRain.ID4i.Api
                         if (request == null)
                         throw new ApiException(400, "Missing required parameter 'request' when calling CollectionsApi->UpdateRoutingCollection");
 
-                var localVarPath = "/api/v1/collections/routing/{id4n}";
+                var localVarPath = "./api/v1/collections/routing/{id4n}";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -6865,7 +6865,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
                 }
 

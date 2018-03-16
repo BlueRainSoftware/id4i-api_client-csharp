@@ -12,14 +12,12 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = BlueRain.ID4i.Client.SwaggerDateConverter;
 
 namespace BlueRain.ID4i.Model
@@ -28,7 +26,7 @@ namespace BlueRain.ID4i.Model
     /// GUID creation information
     /// </summary>
     [DataContract]
-    public partial class CreateGuidRequest :  IEquatable<CreateGuidRequest>, IValidatableObject
+    public partial class CreateGuidRequest :  IEquatable<CreateGuidRequest>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateGuidRequest" /> class.
@@ -172,40 +170,6 @@ namespace BlueRain.ID4i.Model
                     hashCode = hashCode * 59 + this.OrganizationId.GetHashCode();
                 return hashCode;
             }
-        }
-
-        /// <summary>
-        /// To validate all properties of the instance
-        /// </summary>
-        /// <param name="validationContext">Validation context</param>
-        /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-        {
-            // Count (int?) maximum
-            if(this.Count > (int?)1000)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Count, must be a value less than or equal to 1000.", new [] { "Count" });
-            }
-
-            // Count (int?) minimum
-            if(this.Count < (int?)1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Count, must be a value greater than or equal to 1.", new [] { "Count" });
-            }
-
-            // Length (int?) maximum
-            if(this.Length > (int?)255)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Length, must be a value less than or equal to 255.", new [] { "Length" });
-            }
-
-            // Length (int?) minimum
-            if(this.Length < (int?)6)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Length, must be a value greater than or equal to 6.", new [] { "Length" });
-            }
-
-            yield break;
         }
     }
 

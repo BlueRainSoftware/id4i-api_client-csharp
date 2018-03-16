@@ -4,12 +4,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ID4i API Client")]
-[assembly: AssemblyDescription("ID4i API Client for C# .NET")]
+[assembly: AssemblyTitle("Swagger Library")]
+[assembly: AssemblyDescription("A library generated from a Swagger doc")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("BlueRain Software GmbH & Co. KG")]
-[assembly: AssemblyProduct("ID4i")]
-[assembly: AssemblyCopyright("2018 - BlueRain Software GmbH & Co. KG")]
+[assembly: AssemblyCompany("Swagger")]
+[assembly: AssemblyProduct("SwaggerLibrary")]
+[assembly: AssemblyCopyright("No Copyright")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

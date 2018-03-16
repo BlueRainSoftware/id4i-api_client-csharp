@@ -12,14 +12,12 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = BlueRain.ID4i.Client.SwaggerDateConverter;
 
 namespace BlueRain.ID4i.Model
@@ -28,7 +26,7 @@ namespace BlueRain.ID4i.Model
     /// CreateRoutingCollectionRequest
     /// </summary>
     [DataContract]
-    public partial class CreateRoutingCollectionRequest :  IEquatable<CreateRoutingCollectionRequest>, IValidatableObject
+    public partial class CreateRoutingCollectionRequest :  IEquatable<CreateRoutingCollectionRequest>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateRoutingCollectionRequest" /> class.
@@ -169,40 +167,6 @@ namespace BlueRain.ID4i.Model
                     hashCode = hashCode * 59 + this.OrganizationId.GetHashCode();
                 return hashCode;
             }
-        }
-
-        /// <summary>
-        /// To validate all properties of the instance
-        /// </summary>
-        /// <param name="validationContext">Validation context</param>
-        /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-        {
-            // Label (string) maxLength
-            if(this.Label != null && this.Label.Length > 128)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Label, length must be less than 128.", new [] { "Label" });
-            }
-
-            // Label (string) minLength
-            if(this.Label != null && this.Label.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Label, length must be greater than 1.", new [] { "Label" });
-            }
-
-            // Length (int?) maximum
-            if(this.Length > (int?)255)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Length, must be a value less than or equal to 255.", new [] { "Length" });
-            }
-
-            // Length (int?) minimum
-            if(this.Length < (int?)6)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Length, must be a value greater than or equal to 6.", new [] { "Length" });
-            }
-
-            yield break;
         }
     }
 

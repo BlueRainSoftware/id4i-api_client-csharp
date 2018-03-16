@@ -12,14 +12,12 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = BlueRain.ID4i.Client.SwaggerDateConverter;
 
 namespace BlueRain.ID4i.Model
@@ -28,7 +26,7 @@ namespace BlueRain.ID4i.Model
     /// ApiKeyChangeRequest
     /// </summary>
     [DataContract]
-    public partial class ApiKeyChangeRequest :  IEquatable<ApiKeyChangeRequest>, IValidatableObject
+    public partial class ApiKeyChangeRequest :  IEquatable<ApiKeyChangeRequest>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiKeyChangeRequest" /> class.
@@ -137,28 +135,6 @@ namespace BlueRain.ID4i.Model
                     hashCode = hashCode * 59 + this.NewLabel.GetHashCode();
                 return hashCode;
             }
-        }
-
-        /// <summary>
-        /// To validate all properties of the instance
-        /// </summary>
-        /// <param name="validationContext">Validation context</param>
-        /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-        {
-            // NewLabel (string) maxLength
-            if(this.NewLabel != null && this.NewLabel.Length > 50)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for NewLabel, length must be less than 50.", new [] { "NewLabel" });
-            }
-
-            // NewLabel (string) minLength
-            if(this.NewLabel != null && this.NewLabel.Length < 5)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for NewLabel, length must be greater than 5.", new [] { "NewLabel" });
-            }
-
-            yield break;
         }
     }
 

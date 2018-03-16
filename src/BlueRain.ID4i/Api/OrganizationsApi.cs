@@ -12,7 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-    using RestSharp;
+    using RestSharp.Portable;
 using BlueRain.ID4i.Client;
 using BlueRain.ID4i.Model;
 using Guid = BlueRain.ID4i.Model.Guid;
@@ -1096,7 +1096,7 @@ namespace BlueRain.ID4i.Api
                     if (changeRoleRequest == null)
                     throw new ApiException(400, "Missing required parameter 'changeRoleRequest' when calling OrganizationsApi->AddUserRoles");
 
-            var localVarPath = "/api/v1/organizations/{organizationId}/users/{username}/roles";
+            var localVarPath = "./api/v1/organizations/{organizationId}/users/{username}/roles";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1151,7 +1151,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
             }
 
@@ -1189,7 +1189,7 @@ namespace BlueRain.ID4i.Api
                         if (changeRoleRequest == null)
                         throw new ApiException(400, "Missing required parameter 'changeRoleRequest' when calling OrganizationsApi->AddUserRoles");
 
-                var localVarPath = "/api/v1/organizations/{organizationId}/users/{username}/roles";
+                var localVarPath = "./api/v1/organizations/{organizationId}/users/{username}/roles";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1244,7 +1244,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     null);
                 }
 
@@ -1272,7 +1272,7 @@ namespace BlueRain.ID4i.Api
                     if (organization == null)
                     throw new ApiException(400, "Missing required parameter 'organization' when calling OrganizationsApi->CreateOrganization");
 
-            var localVarPath = "/api/v1/organizations";
+            var localVarPath = "./api/v1/organizations";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1325,7 +1325,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Organization>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Organization) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Organization)));
             }
 
@@ -1354,7 +1354,7 @@ namespace BlueRain.ID4i.Api
                         if (organization == null)
                         throw new ApiException(400, "Missing required parameter 'organization' when calling OrganizationsApi->CreateOrganization");
 
-                var localVarPath = "/api/v1/organizations";
+                var localVarPath = "./api/v1/organizations";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1407,7 +1407,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Organization>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (Organization) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Organization)));
                 }
 
@@ -1434,7 +1434,7 @@ namespace BlueRain.ID4i.Api
                     if (organizationId == null)
                     throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->DeleteOrganization");
 
-            var localVarPath = "/api/v1/organizations/{organizationId}";
+            var localVarPath = "./api/v1/organizations/{organizationId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1480,7 +1480,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
             }
 
@@ -1508,7 +1508,7 @@ namespace BlueRain.ID4i.Api
                         if (organizationId == null)
                         throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->DeleteOrganization");
 
-                var localVarPath = "/api/v1/organizations/{organizationId}";
+                var localVarPath = "./api/v1/organizations/{organizationId}";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1554,7 +1554,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     null);
                 }
 
@@ -1581,7 +1581,7 @@ namespace BlueRain.ID4i.Api
                     if (organizationId == null)
                     throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->DeleteOrganizationBillingAddress");
 
-            var localVarPath = "/api/v1/organizations/{organizationId}/addresses/billing";
+            var localVarPath = "./api/v1/organizations/{organizationId}/addresses/billing";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1627,7 +1627,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
             }
 
@@ -1655,7 +1655,7 @@ namespace BlueRain.ID4i.Api
                         if (organizationId == null)
                         throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->DeleteOrganizationBillingAddress");
 
-                var localVarPath = "/api/v1/organizations/{organizationId}/addresses/billing";
+                var localVarPath = "./api/v1/organizations/{organizationId}/addresses/billing";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1701,7 +1701,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     null);
                 }
 
@@ -1728,7 +1728,7 @@ namespace BlueRain.ID4i.Api
                     if (organizationId == null)
                     throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->DeleteOrganizationLogo");
 
-            var localVarPath = "/api/v1/organizations/{organizationId}/logo";
+            var localVarPath = "./api/v1/organizations/{organizationId}/logo";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1774,7 +1774,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
             }
 
@@ -1802,7 +1802,7 @@ namespace BlueRain.ID4i.Api
                         if (organizationId == null)
                         throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->DeleteOrganizationLogo");
 
-                var localVarPath = "/api/v1/organizations/{organizationId}/logo";
+                var localVarPath = "./api/v1/organizations/{organizationId}/logo";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1848,7 +1848,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     null);
                 }
 
@@ -1876,7 +1876,7 @@ namespace BlueRain.ID4i.Api
                     if (organizationId == null)
                     throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->FindOrganization");
 
-            var localVarPath = "/api/v1/organizations/{organizationId}";
+            var localVarPath = "./api/v1/organizations/{organizationId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1922,7 +1922,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Organization>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Organization) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Organization)));
             }
 
@@ -1951,7 +1951,7 @@ namespace BlueRain.ID4i.Api
                         if (organizationId == null)
                         throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->FindOrganization");
 
-                var localVarPath = "/api/v1/organizations/{organizationId}";
+                var localVarPath = "./api/v1/organizations/{organizationId}";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1997,7 +1997,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Organization>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (Organization) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Organization)));
                 }
 
@@ -2025,7 +2025,7 @@ namespace BlueRain.ID4i.Api
                     if (organizationId == null)
                     throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->FindOrganizationAddress");
 
-            var localVarPath = "/api/v1/organizations/{organizationId}/addresses/default";
+            var localVarPath = "./api/v1/organizations/{organizationId}/addresses/default";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2071,7 +2071,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<OrganizationAddress>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (OrganizationAddress) Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationAddress)));
             }
 
@@ -2100,7 +2100,7 @@ namespace BlueRain.ID4i.Api
                         if (organizationId == null)
                         throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->FindOrganizationAddress");
 
-                var localVarPath = "/api/v1/organizations/{organizationId}/addresses/default";
+                var localVarPath = "./api/v1/organizations/{organizationId}/addresses/default";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2146,7 +2146,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<OrganizationAddress>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (OrganizationAddress) Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationAddress)));
                 }
 
@@ -2174,7 +2174,7 @@ namespace BlueRain.ID4i.Api
                     if (organizationId == null)
                     throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->FindOrganizationBillingAddress");
 
-            var localVarPath = "/api/v1/organizations/{organizationId}/addresses/billing";
+            var localVarPath = "./api/v1/organizations/{organizationId}/addresses/billing";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2220,7 +2220,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<OrganizationAddress>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (OrganizationAddress) Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationAddress)));
             }
 
@@ -2249,7 +2249,7 @@ namespace BlueRain.ID4i.Api
                         if (organizationId == null)
                         throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->FindOrganizationBillingAddress");
 
-                var localVarPath = "/api/v1/organizations/{organizationId}/addresses/billing";
+                var localVarPath = "./api/v1/organizations/{organizationId}/addresses/billing";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2295,7 +2295,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<OrganizationAddress>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (OrganizationAddress) Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationAddress)));
                 }
 
@@ -2333,7 +2333,7 @@ namespace BlueRain.ID4i.Api
                     if (organizationId == null)
                     throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->GetAllCollectionsOfOrganization");
 
-            var localVarPath = "/api/v1/organizations/{organizationId}/collections";
+            var localVarPath = "./api/v1/organizations/{organizationId}/collections";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2384,7 +2384,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<PaginatedGuidCollection>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (PaginatedGuidCollection) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedGuidCollection)));
             }
 
@@ -2423,7 +2423,7 @@ namespace BlueRain.ID4i.Api
                         if (organizationId == null)
                         throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->GetAllCollectionsOfOrganization");
 
-                var localVarPath = "/api/v1/organizations/{organizationId}/collections";
+                var localVarPath = "./api/v1/organizations/{organizationId}/collections";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2474,7 +2474,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<PaginatedGuidCollection>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (PaginatedGuidCollection) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedGuidCollection)));
                 }
 
@@ -2506,7 +2506,7 @@ namespace BlueRain.ID4i.Api
                     if (organizationId == null)
                     throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->GetAllOrganizationRoles");
 
-            var localVarPath = "/api/v1/organizations/{organizationId}/roles";
+            var localVarPath = "./api/v1/organizations/{organizationId}/roles";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2554,7 +2554,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<PaginatedUserRolesResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (PaginatedUserRolesResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedUserRolesResponse)));
             }
 
@@ -2587,7 +2587,7 @@ namespace BlueRain.ID4i.Api
                         if (organizationId == null)
                         throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->GetAllOrganizationRoles");
 
-                var localVarPath = "/api/v1/organizations/{organizationId}/roles";
+                var localVarPath = "./api/v1/organizations/{organizationId}/roles";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2635,7 +2635,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<PaginatedUserRolesResponse>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (PaginatedUserRolesResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedUserRolesResponse)));
                 }
 
@@ -2664,7 +2664,7 @@ namespace BlueRain.ID4i.Api
             public ApiResponse< PaginatedOrganizationResponse > GetOrganizationsOfUserWithHttpInfo (string role = null, int? offset = null, int? limit = null)
             {
 
-            var localVarPath = "/api/v1/user/organizations";
+            var localVarPath = "./api/v1/user/organizations";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2712,7 +2712,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<PaginatedOrganizationResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (PaginatedOrganizationResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedOrganizationResponse)));
             }
 
@@ -2742,7 +2742,7 @@ namespace BlueRain.ID4i.Api
                 public async System.Threading.Tasks.Task<ApiResponse<PaginatedOrganizationResponse>> GetOrganizationsOfUserAsyncWithHttpInfo (string role = null, int? offset = null, int? limit = null)
                 {
 
-                var localVarPath = "/api/v1/user/organizations";
+                var localVarPath = "./api/v1/user/organizations";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2790,7 +2790,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<PaginatedOrganizationResponse>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (PaginatedOrganizationResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedOrganizationResponse)));
                 }
 
@@ -2827,7 +2827,7 @@ namespace BlueRain.ID4i.Api
                     if (username == null)
                     throw new ApiException(400, "Missing required parameter 'username' when calling OrganizationsApi->GetUserRoles");
 
-            var localVarPath = "/api/v1/organizations/{organizationId}/users/{username}/roles";
+            var localVarPath = "./api/v1/organizations/{organizationId}/users/{username}/roles";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2876,7 +2876,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<PaginatedStringResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (PaginatedStringResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedStringResponse)));
             }
 
@@ -2914,7 +2914,7 @@ namespace BlueRain.ID4i.Api
                         if (username == null)
                         throw new ApiException(400, "Missing required parameter 'username' when calling OrganizationsApi->GetUserRoles");
 
-                var localVarPath = "/api/v1/organizations/{organizationId}/users/{username}/roles";
+                var localVarPath = "./api/v1/organizations/{organizationId}/users/{username}/roles";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2963,7 +2963,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<PaginatedStringResponse>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (PaginatedStringResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedStringResponse)));
                 }
 
@@ -2995,7 +2995,7 @@ namespace BlueRain.ID4i.Api
                     if (organizationId == null)
                     throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->GetUsersOfOrganization");
 
-            var localVarPath = "/api/v1/organizations/{organizationId}/users";
+            var localVarPath = "./api/v1/organizations/{organizationId}/users";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -3043,7 +3043,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<PaginatedUserPresentationResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (PaginatedUserPresentationResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedUserPresentationResponse)));
             }
 
@@ -3076,7 +3076,7 @@ namespace BlueRain.ID4i.Api
                         if (organizationId == null)
                         throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->GetUsersOfOrganization");
 
-                var localVarPath = "/api/v1/organizations/{organizationId}/users";
+                var localVarPath = "./api/v1/organizations/{organizationId}/users";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -3124,7 +3124,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<PaginatedUserPresentationResponse>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (PaginatedUserPresentationResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedUserPresentationResponse)));
                 }
 
@@ -3156,7 +3156,7 @@ namespace BlueRain.ID4i.Api
                     if (invitationList == null)
                     throw new ApiException(400, "Missing required parameter 'invitationList' when calling OrganizationsApi->InviteUsers");
 
-            var localVarPath = "/api/v1/organizations/{organizationId}/users/invite";
+            var localVarPath = "./api/v1/organizations/{organizationId}/users/invite";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -3210,7 +3210,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
             }
 
@@ -3243,7 +3243,7 @@ namespace BlueRain.ID4i.Api
                         if (invitationList == null)
                         throw new ApiException(400, "Missing required parameter 'invitationList' when calling OrganizationsApi->InviteUsers");
 
-                var localVarPath = "/api/v1/organizations/{organizationId}/users/invite";
+                var localVarPath = "./api/v1/organizations/{organizationId}/users/invite";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -3297,7 +3297,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     null);
                 }
 
@@ -3324,7 +3324,7 @@ namespace BlueRain.ID4i.Api
             public ApiResponse< PaginatedCountryResponse > ListCountriesWithHttpInfo (int? offset = null, int? limit = null)
             {
 
-            var localVarPath = "/api/v1/countries";
+            var localVarPath = "./api/v1/countries";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -3371,7 +3371,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<PaginatedCountryResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (PaginatedCountryResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedCountryResponse)));
             }
 
@@ -3399,7 +3399,7 @@ namespace BlueRain.ID4i.Api
                 public async System.Threading.Tasks.Task<ApiResponse<PaginatedCountryResponse>> ListCountriesAsyncWithHttpInfo (int? offset = null, int? limit = null)
                 {
 
-                var localVarPath = "/api/v1/countries";
+                var localVarPath = "./api/v1/countries";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -3446,7 +3446,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<PaginatedCountryResponse>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (PaginatedCountryResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedCountryResponse)));
                 }
 
@@ -3483,7 +3483,7 @@ namespace BlueRain.ID4i.Api
                     if (changeRoleRequest == null)
                     throw new ApiException(400, "Missing required parameter 'changeRoleRequest' when calling OrganizationsApi->RemoveUserRoles");
 
-            var localVarPath = "/api/v1/organizations/{organizationId}/users/{username}/roles";
+            var localVarPath = "./api/v1/organizations/{organizationId}/users/{username}/roles";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -3538,7 +3538,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
             }
 
@@ -3576,7 +3576,7 @@ namespace BlueRain.ID4i.Api
                         if (changeRoleRequest == null)
                         throw new ApiException(400, "Missing required parameter 'changeRoleRequest' when calling OrganizationsApi->RemoveUserRoles");
 
-                var localVarPath = "/api/v1/organizations/{organizationId}/users/{username}/roles";
+                var localVarPath = "./api/v1/organizations/{organizationId}/users/{username}/roles";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -3631,7 +3631,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     null);
                 }
 
@@ -3664,7 +3664,7 @@ namespace BlueRain.ID4i.Api
                     if (file == null)
                     throw new ApiException(400, "Missing required parameter 'file' when calling OrganizationsApi->SetOrganizationLogo");
 
-            var localVarPath = "/api/v1/organizations/{organizationId}/logo";
+            var localVarPath = "./api/v1/organizations/{organizationId}/logo";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -3710,7 +3710,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<PublicImagePresentation>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (PublicImagePresentation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PublicImagePresentation)));
             }
 
@@ -3744,7 +3744,7 @@ namespace BlueRain.ID4i.Api
                         if (file == null)
                         throw new ApiException(400, "Missing required parameter 'file' when calling OrganizationsApi->SetOrganizationLogo");
 
-                var localVarPath = "/api/v1/organizations/{organizationId}/logo";
+                var localVarPath = "./api/v1/organizations/{organizationId}/logo";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -3790,7 +3790,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<PublicImagePresentation>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (PublicImagePresentation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PublicImagePresentation)));
                 }
 
@@ -3823,7 +3823,7 @@ namespace BlueRain.ID4i.Api
                     if (organization == null)
                     throw new ApiException(400, "Missing required parameter 'organization' when calling OrganizationsApi->UpdateOrganization");
 
-            var localVarPath = "/api/v1/organizations/{organizationId}";
+            var localVarPath = "./api/v1/organizations/{organizationId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -3877,7 +3877,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Organization>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Organization) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Organization)));
             }
 
@@ -3911,7 +3911,7 @@ namespace BlueRain.ID4i.Api
                         if (organization == null)
                         throw new ApiException(400, "Missing required parameter 'organization' when calling OrganizationsApi->UpdateOrganization");
 
-                var localVarPath = "/api/v1/organizations/{organizationId}";
+                var localVarPath = "./api/v1/organizations/{organizationId}";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -3965,7 +3965,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Organization>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (Organization) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Organization)));
                 }
 
@@ -3998,7 +3998,7 @@ namespace BlueRain.ID4i.Api
                     if (addressResource == null)
                     throw new ApiException(400, "Missing required parameter 'addressResource' when calling OrganizationsApi->UpdateOrganizationAddress");
 
-            var localVarPath = "/api/v1/organizations/{organizationId}/addresses/default";
+            var localVarPath = "./api/v1/organizations/{organizationId}/addresses/default";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -4052,7 +4052,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<OrganizationAddress>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (OrganizationAddress) Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationAddress)));
             }
 
@@ -4086,7 +4086,7 @@ namespace BlueRain.ID4i.Api
                         if (addressResource == null)
                         throw new ApiException(400, "Missing required parameter 'addressResource' when calling OrganizationsApi->UpdateOrganizationAddress");
 
-                var localVarPath = "/api/v1/organizations/{organizationId}/addresses/default";
+                var localVarPath = "./api/v1/organizations/{organizationId}/addresses/default";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -4140,7 +4140,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<OrganizationAddress>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (OrganizationAddress) Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationAddress)));
                 }
 
@@ -4173,7 +4173,7 @@ namespace BlueRain.ID4i.Api
                     if (addressResource == null)
                     throw new ApiException(400, "Missing required parameter 'addressResource' when calling OrganizationsApi->UpdateOrganizationBillingAddress");
 
-            var localVarPath = "/api/v1/organizations/{organizationId}/addresses/billing";
+            var localVarPath = "./api/v1/organizations/{organizationId}/addresses/billing";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -4227,7 +4227,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<OrganizationAddress>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (OrganizationAddress) Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationAddress)));
             }
 
@@ -4261,7 +4261,7 @@ namespace BlueRain.ID4i.Api
                         if (addressResource == null)
                         throw new ApiException(400, "Missing required parameter 'addressResource' when calling OrganizationsApi->UpdateOrganizationBillingAddress");
 
-                var localVarPath = "/api/v1/organizations/{organizationId}/addresses/billing";
+                var localVarPath = "./api/v1/organizations/{organizationId}/addresses/billing";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -4315,7 +4315,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<OrganizationAddress>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (OrganizationAddress) Configuration.ApiClient.Deserialize(localVarResponse, typeof(OrganizationAddress)));
                 }
 

@@ -10,7 +10,7 @@
 
 
 using System;
-using RestSharp;
+using RestSharp.Portable;
 
 namespace BlueRain.ID4i.Client
 {

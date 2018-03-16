@@ -12,7 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-    using RestSharp;
+    using RestSharp.Portable;
 using BlueRain.ID4i.Client;
 using BlueRain.ID4i.Model;
 using Guid = BlueRain.ID4i.Model.Guid;
@@ -193,7 +193,7 @@ namespace BlueRain.ID4i.Api
                     if (imageID == null)
                     throw new ApiException(400, "Missing required parameter 'imageID' when calling ImagesApi->ResolveImageUsingGET");
 
-            var localVarPath = "/api/v1/public/image/{imageID}";
+            var localVarPath = "./api/v1/public/image/{imageID}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -239,7 +239,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<byte[]>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (byte[]) Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
             }
 
@@ -268,7 +268,7 @@ namespace BlueRain.ID4i.Api
                         if (imageID == null)
                         throw new ApiException(400, "Missing required parameter 'imageID' when calling ImagesApi->ResolveImageUsingGET");
 
-                var localVarPath = "/api/v1/public/image/{imageID}";
+                var localVarPath = "./api/v1/public/image/{imageID}";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -314,7 +314,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<byte[]>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (byte[]) Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
                 }
 

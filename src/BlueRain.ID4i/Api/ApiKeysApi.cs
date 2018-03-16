@@ -12,7 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-    using RestSharp;
+    using RestSharp.Portable;
 using BlueRain.ID4i.Client;
 using BlueRain.ID4i.Model;
 using Guid = BlueRain.ID4i.Model.Guid;
@@ -723,7 +723,7 @@ namespace BlueRain.ID4i.Api
                     if (addApiKeyPrivilegeRequest == null)
                     throw new ApiException(400, "Missing required parameter 'addApiKeyPrivilegeRequest' when calling ApiKeysApi->AddApiKeyPrivilege");
 
-            var localVarPath = "/api/v1/apikeys/{key}/privileges";
+            var localVarPath = "./api/v1/apikeys/{key}/privileges";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -777,7 +777,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
             }
 
@@ -810,7 +810,7 @@ namespace BlueRain.ID4i.Api
                         if (addApiKeyPrivilegeRequest == null)
                         throw new ApiException(400, "Missing required parameter 'addApiKeyPrivilegeRequest' when calling ApiKeysApi->AddApiKeyPrivilege");
 
-                var localVarPath = "/api/v1/apikeys/{key}/privileges";
+                var localVarPath = "./api/v1/apikeys/{key}/privileges";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -864,7 +864,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     null);
                 }
 
@@ -901,7 +901,7 @@ namespace BlueRain.ID4i.Api
                     if (id4ns == null)
                     throw new ApiException(400, "Missing required parameter 'id4ns' when calling ApiKeysApi->AddApiKeyPrivilegeForId4ns");
 
-            var localVarPath = "/api/v1/apikeys/{key}/privileges/{privilege}/id4ns";
+            var localVarPath = "./api/v1/apikeys/{key}/privileges/{privilege}/id4ns";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -956,7 +956,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
             }
 
@@ -994,7 +994,7 @@ namespace BlueRain.ID4i.Api
                         if (id4ns == null)
                         throw new ApiException(400, "Missing required parameter 'id4ns' when calling ApiKeysApi->AddApiKeyPrivilegeForId4ns");
 
-                var localVarPath = "/api/v1/apikeys/{key}/privileges/{privilege}/id4ns";
+                var localVarPath = "./api/v1/apikeys/{key}/privileges/{privilege}/id4ns";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1049,7 +1049,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     null);
                 }
 
@@ -1077,7 +1077,7 @@ namespace BlueRain.ID4i.Api
                     if (creationRequest == null)
                     throw new ApiException(400, "Missing required parameter 'creationRequest' when calling ApiKeysApi->CreateNewApiKey");
 
-            var localVarPath = "/api/v1/apikeys";
+            var localVarPath = "./api/v1/apikeys";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1130,7 +1130,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<ApiKeyPresentation>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (ApiKeyPresentation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApiKeyPresentation)));
             }
 
@@ -1159,7 +1159,7 @@ namespace BlueRain.ID4i.Api
                         if (creationRequest == null)
                         throw new ApiException(400, "Missing required parameter 'creationRequest' when calling ApiKeysApi->CreateNewApiKey");
 
-                var localVarPath = "/api/v1/apikeys";
+                var localVarPath = "./api/v1/apikeys";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1212,7 +1212,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<ApiKeyPresentation>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (ApiKeyPresentation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApiKeyPresentation)));
                 }
 
@@ -1239,7 +1239,7 @@ namespace BlueRain.ID4i.Api
                     if (key == null)
                     throw new ApiException(400, "Missing required parameter 'key' when calling ApiKeysApi->DeleteApiKey");
 
-            var localVarPath = "/api/v1/apikeys/{key}";
+            var localVarPath = "./api/v1/apikeys/{key}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1285,7 +1285,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
             }
 
@@ -1313,7 +1313,7 @@ namespace BlueRain.ID4i.Api
                         if (key == null)
                         throw new ApiException(400, "Missing required parameter 'key' when calling ApiKeysApi->DeleteApiKey");
 
-                var localVarPath = "/api/v1/apikeys/{key}";
+                var localVarPath = "./api/v1/apikeys/{key}";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1359,7 +1359,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     null);
                 }
 
@@ -1387,7 +1387,7 @@ namespace BlueRain.ID4i.Api
                     if (key == null)
                     throw new ApiException(400, "Missing required parameter 'key' when calling ApiKeysApi->GetApiKey");
 
-            var localVarPath = "/api/v1/apikeys/{key}";
+            var localVarPath = "./api/v1/apikeys/{key}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1433,7 +1433,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<ApiKeyPresentation>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (ApiKeyPresentation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApiKeyPresentation)));
             }
 
@@ -1462,7 +1462,7 @@ namespace BlueRain.ID4i.Api
                         if (key == null)
                         throw new ApiException(400, "Missing required parameter 'key' when calling ApiKeysApi->GetApiKey");
 
-                var localVarPath = "/api/v1/apikeys/{key}";
+                var localVarPath = "./api/v1/apikeys/{key}";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1508,7 +1508,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<ApiKeyPresentation>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (ApiKeyPresentation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApiKeyPresentation)));
                 }
 
@@ -1537,7 +1537,7 @@ namespace BlueRain.ID4i.Api
             public ApiResponse< ApiKeyPrivilegeInfoResponse > ListAllApiKeyPrivilegesWithHttpInfo (bool? id4nConcerning = null, int? offset = null, int? limit = null)
             {
 
-            var localVarPath = "/api/v1/apikeys/privileges";
+            var localVarPath = "./api/v1/apikeys/privileges";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1585,7 +1585,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<ApiKeyPrivilegeInfoResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (ApiKeyPrivilegeInfoResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApiKeyPrivilegeInfoResponse)));
             }
 
@@ -1615,7 +1615,7 @@ namespace BlueRain.ID4i.Api
                 public async System.Threading.Tasks.Task<ApiResponse<ApiKeyPrivilegeInfoResponse>> ListAllApiKeyPrivilegesAsyncWithHttpInfo (bool? id4nConcerning = null, int? offset = null, int? limit = null)
                 {
 
-                var localVarPath = "/api/v1/apikeys/privileges";
+                var localVarPath = "./api/v1/apikeys/privileges";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1663,7 +1663,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<ApiKeyPrivilegeInfoResponse>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (ApiKeyPrivilegeInfoResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApiKeyPrivilegeInfoResponse)));
                 }
 
@@ -1695,7 +1695,7 @@ namespace BlueRain.ID4i.Api
                     if (organizationId == null)
                     throw new ApiException(400, "Missing required parameter 'organizationId' when calling ApiKeysApi->ListAllApiKeysOfOrganization");
 
-            var localVarPath = "/api/v1/apikeys";
+            var localVarPath = "./api/v1/apikeys";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1743,7 +1743,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<PaginatedApiKeyResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (PaginatedApiKeyResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedApiKeyResponse)));
             }
 
@@ -1776,7 +1776,7 @@ namespace BlueRain.ID4i.Api
                         if (organizationId == null)
                         throw new ApiException(400, "Missing required parameter 'organizationId' when calling ApiKeysApi->ListAllApiKeysOfOrganization");
 
-                var localVarPath = "/api/v1/apikeys";
+                var localVarPath = "./api/v1/apikeys";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1824,7 +1824,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<PaginatedApiKeyResponse>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (PaginatedApiKeyResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedApiKeyResponse)));
                 }
 
@@ -1856,7 +1856,7 @@ namespace BlueRain.ID4i.Api
                     if (key == null)
                     throw new ApiException(400, "Missing required parameter 'key' when calling ApiKeysApi->ListApiKeyPrivileges");
 
-            var localVarPath = "/api/v1/apikeys/{key}/privileges";
+            var localVarPath = "./api/v1/apikeys/{key}/privileges";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1904,7 +1904,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<ApiKeyPrivilegePaginatedResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (ApiKeyPrivilegePaginatedResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApiKeyPrivilegePaginatedResponse)));
             }
 
@@ -1937,7 +1937,7 @@ namespace BlueRain.ID4i.Api
                         if (key == null)
                         throw new ApiException(400, "Missing required parameter 'key' when calling ApiKeysApi->ListApiKeyPrivileges");
 
-                var localVarPath = "/api/v1/apikeys/{key}/privileges";
+                var localVarPath = "./api/v1/apikeys/{key}/privileges";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1985,7 +1985,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<ApiKeyPrivilegePaginatedResponse>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (ApiKeyPrivilegePaginatedResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApiKeyPrivilegePaginatedResponse)));
                 }
 
@@ -2022,7 +2022,7 @@ namespace BlueRain.ID4i.Api
                     if (privilege == null)
                     throw new ApiException(400, "Missing required parameter 'privilege' when calling ApiKeysApi->ListId4ns");
 
-            var localVarPath = "/api/v1/apikeys/{key}/privileges/{privilege}/id4ns";
+            var localVarPath = "./api/v1/apikeys/{key}/privileges/{privilege}/id4ns";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2071,7 +2071,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Id4nPresentationPaginatedResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Id4nPresentationPaginatedResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Id4nPresentationPaginatedResponse)));
             }
 
@@ -2109,7 +2109,7 @@ namespace BlueRain.ID4i.Api
                         if (privilege == null)
                         throw new ApiException(400, "Missing required parameter 'privilege' when calling ApiKeysApi->ListId4ns");
 
-                var localVarPath = "/api/v1/apikeys/{key}/privileges/{privilege}/id4ns";
+                var localVarPath = "./api/v1/apikeys/{key}/privileges/{privilege}/id4ns";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2158,7 +2158,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Id4nPresentationPaginatedResponse>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (Id4nPresentationPaginatedResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Id4nPresentationPaginatedResponse)));
                 }
 
@@ -2190,7 +2190,7 @@ namespace BlueRain.ID4i.Api
                     if (removeApiKeyPrivilegeRequest == null)
                     throw new ApiException(400, "Missing required parameter 'removeApiKeyPrivilegeRequest' when calling ApiKeysApi->RemoveApiKeyPrivilege");
 
-            var localVarPath = "/api/v1/apikeys/{key}/privileges";
+            var localVarPath = "./api/v1/apikeys/{key}/privileges";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2244,7 +2244,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
             }
 
@@ -2277,7 +2277,7 @@ namespace BlueRain.ID4i.Api
                         if (removeApiKeyPrivilegeRequest == null)
                         throw new ApiException(400, "Missing required parameter 'removeApiKeyPrivilegeRequest' when calling ApiKeysApi->RemoveApiKeyPrivilege");
 
-                var localVarPath = "/api/v1/apikeys/{key}/privileges";
+                var localVarPath = "./api/v1/apikeys/{key}/privileges";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2331,7 +2331,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     null);
                 }
 
@@ -2368,7 +2368,7 @@ namespace BlueRain.ID4i.Api
                     if (id4ns == null)
                     throw new ApiException(400, "Missing required parameter 'id4ns' when calling ApiKeysApi->RemoveApiKeyPrivilegeForId4ns");
 
-            var localVarPath = "/api/v1/apikeys/{key}/privileges/{privilege}/id4ns";
+            var localVarPath = "./api/v1/apikeys/{key}/privileges/{privilege}/id4ns";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2423,7 +2423,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
             }
 
@@ -2461,7 +2461,7 @@ namespace BlueRain.ID4i.Api
                         if (id4ns == null)
                         throw new ApiException(400, "Missing required parameter 'id4ns' when calling ApiKeysApi->RemoveApiKeyPrivilegeForId4ns");
 
-                var localVarPath = "/api/v1/apikeys/{key}/privileges/{privilege}/id4ns";
+                var localVarPath = "./api/v1/apikeys/{key}/privileges/{privilege}/id4ns";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2516,7 +2516,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     null);
                 }
 
@@ -2548,7 +2548,7 @@ namespace BlueRain.ID4i.Api
                     if (apiKeyChange == null)
                     throw new ApiException(400, "Missing required parameter 'apiKeyChange' when calling ApiKeysApi->UpdateApiKey");
 
-            var localVarPath = "/api/v1/apikeys/{key}";
+            var localVarPath = "./api/v1/apikeys/{key}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2602,7 +2602,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
             }
 
@@ -2635,7 +2635,7 @@ namespace BlueRain.ID4i.Api
                         if (apiKeyChange == null)
                         throw new ApiException(400, "Missing required parameter 'apiKeyChange' when calling ApiKeysApi->UpdateApiKey");
 
-                var localVarPath = "/api/v1/apikeys/{key}";
+                var localVarPath = "./api/v1/apikeys/{key}";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2689,7 +2689,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                     return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     null);
                 }
 
