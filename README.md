@@ -199,6 +199,7 @@ Class | Method | HTTP request | Description
 *RoutingApi* | [**GetRoute**](docs/RoutingApi.md#getroute) | **GET** /api/v1/routingfiles/{id4n}/route/{type} | Retrieve current route of a GUID (or ID4N)
 *RoutingApi* | [**GetRoutingFile**](docs/RoutingApi.md#getroutingfile) | **GET** /api/v1/routingfiles/{id4n} | Retrieve routing file
 *RoutingApi* | [**UpdateRoutingFile**](docs/RoutingApi.md#updateroutingfile) | **PUT** /api/v1/routingfiles/{id4n} | Store routing file
+*StorageApi* | [**CreateDocument**](docs/StorageApi.md#createdocument) | **POST** /api/v1/documents/{id4n}/{organizationId} | Create an empty document for an id4n
 *StorageApi* | [**DeleteDocument**](docs/StorageApi.md#deletedocument) | **DELETE** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Delete a document
 *StorageApi* | [**GetDocument**](docs/StorageApi.md#getdocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
 *StorageApi* | [**GetPublicDocument**](docs/StorageApi.md#getpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)

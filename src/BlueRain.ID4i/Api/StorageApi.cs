@@ -26,6 +26,31 @@ namespace BlueRain.ID4i.Api
     {
     #region Synchronous Operations
         /// <summary>
+            /// Create an empty document for an id4n
+            /// </summary>
+        /// <remarks>
+            /// The document is created empty, mime-type defaults to text/plain
+            /// </remarks>
+        /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">organizationId</param>
+        /// <param name="id4n">id4n</param>
+        /// <param name="content">content</param>
+        /// <returns>Document</returns>
+        Document CreateDocument (long? organizationId, string id4n, System.IO.Stream content);
+
+        /// <summary>
+            /// Create an empty document for an id4n
+            /// </summary>
+        /// <remarks>
+            /// The document is created empty, mime-type defaults to text/plain
+            /// </remarks>
+        /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">organizationId</param>
+        /// <param name="id4n">id4n</param>
+        /// <param name="content">content</param>
+        /// <returns>ApiResponse of Document</returns>
+        ApiResponse<Document> CreateDocumentWithHttpInfo (long? organizationId, string id4n, System.IO.Stream content);
+        /// <summary>
             /// Delete a document
             /// </summary>
         /// <remarks>
@@ -337,6 +362,31 @@ namespace BlueRain.ID4i.Api
         ApiResponse<Object> WriteToMicrostorageWithHttpInfo (long? organization, string id4n, string body, string contentType = null, long? contentLength = null);
         #endregion Synchronous Operations
             #region Asynchronous Operations
+                /// <summary>
+                /// Create an empty document for an id4n
+                /// </summary>
+                /// <remarks>
+                /// The document is created empty, mime-type defaults to text/plain
+                /// </remarks>
+                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="organizationId">organizationId</param>
+            /// <param name="id4n">id4n</param>
+            /// <param name="content">content</param>
+            /// <returns>Task of Document</returns>
+            System.Threading.Tasks.Task<Document> CreateDocumentAsync (long? organizationId, string id4n, System.IO.Stream content);
+
+                /// <summary>
+                /// Create an empty document for an id4n
+                /// </summary>
+                /// <remarks>
+                /// The document is created empty, mime-type defaults to text/plain
+                /// </remarks>
+                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="organizationId">organizationId</param>
+            /// <param name="id4n">id4n</param>
+            /// <param name="content">content</param>
+            /// <returns>Task of ApiResponse (Document)</returns>
+                System.Threading.Tasks.Task<ApiResponse<Document>> CreateDocumentAsyncWithHttpInfo (long? organizationId, string id4n, System.IO.Stream content);
                 /// <summary>
                 /// Delete a document
                 /// </summary>
@@ -746,6 +796,177 @@ namespace BlueRain.ID4i.Api
         {
         this.Configuration.AddDefaultHeader(key, value);
         }
+
+            /// <summary>
+            /// Create an empty document for an id4n The document is created empty, mime-type defaults to text/plain
+            /// </summary>
+            /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">organizationId</param>
+        /// <param name="id4n">id4n</param>
+        /// <param name="content">content</param>
+        /// <returns>Document</returns>
+            public Document CreateDocument (long? organizationId, string id4n, System.IO.Stream content)
+            {
+        ApiResponse<Document> localVarResponse = CreateDocumentWithHttpInfo(organizationId, id4n, content);
+            return localVarResponse.Data;
+            }
+
+            /// <summary>
+            /// Create an empty document for an id4n The document is created empty, mime-type defaults to text/plain
+            /// </summary>
+            /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">organizationId</param>
+        /// <param name="id4n">id4n</param>
+        /// <param name="content">content</param>
+        /// <returns>ApiResponse of Document</returns>
+            public ApiResponse< Document > CreateDocumentWithHttpInfo (long? organizationId, string id4n, System.IO.Stream content)
+            {
+                    // verify the required parameter 'organizationId' is set
+                    if (organizationId == null)
+                    throw new ApiException(400, "Missing required parameter 'organizationId' when calling StorageApi->CreateDocument");
+                    // verify the required parameter 'id4n' is set
+                    if (id4n == null)
+                    throw new ApiException(400, "Missing required parameter 'id4n' when calling StorageApi->CreateDocument");
+                    // verify the required parameter 'content' is set
+                    if (content == null)
+                    throw new ApiException(400, "Missing required parameter 'content' when calling StorageApi->CreateDocument");
+
+            var localVarPath = "./api/v1/documents/{id4n}/{organizationId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "multipart/form-data"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/xml",
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+                if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
+                if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
+                if (content != null) localVarFileParams.Add("content", Configuration.ApiClient.ParameterToFile("content", content));
+
+                // authentication (Authorization) required
+                        if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+                        {
+                        localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+                        }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+            Exception exception = ExceptionFactory("CreateDocument", localVarResponse);
+            if (exception != null) throw exception;
+            }
+
+                return new ApiResponse<Document>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (Document) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Document)));
+            }
+
+                /// <summary>
+                /// Create an empty document for an id4n The document is created empty, mime-type defaults to text/plain
+                /// </summary>
+                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="organizationId">organizationId</param>
+            /// <param name="id4n">id4n</param>
+            /// <param name="content">content</param>
+            /// <returns>Task of Document</returns>
+            public async System.Threading.Tasks.Task<Document> CreateDocumentAsync (long? organizationId, string id4n, System.IO.Stream content)
+                {
+            ApiResponse<Document> localVarResponse = await CreateDocumentAsyncWithHttpInfo(organizationId, id4n, content);
+                return localVarResponse.Data;
+
+                }
+
+                /// <summary>
+                /// Create an empty document for an id4n The document is created empty, mime-type defaults to text/plain
+                /// </summary>
+                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="organizationId">organizationId</param>
+            /// <param name="id4n">id4n</param>
+            /// <param name="content">content</param>
+            /// <returns>Task of ApiResponse (Document)</returns>
+                public async System.Threading.Tasks.Task<ApiResponse<Document>> CreateDocumentAsyncWithHttpInfo (long? organizationId, string id4n, System.IO.Stream content)
+                {
+                        // verify the required parameter 'organizationId' is set
+                        if (organizationId == null)
+                        throw new ApiException(400, "Missing required parameter 'organizationId' when calling StorageApi->CreateDocument");
+                        // verify the required parameter 'id4n' is set
+                        if (id4n == null)
+                        throw new ApiException(400, "Missing required parameter 'id4n' when calling StorageApi->CreateDocument");
+                        // verify the required parameter 'content' is set
+                        if (content == null)
+                        throw new ApiException(400, "Missing required parameter 'content' when calling StorageApi->CreateDocument");
+
+                var localVarPath = "./api/v1/documents/{id4n}/{organizationId}";
+                var localVarPathParams = new Dictionary<String, String>();
+                var localVarQueryParams = new List<KeyValuePair<String, String>>();
+                var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+                var localVarFormParams = new Dictionary<String, String>();
+                var localVarFileParams = new Dictionary<String, FileParameter>();
+                Object localVarPostBody = null;
+
+                // to determine the Content-Type header
+                String[] localVarHttpContentTypes = new String[] {
+                    "multipart/form-data"
+                };
+                String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+                // to determine the Accept header
+                String[] localVarHttpHeaderAccepts = new String[] {
+                    "application/xml",
+                    "application/json"
+                };
+                String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+                if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+                    if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
+                    if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
+                    if (content != null) localVarFileParams.Add("content", Configuration.ApiClient.ParameterToFile("content", content));
+
+                    // authentication (Authorization) required
+                            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+                            {
+                            localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+                            }
+
+                // make the HTTP request
+                IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+                int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+                if (ExceptionFactory != null)
+                {
+                Exception exception = ExceptionFactory("CreateDocument", localVarResponse);
+                if (exception != null) throw exception;
+                }
+
+                    return new ApiResponse<Document>(localVarStatusCode,
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                    (Document) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Document)));
+                }
 
             /// <summary>
             /// Delete a document 
