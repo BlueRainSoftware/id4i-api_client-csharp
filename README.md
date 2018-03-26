@@ -1,3 +1,9 @@
+
+
+[![CircleCI](https://img.shields.io/circleci/project/github/RedSparr0w/node-csgo-parser.svg)](https://circleci.com/gh/BlueRainSoftware/id4i-api_client-sample-csharp)
+[![Support Chat](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/BlueRainSoftware/support)
+[![C# API on NuGet](https://img.shields.io/nuget/v/BlueRain.ID4i.svg)](https://github.com/BlueRainSoftware/id4i-api_client-csharp)
+
 # ID4i API Client Library - C#
 
 This library allows developers to interact with the http://id4i.de HTTP API.
