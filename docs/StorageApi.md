@@ -15,7 +15,7 @@ Method | HTTP request | Description
 [**ReadDocument**](StorageApi.md#readdocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Read document contents
 [**ReadFromMicrostorage**](StorageApi.md#readfrommicrostorage) | **GET** /api/v1/microstorage/{id4n}/{organization} | Read data from microstorage
 [**ReadPublicDocument**](StorageApi.md#readpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read document contents
-[**UpdateDocumentMetadata**](StorageApi.md#updatedocumentmetadata) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Update a document
+[**UpdateDocumentMetadata**](StorageApi.md#updatedocumentmetadata) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Update a document
 [**WriteToMicrostorage**](StorageApi.md#writetomicrostorage) | **PUT** /api/v1/microstorage/{id4n}/{organization} | Write data to microstorage
 
 
@@ -853,7 +853,7 @@ Name | Type | Description  | Notes
 
 <a name="writetomicrostorage"></a>
 # **WriteToMicrostorage**
-> Object WriteToMicrostorage (long? organization, string id4n, string body, string contentType = null, long? contentLength = null)
+> Object WriteToMicrostorage (long? organization, string id4n, string contentType = null, long? contentLength = null, byte[] body = null)
 
 Write data to microstorage
 
@@ -879,14 +879,14 @@ namespace Example
             var apiInstance = new StorageApi();
             var organization = 789;  // long? | organization
             var id4n = id4n_example;  // string | id4n
-            var body = body_example;  // string | 
             var contentType = contentType_example;  // string | Content-Type (optional) 
             var contentLength = 789;  // long? | Content-Length (optional) 
+            var body = BINARY_DATA_HERE;  // byte[] | body (optional) 
 
             try
             {
                 // Write data to microstorage
-                Object result = apiInstance.WriteToMicrostorage(organization, id4n, body, contentType, contentLength);
+                Object result = apiInstance.WriteToMicrostorage(organization, id4n, contentType, contentLength, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -904,9 +904,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization** | **long?**| organization | 
  **id4n** | **string**| id4n | 
- **body** | **string**|  | 
  **contentType** | **string**| Content-Type | [optional] 
  **contentLength** | **long?**| Content-Length | [optional] 
+ **body** | **byte[]**| body | [optional] 
 
 ### Return type
 

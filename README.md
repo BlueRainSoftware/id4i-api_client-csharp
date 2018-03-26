@@ -1,8 +1,3 @@
-
-
-[![Support Chat](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/BlueRainSoftware/support)
-[![C# API on NuGet](https://img.shields.io/nuget/v/BlueRain.ID4i.svg)](https://www.nuget.org/packages/BlueRain.ID4i/)
-
 # ID4i API Client Library - C#
 
 This library allows developers to interact with the http://id4i.de HTTP API.
@@ -215,7 +210,7 @@ Class | Method | HTTP request | Description
 *StorageApi* | [**ReadDocument**](docs/StorageApi.md#readdocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Read document contents
 *StorageApi* | [**ReadFromMicrostorage**](docs/StorageApi.md#readfrommicrostorage) | **GET** /api/v1/microstorage/{id4n}/{organization} | Read data from microstorage
 *StorageApi* | [**ReadPublicDocument**](docs/StorageApi.md#readpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read document contents
-*StorageApi* | [**UpdateDocumentMetadata**](docs/StorageApi.md#updatedocumentmetadata) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Update a document
+*StorageApi* | [**UpdateDocumentMetadata**](docs/StorageApi.md#updatedocumentmetadata) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Update a document
 *StorageApi* | [**WriteToMicrostorage**](docs/StorageApi.md#writetomicrostorage) | **PUT** /api/v1/microstorage/{id4n}/{organization} | Write data to microstorage
 *WhoIsApi* | [**ResolveWhoIsEntry**](docs/WhoIsApi.md#resolvewhoisentry) | **GET** /whois/{id4n} | Resolve owner of id4n
 

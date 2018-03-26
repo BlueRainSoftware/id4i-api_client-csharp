@@ -340,11 +340,11 @@ namespace BlueRain.ID4i.Api
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organization">organization</param>
         /// <param name="id4n">id4n</param>
-        /// <param name="body"></param>
         /// <param name="contentType">Content-Type (optional)</param>
         /// <param name="contentLength">Content-Length (optional)</param>
+        /// <param name="body">body (optional)</param>
         /// <returns>Object</returns>
-        Object WriteToMicrostorage (long? organization, string id4n, string body, string contentType = null, long? contentLength = null);
+        Object WriteToMicrostorage (long? organization, string id4n, string contentType = null, long? contentLength = null, byte[] body = null);
 
         /// <summary>
             /// Write data to microstorage
@@ -355,11 +355,11 @@ namespace BlueRain.ID4i.Api
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organization">organization</param>
         /// <param name="id4n">id4n</param>
-        /// <param name="body"></param>
         /// <param name="contentType">Content-Type (optional)</param>
         /// <param name="contentLength">Content-Length (optional)</param>
+        /// <param name="body">body (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> WriteToMicrostorageWithHttpInfo (long? organization, string id4n, string body, string contentType = null, long? contentLength = null);
+        ApiResponse<Object> WriteToMicrostorageWithHttpInfo (long? organization, string id4n, string contentType = null, long? contentLength = null, byte[] body = null);
         #endregion Synchronous Operations
             #region Asynchronous Operations
                 /// <summary>
@@ -677,11 +677,11 @@ namespace BlueRain.ID4i.Api
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organization">organization</param>
             /// <param name="id4n">id4n</param>
-            /// <param name="body"></param>
             /// <param name="contentType">Content-Type (optional)</param>
             /// <param name="contentLength">Content-Length (optional)</param>
+            /// <param name="body">body (optional)</param>
             /// <returns>Task of Object</returns>
-            System.Threading.Tasks.Task<Object> WriteToMicrostorageAsync (long? organization, string id4n, string body, string contentType = null, long? contentLength = null);
+            System.Threading.Tasks.Task<Object> WriteToMicrostorageAsync (long? organization, string id4n, string contentType = null, long? contentLength = null, byte[] body = null);
 
                 /// <summary>
                 /// Write data to microstorage
@@ -692,11 +692,11 @@ namespace BlueRain.ID4i.Api
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organization">organization</param>
             /// <param name="id4n">id4n</param>
-            /// <param name="body"></param>
             /// <param name="contentType">Content-Type (optional)</param>
             /// <param name="contentLength">Content-Length (optional)</param>
+            /// <param name="body">body (optional)</param>
             /// <returns>Task of ApiResponse (Object)</returns>
-                System.Threading.Tasks.Task<ApiResponse<Object>> WriteToMicrostorageAsyncWithHttpInfo (long? organization, string id4n, string body, string contentType = null, long? contentLength = null);
+                System.Threading.Tasks.Task<ApiResponse<Object>> WriteToMicrostorageAsyncWithHttpInfo (long? organization, string id4n, string contentType = null, long? contentLength = null, byte[] body = null);
             #endregion Asynchronous Operations
         }
 
@@ -2707,7 +2707,7 @@ namespace BlueRain.ID4i.Api
                     if (document == null)
                     throw new ApiException(400, "Missing required parameter 'document' when calling StorageApi->UpdateDocumentMetadata");
 
-            var localVarPath = "./api/v1/documents/{id4n}/{organizationId}/{fileName}";
+            var localVarPath = "./api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2807,7 +2807,7 @@ namespace BlueRain.ID4i.Api
                         if (document == null)
                         throw new ApiException(400, "Missing required parameter 'document' when calling StorageApi->UpdateDocumentMetadata");
 
-                var localVarPath = "./api/v1/documents/{id4n}/{organizationId}/{fileName}";
+                var localVarPath = "./api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2873,13 +2873,13 @@ namespace BlueRain.ID4i.Api
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organization">organization</param>
         /// <param name="id4n">id4n</param>
-        /// <param name="body"></param>
         /// <param name="contentType">Content-Type (optional)</param>
         /// <param name="contentLength">Content-Length (optional)</param>
+        /// <param name="body">body (optional)</param>
         /// <returns>Object</returns>
-            public Object WriteToMicrostorage (long? organization, string id4n, string body, string contentType = null, long? contentLength = null)
+            public Object WriteToMicrostorage (long? organization, string id4n, string contentType = null, long? contentLength = null, byte[] body = null)
             {
-        ApiResponse<Object> localVarResponse = WriteToMicrostorageWithHttpInfo(organization, id4n, body, contentType, contentLength);
+        ApiResponse<Object> localVarResponse = WriteToMicrostorageWithHttpInfo(organization, id4n, contentType, contentLength, body);
             return localVarResponse.Data;
             }
 
@@ -2889,11 +2889,11 @@ namespace BlueRain.ID4i.Api
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organization">organization</param>
         /// <param name="id4n">id4n</param>
-        /// <param name="body"></param>
         /// <param name="contentType">Content-Type (optional)</param>
         /// <param name="contentLength">Content-Length (optional)</param>
+        /// <param name="body">body (optional)</param>
         /// <returns>ApiResponse of Object</returns>
-            public ApiResponse< Object > WriteToMicrostorageWithHttpInfo (long? organization, string id4n, string body, string contentType = null, long? contentLength = null)
+            public ApiResponse< Object > WriteToMicrostorageWithHttpInfo (long? organization, string id4n, string contentType = null, long? contentLength = null, byte[] body = null)
             {
                     // verify the required parameter 'organization' is set
                     if (organization == null)
@@ -2901,9 +2901,6 @@ namespace BlueRain.ID4i.Api
                     // verify the required parameter 'id4n' is set
                     if (id4n == null)
                     throw new ApiException(400, "Missing required parameter 'id4n' when calling StorageApi->WriteToMicrostorage");
-                    // verify the required parameter 'body' is set
-                    if (body == null)
-                    throw new ApiException(400, "Missing required parameter 'body' when calling StorageApi->WriteToMicrostorage");
 
             var localVarPath = "./api/v1/microstorage/{id4n}/{organization}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2971,13 +2968,13 @@ namespace BlueRain.ID4i.Api
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organization">organization</param>
             /// <param name="id4n">id4n</param>
-            /// <param name="body"></param>
             /// <param name="contentType">Content-Type (optional)</param>
             /// <param name="contentLength">Content-Length (optional)</param>
+            /// <param name="body">body (optional)</param>
             /// <returns>Task of Object</returns>
-            public async System.Threading.Tasks.Task<Object> WriteToMicrostorageAsync (long? organization, string id4n, string body, string contentType = null, long? contentLength = null)
+            public async System.Threading.Tasks.Task<Object> WriteToMicrostorageAsync (long? organization, string id4n, string contentType = null, long? contentLength = null, byte[] body = null)
                 {
-            ApiResponse<Object> localVarResponse = await WriteToMicrostorageAsyncWithHttpInfo(organization, id4n, body, contentType, contentLength);
+            ApiResponse<Object> localVarResponse = await WriteToMicrostorageAsyncWithHttpInfo(organization, id4n, contentType, contentLength, body);
                 return localVarResponse.Data;
 
                 }
@@ -2988,11 +2985,11 @@ namespace BlueRain.ID4i.Api
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organization">organization</param>
             /// <param name="id4n">id4n</param>
-            /// <param name="body"></param>
             /// <param name="contentType">Content-Type (optional)</param>
             /// <param name="contentLength">Content-Length (optional)</param>
+            /// <param name="body">body (optional)</param>
             /// <returns>Task of ApiResponse (Object)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<Object>> WriteToMicrostorageAsyncWithHttpInfo (long? organization, string id4n, string body, string contentType = null, long? contentLength = null)
+                public async System.Threading.Tasks.Task<ApiResponse<Object>> WriteToMicrostorageAsyncWithHttpInfo (long? organization, string id4n, string contentType = null, long? contentLength = null, byte[] body = null)
                 {
                         // verify the required parameter 'organization' is set
                         if (organization == null)
@@ -3000,9 +2997,6 @@ namespace BlueRain.ID4i.Api
                         // verify the required parameter 'id4n' is set
                         if (id4n == null)
                         throw new ApiException(400, "Missing required parameter 'id4n' when calling StorageApi->WriteToMicrostorage");
-                        // verify the required parameter 'body' is set
-                        if (body == null)
-                        throw new ApiException(400, "Missing required parameter 'body' when calling StorageApi->WriteToMicrostorage");
 
                 var localVarPath = "./api/v1/microstorage/{id4n}/{organization}";
                 var localVarPathParams = new Dictionary<String, String>();
