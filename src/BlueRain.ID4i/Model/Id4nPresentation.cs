@@ -83,6 +83,13 @@ namespace BlueRain.ID4i.Model
         public long? CreatedTimestamp { get; private set; }
 
         /// <summary>
+        /// ${Id4nPresentation.Guid.holderOrganizationId}
+        /// </summary>
+        /// <value>${Id4nPresentation.Guid.holderOrganizationId}</value>
+        [DataMember(Name="holderOrganizationId", EmitDefaultValue=false)]
+        public long? HolderOrganizationId { get; private set; }
+
+        /// <summary>
         /// The ID
         /// </summary>
         /// <value>The ID</value>
@@ -96,11 +103,11 @@ namespace BlueRain.ID4i.Model
         public string Label { get; private set; }
 
         /// <summary>
-        /// Indicates if next scan ownership is active or not. If privileges are missing or the type of object doesn&#39;t support NSO this value is null.
+        /// ${Id4nPresentation.Guid.ownerOrganizationId}
         /// </summary>
-        /// <value>Indicates if next scan ownership is active or not. If privileges are missing or the type of object doesn&#39;t support NSO this value is null.</value>
-        [DataMember(Name="nextScanOwnership", EmitDefaultValue=false)]
-        public bool? NextScanOwnership { get; private set; }
+        /// <value>${Id4nPresentation.Guid.ownerOrganizationId}</value>
+        [DataMember(Name="ownerOrganizationId", EmitDefaultValue=false)]
+        public long? OwnerOrganizationId { get; private set; }
 
 
         /// <summary>
@@ -112,9 +119,10 @@ namespace BlueRain.ID4i.Model
             var sb = new StringBuilder();
             sb.Append("class Id4nPresentation {\n");
             sb.Append("  CreatedTimestamp: ").Append(CreatedTimestamp).Append("\n");
+            sb.Append("  HolderOrganizationId: ").Append(HolderOrganizationId).Append("\n");
             sb.Append("  Id4n: ").Append(Id4n).Append("\n");
             sb.Append("  Label: ").Append(Label).Append("\n");
-            sb.Append("  NextScanOwnership: ").Append(NextScanOwnership).Append("\n");
+            sb.Append("  OwnerOrganizationId: ").Append(OwnerOrganizationId).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -156,6 +164,11 @@ namespace BlueRain.ID4i.Model
                     this.CreatedTimestamp.Equals(input.CreatedTimestamp))
                 ) && 
                 (
+                    this.HolderOrganizationId == input.HolderOrganizationId ||
+                    (this.HolderOrganizationId != null &&
+                    this.HolderOrganizationId.Equals(input.HolderOrganizationId))
+                ) && 
+                (
                     this.Id4n == input.Id4n ||
                     (this.Id4n != null &&
                     this.Id4n.Equals(input.Id4n))
@@ -166,9 +179,9 @@ namespace BlueRain.ID4i.Model
                     this.Label.Equals(input.Label))
                 ) && 
                 (
-                    this.NextScanOwnership == input.NextScanOwnership ||
-                    (this.NextScanOwnership != null &&
-                    this.NextScanOwnership.Equals(input.NextScanOwnership))
+                    this.OwnerOrganizationId == input.OwnerOrganizationId ||
+                    (this.OwnerOrganizationId != null &&
+                    this.OwnerOrganizationId.Equals(input.OwnerOrganizationId))
                 ) && 
                 (
                     this.Type == input.Type ||
@@ -188,12 +201,14 @@ namespace BlueRain.ID4i.Model
                 int hashCode = 41;
                 if (this.CreatedTimestamp != null)
                     hashCode = hashCode * 59 + this.CreatedTimestamp.GetHashCode();
+                if (this.HolderOrganizationId != null)
+                    hashCode = hashCode * 59 + this.HolderOrganizationId.GetHashCode();
                 if (this.Id4n != null)
                     hashCode = hashCode * 59 + this.Id4n.GetHashCode();
                 if (this.Label != null)
                     hashCode = hashCode * 59 + this.Label.GetHashCode();
-                if (this.NextScanOwnership != null)
-                    hashCode = hashCode * 59 + this.NextScanOwnership.GetHashCode();
+                if (this.OwnerOrganizationId != null)
+                    hashCode = hashCode * 59 + this.OwnerOrganizationId.GetHashCode();
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;

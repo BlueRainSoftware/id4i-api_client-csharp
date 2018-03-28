@@ -150,10 +150,6 @@ Class | Method | HTTP request | Description
 *CollectionsApi* | [**RemoveElementsFromLabelledCollection**](docs/CollectionsApi.md#removeelementsfromlabelledcollection) | **DELETE** /api/v1/collections/labelled/{collectionId4n}/elements | Remove elements from labelled collection
 *CollectionsApi* | [**RemoveElementsFromLogisticCollection**](docs/CollectionsApi.md#removeelementsfromlogisticcollection) | **DELETE** /api/v1/collections/logistic/{collectionId4n}/elements | Remove elements from logistic collection
 *CollectionsApi* | [**RemoveElementsFromRoutingCollection**](docs/CollectionsApi.md#removeelementsfromroutingcollection) | **DELETE** /api/v1/collections/routing/{collectionId4n}/elements | Remove elements from routing collection
-*CollectionsApi* | [**SetCollection**](docs/CollectionsApi.md#setcollection) | **PUT** /api/v1/collections/{id4n} | Set collection
-*CollectionsApi* | [**SetLabelledCollection**](docs/CollectionsApi.md#setlabelledcollection) | **PUT** /api/v1/collections/labelled/{id4n} | Set labelled collection values
-*CollectionsApi* | [**SetLogisticCollection**](docs/CollectionsApi.md#setlogisticcollection) | **PUT** /api/v1/collections/logistic/{id4n} | Replace logistic collection
-*CollectionsApi* | [**SetRoutingCollection**](docs/CollectionsApi.md#setroutingcollection) | **PUT** /api/v1/collections/routing/{id4n} | Update routing collection
 *CollectionsApi* | [**UpdateCollection**](docs/CollectionsApi.md#updatecollection) | **PATCH** /api/v1/collections/{id4n} | Update collection
 *CollectionsApi* | [**UpdateLabelledCollection**](docs/CollectionsApi.md#updatelabelledcollection) | **PATCH** /api/v1/collections/labelled/{id4n} | Update labelled collection
 *CollectionsApi* | [**UpdateLogisticCollection**](docs/CollectionsApi.md#updatelogisticcollection) | **PATCH** /api/v1/collections/logistic/{id4n} | Update logistic collection
@@ -165,8 +161,8 @@ Class | Method | HTTP request | Description
 *GuidsApi* | [**GetGuidsWithoutCollection**](docs/GuidsApi.md#getguidswithoutcollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 *GuidsApi* | [**GetId4n**](docs/GuidsApi.md#getid4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
 *GuidsApi* | [**RemoveGuidAlias**](docs/GuidsApi.md#removeguidalias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
-*GuidsApi* | [**SetGuid**](docs/GuidsApi.md#setguid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
-*GuidsApi* | [**SetGuid1**](docs/GuidsApi.md#setguid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
+*GuidsApi* | [**UpdateGuid**](docs/GuidsApi.md#updateguid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
+*GuidsApi* | [**UpdateGuid1**](docs/GuidsApi.md#updateguid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 *ImagesApi* | [**ResolveImageUsingGET**](docs/ImagesApi.md#resolveimageusingget) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *MetaInformationApi* | [**ApplicationInfo**](docs/MetaInformationApi.md#applicationinfo) | **GET** /api/v1/info | Retrieve version information about ID4i
 *OrganizationsApi* | [**AddUserRoles**](docs/OrganizationsApi.md#adduserroles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
@@ -212,6 +208,10 @@ Class | Method | HTTP request | Description
 *StorageApi* | [**ReadPublicDocument**](docs/StorageApi.md#readpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read document contents
 *StorageApi* | [**UpdateDocumentMetadata**](docs/StorageApi.md#updatedocumentmetadata) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Update a document
 *StorageApi* | [**WriteToMicrostorage**](docs/StorageApi.md#writetomicrostorage) | **PUT** /api/v1/microstorage/{id4n}/{organization} | Write data to microstorage
+*TransferApi* | [**GetReceiveInfo**](docs/TransferApi.md#getreceiveinfo) | **GET** /api/v1/transfers/{id4n}/receiveInfo | Show transfer information
+*TransferApi* | [**GetSendInfo**](docs/TransferApi.md#getsendinfo) | **GET** /api/v1/transfers/{id4n}/sendInfo | Show transfer preparation information
+*TransferApi* | [**Prepare**](docs/TransferApi.md#prepare) | **PUT** /api/v1/transfers/{id4n}/sendInfo | Prepare an object for transfer
+*TransferApi* | [**Receive**](docs/TransferApi.md#receive) | **PUT** /api/v1/transfers/{id4n}/receiveInfo | Transfer a GUID or collection, obtaining it (i.e. becoming the holder) and if allowed also taking ownership
 *WhoIsApi* | [**ResolveWhoIsEntry**](docs/WhoIsApi.md#resolvewhoisentry) | **GET** /whois/{id4n} | Resolve owner of id4n
 
 
@@ -293,6 +293,8 @@ Class | Method | HTTP request | Description
      - [Model.ServiceCosts](docs/ServiceCosts.md)
      - [Model.SimpleMessageResponse](docs/SimpleMessageResponse.md)
      - [Model.Timestamp](docs/Timestamp.md)
+     - [Model.TransferReceiveInfo](docs/TransferReceiveInfo.md)
+     - [Model.TransferSendInfo](docs/TransferSendInfo.md)
      - [Model.URI](docs/URI.md)
      - [Model.URL](docs/URL.md)
      - [Model.UserPresentation](docs/UserPresentation.md)

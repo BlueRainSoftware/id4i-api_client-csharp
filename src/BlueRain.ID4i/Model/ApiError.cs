@@ -267,7 +267,13 @@ namespace BlueRain.ID4i.Model
             /// Enum INSECUREPASSWORD for value: ERR_INSECURE_PASSWORD
             /// </summary>
             [EnumMember(Value = "ERR_INSECURE_PASSWORD")]
-            INSECUREPASSWORD = 39
+            INSECUREPASSWORD = 39,
+            
+            /// <summary>
+            /// Enum TRANSFERDENIED for value: ERR_TRANSFER_DENIED
+            /// </summary>
+            [EnumMember(Value = "ERR_TRANSFER_DENIED")]
+            TRANSFERDENIED = 40
         }
 
         /// <summary>

@@ -4,9 +4,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreatedTimestamp** | **long?** | The UTC unix timestamp of when this ID has been created | 
+**HolderOrganizationId** | **long?** | ${Id4nPresentation.Guid.holderOrganizationId} | [optional] 
 **Id4n** | **string** | The ID | 
 **Label** | **string** |  | [optional] 
-**NextScanOwnership** | **bool?** | Indicates if next scan ownership is active or not. If privileges are missing or the type of object doesn&#39;t support NSO this value is null. | [optional] 
+**OwnerOrganizationId** | **long?** | ${Id4nPresentation.Guid.ownerOrganizationId} | [optional] 
 **Type** | **string** | The type of ID | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
