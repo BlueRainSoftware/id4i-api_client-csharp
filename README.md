@@ -124,6 +124,7 @@ Class | Method | HTTP request | Description
 *ApiKeysApi* | [**RemoveApiKeyPrivilege**](docs/ApiKeysApi.md#removeapikeyprivilege) | **DELETE** /api/v1/apikeys/{key}/privileges | Remove privilege
 *ApiKeysApi* | [**RemoveApiKeyPrivilegeForId4ns**](docs/ApiKeysApi.md#removeapikeyprivilegeforid4ns) | **DELETE** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | Remove id4ns of a privilege
 *ApiKeysApi* | [**UpdateApiKey**](docs/ApiKeysApi.md#updateapikey) | **PUT** /api/v1/apikeys/{key} | Update API keys
+*AuditingApi* | [**ListOrganizationChangeLog**](docs/AuditingApi.md#listorganizationchangelog) | **GET** /api/v1/changelog/organization/{organizationId}/ | List change log entries of an organization
 *BillingApi* | [**GetPositionsForOrganization**](docs/BillingApi.md#getpositionsfororganization) | **GET** /api/v1/billing/{organizationId}/positions | Get billing positions for a given organization
 *BillingApi* | [**GetSumForOrganization**](docs/BillingApi.md#getsumfororganization) | **GET** /api/v1/billing/{organizationId} | Get billing amount of services for a given organization
 *CollectionsApi* | [**AddElementsToCollection**](docs/CollectionsApi.md#addelementstocollection) | **POST** /api/v1/collections/{id4n}/elements | Add elements to collection
@@ -230,6 +231,7 @@ Class | Method | HTTP request | Description
      - [Model.ApiKeyPrivilegePaginatedResponse](docs/ApiKeyPrivilegePaginatedResponse.md)
      - [Model.AppInfoPresentation](docs/AppInfoPresentation.md)
      - [Model.BillingPosition](docs/BillingPosition.md)
+     - [Model.ChangeLogEntry](docs/ChangeLogEntry.md)
      - [Model.ChangeRoleRequest](docs/ChangeRoleRequest.md)
      - [Model.CompleteUserRegistrationRequest](docs/CompleteUserRegistrationRequest.md)
      - [Model.Country](docs/Country.md)
@@ -255,6 +257,7 @@ Class | Method | HTTP request | Description
      - [Model.OrganizationUserInvitationListRequest](docs/OrganizationUserInvitationListRequest.md)
      - [Model.OwnedDocument](docs/OwnedDocument.md)
      - [Model.PaginatedApiKeyResponse](docs/PaginatedApiKeyResponse.md)
+     - [Model.PaginatedChangeLogEntryResponse](docs/PaginatedChangeLogEntryResponse.md)
      - [Model.PaginatedCountryResponse](docs/PaginatedCountryResponse.md)
      - [Model.PaginatedDocumentResponse](docs/PaginatedDocumentResponse.md)
      - [Model.PaginatedGuidCollection](docs/PaginatedGuidCollection.md)
@@ -264,6 +267,7 @@ Class | Method | HTTP request | Description
      - [Model.PaginatedResponseApiKeyPresentation](docs/PaginatedResponseApiKeyPresentation.md)
      - [Model.PaginatedResponseApiKeyPrivilege](docs/PaginatedResponseApiKeyPrivilege.md)
      - [Model.PaginatedResponseApiKeyPrivilegeInfo](docs/PaginatedResponseApiKeyPrivilegeInfo.md)
+     - [Model.PaginatedResponseChangeLogEntry](docs/PaginatedResponseChangeLogEntry.md)
      - [Model.PaginatedResponseCountry](docs/PaginatedResponseCountry.md)
      - [Model.PaginatedResponseDocument](docs/PaginatedResponseDocument.md)
      - [Model.PaginatedResponseGuid](docs/PaginatedResponseGuid.md)

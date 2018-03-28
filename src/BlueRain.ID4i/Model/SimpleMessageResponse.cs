@@ -31,10 +31,23 @@ namespace BlueRain.ID4i.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SimpleMessageResponse" /> class.
         /// </summary>
-        /// <param name="Message">Message.</param>
+        [JsonConstructorAttribute]
+        protected SimpleMessageResponse() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SimpleMessageResponse" /> class.
+        /// </summary>
+        /// <param name="Message">Message (required).</param>
         public SimpleMessageResponse(string Message = default(string))
         {
-            this.Message = Message;
+            // to ensure "Message" is required (not null)
+            if (Message == null)
+            {
+                throw new InvalidDataException("Message is a required property for SimpleMessageResponse and cannot be null");
+            }
+            else
+            {
+                this.Message = Message;
+            }
         }
         
         /// <summary>
