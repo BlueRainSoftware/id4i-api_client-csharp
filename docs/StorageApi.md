@@ -4,6 +4,7 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**CreateDocument**](StorageApi.md#createdocument) | **PUT** /api/v1/documents/{id4n}/{organizationId} | Create an empty document for an id4n
 [**DeleteDocument**](StorageApi.md#deletedocument) | **DELETE** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Delete a document
 [**GetDocument**](StorageApi.md#getdocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
 [**GetPublicDocument**](StorageApi.md#getpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
@@ -14,9 +15,79 @@ Method | HTTP request | Description
 [**ReadDocument**](StorageApi.md#readdocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Read document contents
 [**ReadFromMicrostorage**](StorageApi.md#readfrommicrostorage) | **GET** /api/v1/microstorage/{id4n}/{organization} | Read data from microstorage
 [**ReadPublicDocument**](StorageApi.md#readpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read document contents
-[**UpdateDocumentMetadata**](StorageApi.md#updatedocumentmetadata) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Update a document
+[**UpdateDocumentMetadata**](StorageApi.md#updatedocumentmetadata) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Update a document
 [**WriteToMicrostorage**](StorageApi.md#writetomicrostorage) | **PUT** /api/v1/microstorage/{id4n}/{organization} | Write data to microstorage
 
+
+<a name="createdocument"></a>
+# **CreateDocument**
+> Document CreateDocument (long? organizationId, string id4n, System.IO.Stream content)
+
+Create an empty document for an id4n
+
+The document is created empty, mime-type defaults to text/plain
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
+
+namespace Example
+{
+    public class CreateDocumentExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: Authorization
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new StorageApi();
+            var organizationId = 789;  // long? | organizationId
+            var id4n = id4n_example;  // string | id4n
+            var content = new System.IO.Stream(); // System.IO.Stream | content
+
+            try
+            {
+                // Create an empty document for an id4n
+                Document result = apiInstance.CreateDocument(organizationId, id4n, content);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling StorageApi.CreateDocument: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **long?**| organizationId | 
+ **id4n** | **string**| id4n | 
+ **content** | **System.IO.Stream**| content | 
+
+### Return type
+
+[**Document**](Document.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="deletedocument"></a>
 # **DeleteDocument**
@@ -782,7 +853,7 @@ Name | Type | Description  | Notes
 
 <a name="writetomicrostorage"></a>
 # **WriteToMicrostorage**
-> Object WriteToMicrostorage (long? organization, string id4n, string body, string contentType = null, long? contentLength = null)
+> Object WriteToMicrostorage (long? organization, string id4n, string contentType = null, long? contentLength = null, byte[] body = null)
 
 Write data to microstorage
 
@@ -808,14 +879,14 @@ namespace Example
             var apiInstance = new StorageApi();
             var organization = 789;  // long? | organization
             var id4n = id4n_example;  // string | id4n
-            var body = body_example;  // string | 
             var contentType = contentType_example;  // string | Content-Type (optional) 
             var contentLength = 789;  // long? | Content-Length (optional) 
+            var body = BINARY_DATA_HERE;  // byte[] | body (optional) 
 
             try
             {
                 // Write data to microstorage
-                Object result = apiInstance.WriteToMicrostorage(organization, id4n, body, contentType, contentLength);
+                Object result = apiInstance.WriteToMicrostorage(organization, id4n, contentType, contentLength, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -833,9 +904,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization** | **long?**| organization | 
  **id4n** | **string**| id4n | 
- **body** | **string**|  | 
  **contentType** | **string**| Content-Type | [optional] 
  **contentLength** | **long?**| Content-Length | [optional] 
+ **body** | **byte[]**| body | [optional] 
 
 ### Return type
 

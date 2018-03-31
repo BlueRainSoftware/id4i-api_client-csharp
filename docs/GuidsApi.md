@@ -11,8 +11,8 @@ Method | HTTP request | Description
 [**GetGuidsWithoutCollection**](GuidsApi.md#getguidswithoutcollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 [**GetId4n**](GuidsApi.md#getid4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
 [**RemoveGuidAlias**](GuidsApi.md#removeguidalias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
-[**SetGuid**](GuidsApi.md#setguid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
-[**SetGuid1**](GuidsApi.md#setguid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
+[**UpdateGuid**](GuidsApi.md#updateguid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
+[**UpdateGuid1**](GuidsApi.md#updateguid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 
 
 <a name="addguidalias"></a>
@@ -481,9 +481,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="setguid"></a>
-# **SetGuid**
-> Object SetGuid (string id4n, Guid request)
+<a name="updateguid"></a>
+# **UpdateGuid**
+> Object UpdateGuid (string id4n, Guid request)
 
 Change GUID information.
 
@@ -499,7 +499,7 @@ using BlueRain.ID4i.Model;
 
 namespace Example
 {
-    public class SetGuidExample
+    public class UpdateGuidExample
     {
         public void main()
         {
@@ -515,12 +515,12 @@ namespace Example
             try
             {
                 // Change GUID information.
-                Object result = apiInstance.SetGuid(id4n, request);
+                Object result = apiInstance.UpdateGuid(id4n, request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling GuidsApi.SetGuid: " + e.Message );
+                Debug.Print("Exception when calling GuidsApi.UpdateGuid: " + e.Message );
             }
         }
     }
@@ -549,9 +549,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="setguid1"></a>
-# **SetGuid1**
-> Object SetGuid1 (string id4n, Guid request)
+<a name="updateguid1"></a>
+# **UpdateGuid1**
+> Object UpdateGuid1 (string id4n, Guid request)
 
 Change GUID information.
 
@@ -567,7 +567,7 @@ using BlueRain.ID4i.Model;
 
 namespace Example
 {
-    public class SetGuid1Example
+    public class UpdateGuid1Example
     {
         public void main()
         {
@@ -583,12 +583,12 @@ namespace Example
             try
             {
                 // Change GUID information.
-                Object result = apiInstance.SetGuid1(id4n, request);
+                Object result = apiInstance.UpdateGuid1(id4n, request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling GuidsApi.SetGuid1: " + e.Message );
+                Debug.Print("Exception when calling GuidsApi.UpdateGuid1: " + e.Message );
             }
         }
     }
