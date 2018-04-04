@@ -76,9 +76,9 @@ namespace BlueRain.ID4i.Model
         public long? CreatedTimestamp { get; private set; }
 
         /// <summary>
-        /// The UTC unix timestamp of when this collection has been created
+        /// Organization ID of the GUID holder
         /// </summary>
-        /// <value>The UTC unix timestamp of when this collection has been created</value>
+        /// <value>Organization ID of the GUID holder</value>
         [DataMember(Name="holderOrganizationId", EmitDefaultValue=false)]
         public long? HolderOrganizationId { get; private set; }
 
@@ -96,9 +96,9 @@ namespace BlueRain.ID4i.Model
         public string Label { get; set; }
 
         /// <summary>
-        /// The UTC unix timestamp of when this collection has been created
+        /// Organization ID of the GUID owner
         /// </summary>
-        /// <value>The UTC unix timestamp of when this collection has been created</value>
+        /// <value>Organization ID of the GUID owner</value>
         [DataMember(Name="ownerOrganizationId", EmitDefaultValue=false)]
         public long? OwnerOrganizationId { get; private set; }
 
