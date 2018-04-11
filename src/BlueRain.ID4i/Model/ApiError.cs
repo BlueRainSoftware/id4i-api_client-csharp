@@ -286,28 +286,49 @@ namespace BlueRain.ID4i.Model
         /// Gets or Sets Code
         /// </summary>
         [DataMember(Name="code", EmitDefaultValue=false)]
-        public CodeEnum? Code { get; set; }
+        public CodeEnum Code { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiError" /> class.
         /// </summary>
-        /// <param name="Code">Code.</param>
-        /// <param name="ErrorId">ErrorId.</param>
-        /// <param name="ErrorList">ErrorList.</param>
-        /// <param name="Message">Message.</param>
-        public ApiError(CodeEnum? Code = default(CodeEnum?), string ErrorId = default(string), List<ApiError> ErrorList = default(List<ApiError>), string Message = default(string))
+        [JsonConstructorAttribute]
+        protected ApiError() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiError" /> class.
+        /// </summary>
+        /// <param name="Code">Code (required).</param>
+        /// <param name="ErrorList">ErrorList (required).</param>
+        /// <param name="Message">Message (required).</param>
+        public ApiError(CodeEnum Code = default(CodeEnum), List<ApiError> ErrorList = default(List<ApiError>), string Message = default(string))
         {
-            this.Code = Code;
-            this.ErrorId = ErrorId;
-            this.ErrorList = ErrorList;
-            this.Message = Message;
+            // to ensure "Code" is required (not null)
+            if (Code == null)
+            {
+                throw new InvalidDataException("Code is a required property for ApiError and cannot be null");
+            }
+            else
+            {
+                this.Code = Code;
+            }
+            // to ensure "ErrorList" is required (not null)
+            if (ErrorList == null)
+            {
+                throw new InvalidDataException("ErrorList is a required property for ApiError and cannot be null");
+            }
+            else
+            {
+                this.ErrorList = ErrorList;
+            }
+            // to ensure "Message" is required (not null)
+            if (Message == null)
+            {
+                throw new InvalidDataException("Message is a required property for ApiError and cannot be null");
+            }
+            else
+            {
+                this.Message = Message;
+            }
         }
         
-
-        /// <summary>
-        /// Gets or Sets ErrorId
-        /// </summary>
-        [DataMember(Name="errorId", EmitDefaultValue=false)]
-        public string ErrorId { get; set; }
 
         /// <summary>
         /// Gets or Sets ErrorList
@@ -330,7 +351,6 @@ namespace BlueRain.ID4i.Model
             var sb = new StringBuilder();
             sb.Append("class ApiError {\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
-            sb.Append("  ErrorId: ").Append(ErrorId).Append("\n");
             sb.Append("  ErrorList: ").Append(ErrorList).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
             sb.Append("}\n");
@@ -373,11 +393,6 @@ namespace BlueRain.ID4i.Model
                     this.Code.Equals(input.Code))
                 ) && 
                 (
-                    this.ErrorId == input.ErrorId ||
-                    (this.ErrorId != null &&
-                    this.ErrorId.Equals(input.ErrorId))
-                ) && 
-                (
                     this.ErrorList == input.ErrorList ||
                     this.ErrorList != null &&
                     this.ErrorList.SequenceEqual(input.ErrorList)
@@ -400,8 +415,6 @@ namespace BlueRain.ID4i.Model
                 int hashCode = 41;
                 if (this.Code != null)
                     hashCode = hashCode * 59 + this.Code.GetHashCode();
-                if (this.ErrorId != null)
-                    hashCode = hashCode * 59 + this.ErrorId.GetHashCode();
                 if (this.ErrorList != null)
                     hashCode = hashCode * 59 + this.ErrorList.GetHashCode();
                 if (this.Message != null)
