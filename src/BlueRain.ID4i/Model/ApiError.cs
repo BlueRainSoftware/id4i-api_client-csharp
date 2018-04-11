@@ -273,7 +273,13 @@ namespace BlueRain.ID4i.Model
             /// Enum TRANSFERDENIED for value: ERR_TRANSFER_DENIED
             /// </summary>
             [EnumMember(Value = "ERR_TRANSFER_DENIED")]
-            TRANSFERDENIED = 40
+            TRANSFERDENIED = 40,
+            
+            /// <summary>
+            /// Enum INVALIDPHYSICALSTATE for value: ERR_INVALID_PHYSICAL_STATE
+            /// </summary>
+            [EnumMember(Value = "ERR_INVALID_PHYSICAL_STATE")]
+            INVALIDPHYSICALSTATE = 41
         }
 
         /// <summary>
