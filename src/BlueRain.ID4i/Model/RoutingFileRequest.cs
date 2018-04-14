@@ -36,9 +36,9 @@ namespace BlueRain.ID4i.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RoutingFileRequest" /> class.
         /// </summary>
-        /// <param name="OrganizationId">OrganizationId.</param>
         /// <param name="Routing">Routing (required).</param>
-        public RoutingFileRequest(long? OrganizationId = default(long?), RoutingFile Routing = default(RoutingFile))
+        /// <param name="OrganizationId">OrganizationId.</param>
+        public RoutingFileRequest(RoutingFile Routing = default(RoutingFile), long? OrganizationId = default(long?))
         {
             // to ensure "Routing" is required (not null)
             if (Routing == null)
@@ -53,16 +53,16 @@ namespace BlueRain.ID4i.Model
         }
         
         /// <summary>
-        /// Gets or Sets OrganizationId
-        /// </summary>
-        [DataMember(Name="organizationId", EmitDefaultValue=false)]
-        public long? OrganizationId { get; set; }
-
-        /// <summary>
         /// Gets or Sets Routing
         /// </summary>
         [DataMember(Name="routing", EmitDefaultValue=false)]
         public RoutingFile Routing { get; set; }
+
+        /// <summary>
+        /// Gets or Sets OrganizationId
+        /// </summary>
+        [DataMember(Name="organizationId", EmitDefaultValue=false)]
+        public long? OrganizationId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -72,8 +72,8 @@ namespace BlueRain.ID4i.Model
         {
             var sb = new StringBuilder();
             sb.Append("class RoutingFileRequest {\n");
-            sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
             sb.Append("  Routing: ").Append(Routing).Append("\n");
+            sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -109,14 +109,14 @@ namespace BlueRain.ID4i.Model
 
             return 
                 (
-                    this.OrganizationId == input.OrganizationId ||
-                    (this.OrganizationId != null &&
-                    this.OrganizationId.Equals(input.OrganizationId))
-                ) && 
-                (
                     this.Routing == input.Routing ||
                     (this.Routing != null &&
                     this.Routing.Equals(input.Routing))
+                ) && 
+                (
+                    this.OrganizationId == input.OrganizationId ||
+                    (this.OrganizationId != null &&
+                    this.OrganizationId.Equals(input.OrganizationId))
                 );
         }
 
@@ -129,10 +129,10 @@ namespace BlueRain.ID4i.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.OrganizationId != null)
-                    hashCode = hashCode * 59 + this.OrganizationId.GetHashCode();
                 if (this.Routing != null)
                     hashCode = hashCode * 59 + this.Routing.GetHashCode();
+                if (this.OrganizationId != null)
+                    hashCode = hashCode * 59 + this.OrganizationId.GetHashCode();
                 return hashCode;
             }
         }

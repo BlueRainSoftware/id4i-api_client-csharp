@@ -31,14 +31,27 @@ namespace BlueRain.ID4i.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UserRegistrationResponse" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected UserRegistrationResponse() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserRegistrationResponse" /> class.
+        /// </summary>
         /// <param name="Email">Email.</param>
-        /// <param name="Id">Id.</param>
+        /// <param name="Id">Id (required).</param>
         /// <param name="Message">Message.</param>
         /// <param name="Username">Username.</param>
         public UserRegistrationResponse(string Email = default(string), long? Id = default(long?), string Message = default(string), string Username = default(string))
         {
+            // to ensure "Id" is required (not null)
+            if (Id == null)
+            {
+                throw new InvalidDataException("Id is a required property for UserRegistrationResponse and cannot be null");
+            }
+            else
+            {
+                this.Id = Id;
+            }
             this.Email = Email;
-            this.Id = Id;
             this.Message = Message;
             this.Username = Username;
         }

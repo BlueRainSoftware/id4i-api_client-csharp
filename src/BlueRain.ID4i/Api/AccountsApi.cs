@@ -99,11 +99,11 @@ namespace BlueRain.ID4i.Api
             /// 
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="usernamePrefix">Find users starting with this prefix.</param>
+        /// <param name="usernamePrefix"> (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>PaginatedUserPresentationResponse</returns>
-        PaginatedUserPresentationResponse FindUsers (string usernamePrefix, int? offset = null, int? limit = null);
+        PaginatedUserPresentationResponse FindUsers (string usernamePrefix = null, int? offset = null, int? limit = null);
 
         /// <summary>
             /// Find users
@@ -112,11 +112,11 @@ namespace BlueRain.ID4i.Api
             /// 
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="usernamePrefix">Find users starting with this prefix.</param>
+        /// <param name="usernamePrefix"> (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>ApiResponse of PaginatedUserPresentationResponse</returns>
-        ApiResponse<PaginatedUserPresentationResponse> FindUsersWithHttpInfo (string usernamePrefix, int? offset = null, int? limit = null);
+        ApiResponse<PaginatedUserPresentationResponse> FindUsersWithHttpInfo (string usernamePrefix = null, int? offset = null, int? limit = null);
         /// <summary>
             /// List users and their roles
             /// </summary>
@@ -473,11 +473,11 @@ namespace BlueRain.ID4i.Api
                 /// 
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="usernamePrefix">Find users starting with this prefix.</param>
+            /// <param name="usernamePrefix"> (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of PaginatedUserPresentationResponse</returns>
-            System.Threading.Tasks.Task<PaginatedUserPresentationResponse> FindUsersAsync (string usernamePrefix, int? offset = null, int? limit = null);
+            System.Threading.Tasks.Task<PaginatedUserPresentationResponse> FindUsersAsync (string usernamePrefix = null, int? offset = null, int? limit = null);
 
                 /// <summary>
                 /// Find users
@@ -486,11 +486,11 @@ namespace BlueRain.ID4i.Api
                 /// 
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="usernamePrefix">Find users starting with this prefix.</param>
+            /// <param name="usernamePrefix"> (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedUserPresentationResponse)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedUserPresentationResponse>> FindUsersAsyncWithHttpInfo (string usernamePrefix, int? offset = null, int? limit = null);
+                System.Threading.Tasks.Task<ApiResponse<PaginatedUserPresentationResponse>> FindUsersAsyncWithHttpInfo (string usernamePrefix = null, int? offset = null, int? limit = null);
                 /// <summary>
                 /// List users and their roles
                 /// </summary>
@@ -1360,11 +1360,11 @@ namespace BlueRain.ID4i.Api
             /// Find users 
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="usernamePrefix">Find users starting with this prefix.</param>
+        /// <param name="usernamePrefix"> (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>PaginatedUserPresentationResponse</returns>
-            public PaginatedUserPresentationResponse FindUsers (string usernamePrefix, int? offset = null, int? limit = null)
+            public PaginatedUserPresentationResponse FindUsers (string usernamePrefix = null, int? offset = null, int? limit = null)
             {
         ApiResponse<PaginatedUserPresentationResponse> localVarResponse = FindUsersWithHttpInfo(usernamePrefix, offset, limit);
             return localVarResponse.Data;
@@ -1374,15 +1374,12 @@ namespace BlueRain.ID4i.Api
             /// Find users 
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="usernamePrefix">Find users starting with this prefix.</param>
+        /// <param name="usernamePrefix"> (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>ApiResponse of PaginatedUserPresentationResponse</returns>
-            public ApiResponse< PaginatedUserPresentationResponse > FindUsersWithHttpInfo (string usernamePrefix, int? offset = null, int? limit = null)
+            public ApiResponse< PaginatedUserPresentationResponse > FindUsersWithHttpInfo (string usernamePrefix = null, int? offset = null, int? limit = null)
             {
-                    // verify the required parameter 'usernamePrefix' is set
-                    if (usernamePrefix == null)
-                    throw new ApiException(400, "Missing required parameter 'usernamePrefix' when calling AccountsApi->FindUsers");
 
             var localVarPath = "./api/v1/users";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1440,11 +1437,11 @@ namespace BlueRain.ID4i.Api
                 /// Find users 
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="usernamePrefix">Find users starting with this prefix.</param>
+            /// <param name="usernamePrefix"> (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of PaginatedUserPresentationResponse</returns>
-            public async System.Threading.Tasks.Task<PaginatedUserPresentationResponse> FindUsersAsync (string usernamePrefix, int? offset = null, int? limit = null)
+            public async System.Threading.Tasks.Task<PaginatedUserPresentationResponse> FindUsersAsync (string usernamePrefix = null, int? offset = null, int? limit = null)
                 {
             ApiResponse<PaginatedUserPresentationResponse> localVarResponse = await FindUsersAsyncWithHttpInfo(usernamePrefix, offset, limit);
                 return localVarResponse.Data;
@@ -1455,15 +1452,12 @@ namespace BlueRain.ID4i.Api
                 /// Find users 
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="usernamePrefix">Find users starting with this prefix.</param>
+            /// <param name="usernamePrefix"> (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedUserPresentationResponse)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedUserPresentationResponse>> FindUsersAsyncWithHttpInfo (string usernamePrefix, int? offset = null, int? limit = null)
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedUserPresentationResponse>> FindUsersAsyncWithHttpInfo (string usernamePrefix = null, int? offset = null, int? limit = null)
                 {
-                        // verify the required parameter 'usernamePrefix' is set
-                        if (usernamePrefix == null)
-                        throw new ApiException(400, "Missing required parameter 'usernamePrefix' when calling AccountsApi->FindUsers");
 
                 var localVarPath = "./api/v1/users";
                 var localVarPathParams = new Dictionary<String, String>();

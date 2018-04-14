@@ -37,9 +37,9 @@ namespace BlueRain.ID4i.Model
         /// Initializes a new instance of the <see cref="OrganizationUserInvitation" /> class.
         /// </summary>
         /// <param name="Email">Email.</param>
-        /// <param name="Roles">Roles (required).</param>
         /// <param name="UserName">UserName.</param>
-        public OrganizationUserInvitation(string Email = default(string), List<string> Roles = default(List<string>), string UserName = default(string))
+        /// <param name="Roles">Roles (required).</param>
+        public OrganizationUserInvitation(string Email = default(string), string UserName = default(string), List<string> Roles = default(List<string>))
         {
             // to ensure "Roles" is required (not null)
             if (Roles == null)
@@ -61,16 +61,16 @@ namespace BlueRain.ID4i.Model
         public string Email { get; set; }
 
         /// <summary>
-        /// Gets or Sets Roles
-        /// </summary>
-        [DataMember(Name="roles", EmitDefaultValue=false)]
-        public List<string> Roles { get; set; }
-
-        /// <summary>
         /// Gets or Sets UserName
         /// </summary>
         [DataMember(Name="userName", EmitDefaultValue=false)]
         public string UserName { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Roles
+        /// </summary>
+        [DataMember(Name="roles", EmitDefaultValue=false)]
+        public List<string> Roles { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -81,8 +81,8 @@ namespace BlueRain.ID4i.Model
             var sb = new StringBuilder();
             sb.Append("class OrganizationUserInvitation {\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
-            sb.Append("  Roles: ").Append(Roles).Append("\n");
             sb.Append("  UserName: ").Append(UserName).Append("\n");
+            sb.Append("  Roles: ").Append(Roles).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -123,14 +123,14 @@ namespace BlueRain.ID4i.Model
                     this.Email.Equals(input.Email))
                 ) && 
                 (
-                    this.Roles == input.Roles ||
-                    this.Roles != null &&
-                    this.Roles.SequenceEqual(input.Roles)
-                ) && 
-                (
                     this.UserName == input.UserName ||
                     (this.UserName != null &&
                     this.UserName.Equals(input.UserName))
+                ) && 
+                (
+                    this.Roles == input.Roles ||
+                    this.Roles != null &&
+                    this.Roles.SequenceEqual(input.Roles)
                 );
         }
 
@@ -145,10 +145,10 @@ namespace BlueRain.ID4i.Model
                 int hashCode = 41;
                 if (this.Email != null)
                     hashCode = hashCode * 59 + this.Email.GetHashCode();
-                if (this.Roles != null)
-                    hashCode = hashCode * 59 + this.Roles.GetHashCode();
                 if (this.UserName != null)
                     hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.Roles != null)
+                    hashCode = hashCode * 59 + this.Roles.GetHashCode();
                 return hashCode;
             }
         }

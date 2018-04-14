@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 
 <a name="findusers"></a>
 # **FindUsers**
-> PaginatedUserPresentationResponse FindUsers (string usernamePrefix, int? offset = null, int? limit = null)
+> PaginatedUserPresentationResponse FindUsers (string usernamePrefix = null, int? offset = null, int? limit = null)
 
 Find users
 
@@ -239,7 +239,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new AccountsApi();
-            var usernamePrefix = usernamePrefix_example;  // string | Find users starting with this prefix.
+            var usernamePrefix = usernamePrefix_example;  // string |  (optional) 
             var offset = 56;  // int? | Start with the n-th element (optional) 
             var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
@@ -262,7 +262,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **usernamePrefix** | **string**| Find users starting with this prefix. | 
+ **usernamePrefix** | **string**|  | [optional] 
  **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
 

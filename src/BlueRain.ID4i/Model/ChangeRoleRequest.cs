@@ -31,23 +31,10 @@ namespace BlueRain.ID4i.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ChangeRoleRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected ChangeRoleRequest() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ChangeRoleRequest" /> class.
-        /// </summary>
-        /// <param name="Roles">Roles (required).</param>
+        /// <param name="Roles">Roles.</param>
         public ChangeRoleRequest(List<string> Roles = default(List<string>))
         {
-            // to ensure "Roles" is required (not null)
-            if (Roles == null)
-            {
-                throw new InvalidDataException("Roles is a required property for ChangeRoleRequest and cannot be null");
-            }
-            else
-            {
-                this.Roles = Roles;
-            }
+            this.Roles = Roles;
         }
         
         /// <summary>

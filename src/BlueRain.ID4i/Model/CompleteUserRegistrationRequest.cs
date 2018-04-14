@@ -36,19 +36,19 @@ namespace BlueRain.ID4i.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CompleteUserRegistrationRequest" /> class.
         /// </summary>
-        /// <param name="Password">Password (required).</param>
-        /// <param name="Username">Username (required).</param>
         /// <param name="VerificationToken">VerificationToken (required).</param>
-        public CompleteUserRegistrationRequest(string Password = default(string), string Username = default(string), string VerificationToken = default(string))
+        /// <param name="Username">Username (required).</param>
+        /// <param name="Password">Password (required).</param>
+        public CompleteUserRegistrationRequest(string VerificationToken = default(string), string Username = default(string), string Password = default(string))
         {
-            // to ensure "Password" is required (not null)
-            if (Password == null)
+            // to ensure "VerificationToken" is required (not null)
+            if (VerificationToken == null)
             {
-                throw new InvalidDataException("Password is a required property for CompleteUserRegistrationRequest and cannot be null");
+                throw new InvalidDataException("VerificationToken is a required property for CompleteUserRegistrationRequest and cannot be null");
             }
             else
             {
-                this.Password = Password;
+                this.VerificationToken = VerificationToken;
             }
             // to ensure "Username" is required (not null)
             if (Username == null)
@@ -59,22 +59,22 @@ namespace BlueRain.ID4i.Model
             {
                 this.Username = Username;
             }
-            // to ensure "VerificationToken" is required (not null)
-            if (VerificationToken == null)
+            // to ensure "Password" is required (not null)
+            if (Password == null)
             {
-                throw new InvalidDataException("VerificationToken is a required property for CompleteUserRegistrationRequest and cannot be null");
+                throw new InvalidDataException("Password is a required property for CompleteUserRegistrationRequest and cannot be null");
             }
             else
             {
-                this.VerificationToken = VerificationToken;
+                this.Password = Password;
             }
         }
         
         /// <summary>
-        /// Gets or Sets Password
+        /// Gets or Sets VerificationToken
         /// </summary>
-        [DataMember(Name="password", EmitDefaultValue=false)]
-        public string Password { get; set; }
+        [DataMember(Name="verificationToken", EmitDefaultValue=false)]
+        public string VerificationToken { get; set; }
 
         /// <summary>
         /// Gets or Sets Username
@@ -83,10 +83,10 @@ namespace BlueRain.ID4i.Model
         public string Username { get; set; }
 
         /// <summary>
-        /// Gets or Sets VerificationToken
+        /// Gets or Sets Password
         /// </summary>
-        [DataMember(Name="verificationToken", EmitDefaultValue=false)]
-        public string VerificationToken { get; set; }
+        [DataMember(Name="password", EmitDefaultValue=false)]
+        public string Password { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -96,9 +96,9 @@ namespace BlueRain.ID4i.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CompleteUserRegistrationRequest {\n");
-            sb.Append("  Password: ").Append(Password).Append("\n");
-            sb.Append("  Username: ").Append(Username).Append("\n");
             sb.Append("  VerificationToken: ").Append(VerificationToken).Append("\n");
+            sb.Append("  Username: ").Append(Username).Append("\n");
+            sb.Append("  Password: ").Append(Password).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -134,9 +134,9 @@ namespace BlueRain.ID4i.Model
 
             return 
                 (
-                    this.Password == input.Password ||
-                    (this.Password != null &&
-                    this.Password.Equals(input.Password))
+                    this.VerificationToken == input.VerificationToken ||
+                    (this.VerificationToken != null &&
+                    this.VerificationToken.Equals(input.VerificationToken))
                 ) && 
                 (
                     this.Username == input.Username ||
@@ -144,9 +144,9 @@ namespace BlueRain.ID4i.Model
                     this.Username.Equals(input.Username))
                 ) && 
                 (
-                    this.VerificationToken == input.VerificationToken ||
-                    (this.VerificationToken != null &&
-                    this.VerificationToken.Equals(input.VerificationToken))
+                    this.Password == input.Password ||
+                    (this.Password != null &&
+                    this.Password.Equals(input.Password))
                 );
         }
 
@@ -159,12 +159,12 @@ namespace BlueRain.ID4i.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Password != null)
-                    hashCode = hashCode * 59 + this.Password.GetHashCode();
-                if (this.Username != null)
-                    hashCode = hashCode * 59 + this.Username.GetHashCode();
                 if (this.VerificationToken != null)
                     hashCode = hashCode * 59 + this.VerificationToken.GetHashCode();
+                if (this.Username != null)
+                    hashCode = hashCode * 59 + this.Username.GetHashCode();
+                if (this.Password != null)
+                    hashCode = hashCode * 59 + this.Password.GetHashCode();
                 return hashCode;
             }
         }

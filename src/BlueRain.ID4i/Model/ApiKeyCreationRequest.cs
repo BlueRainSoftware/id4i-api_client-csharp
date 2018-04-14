@@ -37,9 +37,9 @@ namespace BlueRain.ID4i.Model
         /// Initializes a new instance of the <see cref="ApiKeyCreationRequest" /> class.
         /// </summary>
         /// <param name="Label">Label (required).</param>
-        /// <param name="OrganizationId">OrganizationId (required).</param>
         /// <param name="Secret">Secret (required).</param>
-        public ApiKeyCreationRequest(string Label = default(string), long? OrganizationId = default(long?), string Secret = default(string))
+        /// <param name="OrganizationId">OrganizationId (required).</param>
+        public ApiKeyCreationRequest(string Label = default(string), string Secret = default(string), long? OrganizationId = default(long?))
         {
             // to ensure "Label" is required (not null)
             if (Label == null)
@@ -50,15 +50,6 @@ namespace BlueRain.ID4i.Model
             {
                 this.Label = Label;
             }
-            // to ensure "OrganizationId" is required (not null)
-            if (OrganizationId == null)
-            {
-                throw new InvalidDataException("OrganizationId is a required property for ApiKeyCreationRequest and cannot be null");
-            }
-            else
-            {
-                this.OrganizationId = OrganizationId;
-            }
             // to ensure "Secret" is required (not null)
             if (Secret == null)
             {
@@ -67,6 +58,15 @@ namespace BlueRain.ID4i.Model
             else
             {
                 this.Secret = Secret;
+            }
+            // to ensure "OrganizationId" is required (not null)
+            if (OrganizationId == null)
+            {
+                throw new InvalidDataException("OrganizationId is a required property for ApiKeyCreationRequest and cannot be null");
+            }
+            else
+            {
+                this.OrganizationId = OrganizationId;
             }
         }
         
@@ -77,16 +77,16 @@ namespace BlueRain.ID4i.Model
         public string Label { get; set; }
 
         /// <summary>
-        /// Gets or Sets OrganizationId
-        /// </summary>
-        [DataMember(Name="organizationId", EmitDefaultValue=false)]
-        public long? OrganizationId { get; set; }
-
-        /// <summary>
         /// Gets or Sets Secret
         /// </summary>
         [DataMember(Name="secret", EmitDefaultValue=false)]
         public string Secret { get; set; }
+
+        /// <summary>
+        /// Gets or Sets OrganizationId
+        /// </summary>
+        [DataMember(Name="organizationId", EmitDefaultValue=false)]
+        public long? OrganizationId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -97,8 +97,8 @@ namespace BlueRain.ID4i.Model
             var sb = new StringBuilder();
             sb.Append("class ApiKeyCreationRequest {\n");
             sb.Append("  Label: ").Append(Label).Append("\n");
-            sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
             sb.Append("  Secret: ").Append(Secret).Append("\n");
+            sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -139,14 +139,14 @@ namespace BlueRain.ID4i.Model
                     this.Label.Equals(input.Label))
                 ) && 
                 (
-                    this.OrganizationId == input.OrganizationId ||
-                    (this.OrganizationId != null &&
-                    this.OrganizationId.Equals(input.OrganizationId))
-                ) && 
-                (
                     this.Secret == input.Secret ||
                     (this.Secret != null &&
                     this.Secret.Equals(input.Secret))
+                ) && 
+                (
+                    this.OrganizationId == input.OrganizationId ||
+                    (this.OrganizationId != null &&
+                    this.OrganizationId.Equals(input.OrganizationId))
                 );
         }
 
@@ -161,10 +161,10 @@ namespace BlueRain.ID4i.Model
                 int hashCode = 41;
                 if (this.Label != null)
                     hashCode = hashCode * 59 + this.Label.GetHashCode();
-                if (this.OrganizationId != null)
-                    hashCode = hashCode * 59 + this.OrganizationId.GetHashCode();
                 if (this.Secret != null)
                     hashCode = hashCode * 59 + this.Secret.GetHashCode();
+                if (this.OrganizationId != null)
+                    hashCode = hashCode * 59 + this.OrganizationId.GetHashCode();
                 return hashCode;
             }
         }
