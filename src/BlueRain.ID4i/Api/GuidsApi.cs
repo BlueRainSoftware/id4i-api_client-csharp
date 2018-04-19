@@ -958,7 +958,7 @@ namespace BlueRain.ID4i.Api
                     if (historyItem == null)
                     throw new ApiException(400, "Missing required parameter 'historyItem' when calling GuidsApi->AddHistoryItem");
 
-            var localVarPath = "./api/v1/guids/{id4n}/history";
+            var localVarPath = "./api/v1/history/{id4n}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1045,7 +1045,7 @@ namespace BlueRain.ID4i.Api
                         if (historyItem == null)
                         throw new ApiException(400, "Missing required parameter 'historyItem' when calling GuidsApi->AddHistoryItem");
 
-                var localVarPath = "./api/v1/guids/{id4n}/history";
+                var localVarPath = "./api/v1/history/{id4n}";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1904,7 +1904,7 @@ namespace BlueRain.ID4i.Api
                     if (id4n == null)
                     throw new ApiException(400, "Missing required parameter 'id4n' when calling GuidsApi->ListHistory");
 
-            var localVarPath = "./api/v1/guids/{id4n}/history";
+            var localVarPath = "./api/v1/history/{id4n}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1988,7 +1988,7 @@ namespace BlueRain.ID4i.Api
                         if (id4n == null)
                         throw new ApiException(400, "Missing required parameter 'id4n' when calling GuidsApi->ListHistory");
 
-                var localVarPath = "./api/v1/guids/{id4n}/history";
+                var localVarPath = "./api/v1/history/{id4n}";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2076,7 +2076,7 @@ namespace BlueRain.ID4i.Api
                     if (organizationId == null)
                     throw new ApiException(400, "Missing required parameter 'organizationId' when calling GuidsApi->ListHistoryOfOrganization");
 
-            var localVarPath = "./api/v1/guids/{id4n}/history/{organizationId}";
+            var localVarPath = "./api/v1/history/{id4n}/{organizationId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2166,7 +2166,7 @@ namespace BlueRain.ID4i.Api
                         if (organizationId == null)
                         throw new ApiException(400, "Missing required parameter 'organizationId' when calling GuidsApi->ListHistoryOfOrganization");
 
-                var localVarPath = "./api/v1/guids/{id4n}/history/{organizationId}";
+                var localVarPath = "./api/v1/history/{id4n}/{organizationId}";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2768,7 +2768,7 @@ namespace BlueRain.ID4i.Api
                     if (visibility == null)
                     throw new ApiException(400, "Missing required parameter 'visibility' when calling GuidsApi->UpdateHistoryItemVisibility");
 
-            var localVarPath = "./api/v1/guids/{id4n}/history/{organizationId}/{sequence}/visibility";
+            var localVarPath = "./api/v1/history/{id4n}/{organizationId}/{sequence}/visibility";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2868,7 +2868,7 @@ namespace BlueRain.ID4i.Api
                         if (visibility == null)
                         throw new ApiException(400, "Missing required parameter 'visibility' when calling GuidsApi->UpdateHistoryItemVisibility");
 
-                var localVarPath = "./api/v1/guids/{id4n}/history/{organizationId}/{sequence}/visibility";
+                var localVarPath = "./api/v1/history/{id4n}/{organizationId}/{sequence}/visibility";
                 var localVarPathParams = new Dictionary<String, String>();
                 var localVarQueryParams = new List<KeyValuePair<String, String>>();
                 var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);

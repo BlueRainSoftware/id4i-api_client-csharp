@@ -156,18 +156,18 @@ Class | Method | HTTP request | Description
 *CollectionsApi* | [**UpdateLogisticCollection**](docs/CollectionsApi.md#updatelogisticcollection) | **PATCH** /api/v1/collections/logistic/{id4n} | Update logistic collection
 *CollectionsApi* | [**UpdateRoutingCollection**](docs/CollectionsApi.md#updateroutingcollection) | **PATCH** /api/v1/collections/routing/{id4n} | Update routing collection
 *GuidsApi* | [**AddGuidAlias**](docs/GuidsApi.md#addguidalias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
-*GuidsApi* | [**AddHistoryItem**](docs/GuidsApi.md#addhistoryitem) | **POST** /api/v1/guids/{id4n}/history | Add history item
+*GuidsApi* | [**AddHistoryItem**](docs/GuidsApi.md#addhistoryitem) | **POST** /api/v1/history/{id4n} | Add history item
 *GuidsApi* | [**CreateGuid**](docs/GuidsApi.md#createguid) | **POST** /api/v1/guids | Create GUID(s)
 *GuidsApi* | [**GetGuid**](docs/GuidsApi.md#getguid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
 *GuidsApi* | [**GetGuidAliases**](docs/GuidsApi.md#getguidaliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
 *GuidsApi* | [**GetGuidsWithoutCollection**](docs/GuidsApi.md#getguidswithoutcollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 *GuidsApi* | [**GetId4n**](docs/GuidsApi.md#getid4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
-*GuidsApi* | [**ListHistory**](docs/GuidsApi.md#listhistory) | **GET** /api/v1/guids/{id4n}/history | List history
-*GuidsApi* | [**ListHistoryOfOrganization**](docs/GuidsApi.md#listhistoryoforganization) | **GET** /api/v1/guids/{id4n}/history/{organizationId} | List history
+*GuidsApi* | [**ListHistory**](docs/GuidsApi.md#listhistory) | **GET** /api/v1/history/{id4n} | List history
+*GuidsApi* | [**ListHistoryOfOrganization**](docs/GuidsApi.md#listhistoryoforganization) | **GET** /api/v1/history/{id4n}/{organizationId} | List history
 *GuidsApi* | [**RemoveGuidAlias**](docs/GuidsApi.md#removeguidalias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
 *GuidsApi* | [**UpdateGuid**](docs/GuidsApi.md#updateguid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
 *GuidsApi* | [**UpdateGuid1**](docs/GuidsApi.md#updateguid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
-*GuidsApi* | [**UpdateHistoryItemVisibility**](docs/GuidsApi.md#updatehistoryitemvisibility) | **PUT** /api/v1/guids/{id4n}/history/{organizationId}/{sequence}/visibility | Set history item visibility
+*GuidsApi* | [**UpdateHistoryItemVisibility**](docs/GuidsApi.md#updatehistoryitemvisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequence}/visibility | Set history item visibility
 *ImagesApi* | [**ResolveImageUsingGET**](docs/ImagesApi.md#resolveimageusingget) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *MetaInformationApi* | [**ApplicationInfo**](docs/MetaInformationApi.md#applicationinfo) | **GET** /api/v1/info | Retrieve version information about ID4i
 *OrganizationsApi* | [**AddUserRoles**](docs/OrganizationsApi.md#adduserroles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user

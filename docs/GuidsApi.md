@@ -5,18 +5,18 @@ All URIs are relative to *https://backend.id4i.de*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**AddGuidAlias**](GuidsApi.md#addguidalias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
-[**AddHistoryItem**](GuidsApi.md#addhistoryitem) | **POST** /api/v1/guids/{id4n}/history | Add history item
+[**AddHistoryItem**](GuidsApi.md#addhistoryitem) | **POST** /api/v1/history/{id4n} | Add history item
 [**CreateGuid**](GuidsApi.md#createguid) | **POST** /api/v1/guids | Create GUID(s)
 [**GetGuid**](GuidsApi.md#getguid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
 [**GetGuidAliases**](GuidsApi.md#getguidaliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
 [**GetGuidsWithoutCollection**](GuidsApi.md#getguidswithoutcollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 [**GetId4n**](GuidsApi.md#getid4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
-[**ListHistory**](GuidsApi.md#listhistory) | **GET** /api/v1/guids/{id4n}/history | List history
-[**ListHistoryOfOrganization**](GuidsApi.md#listhistoryoforganization) | **GET** /api/v1/guids/{id4n}/history/{organizationId} | List history
+[**ListHistory**](GuidsApi.md#listhistory) | **GET** /api/v1/history/{id4n} | List history
+[**ListHistoryOfOrganization**](GuidsApi.md#listhistoryoforganization) | **GET** /api/v1/history/{id4n}/{organizationId} | List history
 [**RemoveGuidAlias**](GuidsApi.md#removeguidalias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
 [**UpdateGuid**](GuidsApi.md#updateguid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
 [**UpdateGuid1**](GuidsApi.md#updateguid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
-[**UpdateHistoryItemVisibility**](GuidsApi.md#updatehistoryitemvisibility) | **PUT** /api/v1/guids/{id4n}/history/{organizationId}/{sequence}/visibility | Set history item visibility
+[**UpdateHistoryItemVisibility**](GuidsApi.md#updatehistoryitemvisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequence}/visibility | Set history item visibility
 
 
 <a name="addguidalias"></a>
