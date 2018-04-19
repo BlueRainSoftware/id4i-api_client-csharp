@@ -5,14 +5,18 @@ All URIs are relative to *https://backend.id4i.de*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**AddGuidAlias**](GuidsApi.md#addguidalias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
+[**AddHistoryItem**](GuidsApi.md#addhistoryitem) | **POST** /api/v1/guids/{id4n}/history | Add history item
 [**CreateGuid**](GuidsApi.md#createguid) | **POST** /api/v1/guids | Create GUID(s)
 [**GetGuid**](GuidsApi.md#getguid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
 [**GetGuidAliases**](GuidsApi.md#getguidaliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
 [**GetGuidsWithoutCollection**](GuidsApi.md#getguidswithoutcollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 [**GetId4n**](GuidsApi.md#getid4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
+[**ListHistory**](GuidsApi.md#listhistory) | **GET** /api/v1/guids/{id4n}/history | List history
+[**ListHistoryOfOrganization**](GuidsApi.md#listhistoryoforganization) | **GET** /api/v1/guids/{id4n}/history/{organizationId} | List history
 [**RemoveGuidAlias**](GuidsApi.md#removeguidalias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
 [**UpdateGuid**](GuidsApi.md#updateguid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
 [**UpdateGuid1**](GuidsApi.md#updateguid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
+[**UpdateHistoryItemVisibility**](GuidsApi.md#updatehistoryitemvisibility) | **PUT** /api/v1/guids/{id4n}/history/{organizationId}/{sequence}/visibility | Set history item visibility
 
 
 <a name="addguidalias"></a>
@@ -68,6 +72,73 @@ Name | Type | Description  | Notes
  **id4n** | **string**| The GUID to operate on | 
  **aliasType** | **string**| Alias type, see the corresponding API model | 
  **alias** | [**GuidAlias**](GuidAlias.md)| The alias to add or update | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="addhistoryitem"></a>
+# **AddHistoryItem**
+> void AddHistoryItem (string id4n, HistoryItem historyItem)
+
+Add history item
+
+Add a new history item
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
+
+namespace Example
+{
+    public class AddHistoryItemExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: Authorization
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new GuidsApi();
+            var id4n = id4n_example;  // string | GUID to retrieve the history for
+            var historyItem = new HistoryItem(); // HistoryItem | The history item to publish
+
+            try
+            {
+                // Add history item
+                apiInstance.AddHistoryItem(id4n, historyItem);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling GuidsApi.AddHistoryItem: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| GUID to retrieve the history for | 
+ **historyItem** | [**HistoryItem**](HistoryItem.md)| The history item to publish | 
 
 ### Return type
 
@@ -414,6 +485,152 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="listhistory"></a>
+# **ListHistory**
+> PaginatedHistoryItemResponse ListHistory (string id4n, bool? includePrivate = null, int? offset = null, int? limit = null)
+
+List history
+
+Lists the history of a GUID
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
+
+namespace Example
+{
+    public class ListHistoryExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: Authorization
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new GuidsApi();
+            var id4n = id4n_example;  // string | GUID to retrieve the history for
+            var includePrivate = true;  // bool? | Also return private history entries (optional)  (default to true)
+            var offset = 56;  // int? | Start with the n-th element (optional) 
+            var limit = 56;  // int? | The maximum count of returned elements (optional) 
+
+            try
+            {
+                // List history
+                PaginatedHistoryItemResponse result = apiInstance.ListHistory(id4n, includePrivate, offset, limit);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling GuidsApi.ListHistory: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| GUID to retrieve the history for | 
+ **includePrivate** | **bool?**| Also return private history entries | [optional] [default to true]
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
+
+### Return type
+
+[**PaginatedHistoryItemResponse**](PaginatedHistoryItemResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listhistoryoforganization"></a>
+# **ListHistoryOfOrganization**
+> PaginatedHistoryItemResponse ListHistoryOfOrganization (string id4n, long? organizationId, bool? includePrivate = null, int? offset = null, int? limit = null)
+
+List history
+
+Lists the history of a GUID
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
+
+namespace Example
+{
+    public class ListHistoryOfOrganizationExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: Authorization
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new GuidsApi();
+            var id4n = id4n_example;  // string | GUID to retrieve the history for
+            var organizationId = 789;  // long? | organizationId
+            var includePrivate = true;  // bool? | Also return private history entries (optional)  (default to true)
+            var offset = 56;  // int? | Start with the n-th element (optional) 
+            var limit = 56;  // int? | The maximum count of returned elements (optional) 
+
+            try
+            {
+                // List history
+                PaginatedHistoryItemResponse result = apiInstance.ListHistoryOfOrganization(id4n, organizationId, includePrivate, offset, limit);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling GuidsApi.ListHistoryOfOrganization: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| GUID to retrieve the history for | 
+ **organizationId** | **long?**| organizationId | 
+ **includePrivate** | **bool?**| Also return private history entries | [optional] [default to true]
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
+
+### Return type
+
+[**PaginatedHistoryItemResponse**](PaginatedHistoryItemResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="removeguidalias"></a>
 # **RemoveGuidAlias**
 > void RemoveGuidAlias (string id4n, string aliasType)
@@ -605,6 +822,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 **Object**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="updatehistoryitemvisibility"></a>
+# **UpdateHistoryItemVisibility**
+> HistoryItem UpdateHistoryItemVisibility (string id4n, long? organizationId, int? sequence, Visibility visibility)
+
+Set history item visibility
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
+
+namespace Example
+{
+    public class UpdateHistoryItemVisibilityExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: Authorization
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new GuidsApi();
+            var id4n = id4n_example;  // string | GUID to retrieve the history for
+            var organizationId = 789;  // long? | organizationId
+            var sequence = 56;  // int? | sequence
+            var visibility = new Visibility(); // Visibility | History item visibility restrictions
+
+            try
+            {
+                // Set history item visibility
+                HistoryItem result = apiInstance.UpdateHistoryItemVisibility(id4n, organizationId, sequence, visibility);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling GuidsApi.UpdateHistoryItemVisibility: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| GUID to retrieve the history for | 
+ **organizationId** | **long?**| organizationId | 
+ **sequence** | **int?**| sequence | 
+ **visibility** | [**Visibility**](Visibility.md)| History item visibility restrictions | 
+
+### Return type
+
+[**HistoryItem**](HistoryItem.md)
 
 ### Authorization
 

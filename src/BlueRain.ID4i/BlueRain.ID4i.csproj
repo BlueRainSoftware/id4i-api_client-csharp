@@ -4,7 +4,7 @@ ID4i API
 
 ID4i HTTP API
 
-OpenAPI spec version: 0.4.1-SNAPSHOT
+OpenAPI spec version: 0.5.0-SNAPSHOT
 Contact: info@bluerain.de
 -->
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -12,7 +12,7 @@ Contact: info@bluerain.de
     <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{06903F47-4B8C-4B97-A504-88FE78E20F89}</ProjectGuid>
+    <ProjectGuid>{783E07E2-E823-4FAC-A900-B4A9238634D8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BlueRain.ID4i</RootNamespace>

@@ -23,29 +23,29 @@ using SwaggerDateConverter = BlueRain.ID4i.Client.SwaggerDateConverter;
 namespace BlueRain.ID4i.Model
 {
     /// <summary>
-    /// PaginatedGuidCollection
+    /// PaginatedResponseHistoryItem
     /// </summary>
     [DataContract]
-    public partial class PaginatedGuidCollection :  IEquatable<PaginatedGuidCollection>
+    public partial class PaginatedResponseHistoryItem :  IEquatable<PaginatedResponseHistoryItem>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PaginatedGuidCollection" /> class.
+        /// Initializes a new instance of the <see cref="PaginatedResponseHistoryItem" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected PaginatedGuidCollection() { }
+        protected PaginatedResponseHistoryItem() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="PaginatedGuidCollection" /> class.
+        /// Initializes a new instance of the <see cref="PaginatedResponseHistoryItem" /> class.
         /// </summary>
         /// <param name="Elements">Elements (required).</param>
         /// <param name="Limit">The number of returned elements (required).</param>
         /// <param name="Offset">Starting with the n-th element (required).</param>
         /// <param name="Total">The total number of elements.</param>
-        public PaginatedGuidCollection(List<GuidCollection> Elements = default(List<GuidCollection>), int? Limit = default(int?), int? Offset = default(int?), int? Total = default(int?))
+        public PaginatedResponseHistoryItem(List<HistoryItem> Elements = default(List<HistoryItem>), int? Limit = default(int?), int? Offset = default(int?), int? Total = default(int?))
         {
             // to ensure "Elements" is required (not null)
             if (Elements == null)
             {
-                throw new InvalidDataException("Elements is a required property for PaginatedGuidCollection and cannot be null");
+                throw new InvalidDataException("Elements is a required property for PaginatedResponseHistoryItem and cannot be null");
             }
             else
             {
@@ -54,7 +54,7 @@ namespace BlueRain.ID4i.Model
             // to ensure "Limit" is required (not null)
             if (Limit == null)
             {
-                throw new InvalidDataException("Limit is a required property for PaginatedGuidCollection and cannot be null");
+                throw new InvalidDataException("Limit is a required property for PaginatedResponseHistoryItem and cannot be null");
             }
             else
             {
@@ -63,7 +63,7 @@ namespace BlueRain.ID4i.Model
             // to ensure "Offset" is required (not null)
             if (Offset == null)
             {
-                throw new InvalidDataException("Offset is a required property for PaginatedGuidCollection and cannot be null");
+                throw new InvalidDataException("Offset is a required property for PaginatedResponseHistoryItem and cannot be null");
             }
             else
             {
@@ -76,7 +76,7 @@ namespace BlueRain.ID4i.Model
         /// Gets or Sets Elements
         /// </summary>
         [DataMember(Name="elements", EmitDefaultValue=false)]
-        public List<GuidCollection> Elements { get; set; }
+        public List<HistoryItem> Elements { get; set; }
 
         /// <summary>
         /// The number of returned elements
@@ -106,7 +106,7 @@ namespace BlueRain.ID4i.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class PaginatedGuidCollection {\n");
+            sb.Append("class PaginatedResponseHistoryItem {\n");
             sb.Append("  Elements: ").Append(Elements).Append("\n");
             sb.Append("  Limit: ").Append(Limit).Append("\n");
             sb.Append("  Offset: ").Append(Offset).Append("\n");
@@ -131,15 +131,15 @@ namespace BlueRain.ID4i.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as PaginatedGuidCollection);
+            return this.Equals(input as PaginatedResponseHistoryItem);
         }
 
         /// <summary>
-        /// Returns true if PaginatedGuidCollection instances are equal
+        /// Returns true if PaginatedResponseHistoryItem instances are equal
         /// </summary>
-        /// <param name="input">Instance of PaginatedGuidCollection to be compared</param>
+        /// <param name="input">Instance of PaginatedResponseHistoryItem to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(PaginatedGuidCollection input)
+        public bool Equals(PaginatedResponseHistoryItem input)
         {
             if (input == null)
                 return false;
