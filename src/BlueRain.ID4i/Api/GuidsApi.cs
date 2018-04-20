@@ -285,29 +285,6 @@ namespace BlueRain.ID4i.Api
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<Object> UpdateGuidWithHttpInfo (string id4n, Guid request);
         /// <summary>
-            /// Change GUID information.
-            /// </summary>
-        /// <remarks>
-            /// Allows ownership transfer.
-            /// </remarks>
-        /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id4n">The GUID number</param>
-        /// <param name="request">request</param>
-        /// <returns>Object</returns>
-        Object UpdateGuid1 (string id4n, Guid request);
-
-        /// <summary>
-            /// Change GUID information.
-            /// </summary>
-        /// <remarks>
-            /// Allows ownership transfer.
-            /// </remarks>
-        /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id4n">The GUID number</param>
-        /// <param name="request">request</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> UpdateGuid1WithHttpInfo (string id4n, Guid request);
-        /// <summary>
             /// Set history item visibility
             /// </summary>
         /// <remarks>
@@ -595,29 +572,6 @@ namespace BlueRain.ID4i.Api
             /// <param name="request">request</param>
             /// <returns>Task of ApiResponse (Object)</returns>
                 System.Threading.Tasks.Task<ApiResponse<Object>> UpdateGuidAsyncWithHttpInfo (string id4n, Guid request);
-                /// <summary>
-                /// Change GUID information.
-                /// </summary>
-                /// <remarks>
-                /// Allows ownership transfer.
-                /// </remarks>
-                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="id4n">The GUID number</param>
-            /// <param name="request">request</param>
-            /// <returns>Task of Object</returns>
-            System.Threading.Tasks.Task<Object> UpdateGuid1Async (string id4n, Guid request);
-
-                /// <summary>
-                /// Change GUID information.
-                /// </summary>
-                /// <remarks>
-                /// Allows ownership transfer.
-                /// </remarks>
-                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="id4n">The GUID number</param>
-            /// <param name="request">request</param>
-            /// <returns>Task of ApiResponse (Object)</returns>
-                System.Threading.Tasks.Task<ApiResponse<Object>> UpdateGuid1AsyncWithHttpInfo (string id4n, Guid request);
                 /// <summary>
                 /// Set history item visibility
                 /// </summary>
@@ -2450,7 +2404,7 @@ namespace BlueRain.ID4i.Api
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-            Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            Method.PATCH, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
             localVarPathParams, localVarHttpContentType);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
@@ -2538,181 +2492,6 @@ namespace BlueRain.ID4i.Api
 
                 // make the HTTP request
                 IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-                int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-                if (ExceptionFactory != null)
-                {
-                Exception exception = ExceptionFactory("UpdateGuid", localVarResponse);
-                if (exception != null) throw exception;
-                }
-
-                    return new ApiResponse<Object>(localVarStatusCode,
-                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                    (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
-                }
-
-            /// <summary>
-            /// Change GUID information. Allows ownership transfer.
-            /// </summary>
-            /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id4n">The GUID number</param>
-        /// <param name="request">request</param>
-        /// <returns>Object</returns>
-            public Object UpdateGuid1 (string id4n, Guid request)
-            {
-        ApiResponse<Object> localVarResponse = UpdateGuid1WithHttpInfo(id4n, request);
-            return localVarResponse.Data;
-            }
-
-            /// <summary>
-            /// Change GUID information. Allows ownership transfer.
-            /// </summary>
-            /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id4n">The GUID number</param>
-        /// <param name="request">request</param>
-        /// <returns>ApiResponse of Object</returns>
-            public ApiResponse< Object > UpdateGuid1WithHttpInfo (string id4n, Guid request)
-            {
-                    // verify the required parameter 'id4n' is set
-                    if (id4n == null)
-                    throw new ApiException(400, "Missing required parameter 'id4n' when calling GuidsApi->UpdateGuid1");
-                    // verify the required parameter 'request' is set
-                    if (request == null)
-                    throw new ApiException(400, "Missing required parameter 'request' when calling GuidsApi->UpdateGuid1");
-
-            var localVarPath = "./api/v1/guids/{id4n}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/xml", 
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/xml",
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-                if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
-                if (request != null && request.GetType() != typeof(byte[]))
-                {
-                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
-                }
-                else
-                {
-                localVarPostBody = request; // byte array
-                }
-
-                // authentication (Authorization) required
-                        if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
-                        {
-                        localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
-                        }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-            Method.PATCH, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-            localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-            Exception exception = ExceptionFactory("UpdateGuid1", localVarResponse);
-            if (exception != null) throw exception;
-            }
-
-                return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
-            }
-
-                /// <summary>
-                /// Change GUID information. Allows ownership transfer.
-                /// </summary>
-                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="id4n">The GUID number</param>
-            /// <param name="request">request</param>
-            /// <returns>Task of Object</returns>
-            public async System.Threading.Tasks.Task<Object> UpdateGuid1Async (string id4n, Guid request)
-                {
-            ApiResponse<Object> localVarResponse = await UpdateGuid1AsyncWithHttpInfo(id4n, request);
-                return localVarResponse.Data;
-
-                }
-
-                /// <summary>
-                /// Change GUID information. Allows ownership transfer.
-                /// </summary>
-                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="id4n">The GUID number</param>
-            /// <param name="request">request</param>
-            /// <returns>Task of ApiResponse (Object)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<Object>> UpdateGuid1AsyncWithHttpInfo (string id4n, Guid request)
-                {
-                        // verify the required parameter 'id4n' is set
-                        if (id4n == null)
-                        throw new ApiException(400, "Missing required parameter 'id4n' when calling GuidsApi->UpdateGuid1");
-                        // verify the required parameter 'request' is set
-                        if (request == null)
-                        throw new ApiException(400, "Missing required parameter 'request' when calling GuidsApi->UpdateGuid1");
-
-                var localVarPath = "./api/v1/guids/{id4n}";
-                var localVarPathParams = new Dictionary<String, String>();
-                var localVarQueryParams = new List<KeyValuePair<String, String>>();
-                var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-                var localVarFormParams = new Dictionary<String, String>();
-                var localVarFileParams = new Dictionary<String, FileParameter>();
-                Object localVarPostBody = null;
-
-                // to determine the Content-Type header
-                String[] localVarHttpContentTypes = new String[] {
-                    "application/xml", 
-                    "application/json"
-                };
-                String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-                // to determine the Accept header
-                String[] localVarHttpHeaderAccepts = new String[] {
-                    "application/xml",
-                    "application/json"
-                };
-                String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-                if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-                    if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
-                    if (request != null && request.GetType() != typeof(byte[]))
-                    {
-                    localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
-                    }
-                    else
-                    {
-                    localVarPostBody = request; // byte array
-                    }
-
-                    // authentication (Authorization) required
-                            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
-                            {
-                            localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
-                            }
-
-                // make the HTTP request
-                IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.PATCH, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -2720,7 +2499,7 @@ namespace BlueRain.ID4i.Api
 
                 if (ExceptionFactory != null)
                 {
-                Exception exception = ExceptionFactory("UpdateGuid1", localVarResponse);
+                Exception exception = ExceptionFactory("UpdateGuid", localVarResponse);
                 if (exception != null) throw exception;
                 }
 
