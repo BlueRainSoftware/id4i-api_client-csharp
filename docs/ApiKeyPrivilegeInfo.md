@@ -3,6 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AllowsBillableOperations** | **bool?** |  | [optional] 
 **HelpText** | **string** |  | [optional] 
 **Id4nAssociated** | **bool?** |  | 
 **Name** | **string** |  | 
