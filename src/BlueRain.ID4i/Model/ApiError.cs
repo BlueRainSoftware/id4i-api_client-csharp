@@ -210,82 +210,88 @@ namespace BlueRain.ID4i.Model
             USERINVITATIONSPECIFYEMAILORUSERNAME = 29,
             
             /// <summary>
+            /// Enum USERDEACTIVATED for value: ERR_USER_DEACTIVATED
+            /// </summary>
+            [EnumMember(Value = "ERR_USER_DEACTIVATED")]
+            USERDEACTIVATED = 30,
+            
+            /// <summary>
             /// Enum LANGUAGENOTSUPPORTED for value: ERR_LANGUAGE_NOT_SUPPORTED
             /// </summary>
             [EnumMember(Value = "ERR_LANGUAGE_NOT_SUPPORTED")]
-            LANGUAGENOTSUPPORTED = 30,
+            LANGUAGENOTSUPPORTED = 31,
             
             /// <summary>
             /// Enum EMAILMISSINGTEMPLATEPARAM for value: ERR_EMAIL_MISSING_TEMPLATE_PARAM
             /// </summary>
             [EnumMember(Value = "ERR_EMAIL_MISSING_TEMPLATE_PARAM")]
-            EMAILMISSINGTEMPLATEPARAM = 31,
+            EMAILMISSINGTEMPLATEPARAM = 32,
             
             /// <summary>
             /// Enum EMAILTEMPLATENOTAVAILABLE for value: ERR_EMAIL_TEMPLATE_NOT_AVAILABLE
             /// </summary>
             [EnumMember(Value = "ERR_EMAIL_TEMPLATE_NOT_AVAILABLE")]
-            EMAILTEMPLATENOTAVAILABLE = 32,
+            EMAILTEMPLATENOTAVAILABLE = 33,
             
             /// <summary>
             /// Enum EMAILPREPARATIONFAILED for value: ERR_EMAIL_PREPARATION_FAILED
             /// </summary>
             [EnumMember(Value = "ERR_EMAIL_PREPARATION_FAILED")]
-            EMAILPREPARATIONFAILED = 33,
+            EMAILPREPARATIONFAILED = 34,
             
             /// <summary>
             /// Enum IMAGECONVERSION for value: ERR_IMAGE_CONVERSION
             /// </summary>
             [EnumMember(Value = "ERR_IMAGE_CONVERSION")]
-            IMAGECONVERSION = 34,
+            IMAGECONVERSION = 35,
             
             /// <summary>
             /// Enum UPLOADTOOLARGE for value: ERR_UPLOAD_TOO_LARGE
             /// </summary>
             [EnumMember(Value = "ERR_UPLOAD_TOO_LARGE")]
-            UPLOADTOOLARGE = 35,
+            UPLOADTOOLARGE = 36,
             
             /// <summary>
             /// Enum INVALIDALIASTYPE for value: ERR_INVALID_ALIAS_TYPE
             /// </summary>
             [EnumMember(Value = "ERR_INVALID_ALIAS_TYPE")]
-            INVALIDALIASTYPE = 36,
+            INVALIDALIASTYPE = 37,
             
             /// <summary>
             /// Enum INVALIDURITEMPLATE for value: ERR_INVALID_URI_TEMPLATE
             /// </summary>
             [EnumMember(Value = "ERR_INVALID_URI_TEMPLATE")]
-            INVALIDURITEMPLATE = 37,
+            INVALIDURITEMPLATE = 38,
             
             /// <summary>
             /// Enum INVALIDURITEMPLATEVARIABLE for value: ERR_INVALID_URI_TEMPLATE_VARIABLE
             /// </summary>
             [EnumMember(Value = "ERR_INVALID_URI_TEMPLATE_VARIABLE")]
-            INVALIDURITEMPLATEVARIABLE = 38,
+            INVALIDURITEMPLATEVARIABLE = 39,
             
             /// <summary>
             /// Enum MODULENOTACTIVE for value: ERR_MODULE_NOT_ACTIVE
             /// </summary>
             [EnumMember(Value = "ERR_MODULE_NOT_ACTIVE")]
-            MODULENOTACTIVE = 39,
+            MODULENOTACTIVE = 40,
             
             /// <summary>
             /// Enum INSECUREPASSWORD for value: ERR_INSECURE_PASSWORD
             /// </summary>
             [EnumMember(Value = "ERR_INSECURE_PASSWORD")]
-            INSECUREPASSWORD = 40,
+            INSECUREPASSWORD = 41,
             
             /// <summary>
             /// Enum TRANSFERDENIED for value: ERR_TRANSFER_DENIED
             /// </summary>
             [EnumMember(Value = "ERR_TRANSFER_DENIED")]
-            TRANSFERDENIED = 41,
+            TRANSFERDENIED = 42,
             
             /// <summary>
             /// Enum INVALIDPHYSICALSTATE for value: ERR_INVALID_PHYSICAL_STATE
             /// </summary>
             [EnumMember(Value = "ERR_INVALID_PHYSICAL_STATE")]
-            INVALIDPHYSICALSTATE = 42
+            INVALIDPHYSICALSTATE = 43
         }
 
         /// <summary>
