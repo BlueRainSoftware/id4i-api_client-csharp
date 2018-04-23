@@ -11,8 +11,7 @@ Method | HTTP request | Description
 [**GetGuidsWithoutCollection**](GuidsApi.md#getguidswithoutcollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 [**GetId4n**](GuidsApi.md#getid4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
 [**RemoveGuidAlias**](GuidsApi.md#removeguidalias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
-[**UpdateGuid**](GuidsApi.md#updateguid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
-[**UpdateGuid1**](GuidsApi.md#updateguid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
+[**UpdateGuid**](GuidsApi.md#updateguid) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 
 
 <a name="addguidalias"></a>
@@ -521,74 +520,6 @@ namespace Example
             catch (Exception e)
             {
                 Debug.Print("Exception when calling GuidsApi.UpdateGuid: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **string**| The GUID number | 
- **request** | [**Guid**](Guid.md)| request | 
-
-### Return type
-
-**Object**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="updateguid1"></a>
-# **UpdateGuid1**
-> Object UpdateGuid1 (string id4n, Guid request)
-
-Change GUID information.
-
-Allows ownership transfer.
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using BlueRain.ID4i.Api;
-using BlueRain.ID4i.Client;
-using BlueRain.ID4i.Model;
-
-namespace Example
-{
-    public class UpdateGuid1Example
-    {
-        public void main()
-        {
-            // Configure API key authorization: Authorization
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
-
-            var apiInstance = new GuidsApi();
-            var id4n = id4n_example;  // string | The GUID number
-            var request = new Guid(); // Guid | request
-
-            try
-            {
-                // Change GUID information.
-                Object result = apiInstance.UpdateGuid1(id4n, request);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling GuidsApi.UpdateGuid1: " + e.Message );
             }
         }
     }

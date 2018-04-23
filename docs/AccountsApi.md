@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**GetUserRoles**](AccountsApi.md#getuserroles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
 [**GetUsersOfOrganization**](AccountsApi.md#getusersoforganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
 [**InviteUsers**](AccountsApi.md#inviteusers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
+[**IsContractRequired**](AccountsApi.md#iscontractrequired) | **GET** /account/contractRequired | Tells you whether your company needs to have a contract with BlueRain to be able to sign up
 [**ListAllRoles**](AccountsApi.md#listallroles) | **GET** /api/v1/roles | List roles
 [**Login**](AccountsApi.md#login) | **POST** /login | 
 [**RegisterUser**](AccountsApi.md#registeruser) | **POST** /account/registration | Register user
@@ -215,7 +216,7 @@ Name | Type | Description  | Notes
 
 <a name="findusers"></a>
 # **FindUsers**
-> PaginatedUserPresentationResponse FindUsers (string usernamePrefix, int? offset = null, int? limit = null)
+> PaginatedUserPresentationResponse FindUsers (string usernamePrefix = null, int? offset = null, int? limit = null)
 
 Find users
 
@@ -239,7 +240,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new AccountsApi();
-            var usernamePrefix = usernamePrefix_example;  // string | Find users starting with this prefix.
+            var usernamePrefix = usernamePrefix_example;  // string |  (optional) 
             var offset = 56;  // int? | Start with the n-th element (optional) 
             var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
@@ -262,7 +263,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **usernamePrefix** | **string**| Find users starting with this prefix. | 
+ **usernamePrefix** | **string**|  | [optional] 
  **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
 
@@ -616,6 +617,63 @@ void (empty response body)
 ### Authorization
 
 [Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="iscontractrequired"></a>
+# **IsContractRequired**
+> bool? IsContractRequired ()
+
+Tells you whether your company needs to have a contract with BlueRain to be able to sign up
+
+On production systems, users must confirm that their organization has a valid contract for ID4i usage. It is not required on test and sandbox systems. 
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
+
+namespace Example
+{
+    public class IsContractRequiredExample
+    {
+        public void main()
+        {
+            var apiInstance = new AccountsApi();
+
+            try
+            {
+                // Tells you whether your company needs to have a contract with BlueRain to be able to sign up
+                bool? result = apiInstance.IsContractRequired();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling AccountsApi.IsContractRequired: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**bool?**
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 

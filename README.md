@@ -13,7 +13,7 @@ For additional information, please refer to
 * https://backend.id4i.de/docs/redoc/index.html for API documentation
 * https://github.com/BlueRainSoftware/support for getting additional support
 
-- API version: 0.4.0
+- API version: 0.5.1
 - Package version: 
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
 
@@ -100,6 +100,7 @@ Class | Method | HTTP request | Description
 *AccountsApi* | [**GetUserRoles**](docs/AccountsApi.md#getuserroles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
 *AccountsApi* | [**GetUsersOfOrganization**](docs/AccountsApi.md#getusersoforganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
 *AccountsApi* | [**InviteUsers**](docs/AccountsApi.md#inviteusers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
+*AccountsApi* | [**IsContractRequired**](docs/AccountsApi.md#iscontractrequired) | **GET** /account/contractRequired | Tells you whether your company needs to have a contract with BlueRain to be able to sign up
 *AccountsApi* | [**ListAllRoles**](docs/AccountsApi.md#listallroles) | **GET** /api/v1/roles | List roles
 *AccountsApi* | [**Login**](docs/AccountsApi.md#login) | **POST** /login | 
 *AccountsApi* | [**RegisterUser**](docs/AccountsApi.md#registeruser) | **POST** /account/registration | Register user
@@ -162,8 +163,13 @@ Class | Method | HTTP request | Description
 *GuidsApi* | [**GetGuidsWithoutCollection**](docs/GuidsApi.md#getguidswithoutcollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 *GuidsApi* | [**GetId4n**](docs/GuidsApi.md#getid4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
 *GuidsApi* | [**RemoveGuidAlias**](docs/GuidsApi.md#removeguidalias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
-*GuidsApi* | [**UpdateGuid**](docs/GuidsApi.md#updateguid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
-*GuidsApi* | [**UpdateGuid1**](docs/GuidsApi.md#updateguid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
+*GuidsApi* | [**UpdateGuid**](docs/GuidsApi.md#updateguid) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
+*HistoryApi* | [**AddItem**](docs/HistoryApi.md#additem) | **POST** /api/v1/history/{id4n} | Add history item
+*HistoryApi* | [**List**](docs/HistoryApi.md#list) | **GET** /api/v1/history/{id4n}/{organizationId} | List history
+*HistoryApi* | [**ListAll**](docs/HistoryApi.md#listall) | **GET** /api/v1/history/{id4n} | List history
+*HistoryApi* | [**RetrieveItem**](docs/HistoryApi.md#retrieveitem) | **GET** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | List history
+*HistoryApi* | [**UpdateItem**](docs/HistoryApi.md#updateitem) | **PATCH** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | Update history item
+*HistoryApi* | [**UpdateItemVisibility**](docs/HistoryApi.md#updateitemvisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequenceId}/visibility | Set history item visibility
 *ImagesApi* | [**ResolveImageUsingGET**](docs/ImagesApi.md#resolveimageusingget) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *MetaInformationApi* | [**ApplicationInfo**](docs/MetaInformationApi.md#applicationinfo) | **GET** /api/v1/info | Retrieve version information about ID4i
 *OrganizationsApi* | [**AddUserRoles**](docs/OrganizationsApi.md#adduserroles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
@@ -191,6 +197,8 @@ Class | Method | HTTP request | Description
 *PublicServicesApi* | [**Go**](docs/PublicServicesApi.md#go) | **GET** /go/{guid} | Forward
 *PublicServicesApi* | [**ListAllPublicDocuments**](docs/PublicServicesApi.md#listallpublicdocuments) | **GET** /api/v1/public/documents/{id4n} | List organization specific documents
 *PublicServicesApi* | [**ListPublicDocuments**](docs/PublicServicesApi.md#listpublicdocuments) | **GET** /api/v1/public/documents/{id4n}/{organizationId} | List organization specific documents
+*PublicServicesApi* | [**ListPublicHistory**](docs/PublicServicesApi.md#listpublichistory) | **GET** /api/v1/public/history/{id4n} | Shows the public history of the given GUID
+*PublicServicesApi* | [**ReadOrganizationInfo**](docs/PublicServicesApi.md#readorganizationinfo) | **GET** /api/v1/public/organizations/{organizationId} | Read public organization information
 *PublicServicesApi* | [**ReadPublicDocument**](docs/PublicServicesApi.md#readpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read document contents
 *PublicServicesApi* | [**ResolveImageUsingGET**](docs/PublicServicesApi.md#resolveimageusingget) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *PublicServicesApi* | [**ResolveWhoIsEntry**](docs/PublicServicesApi.md#resolvewhoisentry) | **GET** /whois/{id4n} | Resolve owner of id4n
@@ -247,6 +255,8 @@ Class | Method | HTTP request | Description
      - [Model.Guid](docs/Guid.md)
      - [Model.GuidAlias](docs/GuidAlias.md)
      - [Model.GuidCollection](docs/GuidCollection.md)
+     - [Model.HistoryItem](docs/HistoryItem.md)
+     - [Model.HistoryItemUpdate](docs/HistoryItemUpdate.md)
      - [Model.Id4n](docs/Id4n.md)
      - [Model.Id4nPresentation](docs/Id4nPresentation.md)
      - [Model.Id4nPresentationPaginatedResponse](docs/Id4nPresentationPaginatedResponse.md)
@@ -264,6 +274,7 @@ Class | Method | HTTP request | Description
      - [Model.PaginatedDocumentResponse](docs/PaginatedDocumentResponse.md)
      - [Model.PaginatedGuidCollection](docs/PaginatedGuidCollection.md)
      - [Model.PaginatedGuidResponse](docs/PaginatedGuidResponse.md)
+     - [Model.PaginatedHistoryItemResponse](docs/PaginatedHistoryItemResponse.md)
      - [Model.PaginatedOrganizationResponse](docs/PaginatedOrganizationResponse.md)
      - [Model.PaginatedOwnedDocumentResponse](docs/PaginatedOwnedDocumentResponse.md)
      - [Model.PaginatedResponseApiKeyPresentation](docs/PaginatedResponseApiKeyPresentation.md)
@@ -274,6 +285,7 @@ Class | Method | HTTP request | Description
      - [Model.PaginatedResponseDocument](docs/PaginatedResponseDocument.md)
      - [Model.PaginatedResponseGuid](docs/PaginatedResponseGuid.md)
      - [Model.PaginatedResponseGuidCollection](docs/PaginatedResponseGuidCollection.md)
+     - [Model.PaginatedResponseHistoryItem](docs/PaginatedResponseHistoryItem.md)
      - [Model.PaginatedResponseId4nPresentation](docs/PaginatedResponseId4nPresentation.md)
      - [Model.PaginatedResponseOrganization](docs/PaginatedResponseOrganization.md)
      - [Model.PaginatedResponseOwnedDocument](docs/PaginatedResponseOwnedDocument.md)
