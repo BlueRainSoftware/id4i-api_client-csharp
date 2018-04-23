@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **Branch** | **string** |  | [optional] 
 **CommitTime** | **string** |  | [optional] 
 **Name** | **string** |  | [optional] 
+**ProductionMode** | **bool?** |  | [optional] 
 **Revision** | **string** |  | [optional] 
 **Version** | **string** |  | [optional] 
 
