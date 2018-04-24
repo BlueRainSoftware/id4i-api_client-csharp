@@ -95,10 +95,12 @@ namespace BlueRain.ID4i.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GuidCollection" /> class.
         /// </summary>
+        /// <param name="HolderOrganizationId">Organization ID of the holder of the collection.</param>
         /// <param name="Label">Label.</param>
         /// <param name="PhysicalState">Physical attachment state of the collection.</param>
-        public GuidCollection(string Label = default(string), PhysicalStateEnum? PhysicalState = default(PhysicalStateEnum?))
+        public GuidCollection(long? HolderOrganizationId = default(long?), string Label = default(string), PhysicalStateEnum? PhysicalState = default(PhysicalStateEnum?))
         {
+            this.HolderOrganizationId = HolderOrganizationId;
             this.Label = Label;
             this.PhysicalState = PhysicalState;
         }
@@ -115,7 +117,7 @@ namespace BlueRain.ID4i.Model
         /// </summary>
         /// <value>Organization ID of the holder of the collection</value>
         [DataMember(Name="holderOrganizationId", EmitDefaultValue=false)]
-        public long? HolderOrganizationId { get; private set; }
+        public long? HolderOrganizationId { get; set; }
 
         /// <summary>
         /// The ID

@@ -23,37 +23,60 @@ using SwaggerDateConverter = BlueRain.ID4i.Client.SwaggerDateConverter;
 namespace BlueRain.ID4i.Model
 {
     /// <summary>
-    /// CreateRoutingCollectionRequest
+    /// CreateCollectionRequest
     /// </summary>
     [DataContract]
-    public partial class CreateRoutingCollectionRequest :  IEquatable<CreateRoutingCollectionRequest>
+    public partial class CreateCollectionRequest :  IEquatable<CreateCollectionRequest>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateRoutingCollectionRequest" /> class.
+        /// Defines Type
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TypeEnum
+        {
+            
+            /// <summary>
+            /// Enum ROUTINGCOLLECTION for value: ROUTING_COLLECTION
+            /// </summary>
+            [EnumMember(Value = "ROUTING_COLLECTION")]
+            ROUTINGCOLLECTION = 1,
+            
+            /// <summary>
+            /// Enum LOGISTICCOLLECTION for value: LOGISTIC_COLLECTION
+            /// </summary>
+            [EnumMember(Value = "LOGISTIC_COLLECTION")]
+            LOGISTICCOLLECTION = 2,
+            
+            /// <summary>
+            /// Enum LABELLEDCOLLECTION for value: LABELLED_COLLECTION
+            /// </summary>
+            [EnumMember(Value = "LABELLED_COLLECTION")]
+            LABELLEDCOLLECTION = 3
+        }
+
+        /// <summary>
+        /// Gets or Sets Type
+        /// </summary>
+        [DataMember(Name="type", EmitDefaultValue=false)]
+        public TypeEnum Type { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateCollectionRequest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected CreateRoutingCollectionRequest() { }
+        protected CreateCollectionRequest() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateRoutingCollectionRequest" /> class.
+        /// Initializes a new instance of the <see cref="CreateCollectionRequest" /> class.
         /// </summary>
-        /// <param name="Label">Label (required).</param>
+        /// <param name="Label">Label.</param>
         /// <param name="Length">Length (required).</param>
         /// <param name="OrganizationId">OrganizationId (required).</param>
-        public CreateRoutingCollectionRequest(string Label = default(string), int? Length = default(int?), long? OrganizationId = default(long?))
+        /// <param name="Type">Type (required).</param>
+        public CreateCollectionRequest(string Label = default(string), int? Length = default(int?), long? OrganizationId = default(long?), TypeEnum Type = default(TypeEnum))
         {
-            // to ensure "Label" is required (not null)
-            if (Label == null)
-            {
-                throw new InvalidDataException("Label is a required property for CreateRoutingCollectionRequest and cannot be null");
-            }
-            else
-            {
-                this.Label = Label;
-            }
             // to ensure "Length" is required (not null)
             if (Length == null)
             {
-                throw new InvalidDataException("Length is a required property for CreateRoutingCollectionRequest and cannot be null");
+                throw new InvalidDataException("Length is a required property for CreateCollectionRequest and cannot be null");
             }
             else
             {
@@ -62,12 +85,22 @@ namespace BlueRain.ID4i.Model
             // to ensure "OrganizationId" is required (not null)
             if (OrganizationId == null)
             {
-                throw new InvalidDataException("OrganizationId is a required property for CreateRoutingCollectionRequest and cannot be null");
+                throw new InvalidDataException("OrganizationId is a required property for CreateCollectionRequest and cannot be null");
             }
             else
             {
                 this.OrganizationId = OrganizationId;
             }
+            // to ensure "Type" is required (not null)
+            if (Type == null)
+            {
+                throw new InvalidDataException("Type is a required property for CreateCollectionRequest and cannot be null");
+            }
+            else
+            {
+                this.Type = Type;
+            }
+            this.Label = Label;
         }
         
         /// <summary>
@@ -88,6 +121,7 @@ namespace BlueRain.ID4i.Model
         [DataMember(Name="organizationId", EmitDefaultValue=false)]
         public long? OrganizationId { get; set; }
 
+
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -95,10 +129,11 @@ namespace BlueRain.ID4i.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CreateRoutingCollectionRequest {\n");
+            sb.Append("class CreateCollectionRequest {\n");
             sb.Append("  Label: ").Append(Label).Append("\n");
             sb.Append("  Length: ").Append(Length).Append("\n");
             sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -119,15 +154,15 @@ namespace BlueRain.ID4i.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateRoutingCollectionRequest);
+            return this.Equals(input as CreateCollectionRequest);
         }
 
         /// <summary>
-        /// Returns true if CreateRoutingCollectionRequest instances are equal
+        /// Returns true if CreateCollectionRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of CreateRoutingCollectionRequest to be compared</param>
+        /// <param name="input">Instance of CreateCollectionRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CreateRoutingCollectionRequest input)
+        public bool Equals(CreateCollectionRequest input)
         {
             if (input == null)
                 return false;
@@ -147,6 +182,11 @@ namespace BlueRain.ID4i.Model
                     this.OrganizationId == input.OrganizationId ||
                     (this.OrganizationId != null &&
                     this.OrganizationId.Equals(input.OrganizationId))
+                ) && 
+                (
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
                 );
         }
 
@@ -165,6 +205,8 @@ namespace BlueRain.ID4i.Model
                     hashCode = hashCode * 59 + this.Length.GetHashCode();
                 if (this.OrganizationId != null)
                     hashCode = hashCode * 59 + this.OrganizationId.GetHashCode();
+                if (this.Type != null)
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;
             }
         }
