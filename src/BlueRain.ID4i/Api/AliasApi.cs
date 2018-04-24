@@ -70,10 +70,10 @@ namespace BlueRain.ID4i.Api
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
         ApiResponse<List<string>> GetGuidAliasTypesWithHttpInfo ();
         /// <summary>
-            /// Get all aliases for the given GUID
+            /// Get all aliases for the given GUID.
             /// </summary>
         /// <remarks>
-            /// Looks up the alias for each alias type (group and single GUID) and returns all found ones
+            /// Looks up the alias for each alias type (group and single GUID) and returns a map of all aliases found.
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">The GUID to operate on</param>
@@ -81,10 +81,10 @@ namespace BlueRain.ID4i.Api
         Dictionary<string, string> GetGuidAliases (string id4n);
 
         /// <summary>
-            /// Get all aliases for the given GUID
+            /// Get all aliases for the given GUID.
             /// </summary>
         /// <remarks>
-            /// Looks up the alias for each alias type (group and single GUID) and returns all found ones
+            /// Looks up the alias for each alias type (group and single GUID) and returns a map of all aliases found.
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">The GUID to operate on</param>
@@ -187,10 +187,10 @@ namespace BlueRain.ID4i.Api
             /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
                 System.Threading.Tasks.Task<ApiResponse<List<string>>> GetGuidAliasTypesAsyncWithHttpInfo ();
                 /// <summary>
-                /// Get all aliases for the given GUID
+                /// Get all aliases for the given GUID.
                 /// </summary>
                 /// <remarks>
-                /// Looks up the alias for each alias type (group and single GUID) and returns all found ones
+                /// Looks up the alias for each alias type (group and single GUID) and returns a map of all aliases found.
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">The GUID to operate on</param>
@@ -198,10 +198,10 @@ namespace BlueRain.ID4i.Api
             System.Threading.Tasks.Task<Dictionary<string, string>> GetGuidAliasesAsync (string id4n);
 
                 /// <summary>
-                /// Get all aliases for the given GUID
+                /// Get all aliases for the given GUID.
                 /// </summary>
                 /// <remarks>
-                /// Looks up the alias for each alias type (group and single GUID) and returns all found ones
+                /// Looks up the alias for each alias type (group and single GUID) and returns a map of all aliases found.
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">The GUID to operate on</param>
@@ -680,7 +680,7 @@ namespace BlueRain.ID4i.Api
                 }
 
             /// <summary>
-            /// Get all aliases for the given GUID Looks up the alias for each alias type (group and single GUID) and returns all found ones
+            /// Get all aliases for the given GUID. Looks up the alias for each alias type (group and single GUID) and returns a map of all aliases found.
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">The GUID to operate on</param>
@@ -692,7 +692,7 @@ namespace BlueRain.ID4i.Api
             }
 
             /// <summary>
-            /// Get all aliases for the given GUID Looks up the alias for each alias type (group and single GUID) and returns all found ones
+            /// Get all aliases for the given GUID. Looks up the alias for each alias type (group and single GUID) and returns a map of all aliases found.
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">The GUID to operate on</param>
@@ -754,7 +754,7 @@ namespace BlueRain.ID4i.Api
             }
 
                 /// <summary>
-                /// Get all aliases for the given GUID Looks up the alias for each alias type (group and single GUID) and returns all found ones
+                /// Get all aliases for the given GUID. Looks up the alias for each alias type (group and single GUID) and returns a map of all aliases found.
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">The GUID to operate on</param>
@@ -767,7 +767,7 @@ namespace BlueRain.ID4i.Api
                 }
 
                 /// <summary>
-                /// Get all aliases for the given GUID Looks up the alias for each alias type (group and single GUID) and returns all found ones
+                /// Get all aliases for the given GUID. Looks up the alias for each alias type (group and single GUID) and returns a map of all aliases found.
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">The GUID to operate on</param>

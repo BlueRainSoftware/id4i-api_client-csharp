@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**AddGuidAlias**](AliasApi.md#addguidalias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
 [**GetGuidAliasTypes**](AliasApi.md#getguidaliastypes) | **GET** /api/v1/search/guids/aliases/types | List all supported alias types
-[**GetGuidAliases**](AliasApi.md#getguidaliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
+[**GetGuidAliases**](AliasApi.md#getguidaliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID.
 [**RemoveGuidAlias**](AliasApi.md#removeguidalias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
 [**SearchByAlias**](AliasApi.md#searchbyalias) | **GET** /api/v1/search/guids | Search for GUIDs by alias
 
@@ -146,9 +146,9 @@ This endpoint does not need any parameter.
 # **GetGuidAliases**
 > Dictionary<string, string> GetGuidAliases (string id4n)
 
-Get all aliases for the given GUID
+Get all aliases for the given GUID.
 
-Looks up the alias for each alias type (group and single GUID) and returns all found ones
+Looks up the alias for each alias type (group and single GUID) and returns a map of all aliases found.
 
 ### Example
 ```csharp
@@ -174,7 +174,7 @@ namespace Example
 
             try
             {
-                // Get all aliases for the given GUID
+                // Get all aliases for the given GUID.
                 Dictionary&lt;string, string&gt; result = apiInstance.GetGuidAliases(id4n);
                 Debug.WriteLine(result);
             }
