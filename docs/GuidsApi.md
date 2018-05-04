@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**AddGuidAlias**](GuidsApi.md#addguidalias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
 [**CreateGuid**](GuidsApi.md#createguid) | **POST** /api/v1/guids | Create GUID(s)
 [**GetGuid**](GuidsApi.md#getguid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
-[**GetGuidAliases**](GuidsApi.md#getguidaliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
+[**GetGuidAliases**](GuidsApi.md#getguidaliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID.
 [**GetGuidsWithoutCollection**](GuidsApi.md#getguidswithoutcollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 [**GetId4n**](GuidsApi.md#getid4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
 [**RemoveGuidAlias**](GuidsApi.md#removeguidalias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
@@ -111,7 +111,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new GuidsApi();
-            var createGUIDInfo = new CreateGuidRequest(); // CreateGuidRequest | createGUIDInfo
+            var createGUIDInfo = new CreateGuidRequest(); // CreateGuidRequest | GUID creation model
 
             try
             {
@@ -132,7 +132,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createGUIDInfo** | [**CreateGuidRequest**](CreateGuidRequest.md)| createGUIDInfo | 
+ **createGUIDInfo** | [**CreateGuidRequest**](CreateGuidRequest.md)| GUID creation model | 
 
 ### Return type
 
@@ -217,9 +217,9 @@ Name | Type | Description  | Notes
 # **GetGuidAliases**
 > Dictionary<string, string> GetGuidAliases (string id4n)
 
-Get all aliases for the given GUID
+Get all aliases for the given GUID.
 
-Looks up the alias for each alias type (group and single GUID) and returns all found ones
+Looks up the alias for each alias type (group and single GUID) and returns a map of all aliases found.
 
 ### Example
 ```csharp
@@ -245,7 +245,7 @@ namespace Example
 
             try
             {
-                // Get all aliases for the given GUID
+                // Get all aliases for the given GUID.
                 Dictionary&lt;string, string&gt; result = apiInstance.GetGuidAliases(id4n);
                 Debug.WriteLine(result);
             }
@@ -281,7 +281,7 @@ Name | Type | Description  | Notes
 
 <a name="getguidswithoutcollection"></a>
 # **GetGuidsWithoutCollection**
-> PaginatedResponseGuid GetGuidsWithoutCollection (long? organizationId, int? offset = null, int? limit = null)
+> PaginatedResponseGuid GetGuidsWithoutCollection (string organizationId, int? offset = null, int? limit = null)
 
 Retrieve GUIDs not in any collection
 
@@ -305,7 +305,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new GuidsApi();
-            var organizationId = 789;  // long? | Organization to search GUIDs for (required).
+            var organizationId = organizationId_example;  // string | The namespace of the organization to search GUIDs for
             var offset = 56;  // int? | Start with the n-th element (optional) 
             var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
@@ -328,7 +328,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| Organization to search GUIDs for (required). | 
+ **organizationId** | **string**| The namespace of the organization to search GUIDs for | 
  **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
 

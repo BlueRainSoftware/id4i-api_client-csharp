@@ -23,33 +23,35 @@ using SwaggerDateConverter = BlueRain.ID4i.Client.SwaggerDateConverter;
 namespace BlueRain.ID4i.Model
 {
     /// <summary>
-    /// UserRoles
+    /// An organization
     /// </summary>
     [DataContract]
-    public partial class UserRoles :  IEquatable<UserRoles>
+    public partial class OrganizationUpdate :  IEquatable<OrganizationUpdate>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UserRoles" /> class.
+        /// Initializes a new instance of the <see cref="OrganizationUpdate" /> class.
         /// </summary>
-        /// <param name="Roles">Roles.</param>
-        /// <param name="User">User.</param>
-        public UserRoles(List<string> Roles = default(List<string>), UserPresentation User = default(UserPresentation))
+        /// <param name="Name">The name of the organization.</param>
+        /// <param name="_Namespace">The namespace of the organization.</param>
+        public OrganizationUpdate(string Name = default(string), string _Namespace = default(string))
         {
-            this.Roles = Roles;
-            this.User = User;
+            this.Name = Name;
+            this._Namespace = _Namespace;
         }
         
         /// <summary>
-        /// Gets or Sets Roles
+        /// The name of the organization
         /// </summary>
-        [DataMember(Name="roles", EmitDefaultValue=false)]
-        public List<string> Roles { get; set; }
+        /// <value>The name of the organization</value>
+        [DataMember(Name="name", EmitDefaultValue=false)]
+        public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets User
+        /// The namespace of the organization
         /// </summary>
-        [DataMember(Name="user", EmitDefaultValue=false)]
-        public UserPresentation User { get; set; }
+        /// <value>The namespace of the organization</value>
+        [DataMember(Name="namespace", EmitDefaultValue=false)]
+        public string _Namespace { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -58,9 +60,9 @@ namespace BlueRain.ID4i.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class UserRoles {\n");
-            sb.Append("  Roles: ").Append(Roles).Append("\n");
-            sb.Append("  User: ").Append(User).Append("\n");
+            sb.Append("class OrganizationUpdate {\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  _Namespace: ").Append(_Namespace).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -81,29 +83,29 @@ namespace BlueRain.ID4i.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UserRoles);
+            return this.Equals(input as OrganizationUpdate);
         }
 
         /// <summary>
-        /// Returns true if UserRoles instances are equal
+        /// Returns true if OrganizationUpdate instances are equal
         /// </summary>
-        /// <param name="input">Instance of UserRoles to be compared</param>
+        /// <param name="input">Instance of OrganizationUpdate to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UserRoles input)
+        public bool Equals(OrganizationUpdate input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Roles == input.Roles ||
-                    this.Roles != null &&
-                    this.Roles.SequenceEqual(input.Roles)
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.User == input.User ||
-                    (this.User != null &&
-                    this.User.Equals(input.User))
+                    this._Namespace == input._Namespace ||
+                    (this._Namespace != null &&
+                    this._Namespace.Equals(input._Namespace))
                 );
         }
 
@@ -116,10 +118,10 @@ namespace BlueRain.ID4i.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Roles != null)
-                    hashCode = hashCode * 59 + this.Roles.GetHashCode();
-                if (this.User != null)
-                    hashCode = hashCode * 59 + this.User.GetHashCode();
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this._Namespace != null)
+                    hashCode = hashCode * 59 + this._Namespace.GetHashCode();
                 return hashCode;
             }
         }

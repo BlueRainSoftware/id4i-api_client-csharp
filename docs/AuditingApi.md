@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="listorganizationchangelog"></a>
 # **ListOrganizationChangeLog**
-> PaginatedChangeLogEntryResponse ListOrganizationChangeLog (long? organizationId, string messageMimeType = null, DateTime? fromDate = null, DateTime? toDate = null, int? offset = null, int? limit = null)
+> PaginatedChangeLogEntryResponse ListOrganizationChangeLog (string organizationId, string messageMimeType = null, DateTime? fromDate = null, DateTime? toDate = null, int? offset = null, int? limit = null)
 
 List change log entries of an organization
 
@@ -35,7 +35,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new AuditingApi();
-            var organizationId = 789;  // long? | Organization-ID of change log entries to be listed
+            var organizationId = organizationId_example;  // string | The namespace identifying the organization whose change log entries are to be listed
             var messageMimeType = messageMimeType_example;  // string | The Mime-type for the message format that should be returned. e.g. 'text/plain' or 'text/mustache'  (optional)  (default to text/mustache)
             var fromDate = 2013-10-20T19:20:30+01:00;  // DateTime? | From date time as UTC Date-Time format (optional) 
             var toDate = 2013-10-20T19:20:30+01:00;  // DateTime? | To date time as UTC Date-Time format (optional) 
@@ -61,7 +61,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| Organization-ID of change log entries to be listed | 
+ **organizationId** | **string**| The namespace identifying the organization whose change log entries are to be listed | 
  **messageMimeType** | **string**| The Mime-type for the message format that should be returned. e.g. &#39;text/plain&#39; or &#39;text/mustache&#39;  | [optional] [default to text/mustache]
  **fromDate** | **DateTime?**| From date time as UTC Date-Time format | [optional] 
  **toDate** | **DateTime?**| To date time as UTC Date-Time format | [optional] 

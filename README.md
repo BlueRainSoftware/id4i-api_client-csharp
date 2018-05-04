@@ -13,7 +13,7 @@ For additional information, please refer to
 * https://backend.id4i.de/docs/redoc/index.html for API documentation
 * https://github.com/BlueRainSoftware/support for getting additional support
 
-- API version: 0.5.1
+- API version: 0.6.0
 - Package version: 
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
 
@@ -65,7 +65,7 @@ public void main()
                 // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
 
     var apiInstance = new AccountsApi();
-            var organizationId = 789;  // long? | organizationId
+            var organizationId = organizationId_example;  // string | The namespace of the organization
             var username = username_example;  // string | username
             var changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
 
@@ -110,7 +110,7 @@ Class | Method | HTTP request | Description
 *AccountsApi* | [**VerifyUserRegistration**](docs/AccountsApi.md#verifyuserregistration) | **POST** /account/verification | Verify registration
 *AliasApi* | [**AddGuidAlias**](docs/AliasApi.md#addguidalias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
 *AliasApi* | [**GetGuidAliasTypes**](docs/AliasApi.md#getguidaliastypes) | **GET** /api/v1/search/guids/aliases/types | List all supported alias types
-*AliasApi* | [**GetGuidAliases**](docs/AliasApi.md#getguidaliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
+*AliasApi* | [**GetGuidAliases**](docs/AliasApi.md#getguidaliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID.
 *AliasApi* | [**RemoveGuidAlias**](docs/AliasApi.md#removeguidalias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
 *AliasApi* | [**SearchByAlias**](docs/AliasApi.md#searchbyalias) | **GET** /api/v1/search/guids | Search for GUIDs by alias
 *ApiKeysApi* | [**AddApiKeyPrivilege**](docs/ApiKeysApi.md#addapikeyprivilege) | **POST** /api/v1/apikeys/{key}/privileges | Add privilege
@@ -129,37 +129,17 @@ Class | Method | HTTP request | Description
 *BillingApi* | [**GetPositionsForOrganization**](docs/BillingApi.md#getpositionsfororganization) | **GET** /api/v1/billing/{organizationId}/positions | Get billing positions for a given organization
 *BillingApi* | [**GetSumForOrganization**](docs/BillingApi.md#getsumfororganization) | **GET** /api/v1/billing/{organizationId} | Get billing amount of services for a given organization
 *CollectionsApi* | [**AddElementsToCollection**](docs/CollectionsApi.md#addelementstocollection) | **POST** /api/v1/collections/{id4n}/elements | Add elements to collection
-*CollectionsApi* | [**AddElementsToLabelledCollection**](docs/CollectionsApi.md#addelementstolabelledcollection) | **POST** /api/v1/collections/labelled/{collectionId4n}/elements | Add elements to labelled collection
-*CollectionsApi* | [**AddElementsToLogisticCollection**](docs/CollectionsApi.md#addelementstologisticcollection) | **POST** /api/v1/collections/logistic/{collectionId4n}/elements | Add elements to logistic collection
-*CollectionsApi* | [**AddElementsToRoutingCollection**](docs/CollectionsApi.md#addelementstoroutingcollection) | **POST** /api/v1/collections/routing/{collectionId4n}/elements | Add element to routing collection
-*CollectionsApi* | [**CreateLabelledCollection**](docs/CollectionsApi.md#createlabelledcollection) | **POST** /api/v1/collections/labelled | Create labelled collection
-*CollectionsApi* | [**CreateLogisticCollection**](docs/CollectionsApi.md#createlogisticcollection) | **POST** /api/v1/collections/logistic | Create logistic collection
-*CollectionsApi* | [**CreateRoutingCollection**](docs/CollectionsApi.md#createroutingcollection) | **POST** /api/v1/collections/routing | Create routing collecton
+*CollectionsApi* | [**CreateCollection**](docs/CollectionsApi.md#createcollection) | **POST** /api/v1/collections | Create collection
 *CollectionsApi* | [**DeleteCollection**](docs/CollectionsApi.md#deletecollection) | **DELETE** /api/v1/collections/{id4n} | Delete collection
-*CollectionsApi* | [**DeleteLabelledCollection**](docs/CollectionsApi.md#deletelabelledcollection) | **DELETE** /api/v1/collections/labelled/{id4n} | Delete labelled collection
-*CollectionsApi* | [**DeleteLogisticCollection**](docs/CollectionsApi.md#deletelogisticcollection) | **DELETE** /api/v1/collections/logistic/{id4n} | Delete logistic collection
-*CollectionsApi* | [**DeleteRoutingCollection**](docs/CollectionsApi.md#deleteroutingcollection) | **DELETE** /api/v1/collections/routing/{id4n} | Delete routing collection
 *CollectionsApi* | [**FindCollection**](docs/CollectionsApi.md#findcollection) | **GET** /api/v1/collections/{id4n} | Find collection
-*CollectionsApi* | [**FindLabelledCollection**](docs/CollectionsApi.md#findlabelledcollection) | **GET** /api/v1/collections/labelled/{id4n} | Find labelled collection
-*CollectionsApi* | [**FindLogisticCollection**](docs/CollectionsApi.md#findlogisticcollection) | **GET** /api/v1/collections/logistic/{id4n} | Find logistic collection
-*CollectionsApi* | [**FindRoutingCollection**](docs/CollectionsApi.md#findroutingcollection) | **GET** /api/v1/collections/routing/{id4n} | Find routing collection
 *CollectionsApi* | [**GetAllCollectionsOfOrganization**](docs/CollectionsApi.md#getallcollectionsoforganization) | **GET** /api/v1/organizations/{organizationId}/collections | Get collections of organization
 *CollectionsApi* | [**ListElementsOfCollection**](docs/CollectionsApi.md#listelementsofcollection) | **GET** /api/v1/collections/{id4n}/elements | List contents of the collection
-*CollectionsApi* | [**ListElementsOfLabelledCollection**](docs/CollectionsApi.md#listelementsoflabelledcollection) | **GET** /api/v1/collections/labelled/{id4n}/elements | List contents of the collection
-*CollectionsApi* | [**ListElementsOfLogisticCollection**](docs/CollectionsApi.md#listelementsoflogisticcollection) | **GET** /api/v1/collections/logistic/{id4n}/elements | List contents of the collection
-*CollectionsApi* | [**ListElementsOfRoutingCollection**](docs/CollectionsApi.md#listelementsofroutingcollection) | **GET** /api/v1/collections/routing/{id4n}/elements | List contents of the collection
 *CollectionsApi* | [**RemoveElementsFromCollection**](docs/CollectionsApi.md#removeelementsfromcollection) | **DELETE** /api/v1/collections/{id4n}/elements | Remove elements from collection
-*CollectionsApi* | [**RemoveElementsFromLabelledCollection**](docs/CollectionsApi.md#removeelementsfromlabelledcollection) | **DELETE** /api/v1/collections/labelled/{collectionId4n}/elements | Remove elements from labelled collection
-*CollectionsApi* | [**RemoveElementsFromLogisticCollection**](docs/CollectionsApi.md#removeelementsfromlogisticcollection) | **DELETE** /api/v1/collections/logistic/{collectionId4n}/elements | Remove elements from logistic collection
-*CollectionsApi* | [**RemoveElementsFromRoutingCollection**](docs/CollectionsApi.md#removeelementsfromroutingcollection) | **DELETE** /api/v1/collections/routing/{collectionId4n}/elements | Remove elements from routing collection
 *CollectionsApi* | [**UpdateCollection**](docs/CollectionsApi.md#updatecollection) | **PATCH** /api/v1/collections/{id4n} | Update collection
-*CollectionsApi* | [**UpdateLabelledCollection**](docs/CollectionsApi.md#updatelabelledcollection) | **PATCH** /api/v1/collections/labelled/{id4n} | Update labelled collection
-*CollectionsApi* | [**UpdateLogisticCollection**](docs/CollectionsApi.md#updatelogisticcollection) | **PATCH** /api/v1/collections/logistic/{id4n} | Update logistic collection
-*CollectionsApi* | [**UpdateRoutingCollection**](docs/CollectionsApi.md#updateroutingcollection) | **PATCH** /api/v1/collections/routing/{id4n} | Update routing collection
 *GuidsApi* | [**AddGuidAlias**](docs/GuidsApi.md#addguidalias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
 *GuidsApi* | [**CreateGuid**](docs/GuidsApi.md#createguid) | **POST** /api/v1/guids | Create GUID(s)
 *GuidsApi* | [**GetGuid**](docs/GuidsApi.md#getguid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
-*GuidsApi* | [**GetGuidAliases**](docs/GuidsApi.md#getguidaliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
+*GuidsApi* | [**GetGuidAliases**](docs/GuidsApi.md#getguidaliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID.
 *GuidsApi* | [**GetGuidsWithoutCollection**](docs/GuidsApi.md#getguidswithoutcollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 *GuidsApi* | [**GetId4n**](docs/GuidsApi.md#getid4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
 *GuidsApi* | [**RemoveGuidAlias**](docs/GuidsApi.md#removeguidalias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
@@ -167,7 +147,7 @@ Class | Method | HTTP request | Description
 *HistoryApi* | [**AddItem**](docs/HistoryApi.md#additem) | **POST** /api/v1/history/{id4n} | Add history item
 *HistoryApi* | [**List**](docs/HistoryApi.md#list) | **GET** /api/v1/history/{id4n}/{organizationId} | List history
 *HistoryApi* | [**ListAll**](docs/HistoryApi.md#listall) | **GET** /api/v1/history/{id4n} | List history
-*HistoryApi* | [**RetrieveItem**](docs/HistoryApi.md#retrieveitem) | **GET** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | List history
+*HistoryApi* | [**RetrieveItem**](docs/HistoryApi.md#retrieveitem) | **GET** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | Get history item
 *HistoryApi* | [**UpdateItem**](docs/HistoryApi.md#updateitem) | **PATCH** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | Update history item
 *HistoryApi* | [**UpdateItemVisibility**](docs/HistoryApi.md#updateitemvisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequenceId}/visibility | Set history item visibility
 *ImagesApi* | [**ResolveImageUsingGET**](docs/ImagesApi.md#resolveimageusingget) | **GET** /api/v1/public/image/{imageID} | Resolve image
@@ -177,7 +157,7 @@ Class | Method | HTTP request | Description
 *OrganizationsApi* | [**DeleteOrganization**](docs/OrganizationsApi.md#deleteorganization) | **DELETE** /api/v1/organizations/{organizationId} | Delete organization
 *OrganizationsApi* | [**DeleteOrganizationBillingAddress**](docs/OrganizationsApi.md#deleteorganizationbillingaddress) | **DELETE** /api/v1/organizations/{organizationId}/addresses/billing | Remove billing address
 *OrganizationsApi* | [**DeleteOrganizationLogo**](docs/OrganizationsApi.md#deleteorganizationlogo) | **DELETE** /api/v1/organizations/{organizationId}/logo | Delete organization logo
-*OrganizationsApi* | [**FindOrganization**](docs/OrganizationsApi.md#findorganization) | **GET** /api/v1/organizations/{organizationId} | Find organization by id
+*OrganizationsApi* | [**FindOrganization**](docs/OrganizationsApi.md#findorganization) | **GET** /api/v1/organizations/{organizationId} | Find organization by id/namespace
 *OrganizationsApi* | [**FindOrganizationAddress**](docs/OrganizationsApi.md#findorganizationaddress) | **GET** /api/v1/organizations/{organizationId}/addresses/default | Retrieve address
 *OrganizationsApi* | [**FindOrganizationBillingAddress**](docs/OrganizationsApi.md#findorganizationbillingaddress) | **GET** /api/v1/organizations/{organizationId}/addresses/billing | Retrieve billing address
 *OrganizationsApi* | [**GetAllCollectionsOfOrganization**](docs/OrganizationsApi.md#getallcollectionsoforganization) | **GET** /api/v1/organizations/{organizationId}/collections | Get collections of organization
@@ -245,10 +225,8 @@ Class | Method | HTTP request | Description
      - [Model.ChangeRoleRequest](docs/ChangeRoleRequest.md)
      - [Model.CompleteUserRegistrationRequest](docs/CompleteUserRegistrationRequest.md)
      - [Model.Country](docs/Country.md)
+     - [Model.CreateCollectionRequest](docs/CreateCollectionRequest.md)
      - [Model.CreateGuidRequest](docs/CreateGuidRequest.md)
-     - [Model.CreateLabelledCollectionRequest](docs/CreateLabelledCollectionRequest.md)
-     - [Model.CreateLogisticCollectionRequest](docs/CreateLogisticCollectionRequest.md)
-     - [Model.CreateRoutingCollectionRequest](docs/CreateRoutingCollectionRequest.md)
      - [Model.Document](docs/Document.md)
      - [Model.DocumentUpdate](docs/DocumentUpdate.md)
      - [Model.File](docs/File.md)
@@ -265,6 +243,7 @@ Class | Method | HTTP request | Description
      - [Model.ListOfId4ns](docs/ListOfId4ns.md)
      - [Model.Organization](docs/Organization.md)
      - [Model.OrganizationAddress](docs/OrganizationAddress.md)
+     - [Model.OrganizationUpdate](docs/OrganizationUpdate.md)
      - [Model.OrganizationUserInvitation](docs/OrganizationUserInvitation.md)
      - [Model.OrganizationUserInvitationListRequest](docs/OrganizationUserInvitationListRequest.md)
      - [Model.OwnedDocument](docs/OwnedDocument.md)

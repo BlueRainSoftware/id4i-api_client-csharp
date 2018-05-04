@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**DeleteOrganization**](OrganizationsApi.md#deleteorganization) | **DELETE** /api/v1/organizations/{organizationId} | Delete organization
 [**DeleteOrganizationBillingAddress**](OrganizationsApi.md#deleteorganizationbillingaddress) | **DELETE** /api/v1/organizations/{organizationId}/addresses/billing | Remove billing address
 [**DeleteOrganizationLogo**](OrganizationsApi.md#deleteorganizationlogo) | **DELETE** /api/v1/organizations/{organizationId}/logo | Delete organization logo
-[**FindOrganization**](OrganizationsApi.md#findorganization) | **GET** /api/v1/organizations/{organizationId} | Find organization by id
+[**FindOrganization**](OrganizationsApi.md#findorganization) | **GET** /api/v1/organizations/{organizationId} | Find organization by id/namespace
 [**FindOrganizationAddress**](OrganizationsApi.md#findorganizationaddress) | **GET** /api/v1/organizations/{organizationId}/addresses/default | Retrieve address
 [**FindOrganizationBillingAddress**](OrganizationsApi.md#findorganizationbillingaddress) | **GET** /api/v1/organizations/{organizationId}/addresses/billing | Retrieve billing address
 [**GetAllCollectionsOfOrganization**](OrganizationsApi.md#getallcollectionsoforganization) | **GET** /api/v1/organizations/{organizationId}/collections | Get collections of organization
@@ -28,7 +28,7 @@ Method | HTTP request | Description
 
 <a name="adduserroles"></a>
 # **AddUserRoles**
-> void AddUserRoles (long? organizationId, string username, ChangeRoleRequest changeRoleRequest)
+> void AddUserRoles (string organizationId, string username, ChangeRoleRequest changeRoleRequest)
 
 Add role(s) to user
 
@@ -52,7 +52,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new OrganizationsApi();
-            var organizationId = 789;  // long? | organizationId
+            var organizationId = organizationId_example;  // string | The namespace of the organization
             var username = username_example;  // string | username
             var changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
 
@@ -74,7 +74,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
+ **organizationId** | **string**| The namespace of the organization | 
  **username** | **string**| username | 
  **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteorganization"></a>
 # **DeleteOrganization**
-> void DeleteOrganization (long? organizationId)
+> void DeleteOrganization (string organizationId)
 
 Delete organization
 
@@ -185,7 +185,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new OrganizationsApi();
-            var organizationId = 789;  // long? | The id of the organization to be deleted.
+            var organizationId = organizationId_example;  // string | The namespace of the organization to be deleted.
 
             try
             {
@@ -205,7 +205,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| The id of the organization to be deleted. | 
+ **organizationId** | **string**| The namespace of the organization to be deleted. | 
 
 ### Return type
 
@@ -224,7 +224,7 @@ void (empty response body)
 
 <a name="deleteorganizationbillingaddress"></a>
 # **DeleteOrganizationBillingAddress**
-> void DeleteOrganizationBillingAddress (long? organizationId)
+> void DeleteOrganizationBillingAddress (string organizationId)
 
 Remove billing address
 
@@ -248,7 +248,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new OrganizationsApi();
-            var organizationId = 789;  // long? | organizationId
+            var organizationId = organizationId_example;  // string | organizationId
 
             try
             {
@@ -268,7 +268,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
+ **organizationId** | **string**| organizationId | 
 
 ### Return type
 
@@ -287,7 +287,7 @@ void (empty response body)
 
 <a name="deleteorganizationlogo"></a>
 # **DeleteOrganizationLogo**
-> void DeleteOrganizationLogo (long? organizationId)
+> void DeleteOrganizationLogo (string organizationId)
 
 Delete organization logo
 
@@ -311,7 +311,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new OrganizationsApi();
-            var organizationId = 789;  // long? | The id of the organization where the logo should be deleted.
+            var organizationId = organizationId_example;  // string | The namespace of the organization where the logo should be deleted.
 
             try
             {
@@ -331,7 +331,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| The id of the organization where the logo should be deleted. | 
+ **organizationId** | **string**| The namespace of the organization where the logo should be deleted. | 
 
 ### Return type
 
@@ -350,9 +350,9 @@ void (empty response body)
 
 <a name="findorganization"></a>
 # **FindOrganization**
-> Organization FindOrganization (long? organizationId)
+> Organization FindOrganization (string organizationId)
 
-Find organization by id
+Find organization by id/namespace
 
 Returns a single organization.
 
@@ -376,11 +376,11 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new OrganizationsApi();
-            var organizationId = 789;  // long? | The id of the organization to be retrieved.
+            var organizationId = organizationId_example;  // string | The namespace of the organization to be retrieved.
 
             try
             {
-                // Find organization by id
+                // Find organization by id/namespace
                 Organization result = apiInstance.FindOrganization(organizationId);
                 Debug.WriteLine(result);
             }
@@ -397,7 +397,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| The id of the organization to be retrieved. | 
+ **organizationId** | **string**| The namespace of the organization to be retrieved. | 
 
 ### Return type
 
@@ -416,7 +416,7 @@ Name | Type | Description  | Notes
 
 <a name="findorganizationaddress"></a>
 # **FindOrganizationAddress**
-> OrganizationAddress FindOrganizationAddress (long? organizationId)
+> OrganizationAddress FindOrganizationAddress (string organizationId)
 
 Retrieve address
 
@@ -440,7 +440,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new OrganizationsApi();
-            var organizationId = 789;  // long? | organizationId
+            var organizationId = organizationId_example;  // string | organizationId
 
             try
             {
@@ -461,7 +461,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
+ **organizationId** | **string**| organizationId | 
 
 ### Return type
 
@@ -480,7 +480,7 @@ Name | Type | Description  | Notes
 
 <a name="findorganizationbillingaddress"></a>
 # **FindOrganizationBillingAddress**
-> OrganizationAddress FindOrganizationBillingAddress (long? organizationId)
+> OrganizationAddress FindOrganizationBillingAddress (string organizationId)
 
 Retrieve billing address
 
@@ -504,7 +504,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new OrganizationsApi();
-            var organizationId = 789;  // long? | organizationId
+            var organizationId = organizationId_example;  // string | organizationId
 
             try
             {
@@ -525,7 +525,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
+ **organizationId** | **string**| organizationId | 
 
 ### Return type
 
@@ -544,7 +544,7 @@ Name | Type | Description  | Notes
 
 <a name="getallcollectionsoforganization"></a>
 # **GetAllCollectionsOfOrganization**
-> PaginatedGuidCollection GetAllCollectionsOfOrganization (long? organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null)
+> PaginatedGuidCollection GetAllCollectionsOfOrganization (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null)
 
 Get collections of organization
 
@@ -570,7 +570,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new OrganizationsApi();
-            var organizationId = 789;  // long? | organizationId
+            var organizationId = organizationId_example;  // string | The namespace of the organization
             var offset = 56;  // int? | Start with the n-th element (optional) 
             var limit = 56;  // int? | The maximum count of returned elements (optional) 
             var type = type_example;  // string | Filter by this type (optional) 
@@ -596,7 +596,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
+ **organizationId** | **string**| The namespace of the organization | 
  **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
  **type** | **string**| Filter by this type | [optional] 
@@ -620,7 +620,7 @@ Name | Type | Description  | Notes
 
 <a name="getallorganizationroles"></a>
 # **GetAllOrganizationRoles**
-> PaginatedUserRolesResponse GetAllOrganizationRoles (long? organizationId, int? offset = null, int? limit = null)
+> PaginatedUserRolesResponse GetAllOrganizationRoles (string organizationId, int? offset = null, int? limit = null)
 
 List users and their roles
 
@@ -646,7 +646,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new OrganizationsApi();
-            var organizationId = 789;  // long? | organizationId
+            var organizationId = organizationId_example;  // string | organizationId
             var offset = 56;  // int? | Start with the n-th element (optional) 
             var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
@@ -669,7 +669,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
+ **organizationId** | **string**| organizationId | 
  **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
 
@@ -758,7 +758,7 @@ Name | Type | Description  | Notes
 
 <a name="getuserroles"></a>
 # **GetUserRoles**
-> PaginatedStringResponse GetUserRoles (long? organizationId, string username, int? offset = null, int? limit = null)
+> PaginatedStringResponse GetUserRoles (string organizationId, string username, int? offset = null, int? limit = null)
 
 Get user roles by username
 
@@ -782,7 +782,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new OrganizationsApi();
-            var organizationId = 789;  // long? | organizationId
+            var organizationId = organizationId_example;  // string | The namespace of the organization
             var username = username_example;  // string | username
             var offset = 56;  // int? | Start with the n-th element (optional) 
             var limit = 56;  // int? | The maximum count of returned elements (optional) 
@@ -806,7 +806,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
+ **organizationId** | **string**| The namespace of the organization | 
  **username** | **string**| username | 
  **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
@@ -828,7 +828,7 @@ Name | Type | Description  | Notes
 
 <a name="getusersoforganization"></a>
 # **GetUsersOfOrganization**
-> PaginatedUserPresentationResponse GetUsersOfOrganization (long? organizationId, int? offset = null, int? limit = null)
+> PaginatedUserPresentationResponse GetUsersOfOrganization (string organizationId, int? offset = null, int? limit = null)
 
 Find users in organization
 
@@ -854,7 +854,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new OrganizationsApi();
-            var organizationId = 789;  // long? | organizationId
+            var organizationId = organizationId_example;  // string | organizationId
             var offset = 56;  // int? | Start with the n-th element (optional) 
             var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
@@ -877,7 +877,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
+ **organizationId** | **string**| organizationId | 
  **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
 
@@ -898,7 +898,7 @@ Name | Type | Description  | Notes
 
 <a name="inviteusers"></a>
 # **InviteUsers**
-> void InviteUsers (long? organizationId, OrganizationUserInvitationListRequest invitationList)
+> void InviteUsers (string organizationId, OrganizationUserInvitationListRequest invitationList)
 
 Invite Users
 
@@ -922,7 +922,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new OrganizationsApi();
-            var organizationId = 789;  // long? | organizationId
+            var organizationId = organizationId_example;  // string | The namespace of the organization where users should be invited
             var invitationList = new OrganizationUserInvitationListRequest(); // OrganizationUserInvitationListRequest | invitationList
 
             try
@@ -943,7 +943,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
+ **organizationId** | **string**| The namespace of the organization where users should be invited | 
  **invitationList** | [**OrganizationUserInvitationListRequest**](OrganizationUserInvitationListRequest.md)| invitationList | 
 
 ### Return type
@@ -1029,7 +1029,7 @@ Name | Type | Description  | Notes
 
 <a name="removeuserroles"></a>
 # **RemoveUserRoles**
-> void RemoveUserRoles (long? organizationId, string username, ChangeRoleRequest changeRoleRequest)
+> void RemoveUserRoles (string organizationId, string username, ChangeRoleRequest changeRoleRequest)
 
 Remove role(s) from user
 
@@ -1053,7 +1053,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new OrganizationsApi();
-            var organizationId = 789;  // long? | organizationId
+            var organizationId = organizationId_example;  // string | The namespace of the organization
             var username = username_example;  // string | username
             var changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
 
@@ -1075,7 +1075,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
+ **organizationId** | **string**| The namespace of the organization | 
  **username** | **string**| username | 
  **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
 
@@ -1096,7 +1096,7 @@ void (empty response body)
 
 <a name="setorganizationlogo"></a>
 # **SetOrganizationLogo**
-> PublicImagePresentation SetOrganizationLogo (long? organizationId, System.IO.Stream file)
+> PublicImagePresentation SetOrganizationLogo (string organizationId, System.IO.Stream file)
 
 Update organization logo
 
@@ -1122,7 +1122,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new OrganizationsApi();
-            var organizationId = 789;  // long? | The id of the organization where the logo should be updated.
+            var organizationId = organizationId_example;  // string | The namespace of the organization where the logo should be updated.
             var file = new System.IO.Stream(); // System.IO.Stream | An image containing the new logo.
 
             try
@@ -1144,7 +1144,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| The id of the organization where the logo should be updated. | 
+ **organizationId** | **string**| The namespace of the organization where the logo should be updated. | 
  **file** | **System.IO.Stream**| An image containing the new logo. | 
 
 ### Return type
@@ -1164,7 +1164,7 @@ Name | Type | Description  | Notes
 
 <a name="updateorganization"></a>
 # **UpdateOrganization**
-> Organization UpdateOrganization (long? organizationId, Organization organization)
+> Organization UpdateOrganization (string organizationId, OrganizationUpdate organizationUpdate)
 
 Update organization
 
@@ -1188,13 +1188,13 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new OrganizationsApi();
-            var organizationId = 789;  // long? | The id of the organization to be updated.
-            var organization = new Organization(); // Organization | Updated organization object
+            var organizationId = organizationId_example;  // string | The namespace of the organization to be updated.
+            var organizationUpdate = new OrganizationUpdate(); // OrganizationUpdate | Updated organization object
 
             try
             {
                 // Update organization
-                Organization result = apiInstance.UpdateOrganization(organizationId, organization);
+                Organization result = apiInstance.UpdateOrganization(organizationId, organizationUpdate);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1210,8 +1210,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| The id of the organization to be updated. | 
- **organization** | [**Organization**](Organization.md)| Updated organization object | 
+ **organizationId** | **string**| The namespace of the organization to be updated. | 
+ **organizationUpdate** | [**OrganizationUpdate**](OrganizationUpdate.md)| Updated organization object | 
 
 ### Return type
 
@@ -1230,7 +1230,7 @@ Name | Type | Description  | Notes
 
 <a name="updateorganizationaddress"></a>
 # **UpdateOrganizationAddress**
-> OrganizationAddress UpdateOrganizationAddress (long? organizationId, OrganizationAddress addressResource)
+> OrganizationAddress UpdateOrganizationAddress (string organizationId, OrganizationAddress addressResource)
 
 Store address
 
@@ -1254,7 +1254,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new OrganizationsApi();
-            var organizationId = 789;  // long? | organizationId
+            var organizationId = organizationId_example;  // string | organizationId
             var addressResource = new OrganizationAddress(); // OrganizationAddress | addressResource
 
             try
@@ -1276,7 +1276,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
+ **organizationId** | **string**| organizationId | 
  **addressResource** | [**OrganizationAddress**](OrganizationAddress.md)| addressResource | 
 
 ### Return type
@@ -1296,7 +1296,7 @@ Name | Type | Description  | Notes
 
 <a name="updateorganizationbillingaddress"></a>
 # **UpdateOrganizationBillingAddress**
-> OrganizationAddress UpdateOrganizationBillingAddress (long? organizationId, OrganizationAddress addressResource)
+> OrganizationAddress UpdateOrganizationBillingAddress (string organizationId, OrganizationAddress addressResource)
 
 Store billing address
 
@@ -1320,7 +1320,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new OrganizationsApi();
-            var organizationId = 789;  // long? | organizationId
+            var organizationId = organizationId_example;  // string | organizationId
             var addressResource = new OrganizationAddress(); // OrganizationAddress | addressResource
 
             try
@@ -1342,7 +1342,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
+ **organizationId** | **string**| organizationId | 
  **addressResource** | [**OrganizationAddress**](OrganizationAddress.md)| addressResource | 
 
 ### Return type

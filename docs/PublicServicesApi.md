@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 <a name="getpublicdocument"></a>
 # **GetPublicDocument**
-> Document GetPublicDocument (long? organizationId, string id4n, string fileName)
+> Document GetPublicDocument (string organizationId, string id4n, string fileName)
 
 Retrieve a document (meta-data only, no content)
 
@@ -42,7 +42,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new PublicServicesApi();
-            var organizationId = 789;  // long? | organizationId
+            var organizationId = organizationId_example;  // string | organizationId
             var id4n = id4n_example;  // string | id4n
             var fileName = fileName_example;  // string | fileName
 
@@ -65,7 +65,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
+ **organizationId** | **string**| organizationId | 
  **id4n** | **string**| id4n | 
  **fileName** | **string**| fileName | 
 
@@ -210,7 +210,7 @@ No authorization required
 
 <a name="listallpublicdocuments"></a>
 # **ListAllPublicDocuments**
-> PaginatedOwnedDocumentResponse ListAllPublicDocuments (string id4n, long? organizationId = null, int? offset = null, int? limit = null)
+> PaginatedOwnedDocumentResponse ListAllPublicDocuments (string id4n, string organizationId = null, int? offset = null, int? limit = null)
 
 List organization specific documents
 
@@ -237,7 +237,7 @@ namespace Example
 
             var apiInstance = new PublicServicesApi();
             var id4n = id4n_example;  // string | id4n
-            var organizationId = 789;  // long? | organizationId (optional) 
+            var organizationId = organizationId_example;  // string | organizationId (optional) 
             var offset = 56;  // int? | Start with the n-th element (optional) 
             var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
@@ -261,7 +261,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **organizationId** | **long?**| organizationId | [optional] 
+ **organizationId** | **string**| organizationId | [optional] 
  **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 <a name="listpublicdocuments"></a>
 # **ListPublicDocuments**
-> PaginatedDocumentResponse ListPublicDocuments (long? organizationId, string id4n, int? offset = null, int? limit = null)
+> PaginatedDocumentResponse ListPublicDocuments (string organizationId, string id4n, int? offset = null, int? limit = null)
 
 List organization specific documents
 
@@ -308,7 +308,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new PublicServicesApi();
-            var organizationId = 789;  // long? | organizationId
+            var organizationId = organizationId_example;  // string | organizationId
             var id4n = id4n_example;  // string | id4n
             var offset = 56;  // int? | Start with the n-th element (optional) 
             var limit = 56;  // int? | The maximum count of returned elements (optional) 
@@ -332,7 +332,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
+ **organizationId** | **string**| organizationId | 
  **id4n** | **string**| id4n | 
  **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
@@ -424,7 +424,7 @@ Name | Type | Description  | Notes
 
 <a name="readorganizationinfo"></a>
 # **ReadOrganizationInfo**
-> Organization ReadOrganizationInfo (long? organizationId)
+> Organization ReadOrganizationInfo (string organizationId)
 
 Read public organization information
 
@@ -448,7 +448,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new PublicServicesApi();
-            var organizationId = 789;  // long? | Organization ID
+            var organizationId = organizationId_example;  // string | Organization ID
 
             try
             {
@@ -469,7 +469,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| Organization ID | 
+ **organizationId** | **string**| Organization ID | 
 
 ### Return type
 
@@ -488,7 +488,7 @@ Name | Type | Description  | Notes
 
 <a name="readpublicdocument"></a>
 # **ReadPublicDocument**
-> byte[] ReadPublicDocument (long? organizationId, string id4n, string fileName)
+> byte[] ReadPublicDocument (string organizationId, string id4n, string fileName)
 
 Read document contents
 
@@ -512,7 +512,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new PublicServicesApi();
-            var organizationId = 789;  // long? | organizationId
+            var organizationId = organizationId_example;  // string | organizationId
             var id4n = id4n_example;  // string | id4n
             var fileName = fileName_example;  // string | fileName
 
@@ -535,7 +535,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
+ **organizationId** | **string**| organizationId | 
  **id4n** | **string**| id4n | 
  **fileName** | **string**| fileName | 
 

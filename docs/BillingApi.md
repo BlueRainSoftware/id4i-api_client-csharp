@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getpositionsfororganization"></a>
 # **GetPositionsForOrganization**
-> List<BillingPosition> GetPositionsForOrganization (long? organizationId, DateTime? fromDate = null, DateTime? toDate = null)
+> List<BillingPosition> GetPositionsForOrganization (string organizationId, DateTime? fromDate = null, DateTime? toDate = null)
 
 Get billing positions for a given organization
 
@@ -34,7 +34,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new BillingApi();
-            var organizationId = 789;  // long? | The organization to compute the billing information for
+            var organizationId = organizationId_example;  // string | The organization to compute the billing information for
             var fromDate = 2013-10-20T19:20:30+01:00;  // DateTime? | Billing start date (optional) 
             var toDate = 2013-10-20T19:20:30+01:00;  // DateTime? | Billing end date (optional) 
 
@@ -57,7 +57,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| The organization to compute the billing information for | 
+ **organizationId** | **string**| The organization to compute the billing information for | 
  **fromDate** | **DateTime?**| Billing start date | [optional] 
  **toDate** | **DateTime?**| Billing end date | [optional] 
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 <a name="getsumfororganization"></a>
 # **GetSumForOrganization**
-> ServiceCosts GetSumForOrganization (long? organizationId, DateTime? fromDate = null, DateTime? toDate = null)
+> ServiceCosts GetSumForOrganization (string organizationId, DateTime? fromDate = null, DateTime? toDate = null)
 
 Get billing amount of services for a given organization
 
@@ -102,7 +102,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new BillingApi();
-            var organizationId = 789;  // long? | The organization to compute the billing information for
+            var organizationId = organizationId_example;  // string | The organization to compute the billing information for
             var fromDate = 2013-10-20T19:20:30+01:00;  // DateTime? | Billing start date (optional) 
             var toDate = 2013-10-20T19:20:30+01:00;  // DateTime? | Billing end date (optional) 
 
@@ -125,7 +125,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| The organization to compute the billing information for | 
+ **organizationId** | **string**| The organization to compute the billing information for | 
  **fromDate** | **DateTime?**| Billing start date | [optional] 
  **toDate** | **DateTime?**| Billing end date | [optional] 
 

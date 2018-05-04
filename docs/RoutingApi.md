@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 <a name="getroutingfile"></a>
 # **GetRoutingFile**
-> RoutingFile GetRoutingFile (string id4n, long? organizationId = null)
+> RoutingFile GetRoutingFile (string id4n, string organizationId = null)
 
 Retrieve routing file
 
@@ -175,7 +175,7 @@ namespace Example
 
             var apiInstance = new RoutingApi();
             var id4n = id4n_example;  // string | id4n
-            var organizationId = 789;  // long? | organizationId (optional) 
+            var organizationId = organizationId_example;  // string | organizationId (optional) 
 
             try
             {
@@ -197,7 +197,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **organizationId** | **long?**| organizationId | [optional] 
+ **organizationId** | **string**| organizationId | [optional] 
 
 ### Return type
 
