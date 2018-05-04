@@ -419,7 +419,7 @@ Name | Type | Description  | Notes
 
 <a name="listallapikeysoforganization"></a>
 # **ListAllApiKeysOfOrganization**
-> PaginatedApiKeyResponse ListAllApiKeysOfOrganization (long? organizationId, int? offset = null, int? limit = null)
+> PaginatedApiKeyResponse ListAllApiKeysOfOrganization (string organizationId = null, int? offset = null, int? limit = null)
 
 Find API key by organization
 
@@ -445,7 +445,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ApiKeysApi();
-            var organizationId = 789;  // long? | The id of the organization to search in.
+            var organizationId = organizationId_example;  // string | The namespace of the organization to search in. (optional) 
             var offset = 56;  // int? | Start with the n-th element (optional) 
             var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
@@ -468,7 +468,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| The id of the organization to search in. | 
+ **organizationId** | **string**| The namespace of the organization to search in. | [optional] 
  **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
 

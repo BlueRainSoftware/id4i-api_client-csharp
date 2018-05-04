@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 <a name="adduserroles"></a>
 # **AddUserRoles**
-> void AddUserRoles (long? organizationId, string username, ChangeRoleRequest changeRoleRequest)
+> void AddUserRoles (string organizationId, string username, ChangeRoleRequest changeRoleRequest)
 
 Add role(s) to user
 
@@ -49,7 +49,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new AccountsApi();
-            var organizationId = 789;  // long? | organizationId
+            var organizationId = organizationId_example;  // string | The namespace of the organization
             var username = username_example;  // string | username
             var changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
 
@@ -71,7 +71,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
+ **organizationId** | **string**| The namespace of the organization | 
  **username** | **string**| username | 
  **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
 
@@ -284,7 +284,7 @@ Name | Type | Description  | Notes
 
 <a name="getallorganizationroles"></a>
 # **GetAllOrganizationRoles**
-> PaginatedUserRolesResponse GetAllOrganizationRoles (long? organizationId, int? offset = null, int? limit = null)
+> PaginatedUserRolesResponse GetAllOrganizationRoles (string organizationId, int? offset = null, int? limit = null)
 
 List users and their roles
 
@@ -310,7 +310,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new AccountsApi();
-            var organizationId = 789;  // long? | organizationId
+            var organizationId = organizationId_example;  // string | organizationId
             var offset = 56;  // int? | Start with the n-th element (optional) 
             var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
@@ -333,7 +333,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
+ **organizationId** | **string**| organizationId | 
  **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
 
@@ -422,7 +422,7 @@ Name | Type | Description  | Notes
 
 <a name="getuserroles"></a>
 # **GetUserRoles**
-> PaginatedStringResponse GetUserRoles (long? organizationId, string username, int? offset = null, int? limit = null)
+> PaginatedStringResponse GetUserRoles (string organizationId, string username, int? offset = null, int? limit = null)
 
 Get user roles by username
 
@@ -446,7 +446,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new AccountsApi();
-            var organizationId = 789;  // long? | organizationId
+            var organizationId = organizationId_example;  // string | The namespace of the organization
             var username = username_example;  // string | username
             var offset = 56;  // int? | Start with the n-th element (optional) 
             var limit = 56;  // int? | The maximum count of returned elements (optional) 
@@ -470,7 +470,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
+ **organizationId** | **string**| The namespace of the organization | 
  **username** | **string**| username | 
  **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 
 <a name="getusersoforganization"></a>
 # **GetUsersOfOrganization**
-> PaginatedUserPresentationResponse GetUsersOfOrganization (long? organizationId, int? offset = null, int? limit = null)
+> PaginatedUserPresentationResponse GetUsersOfOrganization (string organizationId, int? offset = null, int? limit = null)
 
 Find users in organization
 
@@ -518,7 +518,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new AccountsApi();
-            var organizationId = 789;  // long? | organizationId
+            var organizationId = organizationId_example;  // string | organizationId
             var offset = 56;  // int? | Start with the n-th element (optional) 
             var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
@@ -541,7 +541,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
+ **organizationId** | **string**| organizationId | 
  **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
 
@@ -562,7 +562,7 @@ Name | Type | Description  | Notes
 
 <a name="inviteusers"></a>
 # **InviteUsers**
-> void InviteUsers (long? organizationId, OrganizationUserInvitationListRequest invitationList)
+> void InviteUsers (string organizationId, OrganizationUserInvitationListRequest invitationList)
 
 Invite Users
 
@@ -586,7 +586,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new AccountsApi();
-            var organizationId = 789;  // long? | organizationId
+            var organizationId = organizationId_example;  // string | The namespace of the organization where users should be invited
             var invitationList = new OrganizationUserInvitationListRequest(); // OrganizationUserInvitationListRequest | invitationList
 
             try
@@ -607,7 +607,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
+ **organizationId** | **string**| The namespace of the organization where users should be invited | 
  **invitationList** | [**OrganizationUserInvitationListRequest**](OrganizationUserInvitationListRequest.md)| invitationList | 
 
 ### Return type
@@ -874,7 +874,7 @@ No authorization required
 
 <a name="removeuserroles"></a>
 # **RemoveUserRoles**
-> void RemoveUserRoles (long? organizationId, string username, ChangeRoleRequest changeRoleRequest)
+> void RemoveUserRoles (string organizationId, string username, ChangeRoleRequest changeRoleRequest)
 
 Remove role(s) from user
 
@@ -898,7 +898,7 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new AccountsApi();
-            var organizationId = 789;  // long? | organizationId
+            var organizationId = organizationId_example;  // string | The namespace of the organization
             var username = username_example;  // string | username
             var changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
 
@@ -920,7 +920,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **long?**| organizationId | 
+ **organizationId** | **string**| The namespace of the organization | 
  **username** | **string**| username | 
  **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest | 
 

@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**AddItem**](HistoryApi.md#additem) | **POST** /api/v1/history/{id4n} | Add history item
 [**List**](HistoryApi.md#list) | **GET** /api/v1/history/{id4n}/{organizationId} | List history
 [**ListAll**](HistoryApi.md#listall) | **GET** /api/v1/history/{id4n} | List history
-[**RetrieveItem**](HistoryApi.md#retrieveitem) | **GET** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | List history
+[**RetrieveItem**](HistoryApi.md#retrieveitem) | **GET** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | Get history item
 [**UpdateItem**](HistoryApi.md#updateitem) | **PATCH** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | Update history item
 [**UpdateItemVisibility**](HistoryApi.md#updateitemvisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequenceId}/visibility | Set history item visibility
 
@@ -81,11 +81,11 @@ void (empty response body)
 
 <a name="list"></a>
 # **List**
-> PaginatedHistoryItemResponse List (string id4n, long? organizationId, bool? includePrivate = null, int? offset = null, int? limit = null)
+> PaginatedHistoryItemResponse List (string id4n, string organizationId, bool? includePrivate = null, int? offset = null, int? limit = null)
 
 List history
 
-Lists the history of a GUID
+Lists the history of a GUID of the specified organization
 
 ### Example
 ```csharp
@@ -108,7 +108,7 @@ namespace Example
 
             var apiInstance = new HistoryApi();
             var id4n = id4n_example;  // string | GUID to retrieve the history for
-            var organizationId = 789;  // long? | organizationId
+            var organizationId = organizationId_example;  // string | organizationId
             var includePrivate = true;  // bool? | Also return private history entries (optional)  (default to true)
             var offset = 56;  // int? | Start with the n-th element (optional) 
             var limit = 56;  // int? | The maximum count of returned elements (optional) 
@@ -133,7 +133,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| GUID to retrieve the history for | 
- **organizationId** | **long?**| organizationId | 
+ **organizationId** | **string**| organizationId | 
  **includePrivate** | **bool?**| Also return private history entries | [optional] [default to true]
  **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
@@ -227,11 +227,9 @@ Name | Type | Description  | Notes
 
 <a name="retrieveitem"></a>
 # **RetrieveItem**
-> PaginatedHistoryItemResponse RetrieveItem (string id4n, long? organizationId, int? sequenceId)
+> PaginatedHistoryItemResponse RetrieveItem (string id4n, string organizationId, int? sequenceId)
 
-List history
-
-Lists the history of a GUID
+Get history item
 
 ### Example
 ```csharp
@@ -254,12 +252,12 @@ namespace Example
 
             var apiInstance = new HistoryApi();
             var id4n = id4n_example;  // string | GUID to retrieve the history for
-            var organizationId = 789;  // long? | organizationId
+            var organizationId = organizationId_example;  // string | organizationId
             var sequenceId = 56;  // int? | sequenceId
 
             try
             {
-                // List history
+                // Get history item
                 PaginatedHistoryItemResponse result = apiInstance.RetrieveItem(id4n, organizationId, sequenceId);
                 Debug.WriteLine(result);
             }
@@ -277,7 +275,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| GUID to retrieve the history for | 
- **organizationId** | **long?**| organizationId | 
+ **organizationId** | **string**| organizationId | 
  **sequenceId** | **int?**| sequenceId | 
 
 ### Return type
@@ -297,7 +295,7 @@ Name | Type | Description  | Notes
 
 <a name="updateitem"></a>
 # **UpdateItem**
-> HistoryItem UpdateItem (string id4n, long? organizationId, int? sequenceId, HistoryItemUpdate update)
+> HistoryItem UpdateItem (string id4n, string organizationId, int? sequenceId, HistoryItemUpdate update)
 
 Update history item
 
@@ -322,7 +320,7 @@ namespace Example
 
             var apiInstance = new HistoryApi();
             var id4n = id4n_example;  // string | GUID to retrieve the history for
-            var organizationId = 789;  // long? | organizationId
+            var organizationId = organizationId_example;  // string | organizationId
             var sequenceId = 56;  // int? | sequenceId
             var update = new HistoryItemUpdate(); // HistoryItemUpdate | update
 
@@ -346,7 +344,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| GUID to retrieve the history for | 
- **organizationId** | **long?**| organizationId | 
+ **organizationId** | **string**| organizationId | 
  **sequenceId** | **int?**| sequenceId | 
  **update** | [**HistoryItemUpdate**](HistoryItemUpdate.md)| update | 
 
@@ -367,7 +365,7 @@ Name | Type | Description  | Notes
 
 <a name="updateitemvisibility"></a>
 # **UpdateItemVisibility**
-> HistoryItem UpdateItemVisibility (string id4n, long? organizationId, int? sequenceId, Visibility visibility)
+> HistoryItem UpdateItemVisibility (string id4n, string organizationId, int? sequenceId, Visibility visibility)
 
 Set history item visibility
 
@@ -392,7 +390,7 @@ namespace Example
 
             var apiInstance = new HistoryApi();
             var id4n = id4n_example;  // string | GUID to retrieve the history for
-            var organizationId = 789;  // long? | organizationId
+            var organizationId = organizationId_example;  // string | organizationId
             var sequenceId = 56;  // int? | sequenceId
             var visibility = new Visibility(); // Visibility | History item visibility restrictions
 
@@ -416,7 +414,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| GUID to retrieve the history for | 
- **organizationId** | **long?**| organizationId | 
+ **organizationId** | **string**| organizationId | 
  **sequenceId** | **int?**| sequenceId | 
  **visibility** | [**Visibility**](Visibility.md)| History item visibility restrictions | 
 

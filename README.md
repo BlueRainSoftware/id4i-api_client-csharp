@@ -13,7 +13,7 @@ For additional information, please refer to
 * https://backend.id4i.de/docs/redoc/index.html for API documentation
 * https://github.com/BlueRainSoftware/support for getting additional support
 
-- API version: 0.5.1
+- API version: 0.6.0
 - Package version: 
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
 
@@ -65,7 +65,7 @@ public void main()
                 // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
 
     var apiInstance = new AccountsApi();
-            var organizationId = 789;  // long? | organizationId
+            var organizationId = organizationId_example;  // string | The namespace of the organization
             var username = username_example;  // string | username
             var changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
 
@@ -147,7 +147,7 @@ Class | Method | HTTP request | Description
 *HistoryApi* | [**AddItem**](docs/HistoryApi.md#additem) | **POST** /api/v1/history/{id4n} | Add history item
 *HistoryApi* | [**List**](docs/HistoryApi.md#list) | **GET** /api/v1/history/{id4n}/{organizationId} | List history
 *HistoryApi* | [**ListAll**](docs/HistoryApi.md#listall) | **GET** /api/v1/history/{id4n} | List history
-*HistoryApi* | [**RetrieveItem**](docs/HistoryApi.md#retrieveitem) | **GET** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | List history
+*HistoryApi* | [**RetrieveItem**](docs/HistoryApi.md#retrieveitem) | **GET** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | Get history item
 *HistoryApi* | [**UpdateItem**](docs/HistoryApi.md#updateitem) | **PATCH** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | Update history item
 *HistoryApi* | [**UpdateItemVisibility**](docs/HistoryApi.md#updateitemvisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequenceId}/visibility | Set history item visibility
 *ImagesApi* | [**ResolveImageUsingGET**](docs/ImagesApi.md#resolveimageusingget) | **GET** /api/v1/public/image/{imageID} | Resolve image
@@ -157,7 +157,7 @@ Class | Method | HTTP request | Description
 *OrganizationsApi* | [**DeleteOrganization**](docs/OrganizationsApi.md#deleteorganization) | **DELETE** /api/v1/organizations/{organizationId} | Delete organization
 *OrganizationsApi* | [**DeleteOrganizationBillingAddress**](docs/OrganizationsApi.md#deleteorganizationbillingaddress) | **DELETE** /api/v1/organizations/{organizationId}/addresses/billing | Remove billing address
 *OrganizationsApi* | [**DeleteOrganizationLogo**](docs/OrganizationsApi.md#deleteorganizationlogo) | **DELETE** /api/v1/organizations/{organizationId}/logo | Delete organization logo
-*OrganizationsApi* | [**FindOrganization**](docs/OrganizationsApi.md#findorganization) | **GET** /api/v1/organizations/{organizationId} | Find organization by id
+*OrganizationsApi* | [**FindOrganization**](docs/OrganizationsApi.md#findorganization) | **GET** /api/v1/organizations/{organizationId} | Find organization by id/namespace
 *OrganizationsApi* | [**FindOrganizationAddress**](docs/OrganizationsApi.md#findorganizationaddress) | **GET** /api/v1/organizations/{organizationId}/addresses/default | Retrieve address
 *OrganizationsApi* | [**FindOrganizationBillingAddress**](docs/OrganizationsApi.md#findorganizationbillingaddress) | **GET** /api/v1/organizations/{organizationId}/addresses/billing | Retrieve billing address
 *OrganizationsApi* | [**GetAllCollectionsOfOrganization**](docs/OrganizationsApi.md#getallcollectionsoforganization) | **GET** /api/v1/organizations/{organizationId}/collections | Get collections of organization
@@ -243,6 +243,7 @@ Class | Method | HTTP request | Description
      - [Model.ListOfId4ns](docs/ListOfId4ns.md)
      - [Model.Organization](docs/Organization.md)
      - [Model.OrganizationAddress](docs/OrganizationAddress.md)
+     - [Model.OrganizationUpdate](docs/OrganizationUpdate.md)
      - [Model.OrganizationUserInvitation](docs/OrganizationUserInvitation.md)
      - [Model.OrganizationUserInvitationListRequest](docs/OrganizationUserInvitationListRequest.md)
      - [Model.OwnedDocument](docs/OwnedDocument.md)

@@ -4,10 +4,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreatedTimestamp** | **long?** | The UTC unix timestamp of when this ID has been created | 
-**HolderOrganizationId** | **long?** | ${Id4nPresentation.Guid.holderOrganizationId} | [optional] 
+**HolderOrganizationId** | **string** | ${Id4nPresentation.Guid.holderOrganizationId} | [optional] 
 **Id4n** | **string** | The ID | 
 **Label** | **string** |  | [optional] 
-**OwnerOrganizationId** | **long?** | ${Id4nPresentation.Guid.ownerOrganizationId} | [optional] 
+**OwnerOrganizationId** | **string** | ${Id4nPresentation.Guid.ownerOrganizationId} | [optional] 
 **Type** | **string** | The type of ID | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
