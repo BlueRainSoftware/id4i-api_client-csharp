@@ -282,28 +282,22 @@ namespace BlueRain.ID4i.Model
             NAMESPACEALREADYEXISTS = 41,
             
             /// <summary>
-            /// Enum MODULENOTACTIVE for value: ERR_MODULE_NOT_ACTIVE
-            /// </summary>
-            [EnumMember(Value = "ERR_MODULE_NOT_ACTIVE")]
-            MODULENOTACTIVE = 42,
-            
-            /// <summary>
             /// Enum INSECUREPASSWORD for value: ERR_INSECURE_PASSWORD
             /// </summary>
             [EnumMember(Value = "ERR_INSECURE_PASSWORD")]
-            INSECUREPASSWORD = 43,
+            INSECUREPASSWORD = 42,
             
             /// <summary>
             /// Enum TRANSFERDENIED for value: ERR_TRANSFER_DENIED
             /// </summary>
             [EnumMember(Value = "ERR_TRANSFER_DENIED")]
-            TRANSFERDENIED = 44,
+            TRANSFERDENIED = 43,
             
             /// <summary>
             /// Enum INVALIDPHYSICALSTATE for value: ERR_INVALID_PHYSICAL_STATE
             /// </summary>
             [EnumMember(Value = "ERR_INVALID_PHYSICAL_STATE")]
-            INVALIDPHYSICALSTATE = 45
+            INVALIDPHYSICALSTATE = 44
         }
 
         /// <summary>
