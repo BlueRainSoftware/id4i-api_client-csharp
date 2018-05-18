@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**FindOrganizationBillingAddress**](OrganizationsApi.md#findorganizationbillingaddress) | **GET** /api/v1/organizations/{organizationId}/addresses/billing | Retrieve billing address
 [**GetAllCollectionsOfOrganization**](OrganizationsApi.md#getallcollectionsoforganization) | **GET** /api/v1/organizations/{organizationId}/collections | Get collections of organization
 [**GetAllOrganizationRoles**](OrganizationsApi.md#getallorganizationroles) | **GET** /api/v1/organizations/{organizationId}/roles | List users and their roles
+[**GetOrganizationPrivileges**](OrganizationsApi.md#getorganizationprivileges) | **GET** /api/v1/organizations/{organizationId}/privileges | List my privileges
 [**GetOrganizationsOfUser**](OrganizationsApi.md#getorganizationsofuser) | **GET** /api/v1/user/organizations | Retrieve organizations of user
 [**GetUserRoles**](OrganizationsApi.md#getuserroles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
 [**GetUsersOfOrganization**](OrganizationsApi.md#getusersoforganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
@@ -676,6 +677,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PaginatedUserRolesResponse**](PaginatedUserRolesResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getorganizationprivileges"></a>
+# **GetOrganizationPrivileges**
+> List<string> GetOrganizationPrivileges (string organizationId)
+
+List my privileges
+
+Listing all privileges of the current user/APIKey of the specified organization.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
+
+namespace Example
+{
+    public class GetOrganizationPrivilegesExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: Authorization
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new OrganizationsApi();
+            var organizationId = organizationId_example;  // string | The namespace of the organization
+
+            try
+            {
+                // List my privileges
+                List&lt;string&gt; result = apiInstance.GetOrganizationPrivileges(organizationId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling OrganizationsApi.GetOrganizationPrivileges: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| The namespace of the organization | 
+
+### Return type
+
+**List<string>**
 
 ### Authorization
 
