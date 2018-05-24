@@ -13,7 +13,7 @@ For additional information, please refer to
 * https://backend.id4i.de/docs/redoc/index.html for API documentation
 * https://github.com/BlueRainSoftware/support for getting additional support
 
-- API version: 0.7.1
+- API version: 0.7.2
 - Package version: 
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
 
@@ -162,6 +162,7 @@ Class | Method | HTTP request | Description
 *OrganizationsApi* | [**FindOrganizationBillingAddress**](docs/OrganizationsApi.md#findorganizationbillingaddress) | **GET** /api/v1/organizations/{organizationId}/addresses/billing | Retrieve billing address
 *OrganizationsApi* | [**GetAllCollectionsOfOrganization**](docs/OrganizationsApi.md#getallcollectionsoforganization) | **GET** /api/v1/organizations/{organizationId}/collections | Get collections of organization
 *OrganizationsApi* | [**GetAllOrganizationRoles**](docs/OrganizationsApi.md#getallorganizationroles) | **GET** /api/v1/organizations/{organizationId}/roles | List users and their roles
+*OrganizationsApi* | [**GetOrganizationPrivileges**](docs/OrganizationsApi.md#getorganizationprivileges) | **GET** /api/v1/organizations/{organizationId}/privileges | List my privileges
 *OrganizationsApi* | [**GetOrganizationsOfUser**](docs/OrganizationsApi.md#getorganizationsofuser) | **GET** /api/v1/user/organizations | Retrieve organizations of user
 *OrganizationsApi* | [**GetUserRoles**](docs/OrganizationsApi.md#getuserroles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
 *OrganizationsApi* | [**GetUsersOfOrganization**](docs/OrganizationsApi.md#getusersoforganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
