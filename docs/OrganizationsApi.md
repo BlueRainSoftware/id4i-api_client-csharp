@@ -4,6 +4,7 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**AddPartnerOrganization**](OrganizationsApi.md#addpartnerorganization) | **PUT** /api/v1/organizations/{organizationId}/partner | Add partner
 [**AddUserRoles**](OrganizationsApi.md#adduserroles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 [**CreateOrganization**](OrganizationsApi.md#createorganization) | **POST** /api/v1/organizations | Create organization
 [**DeleteOrganization**](OrganizationsApi.md#deleteorganization) | **DELETE** /api/v1/organizations/{organizationId} | Delete organization
@@ -16,16 +17,85 @@ Method | HTTP request | Description
 [**GetAllOrganizationRoles**](OrganizationsApi.md#getallorganizationroles) | **GET** /api/v1/organizations/{organizationId}/roles | List users and their roles
 [**GetOrganizationPrivileges**](OrganizationsApi.md#getorganizationprivileges) | **GET** /api/v1/organizations/{organizationId}/privileges | List my privileges
 [**GetOrganizationsOfUser**](OrganizationsApi.md#getorganizationsofuser) | **GET** /api/v1/user/organizations | Retrieve organizations of user
+[**GetPartnerOrganizations**](OrganizationsApi.md#getpartnerorganizations) | **GET** /api/v1/organizations/{organizationId}/partner | Get partners of an organization
 [**GetUserRoles**](OrganizationsApi.md#getuserroles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
 [**GetUsersOfOrganization**](OrganizationsApi.md#getusersoforganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
 [**InviteUsers**](OrganizationsApi.md#inviteusers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
 [**ListCountries**](OrganizationsApi.md#listcountries) | **GET** /api/v1/countries | List countries
+[**RemovePartnerOrganization**](OrganizationsApi.md#removepartnerorganization) | **DELETE** /api/v1/organizations/{organizationId}/partner | Remove partner
 [**RemoveUserRoles**](OrganizationsApi.md#removeuserroles) | **DELETE** /api/v1/organizations/{organizationId}/users/{username}/roles | Remove role(s) from user
 [**SetOrganizationLogo**](OrganizationsApi.md#setorganizationlogo) | **POST** /api/v1/organizations/{organizationId}/logo | Update organization logo
 [**UpdateOrganization**](OrganizationsApi.md#updateorganization) | **PUT** /api/v1/organizations/{organizationId} | Update organization
 [**UpdateOrganizationAddress**](OrganizationsApi.md#updateorganizationaddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
 [**UpdateOrganizationBillingAddress**](OrganizationsApi.md#updateorganizationbillingaddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/billing | Store billing address
 
+
+<a name="addpartnerorganization"></a>
+# **AddPartnerOrganization**
+> void AddPartnerOrganization (string organizationId, AddPartnerRequest request)
+
+Add partner
+
+Adding a partner organization. If the given organization is already a partner the result will be state 200 too.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
+
+namespace Example
+{
+    public class AddPartnerOrganizationExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: Authorization
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new OrganizationsApi();
+            var organizationId = organizationId_example;  // string | The namespace of the organization
+            var request = new AddPartnerRequest(); // AddPartnerRequest | request
+
+            try
+            {
+                // Add partner
+                apiInstance.AddPartnerOrganization(organizationId, request);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling OrganizationsApi.AddPartnerOrganization: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| The namespace of the organization | 
+ **request** | [**AddPartnerRequest**](AddPartnerRequest.md)| request | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="adduserroles"></a>
 # **AddUserRoles**
@@ -823,6 +893,76 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="getpartnerorganizations"></a>
+# **GetPartnerOrganizations**
+> PaginatedResponsePartnerOrganization GetPartnerOrganizations (string organizationId, int? offset = null, int? limit = null)
+
+Get partners of an organization
+
+Listing partners in a paginated manner.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
+
+namespace Example
+{
+    public class GetPartnerOrganizationsExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: Authorization
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new OrganizationsApi();
+            var organizationId = organizationId_example;  // string | The namespace of the organization to query partner organizations
+            var offset = 56;  // int? | Start with the n-th element (optional) 
+            var limit = 56;  // int? | The maximum count of returned elements (optional) 
+
+            try
+            {
+                // Get partners of an organization
+                PaginatedResponsePartnerOrganization result = apiInstance.GetPartnerOrganizations(organizationId, offset, limit);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling OrganizationsApi.GetPartnerOrganizations: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| The namespace of the organization to query partner organizations | 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
+
+### Return type
+
+[**PaginatedResponsePartnerOrganization**](PaginatedResponsePartnerOrganization.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="getuserroles"></a>
 # **GetUserRoles**
 > PaginatedStringResponse GetUserRoles (string organizationId, string username, int? offset = null, int? limit = null)
@@ -1082,6 +1222,73 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PaginatedCountryResponse**](PaginatedCountryResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="removepartnerorganization"></a>
+# **RemovePartnerOrganization**
+> void RemovePartnerOrganization (string organizationId, RemovePartnerRequest request)
+
+Remove partner
+
+Removing a partner organization
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
+
+namespace Example
+{
+    public class RemovePartnerOrganizationExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: Authorization
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new OrganizationsApi();
+            var organizationId = organizationId_example;  // string | The namespace of the organization
+            var request = new RemovePartnerRequest(); // RemovePartnerRequest | request
+
+            try
+            {
+                // Remove partner
+                apiInstance.RemovePartnerOrganization(organizationId, request);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling OrganizationsApi.RemovePartnerOrganization: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string**| The namespace of the organization | 
+ **request** | [**RemovePartnerRequest**](RemovePartnerRequest.md)| request | 
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 

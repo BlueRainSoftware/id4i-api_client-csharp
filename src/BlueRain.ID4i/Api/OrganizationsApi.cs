@@ -26,6 +26,29 @@ namespace BlueRain.ID4i.Api
     {
     #region Synchronous Operations
         /// <summary>
+            /// Add partner
+            /// </summary>
+        /// <remarks>
+            /// Adding a partner organization. If the given organization is already a partner the result will be state 200 too.
+            /// </remarks>
+        /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The namespace of the organization</param>
+        /// <param name="request">request</param>
+        /// <returns></returns>
+        void AddPartnerOrganization (string organizationId, AddPartnerRequest request);
+
+        /// <summary>
+            /// Add partner
+            /// </summary>
+        /// <remarks>
+            /// Adding a partner organization. If the given organization is already a partner the result will be state 200 too.
+            /// </remarks>
+        /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The namespace of the organization</param>
+        /// <param name="request">request</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> AddPartnerOrganizationWithHttpInfo (string organizationId, AddPartnerRequest request);
+        /// <summary>
             /// Add role(s) to user
             /// </summary>
         /// <remarks>
@@ -300,6 +323,31 @@ namespace BlueRain.ID4i.Api
         /// <returns>ApiResponse of PaginatedOrganizationResponse</returns>
         ApiResponse<PaginatedOrganizationResponse> GetOrganizationsOfUserWithHttpInfo (string role = null, int? offset = null, int? limit = null);
         /// <summary>
+            /// Get partners of an organization
+            /// </summary>
+        /// <remarks>
+            /// Listing partners in a paginated manner.
+            /// </remarks>
+        /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The namespace of the organization to query partner organizations</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <returns>PaginatedResponsePartnerOrganization</returns>
+        PaginatedResponsePartnerOrganization GetPartnerOrganizations (string organizationId, int? offset = null, int? limit = null);
+
+        /// <summary>
+            /// Get partners of an organization
+            /// </summary>
+        /// <remarks>
+            /// Listing partners in a paginated manner.
+            /// </remarks>
+        /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The namespace of the organization to query partner organizations</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <returns>ApiResponse of PaginatedResponsePartnerOrganization</returns>
+        ApiResponse<PaginatedResponsePartnerOrganization> GetPartnerOrganizationsWithHttpInfo (string organizationId, int? offset = null, int? limit = null);
+        /// <summary>
             /// Get user roles by username
             /// </summary>
         /// <remarks>
@@ -397,6 +445,29 @@ namespace BlueRain.ID4i.Api
         /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>ApiResponse of PaginatedCountryResponse</returns>
         ApiResponse<PaginatedCountryResponse> ListCountriesWithHttpInfo (int? offset = null, int? limit = null);
+        /// <summary>
+            /// Remove partner
+            /// </summary>
+        /// <remarks>
+            /// Removing a partner organization
+            /// </remarks>
+        /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The namespace of the organization</param>
+        /// <param name="request">request</param>
+        /// <returns></returns>
+        void RemovePartnerOrganization (string organizationId, RemovePartnerRequest request);
+
+        /// <summary>
+            /// Remove partner
+            /// </summary>
+        /// <remarks>
+            /// Removing a partner organization
+            /// </remarks>
+        /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The namespace of the organization</param>
+        /// <param name="request">request</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> RemovePartnerOrganizationWithHttpInfo (string organizationId, RemovePartnerRequest request);
         /// <summary>
             /// Remove role(s) from user
             /// </summary>
@@ -516,6 +587,29 @@ namespace BlueRain.ID4i.Api
         ApiResponse<OrganizationAddress> UpdateOrganizationBillingAddressWithHttpInfo (string organizationId, OrganizationAddress addressResource);
         #endregion Synchronous Operations
             #region Asynchronous Operations
+                /// <summary>
+                /// Add partner
+                /// </summary>
+                /// <remarks>
+                /// Adding a partner organization. If the given organization is already a partner the result will be state 200 too.
+                /// </remarks>
+                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="organizationId">The namespace of the organization</param>
+            /// <param name="request">request</param>
+            /// <returns>Task of void</returns>
+            System.Threading.Tasks.Task AddPartnerOrganizationAsync (string organizationId, AddPartnerRequest request);
+
+                /// <summary>
+                /// Add partner
+                /// </summary>
+                /// <remarks>
+                /// Adding a partner organization. If the given organization is already a partner the result will be state 200 too.
+                /// </remarks>
+                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="organizationId">The namespace of the organization</param>
+            /// <param name="request">request</param>
+            /// <returns>Task of ApiResponse</returns>
+                System.Threading.Tasks.Task<ApiResponse<Object>> AddPartnerOrganizationAsyncWithHttpInfo (string organizationId, AddPartnerRequest request);
                 /// <summary>
                 /// Add role(s) to user
                 /// </summary>
@@ -791,6 +885,31 @@ namespace BlueRain.ID4i.Api
             /// <returns>Task of ApiResponse (PaginatedOrganizationResponse)</returns>
                 System.Threading.Tasks.Task<ApiResponse<PaginatedOrganizationResponse>> GetOrganizationsOfUserAsyncWithHttpInfo (string role = null, int? offset = null, int? limit = null);
                 /// <summary>
+                /// Get partners of an organization
+                /// </summary>
+                /// <remarks>
+                /// Listing partners in a paginated manner.
+                /// </remarks>
+                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="organizationId">The namespace of the organization to query partner organizations</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <returns>Task of PaginatedResponsePartnerOrganization</returns>
+            System.Threading.Tasks.Task<PaginatedResponsePartnerOrganization> GetPartnerOrganizationsAsync (string organizationId, int? offset = null, int? limit = null);
+
+                /// <summary>
+                /// Get partners of an organization
+                /// </summary>
+                /// <remarks>
+                /// Listing partners in a paginated manner.
+                /// </remarks>
+                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="organizationId">The namespace of the organization to query partner organizations</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <returns>Task of ApiResponse (PaginatedResponsePartnerOrganization)</returns>
+                System.Threading.Tasks.Task<ApiResponse<PaginatedResponsePartnerOrganization>> GetPartnerOrganizationsAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null);
+                /// <summary>
                 /// Get user roles by username
                 /// </summary>
                 /// <remarks>
@@ -888,6 +1007,29 @@ namespace BlueRain.ID4i.Api
             /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedCountryResponse)</returns>
                 System.Threading.Tasks.Task<ApiResponse<PaginatedCountryResponse>> ListCountriesAsyncWithHttpInfo (int? offset = null, int? limit = null);
+                /// <summary>
+                /// Remove partner
+                /// </summary>
+                /// <remarks>
+                /// Removing a partner organization
+                /// </remarks>
+                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="organizationId">The namespace of the organization</param>
+            /// <param name="request">request</param>
+            /// <returns>Task of void</returns>
+            System.Threading.Tasks.Task RemovePartnerOrganizationAsync (string organizationId, RemovePartnerRequest request);
+
+                /// <summary>
+                /// Remove partner
+                /// </summary>
+                /// <remarks>
+                /// Removing a partner organization
+                /// </remarks>
+                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="organizationId">The namespace of the organization</param>
+            /// <param name="request">request</param>
+            /// <returns>Task of ApiResponse</returns>
+                System.Threading.Tasks.Task<ApiResponse<Object>> RemovePartnerOrganizationAsyncWithHttpInfo (string organizationId, RemovePartnerRequest request);
                 /// <summary>
                 /// Remove role(s) from user
                 /// </summary>
@@ -1104,6 +1246,179 @@ namespace BlueRain.ID4i.Api
         {
         this.Configuration.AddDefaultHeader(key, value);
         }
+
+            /// <summary>
+            /// Add partner Adding a partner organization. If the given organization is already a partner the result will be state 200 too.
+            /// </summary>
+            /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The namespace of the organization</param>
+        /// <param name="request">request</param>
+        /// <returns></returns>
+            public void AddPartnerOrganization (string organizationId, AddPartnerRequest request)
+            {
+        AddPartnerOrganizationWithHttpInfo(organizationId, request);
+            }
+
+            /// <summary>
+            /// Add partner Adding a partner organization. If the given organization is already a partner the result will be state 200 too.
+            /// </summary>
+            /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The namespace of the organization</param>
+        /// <param name="request">request</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+            public ApiResponse<Object> AddPartnerOrganizationWithHttpInfo (string organizationId, AddPartnerRequest request)
+            {
+                    // verify the required parameter 'organizationId' is set
+                    if (organizationId == null)
+                    throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->AddPartnerOrganization");
+                    // verify the required parameter 'request' is set
+                    if (request == null)
+                    throw new ApiException(400, "Missing required parameter 'request' when calling OrganizationsApi->AddPartnerOrganization");
+
+            var localVarPath = "./api/v1/organizations/{organizationId}/partner";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/xml", 
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/xml",
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+                if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
+                if (request != null && request.GetType() != typeof(byte[]))
+                {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+                }
+                else
+                {
+                localVarPostBody = request; // byte array
+                }
+
+                // authentication (Authorization) required
+                        if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+                        {
+                        localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+                        }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+            Exception exception = ExceptionFactory("AddPartnerOrganization", localVarResponse);
+            if (exception != null) throw exception;
+            }
+
+                return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+            }
+
+                /// <summary>
+                /// Add partner Adding a partner organization. If the given organization is already a partner the result will be state 200 too.
+                /// </summary>
+                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="organizationId">The namespace of the organization</param>
+            /// <param name="request">request</param>
+            /// <returns>Task of void</returns>
+            public async System.Threading.Tasks.Task AddPartnerOrganizationAsync (string organizationId, AddPartnerRequest request)
+                {
+            await AddPartnerOrganizationAsyncWithHttpInfo(organizationId, request);
+
+                }
+
+                /// <summary>
+                /// Add partner Adding a partner organization. If the given organization is already a partner the result will be state 200 too.
+                /// </summary>
+                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="organizationId">The namespace of the organization</param>
+            /// <param name="request">request</param>
+            /// <returns>Task of ApiResponse</returns>
+                public async System.Threading.Tasks.Task<ApiResponse<Object>> AddPartnerOrganizationAsyncWithHttpInfo (string organizationId, AddPartnerRequest request)
+                {
+                        // verify the required parameter 'organizationId' is set
+                        if (organizationId == null)
+                        throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->AddPartnerOrganization");
+                        // verify the required parameter 'request' is set
+                        if (request == null)
+                        throw new ApiException(400, "Missing required parameter 'request' when calling OrganizationsApi->AddPartnerOrganization");
+
+                var localVarPath = "./api/v1/organizations/{organizationId}/partner";
+                var localVarPathParams = new Dictionary<String, String>();
+                var localVarQueryParams = new List<KeyValuePair<String, String>>();
+                var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+                var localVarFormParams = new Dictionary<String, String>();
+                var localVarFileParams = new Dictionary<String, FileParameter>();
+                Object localVarPostBody = null;
+
+                // to determine the Content-Type header
+                String[] localVarHttpContentTypes = new String[] {
+                    "application/xml", 
+                    "application/json"
+                };
+                String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+                // to determine the Accept header
+                String[] localVarHttpHeaderAccepts = new String[] {
+                    "application/xml",
+                    "application/json"
+                };
+                String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+                if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+                    if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
+                    if (request != null && request.GetType() != typeof(byte[]))
+                    {
+                    localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+                    }
+                    else
+                    {
+                    localVarPostBody = request; // byte array
+                    }
+
+                    // authentication (Authorization) required
+                            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+                            {
+                            localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+                            }
+
+                // make the HTTP request
+                IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+                int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+                if (ExceptionFactory != null)
+                {
+                Exception exception = ExceptionFactory("AddPartnerOrganization", localVarResponse);
+                if (exception != null) throw exception;
+                }
+
+                    return new ApiResponse<Object>(localVarStatusCode,
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                    null);
+                }
 
             /// <summary>
             /// Add role(s) to user 
@@ -2986,6 +3301,167 @@ namespace BlueRain.ID4i.Api
                 }
 
             /// <summary>
+            /// Get partners of an organization Listing partners in a paginated manner.
+            /// </summary>
+            /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The namespace of the organization to query partner organizations</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <returns>PaginatedResponsePartnerOrganization</returns>
+            public PaginatedResponsePartnerOrganization GetPartnerOrganizations (string organizationId, int? offset = null, int? limit = null)
+            {
+        ApiResponse<PaginatedResponsePartnerOrganization> localVarResponse = GetPartnerOrganizationsWithHttpInfo(organizationId, offset, limit);
+            return localVarResponse.Data;
+            }
+
+            /// <summary>
+            /// Get partners of an organization Listing partners in a paginated manner.
+            /// </summary>
+            /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The namespace of the organization to query partner organizations</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <returns>ApiResponse of PaginatedResponsePartnerOrganization</returns>
+            public ApiResponse< PaginatedResponsePartnerOrganization > GetPartnerOrganizationsWithHttpInfo (string organizationId, int? offset = null, int? limit = null)
+            {
+                    // verify the required parameter 'organizationId' is set
+                    if (organizationId == null)
+                    throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->GetPartnerOrganizations");
+
+            var localVarPath = "./api/v1/organizations/{organizationId}/partner";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/xml", 
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/xml",
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+                if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
+                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+                if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+
+                // authentication (Authorization) required
+                        if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+                        {
+                        localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+                        }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+            Exception exception = ExceptionFactory("GetPartnerOrganizations", localVarResponse);
+            if (exception != null) throw exception;
+            }
+
+                return new ApiResponse<PaginatedResponsePartnerOrganization>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (PaginatedResponsePartnerOrganization) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponsePartnerOrganization)));
+            }
+
+                /// <summary>
+                /// Get partners of an organization Listing partners in a paginated manner.
+                /// </summary>
+                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="organizationId">The namespace of the organization to query partner organizations</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <returns>Task of PaginatedResponsePartnerOrganization</returns>
+            public async System.Threading.Tasks.Task<PaginatedResponsePartnerOrganization> GetPartnerOrganizationsAsync (string organizationId, int? offset = null, int? limit = null)
+                {
+            ApiResponse<PaginatedResponsePartnerOrganization> localVarResponse = await GetPartnerOrganizationsAsyncWithHttpInfo(organizationId, offset, limit);
+                return localVarResponse.Data;
+
+                }
+
+                /// <summary>
+                /// Get partners of an organization Listing partners in a paginated manner.
+                /// </summary>
+                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="organizationId">The namespace of the organization to query partner organizations</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <returns>Task of ApiResponse (PaginatedResponsePartnerOrganization)</returns>
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedResponsePartnerOrganization>> GetPartnerOrganizationsAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null)
+                {
+                        // verify the required parameter 'organizationId' is set
+                        if (organizationId == null)
+                        throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->GetPartnerOrganizations");
+
+                var localVarPath = "./api/v1/organizations/{organizationId}/partner";
+                var localVarPathParams = new Dictionary<String, String>();
+                var localVarQueryParams = new List<KeyValuePair<String, String>>();
+                var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+                var localVarFormParams = new Dictionary<String, String>();
+                var localVarFileParams = new Dictionary<String, FileParameter>();
+                Object localVarPostBody = null;
+
+                // to determine the Content-Type header
+                String[] localVarHttpContentTypes = new String[] {
+                    "application/xml", 
+                    "application/json"
+                };
+                String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+                // to determine the Accept header
+                String[] localVarHttpHeaderAccepts = new String[] {
+                    "application/xml",
+                    "application/json"
+                };
+                String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+                if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+                    if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
+                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+                    if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+
+                    // authentication (Authorization) required
+                            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+                            {
+                            localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+                            }
+
+                // make the HTTP request
+                IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+                int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+                if (ExceptionFactory != null)
+                {
+                Exception exception = ExceptionFactory("GetPartnerOrganizations", localVarResponse);
+                if (exception != null) throw exception;
+                }
+
+                    return new ApiResponse<PaginatedResponsePartnerOrganization>(localVarStatusCode,
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                    (PaginatedResponsePartnerOrganization) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponsePartnerOrganization)));
+                }
+
+            /// <summary>
             /// Get user roles by username 
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
@@ -3639,6 +4115,179 @@ namespace BlueRain.ID4i.Api
                     return new ApiResponse<PaginatedCountryResponse>(localVarStatusCode,
                     localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (PaginatedCountryResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedCountryResponse)));
+                }
+
+            /// <summary>
+            /// Remove partner Removing a partner organization
+            /// </summary>
+            /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The namespace of the organization</param>
+        /// <param name="request">request</param>
+        /// <returns></returns>
+            public void RemovePartnerOrganization (string organizationId, RemovePartnerRequest request)
+            {
+        RemovePartnerOrganizationWithHttpInfo(organizationId, request);
+            }
+
+            /// <summary>
+            /// Remove partner Removing a partner organization
+            /// </summary>
+            /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="organizationId">The namespace of the organization</param>
+        /// <param name="request">request</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+            public ApiResponse<Object> RemovePartnerOrganizationWithHttpInfo (string organizationId, RemovePartnerRequest request)
+            {
+                    // verify the required parameter 'organizationId' is set
+                    if (organizationId == null)
+                    throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->RemovePartnerOrganization");
+                    // verify the required parameter 'request' is set
+                    if (request == null)
+                    throw new ApiException(400, "Missing required parameter 'request' when calling OrganizationsApi->RemovePartnerOrganization");
+
+            var localVarPath = "./api/v1/organizations/{organizationId}/partner";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/xml", 
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/xml",
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+                if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
+                if (request != null && request.GetType() != typeof(byte[]))
+                {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+                }
+                else
+                {
+                localVarPostBody = request; // byte array
+                }
+
+                // authentication (Authorization) required
+                        if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+                        {
+                        localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+                        }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+            Exception exception = ExceptionFactory("RemovePartnerOrganization", localVarResponse);
+            if (exception != null) throw exception;
+            }
+
+                return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+            }
+
+                /// <summary>
+                /// Remove partner Removing a partner organization
+                /// </summary>
+                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="organizationId">The namespace of the organization</param>
+            /// <param name="request">request</param>
+            /// <returns>Task of void</returns>
+            public async System.Threading.Tasks.Task RemovePartnerOrganizationAsync (string organizationId, RemovePartnerRequest request)
+                {
+            await RemovePartnerOrganizationAsyncWithHttpInfo(organizationId, request);
+
+                }
+
+                /// <summary>
+                /// Remove partner Removing a partner organization
+                /// </summary>
+                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="organizationId">The namespace of the organization</param>
+            /// <param name="request">request</param>
+            /// <returns>Task of ApiResponse</returns>
+                public async System.Threading.Tasks.Task<ApiResponse<Object>> RemovePartnerOrganizationAsyncWithHttpInfo (string organizationId, RemovePartnerRequest request)
+                {
+                        // verify the required parameter 'organizationId' is set
+                        if (organizationId == null)
+                        throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->RemovePartnerOrganization");
+                        // verify the required parameter 'request' is set
+                        if (request == null)
+                        throw new ApiException(400, "Missing required parameter 'request' when calling OrganizationsApi->RemovePartnerOrganization");
+
+                var localVarPath = "./api/v1/organizations/{organizationId}/partner";
+                var localVarPathParams = new Dictionary<String, String>();
+                var localVarQueryParams = new List<KeyValuePair<String, String>>();
+                var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+                var localVarFormParams = new Dictionary<String, String>();
+                var localVarFileParams = new Dictionary<String, FileParameter>();
+                Object localVarPostBody = null;
+
+                // to determine the Content-Type header
+                String[] localVarHttpContentTypes = new String[] {
+                    "application/xml", 
+                    "application/json"
+                };
+                String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+                // to determine the Accept header
+                String[] localVarHttpHeaderAccepts = new String[] {
+                    "application/xml",
+                    "application/json"
+                };
+                String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+                if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+                    if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
+                    if (request != null && request.GetType() != typeof(byte[]))
+                    {
+                    localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+                    }
+                    else
+                    {
+                    localVarPostBody = request; // byte array
+                    }
+
+                    // authentication (Authorization) required
+                            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+                            {
+                            localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+                            }
+
+                // make the HTTP request
+                IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+                int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+                if (ExceptionFactory != null)
+                {
+                Exception exception = ExceptionFactory("RemovePartnerOrganization", localVarResponse);
+                if (exception != null) throw exception;
+                }
+
+                    return new ApiResponse<Object>(localVarStatusCode,
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                    null);
                 }
 
             /// <summary>
