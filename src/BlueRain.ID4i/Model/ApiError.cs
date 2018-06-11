@@ -322,7 +322,8 @@ namespace BlueRain.ID4i.Model
         /// <param name="Code">Code (required).</param>
         /// <param name="ErrorList">ErrorList (required).</param>
         /// <param name="Message">Message (required).</param>
-        public ApiError(CodeEnum Code = default(CodeEnum), List<ApiError> ErrorList = default(List<ApiError>), string Message = default(string))
+        /// <param name="ErrorId">ErrorId (required).</param>
+        public ApiError(CodeEnum Code = default(CodeEnum), List<ApiError> ErrorList = default(List<ApiError>), string Message = default(string), string ErrorId = default(string))
         {
             // to ensure "Code" is required (not null)
             if (Code == null)
@@ -351,6 +352,15 @@ namespace BlueRain.ID4i.Model
             {
                 this.Message = Message;
             }
+            // to ensure "ErrorId" is required (not null)
+            if (ErrorId == null)
+            {
+                throw new InvalidDataException("ErrorId is a required property for ApiError and cannot be null");
+            }
+            else
+            {
+                this.ErrorId = ErrorId;
+            }
         }
         
 
@@ -367,6 +377,12 @@ namespace BlueRain.ID4i.Model
         public string Message { get; set; }
 
         /// <summary>
+        /// Gets or Sets ErrorId
+        /// </summary>
+        [DataMember(Name="errorId", EmitDefaultValue=false)]
+        public string ErrorId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -377,6 +393,7 @@ namespace BlueRain.ID4i.Model
             sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  ErrorList: ").Append(ErrorList).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
+            sb.Append("  ErrorId: ").Append(ErrorId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -425,6 +442,11 @@ namespace BlueRain.ID4i.Model
                     this.Message == input.Message ||
                     (this.Message != null &&
                     this.Message.Equals(input.Message))
+                ) && 
+                (
+                    this.ErrorId == input.ErrorId ||
+                    (this.ErrorId != null &&
+                    this.ErrorId.Equals(input.ErrorId))
                 );
         }
 
@@ -443,6 +465,8 @@ namespace BlueRain.ID4i.Model
                     hashCode = hashCode * 59 + this.ErrorList.GetHashCode();
                 if (this.Message != null)
                     hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.ErrorId != null)
+                    hashCode = hashCode * 59 + this.ErrorId.GetHashCode();
                 return hashCode;
             }
         }
