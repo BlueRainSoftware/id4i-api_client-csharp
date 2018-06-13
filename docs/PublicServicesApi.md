@@ -5,7 +5,7 @@ All URIs are relative to *https://backend.id4i.de*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetPublicDocument**](PublicServicesApi.md#getpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
-[**GetWebRoutes**](PublicServicesApi.md#getwebroutes) | **GET** /api/v1/public/routes/{id4n} | Retrieve all public routes for a GUID
+[**GetRoutes**](PublicServicesApi.md#getroutes) | **GET** /api/v1/public/routes/{id4n} | Retrieve all public routes for a GUID
 [**Go**](PublicServicesApi.md#go) | **GET** /go/{guid} | Forward
 [**ListAllPublicDocuments**](PublicServicesApi.md#listallpublicdocuments) | **GET** /api/v1/public/documents/{id4n} | List organization specific documents
 [**ListPublicDocuments**](PublicServicesApi.md#listpublicdocuments) | **GET** /api/v1/public/documents/{id4n}/{organizationId} | List organization specific documents
@@ -84,9 +84,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getwebroutes"></a>
-# **GetWebRoutes**
-> List<Route> GetWebRoutes (string id4n)
+<a name="getroutes"></a>
+# **GetRoutes**
+> List<Route> GetRoutes (string id4n, string type, bool? interpolate = null)
 
 Retrieve all public routes for a GUID
 
@@ -100,7 +100,7 @@ using BlueRain.ID4i.Model;
 
 namespace Example
 {
-    public class GetWebRoutesExample
+    public class GetRoutesExample
     {
         public void main()
         {
@@ -111,16 +111,18 @@ namespace Example
 
             var apiInstance = new PublicServicesApi();
             var id4n = id4n_example;  // string | id4n
+            var type = type_example;  // string | type (default to web)
+            var interpolate = true;  // bool? | interpolate (optional)  (default to true)
 
             try
             {
                 // Retrieve all public routes for a GUID
-                List&lt;Route&gt; result = apiInstance.GetWebRoutes(id4n);
+                List&lt;Route&gt; result = apiInstance.GetRoutes(id4n, type, interpolate);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling PublicServicesApi.GetWebRoutes: " + e.Message );
+                Debug.Print("Exception when calling PublicServicesApi.GetRoutes: " + e.Message );
             }
         }
     }
@@ -132,6 +134,8 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
+ **type** | **string**| type | [default to web]
+ **interpolate** | **bool?**| interpolate | [optional] [default to true]
 
 ### Return type
 

@@ -4,19 +4,17 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetAllWebRoutes**](RoutingApi.md#getallwebroutes) | **GET** /api/v1/routingfiles/{id4n}/routes | Retrieve all web routes
-[**GetRoute**](RoutingApi.md#getroute) | **GET** /api/v1/routingfiles/{id4n}/routes/{type} | Retrieve current route of a GUID (or ID4N)
+[**GetAllRoutes**](RoutingApi.md#getallroutes) | **GET** /api/v1/routingfiles/{id4n}/routes/{type} | Retrieve all routes of a GUID (or ID4N)
+[**GetRoute**](RoutingApi.md#getroute) | **GET** /api/v1/routingfiles/{id4n}/route/{type} | Retrieve current route of a GUID (or ID4N)
 [**GetRoutingFile**](RoutingApi.md#getroutingfile) | **GET** /api/v1/routingfiles/{id4n} | Retrieve routing file
 [**UpdateRoutingFile**](RoutingApi.md#updateroutingfile) | **PUT** /api/v1/routingfiles/{id4n} | Store routing file
 
 
-<a name="getallwebroutes"></a>
-# **GetAllWebRoutes**
-> List<Route> GetAllWebRoutes (string id4n)
+<a name="getallroutes"></a>
+# **GetAllRoutes**
+> List<Route> GetAllRoutes (string id4n, string type, string organizationId = null, bool? interpolate = null)
 
-Retrieve all web routes
-
-Retrieves public and private web routes and interpolates them
+Retrieve all routes of a GUID (or ID4N)
 
 ### Example
 ```csharp
@@ -28,7 +26,7 @@ using BlueRain.ID4i.Model;
 
 namespace Example
 {
-    public class GetAllWebRoutesExample
+    public class GetAllRoutesExample
     {
         public void main()
         {
@@ -39,16 +37,19 @@ namespace Example
 
             var apiInstance = new RoutingApi();
             var id4n = id4n_example;  // string | id4n
+            var type = type_example;  // string | The type of route you want to have
+            var organizationId = organizationId_example;  // string | organizationId (optional) 
+            var interpolate = true;  // bool? | interpolate (optional)  (default to true)
 
             try
             {
-                // Retrieve all web routes
-                List&lt;Route&gt; result = apiInstance.GetAllWebRoutes(id4n);
+                // Retrieve all routes of a GUID (or ID4N)
+                List&lt;Route&gt; result = apiInstance.GetAllRoutes(id4n, type, organizationId, interpolate);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling RoutingApi.GetAllWebRoutes: " + e.Message );
+                Debug.Print("Exception when calling RoutingApi.GetAllRoutes: " + e.Message );
             }
         }
     }
@@ -60,6 +61,9 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
+ **type** | **string**| The type of route you want to have | 
+ **organizationId** | **string**| organizationId | [optional] 
+ **interpolate** | **bool?**| interpolate | [optional] [default to true]
 
 ### Return type
 
@@ -104,9 +108,9 @@ namespace Example
             var apiInstance = new RoutingApi();
             var id4n = id4n_example;  // string | id4n
             var type = type_example;  // string | The type of route you want to have
-            var privateRoutes = true;  // bool? | privateRoutes (optional) 
-            var publicRoutes = true;  // bool? | publicRoutes (optional) 
-            var interpolate = true;  // bool? | interpolate (optional) 
+            var privateRoutes = true;  // bool? | privateRoutes (optional)  (default to true)
+            var publicRoutes = true;  // bool? | publicRoutes (optional)  (default to true)
+            var interpolate = true;  // bool? | interpolate (optional)  (default to true)
 
             try
             {
@@ -129,9 +133,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
  **type** | **string**| The type of route you want to have | 
- **privateRoutes** | **bool?**| privateRoutes | [optional] 
- **publicRoutes** | **bool?**| publicRoutes | [optional] 
- **interpolate** | **bool?**| interpolate | [optional] 
+ **privateRoutes** | **bool?**| privateRoutes | [optional] [default to true]
+ **publicRoutes** | **bool?**| publicRoutes | [optional] [default to true]
+ **interpolate** | **bool?**| interpolate | [optional] [default to true]
 
 ### Return type
 
