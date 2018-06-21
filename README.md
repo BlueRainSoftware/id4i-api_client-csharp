@@ -13,7 +13,7 @@ For additional information, please refer to
 * https://backend.id4i.de/docs/redoc/index.html for API documentation
 * https://github.com/BlueRainSoftware/support for getting additional support
 
-- API version: 0.7.2
+- API version: 0.8.0
 - Package version: 
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
 
@@ -152,6 +152,7 @@ Class | Method | HTTP request | Description
 *HistoryApi* | [**UpdateItemVisibility**](docs/HistoryApi.md#updateitemvisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequenceId}/visibility | Set history item visibility
 *ImagesApi* | [**ResolveImageUsingGET**](docs/ImagesApi.md#resolveimageusingget) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *MetaInformationApi* | [**ApplicationInfo**](docs/MetaInformationApi.md#applicationinfo) | **GET** /api/v1/info | Retrieve version information about ID4i
+*OrganizationsApi* | [**AddPartnerOrganization**](docs/OrganizationsApi.md#addpartnerorganization) | **PUT** /api/v1/organizations/{organizationId}/partner | Add partner
 *OrganizationsApi* | [**AddUserRoles**](docs/OrganizationsApi.md#adduserroles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 *OrganizationsApi* | [**CreateOrganization**](docs/OrganizationsApi.md#createorganization) | **POST** /api/v1/organizations | Create organization
 *OrganizationsApi* | [**DeleteOrganization**](docs/OrganizationsApi.md#deleteorganization) | **DELETE** /api/v1/organizations/{organizationId} | Delete organization
@@ -164,17 +165,19 @@ Class | Method | HTTP request | Description
 *OrganizationsApi* | [**GetAllOrganizationRoles**](docs/OrganizationsApi.md#getallorganizationroles) | **GET** /api/v1/organizations/{organizationId}/roles | List users and their roles
 *OrganizationsApi* | [**GetOrganizationPrivileges**](docs/OrganizationsApi.md#getorganizationprivileges) | **GET** /api/v1/organizations/{organizationId}/privileges | List my privileges
 *OrganizationsApi* | [**GetOrganizationsOfUser**](docs/OrganizationsApi.md#getorganizationsofuser) | **GET** /api/v1/user/organizations | Retrieve organizations of user
+*OrganizationsApi* | [**GetPartnerOrganizations**](docs/OrganizationsApi.md#getpartnerorganizations) | **GET** /api/v1/organizations/{organizationId}/partner | Get partners of an organization
 *OrganizationsApi* | [**GetUserRoles**](docs/OrganizationsApi.md#getuserroles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
 *OrganizationsApi* | [**GetUsersOfOrganization**](docs/OrganizationsApi.md#getusersoforganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
 *OrganizationsApi* | [**InviteUsers**](docs/OrganizationsApi.md#inviteusers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
 *OrganizationsApi* | [**ListCountries**](docs/OrganizationsApi.md#listcountries) | **GET** /api/v1/countries | List countries
+*OrganizationsApi* | [**RemovePartnerOrganization**](docs/OrganizationsApi.md#removepartnerorganization) | **DELETE** /api/v1/organizations/{organizationId}/partner | Remove partner
 *OrganizationsApi* | [**RemoveUserRoles**](docs/OrganizationsApi.md#removeuserroles) | **DELETE** /api/v1/organizations/{organizationId}/users/{username}/roles | Remove role(s) from user
 *OrganizationsApi* | [**SetOrganizationLogo**](docs/OrganizationsApi.md#setorganizationlogo) | **POST** /api/v1/organizations/{organizationId}/logo | Update organization logo
 *OrganizationsApi* | [**UpdateOrganization**](docs/OrganizationsApi.md#updateorganization) | **PUT** /api/v1/organizations/{organizationId} | Update organization
 *OrganizationsApi* | [**UpdateOrganizationAddress**](docs/OrganizationsApi.md#updateorganizationaddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
 *OrganizationsApi* | [**UpdateOrganizationBillingAddress**](docs/OrganizationsApi.md#updateorganizationbillingaddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/billing | Store billing address
 *PublicServicesApi* | [**GetPublicDocument**](docs/PublicServicesApi.md#getpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
-*PublicServicesApi* | [**GetWebRoutes**](docs/PublicServicesApi.md#getwebroutes) | **GET** /api/v1/public/routes/{id4n} | Retrieve all public routes for a GUID
+*PublicServicesApi* | [**GetRoutes**](docs/PublicServicesApi.md#getroutes) | **GET** /api/v1/public/routes/{id4n} | Retrieve all public routes for a GUID
 *PublicServicesApi* | [**Go**](docs/PublicServicesApi.md#go) | **GET** /go/{guid} | Forward
 *PublicServicesApi* | [**ListAllPublicDocuments**](docs/PublicServicesApi.md#listallpublicdocuments) | **GET** /api/v1/public/documents/{id4n} | List organization specific documents
 *PublicServicesApi* | [**ListPublicDocuments**](docs/PublicServicesApi.md#listpublicdocuments) | **GET** /api/v1/public/documents/{id4n}/{organizationId} | List organization specific documents
@@ -183,8 +186,8 @@ Class | Method | HTTP request | Description
 *PublicServicesApi* | [**ReadPublicDocument**](docs/PublicServicesApi.md#readpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read document contents
 *PublicServicesApi* | [**ResolveImageUsingGET**](docs/PublicServicesApi.md#resolveimageusingget) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *PublicServicesApi* | [**ResolveWhoIsEntry**](docs/PublicServicesApi.md#resolvewhoisentry) | **GET** /whois/{id4n} | Resolve owner of id4n
-*RoutingApi* | [**GetAllWebRoutes**](docs/RoutingApi.md#getallwebroutes) | **GET** /api/v1/routingfiles/{id4n}/routes | Retrieve all web routes
-*RoutingApi* | [**GetRoute**](docs/RoutingApi.md#getroute) | **GET** /api/v1/routingfiles/{id4n}/routes/{type} | Retrieve current route of a GUID (or ID4N)
+*RoutingApi* | [**GetAllRoutes**](docs/RoutingApi.md#getallroutes) | **GET** /api/v1/routingfiles/{id4n}/routes/{type} | Retrieve all routes of a GUID (or ID4N)
+*RoutingApi* | [**GetRoute**](docs/RoutingApi.md#getroute) | **GET** /api/v1/routingfiles/{id4n}/route/{type} | Retrieve current route of a GUID (or ID4N)
 *RoutingApi* | [**GetRoutingFile**](docs/RoutingApi.md#getroutingfile) | **GET** /api/v1/routingfiles/{id4n} | Retrieve routing file
 *RoutingApi* | [**UpdateRoutingFile**](docs/RoutingApi.md#updateroutingfile) | **PUT** /api/v1/routingfiles/{id4n} | Store routing file
 *StorageApi* | [**CreateDocument**](docs/StorageApi.md#createdocument) | **PUT** /api/v1/documents/{id4n}/{organizationId} | Create an empty document for an id4n
@@ -212,6 +215,7 @@ Class | Method | HTTP request | Description
 
      - [Model.AccountCredentials](docs/AccountCredentials.md)
      - [Model.AddApiKeyPrivilegeRequest](docs/AddApiKeyPrivilegeRequest.md)
+     - [Model.AddPartnerRequest](docs/AddPartnerRequest.md)
      - [Model.ApiError](docs/ApiError.md)
      - [Model.ApiKeyChangeRequest](docs/ApiKeyChangeRequest.md)
      - [Model.ApiKeyCreationRequest](docs/ApiKeyCreationRequest.md)
@@ -269,6 +273,7 @@ Class | Method | HTTP request | Description
      - [Model.PaginatedResponseId4nPresentation](docs/PaginatedResponseId4nPresentation.md)
      - [Model.PaginatedResponseOrganization](docs/PaginatedResponseOrganization.md)
      - [Model.PaginatedResponseOwnedDocument](docs/PaginatedResponseOwnedDocument.md)
+     - [Model.PaginatedResponsePartnerOrganization](docs/PaginatedResponsePartnerOrganization.md)
      - [Model.PaginatedResponseRole](docs/PaginatedResponseRole.md)
      - [Model.PaginatedResponseUserPresentation](docs/PaginatedResponseUserPresentation.md)
      - [Model.PaginatedResponseUserRoles](docs/PaginatedResponseUserRoles.md)
@@ -276,11 +281,13 @@ Class | Method | HTTP request | Description
      - [Model.PaginatedStringResponse](docs/PaginatedStringResponse.md)
      - [Model.PaginatedUserPresentationResponse](docs/PaginatedUserPresentationResponse.md)
      - [Model.PaginatedUserRolesResponse](docs/PaginatedUserRolesResponse.md)
+     - [Model.PartnerOrganization](docs/PartnerOrganization.md)
      - [Model.PasswordResetRequest](docs/PasswordResetRequest.md)
      - [Model.PasswordResetVerificationRequest](docs/PasswordResetVerificationRequest.md)
      - [Model.PublicImagePresentation](docs/PublicImagePresentation.md)
      - [Model.RegistrationVerificationTokenPresentation](docs/RegistrationVerificationTokenPresentation.md)
      - [Model.RemoveApiKeyPrivilegeRequest](docs/RemoveApiKeyPrivilegeRequest.md)
+     - [Model.RemovePartnerRequest](docs/RemovePartnerRequest.md)
      - [Model.ResponseEntity](docs/ResponseEntity.md)
      - [Model.Role](docs/Role.md)
      - [Model.RoleResponse](docs/RoleResponse.md)
