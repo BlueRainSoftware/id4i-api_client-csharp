@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueRain.ID4i", "src\BlueRain.ID4i\BlueRain.ID4i.csproj", "{1C86A623-5814-4439-A010-17CF513E3C2B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueRain.ID4i", "src\BlueRain.ID4i\BlueRain.ID4i.csproj", "{80FC75E1-533E-42A1-9297-CA31456FEE1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,10 +10,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1C86A623-5814-4439-A010-17CF513E3C2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1C86A623-5814-4439-A010-17CF513E3C2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1C86A623-5814-4439-A010-17CF513E3C2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1C86A623-5814-4439-A010-17CF513E3C2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80FC75E1-533E-42A1-9297-CA31456FEE1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80FC75E1-533E-42A1-9297-CA31456FEE1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80FC75E1-533E-42A1-9297-CA31456FEE1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80FC75E1-533E-42A1-9297-CA31456FEE1F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU
