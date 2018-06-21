@@ -138,172 +138,178 @@ namespace BlueRain.ID4i.Model
             INVALIDID4NOBJECTTYPE = 17,
             
             /// <summary>
+            /// Enum MISSINGBILLINGINFORMATION for value: ERR_MISSING_BILLING_INFORMATION
+            /// </summary>
+            [EnumMember(Value = "ERR_MISSING_BILLING_INFORMATION")]
+            MISSINGBILLINGINFORMATION = 18,
+            
+            /// <summary>
             /// Enum COLLECTIONUPDATEDENIED for value: ERR_COLLECTION_UPDATE_DENIED
             /// </summary>
             [EnumMember(Value = "ERR_COLLECTION_UPDATE_DENIED")]
-            COLLECTIONUPDATEDENIED = 18,
+            COLLECTIONUPDATEDENIED = 19,
             
             /// <summary>
             /// Enum ENTITYNOTFOUND for value: ERR_ENTITY_NOT_FOUND
             /// </summary>
             [EnumMember(Value = "ERR_ENTITY_NOT_FOUND")]
-            ENTITYNOTFOUND = 19,
+            ENTITYNOTFOUND = 20,
             
             /// <summary>
             /// Enum ENTITYTOOBIG for value: ERR_ENTITY_TOO_BIG
             /// </summary>
             [EnumMember(Value = "ERR_ENTITY_TOO_BIG")]
-            ENTITYTOOBIG = 20,
+            ENTITYTOOBIG = 21,
             
             /// <summary>
             /// Enum DUPLICATE for value: ERR_DUPLICATE
             /// </summary>
             [EnumMember(Value = "ERR_DUPLICATE")]
-            DUPLICATE = 21,
+            DUPLICATE = 22,
             
             /// <summary>
             /// Enum INTERNAL for value: ERR_INTERNAL
             /// </summary>
             [EnumMember(Value = "ERR_INTERNAL")]
-            INTERNAL = 22,
+            INTERNAL = 23,
             
             /// <summary>
             /// Enum UNKNOWN for value: ERR_UNKNOWN
             /// </summary>
             [EnumMember(Value = "ERR_UNKNOWN")]
-            UNKNOWN = 23,
+            UNKNOWN = 24,
             
             /// <summary>
             /// Enum INVALIDORGANIZATIONUSERROLE for value: ERR_INVALID_ORGANIZATION_USERROLE
             /// </summary>
             [EnumMember(Value = "ERR_INVALID_ORGANIZATION_USERROLE")]
-            INVALIDORGANIZATIONUSERROLE = 24,
+            INVALIDORGANIZATIONUSERROLE = 25,
             
             /// <summary>
             /// Enum ORGANIZATIONROLEINCONSISTENCY for value: ERR_ORGANIZATION_ROLE_INCONSISTENCY
             /// </summary>
             [EnumMember(Value = "ERR_ORGANIZATION_ROLE_INCONSISTENCY")]
-            ORGANIZATIONROLEINCONSISTENCY = 25,
+            ORGANIZATIONROLEINCONSISTENCY = 26,
             
             /// <summary>
             /// Enum ORGANIZATIONNOTDELETABLE for value: ERR_ORGANIZATION_NOT_DELETABLE
             /// </summary>
             [EnumMember(Value = "ERR_ORGANIZATION_NOT_DELETABLE")]
-            ORGANIZATIONNOTDELETABLE = 26,
+            ORGANIZATIONNOTDELETABLE = 27,
             
             /// <summary>
             /// Enum USERALREADYINORGANIZATION for value: ERR_USER_ALREADY_IN_ORGANIZATION
             /// </summary>
             [EnumMember(Value = "ERR_USER_ALREADY_IN_ORGANIZATION")]
-            USERALREADYINORGANIZATION = 27,
+            USERALREADYINORGANIZATION = 28,
             
             /// <summary>
             /// Enum USERINVITATIONNEEDSMINIMUMONEROLE for value: ERR_USER_INVITATION_NEEDS_MINIMUM_ONE_ROLE
             /// </summary>
             [EnumMember(Value = "ERR_USER_INVITATION_NEEDS_MINIMUM_ONE_ROLE")]
-            USERINVITATIONNEEDSMINIMUMONEROLE = 28,
+            USERINVITATIONNEEDSMINIMUMONEROLE = 29,
             
             /// <summary>
             /// Enum USERINVITATIONSPECIFYEMAILORUSERNAME for value: ERR_USER_INVITATION_SPECIFY_EMAIL_OR_USERNAME
             /// </summary>
             [EnumMember(Value = "ERR_USER_INVITATION_SPECIFY_EMAIL_OR_USERNAME")]
-            USERINVITATIONSPECIFYEMAILORUSERNAME = 29,
+            USERINVITATIONSPECIFYEMAILORUSERNAME = 30,
             
             /// <summary>
             /// Enum USERDEACTIVATED for value: ERR_USER_DEACTIVATED
             /// </summary>
             [EnumMember(Value = "ERR_USER_DEACTIVATED")]
-            USERDEACTIVATED = 30,
+            USERDEACTIVATED = 31,
             
             /// <summary>
             /// Enum LANGUAGENOTSUPPORTED for value: ERR_LANGUAGE_NOT_SUPPORTED
             /// </summary>
             [EnumMember(Value = "ERR_LANGUAGE_NOT_SUPPORTED")]
-            LANGUAGENOTSUPPORTED = 31,
+            LANGUAGENOTSUPPORTED = 32,
             
             /// <summary>
             /// Enum EMAILMISSINGTEMPLATEPARAM for value: ERR_EMAIL_MISSING_TEMPLATE_PARAM
             /// </summary>
             [EnumMember(Value = "ERR_EMAIL_MISSING_TEMPLATE_PARAM")]
-            EMAILMISSINGTEMPLATEPARAM = 32,
+            EMAILMISSINGTEMPLATEPARAM = 33,
             
             /// <summary>
             /// Enum EMAILTEMPLATENOTAVAILABLE for value: ERR_EMAIL_TEMPLATE_NOT_AVAILABLE
             /// </summary>
             [EnumMember(Value = "ERR_EMAIL_TEMPLATE_NOT_AVAILABLE")]
-            EMAILTEMPLATENOTAVAILABLE = 33,
+            EMAILTEMPLATENOTAVAILABLE = 34,
             
             /// <summary>
             /// Enum EMAILPREPARATIONFAILED for value: ERR_EMAIL_PREPARATION_FAILED
             /// </summary>
             [EnumMember(Value = "ERR_EMAIL_PREPARATION_FAILED")]
-            EMAILPREPARATIONFAILED = 34,
+            EMAILPREPARATIONFAILED = 35,
             
             /// <summary>
             /// Enum IMAGECONVERSION for value: ERR_IMAGE_CONVERSION
             /// </summary>
             [EnumMember(Value = "ERR_IMAGE_CONVERSION")]
-            IMAGECONVERSION = 35,
+            IMAGECONVERSION = 36,
             
             /// <summary>
             /// Enum UPLOADTOOLARGE for value: ERR_UPLOAD_TOO_LARGE
             /// </summary>
             [EnumMember(Value = "ERR_UPLOAD_TOO_LARGE")]
-            UPLOADTOOLARGE = 36,
+            UPLOADTOOLARGE = 37,
             
             /// <summary>
             /// Enum INVALIDALIASTYPE for value: ERR_INVALID_ALIAS_TYPE
             /// </summary>
             [EnumMember(Value = "ERR_INVALID_ALIAS_TYPE")]
-            INVALIDALIASTYPE = 37,
+            INVALIDALIASTYPE = 38,
             
             /// <summary>
             /// Enum INVALIDURITEMPLATE for value: ERR_INVALID_URI_TEMPLATE
             /// </summary>
             [EnumMember(Value = "ERR_INVALID_URI_TEMPLATE")]
-            INVALIDURITEMPLATE = 38,
+            INVALIDURITEMPLATE = 39,
             
             /// <summary>
             /// Enum INVALIDURITEMPLATEVARIABLE for value: ERR_INVALID_URI_TEMPLATE_VARIABLE
             /// </summary>
             [EnumMember(Value = "ERR_INVALID_URI_TEMPLATE_VARIABLE")]
-            INVALIDURITEMPLATEVARIABLE = 39,
+            INVALIDURITEMPLATEVARIABLE = 40,
             
             /// <summary>
             /// Enum INVALIDNAMESPACE for value: ERR_INVALID_NAMESPACE
             /// </summary>
             [EnumMember(Value = "ERR_INVALID_NAMESPACE")]
-            INVALIDNAMESPACE = 40,
+            INVALIDNAMESPACE = 41,
             
             /// <summary>
             /// Enum NAMESPACEALREADYEXISTS for value: ERR_NAMESPACE_ALREADY_EXISTS
             /// </summary>
             [EnumMember(Value = "ERR_NAMESPACE_ALREADY_EXISTS")]
-            NAMESPACEALREADYEXISTS = 41,
+            NAMESPACEALREADYEXISTS = 42,
             
             /// <summary>
             /// Enum INSECUREPASSWORD for value: ERR_INSECURE_PASSWORD
             /// </summary>
             [EnumMember(Value = "ERR_INSECURE_PASSWORD")]
-            INSECUREPASSWORD = 42,
+            INSECUREPASSWORD = 43,
             
             /// <summary>
             /// Enum TRANSFERDENIED for value: ERR_TRANSFER_DENIED
             /// </summary>
             [EnumMember(Value = "ERR_TRANSFER_DENIED")]
-            TRANSFERDENIED = 43,
+            TRANSFERDENIED = 44,
             
             /// <summary>
             /// Enum INVALIDPHYSICALSTATE for value: ERR_INVALID_PHYSICAL_STATE
             /// </summary>
             [EnumMember(Value = "ERR_INVALID_PHYSICAL_STATE")]
-            INVALIDPHYSICALSTATE = 44,
+            INVALIDPHYSICALSTATE = 45,
             
             /// <summary>
             /// Enum INVALIDHISTORYPROPERTYNAMESPACE for value: ERR_INVALID_HISTORY_PROPERTY_NAMESPACE
             /// </summary>
             [EnumMember(Value = "ERR_INVALID_HISTORY_PROPERTY_NAMESPACE")]
-            INVALIDHISTORYPROPERTYNAMESPACE = 45
+            INVALIDHISTORYPROPERTYNAMESPACE = 46
         }
 
         /// <summary>
