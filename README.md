@@ -13,7 +13,7 @@ For additional information, please refer to
 * https://backend.id4i.de/docs/redoc/index.html for API documentation
 * https://github.com/BlueRainSoftware/support for getting additional support
 
-- API version: 0.8.1
+- API version: 0.8.2-SNAPSHOT
 - Package version: 
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
 
