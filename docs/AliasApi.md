@@ -4,10 +4,10 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddGuidAlias**](AliasApi.md#addguidalias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
+[**AddGuidAlias**](AliasApi.md#addguidalias) | **POST** /api/v1/id4ns/{id4n}/alias/{aliasType} | Add alias for GUID or Collection
 [**GetGuidAliasTypes**](AliasApi.md#getguidaliastypes) | **GET** /api/v1/search/guids/aliases/types | List all supported alias types
-[**GetGuidAliases**](AliasApi.md#getguidaliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID.
-[**RemoveGuidAlias**](AliasApi.md#removeguidalias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
+[**GetGuidAliases**](AliasApi.md#getguidaliases) | **GET** /api/v1/id4ns/{id4n}/alias | Get all aliases for the given GUID or Collection.
+[**RemoveGuidAlias**](AliasApi.md#removeguidalias) | **DELETE** /api/v1/id4ns/{id4n}/alias/{aliasType} | Remove aliases from GUID or Collection
 [**SearchByAlias**](AliasApi.md#searchbyalias) | **GET** /api/v1/search/guids | Search for GUIDs by alias
 
 
@@ -15,9 +15,9 @@ Method | HTTP request | Description
 # **AddGuidAlias**
 > void AddGuidAlias (string id4n, string aliasType, GuidAlias alias)
 
-Add alias for GUIDs
+Add alias for GUID or Collection
 
-Adds or replaces aliases for single GUIDs (alias type item and mapp) or groups of GUIDs (alias types gtin, ean and article)
+Adds or replaces aliases for single ID4ns (alias type item and mapp) or groups of ID4ns (alias types gtin, ean and article)
 
 ### Example
 ```csharp
@@ -39,13 +39,13 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new AliasApi();
-            var id4n = id4n_example;  // string | The GUID to operate on
+            var id4n = id4n_example;  // string | The GUID or Collection to operate on
             var aliasType = aliasType_example;  // string | Alias type, see the corresponding API model
             var alias = new GuidAlias(); // GuidAlias | The alias to add or update
 
             try
             {
-                // Add alias for GUIDs
+                // Add alias for GUID or Collection
                 apiInstance.AddGuidAlias(id4n, aliasType, alias);
             }
             catch (Exception e)
@@ -61,7 +61,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **string**| The GUID to operate on | 
+ **id4n** | **string**| The GUID or Collection to operate on | 
  **aliasType** | **string**| Alias type, see the corresponding API model | 
  **alias** | [**GuidAlias**](GuidAlias.md)| The alias to add or update | 
 
@@ -146,9 +146,9 @@ This endpoint does not need any parameter.
 # **GetGuidAliases**
 > Dictionary<string, string> GetGuidAliases (string id4n)
 
-Get all aliases for the given GUID.
+Get all aliases for the given GUID or Collection.
 
-Looks up the alias for each alias type (group and single GUID) and returns a map of all aliases found.
+Looks up the alias for each alias type (group and single) and returns a map of all aliases found.
 
 ### Example
 ```csharp
@@ -170,11 +170,11 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new AliasApi();
-            var id4n = id4n_example;  // string | The GUID to operate on
+            var id4n = id4n_example;  // string | The GUID or Collection to operate on
 
             try
             {
-                // Get all aliases for the given GUID.
+                // Get all aliases for the given GUID or Collection.
                 Dictionary&lt;string, string&gt; result = apiInstance.GetGuidAliases(id4n);
                 Debug.WriteLine(result);
             }
@@ -191,7 +191,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **string**| The GUID to operate on | 
+ **id4n** | **string**| The GUID or Collection to operate on | 
 
 ### Return type
 
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 # **RemoveGuidAlias**
 > void RemoveGuidAlias (string id4n, string aliasType)
 
-Remove aliases from GUIDs
+Remove aliases from GUID or Collection
 
 Remove the alias of the given type
 
@@ -236,12 +236,12 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new AliasApi();
-            var id4n = id4n_example;  // string | The GUID to operate on
+            var id4n = id4n_example;  // string | The GUID or Collection to operate on
             var aliasType = aliasType_example;  // string | Alias type, see the corresponding API model
 
             try
             {
-                // Remove aliases from GUIDs
+                // Remove aliases from GUID or Collection
                 apiInstance.RemoveGuidAlias(id4n, aliasType);
             }
             catch (Exception e)
@@ -257,7 +257,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **string**| The GUID to operate on | 
+ **id4n** | **string**| The GUID or Collection to operate on | 
  **aliasType** | **string**| Alias type, see the corresponding API model | 
 
 ### Return type
