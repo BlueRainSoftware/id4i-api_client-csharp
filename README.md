@@ -13,7 +13,7 @@ For additional information, please refer to
 * https://backend.id4i.de/docs/redoc/index.html for API documentation
 * https://github.com/BlueRainSoftware/support for getting additional support
 
-- API version: 0.8.3
+- API version: 0.8.4
 - Package version: 
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
 
@@ -100,7 +100,6 @@ Class | Method | HTTP request | Description
 *AccountsApi* | [**GetUserRoles**](docs/AccountsApi.md#getuserroles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
 *AccountsApi* | [**GetUsersOfOrganization**](docs/AccountsApi.md#getusersoforganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
 *AccountsApi* | [**InviteUsers**](docs/AccountsApi.md#inviteusers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
-*AccountsApi* | [**IsContractRequired**](docs/AccountsApi.md#iscontractrequired) | **GET** /account/contractRequired | Tells you whether your company needs to have a contract with BlueRain to be able to sign up
 *AccountsApi* | [**ListAllRoles**](docs/AccountsApi.md#listallroles) | **GET** /api/v1/roles | List roles
 *AccountsApi* | [**Login**](docs/AccountsApi.md#login) | **POST** /login | 
 *AccountsApi* | [**RegisterUser**](docs/AccountsApi.md#registeruser) | **POST** /account/registration | Register user
