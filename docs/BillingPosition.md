@@ -4,11 +4,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Amount** | **long?** |  | 
-**Count** | **double?** |  | 
+**Count** | **decimal?** |  | 
 **Description** | **string** |  | 
 **Service** | **string** |  | 
-**SinglePrice** | **double?** |  | 
-**Sum** | **double?** |  | 
+**SinglePrice** | **decimal?** |  | 
+**Sum** | **decimal?** |  | 
 **Unit** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

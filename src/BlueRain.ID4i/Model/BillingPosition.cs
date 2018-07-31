@@ -43,7 +43,7 @@ namespace BlueRain.ID4i.Model
         /// <param name="SinglePrice">SinglePrice (required).</param>
         /// <param name="Sum">Sum (required).</param>
         /// <param name="Unit">Unit (required).</param>
-        public BillingPosition(long? Amount = default(long?), double? Count = default(double?), string Description = default(string), string Service = default(string), double? SinglePrice = default(double?), double? Sum = default(double?), string Unit = default(string))
+        public BillingPosition(long? Amount = default(long?), decimal? Count = default(decimal?), string Description = default(string), string Service = default(string), decimal? SinglePrice = default(decimal?), decimal? Sum = default(decimal?), string Unit = default(string))
         {
             // to ensure "Amount" is required (not null)
             if (Amount == null)
@@ -120,7 +120,7 @@ namespace BlueRain.ID4i.Model
         /// Gets or Sets Count
         /// </summary>
         [DataMember(Name="count", EmitDefaultValue=false)]
-        public double? Count { get; set; }
+        public decimal? Count { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
@@ -138,13 +138,13 @@ namespace BlueRain.ID4i.Model
         /// Gets or Sets SinglePrice
         /// </summary>
         [DataMember(Name="singlePrice", EmitDefaultValue=false)]
-        public double? SinglePrice { get; set; }
+        public decimal? SinglePrice { get; set; }
 
         /// <summary>
         /// Gets or Sets Sum
         /// </summary>
         [DataMember(Name="sum", EmitDefaultValue=false)]
-        public double? Sum { get; set; }
+        public decimal? Sum { get; set; }
 
         /// <summary>
         /// Gets or Sets Unit

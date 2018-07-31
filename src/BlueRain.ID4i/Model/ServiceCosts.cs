@@ -37,7 +37,7 @@ namespace BlueRain.ID4i.Model
         /// Initializes a new instance of the <see cref="ServiceCosts" /> class.
         /// </summary>
         /// <param name="Listing">Listing (required).</param>
-        public ServiceCosts(Dictionary<string, double?> Listing = default(Dictionary<string, double?>))
+        public ServiceCosts(Dictionary<string, decimal?> Listing = default(Dictionary<string, decimal?>))
         {
             // to ensure "Listing" is required (not null)
             if (Listing == null)
@@ -54,7 +54,7 @@ namespace BlueRain.ID4i.Model
         /// Gets or Sets Listing
         /// </summary>
         [DataMember(Name="listing", EmitDefaultValue=false)]
-        public Dictionary<string, double?> Listing { get; set; }
+        public Dictionary<string, decimal?> Listing { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
