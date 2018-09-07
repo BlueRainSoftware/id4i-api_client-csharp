@@ -83,9 +83,9 @@ namespace BlueRain.ID4i.Model
         public long? CreatedTimestamp { get; private set; }
 
         /// <summary>
-        /// ${Id4nPresentation.Guid.holderOrganizationId}
+        /// Organization namespace of the holder of the ID
         /// </summary>
-        /// <value>${Id4nPresentation.Guid.holderOrganizationId}</value>
+        /// <value>Organization namespace of the holder of the ID</value>
         [DataMember(Name="holderOrganizationId", EmitDefaultValue=false)]
         public string HolderOrganizationId { get; private set; }
 
@@ -103,9 +103,9 @@ namespace BlueRain.ID4i.Model
         public string Label { get; private set; }
 
         /// <summary>
-        /// ${Id4nPresentation.Guid.ownerOrganizationId}
+        /// Organization namespace of the ID owner
         /// </summary>
-        /// <value>${Id4nPresentation.Guid.ownerOrganizationId}</value>
+        /// <value>Organization namespace of the ID owner</value>
         [DataMember(Name="ownerOrganizationId", EmitDefaultValue=false)]
         public string OwnerOrganizationId { get; private set; }
 
