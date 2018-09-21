@@ -13,7 +13,7 @@ For additional information, please refer to
 * https://backend.id4i.de/docs/redoc/index.html for API documentation
 * https://github.com/BlueRainSoftware/support for getting additional support
 
-- API version: 0.9.1-SNAPSHOT
+- API version: 0.9.1
 - Package version: 
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
 
@@ -175,14 +175,13 @@ Class | Method | HTTP request | Description
 *OrganizationsApi* | [**UpdateOrganization**](docs/OrganizationsApi.md#updateorganization) | **PUT** /api/v1/organizations/{organizationId} | Update organization
 *OrganizationsApi* | [**UpdateOrganizationAddress**](docs/OrganizationsApi.md#updateorganizationaddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
 *OrganizationsApi* | [**UpdateOrganizationBillingAddress**](docs/OrganizationsApi.md#updateorganizationbillingaddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/billing | Store billing address
-*PublicServicesApi* | [**GetPublicDocument**](docs/PublicServicesApi.md#getpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
+*PublicServicesApi* | [**GetPublicDocument**](docs/PublicServicesApi.md#getpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a public document (meta-data only, no content)
 *PublicServicesApi* | [**GetRoutes**](docs/PublicServicesApi.md#getroutes) | **GET** /api/v1/public/routes/{id4n} | Retrieve all public routes for a GUID
 *PublicServicesApi* | [**Go**](docs/PublicServicesApi.md#go) | **GET** /go/{guid} | Forward
-*PublicServicesApi* | [**ListAllPublicDocuments**](docs/PublicServicesApi.md#listallpublicdocuments) | **GET** /api/v1/public/documents/{id4n} | List organization specific documents
-*PublicServicesApi* | [**ListPublicDocuments**](docs/PublicServicesApi.md#listpublicdocuments) | **GET** /api/v1/public/documents/{id4n}/{organizationId} | List organization specific documents
+*PublicServicesApi* | [**ListAllPublicDocuments**](docs/PublicServicesApi.md#listallpublicdocuments) | **GET** /api/v1/public/documents/{id4n} | List public documents
 *PublicServicesApi* | [**ListPublicHistory**](docs/PublicServicesApi.md#listpublichistory) | **GET** /api/v1/public/history/{id4n} | Shows the public history of the given GUID
 *PublicServicesApi* | [**ReadOrganizationInfo**](docs/PublicServicesApi.md#readorganizationinfo) | **GET** /api/v1/public/organizations/{organizationId} | Read public organization information
-*PublicServicesApi* | [**ReadPublicDocument**](docs/PublicServicesApi.md#readpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read document contents
+*PublicServicesApi* | [**ReadPublicDocument**](docs/PublicServicesApi.md#readpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read public document contents
 *PublicServicesApi* | [**ResolveImageUsingGET**](docs/PublicServicesApi.md#resolveimageusingget) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *PublicServicesApi* | [**ResolveWhoIsEntry**](docs/PublicServicesApi.md#resolvewhoisentry) | **GET** /whois/{id4n} | Resolve owner of id4n
 *RoutingApi* | [**GetAllRoutes**](docs/RoutingApi.md#getallroutes) | **GET** /api/v1/routingfiles/{id4n}/routes/{type} | Retrieve all routes of a GUID (or ID4N)
@@ -192,14 +191,13 @@ Class | Method | HTTP request | Description
 *StorageApi* | [**CreateDocument**](docs/StorageApi.md#createdocument) | **PUT** /api/v1/documents/{id4n}/{organizationId} | Create an empty document for an id4n
 *StorageApi* | [**DeleteDocument**](docs/StorageApi.md#deletedocument) | **DELETE** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Delete a document
 *StorageApi* | [**GetDocument**](docs/StorageApi.md#getdocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
-*StorageApi* | [**GetPublicDocument**](docs/StorageApi.md#getpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
+*StorageApi* | [**GetPublicDocument**](docs/StorageApi.md#getpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a public document (meta-data only, no content)
 *StorageApi* | [**ListAllDocuments**](docs/StorageApi.md#listalldocuments) | **GET** /api/v1/documents/{id4n} | List documents
-*StorageApi* | [**ListAllPublicDocuments**](docs/StorageApi.md#listallpublicdocuments) | **GET** /api/v1/public/documents/{id4n} | List organization specific documents
+*StorageApi* | [**ListAllPublicDocuments**](docs/StorageApi.md#listallpublicdocuments) | **GET** /api/v1/public/documents/{id4n} | List public documents
 *StorageApi* | [**ListDocuments**](docs/StorageApi.md#listdocuments) | **GET** /api/v1/documents/{id4n}/{organizationId} | List organization specific documents
-*StorageApi* | [**ListPublicDocuments**](docs/StorageApi.md#listpublicdocuments) | **GET** /api/v1/public/documents/{id4n}/{organizationId} | List organization specific documents
 *StorageApi* | [**ReadDocument**](docs/StorageApi.md#readdocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Read document contents
 *StorageApi* | [**ReadFromMicrostorage**](docs/StorageApi.md#readfrommicrostorage) | **GET** /api/v1/microstorage/{id4n}/{organization} | Read data from microstorage
-*StorageApi* | [**ReadPublicDocument**](docs/StorageApi.md#readpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read document contents
+*StorageApi* | [**ReadPublicDocument**](docs/StorageApi.md#readpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read public document contents
 *StorageApi* | [**UpdateDocumentMetadata**](docs/StorageApi.md#updatedocumentmetadata) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Update a document
 *StorageApi* | [**WriteToMicrostorage**](docs/StorageApi.md#writetomicrostorage) | **PUT** /api/v1/microstorage/{id4n}/{organization} | Write data to microstorage
 *TransferApi* | [**GetReceiveInfo**](docs/TransferApi.md#getreceiveinfo) | **GET** /api/v1/transfers/{id4n}/receiveInfo | Show transfer information
@@ -250,7 +248,6 @@ Class | Method | HTTP request | Description
      - [Model.OrganizationUpdate](docs/OrganizationUpdate.md)
      - [Model.OrganizationUserInvitation](docs/OrganizationUserInvitation.md)
      - [Model.OrganizationUserInvitationListRequest](docs/OrganizationUserInvitationListRequest.md)
-     - [Model.OwnedDocument](docs/OwnedDocument.md)
      - [Model.PaginatedApiKeyResponse](docs/PaginatedApiKeyResponse.md)
      - [Model.PaginatedChangeLogEntryResponse](docs/PaginatedChangeLogEntryResponse.md)
      - [Model.PaginatedCountryResponse](docs/PaginatedCountryResponse.md)
@@ -259,7 +256,6 @@ Class | Method | HTTP request | Description
      - [Model.PaginatedGuidResponse](docs/PaginatedGuidResponse.md)
      - [Model.PaginatedHistoryItemResponse](docs/PaginatedHistoryItemResponse.md)
      - [Model.PaginatedOrganizationResponse](docs/PaginatedOrganizationResponse.md)
-     - [Model.PaginatedOwnedDocumentResponse](docs/PaginatedOwnedDocumentResponse.md)
      - [Model.PaginatedResponseApiKeyPresentation](docs/PaginatedResponseApiKeyPresentation.md)
      - [Model.PaginatedResponseApiKeyPrivilege](docs/PaginatedResponseApiKeyPrivilege.md)
      - [Model.PaginatedResponseApiKeyPrivilegeInfo](docs/PaginatedResponseApiKeyPrivilegeInfo.md)
@@ -271,7 +267,6 @@ Class | Method | HTTP request | Description
      - [Model.PaginatedResponseHistoryItem](docs/PaginatedResponseHistoryItem.md)
      - [Model.PaginatedResponseId4nPresentation](docs/PaginatedResponseId4nPresentation.md)
      - [Model.PaginatedResponseOrganization](docs/PaginatedResponseOrganization.md)
-     - [Model.PaginatedResponseOwnedDocument](docs/PaginatedResponseOwnedDocument.md)
      - [Model.PaginatedResponsePartnerOrganization](docs/PaginatedResponsePartnerOrganization.md)
      - [Model.PaginatedResponseRole](docs/PaginatedResponseRole.md)
      - [Model.PaginatedResponseUserPresentation](docs/PaginatedResponseUserPresentation.md)
