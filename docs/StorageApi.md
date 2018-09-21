@@ -7,14 +7,13 @@ Method | HTTP request | Description
 [**CreateDocument**](StorageApi.md#createdocument) | **PUT** /api/v1/documents/{id4n}/{organizationId} | Create an empty document for an id4n
 [**DeleteDocument**](StorageApi.md#deletedocument) | **DELETE** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Delete a document
 [**GetDocument**](StorageApi.md#getdocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
-[**GetPublicDocument**](StorageApi.md#getpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
+[**GetPublicDocument**](StorageApi.md#getpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a public document (meta-data only, no content)
 [**ListAllDocuments**](StorageApi.md#listalldocuments) | **GET** /api/v1/documents/{id4n} | List documents
-[**ListAllPublicDocuments**](StorageApi.md#listallpublicdocuments) | **GET** /api/v1/public/documents/{id4n} | List organization specific documents
+[**ListAllPublicDocuments**](StorageApi.md#listallpublicdocuments) | **GET** /api/v1/public/documents/{id4n} | List public documents
 [**ListDocuments**](StorageApi.md#listdocuments) | **GET** /api/v1/documents/{id4n}/{organizationId} | List organization specific documents
-[**ListPublicDocuments**](StorageApi.md#listpublicdocuments) | **GET** /api/v1/public/documents/{id4n}/{organizationId} | List organization specific documents
 [**ReadDocument**](StorageApi.md#readdocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Read document contents
 [**ReadFromMicrostorage**](StorageApi.md#readfrommicrostorage) | **GET** /api/v1/microstorage/{id4n}/{organization} | Read data from microstorage
-[**ReadPublicDocument**](StorageApi.md#readpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read document contents
+[**ReadPublicDocument**](StorageApi.md#readpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read public document contents
 [**UpdateDocumentMetadata**](StorageApi.md#updatedocumentmetadata) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Update a document
 [**WriteToMicrostorage**](StorageApi.md#writetomicrostorage) | **PUT** /api/v1/microstorage/{id4n}/{organization} | Write data to microstorage
 
@@ -229,7 +228,7 @@ Name | Type | Description  | Notes
 # **GetPublicDocument**
 > Document GetPublicDocument (string organizationId, string id4n, string fileName)
 
-Retrieve a document (meta-data only, no content)
+Retrieve a public document (meta-data only, no content)
 
 ### Example
 ```csharp
@@ -257,7 +256,7 @@ namespace Example
 
             try
             {
-                // Retrieve a document (meta-data only, no content)
+                // Retrieve a public document (meta-data only, no content)
                 Document result = apiInstance.GetPublicDocument(organizationId, id4n, fileName);
                 Debug.WriteLine(result);
             }
@@ -295,7 +294,7 @@ Name | Type | Description  | Notes
 
 <a name="listalldocuments"></a>
 # **ListAllDocuments**
-> PaginatedOwnedDocumentResponse ListAllDocuments (string id4n, int? offset = null, int? limit = null)
+> PaginatedDocumentResponse ListAllDocuments (string id4n, string owner = null, int? offset = null, int? limit = null)
 
 List documents
 
@@ -322,13 +321,14 @@ namespace Example
 
             var apiInstance = new StorageApi();
             var id4n = id4n_example;  // string | id4n
+            var owner = owner_example;  // string | Filter by owner organization (optional) 
             var offset = 56;  // int? | Start with the n-th element (optional) 
             var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
                 // List documents
-                PaginatedOwnedDocumentResponse result = apiInstance.ListAllDocuments(id4n, offset, limit);
+                PaginatedDocumentResponse result = apiInstance.ListAllDocuments(id4n, owner, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -345,12 +345,13 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
+ **owner** | **string**| Filter by owner organization | [optional] 
  **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
-[**PaginatedOwnedDocumentResponse**](PaginatedOwnedDocumentResponse.md)
+[**PaginatedDocumentResponse**](PaginatedDocumentResponse.md)
 
 ### Authorization
 
@@ -365,11 +366,11 @@ Name | Type | Description  | Notes
 
 <a name="listallpublicdocuments"></a>
 # **ListAllPublicDocuments**
-> PaginatedOwnedDocumentResponse ListAllPublicDocuments (string id4n, string organizationId = null, int? offset = null, int? limit = null)
+> PaginatedDocumentResponse ListAllPublicDocuments (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null)
 
-List organization specific documents
+List public documents
 
-Listing documents of an id4n owned by a specified organization
+Listing all public documents of an id4n
 
 ### Example
 ```csharp
@@ -393,13 +394,14 @@ namespace Example
             var apiInstance = new StorageApi();
             var id4n = id4n_example;  // string | id4n
             var organizationId = organizationId_example;  // string | organizationId (optional) 
+            var owner = owner_example;  // string | Filter by owner organization (optional) 
             var offset = 56;  // int? | Start with the n-th element (optional) 
             var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
-                // List organization specific documents
-                PaginatedOwnedDocumentResponse result = apiInstance.ListAllPublicDocuments(id4n, organizationId, offset, limit);
+                // List public documents
+                PaginatedDocumentResponse result = apiInstance.ListAllPublicDocuments(id4n, organizationId, owner, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -417,12 +419,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
  **organizationId** | **string**| organizationId | [optional] 
+ **owner** | **string**| Filter by owner organization | [optional] 
  **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
-[**PaginatedOwnedDocumentResponse**](PaginatedOwnedDocumentResponse.md)
+[**PaginatedDocumentResponse**](PaginatedDocumentResponse.md)
 
 ### Authorization
 
@@ -437,11 +440,11 @@ Name | Type | Description  | Notes
 
 <a name="listdocuments"></a>
 # **ListDocuments**
-> PaginatedDocumentResponse ListDocuments (string organizationId, string id4n, int? offset = null, int? limit = null)
+> PaginatedDocumentResponse ListDocuments (string organizationId, string id4n, string owner = null, int? offset = null, int? limit = null)
 
 List organization specific documents
 
-Listing documents of an id4n owned by a specified organization
+Listing documents of an id4n seen by a specified organization
 
 ### Example
 ```csharp
@@ -465,13 +468,14 @@ namespace Example
             var apiInstance = new StorageApi();
             var organizationId = organizationId_example;  // string | organizationId
             var id4n = id4n_example;  // string | id4n
+            var owner = owner_example;  // string | Filter by owner organization (optional) 
             var offset = 56;  // int? | Start with the n-th element (optional) 
             var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
                 // List organization specific documents
-                PaginatedDocumentResponse result = apiInstance.ListDocuments(organizationId, id4n, offset, limit);
+                PaginatedDocumentResponse result = apiInstance.ListDocuments(organizationId, id4n, owner, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -489,78 +493,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| organizationId | 
  **id4n** | **string**| id4n | 
- **offset** | **int?**| Start with the n-th element | [optional] 
- **limit** | **int?**| The maximum count of returned elements | [optional] 
-
-### Return type
-
-[**PaginatedDocumentResponse**](PaginatedDocumentResponse.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="listpublicdocuments"></a>
-# **ListPublicDocuments**
-> PaginatedDocumentResponse ListPublicDocuments (string organizationId, string id4n, int? offset = null, int? limit = null)
-
-List organization specific documents
-
-Listing documents of an id4n owned by a specified organization
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using BlueRain.ID4i.Api;
-using BlueRain.ID4i.Client;
-using BlueRain.ID4i.Model;
-
-namespace Example
-{
-    public class ListPublicDocumentsExample
-    {
-        public void main()
-        {
-            // Configure API key authorization: Authorization
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
-
-            var apiInstance = new StorageApi();
-            var organizationId = organizationId_example;  // string | organizationId
-            var id4n = id4n_example;  // string | id4n
-            var offset = 56;  // int? | Start with the n-th element (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements (optional) 
-
-            try
-            {
-                // List organization specific documents
-                PaginatedDocumentResponse result = apiInstance.ListPublicDocuments(organizationId, id4n, offset, limit);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling StorageApi.ListPublicDocuments: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| organizationId | 
- **id4n** | **string**| id4n | 
+ **owner** | **string**| Filter by owner organization | [optional] 
  **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
 
@@ -717,7 +650,7 @@ Name | Type | Description  | Notes
 # **ReadPublicDocument**
 > byte[] ReadPublicDocument (string organizationId, string id4n, string fileName)
 
-Read document contents
+Read public document contents
 
 ### Example
 ```csharp
@@ -745,7 +678,7 @@ namespace Example
 
             try
             {
-                // Read document contents
+                // Read public document contents
                 byte[] result = apiInstance.ReadPublicDocument(organizationId, id4n, fileName);
                 Debug.WriteLine(result);
             }
