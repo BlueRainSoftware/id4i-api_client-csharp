@@ -309,7 +309,13 @@ namespace BlueRain.ID4i.Model
             /// Enum INVALIDHISTORYPROPERTYNAMESPACE for value: ERR_INVALID_HISTORY_PROPERTY_NAMESPACE
             /// </summary>
             [EnumMember(Value = "ERR_INVALID_HISTORY_PROPERTY_NAMESPACE")]
-            INVALIDHISTORYPROPERTYNAMESPACE = 46
+            INVALIDHISTORYPROPERTYNAMESPACE = 46,
+            
+            /// <summary>
+            /// Enum ORGACANNOTBEOWNPARTNER for value: ERR_ORGA_CANNOT_BE_OWN_PARTNER
+            /// </summary>
+            [EnumMember(Value = "ERR_ORGA_CANNOT_BE_OWN_PARTNER")]
+            ORGACANNOTBEOWNPARTNER = 47
         }
 
         /// <summary>
