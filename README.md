@@ -137,6 +137,7 @@ Class | Method | HTTP request | Description
 *CollectionsApi* | [**UpdateCollection**](docs/CollectionsApi.md#updatecollection) | **PATCH** /api/v1/collections/{id4n} | Update collection
 *GuidsApi* | [**AddGuidAlias**](docs/GuidsApi.md#addguidalias) | **POST** /api/v1/id4ns/{id4n}/alias/{aliasType} | Add alias for GUID or Collection
 *GuidsApi* | [**CreateGuid**](docs/GuidsApi.md#createguid) | **POST** /api/v1/guids | Create GUID(s)
+*GuidsApi* | [**GetCollections**](docs/GuidsApi.md#getcollections) | **GET** /api/v1/id4ns/{id4n}/collections | Retrieve collections of an ID
 *GuidsApi* | [**GetGuid**](docs/GuidsApi.md#getguid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
 *GuidsApi* | [**GetGuidAliases**](docs/GuidsApi.md#getguidaliases) | **GET** /api/v1/id4ns/{id4n}/alias | Get all aliases for the given GUID or Collection.
 *GuidsApi* | [**GetGuidsWithoutCollection**](docs/GuidsApi.md#getguidswithoutcollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
@@ -253,6 +254,7 @@ Class | Method | HTTP request | Description
      - [Model.PaginatedCountryResponse](docs/PaginatedCountryResponse.md)
      - [Model.PaginatedDocumentResponse](docs/PaginatedDocumentResponse.md)
      - [Model.PaginatedGuidCollection](docs/PaginatedGuidCollection.md)
+     - [Model.PaginatedGuidCollectionResponse](docs/PaginatedGuidCollectionResponse.md)
      - [Model.PaginatedGuidResponse](docs/PaginatedGuidResponse.md)
      - [Model.PaginatedHistoryItemResponse](docs/PaginatedHistoryItemResponse.md)
      - [Model.PaginatedOrganizationResponse](docs/PaginatedOrganizationResponse.md)
