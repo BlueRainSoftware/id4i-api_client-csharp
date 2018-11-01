@@ -23,29 +23,29 @@ using SwaggerDateConverter = BlueRain.ID4i.Client.SwaggerDateConverter;
 namespace BlueRain.ID4i.Model
 {
     /// <summary>
-    /// Id4nPresentationPaginatedResponse
+    /// PaginatedGuidCollectionResponse
     /// </summary>
     [DataContract]
-    public partial class Id4nPresentationPaginatedResponse :  IEquatable<Id4nPresentationPaginatedResponse>
+    public partial class PaginatedGuidCollectionResponse :  IEquatable<PaginatedGuidCollectionResponse>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Id4nPresentationPaginatedResponse" /> class.
+        /// Initializes a new instance of the <see cref="PaginatedGuidCollectionResponse" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected Id4nPresentationPaginatedResponse() { }
+        protected PaginatedGuidCollectionResponse() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="Id4nPresentationPaginatedResponse" /> class.
+        /// Initializes a new instance of the <see cref="PaginatedGuidCollectionResponse" /> class.
         /// </summary>
         /// <param name="Elements">Elements (required).</param>
         /// <param name="Limit">The number of returned elements (required).</param>
         /// <param name="Offset">Starting with the n-th element (required).</param>
         /// <param name="Total">The total number of elements.</param>
-        public Id4nPresentationPaginatedResponse(List<Id4nPresentation> Elements = default(List<Id4nPresentation>), int? Limit = default(int?), int? Offset = default(int?), int? Total = default(int?))
+        public PaginatedGuidCollectionResponse(List<GuidCollection> Elements = default(List<GuidCollection>), int? Limit = default(int?), int? Offset = default(int?), int? Total = default(int?))
         {
             // to ensure "Elements" is required (not null)
             if (Elements == null)
             {
-                throw new InvalidDataException("Elements is a required property for Id4nPresentationPaginatedResponse and cannot be null");
+                throw new InvalidDataException("Elements is a required property for PaginatedGuidCollectionResponse and cannot be null");
             }
             else
             {
@@ -54,7 +54,7 @@ namespace BlueRain.ID4i.Model
             // to ensure "Limit" is required (not null)
             if (Limit == null)
             {
-                throw new InvalidDataException("Limit is a required property for Id4nPresentationPaginatedResponse and cannot be null");
+                throw new InvalidDataException("Limit is a required property for PaginatedGuidCollectionResponse and cannot be null");
             }
             else
             {
@@ -63,7 +63,7 @@ namespace BlueRain.ID4i.Model
             // to ensure "Offset" is required (not null)
             if (Offset == null)
             {
-                throw new InvalidDataException("Offset is a required property for Id4nPresentationPaginatedResponse and cannot be null");
+                throw new InvalidDataException("Offset is a required property for PaginatedGuidCollectionResponse and cannot be null");
             }
             else
             {
@@ -76,7 +76,7 @@ namespace BlueRain.ID4i.Model
         /// Gets or Sets Elements
         /// </summary>
         [DataMember(Name="elements", EmitDefaultValue=false)]
-        public List<Id4nPresentation> Elements { get; set; }
+        public List<GuidCollection> Elements { get; set; }
 
         /// <summary>
         /// The number of returned elements
@@ -106,7 +106,7 @@ namespace BlueRain.ID4i.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class Id4nPresentationPaginatedResponse {\n");
+            sb.Append("class PaginatedGuidCollectionResponse {\n");
             sb.Append("  Elements: ").Append(Elements).Append("\n");
             sb.Append("  Limit: ").Append(Limit).Append("\n");
             sb.Append("  Offset: ").Append(Offset).Append("\n");
@@ -131,15 +131,15 @@ namespace BlueRain.ID4i.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Id4nPresentationPaginatedResponse);
+            return this.Equals(input as PaginatedGuidCollectionResponse);
         }
 
         /// <summary>
-        /// Returns true if Id4nPresentationPaginatedResponse instances are equal
+        /// Returns true if PaginatedGuidCollectionResponse instances are equal
         /// </summary>
-        /// <param name="input">Instance of Id4nPresentationPaginatedResponse to be compared</param>
+        /// <param name="input">Instance of PaginatedGuidCollectionResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Id4nPresentationPaginatedResponse input)
+        public bool Equals(PaginatedGuidCollectionResponse input)
         {
             if (input == null)
                 return false;
