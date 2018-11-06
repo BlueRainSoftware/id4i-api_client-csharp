@@ -13,7 +13,7 @@ For additional information, please refer to
 * https://backend.id4i.de/docs/redoc/index.html for API documentation
 * https://github.com/BlueRainSoftware/support for getting additional support
 
-- API version: 0.9.5-SNAPSHOT
+- API version: 0.9.4-SNAPSHOT
 - Package version: 
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
 
@@ -201,6 +201,7 @@ Class | Method | HTTP request | Description
 *StorageApi* | [**ReadPublicDocument**](docs/StorageApi.md#readpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read public document contents
 *StorageApi* | [**UpdateDocumentMetadata**](docs/StorageApi.md#updatedocumentmetadata) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Update a document
 *StorageApi* | [**WriteToMicrostorage**](docs/StorageApi.md#writetomicrostorage) | **PUT** /api/v1/microstorage/{id4n}/{organization} | Write data to microstorage
+*TransferApi* | [**GetReceiveInfo**](docs/TransferApi.md#getreceiveinfo) | **GET** /api/v1/transfers/{id4n}/receiveInfo | Show transfer information
 *TransferApi* | [**GetSendInfo**](docs/TransferApi.md#getsendinfo) | **GET** /api/v1/transfers/{id4n}/sendInfo | Show transfer preparation information
 *TransferApi* | [**Prepare**](docs/TransferApi.md#prepare) | **PUT** /api/v1/transfers/{id4n}/sendInfo | Prepare an object for transfer
 *TransferApi* | [**Receive**](docs/TransferApi.md#receive) | **PUT** /api/v1/transfers/{id4n}/receiveInfo | Transfer a GUID or collection, obtaining it (i.e. becoming the holder) and if allowed also taking ownership
