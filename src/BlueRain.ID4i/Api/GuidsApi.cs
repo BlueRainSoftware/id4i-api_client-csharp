@@ -150,8 +150,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">The namespace of the organization to search GUIDs for</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>PaginatedResponseGuid</returns>
-        PaginatedResponseGuid GetGuidsWithoutCollection (string organizationId, int? offset = null, int? limit = null);
+        /// <returns>PaginatedResponseOfGuid</returns>
+        PaginatedResponseOfGuid GetGuidsWithoutCollection (string organizationId, int? offset = null, int? limit = null);
 
         /// <summary>
             /// Retrieve GUIDs not in any collection
@@ -163,8 +163,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">The namespace of the organization to search GUIDs for</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiResponse of PaginatedResponseGuid</returns>
-        ApiResponse<PaginatedResponseGuid> GetGuidsWithoutCollectionWithHttpInfo (string organizationId, int? offset = null, int? limit = null);
+        /// <returns>ApiResponse of PaginatedResponseOfGuid</returns>
+        ApiResponse<PaginatedResponseOfGuid> GetGuidsWithoutCollectionWithHttpInfo (string organizationId, int? offset = null, int? limit = null);
         /// <summary>
             /// Retrieve ID4n information
             /// </summary>
@@ -359,8 +359,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="organizationId">The namespace of the organization to search GUIDs for</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of PaginatedResponseGuid</returns>
-            System.Threading.Tasks.Task<PaginatedResponseGuid> GetGuidsWithoutCollectionAsync (string organizationId, int? offset = null, int? limit = null);
+            /// <returns>Task of PaginatedResponseOfGuid</returns>
+            System.Threading.Tasks.Task<PaginatedResponseOfGuid> GetGuidsWithoutCollectionAsync (string organizationId, int? offset = null, int? limit = null);
 
                 /// <summary>
                 /// Retrieve GUIDs not in any collection
@@ -372,8 +372,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="organizationId">The namespace of the organization to search GUIDs for</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiResponse (PaginatedResponseGuid)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedResponseGuid>> GetGuidsWithoutCollectionAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null);
+            /// <returns>Task of ApiResponse (PaginatedResponseOfGuid)</returns>
+                System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfGuid>> GetGuidsWithoutCollectionAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null);
                 /// <summary>
                 /// Retrieve ID4n information
                 /// </summary>
@@ -1361,10 +1361,10 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">The namespace of the organization to search GUIDs for</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>PaginatedResponseGuid</returns>
-            public PaginatedResponseGuid GetGuidsWithoutCollection (string organizationId, int? offset = null, int? limit = null)
+        /// <returns>PaginatedResponseOfGuid</returns>
+            public PaginatedResponseOfGuid GetGuidsWithoutCollection (string organizationId, int? offset = null, int? limit = null)
             {
-        ApiResponse<PaginatedResponseGuid> localVarResponse = GetGuidsWithoutCollectionWithHttpInfo(organizationId, offset, limit);
+        ApiResponse<PaginatedResponseOfGuid> localVarResponse = GetGuidsWithoutCollectionWithHttpInfo(organizationId, offset, limit);
             return localVarResponse.Data;
             }
 
@@ -1375,8 +1375,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">The namespace of the organization to search GUIDs for</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiResponse of PaginatedResponseGuid</returns>
-            public ApiResponse< PaginatedResponseGuid > GetGuidsWithoutCollectionWithHttpInfo (string organizationId, int? offset = null, int? limit = null)
+        /// <returns>ApiResponse of PaginatedResponseOfGuid</returns>
+            public ApiResponse< PaginatedResponseOfGuid > GetGuidsWithoutCollectionWithHttpInfo (string organizationId, int? offset = null, int? limit = null)
             {
                     // verify the required parameter 'organizationId' is set
                     if (organizationId == null)
@@ -1429,9 +1429,9 @@ namespace BlueRain.ID4i.Api
             if (exception != null) throw exception;
             }
 
-                return new ApiResponse<PaginatedResponseGuid>(localVarStatusCode,
+                return new ApiResponse<PaginatedResponseOfGuid>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (PaginatedResponseGuid) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseGuid)));
+                (PaginatedResponseOfGuid) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseOfGuid)));
             }
 
                 /// <summary>
@@ -1441,10 +1441,10 @@ namespace BlueRain.ID4i.Api
             /// <param name="organizationId">The namespace of the organization to search GUIDs for</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of PaginatedResponseGuid</returns>
-            public async System.Threading.Tasks.Task<PaginatedResponseGuid> GetGuidsWithoutCollectionAsync (string organizationId, int? offset = null, int? limit = null)
+            /// <returns>Task of PaginatedResponseOfGuid</returns>
+            public async System.Threading.Tasks.Task<PaginatedResponseOfGuid> GetGuidsWithoutCollectionAsync (string organizationId, int? offset = null, int? limit = null)
                 {
-            ApiResponse<PaginatedResponseGuid> localVarResponse = await GetGuidsWithoutCollectionAsyncWithHttpInfo(organizationId, offset, limit);
+            ApiResponse<PaginatedResponseOfGuid> localVarResponse = await GetGuidsWithoutCollectionAsyncWithHttpInfo(organizationId, offset, limit);
                 return localVarResponse.Data;
 
                 }
@@ -1456,8 +1456,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="organizationId">The namespace of the organization to search GUIDs for</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiResponse (PaginatedResponseGuid)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedResponseGuid>> GetGuidsWithoutCollectionAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null)
+            /// <returns>Task of ApiResponse (PaginatedResponseOfGuid)</returns>
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfGuid>> GetGuidsWithoutCollectionAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null)
                 {
                         // verify the required parameter 'organizationId' is set
                         if (organizationId == null)
@@ -1510,9 +1510,9 @@ namespace BlueRain.ID4i.Api
                 if (exception != null) throw exception;
                 }
 
-                    return new ApiResponse<PaginatedResponseGuid>(localVarStatusCode,
+                    return new ApiResponse<PaginatedResponseOfGuid>(localVarStatusCode,
                     localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                    (PaginatedResponseGuid) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseGuid)));
+                    (PaginatedResponseOfGuid) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseOfGuid)));
                 }
 
             /// <summary>

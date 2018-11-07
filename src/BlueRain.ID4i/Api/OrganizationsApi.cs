@@ -332,8 +332,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">The namespace of the organization to query partner organizations</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>PaginatedResponsePartnerOrganization</returns>
-        PaginatedResponsePartnerOrganization GetPartnerOrganizations (string organizationId, int? offset = null, int? limit = null);
+        /// <returns>PaginatedResponseOfPartnerOrganization</returns>
+        PaginatedResponseOfPartnerOrganization GetPartnerOrganizations (string organizationId, int? offset = null, int? limit = null);
 
         /// <summary>
             /// Get partners of an organization
@@ -345,8 +345,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">The namespace of the organization to query partner organizations</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiResponse of PaginatedResponsePartnerOrganization</returns>
-        ApiResponse<PaginatedResponsePartnerOrganization> GetPartnerOrganizationsWithHttpInfo (string organizationId, int? offset = null, int? limit = null);
+        /// <returns>ApiResponse of PaginatedResponseOfPartnerOrganization</returns>
+        ApiResponse<PaginatedResponseOfPartnerOrganization> GetPartnerOrganizationsWithHttpInfo (string organizationId, int? offset = null, int? limit = null);
         /// <summary>
             /// Get user roles by username
             /// </summary>
@@ -894,8 +894,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="organizationId">The namespace of the organization to query partner organizations</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of PaginatedResponsePartnerOrganization</returns>
-            System.Threading.Tasks.Task<PaginatedResponsePartnerOrganization> GetPartnerOrganizationsAsync (string organizationId, int? offset = null, int? limit = null);
+            /// <returns>Task of PaginatedResponseOfPartnerOrganization</returns>
+            System.Threading.Tasks.Task<PaginatedResponseOfPartnerOrganization> GetPartnerOrganizationsAsync (string organizationId, int? offset = null, int? limit = null);
 
                 /// <summary>
                 /// Get partners of an organization
@@ -907,8 +907,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="organizationId">The namespace of the organization to query partner organizations</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiResponse (PaginatedResponsePartnerOrganization)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedResponsePartnerOrganization>> GetPartnerOrganizationsAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null);
+            /// <returns>Task of ApiResponse (PaginatedResponseOfPartnerOrganization)</returns>
+                System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfPartnerOrganization>> GetPartnerOrganizationsAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null);
                 /// <summary>
                 /// Get user roles by username
                 /// </summary>
@@ -3307,10 +3307,10 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">The namespace of the organization to query partner organizations</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>PaginatedResponsePartnerOrganization</returns>
-            public PaginatedResponsePartnerOrganization GetPartnerOrganizations (string organizationId, int? offset = null, int? limit = null)
+        /// <returns>PaginatedResponseOfPartnerOrganization</returns>
+            public PaginatedResponseOfPartnerOrganization GetPartnerOrganizations (string organizationId, int? offset = null, int? limit = null)
             {
-        ApiResponse<PaginatedResponsePartnerOrganization> localVarResponse = GetPartnerOrganizationsWithHttpInfo(organizationId, offset, limit);
+        ApiResponse<PaginatedResponseOfPartnerOrganization> localVarResponse = GetPartnerOrganizationsWithHttpInfo(organizationId, offset, limit);
             return localVarResponse.Data;
             }
 
@@ -3321,8 +3321,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">The namespace of the organization to query partner organizations</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiResponse of PaginatedResponsePartnerOrganization</returns>
-            public ApiResponse< PaginatedResponsePartnerOrganization > GetPartnerOrganizationsWithHttpInfo (string organizationId, int? offset = null, int? limit = null)
+        /// <returns>ApiResponse of PaginatedResponseOfPartnerOrganization</returns>
+            public ApiResponse< PaginatedResponseOfPartnerOrganization > GetPartnerOrganizationsWithHttpInfo (string organizationId, int? offset = null, int? limit = null)
             {
                     // verify the required parameter 'organizationId' is set
                     if (organizationId == null)
@@ -3375,9 +3375,9 @@ namespace BlueRain.ID4i.Api
             if (exception != null) throw exception;
             }
 
-                return new ApiResponse<PaginatedResponsePartnerOrganization>(localVarStatusCode,
+                return new ApiResponse<PaginatedResponseOfPartnerOrganization>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (PaginatedResponsePartnerOrganization) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponsePartnerOrganization)));
+                (PaginatedResponseOfPartnerOrganization) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseOfPartnerOrganization)));
             }
 
                 /// <summary>
@@ -3387,10 +3387,10 @@ namespace BlueRain.ID4i.Api
             /// <param name="organizationId">The namespace of the organization to query partner organizations</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of PaginatedResponsePartnerOrganization</returns>
-            public async System.Threading.Tasks.Task<PaginatedResponsePartnerOrganization> GetPartnerOrganizationsAsync (string organizationId, int? offset = null, int? limit = null)
+            /// <returns>Task of PaginatedResponseOfPartnerOrganization</returns>
+            public async System.Threading.Tasks.Task<PaginatedResponseOfPartnerOrganization> GetPartnerOrganizationsAsync (string organizationId, int? offset = null, int? limit = null)
                 {
-            ApiResponse<PaginatedResponsePartnerOrganization> localVarResponse = await GetPartnerOrganizationsAsyncWithHttpInfo(organizationId, offset, limit);
+            ApiResponse<PaginatedResponseOfPartnerOrganization> localVarResponse = await GetPartnerOrganizationsAsyncWithHttpInfo(organizationId, offset, limit);
                 return localVarResponse.Data;
 
                 }
@@ -3402,8 +3402,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="organizationId">The namespace of the organization to query partner organizations</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiResponse (PaginatedResponsePartnerOrganization)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedResponsePartnerOrganization>> GetPartnerOrganizationsAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null)
+            /// <returns>Task of ApiResponse (PaginatedResponseOfPartnerOrganization)</returns>
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfPartnerOrganization>> GetPartnerOrganizationsAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null)
                 {
                         // verify the required parameter 'organizationId' is set
                         if (organizationId == null)
@@ -3456,9 +3456,9 @@ namespace BlueRain.ID4i.Api
                 if (exception != null) throw exception;
                 }
 
-                    return new ApiResponse<PaginatedResponsePartnerOrganization>(localVarStatusCode,
+                    return new ApiResponse<PaginatedResponseOfPartnerOrganization>(localVarStatusCode,
                     localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                    (PaginatedResponsePartnerOrganization) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponsePartnerOrganization)));
+                    (PaginatedResponseOfPartnerOrganization) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseOfPartnerOrganization)));
                 }
 
             /// <summary>
