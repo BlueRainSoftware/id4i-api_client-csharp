@@ -60,8 +60,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">organizationId</param>
         /// <param name="id4n">id4n</param>
         /// <param name="fileName">fileName</param>
-        /// <returns>ResponseEntity</returns>
-        ResponseEntity DeleteDocument (string organizationId, string id4n, string fileName);
+        /// <returns></returns>
+        void DeleteDocument (string organizationId, string id4n, string fileName);
 
         /// <summary>
             /// Delete a document
@@ -73,8 +73,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">organizationId</param>
         /// <param name="id4n">id4n</param>
         /// <param name="fileName">fileName</param>
-        /// <returns>ApiResponse of ResponseEntity</returns>
-        ApiResponse<ResponseEntity> DeleteDocumentWithHttpInfo (string organizationId, string id4n, string fileName);
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DeleteDocumentWithHttpInfo (string organizationId, string id4n, string fileName);
         /// <summary>
             /// Retrieve a document (meta-data only, no content)
             /// </summary>
@@ -376,8 +376,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="organizationId">organizationId</param>
             /// <param name="id4n">id4n</param>
             /// <param name="fileName">fileName</param>
-            /// <returns>Task of ResponseEntity</returns>
-            System.Threading.Tasks.Task<ResponseEntity> DeleteDocumentAsync (string organizationId, string id4n, string fileName);
+            /// <returns>Task of void</returns>
+            System.Threading.Tasks.Task DeleteDocumentAsync (string organizationId, string id4n, string fileName);
 
                 /// <summary>
                 /// Delete a document
@@ -389,8 +389,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="organizationId">organizationId</param>
             /// <param name="id4n">id4n</param>
             /// <param name="fileName">fileName</param>
-            /// <returns>Task of ApiResponse (ResponseEntity)</returns>
-                System.Threading.Tasks.Task<ApiResponse<ResponseEntity>> DeleteDocumentAsyncWithHttpInfo (string organizationId, string id4n, string fileName);
+            /// <returns>Task of ApiResponse</returns>
+                System.Threading.Tasks.Task<ApiResponse<Object>> DeleteDocumentAsyncWithHttpInfo (string organizationId, string id4n, string fileName);
                 /// <summary>
                 /// Retrieve a document (meta-data only, no content)
                 /// </summary>
@@ -933,11 +933,10 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">organizationId</param>
         /// <param name="id4n">id4n</param>
         /// <param name="fileName">fileName</param>
-        /// <returns>ResponseEntity</returns>
-            public ResponseEntity DeleteDocument (string organizationId, string id4n, string fileName)
+        /// <returns></returns>
+            public void DeleteDocument (string organizationId, string id4n, string fileName)
             {
-        ApiResponse<ResponseEntity> localVarResponse = DeleteDocumentWithHttpInfo(organizationId, id4n, fileName);
-            return localVarResponse.Data;
+        DeleteDocumentWithHttpInfo(organizationId, id4n, fileName);
             }
 
             /// <summary>
@@ -947,8 +946,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">organizationId</param>
         /// <param name="id4n">id4n</param>
         /// <param name="fileName">fileName</param>
-        /// <returns>ApiResponse of ResponseEntity</returns>
-            public ApiResponse< ResponseEntity > DeleteDocumentWithHttpInfo (string organizationId, string id4n, string fileName)
+        /// <returns>ApiResponse of Object(void)</returns>
+            public ApiResponse<Object> DeleteDocumentWithHttpInfo (string organizationId, string id4n, string fileName)
             {
                     // verify the required parameter 'organizationId' is set
                     if (organizationId == null)
@@ -1007,9 +1006,9 @@ namespace BlueRain.ID4i.Api
             if (exception != null) throw exception;
             }
 
-                return new ApiResponse<ResponseEntity>(localVarStatusCode,
+                return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (ResponseEntity) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseEntity)));
+                null);
             }
 
                 /// <summary>
@@ -1019,11 +1018,10 @@ namespace BlueRain.ID4i.Api
             /// <param name="organizationId">organizationId</param>
             /// <param name="id4n">id4n</param>
             /// <param name="fileName">fileName</param>
-            /// <returns>Task of ResponseEntity</returns>
-            public async System.Threading.Tasks.Task<ResponseEntity> DeleteDocumentAsync (string organizationId, string id4n, string fileName)
+            /// <returns>Task of void</returns>
+            public async System.Threading.Tasks.Task DeleteDocumentAsync (string organizationId, string id4n, string fileName)
                 {
-            ApiResponse<ResponseEntity> localVarResponse = await DeleteDocumentAsyncWithHttpInfo(organizationId, id4n, fileName);
-                return localVarResponse.Data;
+            await DeleteDocumentAsyncWithHttpInfo(organizationId, id4n, fileName);
 
                 }
 
@@ -1034,8 +1032,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="organizationId">organizationId</param>
             /// <param name="id4n">id4n</param>
             /// <param name="fileName">fileName</param>
-            /// <returns>Task of ApiResponse (ResponseEntity)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<ResponseEntity>> DeleteDocumentAsyncWithHttpInfo (string organizationId, string id4n, string fileName)
+            /// <returns>Task of ApiResponse</returns>
+                public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteDocumentAsyncWithHttpInfo (string organizationId, string id4n, string fileName)
                 {
                         // verify the required parameter 'organizationId' is set
                         if (organizationId == null)
@@ -1094,9 +1092,9 @@ namespace BlueRain.ID4i.Api
                 if (exception != null) throw exception;
                 }
 
-                    return new ApiResponse<ResponseEntity>(localVarStatusCode,
+                    return new ApiResponse<Object>(localVarStatusCode,
                     localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                    (ResponseEntity) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResponseEntity)));
+                    null);
                 }
 
             /// <summary>
