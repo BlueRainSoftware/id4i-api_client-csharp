@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="getallroutes"></a>
 # **GetAllRoutes**
-> List<Route> GetAllRoutes (string id4n, string type, string organizationId = null, bool? interpolate = null)
+> List<Route> GetAllRoutes (string id4n, string type, bool? interpolate = null, string organizationId = null)
 
 Retrieve all routes of a GUID (or ID4N)
 
@@ -38,13 +38,13 @@ namespace Example
             var apiInstance = new RoutingApi();
             var id4n = id4n_example;  // string | id4n
             var type = type_example;  // string | The type of route you want to have
-            var organizationId = organizationId_example;  // string | organizationId (optional) 
             var interpolate = true;  // bool? | interpolate (optional)  (default to true)
+            var organizationId = organizationId_example;  // string | organizationId (optional) 
 
             try
             {
                 // Retrieve all routes of a GUID (or ID4N)
-                List&lt;Route&gt; result = apiInstance.GetAllRoutes(id4n, type, organizationId, interpolate);
+                List&lt;Route&gt; result = apiInstance.GetAllRoutes(id4n, type, interpolate, organizationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -62,8 +62,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
  **type** | **string**| The type of route you want to have | 
- **organizationId** | **string**| organizationId | [optional] 
  **interpolate** | **bool?**| interpolate | [optional] [default to true]
+ **organizationId** | **string**| organizationId | [optional] 
 
 ### Return type
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 <a name="getroute"></a>
 # **GetRoute**
-> Route GetRoute (string id4n, string type, bool? privateRoutes = null, bool? publicRoutes = null, bool? interpolate = null)
+> Route GetRoute (string id4n, string type, bool? interpolate = null, bool? privateRoutes = null, bool? publicRoutes = null)
 
 Retrieve current route of a GUID (or ID4N)
 
@@ -108,14 +108,14 @@ namespace Example
             var apiInstance = new RoutingApi();
             var id4n = id4n_example;  // string | id4n
             var type = type_example;  // string | The type of route you want to have
+            var interpolate = true;  // bool? | interpolate (optional)  (default to true)
             var privateRoutes = true;  // bool? | privateRoutes (optional)  (default to true)
             var publicRoutes = true;  // bool? | publicRoutes (optional)  (default to true)
-            var interpolate = true;  // bool? | interpolate (optional)  (default to true)
 
             try
             {
                 // Retrieve current route of a GUID (or ID4N)
-                Route result = apiInstance.GetRoute(id4n, type, privateRoutes, publicRoutes, interpolate);
+                Route result = apiInstance.GetRoute(id4n, type, interpolate, privateRoutes, publicRoutes);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -133,9 +133,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
  **type** | **string**| The type of route you want to have | 
+ **interpolate** | **bool?**| interpolate | [optional] [default to true]
  **privateRoutes** | **bool?**| privateRoutes | [optional] [default to true]
  **publicRoutes** | **bool?**| publicRoutes | [optional] [default to true]
- **interpolate** | **bool?**| interpolate | [optional] [default to true]
 
 ### Return type
 
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 <a name="updateroutingfile"></a>
 # **UpdateRoutingFile**
-> void UpdateRoutingFile (RoutingFileRequest rfr, string id4n)
+> void UpdateRoutingFile (string id4n, RoutingFileRequest rfr)
 
 Store routing file
 
@@ -244,13 +244,13 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new RoutingApi();
-            var rfr = new RoutingFileRequest(); // RoutingFileRequest | rfr
             var id4n = id4n_example;  // string | id4n
+            var rfr = new RoutingFileRequest(); // RoutingFileRequest | rfr
 
             try
             {
                 // Store routing file
-                apiInstance.UpdateRoutingFile(rfr, id4n);
+                apiInstance.UpdateRoutingFile(id4n, rfr);
             }
             catch (Exception e)
             {
@@ -265,8 +265,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **rfr** | [**RoutingFileRequest**](RoutingFileRequest.md)| rfr | 
  **id4n** | **string**| id4n | 
+ **rfr** | [**RoutingFileRequest**](RoutingFileRequest.md)| rfr | 
 
 ### Return type
 

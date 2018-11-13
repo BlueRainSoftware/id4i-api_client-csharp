@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="listorganizationchangelog"></a>
 # **ListOrganizationChangeLog**
-> PaginatedChangeLogEntryResponse ListOrganizationChangeLog (string organizationId, string messageMimeType = null, DateTime? fromDate = null, DateTime? toDate = null, int? offset = null, int? limit = null)
+> PaginatedChangeLogEntryResponse ListOrganizationChangeLog (string organizationId, DateTime? fromDate = null, int? limit = null, string messageMimeType = null, int? offset = null, DateTime? toDate = null)
 
 List change log entries of an organization
 
@@ -36,16 +36,16 @@ namespace Example
 
             var apiInstance = new AuditingApi();
             var organizationId = organizationId_example;  // string | The namespace identifying the organization whose change log entries are to be listed
-            var messageMimeType = messageMimeType_example;  // string | The Mime-type for the message format that should be returned. e.g. 'text/plain' or 'text/mustache'  (optional)  (default to text/mustache)
-            var fromDate = 2013-10-20T19:20:30+01:00;  // DateTime? | From date time as UTC Date-Time format (optional) 
-            var toDate = 2013-10-20T19:20:30+01:00;  // DateTime? | To date time as UTC Date-Time format (optional) 
-            var offset = 56;  // int? | Start with the n-th element (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements (optional) 
+            var fromDate = "2018-05-10T10:05:10.690Z";  // DateTime? | From date time as UTC Date-Time format (optional) 
+            var limit = 100;  // int? | The maximum count of returned elements (optional) 
+            var messageMimeType = "text/plain";  // string | The Mime-type for the message format that should be returned. e.g. 'text/plain' or 'text/mustache'  (optional)  (default to text/mustache)
+            var offset = 0;  // int? | Start with the n-th element (optional) 
+            var toDate = "2018-05-11T01:01:01.690Z";  // DateTime? | To date time as UTC Date-Time format (optional) 
 
             try
             {
                 // List change log entries of an organization
-                PaginatedChangeLogEntryResponse result = apiInstance.ListOrganizationChangeLog(organizationId, messageMimeType, fromDate, toDate, offset, limit);
+                PaginatedChangeLogEntryResponse result = apiInstance.ListOrganizationChangeLog(organizationId, fromDate, limit, messageMimeType, offset, toDate);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -62,11 +62,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| The namespace identifying the organization whose change log entries are to be listed | 
- **messageMimeType** | **string**| The Mime-type for the message format that should be returned. e.g. &#39;text/plain&#39; or &#39;text/mustache&#39;  | [optional] [default to text/mustache]
  **fromDate** | **DateTime?**| From date time as UTC Date-Time format | [optional] 
- **toDate** | **DateTime?**| To date time as UTC Date-Time format | [optional] 
- **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
+ **messageMimeType** | **string**| The Mime-type for the message format that should be returned. e.g. &#39;text/plain&#39; or &#39;text/mustache&#39;  | [optional] [default to text/mustache]
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **toDate** | **DateTime?**| To date time as UTC Date-Time format | [optional] 
 
 ### Return type
 

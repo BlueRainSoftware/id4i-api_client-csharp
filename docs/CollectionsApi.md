@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
 
 <a name="getallcollectionsoforganization"></a>
 # **GetAllCollectionsOfOrganization**
-> PaginatedGuidCollection GetAllCollectionsOfOrganization (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null)
+> PaginatedGuidCollection GetAllCollectionsOfOrganization (string organizationId, string label = null, string labelPrefix = null, int? limit = null, int? offset = null, string type = null)
 
 Get collections of organization
 
@@ -299,16 +299,16 @@ namespace Example
 
             var apiInstance = new CollectionsApi();
             var organizationId = organizationId_example;  // string | The namespace of the organization
-            var offset = 56;  // int? | Start with the n-th element (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements (optional) 
-            var type = type_example;  // string | Filter by this type (optional) 
             var label = label_example;  // string | Filter by this label (optional) 
             var labelPrefix = labelPrefix_example;  // string | Filter by this label prefix (optional) 
+            var limit = 100;  // int? | The maximum count of returned elements (optional) 
+            var offset = 0;  // int? | Start with the n-th element (optional) 
+            var type = type_example;  // string | Filter by this type (optional) 
 
             try
             {
                 // Get collections of organization
-                PaginatedGuidCollection result = apiInstance.GetAllCollectionsOfOrganization(organizationId, offset, limit, type, label, labelPrefix);
+                PaginatedGuidCollection result = apiInstance.GetAllCollectionsOfOrganization(organizationId, label, labelPrefix, limit, offset, type);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -325,11 +325,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| The namespace of the organization | 
- **offset** | **int?**| Start with the n-th element | [optional] 
- **limit** | **int?**| The maximum count of returned elements | [optional] 
- **type** | **string**| Filter by this type | [optional] 
  **label** | **string**| Filter by this label | [optional] 
  **labelPrefix** | **string**| Filter by this label prefix | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **type** | **string**| Filter by this type | [optional] 
 
 ### Return type
 
@@ -348,7 +348,7 @@ Name | Type | Description  | Notes
 
 <a name="listelementsofcollection"></a>
 # **ListElementsOfCollection**
-> PaginatedGuidResponse ListElementsOfCollection (string id4n, int? offset = null, int? limit = null)
+> PaginatedGuidResponse ListElementsOfCollection (string id4n, int? limit = null, int? offset = null)
 
 List contents of the collection
 
@@ -373,13 +373,13 @@ namespace Example
 
             var apiInstance = new CollectionsApi();
             var id4n = id4n_example;  // string | id4n
-            var offset = 56;  // int? | Start with the n-th element (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements (optional) 
+            var limit = 100;  // int? | The maximum count of returned elements (optional) 
+            var offset = 0;  // int? | Start with the n-th element (optional) 
 
             try
             {
                 // List contents of the collection
-                PaginatedGuidResponse result = apiInstance.ListElementsOfCollection(id4n, offset, limit);
+                PaginatedGuidResponse result = apiInstance.ListElementsOfCollection(id4n, limit, offset);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -396,8 +396,8 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
 
 ### Return type
 

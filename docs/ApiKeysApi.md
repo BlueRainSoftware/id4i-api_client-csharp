@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 <a name="addapikeyprivilege"></a>
 # **AddApiKeyPrivilege**
-> void AddApiKeyPrivilege (string key, AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest)
+> void AddApiKeyPrivilege (AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest, string key)
 
 Add privilege
 
@@ -44,13 +44,13 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ApiKeysApi();
-            var key = key_example;  // string | key
             var addApiKeyPrivilegeRequest = new AddApiKeyPrivilegeRequest(); // AddApiKeyPrivilegeRequest | addApiKeyPrivilegeRequest
+            var key = key_example;  // string | key
 
             try
             {
                 // Add privilege
-                apiInstance.AddApiKeyPrivilege(key, addApiKeyPrivilegeRequest);
+                apiInstance.AddApiKeyPrivilege(addApiKeyPrivilegeRequest, key);
             }
             catch (Exception e)
             {
@@ -65,8 +65,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **key** | **string**| key | 
  **addApiKeyPrivilegeRequest** | [**AddApiKeyPrivilegeRequest**](AddApiKeyPrivilegeRequest.md)| addApiKeyPrivilegeRequest | 
+ **key** | **string**| key | 
 
 ### Return type
 
@@ -85,7 +85,7 @@ void (empty response body)
 
 <a name="addapikeyprivilegeforid4ns"></a>
 # **AddApiKeyPrivilegeForId4ns**
-> void AddApiKeyPrivilegeForId4ns (string key, string privilege, ListOfId4ns id4ns)
+> void AddApiKeyPrivilegeForId4ns (ListOfId4ns id4ns, string key, string privilege)
 
 Add ID4ns of a privilege
 
@@ -109,14 +109,14 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ApiKeysApi();
+            var id4ns = new ListOfId4ns(); // ListOfId4ns | id4ns
             var key = key_example;  // string | key
             var privilege = privilege_example;  // string | privilege
-            var id4ns = new ListOfId4ns(); // ListOfId4ns | id4ns
 
             try
             {
                 // Add ID4ns of a privilege
-                apiInstance.AddApiKeyPrivilegeForId4ns(key, privilege, id4ns);
+                apiInstance.AddApiKeyPrivilegeForId4ns(id4ns, key, privilege);
             }
             catch (Exception e)
             {
@@ -131,9 +131,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **id4ns** | [**ListOfId4ns**](ListOfId4ns.md)| id4ns | 
  **key** | **string**| key | 
  **privilege** | **string**| privilege | 
- **id4ns** | [**ListOfId4ns**](ListOfId4ns.md)| id4ns | 
 
 ### Return type
 
@@ -349,7 +349,7 @@ Name | Type | Description  | Notes
 
 <a name="listallapikeyprivileges"></a>
 # **ListAllApiKeyPrivileges**
-> ApiKeyPrivilegeInfoResponse ListAllApiKeyPrivileges (bool? id4nConcerning = null, int? offset = null, int? limit = null)
+> ApiKeyPrivilegeInfoResponse ListAllApiKeyPrivileges (bool? id4nConcerning = null, int? limit = null, int? offset = null)
 
 List all privileges
 
@@ -376,13 +376,13 @@ namespace Example
 
             var apiInstance = new ApiKeysApi();
             var id4nConcerning = true;  // bool? | id4nConcerning (optional) 
-            var offset = 56;  // int? | Start with the n-th element (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements (optional) 
+            var limit = 100;  // int? | The maximum count of returned elements (optional) 
+            var offset = 0;  // int? | Start with the n-th element (optional) 
 
             try
             {
                 // List all privileges
-                ApiKeyPrivilegeInfoResponse result = apiInstance.ListAllApiKeyPrivileges(id4nConcerning, offset, limit);
+                ApiKeyPrivilegeInfoResponse result = apiInstance.ListAllApiKeyPrivileges(id4nConcerning, limit, offset);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -399,8 +399,8 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4nConcerning** | **bool?**| id4nConcerning | [optional] 
- **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
 
 ### Return type
 
@@ -419,7 +419,7 @@ Name | Type | Description  | Notes
 
 <a name="listallapikeysoforganization"></a>
 # **ListAllApiKeysOfOrganization**
-> PaginatedApiKeyResponse ListAllApiKeysOfOrganization (string organizationId = null, int? offset = null, int? limit = null)
+> PaginatedApiKeyResponse ListAllApiKeysOfOrganization (int? limit = null, int? offset = null, string organizationId = null)
 
 Find API key by organization
 
@@ -445,14 +445,14 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ApiKeysApi();
+            var limit = 100;  // int? | The maximum count of returned elements (optional) 
+            var offset = 0;  // int? | Start with the n-th element (optional) 
             var organizationId = organizationId_example;  // string | The namespace of the organization to search in. (optional) 
-            var offset = 56;  // int? | Start with the n-th element (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
                 // Find API key by organization
-                PaginatedApiKeyResponse result = apiInstance.ListAllApiKeysOfOrganization(organizationId, offset, limit);
+                PaginatedApiKeyResponse result = apiInstance.ListAllApiKeysOfOrganization(limit, offset, organizationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -468,9 +468,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **string**| The namespace of the organization to search in. | [optional] 
- **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **organizationId** | **string**| The namespace of the organization to search in. | [optional] 
 
 ### Return type
 
@@ -489,7 +489,7 @@ Name | Type | Description  | Notes
 
 <a name="listapikeyprivileges"></a>
 # **ListApiKeyPrivileges**
-> ApiKeyPrivilegePaginatedResponse ListApiKeyPrivileges (string key, int? offset = null, int? limit = null)
+> ApiKeyPrivilegePaginatedResponse ListApiKeyPrivileges (string key, int? limit = null, int? offset = null)
 
 List privileges
 
@@ -514,13 +514,13 @@ namespace Example
 
             var apiInstance = new ApiKeysApi();
             var key = key_example;  // string | key
-            var offset = 56;  // int? | Start with the n-th element (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements (optional) 
+            var limit = 100;  // int? | The maximum count of returned elements (optional) 
+            var offset = 0;  // int? | Start with the n-th element (optional) 
 
             try
             {
                 // List privileges
-                ApiKeyPrivilegePaginatedResponse result = apiInstance.ListApiKeyPrivileges(key, offset, limit);
+                ApiKeyPrivilegePaginatedResponse result = apiInstance.ListApiKeyPrivileges(key, limit, offset);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -537,8 +537,8 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **string**| key | 
- **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
 
 ### Return type
 
@@ -557,7 +557,7 @@ Name | Type | Description  | Notes
 
 <a name="listid4ns"></a>
 # **ListId4ns**
-> Id4nPresentationPaginatedResponse ListId4ns (string key, string privilege, int? offset = null, int? limit = null)
+> Id4nPresentationPaginatedResponse ListId4ns (string key, string privilege, int? limit = null, int? offset = null)
 
 ID4ns of a privilege
 
@@ -585,13 +585,13 @@ namespace Example
             var apiInstance = new ApiKeysApi();
             var key = key_example;  // string | key
             var privilege = privilege_example;  // string | privilege
-            var offset = 56;  // int? | Start with the n-th element (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements (optional) 
+            var limit = 100;  // int? | The maximum count of returned elements (optional) 
+            var offset = 0;  // int? | Start with the n-th element (optional) 
 
             try
             {
                 // ID4ns of a privilege
-                Id4nPresentationPaginatedResponse result = apiInstance.ListId4ns(key, privilege, offset, limit);
+                Id4nPresentationPaginatedResponse result = apiInstance.ListId4ns(key, privilege, limit, offset);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -609,8 +609,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **string**| key | 
  **privilege** | **string**| privilege | 
- **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
 
 ### Return type
 
@@ -694,7 +694,7 @@ void (empty response body)
 
 <a name="removeapikeyprivilegeforid4ns"></a>
 # **RemoveApiKeyPrivilegeForId4ns**
-> void RemoveApiKeyPrivilegeForId4ns (string key, string privilege, ListOfId4ns id4ns)
+> void RemoveApiKeyPrivilegeForId4ns (ListOfId4ns id4ns, string key, string privilege)
 
 Remove id4ns of a privilege
 
@@ -718,14 +718,14 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ApiKeysApi();
+            var id4ns = new ListOfId4ns(); // ListOfId4ns | id4ns
             var key = key_example;  // string | key
             var privilege = privilege_example;  // string | privilege
-            var id4ns = new ListOfId4ns(); // ListOfId4ns | id4ns
 
             try
             {
                 // Remove id4ns of a privilege
-                apiInstance.RemoveApiKeyPrivilegeForId4ns(key, privilege, id4ns);
+                apiInstance.RemoveApiKeyPrivilegeForId4ns(id4ns, key, privilege);
             }
             catch (Exception e)
             {
@@ -740,9 +740,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **id4ns** | [**ListOfId4ns**](ListOfId4ns.md)| id4ns | 
  **key** | **string**| key | 
  **privilege** | **string**| privilege | 
- **id4ns** | [**ListOfId4ns**](ListOfId4ns.md)| id4ns | 
 
 ### Return type
 
@@ -761,7 +761,7 @@ void (empty response body)
 
 <a name="updateapikey"></a>
 # **UpdateApiKey**
-> void UpdateApiKey (string key, ApiKeyChangeRequest apiKeyChange)
+> void UpdateApiKey (ApiKeyChangeRequest apiKeyChange, string key)
 
 Update API keys
 
@@ -787,13 +787,13 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ApiKeysApi();
-            var key = key_example;  // string | The API key to be updated.
             var apiKeyChange = new ApiKeyChangeRequest(); // ApiKeyChangeRequest | The new values to apply.
+            var key = key_example;  // string | The API key to be updated.
 
             try
             {
                 // Update API keys
-                apiInstance.UpdateApiKey(key, apiKeyChange);
+                apiInstance.UpdateApiKey(apiKeyChange, key);
             }
             catch (Exception e)
             {
@@ -808,8 +808,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **key** | **string**| The API key to be updated. | 
  **apiKeyChange** | [**ApiKeyChangeRequest**](ApiKeyChangeRequest.md)| The new values to apply. | 
+ **key** | **string**| The API key to be updated. | 
 
 ### Return type
 

@@ -32,10 +32,10 @@ namespace BlueRain.ID4i.Api
             /// Add a new history item
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id4n">GUID to retrieve the history for</param>
         /// <param name="historyItem">The history item to publish</param>
+        /// <param name="id4n">GUID to retrieve the history for</param>
         /// <returns></returns>
-        void AddItem (string id4n, HistoryItem historyItem);
+        void AddItem (HistoryItem historyItem, string id4n);
 
         /// <summary>
             /// Add history item
@@ -44,10 +44,10 @@ namespace BlueRain.ID4i.Api
             /// Add a new history item
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id4n">GUID to retrieve the history for</param>
         /// <param name="historyItem">The history item to publish</param>
+        /// <param name="id4n">GUID to retrieve the history for</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> AddItemWithHttpInfo (string id4n, HistoryItem historyItem);
+        ApiResponse<Object> AddItemWithHttpInfo (HistoryItem historyItem, string id4n);
         /// <summary>
             /// List history
             /// </summary>
@@ -56,16 +56,16 @@ namespace BlueRain.ID4i.Api
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">GUID to retrieve the history for</param>
-        /// <param name="includePrivate">Also return private history entries (optional, default to true)</param>
-        /// <param name="organization">Show only entries created by one of the given organizations. This parameter can be used multiple times. (optional)</param>
-        /// <param name="type">Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional)</param>
-        /// <param name="qualifier">Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)</param>
         /// <param name="fromDate">From date time as UTC Date-Time format (optional)</param>
-        /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="includePrivate">Also return private history entries (optional, default to true)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="organization">Show only entries created by one of the given organizations. This parameter can be used multiple times. (optional)</param>
+        /// <param name="qualifier">Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)</param>
+        /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
+        /// <param name="type">Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional)</param>
         /// <returns>PaginatedHistoryItemResponse</returns>
-        PaginatedHistoryItemResponse FilteredList (string id4n, bool? includePrivate = null, string organization = null, List<string> type = null, List<string> qualifier = null, DateTime? fromDate = null, DateTime? toDate = null, int? offset = null, int? limit = null);
+        PaginatedHistoryItemResponse FilteredList (string id4n, DateTime? fromDate = null, bool? includePrivate = null, int? limit = null, int? offset = null, string organization = null, List<string> qualifier = null, DateTime? toDate = null, List<string> type = null);
 
         /// <summary>
             /// List history
@@ -75,16 +75,16 @@ namespace BlueRain.ID4i.Api
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">GUID to retrieve the history for</param>
-        /// <param name="includePrivate">Also return private history entries (optional, default to true)</param>
-        /// <param name="organization">Show only entries created by one of the given organizations. This parameter can be used multiple times. (optional)</param>
-        /// <param name="type">Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional)</param>
-        /// <param name="qualifier">Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)</param>
         /// <param name="fromDate">From date time as UTC Date-Time format (optional)</param>
-        /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="includePrivate">Also return private history entries (optional, default to true)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="organization">Show only entries created by one of the given organizations. This parameter can be used multiple times. (optional)</param>
+        /// <param name="qualifier">Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)</param>
+        /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
+        /// <param name="type">Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional)</param>
         /// <returns>ApiResponse of PaginatedHistoryItemResponse</returns>
-        ApiResponse<PaginatedHistoryItemResponse> FilteredListWithHttpInfo (string id4n, bool? includePrivate = null, string organization = null, List<string> type = null, List<string> qualifier = null, DateTime? fromDate = null, DateTime? toDate = null, int? offset = null, int? limit = null);
+        ApiResponse<PaginatedHistoryItemResponse> FilteredListWithHttpInfo (string id4n, DateTime? fromDate = null, bool? includePrivate = null, int? limit = null, int? offset = null, string organization = null, List<string> qualifier = null, DateTime? toDate = null, List<string> type = null);
         /// <summary>
             /// DEPRECATED - List history
             /// </summary>
@@ -95,10 +95,10 @@ namespace BlueRain.ID4i.Api
         /// <param name="id4n">GUID to retrieve the history for</param>
         /// <param name="organizationId">organizationId</param>
         /// <param name="includePrivate">Also return private history entries (optional, default to true)</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>PaginatedHistoryItemResponse</returns>
-        PaginatedHistoryItemResponse List (string id4n, string organizationId, bool? includePrivate = null, int? offset = null, int? limit = null);
+        PaginatedHistoryItemResponse List (string id4n, string organizationId, bool? includePrivate = null, int? limit = null, int? offset = null);
 
         /// <summary>
             /// DEPRECATED - List history
@@ -110,10 +110,10 @@ namespace BlueRain.ID4i.Api
         /// <param name="id4n">GUID to retrieve the history for</param>
         /// <param name="organizationId">organizationId</param>
         /// <param name="includePrivate">Also return private history entries (optional, default to true)</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>ApiResponse of PaginatedHistoryItemResponse</returns>
-        ApiResponse<PaginatedHistoryItemResponse> ListWithHttpInfo (string id4n, string organizationId, bool? includePrivate = null, int? offset = null, int? limit = null);
+        ApiResponse<PaginatedHistoryItemResponse> ListWithHttpInfo (string id4n, string organizationId, bool? includePrivate = null, int? limit = null, int? offset = null);
         /// <summary>
             /// Get history item
             /// </summary>
@@ -202,10 +202,10 @@ namespace BlueRain.ID4i.Api
                 /// Add a new history item
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="id4n">GUID to retrieve the history for</param>
             /// <param name="historyItem">The history item to publish</param>
+            /// <param name="id4n">GUID to retrieve the history for</param>
             /// <returns>Task of void</returns>
-            System.Threading.Tasks.Task AddItemAsync (string id4n, HistoryItem historyItem);
+            System.Threading.Tasks.Task AddItemAsync (HistoryItem historyItem, string id4n);
 
                 /// <summary>
                 /// Add history item
@@ -214,10 +214,10 @@ namespace BlueRain.ID4i.Api
                 /// Add a new history item
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="id4n">GUID to retrieve the history for</param>
             /// <param name="historyItem">The history item to publish</param>
+            /// <param name="id4n">GUID to retrieve the history for</param>
             /// <returns>Task of ApiResponse</returns>
-                System.Threading.Tasks.Task<ApiResponse<Object>> AddItemAsyncWithHttpInfo (string id4n, HistoryItem historyItem);
+                System.Threading.Tasks.Task<ApiResponse<Object>> AddItemAsyncWithHttpInfo (HistoryItem historyItem, string id4n);
                 /// <summary>
                 /// List history
                 /// </summary>
@@ -226,16 +226,16 @@ namespace BlueRain.ID4i.Api
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">GUID to retrieve the history for</param>
-            /// <param name="includePrivate">Also return private history entries (optional, default to true)</param>
-            /// <param name="organization">Show only entries created by one of the given organizations. This parameter can be used multiple times. (optional)</param>
-            /// <param name="type">Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional)</param>
-            /// <param name="qualifier">Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)</param>
             /// <param name="fromDate">From date time as UTC Date-Time format (optional)</param>
-            /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="includePrivate">Also return private history entries (optional, default to true)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="organization">Show only entries created by one of the given organizations. This parameter can be used multiple times. (optional)</param>
+            /// <param name="qualifier">Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)</param>
+            /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
+            /// <param name="type">Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional)</param>
             /// <returns>Task of PaginatedHistoryItemResponse</returns>
-            System.Threading.Tasks.Task<PaginatedHistoryItemResponse> FilteredListAsync (string id4n, bool? includePrivate = null, string organization = null, List<string> type = null, List<string> qualifier = null, DateTime? fromDate = null, DateTime? toDate = null, int? offset = null, int? limit = null);
+            System.Threading.Tasks.Task<PaginatedHistoryItemResponse> FilteredListAsync (string id4n, DateTime? fromDate = null, bool? includePrivate = null, int? limit = null, int? offset = null, string organization = null, List<string> qualifier = null, DateTime? toDate = null, List<string> type = null);
 
                 /// <summary>
                 /// List history
@@ -245,16 +245,16 @@ namespace BlueRain.ID4i.Api
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">GUID to retrieve the history for</param>
-            /// <param name="includePrivate">Also return private history entries (optional, default to true)</param>
-            /// <param name="organization">Show only entries created by one of the given organizations. This parameter can be used multiple times. (optional)</param>
-            /// <param name="type">Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional)</param>
-            /// <param name="qualifier">Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)</param>
             /// <param name="fromDate">From date time as UTC Date-Time format (optional)</param>
-            /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="includePrivate">Also return private history entries (optional, default to true)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="organization">Show only entries created by one of the given organizations. This parameter can be used multiple times. (optional)</param>
+            /// <param name="qualifier">Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)</param>
+            /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
+            /// <param name="type">Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedHistoryItemResponse)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedHistoryItemResponse>> FilteredListAsyncWithHttpInfo (string id4n, bool? includePrivate = null, string organization = null, List<string> type = null, List<string> qualifier = null, DateTime? fromDate = null, DateTime? toDate = null, int? offset = null, int? limit = null);
+                System.Threading.Tasks.Task<ApiResponse<PaginatedHistoryItemResponse>> FilteredListAsyncWithHttpInfo (string id4n, DateTime? fromDate = null, bool? includePrivate = null, int? limit = null, int? offset = null, string organization = null, List<string> qualifier = null, DateTime? toDate = null, List<string> type = null);
                 /// <summary>
                 /// DEPRECATED - List history
                 /// </summary>
@@ -265,10 +265,10 @@ namespace BlueRain.ID4i.Api
             /// <param name="id4n">GUID to retrieve the history for</param>
             /// <param name="organizationId">organizationId</param>
             /// <param name="includePrivate">Also return private history entries (optional, default to true)</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of PaginatedHistoryItemResponse</returns>
-            System.Threading.Tasks.Task<PaginatedHistoryItemResponse> ListAsync (string id4n, string organizationId, bool? includePrivate = null, int? offset = null, int? limit = null);
+            System.Threading.Tasks.Task<PaginatedHistoryItemResponse> ListAsync (string id4n, string organizationId, bool? includePrivate = null, int? limit = null, int? offset = null);
 
                 /// <summary>
                 /// DEPRECATED - List history
@@ -280,10 +280,10 @@ namespace BlueRain.ID4i.Api
             /// <param name="id4n">GUID to retrieve the history for</param>
             /// <param name="organizationId">organizationId</param>
             /// <param name="includePrivate">Also return private history entries (optional, default to true)</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedHistoryItemResponse)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedHistoryItemResponse>> ListAsyncWithHttpInfo (string id4n, string organizationId, bool? includePrivate = null, int? offset = null, int? limit = null);
+                System.Threading.Tasks.Task<ApiResponse<PaginatedHistoryItemResponse>> ListAsyncWithHttpInfo (string id4n, string organizationId, bool? includePrivate = null, int? limit = null, int? offset = null);
                 /// <summary>
                 /// Get history item
                 /// </summary>
@@ -467,29 +467,29 @@ namespace BlueRain.ID4i.Api
             /// Add history item Add a new history item
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id4n">GUID to retrieve the history for</param>
         /// <param name="historyItem">The history item to publish</param>
+        /// <param name="id4n">GUID to retrieve the history for</param>
         /// <returns></returns>
-            public void AddItem (string id4n, HistoryItem historyItem)
+            public void AddItem (HistoryItem historyItem, string id4n)
             {
-        AddItemWithHttpInfo(id4n, historyItem);
+        AddItemWithHttpInfo(historyItem, id4n);
             }
 
             /// <summary>
             /// Add history item Add a new history item
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id4n">GUID to retrieve the history for</param>
         /// <param name="historyItem">The history item to publish</param>
+        /// <param name="id4n">GUID to retrieve the history for</param>
         /// <returns>ApiResponse of Object(void)</returns>
-            public ApiResponse<Object> AddItemWithHttpInfo (string id4n, HistoryItem historyItem)
+            public ApiResponse<Object> AddItemWithHttpInfo (HistoryItem historyItem, string id4n)
             {
-                    // verify the required parameter 'id4n' is set
-                    if (id4n == null)
-                    throw new ApiException(400, "Missing required parameter 'id4n' when calling HistoryApi->AddItem");
                     // verify the required parameter 'historyItem' is set
                     if (historyItem == null)
                     throw new ApiException(400, "Missing required parameter 'historyItem' when calling HistoryApi->AddItem");
+                    // verify the required parameter 'id4n' is set
+                    if (id4n == null)
+                    throw new ApiException(400, "Missing required parameter 'id4n' when calling HistoryApi->AddItem");
 
             var localVarPath = "./api/v1/history/{id4n}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -553,12 +553,12 @@ namespace BlueRain.ID4i.Api
                 /// Add history item Add a new history item
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="id4n">GUID to retrieve the history for</param>
             /// <param name="historyItem">The history item to publish</param>
+            /// <param name="id4n">GUID to retrieve the history for</param>
             /// <returns>Task of void</returns>
-            public async System.Threading.Tasks.Task AddItemAsync (string id4n, HistoryItem historyItem)
+            public async System.Threading.Tasks.Task AddItemAsync (HistoryItem historyItem, string id4n)
                 {
-            await AddItemAsyncWithHttpInfo(id4n, historyItem);
+            await AddItemAsyncWithHttpInfo(historyItem, id4n);
 
                 }
 
@@ -566,17 +566,17 @@ namespace BlueRain.ID4i.Api
                 /// Add history item Add a new history item
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="id4n">GUID to retrieve the history for</param>
             /// <param name="historyItem">The history item to publish</param>
+            /// <param name="id4n">GUID to retrieve the history for</param>
             /// <returns>Task of ApiResponse</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<Object>> AddItemAsyncWithHttpInfo (string id4n, HistoryItem historyItem)
+                public async System.Threading.Tasks.Task<ApiResponse<Object>> AddItemAsyncWithHttpInfo (HistoryItem historyItem, string id4n)
                 {
-                        // verify the required parameter 'id4n' is set
-                        if (id4n == null)
-                        throw new ApiException(400, "Missing required parameter 'id4n' when calling HistoryApi->AddItem");
                         // verify the required parameter 'historyItem' is set
                         if (historyItem == null)
                         throw new ApiException(400, "Missing required parameter 'historyItem' when calling HistoryApi->AddItem");
+                        // verify the required parameter 'id4n' is set
+                        if (id4n == null)
+                        throw new ApiException(400, "Missing required parameter 'id4n' when calling HistoryApi->AddItem");
 
                 var localVarPath = "./api/v1/history/{id4n}";
                 var localVarPathParams = new Dictionary<String, String>();
@@ -641,18 +641,18 @@ namespace BlueRain.ID4i.Api
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">GUID to retrieve the history for</param>
-        /// <param name="includePrivate">Also return private history entries (optional, default to true)</param>
-        /// <param name="organization">Show only entries created by one of the given organizations. This parameter can be used multiple times. (optional)</param>
-        /// <param name="type">Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional)</param>
-        /// <param name="qualifier">Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)</param>
         /// <param name="fromDate">From date time as UTC Date-Time format (optional)</param>
-        /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="includePrivate">Also return private history entries (optional, default to true)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="organization">Show only entries created by one of the given organizations. This parameter can be used multiple times. (optional)</param>
+        /// <param name="qualifier">Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)</param>
+        /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
+        /// <param name="type">Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional)</param>
         /// <returns>PaginatedHistoryItemResponse</returns>
-            public PaginatedHistoryItemResponse FilteredList (string id4n, bool? includePrivate = null, string organization = null, List<string> type = null, List<string> qualifier = null, DateTime? fromDate = null, DateTime? toDate = null, int? offset = null, int? limit = null)
+            public PaginatedHistoryItemResponse FilteredList (string id4n, DateTime? fromDate = null, bool? includePrivate = null, int? limit = null, int? offset = null, string organization = null, List<string> qualifier = null, DateTime? toDate = null, List<string> type = null)
             {
-        ApiResponse<PaginatedHistoryItemResponse> localVarResponse = FilteredListWithHttpInfo(id4n, includePrivate, organization, type, qualifier, fromDate, toDate, offset, limit);
+        ApiResponse<PaginatedHistoryItemResponse> localVarResponse = FilteredListWithHttpInfo(id4n, fromDate, includePrivate, limit, offset, organization, qualifier, toDate, type);
             return localVarResponse.Data;
             }
 
@@ -661,16 +661,16 @@ namespace BlueRain.ID4i.Api
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">GUID to retrieve the history for</param>
-        /// <param name="includePrivate">Also return private history entries (optional, default to true)</param>
-        /// <param name="organization">Show only entries created by one of the given organizations. This parameter can be used multiple times. (optional)</param>
-        /// <param name="type">Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional)</param>
-        /// <param name="qualifier">Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)</param>
         /// <param name="fromDate">From date time as UTC Date-Time format (optional)</param>
-        /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="includePrivate">Also return private history entries (optional, default to true)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="organization">Show only entries created by one of the given organizations. This parameter can be used multiple times. (optional)</param>
+        /// <param name="qualifier">Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)</param>
+        /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
+        /// <param name="type">Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional)</param>
         /// <returns>ApiResponse of PaginatedHistoryItemResponse</returns>
-            public ApiResponse< PaginatedHistoryItemResponse > FilteredListWithHttpInfo (string id4n, bool? includePrivate = null, string organization = null, List<string> type = null, List<string> qualifier = null, DateTime? fromDate = null, DateTime? toDate = null, int? offset = null, int? limit = null)
+            public ApiResponse< PaginatedHistoryItemResponse > FilteredListWithHttpInfo (string id4n, DateTime? fromDate = null, bool? includePrivate = null, int? limit = null, int? offset = null, string organization = null, List<string> qualifier = null, DateTime? toDate = null, List<string> type = null)
             {
                     // verify the required parameter 'id4n' is set
                     if (id4n == null)
@@ -701,14 +701,14 @@ namespace BlueRain.ID4i.Api
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
                 if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
-                if (includePrivate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "includePrivate", includePrivate)); // query parameter
-                if (organization != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "organization", organization)); // query parameter
-                if (type != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "type", type)); // query parameter
-                if (qualifier != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "qualifier", qualifier)); // query parameter
                 if (fromDate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "fromDate", fromDate)); // query parameter
-                if (toDate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "toDate", toDate)); // query parameter
-                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+                if (includePrivate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "includePrivate", includePrivate)); // query parameter
                 if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+                if (organization != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "organization", organization)); // query parameter
+                if (qualifier != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "qualifier", qualifier)); // query parameter
+                if (toDate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "toDate", toDate)); // query parameter
+                if (type != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "type", type)); // query parameter
 
                 // authentication (Authorization) required
                         if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -739,18 +739,18 @@ namespace BlueRain.ID4i.Api
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">GUID to retrieve the history for</param>
-            /// <param name="includePrivate">Also return private history entries (optional, default to true)</param>
-            /// <param name="organization">Show only entries created by one of the given organizations. This parameter can be used multiple times. (optional)</param>
-            /// <param name="type">Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional)</param>
-            /// <param name="qualifier">Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)</param>
             /// <param name="fromDate">From date time as UTC Date-Time format (optional)</param>
-            /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="includePrivate">Also return private history entries (optional, default to true)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="organization">Show only entries created by one of the given organizations. This parameter can be used multiple times. (optional)</param>
+            /// <param name="qualifier">Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)</param>
+            /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
+            /// <param name="type">Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional)</param>
             /// <returns>Task of PaginatedHistoryItemResponse</returns>
-            public async System.Threading.Tasks.Task<PaginatedHistoryItemResponse> FilteredListAsync (string id4n, bool? includePrivate = null, string organization = null, List<string> type = null, List<string> qualifier = null, DateTime? fromDate = null, DateTime? toDate = null, int? offset = null, int? limit = null)
+            public async System.Threading.Tasks.Task<PaginatedHistoryItemResponse> FilteredListAsync (string id4n, DateTime? fromDate = null, bool? includePrivate = null, int? limit = null, int? offset = null, string organization = null, List<string> qualifier = null, DateTime? toDate = null, List<string> type = null)
                 {
-            ApiResponse<PaginatedHistoryItemResponse> localVarResponse = await FilteredListAsyncWithHttpInfo(id4n, includePrivate, organization, type, qualifier, fromDate, toDate, offset, limit);
+            ApiResponse<PaginatedHistoryItemResponse> localVarResponse = await FilteredListAsyncWithHttpInfo(id4n, fromDate, includePrivate, limit, offset, organization, qualifier, toDate, type);
                 return localVarResponse.Data;
 
                 }
@@ -760,16 +760,16 @@ namespace BlueRain.ID4i.Api
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">GUID to retrieve the history for</param>
-            /// <param name="includePrivate">Also return private history entries (optional, default to true)</param>
-            /// <param name="organization">Show only entries created by one of the given organizations. This parameter can be used multiple times. (optional)</param>
-            /// <param name="type">Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional)</param>
-            /// <param name="qualifier">Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)</param>
             /// <param name="fromDate">From date time as UTC Date-Time format (optional)</param>
-            /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="includePrivate">Also return private history entries (optional, default to true)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="organization">Show only entries created by one of the given organizations. This parameter can be used multiple times. (optional)</param>
+            /// <param name="qualifier">Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)</param>
+            /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
+            /// <param name="type">Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedHistoryItemResponse)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedHistoryItemResponse>> FilteredListAsyncWithHttpInfo (string id4n, bool? includePrivate = null, string organization = null, List<string> type = null, List<string> qualifier = null, DateTime? fromDate = null, DateTime? toDate = null, int? offset = null, int? limit = null)
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedHistoryItemResponse>> FilteredListAsyncWithHttpInfo (string id4n, DateTime? fromDate = null, bool? includePrivate = null, int? limit = null, int? offset = null, string organization = null, List<string> qualifier = null, DateTime? toDate = null, List<string> type = null)
                 {
                         // verify the required parameter 'id4n' is set
                         if (id4n == null)
@@ -800,14 +800,14 @@ namespace BlueRain.ID4i.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
                     if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
-                    if (includePrivate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "includePrivate", includePrivate)); // query parameter
-                    if (organization != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "organization", organization)); // query parameter
-                    if (type != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "type", type)); // query parameter
-                    if (qualifier != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "qualifier", qualifier)); // query parameter
                     if (fromDate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "fromDate", fromDate)); // query parameter
-                    if (toDate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "toDate", toDate)); // query parameter
-                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+                    if (includePrivate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "includePrivate", includePrivate)); // query parameter
                     if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+                    if (organization != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "organization", organization)); // query parameter
+                    if (qualifier != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "qualifier", qualifier)); // query parameter
+                    if (toDate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "toDate", toDate)); // query parameter
+                    if (type != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "type", type)); // query parameter
 
                     // authentication (Authorization) required
                             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -840,12 +840,12 @@ namespace BlueRain.ID4i.Api
         /// <param name="id4n">GUID to retrieve the history for</param>
         /// <param name="organizationId">organizationId</param>
         /// <param name="includePrivate">Also return private history entries (optional, default to true)</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>PaginatedHistoryItemResponse</returns>
-            public PaginatedHistoryItemResponse List (string id4n, string organizationId, bool? includePrivate = null, int? offset = null, int? limit = null)
+            public PaginatedHistoryItemResponse List (string id4n, string organizationId, bool? includePrivate = null, int? limit = null, int? offset = null)
             {
-        ApiResponse<PaginatedHistoryItemResponse> localVarResponse = ListWithHttpInfo(id4n, organizationId, includePrivate, offset, limit);
+        ApiResponse<PaginatedHistoryItemResponse> localVarResponse = ListWithHttpInfo(id4n, organizationId, includePrivate, limit, offset);
             return localVarResponse.Data;
             }
 
@@ -856,10 +856,10 @@ namespace BlueRain.ID4i.Api
         /// <param name="id4n">GUID to retrieve the history for</param>
         /// <param name="organizationId">organizationId</param>
         /// <param name="includePrivate">Also return private history entries (optional, default to true)</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>ApiResponse of PaginatedHistoryItemResponse</returns>
-            public ApiResponse< PaginatedHistoryItemResponse > ListWithHttpInfo (string id4n, string organizationId, bool? includePrivate = null, int? offset = null, int? limit = null)
+            public ApiResponse< PaginatedHistoryItemResponse > ListWithHttpInfo (string id4n, string organizationId, bool? includePrivate = null, int? limit = null, int? offset = null)
             {
                     // verify the required parameter 'id4n' is set
                     if (id4n == null)
@@ -895,8 +895,8 @@ namespace BlueRain.ID4i.Api
                 if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
                 if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
                 if (includePrivate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "includePrivate", includePrivate)); // query parameter
-                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
                 if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
 
                 // authentication (Authorization) required
                         if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -929,12 +929,12 @@ namespace BlueRain.ID4i.Api
             /// <param name="id4n">GUID to retrieve the history for</param>
             /// <param name="organizationId">organizationId</param>
             /// <param name="includePrivate">Also return private history entries (optional, default to true)</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of PaginatedHistoryItemResponse</returns>
-            public async System.Threading.Tasks.Task<PaginatedHistoryItemResponse> ListAsync (string id4n, string organizationId, bool? includePrivate = null, int? offset = null, int? limit = null)
+            public async System.Threading.Tasks.Task<PaginatedHistoryItemResponse> ListAsync (string id4n, string organizationId, bool? includePrivate = null, int? limit = null, int? offset = null)
                 {
-            ApiResponse<PaginatedHistoryItemResponse> localVarResponse = await ListAsyncWithHttpInfo(id4n, organizationId, includePrivate, offset, limit);
+            ApiResponse<PaginatedHistoryItemResponse> localVarResponse = await ListAsyncWithHttpInfo(id4n, organizationId, includePrivate, limit, offset);
                 return localVarResponse.Data;
 
                 }
@@ -946,10 +946,10 @@ namespace BlueRain.ID4i.Api
             /// <param name="id4n">GUID to retrieve the history for</param>
             /// <param name="organizationId">organizationId</param>
             /// <param name="includePrivate">Also return private history entries (optional, default to true)</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedHistoryItemResponse)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedHistoryItemResponse>> ListAsyncWithHttpInfo (string id4n, string organizationId, bool? includePrivate = null, int? offset = null, int? limit = null)
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedHistoryItemResponse>> ListAsyncWithHttpInfo (string id4n, string organizationId, bool? includePrivate = null, int? limit = null, int? offset = null)
                 {
                         // verify the required parameter 'id4n' is set
                         if (id4n == null)
@@ -985,8 +985,8 @@ namespace BlueRain.ID4i.Api
                     if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
                     if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
                     if (includePrivate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "includePrivate", includePrivate)); // query parameter
-                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
                     if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
 
                     // authentication (Authorization) required
                             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))

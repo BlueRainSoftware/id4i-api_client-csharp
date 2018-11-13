@@ -33,13 +33,13 @@ namespace BlueRain.ID4i.Api
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The namespace identifying the organization whose change log entries are to be listed</param>
-        /// <param name="messageMimeType">The Mime-type for the message format that should be returned. e.g. &#39;text/plain&#39; or &#39;text/mustache&#39;  (optional, default to text/mustache)</param>
         /// <param name="fromDate">From date time as UTC Date-Time format (optional)</param>
-        /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="messageMimeType">The Mime-type for the message format that should be returned. e.g. &#39;text/plain&#39; or &#39;text/mustache&#39;  (optional, default to text/mustache)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
         /// <returns>PaginatedChangeLogEntryResponse</returns>
-        PaginatedChangeLogEntryResponse ListOrganizationChangeLog (string organizationId, string messageMimeType = null, DateTime? fromDate = null, DateTime? toDate = null, int? offset = null, int? limit = null);
+        PaginatedChangeLogEntryResponse ListOrganizationChangeLog (string organizationId, DateTime? fromDate = null, int? limit = null, string messageMimeType = null, int? offset = null, DateTime? toDate = null);
 
         /// <summary>
             /// List change log entries of an organization
@@ -49,13 +49,13 @@ namespace BlueRain.ID4i.Api
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The namespace identifying the organization whose change log entries are to be listed</param>
-        /// <param name="messageMimeType">The Mime-type for the message format that should be returned. e.g. &#39;text/plain&#39; or &#39;text/mustache&#39;  (optional, default to text/mustache)</param>
         /// <param name="fromDate">From date time as UTC Date-Time format (optional)</param>
-        /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="messageMimeType">The Mime-type for the message format that should be returned. e.g. &#39;text/plain&#39; or &#39;text/mustache&#39;  (optional, default to text/mustache)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
         /// <returns>ApiResponse of PaginatedChangeLogEntryResponse</returns>
-        ApiResponse<PaginatedChangeLogEntryResponse> ListOrganizationChangeLogWithHttpInfo (string organizationId, string messageMimeType = null, DateTime? fromDate = null, DateTime? toDate = null, int? offset = null, int? limit = null);
+        ApiResponse<PaginatedChangeLogEntryResponse> ListOrganizationChangeLogWithHttpInfo (string organizationId, DateTime? fromDate = null, int? limit = null, string messageMimeType = null, int? offset = null, DateTime? toDate = null);
         #endregion Synchronous Operations
             #region Asynchronous Operations
                 /// <summary>
@@ -66,13 +66,13 @@ namespace BlueRain.ID4i.Api
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">The namespace identifying the organization whose change log entries are to be listed</param>
-            /// <param name="messageMimeType">The Mime-type for the message format that should be returned. e.g. &#39;text/plain&#39; or &#39;text/mustache&#39;  (optional, default to text/mustache)</param>
             /// <param name="fromDate">From date time as UTC Date-Time format (optional)</param>
-            /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="messageMimeType">The Mime-type for the message format that should be returned. e.g. &#39;text/plain&#39; or &#39;text/mustache&#39;  (optional, default to text/mustache)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
             /// <returns>Task of PaginatedChangeLogEntryResponse</returns>
-            System.Threading.Tasks.Task<PaginatedChangeLogEntryResponse> ListOrganizationChangeLogAsync (string organizationId, string messageMimeType = null, DateTime? fromDate = null, DateTime? toDate = null, int? offset = null, int? limit = null);
+            System.Threading.Tasks.Task<PaginatedChangeLogEntryResponse> ListOrganizationChangeLogAsync (string organizationId, DateTime? fromDate = null, int? limit = null, string messageMimeType = null, int? offset = null, DateTime? toDate = null);
 
                 /// <summary>
                 /// List change log entries of an organization
@@ -82,13 +82,13 @@ namespace BlueRain.ID4i.Api
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">The namespace identifying the organization whose change log entries are to be listed</param>
-            /// <param name="messageMimeType">The Mime-type for the message format that should be returned. e.g. &#39;text/plain&#39; or &#39;text/mustache&#39;  (optional, default to text/mustache)</param>
             /// <param name="fromDate">From date time as UTC Date-Time format (optional)</param>
-            /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="messageMimeType">The Mime-type for the message format that should be returned. e.g. &#39;text/plain&#39; or &#39;text/mustache&#39;  (optional, default to text/mustache)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedChangeLogEntryResponse)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedChangeLogEntryResponse>> ListOrganizationChangeLogAsyncWithHttpInfo (string organizationId, string messageMimeType = null, DateTime? fromDate = null, DateTime? toDate = null, int? offset = null, int? limit = null);
+                System.Threading.Tasks.Task<ApiResponse<PaginatedChangeLogEntryResponse>> ListOrganizationChangeLogAsyncWithHttpInfo (string organizationId, DateTime? fromDate = null, int? limit = null, string messageMimeType = null, int? offset = null, DateTime? toDate = null);
             #endregion Asynchronous Operations
         }
 
@@ -194,15 +194,15 @@ namespace BlueRain.ID4i.Api
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The namespace identifying the organization whose change log entries are to be listed</param>
-        /// <param name="messageMimeType">The Mime-type for the message format that should be returned. e.g. &#39;text/plain&#39; or &#39;text/mustache&#39;  (optional, default to text/mustache)</param>
         /// <param name="fromDate">From date time as UTC Date-Time format (optional)</param>
-        /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="messageMimeType">The Mime-type for the message format that should be returned. e.g. &#39;text/plain&#39; or &#39;text/mustache&#39;  (optional, default to text/mustache)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
         /// <returns>PaginatedChangeLogEntryResponse</returns>
-            public PaginatedChangeLogEntryResponse ListOrganizationChangeLog (string organizationId, string messageMimeType = null, DateTime? fromDate = null, DateTime? toDate = null, int? offset = null, int? limit = null)
+            public PaginatedChangeLogEntryResponse ListOrganizationChangeLog (string organizationId, DateTime? fromDate = null, int? limit = null, string messageMimeType = null, int? offset = null, DateTime? toDate = null)
             {
-        ApiResponse<PaginatedChangeLogEntryResponse> localVarResponse = ListOrganizationChangeLogWithHttpInfo(organizationId, messageMimeType, fromDate, toDate, offset, limit);
+        ApiResponse<PaginatedChangeLogEntryResponse> localVarResponse = ListOrganizationChangeLogWithHttpInfo(organizationId, fromDate, limit, messageMimeType, offset, toDate);
             return localVarResponse.Data;
             }
 
@@ -211,13 +211,13 @@ namespace BlueRain.ID4i.Api
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The namespace identifying the organization whose change log entries are to be listed</param>
-        /// <param name="messageMimeType">The Mime-type for the message format that should be returned. e.g. &#39;text/plain&#39; or &#39;text/mustache&#39;  (optional, default to text/mustache)</param>
         /// <param name="fromDate">From date time as UTC Date-Time format (optional)</param>
-        /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="messageMimeType">The Mime-type for the message format that should be returned. e.g. &#39;text/plain&#39; or &#39;text/mustache&#39;  (optional, default to text/mustache)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
         /// <returns>ApiResponse of PaginatedChangeLogEntryResponse</returns>
-            public ApiResponse< PaginatedChangeLogEntryResponse > ListOrganizationChangeLogWithHttpInfo (string organizationId, string messageMimeType = null, DateTime? fromDate = null, DateTime? toDate = null, int? offset = null, int? limit = null)
+            public ApiResponse< PaginatedChangeLogEntryResponse > ListOrganizationChangeLogWithHttpInfo (string organizationId, DateTime? fromDate = null, int? limit = null, string messageMimeType = null, int? offset = null, DateTime? toDate = null)
             {
                     // verify the required parameter 'organizationId' is set
                     if (organizationId == null)
@@ -248,11 +248,11 @@ namespace BlueRain.ID4i.Api
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
                 if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
-                if (messageMimeType != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "messageMimeType", messageMimeType)); // query parameter
                 if (fromDate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "fromDate", fromDate)); // query parameter
-                if (toDate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "toDate", toDate)); // query parameter
-                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
                 if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+                if (messageMimeType != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "messageMimeType", messageMimeType)); // query parameter
+                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+                if (toDate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "toDate", toDate)); // query parameter
 
                 // authentication (Authorization) required
                         if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -283,15 +283,15 @@ namespace BlueRain.ID4i.Api
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">The namespace identifying the organization whose change log entries are to be listed</param>
-            /// <param name="messageMimeType">The Mime-type for the message format that should be returned. e.g. &#39;text/plain&#39; or &#39;text/mustache&#39;  (optional, default to text/mustache)</param>
             /// <param name="fromDate">From date time as UTC Date-Time format (optional)</param>
-            /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="messageMimeType">The Mime-type for the message format that should be returned. e.g. &#39;text/plain&#39; or &#39;text/mustache&#39;  (optional, default to text/mustache)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
             /// <returns>Task of PaginatedChangeLogEntryResponse</returns>
-            public async System.Threading.Tasks.Task<PaginatedChangeLogEntryResponse> ListOrganizationChangeLogAsync (string organizationId, string messageMimeType = null, DateTime? fromDate = null, DateTime? toDate = null, int? offset = null, int? limit = null)
+            public async System.Threading.Tasks.Task<PaginatedChangeLogEntryResponse> ListOrganizationChangeLogAsync (string organizationId, DateTime? fromDate = null, int? limit = null, string messageMimeType = null, int? offset = null, DateTime? toDate = null)
                 {
-            ApiResponse<PaginatedChangeLogEntryResponse> localVarResponse = await ListOrganizationChangeLogAsyncWithHttpInfo(organizationId, messageMimeType, fromDate, toDate, offset, limit);
+            ApiResponse<PaginatedChangeLogEntryResponse> localVarResponse = await ListOrganizationChangeLogAsyncWithHttpInfo(organizationId, fromDate, limit, messageMimeType, offset, toDate);
                 return localVarResponse.Data;
 
                 }
@@ -301,13 +301,13 @@ namespace BlueRain.ID4i.Api
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">The namespace identifying the organization whose change log entries are to be listed</param>
-            /// <param name="messageMimeType">The Mime-type for the message format that should be returned. e.g. &#39;text/plain&#39; or &#39;text/mustache&#39;  (optional, default to text/mustache)</param>
             /// <param name="fromDate">From date time as UTC Date-Time format (optional)</param>
-            /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="messageMimeType">The Mime-type for the message format that should be returned. e.g. &#39;text/plain&#39; or &#39;text/mustache&#39;  (optional, default to text/mustache)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="toDate">To date time as UTC Date-Time format (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedChangeLogEntryResponse)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedChangeLogEntryResponse>> ListOrganizationChangeLogAsyncWithHttpInfo (string organizationId, string messageMimeType = null, DateTime? fromDate = null, DateTime? toDate = null, int? offset = null, int? limit = null)
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedChangeLogEntryResponse>> ListOrganizationChangeLogAsyncWithHttpInfo (string organizationId, DateTime? fromDate = null, int? limit = null, string messageMimeType = null, int? offset = null, DateTime? toDate = null)
                 {
                         // verify the required parameter 'organizationId' is set
                         if (organizationId == null)
@@ -338,11 +338,11 @@ namespace BlueRain.ID4i.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
                     if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
-                    if (messageMimeType != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "messageMimeType", messageMimeType)); // query parameter
                     if (fromDate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "fromDate", fromDate)); // query parameter
-                    if (toDate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "toDate", toDate)); // query parameter
-                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
                     if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+                    if (messageMimeType != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "messageMimeType", messageMimeType)); // query parameter
+                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+                    if (toDate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "toDate", toDate)); // query parameter
 
                     // authentication (Authorization) required
                             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))

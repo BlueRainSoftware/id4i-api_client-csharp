@@ -341,7 +341,7 @@ namespace BlueRain.ID4i.Model
         /// <param name="ErrorList">ErrorList (required).</param>
         /// <param name="Message">Message (required).</param>
         /// <param name="ErrorId">ErrorId (required).</param>
-        public ApiError(CodeEnum Code = default(CodeEnum), List<ApiError> ErrorList = default(List<ApiError>), string Message = default(string), string ErrorId = default(string))
+        public ApiError(CodeEnum Code = default(CodeEnum), List<ApiError> ErrorList = default(List<ApiError>), string Message = default(string), Guid? ErrorId = default(Guid?))
         {
             // to ensure "Code" is required (not null)
             if (Code == null)
@@ -398,7 +398,7 @@ namespace BlueRain.ID4i.Model
         /// Gets or Sets ErrorId
         /// </summary>
         [DataMember(Name="errorId", EmitDefaultValue=false)]
-        public string ErrorId { get; set; }
+        public Guid? ErrorId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

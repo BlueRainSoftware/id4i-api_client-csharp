@@ -34,10 +34,10 @@ namespace BlueRain.ID4i.Api
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">id4n</param>
         /// <param name="type">The type of route you want to have</param>
-        /// <param name="organizationId">organizationId (optional)</param>
         /// <param name="interpolate">interpolate (optional, default to true)</param>
+        /// <param name="organizationId">organizationId (optional)</param>
         /// <returns>List&lt;Route&gt;</returns>
-        List<Route> GetAllRoutes (string id4n, string type, string organizationId = null, bool? interpolate = null);
+        List<Route> GetAllRoutes (string id4n, string type, bool? interpolate = null, string organizationId = null);
 
         /// <summary>
             /// Retrieve all routes of a GUID (or ID4N)
@@ -48,10 +48,10 @@ namespace BlueRain.ID4i.Api
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">id4n</param>
         /// <param name="type">The type of route you want to have</param>
-        /// <param name="organizationId">organizationId (optional)</param>
         /// <param name="interpolate">interpolate (optional, default to true)</param>
+        /// <param name="organizationId">organizationId (optional)</param>
         /// <returns>ApiResponse of List&lt;Route&gt;</returns>
-        ApiResponse<List<Route>> GetAllRoutesWithHttpInfo (string id4n, string type, string organizationId = null, bool? interpolate = null);
+        ApiResponse<List<Route>> GetAllRoutesWithHttpInfo (string id4n, string type, bool? interpolate = null, string organizationId = null);
         /// <summary>
             /// Retrieve current route of a GUID (or ID4N)
             /// </summary>
@@ -61,11 +61,11 @@ namespace BlueRain.ID4i.Api
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">id4n</param>
         /// <param name="type">The type of route you want to have</param>
+        /// <param name="interpolate">interpolate (optional, default to true)</param>
         /// <param name="privateRoutes">privateRoutes (optional, default to true)</param>
         /// <param name="publicRoutes">publicRoutes (optional, default to true)</param>
-        /// <param name="interpolate">interpolate (optional, default to true)</param>
         /// <returns>Route</returns>
-        Route GetRoute (string id4n, string type, bool? privateRoutes = null, bool? publicRoutes = null, bool? interpolate = null);
+        Route GetRoute (string id4n, string type, bool? interpolate = null, bool? privateRoutes = null, bool? publicRoutes = null);
 
         /// <summary>
             /// Retrieve current route of a GUID (or ID4N)
@@ -76,11 +76,11 @@ namespace BlueRain.ID4i.Api
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">id4n</param>
         /// <param name="type">The type of route you want to have</param>
+        /// <param name="interpolate">interpolate (optional, default to true)</param>
         /// <param name="privateRoutes">privateRoutes (optional, default to true)</param>
         /// <param name="publicRoutes">publicRoutes (optional, default to true)</param>
-        /// <param name="interpolate">interpolate (optional, default to true)</param>
         /// <returns>ApiResponse of Route</returns>
-        ApiResponse<Route> GetRouteWithHttpInfo (string id4n, string type, bool? privateRoutes = null, bool? publicRoutes = null, bool? interpolate = null);
+        ApiResponse<Route> GetRouteWithHttpInfo (string id4n, string type, bool? interpolate = null, bool? privateRoutes = null, bool? publicRoutes = null);
         /// <summary>
             /// Retrieve routing file
             /// </summary>
@@ -111,10 +111,10 @@ namespace BlueRain.ID4i.Api
             /// 
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="rfr">rfr</param>
         /// <param name="id4n">id4n</param>
+        /// <param name="rfr">rfr</param>
         /// <returns></returns>
-        void UpdateRoutingFile (RoutingFileRequest rfr, string id4n);
+        void UpdateRoutingFile (string id4n, RoutingFileRequest rfr);
 
         /// <summary>
             /// Store routing file
@@ -123,10 +123,10 @@ namespace BlueRain.ID4i.Api
             /// 
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="rfr">rfr</param>
         /// <param name="id4n">id4n</param>
+        /// <param name="rfr">rfr</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateRoutingFileWithHttpInfo (RoutingFileRequest rfr, string id4n);
+        ApiResponse<Object> UpdateRoutingFileWithHttpInfo (string id4n, RoutingFileRequest rfr);
         #endregion Synchronous Operations
             #region Asynchronous Operations
                 /// <summary>
@@ -138,10 +138,10 @@ namespace BlueRain.ID4i.Api
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">id4n</param>
             /// <param name="type">The type of route you want to have</param>
-            /// <param name="organizationId">organizationId (optional)</param>
             /// <param name="interpolate">interpolate (optional, default to true)</param>
+            /// <param name="organizationId">organizationId (optional)</param>
             /// <returns>Task of List&lt;Route&gt;</returns>
-            System.Threading.Tasks.Task<List<Route>> GetAllRoutesAsync (string id4n, string type, string organizationId = null, bool? interpolate = null);
+            System.Threading.Tasks.Task<List<Route>> GetAllRoutesAsync (string id4n, string type, bool? interpolate = null, string organizationId = null);
 
                 /// <summary>
                 /// Retrieve all routes of a GUID (or ID4N)
@@ -152,10 +152,10 @@ namespace BlueRain.ID4i.Api
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">id4n</param>
             /// <param name="type">The type of route you want to have</param>
-            /// <param name="organizationId">organizationId (optional)</param>
             /// <param name="interpolate">interpolate (optional, default to true)</param>
+            /// <param name="organizationId">organizationId (optional)</param>
             /// <returns>Task of ApiResponse (List&lt;Route&gt;)</returns>
-                System.Threading.Tasks.Task<ApiResponse<List<Route>>> GetAllRoutesAsyncWithHttpInfo (string id4n, string type, string organizationId = null, bool? interpolate = null);
+                System.Threading.Tasks.Task<ApiResponse<List<Route>>> GetAllRoutesAsyncWithHttpInfo (string id4n, string type, bool? interpolate = null, string organizationId = null);
                 /// <summary>
                 /// Retrieve current route of a GUID (or ID4N)
                 /// </summary>
@@ -165,11 +165,11 @@ namespace BlueRain.ID4i.Api
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">id4n</param>
             /// <param name="type">The type of route you want to have</param>
+            /// <param name="interpolate">interpolate (optional, default to true)</param>
             /// <param name="privateRoutes">privateRoutes (optional, default to true)</param>
             /// <param name="publicRoutes">publicRoutes (optional, default to true)</param>
-            /// <param name="interpolate">interpolate (optional, default to true)</param>
             /// <returns>Task of Route</returns>
-            System.Threading.Tasks.Task<Route> GetRouteAsync (string id4n, string type, bool? privateRoutes = null, bool? publicRoutes = null, bool? interpolate = null);
+            System.Threading.Tasks.Task<Route> GetRouteAsync (string id4n, string type, bool? interpolate = null, bool? privateRoutes = null, bool? publicRoutes = null);
 
                 /// <summary>
                 /// Retrieve current route of a GUID (or ID4N)
@@ -180,11 +180,11 @@ namespace BlueRain.ID4i.Api
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">id4n</param>
             /// <param name="type">The type of route you want to have</param>
+            /// <param name="interpolate">interpolate (optional, default to true)</param>
             /// <param name="privateRoutes">privateRoutes (optional, default to true)</param>
             /// <param name="publicRoutes">publicRoutes (optional, default to true)</param>
-            /// <param name="interpolate">interpolate (optional, default to true)</param>
             /// <returns>Task of ApiResponse (Route)</returns>
-                System.Threading.Tasks.Task<ApiResponse<Route>> GetRouteAsyncWithHttpInfo (string id4n, string type, bool? privateRoutes = null, bool? publicRoutes = null, bool? interpolate = null);
+                System.Threading.Tasks.Task<ApiResponse<Route>> GetRouteAsyncWithHttpInfo (string id4n, string type, bool? interpolate = null, bool? privateRoutes = null, bool? publicRoutes = null);
                 /// <summary>
                 /// Retrieve routing file
                 /// </summary>
@@ -215,10 +215,10 @@ namespace BlueRain.ID4i.Api
                 /// 
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="rfr">rfr</param>
             /// <param name="id4n">id4n</param>
+            /// <param name="rfr">rfr</param>
             /// <returns>Task of void</returns>
-            System.Threading.Tasks.Task UpdateRoutingFileAsync (RoutingFileRequest rfr, string id4n);
+            System.Threading.Tasks.Task UpdateRoutingFileAsync (string id4n, RoutingFileRequest rfr);
 
                 /// <summary>
                 /// Store routing file
@@ -227,10 +227,10 @@ namespace BlueRain.ID4i.Api
                 /// 
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="rfr">rfr</param>
             /// <param name="id4n">id4n</param>
+            /// <param name="rfr">rfr</param>
             /// <returns>Task of ApiResponse</returns>
-                System.Threading.Tasks.Task<ApiResponse<Object>> UpdateRoutingFileAsyncWithHttpInfo (RoutingFileRequest rfr, string id4n);
+                System.Threading.Tasks.Task<ApiResponse<Object>> UpdateRoutingFileAsyncWithHttpInfo (string id4n, RoutingFileRequest rfr);
             #endregion Asynchronous Operations
         }
 
@@ -337,12 +337,12 @@ namespace BlueRain.ID4i.Api
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">id4n</param>
         /// <param name="type">The type of route you want to have</param>
-        /// <param name="organizationId">organizationId (optional)</param>
         /// <param name="interpolate">interpolate (optional, default to true)</param>
+        /// <param name="organizationId">organizationId (optional)</param>
         /// <returns>List&lt;Route&gt;</returns>
-            public List<Route> GetAllRoutes (string id4n, string type, string organizationId = null, bool? interpolate = null)
+            public List<Route> GetAllRoutes (string id4n, string type, bool? interpolate = null, string organizationId = null)
             {
-        ApiResponse<List<Route>> localVarResponse = GetAllRoutesWithHttpInfo(id4n, type, organizationId, interpolate);
+        ApiResponse<List<Route>> localVarResponse = GetAllRoutesWithHttpInfo(id4n, type, interpolate, organizationId);
             return localVarResponse.Data;
             }
 
@@ -352,10 +352,10 @@ namespace BlueRain.ID4i.Api
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">id4n</param>
         /// <param name="type">The type of route you want to have</param>
-        /// <param name="organizationId">organizationId (optional)</param>
         /// <param name="interpolate">interpolate (optional, default to true)</param>
+        /// <param name="organizationId">organizationId (optional)</param>
         /// <returns>ApiResponse of List&lt;Route&gt;</returns>
-            public ApiResponse< List<Route> > GetAllRoutesWithHttpInfo (string id4n, string type, string organizationId = null, bool? interpolate = null)
+            public ApiResponse< List<Route> > GetAllRoutesWithHttpInfo (string id4n, string type, bool? interpolate = null, string organizationId = null)
             {
                     // verify the required parameter 'id4n' is set
                     if (id4n == null)
@@ -390,8 +390,8 @@ namespace BlueRain.ID4i.Api
 
                 if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
                 if (type != null) localVarPathParams.Add("type", Configuration.ApiClient.ParameterToString(type)); // path parameter
-                if (organizationId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "organizationId", organizationId)); // query parameter
                 if (interpolate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "interpolate", interpolate)); // query parameter
+                if (organizationId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "organizationId", organizationId)); // query parameter
 
                 // authentication (Authorization) required
                         if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -423,12 +423,12 @@ namespace BlueRain.ID4i.Api
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">id4n</param>
             /// <param name="type">The type of route you want to have</param>
-            /// <param name="organizationId">organizationId (optional)</param>
             /// <param name="interpolate">interpolate (optional, default to true)</param>
+            /// <param name="organizationId">organizationId (optional)</param>
             /// <returns>Task of List&lt;Route&gt;</returns>
-            public async System.Threading.Tasks.Task<List<Route>> GetAllRoutesAsync (string id4n, string type, string organizationId = null, bool? interpolate = null)
+            public async System.Threading.Tasks.Task<List<Route>> GetAllRoutesAsync (string id4n, string type, bool? interpolate = null, string organizationId = null)
                 {
-            ApiResponse<List<Route>> localVarResponse = await GetAllRoutesAsyncWithHttpInfo(id4n, type, organizationId, interpolate);
+            ApiResponse<List<Route>> localVarResponse = await GetAllRoutesAsyncWithHttpInfo(id4n, type, interpolate, organizationId);
                 return localVarResponse.Data;
 
                 }
@@ -439,10 +439,10 @@ namespace BlueRain.ID4i.Api
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">id4n</param>
             /// <param name="type">The type of route you want to have</param>
-            /// <param name="organizationId">organizationId (optional)</param>
             /// <param name="interpolate">interpolate (optional, default to true)</param>
+            /// <param name="organizationId">organizationId (optional)</param>
             /// <returns>Task of ApiResponse (List&lt;Route&gt;)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<List<Route>>> GetAllRoutesAsyncWithHttpInfo (string id4n, string type, string organizationId = null, bool? interpolate = null)
+                public async System.Threading.Tasks.Task<ApiResponse<List<Route>>> GetAllRoutesAsyncWithHttpInfo (string id4n, string type, bool? interpolate = null, string organizationId = null)
                 {
                         // verify the required parameter 'id4n' is set
                         if (id4n == null)
@@ -477,8 +477,8 @@ namespace BlueRain.ID4i.Api
 
                     if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
                     if (type != null) localVarPathParams.Add("type", Configuration.ApiClient.ParameterToString(type)); // path parameter
-                    if (organizationId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "organizationId", organizationId)); // query parameter
                     if (interpolate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "interpolate", interpolate)); // query parameter
+                    if (organizationId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "organizationId", organizationId)); // query parameter
 
                     // authentication (Authorization) required
                             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -510,13 +510,13 @@ namespace BlueRain.ID4i.Api
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">id4n</param>
         /// <param name="type">The type of route you want to have</param>
+        /// <param name="interpolate">interpolate (optional, default to true)</param>
         /// <param name="privateRoutes">privateRoutes (optional, default to true)</param>
         /// <param name="publicRoutes">publicRoutes (optional, default to true)</param>
-        /// <param name="interpolate">interpolate (optional, default to true)</param>
         /// <returns>Route</returns>
-            public Route GetRoute (string id4n, string type, bool? privateRoutes = null, bool? publicRoutes = null, bool? interpolate = null)
+            public Route GetRoute (string id4n, string type, bool? interpolate = null, bool? privateRoutes = null, bool? publicRoutes = null)
             {
-        ApiResponse<Route> localVarResponse = GetRouteWithHttpInfo(id4n, type, privateRoutes, publicRoutes, interpolate);
+        ApiResponse<Route> localVarResponse = GetRouteWithHttpInfo(id4n, type, interpolate, privateRoutes, publicRoutes);
             return localVarResponse.Data;
             }
 
@@ -526,11 +526,11 @@ namespace BlueRain.ID4i.Api
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">id4n</param>
         /// <param name="type">The type of route you want to have</param>
+        /// <param name="interpolate">interpolate (optional, default to true)</param>
         /// <param name="privateRoutes">privateRoutes (optional, default to true)</param>
         /// <param name="publicRoutes">publicRoutes (optional, default to true)</param>
-        /// <param name="interpolate">interpolate (optional, default to true)</param>
         /// <returns>ApiResponse of Route</returns>
-            public ApiResponse< Route > GetRouteWithHttpInfo (string id4n, string type, bool? privateRoutes = null, bool? publicRoutes = null, bool? interpolate = null)
+            public ApiResponse< Route > GetRouteWithHttpInfo (string id4n, string type, bool? interpolate = null, bool? privateRoutes = null, bool? publicRoutes = null)
             {
                     // verify the required parameter 'id4n' is set
                     if (id4n == null)
@@ -565,9 +565,9 @@ namespace BlueRain.ID4i.Api
 
                 if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
                 if (type != null) localVarPathParams.Add("type", Configuration.ApiClient.ParameterToString(type)); // path parameter
+                if (interpolate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "interpolate", interpolate)); // query parameter
                 if (privateRoutes != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "privateRoutes", privateRoutes)); // query parameter
                 if (publicRoutes != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "publicRoutes", publicRoutes)); // query parameter
-                if (interpolate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "interpolate", interpolate)); // query parameter
 
                 // authentication (Authorization) required
                         if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -599,13 +599,13 @@ namespace BlueRain.ID4i.Api
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">id4n</param>
             /// <param name="type">The type of route you want to have</param>
+            /// <param name="interpolate">interpolate (optional, default to true)</param>
             /// <param name="privateRoutes">privateRoutes (optional, default to true)</param>
             /// <param name="publicRoutes">publicRoutes (optional, default to true)</param>
-            /// <param name="interpolate">interpolate (optional, default to true)</param>
             /// <returns>Task of Route</returns>
-            public async System.Threading.Tasks.Task<Route> GetRouteAsync (string id4n, string type, bool? privateRoutes = null, bool? publicRoutes = null, bool? interpolate = null)
+            public async System.Threading.Tasks.Task<Route> GetRouteAsync (string id4n, string type, bool? interpolate = null, bool? privateRoutes = null, bool? publicRoutes = null)
                 {
-            ApiResponse<Route> localVarResponse = await GetRouteAsyncWithHttpInfo(id4n, type, privateRoutes, publicRoutes, interpolate);
+            ApiResponse<Route> localVarResponse = await GetRouteAsyncWithHttpInfo(id4n, type, interpolate, privateRoutes, publicRoutes);
                 return localVarResponse.Data;
 
                 }
@@ -616,11 +616,11 @@ namespace BlueRain.ID4i.Api
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">id4n</param>
             /// <param name="type">The type of route you want to have</param>
+            /// <param name="interpolate">interpolate (optional, default to true)</param>
             /// <param name="privateRoutes">privateRoutes (optional, default to true)</param>
             /// <param name="publicRoutes">publicRoutes (optional, default to true)</param>
-            /// <param name="interpolate">interpolate (optional, default to true)</param>
             /// <returns>Task of ApiResponse (Route)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<Route>> GetRouteAsyncWithHttpInfo (string id4n, string type, bool? privateRoutes = null, bool? publicRoutes = null, bool? interpolate = null)
+                public async System.Threading.Tasks.Task<ApiResponse<Route>> GetRouteAsyncWithHttpInfo (string id4n, string type, bool? interpolate = null, bool? privateRoutes = null, bool? publicRoutes = null)
                 {
                         // verify the required parameter 'id4n' is set
                         if (id4n == null)
@@ -655,9 +655,9 @@ namespace BlueRain.ID4i.Api
 
                     if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
                     if (type != null) localVarPathParams.Add("type", Configuration.ApiClient.ParameterToString(type)); // path parameter
+                    if (interpolate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "interpolate", interpolate)); // query parameter
                     if (privateRoutes != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "privateRoutes", privateRoutes)); // query parameter
                     if (publicRoutes != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "publicRoutes", publicRoutes)); // query parameter
-                    if (interpolate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "interpolate", interpolate)); // query parameter
 
                     // authentication (Authorization) required
                             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -842,29 +842,29 @@ namespace BlueRain.ID4i.Api
             /// Store routing file 
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="rfr">rfr</param>
         /// <param name="id4n">id4n</param>
+        /// <param name="rfr">rfr</param>
         /// <returns></returns>
-            public void UpdateRoutingFile (RoutingFileRequest rfr, string id4n)
+            public void UpdateRoutingFile (string id4n, RoutingFileRequest rfr)
             {
-        UpdateRoutingFileWithHttpInfo(rfr, id4n);
+        UpdateRoutingFileWithHttpInfo(id4n, rfr);
             }
 
             /// <summary>
             /// Store routing file 
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="rfr">rfr</param>
         /// <param name="id4n">id4n</param>
+        /// <param name="rfr">rfr</param>
         /// <returns>ApiResponse of Object(void)</returns>
-            public ApiResponse<Object> UpdateRoutingFileWithHttpInfo (RoutingFileRequest rfr, string id4n)
+            public ApiResponse<Object> UpdateRoutingFileWithHttpInfo (string id4n, RoutingFileRequest rfr)
             {
-                    // verify the required parameter 'rfr' is set
-                    if (rfr == null)
-                    throw new ApiException(400, "Missing required parameter 'rfr' when calling RoutingApi->UpdateRoutingFile");
                     // verify the required parameter 'id4n' is set
                     if (id4n == null)
                     throw new ApiException(400, "Missing required parameter 'id4n' when calling RoutingApi->UpdateRoutingFile");
+                    // verify the required parameter 'rfr' is set
+                    if (rfr == null)
+                    throw new ApiException(400, "Missing required parameter 'rfr' when calling RoutingApi->UpdateRoutingFile");
 
             var localVarPath = "./api/v1/routingfiles/{id4n}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -928,12 +928,12 @@ namespace BlueRain.ID4i.Api
                 /// Store routing file 
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="rfr">rfr</param>
             /// <param name="id4n">id4n</param>
+            /// <param name="rfr">rfr</param>
             /// <returns>Task of void</returns>
-            public async System.Threading.Tasks.Task UpdateRoutingFileAsync (RoutingFileRequest rfr, string id4n)
+            public async System.Threading.Tasks.Task UpdateRoutingFileAsync (string id4n, RoutingFileRequest rfr)
                 {
-            await UpdateRoutingFileAsyncWithHttpInfo(rfr, id4n);
+            await UpdateRoutingFileAsyncWithHttpInfo(id4n, rfr);
 
                 }
 
@@ -941,17 +941,17 @@ namespace BlueRain.ID4i.Api
                 /// Store routing file 
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="rfr">rfr</param>
             /// <param name="id4n">id4n</param>
+            /// <param name="rfr">rfr</param>
             /// <returns>Task of ApiResponse</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<Object>> UpdateRoutingFileAsyncWithHttpInfo (RoutingFileRequest rfr, string id4n)
+                public async System.Threading.Tasks.Task<ApiResponse<Object>> UpdateRoutingFileAsyncWithHttpInfo (string id4n, RoutingFileRequest rfr)
                 {
-                        // verify the required parameter 'rfr' is set
-                        if (rfr == null)
-                        throw new ApiException(400, "Missing required parameter 'rfr' when calling RoutingApi->UpdateRoutingFile");
                         // verify the required parameter 'id4n' is set
                         if (id4n == null)
                         throw new ApiException(400, "Missing required parameter 'id4n' when calling RoutingApi->UpdateRoutingFile");
+                        // verify the required parameter 'rfr' is set
+                        if (rfr == null)
+                        throw new ApiException(400, "Missing required parameter 'rfr' when calling RoutingApi->UpdateRoutingFile");
 
                 var localVarPath = "./api/v1/routingfiles/{id4n}";
                 var localVarPathParams = new Dictionary<String, String>();

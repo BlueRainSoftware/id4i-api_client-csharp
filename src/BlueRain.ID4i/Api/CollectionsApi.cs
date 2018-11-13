@@ -119,13 +119,13 @@ namespace BlueRain.ID4i.Api
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The namespace of the organization</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <param name="type">Filter by this type (optional)</param>
         /// <param name="label">Filter by this label (optional)</param>
         /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="type">Filter by this type (optional)</param>
         /// <returns>PaginatedGuidCollection</returns>
-        PaginatedGuidCollection GetAllCollectionsOfOrganization (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null);
+        PaginatedGuidCollection GetAllCollectionsOfOrganization (string organizationId, string label = null, string labelPrefix = null, int? limit = null, int? offset = null, string type = null);
 
         /// <summary>
             /// Get collections of organization
@@ -135,13 +135,13 @@ namespace BlueRain.ID4i.Api
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The namespace of the organization</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <param name="type">Filter by this type (optional)</param>
         /// <param name="label">Filter by this label (optional)</param>
         /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="type">Filter by this type (optional)</param>
         /// <returns>ApiResponse of PaginatedGuidCollection</returns>
-        ApiResponse<PaginatedGuidCollection> GetAllCollectionsOfOrganizationWithHttpInfo (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null);
+        ApiResponse<PaginatedGuidCollection> GetAllCollectionsOfOrganizationWithHttpInfo (string organizationId, string label = null, string labelPrefix = null, int? limit = null, int? offset = null, string type = null);
         /// <summary>
             /// List contents of the collection
             /// </summary>
@@ -150,10 +150,10 @@ namespace BlueRain.ID4i.Api
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">id4n</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>PaginatedGuidResponse</returns>
-        PaginatedGuidResponse ListElementsOfCollection (string id4n, int? offset = null, int? limit = null);
+        PaginatedGuidResponse ListElementsOfCollection (string id4n, int? limit = null, int? offset = null);
 
         /// <summary>
             /// List contents of the collection
@@ -163,10 +163,10 @@ namespace BlueRain.ID4i.Api
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">id4n</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>ApiResponse of PaginatedGuidResponse</returns>
-        ApiResponse<PaginatedGuidResponse> ListElementsOfCollectionWithHttpInfo (string id4n, int? offset = null, int? limit = null);
+        ApiResponse<PaginatedGuidResponse> ListElementsOfCollectionWithHttpInfo (string id4n, int? limit = null, int? offset = null);
         /// <summary>
             /// Remove elements from collection
             /// </summary>
@@ -309,13 +309,13 @@ namespace BlueRain.ID4i.Api
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">The namespace of the organization</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <param name="type">Filter by this type (optional)</param>
             /// <param name="label">Filter by this label (optional)</param>
             /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="type">Filter by this type (optional)</param>
             /// <returns>Task of PaginatedGuidCollection</returns>
-            System.Threading.Tasks.Task<PaginatedGuidCollection> GetAllCollectionsOfOrganizationAsync (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null);
+            System.Threading.Tasks.Task<PaginatedGuidCollection> GetAllCollectionsOfOrganizationAsync (string organizationId, string label = null, string labelPrefix = null, int? limit = null, int? offset = null, string type = null);
 
                 /// <summary>
                 /// Get collections of organization
@@ -325,13 +325,13 @@ namespace BlueRain.ID4i.Api
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">The namespace of the organization</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <param name="type">Filter by this type (optional)</param>
             /// <param name="label">Filter by this label (optional)</param>
             /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="type">Filter by this type (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedGuidCollection)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedGuidCollection>> GetAllCollectionsOfOrganizationAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null);
+                System.Threading.Tasks.Task<ApiResponse<PaginatedGuidCollection>> GetAllCollectionsOfOrganizationAsyncWithHttpInfo (string organizationId, string label = null, string labelPrefix = null, int? limit = null, int? offset = null, string type = null);
                 /// <summary>
                 /// List contents of the collection
                 /// </summary>
@@ -340,10 +340,10 @@ namespace BlueRain.ID4i.Api
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">id4n</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of PaginatedGuidResponse</returns>
-            System.Threading.Tasks.Task<PaginatedGuidResponse> ListElementsOfCollectionAsync (string id4n, int? offset = null, int? limit = null);
+            System.Threading.Tasks.Task<PaginatedGuidResponse> ListElementsOfCollectionAsync (string id4n, int? limit = null, int? offset = null);
 
                 /// <summary>
                 /// List contents of the collection
@@ -353,10 +353,10 @@ namespace BlueRain.ID4i.Api
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">id4n</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedGuidResponse)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedGuidResponse>> ListElementsOfCollectionAsyncWithHttpInfo (string id4n, int? offset = null, int? limit = null);
+                System.Threading.Tasks.Task<ApiResponse<PaginatedGuidResponse>> ListElementsOfCollectionAsyncWithHttpInfo (string id4n, int? limit = null, int? offset = null);
                 /// <summary>
                 /// Remove elements from collection
                 /// </summary>
@@ -1140,15 +1140,15 @@ namespace BlueRain.ID4i.Api
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The namespace of the organization</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <param name="type">Filter by this type (optional)</param>
         /// <param name="label">Filter by this label (optional)</param>
         /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="type">Filter by this type (optional)</param>
         /// <returns>PaginatedGuidCollection</returns>
-            public PaginatedGuidCollection GetAllCollectionsOfOrganization (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null)
+            public PaginatedGuidCollection GetAllCollectionsOfOrganization (string organizationId, string label = null, string labelPrefix = null, int? limit = null, int? offset = null, string type = null)
             {
-        ApiResponse<PaginatedGuidCollection> localVarResponse = GetAllCollectionsOfOrganizationWithHttpInfo(organizationId, offset, limit, type, label, labelPrefix);
+        ApiResponse<PaginatedGuidCollection> localVarResponse = GetAllCollectionsOfOrganizationWithHttpInfo(organizationId, label, labelPrefix, limit, offset, type);
             return localVarResponse.Data;
             }
 
@@ -1157,13 +1157,13 @@ namespace BlueRain.ID4i.Api
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The namespace of the organization</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <param name="type">Filter by this type (optional)</param>
         /// <param name="label">Filter by this label (optional)</param>
         /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="type">Filter by this type (optional)</param>
         /// <returns>ApiResponse of PaginatedGuidCollection</returns>
-            public ApiResponse< PaginatedGuidCollection > GetAllCollectionsOfOrganizationWithHttpInfo (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null)
+            public ApiResponse< PaginatedGuidCollection > GetAllCollectionsOfOrganizationWithHttpInfo (string organizationId, string label = null, string labelPrefix = null, int? limit = null, int? offset = null, string type = null)
             {
                     // verify the required parameter 'organizationId' is set
                     if (organizationId == null)
@@ -1194,11 +1194,11 @@ namespace BlueRain.ID4i.Api
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
                 if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
-                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
-                if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
-                if (type != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "type", type)); // query parameter
                 if (label != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "label", label)); // query parameter
                 if (labelPrefix != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "labelPrefix", labelPrefix)); // query parameter
+                if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+                if (type != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "type", type)); // query parameter
 
                 // authentication (Authorization) required
                         if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1229,15 +1229,15 @@ namespace BlueRain.ID4i.Api
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">The namespace of the organization</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <param name="type">Filter by this type (optional)</param>
             /// <param name="label">Filter by this label (optional)</param>
             /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="type">Filter by this type (optional)</param>
             /// <returns>Task of PaginatedGuidCollection</returns>
-            public async System.Threading.Tasks.Task<PaginatedGuidCollection> GetAllCollectionsOfOrganizationAsync (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null)
+            public async System.Threading.Tasks.Task<PaginatedGuidCollection> GetAllCollectionsOfOrganizationAsync (string organizationId, string label = null, string labelPrefix = null, int? limit = null, int? offset = null, string type = null)
                 {
-            ApiResponse<PaginatedGuidCollection> localVarResponse = await GetAllCollectionsOfOrganizationAsyncWithHttpInfo(organizationId, offset, limit, type, label, labelPrefix);
+            ApiResponse<PaginatedGuidCollection> localVarResponse = await GetAllCollectionsOfOrganizationAsyncWithHttpInfo(organizationId, label, labelPrefix, limit, offset, type);
                 return localVarResponse.Data;
 
                 }
@@ -1247,13 +1247,13 @@ namespace BlueRain.ID4i.Api
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">The namespace of the organization</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <param name="type">Filter by this type (optional)</param>
             /// <param name="label">Filter by this label (optional)</param>
             /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="type">Filter by this type (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedGuidCollection)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedGuidCollection>> GetAllCollectionsOfOrganizationAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null)
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedGuidCollection>> GetAllCollectionsOfOrganizationAsyncWithHttpInfo (string organizationId, string label = null, string labelPrefix = null, int? limit = null, int? offset = null, string type = null)
                 {
                         // verify the required parameter 'organizationId' is set
                         if (organizationId == null)
@@ -1284,11 +1284,11 @@ namespace BlueRain.ID4i.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
                     if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
-                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
-                    if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
-                    if (type != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "type", type)); // query parameter
                     if (label != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "label", label)); // query parameter
                     if (labelPrefix != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "labelPrefix", labelPrefix)); // query parameter
+                    if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+                    if (type != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "type", type)); // query parameter
 
                     // authentication (Authorization) required
                             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1319,12 +1319,12 @@ namespace BlueRain.ID4i.Api
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">id4n</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>PaginatedGuidResponse</returns>
-            public PaginatedGuidResponse ListElementsOfCollection (string id4n, int? offset = null, int? limit = null)
+            public PaginatedGuidResponse ListElementsOfCollection (string id4n, int? limit = null, int? offset = null)
             {
-        ApiResponse<PaginatedGuidResponse> localVarResponse = ListElementsOfCollectionWithHttpInfo(id4n, offset, limit);
+        ApiResponse<PaginatedGuidResponse> localVarResponse = ListElementsOfCollectionWithHttpInfo(id4n, limit, offset);
             return localVarResponse.Data;
             }
 
@@ -1333,10 +1333,10 @@ namespace BlueRain.ID4i.Api
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">id4n</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>ApiResponse of PaginatedGuidResponse</returns>
-            public ApiResponse< PaginatedGuidResponse > ListElementsOfCollectionWithHttpInfo (string id4n, int? offset = null, int? limit = null)
+            public ApiResponse< PaginatedGuidResponse > ListElementsOfCollectionWithHttpInfo (string id4n, int? limit = null, int? offset = null)
             {
                     // verify the required parameter 'id4n' is set
                     if (id4n == null)
@@ -1367,8 +1367,8 @@ namespace BlueRain.ID4i.Api
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
                 if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
-                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
                 if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
 
                 // authentication (Authorization) required
                         if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1399,12 +1399,12 @@ namespace BlueRain.ID4i.Api
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">id4n</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of PaginatedGuidResponse</returns>
-            public async System.Threading.Tasks.Task<PaginatedGuidResponse> ListElementsOfCollectionAsync (string id4n, int? offset = null, int? limit = null)
+            public async System.Threading.Tasks.Task<PaginatedGuidResponse> ListElementsOfCollectionAsync (string id4n, int? limit = null, int? offset = null)
                 {
-            ApiResponse<PaginatedGuidResponse> localVarResponse = await ListElementsOfCollectionAsyncWithHttpInfo(id4n, offset, limit);
+            ApiResponse<PaginatedGuidResponse> localVarResponse = await ListElementsOfCollectionAsyncWithHttpInfo(id4n, limit, offset);
                 return localVarResponse.Data;
 
                 }
@@ -1414,10 +1414,10 @@ namespace BlueRain.ID4i.Api
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">id4n</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedGuidResponse)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedGuidResponse>> ListElementsOfCollectionAsyncWithHttpInfo (string id4n, int? offset = null, int? limit = null)
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedGuidResponse>> ListElementsOfCollectionAsyncWithHttpInfo (string id4n, int? limit = null, int? offset = null)
                 {
                         // verify the required parameter 'id4n' is set
                         if (id4n == null)
@@ -1448,8 +1448,8 @@ namespace BlueRain.ID4i.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
                     if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
-                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
                     if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
 
                     // authentication (Authorization) required
                             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))

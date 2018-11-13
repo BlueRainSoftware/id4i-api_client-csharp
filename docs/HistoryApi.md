@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="additem"></a>
 # **AddItem**
-> void AddItem (string id4n, HistoryItem historyItem)
+> void AddItem (HistoryItem historyItem, string id4n)
 
 Add history item
 
@@ -40,13 +40,13 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new HistoryApi();
-            var id4n = id4n_example;  // string | GUID to retrieve the history for
             var historyItem = new HistoryItem(); // HistoryItem | The history item to publish
+            var id4n = id4n_example;  // string | GUID to retrieve the history for
 
             try
             {
                 // Add history item
-                apiInstance.AddItem(id4n, historyItem);
+                apiInstance.AddItem(historyItem, id4n);
             }
             catch (Exception e)
             {
@@ -61,8 +61,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **string**| GUID to retrieve the history for | 
  **historyItem** | [**HistoryItem**](HistoryItem.md)| The history item to publish | 
+ **id4n** | **string**| GUID to retrieve the history for | 
 
 ### Return type
 
@@ -81,7 +81,7 @@ void (empty response body)
 
 <a name="filteredlist"></a>
 # **FilteredList**
-> PaginatedHistoryItemResponse FilteredList (string id4n, bool? includePrivate = null, string organization = null, List<string> type = null, List<string> qualifier = null, DateTime? fromDate = null, DateTime? toDate = null, int? offset = null, int? limit = null)
+> PaginatedHistoryItemResponse FilteredList (string id4n, DateTime? fromDate = null, bool? includePrivate = null, int? limit = null, int? offset = null, string organization = null, List<string> qualifier = null, DateTime? toDate = null, List<string> type = null)
 
 List history
 
@@ -108,19 +108,19 @@ namespace Example
 
             var apiInstance = new HistoryApi();
             var id4n = id4n_example;  // string | GUID to retrieve the history for
+            var fromDate = "2018-05-10T10:05:10.690Z";  // DateTime? | From date time as UTC Date-Time format (optional) 
             var includePrivate = true;  // bool? | Also return private history entries (optional)  (default to true)
+            var limit = 100;  // int? | The maximum count of returned elements (optional) 
+            var offset = 0;  // int? | Start with the n-th element (optional) 
             var organization = organization_example;  // string | Show only entries created by one of the given organizations. This parameter can be used multiple times. (optional) 
-            var type = type_example;  // List<string> | Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional) 
             var qualifier = new List<string>(); // List<string> | Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional) 
-            var fromDate = 2013-10-20T19:20:30+01:00;  // DateTime? | From date time as UTC Date-Time format (optional) 
-            var toDate = 2013-10-20T19:20:30+01:00;  // DateTime? | To date time as UTC Date-Time format (optional) 
-            var offset = 56;  // int? | Start with the n-th element (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements (optional) 
+            var toDate = "2018-05-11T01:01:01.690Z";  // DateTime? | To date time as UTC Date-Time format (optional) 
+            var type = type_example;  // List<string> | Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional) 
 
             try
             {
                 // List history
-                PaginatedHistoryItemResponse result = apiInstance.FilteredList(id4n, includePrivate, organization, type, qualifier, fromDate, toDate, offset, limit);
+                PaginatedHistoryItemResponse result = apiInstance.FilteredList(id4n, fromDate, includePrivate, limit, offset, organization, qualifier, toDate, type);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -137,14 +137,14 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| GUID to retrieve the history for | 
- **includePrivate** | **bool?**| Also return private history entries | [optional] [default to true]
- **organization** | **string**| Show only entries created by one of the given organizations. This parameter can be used multiple times. | [optional] 
- **type** | **List&lt;string&gt;**| Show only entries matching one of the given history item types. This parameter can be used multiple times. | [optional] 
- **qualifier** | [**List&lt;string&gt;**](string.md)| Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. | [optional] 
  **fromDate** | **DateTime?**| From date time as UTC Date-Time format | [optional] 
- **toDate** | **DateTime?**| To date time as UTC Date-Time format | [optional] 
- **offset** | **int?**| Start with the n-th element | [optional] 
+ **includePrivate** | **bool?**| Also return private history entries | [optional] [default to true]
  **limit** | **int?**| The maximum count of returned elements | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **organization** | **string**| Show only entries created by one of the given organizations. This parameter can be used multiple times. | [optional] 
+ **qualifier** | [**List&lt;string&gt;**](string.md)| Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. | [optional] 
+ **toDate** | **DateTime?**| To date time as UTC Date-Time format | [optional] 
+ **type** | **List&lt;string&gt;**| Show only entries matching one of the given history item types. This parameter can be used multiple times. | [optional] 
 
 ### Return type
 
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 <a name="list"></a>
 # **List**
-> PaginatedHistoryItemResponse List (string id4n, string organizationId, bool? includePrivate = null, int? offset = null, int? limit = null)
+> PaginatedHistoryItemResponse List (string id4n, string organizationId, bool? includePrivate = null, int? limit = null, int? offset = null)
 
 DEPRECATED - List history
 
@@ -192,13 +192,13 @@ namespace Example
             var id4n = id4n_example;  // string | GUID to retrieve the history for
             var organizationId = organizationId_example;  // string | organizationId
             var includePrivate = true;  // bool? | Also return private history entries (optional)  (default to true)
-            var offset = 56;  // int? | Start with the n-th element (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements (optional) 
+            var limit = 100;  // int? | The maximum count of returned elements (optional) 
+            var offset = 0;  // int? | Start with the n-th element (optional) 
 
             try
             {
                 // DEPRECATED - List history
-                PaginatedHistoryItemResponse result = apiInstance.List(id4n, organizationId, includePrivate, offset, limit);
+                PaginatedHistoryItemResponse result = apiInstance.List(id4n, organizationId, includePrivate, limit, offset);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -217,8 +217,8 @@ Name | Type | Description  | Notes
  **id4n** | **string**| GUID to retrieve the history for | 
  **organizationId** | **string**| organizationId | 
  **includePrivate** | **bool?**| Also return private history entries | [optional] [default to true]
- **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
 
 ### Return type
 

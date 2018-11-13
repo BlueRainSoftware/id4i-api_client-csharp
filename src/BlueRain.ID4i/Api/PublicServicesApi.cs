@@ -32,11 +32,11 @@ namespace BlueRain.ID4i.Api
             /// 
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">organizationId</param>
-        /// <param name="id4n">id4n</param>
         /// <param name="fileName">fileName</param>
+        /// <param name="id4n">id4n</param>
+        /// <param name="organizationId">organizationId</param>
         /// <returns>Document</returns>
-        Document GetPublicDocument (string organizationId, string id4n, string fileName);
+        Document GetPublicDocument (string fileName, string id4n, string organizationId);
 
         /// <summary>
             /// Retrieve a public document (meta-data only, no content)
@@ -45,11 +45,11 @@ namespace BlueRain.ID4i.Api
             /// 
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">organizationId</param>
-        /// <param name="id4n">id4n</param>
         /// <param name="fileName">fileName</param>
+        /// <param name="id4n">id4n</param>
+        /// <param name="organizationId">organizationId</param>
         /// <returns>ApiResponse of Document</returns>
-        ApiResponse<Document> GetPublicDocumentWithHttpInfo (string organizationId, string id4n, string fileName);
+        ApiResponse<Document> GetPublicDocumentWithHttpInfo (string fileName, string id4n, string organizationId);
         /// <summary>
             /// Retrieve all public routes for a GUID
             /// </summary>
@@ -104,12 +104,12 @@ namespace BlueRain.ID4i.Api
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">id4n</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="organizationId">organizationId (optional)</param>
         /// <param name="owner">Filter by owner organization (optional)</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>PaginatedDocumentResponse</returns>
-        PaginatedDocumentResponse ListAllPublicDocuments (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null);
+        PaginatedDocumentResponse ListAllPublicDocuments (string id4n, int? limit = null, int? offset = null, string organizationId = null, string owner = null);
 
         /// <summary>
             /// List public documents
@@ -119,12 +119,12 @@ namespace BlueRain.ID4i.Api
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">id4n</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="organizationId">organizationId (optional)</param>
         /// <param name="owner">Filter by owner organization (optional)</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>ApiResponse of PaginatedDocumentResponse</returns>
-        ApiResponse<PaginatedDocumentResponse> ListAllPublicDocumentsWithHttpInfo (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null);
+        ApiResponse<PaginatedDocumentResponse> ListAllPublicDocumentsWithHttpInfo (string id4n, int? limit = null, int? offset = null, string organizationId = null, string owner = null);
         /// <summary>
             /// Shows the public history of the given GUID
             /// </summary>
@@ -133,10 +133,10 @@ namespace BlueRain.ID4i.Api
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">GUID to retrieve the history for</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>PaginatedHistoryItemResponse</returns>
-        PaginatedHistoryItemResponse ListPublicHistory (string id4n, int? offset = null, int? limit = null);
+        PaginatedHistoryItemResponse ListPublicHistory (string id4n, int? limit = null, int? offset = null);
 
         /// <summary>
             /// Shows the public history of the given GUID
@@ -146,10 +146,10 @@ namespace BlueRain.ID4i.Api
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">GUID to retrieve the history for</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>ApiResponse of PaginatedHistoryItemResponse</returns>
-        ApiResponse<PaginatedHistoryItemResponse> ListPublicHistoryWithHttpInfo (string id4n, int? offset = null, int? limit = null);
+        ApiResponse<PaginatedHistoryItemResponse> ListPublicHistoryWithHttpInfo (string id4n, int? limit = null, int? offset = null);
         /// <summary>
             /// Read public organization information
             /// </summary>
@@ -178,11 +178,11 @@ namespace BlueRain.ID4i.Api
             /// 
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">organizationId</param>
-        /// <param name="id4n">id4n</param>
         /// <param name="fileName">fileName</param>
+        /// <param name="id4n">id4n</param>
+        /// <param name="organizationId">organizationId</param>
         /// <returns>byte[]</returns>
-        byte[] ReadPublicDocument (string organizationId, string id4n, string fileName);
+        byte[] ReadPublicDocument (string fileName, string id4n, string organizationId);
 
         /// <summary>
             /// Read public document contents
@@ -191,11 +191,11 @@ namespace BlueRain.ID4i.Api
             /// 
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">organizationId</param>
-        /// <param name="id4n">id4n</param>
         /// <param name="fileName">fileName</param>
+        /// <param name="id4n">id4n</param>
+        /// <param name="organizationId">organizationId</param>
         /// <returns>ApiResponse of byte[]</returns>
-        ApiResponse<byte[]> ReadPublicDocumentWithHttpInfo (string organizationId, string id4n, string fileName);
+        ApiResponse<byte[]> ReadPublicDocumentWithHttpInfo (string fileName, string id4n, string organizationId);
         /// <summary>
             /// Resolve image
             /// </summary>
@@ -247,11 +247,11 @@ namespace BlueRain.ID4i.Api
                 /// 
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="organizationId">organizationId</param>
-            /// <param name="id4n">id4n</param>
             /// <param name="fileName">fileName</param>
+            /// <param name="id4n">id4n</param>
+            /// <param name="organizationId">organizationId</param>
             /// <returns>Task of Document</returns>
-            System.Threading.Tasks.Task<Document> GetPublicDocumentAsync (string organizationId, string id4n, string fileName);
+            System.Threading.Tasks.Task<Document> GetPublicDocumentAsync (string fileName, string id4n, string organizationId);
 
                 /// <summary>
                 /// Retrieve a public document (meta-data only, no content)
@@ -260,11 +260,11 @@ namespace BlueRain.ID4i.Api
                 /// 
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="organizationId">organizationId</param>
-            /// <param name="id4n">id4n</param>
             /// <param name="fileName">fileName</param>
+            /// <param name="id4n">id4n</param>
+            /// <param name="organizationId">organizationId</param>
             /// <returns>Task of ApiResponse (Document)</returns>
-                System.Threading.Tasks.Task<ApiResponse<Document>> GetPublicDocumentAsyncWithHttpInfo (string organizationId, string id4n, string fileName);
+                System.Threading.Tasks.Task<ApiResponse<Document>> GetPublicDocumentAsyncWithHttpInfo (string fileName, string id4n, string organizationId);
                 /// <summary>
                 /// Retrieve all public routes for a GUID
                 /// </summary>
@@ -319,12 +319,12 @@ namespace BlueRain.ID4i.Api
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">id4n</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="organizationId">organizationId (optional)</param>
             /// <param name="owner">Filter by owner organization (optional)</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of PaginatedDocumentResponse</returns>
-            System.Threading.Tasks.Task<PaginatedDocumentResponse> ListAllPublicDocumentsAsync (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null);
+            System.Threading.Tasks.Task<PaginatedDocumentResponse> ListAllPublicDocumentsAsync (string id4n, int? limit = null, int? offset = null, string organizationId = null, string owner = null);
 
                 /// <summary>
                 /// List public documents
@@ -334,12 +334,12 @@ namespace BlueRain.ID4i.Api
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">id4n</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="organizationId">organizationId (optional)</param>
             /// <param name="owner">Filter by owner organization (optional)</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedDocumentResponse)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedDocumentResponse>> ListAllPublicDocumentsAsyncWithHttpInfo (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null);
+                System.Threading.Tasks.Task<ApiResponse<PaginatedDocumentResponse>> ListAllPublicDocumentsAsyncWithHttpInfo (string id4n, int? limit = null, int? offset = null, string organizationId = null, string owner = null);
                 /// <summary>
                 /// Shows the public history of the given GUID
                 /// </summary>
@@ -348,10 +348,10 @@ namespace BlueRain.ID4i.Api
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">GUID to retrieve the history for</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of PaginatedHistoryItemResponse</returns>
-            System.Threading.Tasks.Task<PaginatedHistoryItemResponse> ListPublicHistoryAsync (string id4n, int? offset = null, int? limit = null);
+            System.Threading.Tasks.Task<PaginatedHistoryItemResponse> ListPublicHistoryAsync (string id4n, int? limit = null, int? offset = null);
 
                 /// <summary>
                 /// Shows the public history of the given GUID
@@ -361,10 +361,10 @@ namespace BlueRain.ID4i.Api
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">GUID to retrieve the history for</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedHistoryItemResponse)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedHistoryItemResponse>> ListPublicHistoryAsyncWithHttpInfo (string id4n, int? offset = null, int? limit = null);
+                System.Threading.Tasks.Task<ApiResponse<PaginatedHistoryItemResponse>> ListPublicHistoryAsyncWithHttpInfo (string id4n, int? limit = null, int? offset = null);
                 /// <summary>
                 /// Read public organization information
                 /// </summary>
@@ -393,11 +393,11 @@ namespace BlueRain.ID4i.Api
                 /// 
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="organizationId">organizationId</param>
-            /// <param name="id4n">id4n</param>
             /// <param name="fileName">fileName</param>
+            /// <param name="id4n">id4n</param>
+            /// <param name="organizationId">organizationId</param>
             /// <returns>Task of byte[]</returns>
-            System.Threading.Tasks.Task<byte[]> ReadPublicDocumentAsync (string organizationId, string id4n, string fileName);
+            System.Threading.Tasks.Task<byte[]> ReadPublicDocumentAsync (string fileName, string id4n, string organizationId);
 
                 /// <summary>
                 /// Read public document contents
@@ -406,11 +406,11 @@ namespace BlueRain.ID4i.Api
                 /// 
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="organizationId">organizationId</param>
-            /// <param name="id4n">id4n</param>
             /// <param name="fileName">fileName</param>
+            /// <param name="id4n">id4n</param>
+            /// <param name="organizationId">organizationId</param>
             /// <returns>Task of ApiResponse (byte[])</returns>
-                System.Threading.Tasks.Task<ApiResponse<byte[]>> ReadPublicDocumentAsyncWithHttpInfo (string organizationId, string id4n, string fileName);
+                System.Threading.Tasks.Task<ApiResponse<byte[]>> ReadPublicDocumentAsyncWithHttpInfo (string fileName, string id4n, string organizationId);
                 /// <summary>
                 /// Resolve image
                 /// </summary>
@@ -557,13 +557,13 @@ namespace BlueRain.ID4i.Api
             /// Retrieve a public document (meta-data only, no content) 
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">organizationId</param>
-        /// <param name="id4n">id4n</param>
         /// <param name="fileName">fileName</param>
+        /// <param name="id4n">id4n</param>
+        /// <param name="organizationId">organizationId</param>
         /// <returns>Document</returns>
-            public Document GetPublicDocument (string organizationId, string id4n, string fileName)
+            public Document GetPublicDocument (string fileName, string id4n, string organizationId)
             {
-        ApiResponse<Document> localVarResponse = GetPublicDocumentWithHttpInfo(organizationId, id4n, fileName);
+        ApiResponse<Document> localVarResponse = GetPublicDocumentWithHttpInfo(fileName, id4n, organizationId);
             return localVarResponse.Data;
             }
 
@@ -571,21 +571,21 @@ namespace BlueRain.ID4i.Api
             /// Retrieve a public document (meta-data only, no content) 
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">organizationId</param>
-        /// <param name="id4n">id4n</param>
         /// <param name="fileName">fileName</param>
+        /// <param name="id4n">id4n</param>
+        /// <param name="organizationId">organizationId</param>
         /// <returns>ApiResponse of Document</returns>
-            public ApiResponse< Document > GetPublicDocumentWithHttpInfo (string organizationId, string id4n, string fileName)
+            public ApiResponse< Document > GetPublicDocumentWithHttpInfo (string fileName, string id4n, string organizationId)
             {
-                    // verify the required parameter 'organizationId' is set
-                    if (organizationId == null)
-                    throw new ApiException(400, "Missing required parameter 'organizationId' when calling PublicServicesApi->GetPublicDocument");
-                    // verify the required parameter 'id4n' is set
-                    if (id4n == null)
-                    throw new ApiException(400, "Missing required parameter 'id4n' when calling PublicServicesApi->GetPublicDocument");
                     // verify the required parameter 'fileName' is set
                     if (fileName == null)
                     throw new ApiException(400, "Missing required parameter 'fileName' when calling PublicServicesApi->GetPublicDocument");
+                    // verify the required parameter 'id4n' is set
+                    if (id4n == null)
+                    throw new ApiException(400, "Missing required parameter 'id4n' when calling PublicServicesApi->GetPublicDocument");
+                    // verify the required parameter 'organizationId' is set
+                    if (organizationId == null)
+                    throw new ApiException(400, "Missing required parameter 'organizationId' when calling PublicServicesApi->GetPublicDocument");
 
             var localVarPath = "./api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata";
             var localVarPathParams = new Dictionary<String, String>();
@@ -611,9 +611,9 @@ namespace BlueRain.ID4i.Api
             if (localVarHttpHeaderAccept != null)
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-                if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
-                if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
                 if (fileName != null) localVarPathParams.Add("fileName", Configuration.ApiClient.ParameterToString(fileName)); // path parameter
+                if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
+                if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
 
                 // authentication (Authorization) required
                         if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -643,13 +643,13 @@ namespace BlueRain.ID4i.Api
                 /// Retrieve a public document (meta-data only, no content) 
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="organizationId">organizationId</param>
-            /// <param name="id4n">id4n</param>
             /// <param name="fileName">fileName</param>
+            /// <param name="id4n">id4n</param>
+            /// <param name="organizationId">organizationId</param>
             /// <returns>Task of Document</returns>
-            public async System.Threading.Tasks.Task<Document> GetPublicDocumentAsync (string organizationId, string id4n, string fileName)
+            public async System.Threading.Tasks.Task<Document> GetPublicDocumentAsync (string fileName, string id4n, string organizationId)
                 {
-            ApiResponse<Document> localVarResponse = await GetPublicDocumentAsyncWithHttpInfo(organizationId, id4n, fileName);
+            ApiResponse<Document> localVarResponse = await GetPublicDocumentAsyncWithHttpInfo(fileName, id4n, organizationId);
                 return localVarResponse.Data;
 
                 }
@@ -658,21 +658,21 @@ namespace BlueRain.ID4i.Api
                 /// Retrieve a public document (meta-data only, no content) 
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="organizationId">organizationId</param>
-            /// <param name="id4n">id4n</param>
             /// <param name="fileName">fileName</param>
+            /// <param name="id4n">id4n</param>
+            /// <param name="organizationId">organizationId</param>
             /// <returns>Task of ApiResponse (Document)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<Document>> GetPublicDocumentAsyncWithHttpInfo (string organizationId, string id4n, string fileName)
+                public async System.Threading.Tasks.Task<ApiResponse<Document>> GetPublicDocumentAsyncWithHttpInfo (string fileName, string id4n, string organizationId)
                 {
-                        // verify the required parameter 'organizationId' is set
-                        if (organizationId == null)
-                        throw new ApiException(400, "Missing required parameter 'organizationId' when calling PublicServicesApi->GetPublicDocument");
-                        // verify the required parameter 'id4n' is set
-                        if (id4n == null)
-                        throw new ApiException(400, "Missing required parameter 'id4n' when calling PublicServicesApi->GetPublicDocument");
                         // verify the required parameter 'fileName' is set
                         if (fileName == null)
                         throw new ApiException(400, "Missing required parameter 'fileName' when calling PublicServicesApi->GetPublicDocument");
+                        // verify the required parameter 'id4n' is set
+                        if (id4n == null)
+                        throw new ApiException(400, "Missing required parameter 'id4n' when calling PublicServicesApi->GetPublicDocument");
+                        // verify the required parameter 'organizationId' is set
+                        if (organizationId == null)
+                        throw new ApiException(400, "Missing required parameter 'organizationId' when calling PublicServicesApi->GetPublicDocument");
 
                 var localVarPath = "./api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata";
                 var localVarPathParams = new Dictionary<String, String>();
@@ -698,9 +698,9 @@ namespace BlueRain.ID4i.Api
                 if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-                    if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
-                    if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
                     if (fileName != null) localVarPathParams.Add("fileName", Configuration.ApiClient.ParameterToString(fileName)); // path parameter
+                    if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
+                    if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
 
                     // authentication (Authorization) required
                             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -782,8 +782,8 @@ namespace BlueRain.ID4i.Api
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
                 if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
-                if (type != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "type", type)); // query parameter
                 if (interpolate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "interpolate", interpolate)); // query parameter
+                if (type != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "type", type)); // query parameter
 
                 // authentication (Authorization) required
                         if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -866,8 +866,8 @@ namespace BlueRain.ID4i.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
                     if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
-                    if (type != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "type", type)); // query parameter
                     if (interpolate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "interpolate", interpolate)); // query parameter
+                    if (type != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "type", type)); // query parameter
 
                     // authentication (Authorization) required
                             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1035,14 +1035,14 @@ namespace BlueRain.ID4i.Api
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">id4n</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="organizationId">organizationId (optional)</param>
         /// <param name="owner">Filter by owner organization (optional)</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>PaginatedDocumentResponse</returns>
-            public PaginatedDocumentResponse ListAllPublicDocuments (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null)
+            public PaginatedDocumentResponse ListAllPublicDocuments (string id4n, int? limit = null, int? offset = null, string organizationId = null, string owner = null)
             {
-        ApiResponse<PaginatedDocumentResponse> localVarResponse = ListAllPublicDocumentsWithHttpInfo(id4n, organizationId, owner, offset, limit);
+        ApiResponse<PaginatedDocumentResponse> localVarResponse = ListAllPublicDocumentsWithHttpInfo(id4n, limit, offset, organizationId, owner);
             return localVarResponse.Data;
             }
 
@@ -1051,12 +1051,12 @@ namespace BlueRain.ID4i.Api
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">id4n</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="organizationId">organizationId (optional)</param>
         /// <param name="owner">Filter by owner organization (optional)</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>ApiResponse of PaginatedDocumentResponse</returns>
-            public ApiResponse< PaginatedDocumentResponse > ListAllPublicDocumentsWithHttpInfo (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null)
+            public ApiResponse< PaginatedDocumentResponse > ListAllPublicDocumentsWithHttpInfo (string id4n, int? limit = null, int? offset = null, string organizationId = null, string owner = null)
             {
                     // verify the required parameter 'id4n' is set
                     if (id4n == null)
@@ -1087,10 +1087,10 @@ namespace BlueRain.ID4i.Api
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
                 if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
+                if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
                 if (organizationId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "organizationId", organizationId)); // query parameter
                 if (owner != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "owner", owner)); // query parameter
-                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
-                if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
 
                 // authentication (Authorization) required
                         if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1121,14 +1121,14 @@ namespace BlueRain.ID4i.Api
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">id4n</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="organizationId">organizationId (optional)</param>
             /// <param name="owner">Filter by owner organization (optional)</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of PaginatedDocumentResponse</returns>
-            public async System.Threading.Tasks.Task<PaginatedDocumentResponse> ListAllPublicDocumentsAsync (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null)
+            public async System.Threading.Tasks.Task<PaginatedDocumentResponse> ListAllPublicDocumentsAsync (string id4n, int? limit = null, int? offset = null, string organizationId = null, string owner = null)
                 {
-            ApiResponse<PaginatedDocumentResponse> localVarResponse = await ListAllPublicDocumentsAsyncWithHttpInfo(id4n, organizationId, owner, offset, limit);
+            ApiResponse<PaginatedDocumentResponse> localVarResponse = await ListAllPublicDocumentsAsyncWithHttpInfo(id4n, limit, offset, organizationId, owner);
                 return localVarResponse.Data;
 
                 }
@@ -1138,12 +1138,12 @@ namespace BlueRain.ID4i.Api
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">id4n</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="organizationId">organizationId (optional)</param>
             /// <param name="owner">Filter by owner organization (optional)</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedDocumentResponse)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedDocumentResponse>> ListAllPublicDocumentsAsyncWithHttpInfo (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null)
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedDocumentResponse>> ListAllPublicDocumentsAsyncWithHttpInfo (string id4n, int? limit = null, int? offset = null, string organizationId = null, string owner = null)
                 {
                         // verify the required parameter 'id4n' is set
                         if (id4n == null)
@@ -1174,10 +1174,10 @@ namespace BlueRain.ID4i.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
                     if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
+                    if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
                     if (organizationId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "organizationId", organizationId)); // query parameter
                     if (owner != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "owner", owner)); // query parameter
-                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
-                    if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
 
                     // authentication (Authorization) required
                             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1208,12 +1208,12 @@ namespace BlueRain.ID4i.Api
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">GUID to retrieve the history for</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>PaginatedHistoryItemResponse</returns>
-            public PaginatedHistoryItemResponse ListPublicHistory (string id4n, int? offset = null, int? limit = null)
+            public PaginatedHistoryItemResponse ListPublicHistory (string id4n, int? limit = null, int? offset = null)
             {
-        ApiResponse<PaginatedHistoryItemResponse> localVarResponse = ListPublicHistoryWithHttpInfo(id4n, offset, limit);
+        ApiResponse<PaginatedHistoryItemResponse> localVarResponse = ListPublicHistoryWithHttpInfo(id4n, limit, offset);
             return localVarResponse.Data;
             }
 
@@ -1222,10 +1222,10 @@ namespace BlueRain.ID4i.Api
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">GUID to retrieve the history for</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>ApiResponse of PaginatedHistoryItemResponse</returns>
-            public ApiResponse< PaginatedHistoryItemResponse > ListPublicHistoryWithHttpInfo (string id4n, int? offset = null, int? limit = null)
+            public ApiResponse< PaginatedHistoryItemResponse > ListPublicHistoryWithHttpInfo (string id4n, int? limit = null, int? offset = null)
             {
                     // verify the required parameter 'id4n' is set
                     if (id4n == null)
@@ -1256,8 +1256,8 @@ namespace BlueRain.ID4i.Api
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
                 if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
-                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
                 if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
 
                 // authentication (Authorization) required
                         if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1288,12 +1288,12 @@ namespace BlueRain.ID4i.Api
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">GUID to retrieve the history for</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of PaginatedHistoryItemResponse</returns>
-            public async System.Threading.Tasks.Task<PaginatedHistoryItemResponse> ListPublicHistoryAsync (string id4n, int? offset = null, int? limit = null)
+            public async System.Threading.Tasks.Task<PaginatedHistoryItemResponse> ListPublicHistoryAsync (string id4n, int? limit = null, int? offset = null)
                 {
-            ApiResponse<PaginatedHistoryItemResponse> localVarResponse = await ListPublicHistoryAsyncWithHttpInfo(id4n, offset, limit);
+            ApiResponse<PaginatedHistoryItemResponse> localVarResponse = await ListPublicHistoryAsyncWithHttpInfo(id4n, limit, offset);
                 return localVarResponse.Data;
 
                 }
@@ -1303,10 +1303,10 @@ namespace BlueRain.ID4i.Api
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">GUID to retrieve the history for</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedHistoryItemResponse)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedHistoryItemResponse>> ListPublicHistoryAsyncWithHttpInfo (string id4n, int? offset = null, int? limit = null)
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedHistoryItemResponse>> ListPublicHistoryAsyncWithHttpInfo (string id4n, int? limit = null, int? offset = null)
                 {
                         // verify the required parameter 'id4n' is set
                         if (id4n == null)
@@ -1337,8 +1337,8 @@ namespace BlueRain.ID4i.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
                     if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
-                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
                     if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
 
                     // authentication (Authorization) required
                             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1517,13 +1517,13 @@ namespace BlueRain.ID4i.Api
             /// Read public document contents 
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">organizationId</param>
-        /// <param name="id4n">id4n</param>
         /// <param name="fileName">fileName</param>
+        /// <param name="id4n">id4n</param>
+        /// <param name="organizationId">organizationId</param>
         /// <returns>byte[]</returns>
-            public byte[] ReadPublicDocument (string organizationId, string id4n, string fileName)
+            public byte[] ReadPublicDocument (string fileName, string id4n, string organizationId)
             {
-        ApiResponse<byte[]> localVarResponse = ReadPublicDocumentWithHttpInfo(organizationId, id4n, fileName);
+        ApiResponse<byte[]> localVarResponse = ReadPublicDocumentWithHttpInfo(fileName, id4n, organizationId);
             return localVarResponse.Data;
             }
 
@@ -1531,21 +1531,21 @@ namespace BlueRain.ID4i.Api
             /// Read public document contents 
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">organizationId</param>
-        /// <param name="id4n">id4n</param>
         /// <param name="fileName">fileName</param>
+        /// <param name="id4n">id4n</param>
+        /// <param name="organizationId">organizationId</param>
         /// <returns>ApiResponse of byte[]</returns>
-            public ApiResponse< byte[] > ReadPublicDocumentWithHttpInfo (string organizationId, string id4n, string fileName)
+            public ApiResponse< byte[] > ReadPublicDocumentWithHttpInfo (string fileName, string id4n, string organizationId)
             {
-                    // verify the required parameter 'organizationId' is set
-                    if (organizationId == null)
-                    throw new ApiException(400, "Missing required parameter 'organizationId' when calling PublicServicesApi->ReadPublicDocument");
-                    // verify the required parameter 'id4n' is set
-                    if (id4n == null)
-                    throw new ApiException(400, "Missing required parameter 'id4n' when calling PublicServicesApi->ReadPublicDocument");
                     // verify the required parameter 'fileName' is set
                     if (fileName == null)
                     throw new ApiException(400, "Missing required parameter 'fileName' when calling PublicServicesApi->ReadPublicDocument");
+                    // verify the required parameter 'id4n' is set
+                    if (id4n == null)
+                    throw new ApiException(400, "Missing required parameter 'id4n' when calling PublicServicesApi->ReadPublicDocument");
+                    // verify the required parameter 'organizationId' is set
+                    if (organizationId == null)
+                    throw new ApiException(400, "Missing required parameter 'organizationId' when calling PublicServicesApi->ReadPublicDocument");
 
             var localVarPath = "./api/v1/public/documents/{id4n}/{organizationId}/{fileName}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1571,9 +1571,9 @@ namespace BlueRain.ID4i.Api
             if (localVarHttpHeaderAccept != null)
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-                if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
-                if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
                 if (fileName != null) localVarPathParams.Add("fileName", Configuration.ApiClient.ParameterToString(fileName)); // path parameter
+                if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
+                if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
 
                 // authentication (Authorization) required
                         if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1603,13 +1603,13 @@ namespace BlueRain.ID4i.Api
                 /// Read public document contents 
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="organizationId">organizationId</param>
-            /// <param name="id4n">id4n</param>
             /// <param name="fileName">fileName</param>
+            /// <param name="id4n">id4n</param>
+            /// <param name="organizationId">organizationId</param>
             /// <returns>Task of byte[]</returns>
-            public async System.Threading.Tasks.Task<byte[]> ReadPublicDocumentAsync (string organizationId, string id4n, string fileName)
+            public async System.Threading.Tasks.Task<byte[]> ReadPublicDocumentAsync (string fileName, string id4n, string organizationId)
                 {
-            ApiResponse<byte[]> localVarResponse = await ReadPublicDocumentAsyncWithHttpInfo(organizationId, id4n, fileName);
+            ApiResponse<byte[]> localVarResponse = await ReadPublicDocumentAsyncWithHttpInfo(fileName, id4n, organizationId);
                 return localVarResponse.Data;
 
                 }
@@ -1618,21 +1618,21 @@ namespace BlueRain.ID4i.Api
                 /// Read public document contents 
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="organizationId">organizationId</param>
-            /// <param name="id4n">id4n</param>
             /// <param name="fileName">fileName</param>
+            /// <param name="id4n">id4n</param>
+            /// <param name="organizationId">organizationId</param>
             /// <returns>Task of ApiResponse (byte[])</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<byte[]>> ReadPublicDocumentAsyncWithHttpInfo (string organizationId, string id4n, string fileName)
+                public async System.Threading.Tasks.Task<ApiResponse<byte[]>> ReadPublicDocumentAsyncWithHttpInfo (string fileName, string id4n, string organizationId)
                 {
-                        // verify the required parameter 'organizationId' is set
-                        if (organizationId == null)
-                        throw new ApiException(400, "Missing required parameter 'organizationId' when calling PublicServicesApi->ReadPublicDocument");
-                        // verify the required parameter 'id4n' is set
-                        if (id4n == null)
-                        throw new ApiException(400, "Missing required parameter 'id4n' when calling PublicServicesApi->ReadPublicDocument");
                         // verify the required parameter 'fileName' is set
                         if (fileName == null)
                         throw new ApiException(400, "Missing required parameter 'fileName' when calling PublicServicesApi->ReadPublicDocument");
+                        // verify the required parameter 'id4n' is set
+                        if (id4n == null)
+                        throw new ApiException(400, "Missing required parameter 'id4n' when calling PublicServicesApi->ReadPublicDocument");
+                        // verify the required parameter 'organizationId' is set
+                        if (organizationId == null)
+                        throw new ApiException(400, "Missing required parameter 'organizationId' when calling PublicServicesApi->ReadPublicDocument");
 
                 var localVarPath = "./api/v1/public/documents/{id4n}/{organizationId}/{fileName}";
                 var localVarPathParams = new Dictionary<String, String>();
@@ -1658,9 +1658,9 @@ namespace BlueRain.ID4i.Api
                 if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-                    if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
-                    if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
                     if (fileName != null) localVarPathParams.Add("fileName", Configuration.ApiClient.ParameterToString(fileName)); // path parameter
+                    if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
+                    if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
 
                     // authentication (Authorization) required
                             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))

@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 <a name="addguidalias"></a>
 # **AddGuidAlias**
-> void AddGuidAlias (string id4n, string aliasType, GuidAlias alias)
+> void AddGuidAlias (GuidAlias alias, string aliasType, string id4n)
 
 Add alias for GUID or Collection
 
@@ -43,14 +43,14 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new GuidsApi();
-            var id4n = id4n_example;  // string | The GUID or Collection to operate on
-            var aliasType = aliasType_example;  // string | Alias type, see the corresponding API model
             var alias = new GuidAlias(); // GuidAlias | The alias to add or update
+            var aliasType = aliasType_example;  // string | Alias type, see the corresponding API model
+            var id4n = id4n_example;  // string | The GUID or Collection to operate on
 
             try
             {
                 // Add alias for GUID or Collection
-                apiInstance.AddGuidAlias(id4n, aliasType, alias);
+                apiInstance.AddGuidAlias(alias, aliasType, id4n);
             }
             catch (Exception e)
             {
@@ -65,9 +65,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **string**| The GUID or Collection to operate on | 
- **aliasType** | **string**| Alias type, see the corresponding API model | 
  **alias** | [**GuidAlias**](GuidAlias.md)| The alias to add or update | 
+ **aliasType** | **string**| Alias type, see the corresponding API model | 
+ **id4n** | **string**| The GUID or Collection to operate on | 
 
 ### Return type
 
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 <a name="getcollections"></a>
 # **GetCollections**
-> PaginatedGuidCollectionResponse GetCollections (string id4n, string organizationId = null, int? offset = null, int? limit = null)
+> PaginatedGuidCollectionResponse GetCollections (string id4n, int? limit = null, int? offset = null, string organizationId = null)
 
 Retrieve collections of an ID
 
@@ -179,14 +179,14 @@ namespace Example
 
             var apiInstance = new GuidsApi();
             var id4n = id4n_example;  // string | The ID which the collections should contain
+            var limit = 100;  // int? | The maximum count of returned elements (optional) 
+            var offset = 0;  // int? | Start with the n-th element (optional) 
             var organizationId = organizationId_example;  // string | The organization holding the collections. (optional) 
-            var offset = 56;  // int? | Start with the n-th element (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
                 // Retrieve collections of an ID
-                PaginatedGuidCollectionResponse result = apiInstance.GetCollections(id4n, organizationId, offset, limit);
+                PaginatedGuidCollectionResponse result = apiInstance.GetCollections(id4n, limit, offset, organizationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -203,9 +203,9 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| The ID which the collections should contain | 
- **organizationId** | **string**| The organization holding the collections. | [optional] 
- **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **organizationId** | **string**| The organization holding the collections. | [optional] 
 
 ### Return type
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 <a name="getguidswithoutcollection"></a>
 # **GetGuidsWithoutCollection**
-> PaginatedResponseOfGuid GetGuidsWithoutCollection (string organizationId, int? offset = null, int? limit = null)
+> PaginatedResponseOfGuid GetGuidsWithoutCollection (string organizationId, int? limit = null, int? offset = null)
 
 Retrieve GUIDs not in any collection
 
@@ -379,13 +379,13 @@ namespace Example
 
             var apiInstance = new GuidsApi();
             var organizationId = organizationId_example;  // string | The namespace of the organization to search GUIDs for
-            var offset = 56;  // int? | Start with the n-th element (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements (optional) 
+            var limit = 100;  // int? | The maximum count of returned elements (optional) 
+            var offset = 0;  // int? | Start with the n-th element (optional) 
 
             try
             {
                 // Retrieve GUIDs not in any collection
-                PaginatedResponseOfGuid result = apiInstance.GetGuidsWithoutCollection(organizationId, offset, limit);
+                PaginatedResponseOfGuid result = apiInstance.GetGuidsWithoutCollection(organizationId, limit, offset);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -402,8 +402,8 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string**| The namespace of the organization to search GUIDs for | 
- **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
 
 ### Return type
 
@@ -488,7 +488,7 @@ Name | Type | Description  | Notes
 
 <a name="removeguidalias"></a>
 # **RemoveGuidAlias**
-> void RemoveGuidAlias (string id4n, string aliasType)
+> void RemoveGuidAlias (string aliasType, string id4n)
 
 Remove aliases from GUID or Collection
 
@@ -514,13 +514,13 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new GuidsApi();
-            var id4n = id4n_example;  // string | The GUID or Collection to operate on
             var aliasType = aliasType_example;  // string | Alias type, see the corresponding API model
+            var id4n = id4n_example;  // string | The GUID or Collection to operate on
 
             try
             {
                 // Remove aliases from GUID or Collection
-                apiInstance.RemoveGuidAlias(id4n, aliasType);
+                apiInstance.RemoveGuidAlias(aliasType, id4n);
             }
             catch (Exception e)
             {
@@ -535,8 +535,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **string**| The GUID or Collection to operate on | 
  **aliasType** | **string**| Alias type, see the corresponding API model | 
+ **id4n** | **string**| The GUID or Collection to operate on | 
 
 ### Return type
 

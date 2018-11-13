@@ -66,7 +66,7 @@ namespace BlueRain.ID4i.Model
         /// </summary>
         /// <value>The type of ID</value>
         [DataMember(Name="type", EmitDefaultValue=false)]
-        public TypeEnum Type { get; set; }
+        public TypeEnum? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Id4nPresentation" /> class.
         /// </summary>

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="addguidalias"></a>
 # **AddGuidAlias**
-> void AddGuidAlias (string id4n, string aliasType, GuidAlias alias)
+> void AddGuidAlias (GuidAlias alias, string aliasType, string id4n)
 
 Add alias for GUID or Collection
 
@@ -39,14 +39,14 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new AliasApi();
-            var id4n = id4n_example;  // string | The GUID or Collection to operate on
-            var aliasType = aliasType_example;  // string | Alias type, see the corresponding API model
             var alias = new GuidAlias(); // GuidAlias | The alias to add or update
+            var aliasType = aliasType_example;  // string | Alias type, see the corresponding API model
+            var id4n = id4n_example;  // string | The GUID or Collection to operate on
 
             try
             {
                 // Add alias for GUID or Collection
-                apiInstance.AddGuidAlias(id4n, aliasType, alias);
+                apiInstance.AddGuidAlias(alias, aliasType, id4n);
             }
             catch (Exception e)
             {
@@ -61,9 +61,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **string**| The GUID or Collection to operate on | 
- **aliasType** | **string**| Alias type, see the corresponding API model | 
  **alias** | [**GuidAlias**](GuidAlias.md)| The alias to add or update | 
+ **aliasType** | **string**| Alias type, see the corresponding API model | 
+ **id4n** | **string**| The GUID or Collection to operate on | 
 
 ### Return type
 
@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 
 <a name="removeguidalias"></a>
 # **RemoveGuidAlias**
-> void RemoveGuidAlias (string id4n, string aliasType)
+> void RemoveGuidAlias (string aliasType, string id4n)
 
 Remove aliases from GUID or Collection
 
@@ -236,13 +236,13 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new AliasApi();
-            var id4n = id4n_example;  // string | The GUID or Collection to operate on
             var aliasType = aliasType_example;  // string | Alias type, see the corresponding API model
+            var id4n = id4n_example;  // string | The GUID or Collection to operate on
 
             try
             {
                 // Remove aliases from GUID or Collection
-                apiInstance.RemoveGuidAlias(id4n, aliasType);
+                apiInstance.RemoveGuidAlias(aliasType, id4n);
             }
             catch (Exception e)
             {
@@ -257,8 +257,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **string**| The GUID or Collection to operate on | 
  **aliasType** | **string**| Alias type, see the corresponding API model | 
+ **id4n** | **string**| The GUID or Collection to operate on | 
 
 ### Return type
 
@@ -277,7 +277,7 @@ void (empty response body)
 
 <a name="searchbyalias"></a>
 # **SearchByAlias**
-> PaginatedGuidResponse SearchByAlias (string alias, string aliasType, int? offset = null, int? limit = null)
+> PaginatedGuidResponse SearchByAlias (string alias, string aliasType, int? limit = null, int? offset = null)
 
 Search for GUIDs by alias
 
@@ -303,13 +303,13 @@ namespace Example
             var apiInstance = new AliasApi();
             var alias = alias_example;  // string | The alias to search for
             var aliasType = aliasType_example;  // string | Alias type type to search for
-            var offset = 56;  // int? | Start with the n-th element (optional) 
-            var limit = 56;  // int? | The maximum count of returned elements (optional) 
+            var limit = 100;  // int? | The maximum count of returned elements (optional) 
+            var offset = 0;  // int? | Start with the n-th element (optional) 
 
             try
             {
                 // Search for GUIDs by alias
-                PaginatedGuidResponse result = apiInstance.SearchByAlias(alias, aliasType, offset, limit);
+                PaginatedGuidResponse result = apiInstance.SearchByAlias(alias, aliasType, limit, offset);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -327,8 +327,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **alias** | **string**| The alias to search for | 
  **aliasType** | **string**| Alias type type to search for | 
- **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
 
 ### Return type
 

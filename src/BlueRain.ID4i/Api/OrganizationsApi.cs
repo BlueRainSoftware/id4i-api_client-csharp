@@ -55,11 +55,11 @@ namespace BlueRain.ID4i.Api
             /// 
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="changeRoleRequest">changeRoleRequest</param>
         /// <param name="organizationId">The namespace of the organization</param>
         /// <param name="username">username</param>
-        /// <param name="changeRoleRequest">changeRoleRequest</param>
         /// <returns></returns>
-        void AddUserRoles (string organizationId, string username, ChangeRoleRequest changeRoleRequest);
+        void AddUserRoles (ChangeRoleRequest changeRoleRequest, string organizationId, string username);
 
         /// <summary>
             /// Add role(s) to user
@@ -68,11 +68,11 @@ namespace BlueRain.ID4i.Api
             /// 
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="changeRoleRequest">changeRoleRequest</param>
         /// <param name="organizationId">The namespace of the organization</param>
         /// <param name="username">username</param>
-        /// <param name="changeRoleRequest">changeRoleRequest</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> AddUserRolesWithHttpInfo (string organizationId, string username, ChangeRoleRequest changeRoleRequest);
+        ApiResponse<Object> AddUserRolesWithHttpInfo (ChangeRoleRequest changeRoleRequest, string organizationId, string username);
         /// <summary>
             /// Create organization
             /// </summary>
@@ -228,13 +228,13 @@ namespace BlueRain.ID4i.Api
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The namespace of the organization</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <param name="type">Filter by this type (optional)</param>
         /// <param name="label">Filter by this label (optional)</param>
         /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="type">Filter by this type (optional)</param>
         /// <returns>PaginatedGuidCollection</returns>
-        PaginatedGuidCollection GetAllCollectionsOfOrganization (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null);
+        PaginatedGuidCollection GetAllCollectionsOfOrganization (string organizationId, string label = null, string labelPrefix = null, int? limit = null, int? offset = null, string type = null);
 
         /// <summary>
             /// Get collections of organization
@@ -244,13 +244,13 @@ namespace BlueRain.ID4i.Api
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The namespace of the organization</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <param name="type">Filter by this type (optional)</param>
         /// <param name="label">Filter by this label (optional)</param>
         /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="type">Filter by this type (optional)</param>
         /// <returns>ApiResponse of PaginatedGuidCollection</returns>
-        ApiResponse<PaginatedGuidCollection> GetAllCollectionsOfOrganizationWithHttpInfo (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null);
+        ApiResponse<PaginatedGuidCollection> GetAllCollectionsOfOrganizationWithHttpInfo (string organizationId, string label = null, string labelPrefix = null, int? limit = null, int? offset = null, string type = null);
         /// <summary>
             /// List users and their roles
             /// </summary>
@@ -259,10 +259,10 @@ namespace BlueRain.ID4i.Api
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">organizationId</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>PaginatedUserRolesResponse</returns>
-        PaginatedUserRolesResponse GetAllOrganizationRoles (string organizationId, int? offset = null, int? limit = null);
+        PaginatedUserRolesResponse GetAllOrganizationRoles (string organizationId, int? limit = null, int? offset = null);
 
         /// <summary>
             /// List users and their roles
@@ -272,10 +272,10 @@ namespace BlueRain.ID4i.Api
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">organizationId</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>ApiResponse of PaginatedUserRolesResponse</returns>
-        ApiResponse<PaginatedUserRolesResponse> GetAllOrganizationRolesWithHttpInfo (string organizationId, int? offset = null, int? limit = null);
+        ApiResponse<PaginatedUserRolesResponse> GetAllOrganizationRolesWithHttpInfo (string organizationId, int? limit = null, int? offset = null);
         /// <summary>
             /// List my privileges
             /// </summary>
@@ -304,11 +304,11 @@ namespace BlueRain.ID4i.Api
             /// 
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="role">role (optional)</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="role">role (optional)</param>
         /// <returns>PaginatedOrganizationResponse</returns>
-        PaginatedOrganizationResponse GetOrganizationsOfUser (string role = null, int? offset = null, int? limit = null);
+        PaginatedOrganizationResponse GetOrganizationsOfUser (int? limit = null, int? offset = null, string role = null);
 
         /// <summary>
             /// Retrieve organizations of user
@@ -317,11 +317,11 @@ namespace BlueRain.ID4i.Api
             /// 
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="role">role (optional)</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>ApiResponse of PaginatedOrganizationResponse</returns>
-        ApiResponse<PaginatedOrganizationResponse> GetOrganizationsOfUserWithHttpInfo (string role = null, int? offset = null, int? limit = null);
+        ApiResponse<PaginatedOrganizationResponse> GetOrganizationsOfUserWithHttpInfo (int? limit = null, int? offset = null, string role = null);
         /// <summary>
             /// Get partners of an organization
             /// </summary>
@@ -330,10 +330,10 @@ namespace BlueRain.ID4i.Api
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The namespace of the organization to query partner organizations</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>PaginatedResponseOfPartnerOrganization</returns>
-        PaginatedResponseOfPartnerOrganization GetPartnerOrganizations (string organizationId, int? offset = null, int? limit = null);
+        PaginatedResponseOfPartnerOrganization GetPartnerOrganizations (string organizationId, int? limit = null, int? offset = null);
 
         /// <summary>
             /// Get partners of an organization
@@ -343,10 +343,10 @@ namespace BlueRain.ID4i.Api
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The namespace of the organization to query partner organizations</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>ApiResponse of PaginatedResponseOfPartnerOrganization</returns>
-        ApiResponse<PaginatedResponseOfPartnerOrganization> GetPartnerOrganizationsWithHttpInfo (string organizationId, int? offset = null, int? limit = null);
+        ApiResponse<PaginatedResponseOfPartnerOrganization> GetPartnerOrganizationsWithHttpInfo (string organizationId, int? limit = null, int? offset = null);
         /// <summary>
             /// Get user roles by username
             /// </summary>
@@ -356,10 +356,10 @@ namespace BlueRain.ID4i.Api
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The namespace of the organization</param>
         /// <param name="username">username</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>PaginatedStringResponse</returns>
-        PaginatedStringResponse GetUserRoles (string organizationId, string username, int? offset = null, int? limit = null);
+        PaginatedStringResponse GetUserRoles (string organizationId, string username, int? limit = null, int? offset = null);
 
         /// <summary>
             /// Get user roles by username
@@ -370,10 +370,10 @@ namespace BlueRain.ID4i.Api
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The namespace of the organization</param>
         /// <param name="username">username</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>ApiResponse of PaginatedStringResponse</returns>
-        ApiResponse<PaginatedStringResponse> GetUserRolesWithHttpInfo (string organizationId, string username, int? offset = null, int? limit = null);
+        ApiResponse<PaginatedStringResponse> GetUserRolesWithHttpInfo (string organizationId, string username, int? limit = null, int? offset = null);
         /// <summary>
             /// Find users in organization
             /// </summary>
@@ -382,10 +382,10 @@ namespace BlueRain.ID4i.Api
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">organizationId</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>PaginatedUserPresentationResponse</returns>
-        PaginatedUserPresentationResponse GetUsersOfOrganization (string organizationId, int? offset = null, int? limit = null);
+        PaginatedUserPresentationResponse GetUsersOfOrganization (string organizationId, int? limit = null, int? offset = null);
 
         /// <summary>
             /// Find users in organization
@@ -395,10 +395,10 @@ namespace BlueRain.ID4i.Api
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">organizationId</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>ApiResponse of PaginatedUserPresentationResponse</returns>
-        ApiResponse<PaginatedUserPresentationResponse> GetUsersOfOrganizationWithHttpInfo (string organizationId, int? offset = null, int? limit = null);
+        ApiResponse<PaginatedUserPresentationResponse> GetUsersOfOrganizationWithHttpInfo (string organizationId, int? limit = null, int? offset = null);
         /// <summary>
             /// Invite Users
             /// </summary>
@@ -406,10 +406,10 @@ namespace BlueRain.ID4i.Api
             /// 
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The namespace of the organization where users should be invited</param>
         /// <param name="invitationList">invitationList</param>
+        /// <param name="organizationId">The namespace of the organization where users should be invited</param>
         /// <returns></returns>
-        void InviteUsers (string organizationId, OrganizationUserInvitationListRequest invitationList);
+        void InviteUsers (OrganizationUserInvitationListRequest invitationList, string organizationId);
 
         /// <summary>
             /// Invite Users
@@ -418,10 +418,10 @@ namespace BlueRain.ID4i.Api
             /// 
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The namespace of the organization where users should be invited</param>
         /// <param name="invitationList">invitationList</param>
+        /// <param name="organizationId">The namespace of the organization where users should be invited</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> InviteUsersWithHttpInfo (string organizationId, OrganizationUserInvitationListRequest invitationList);
+        ApiResponse<Object> InviteUsersWithHttpInfo (OrganizationUserInvitationListRequest invitationList, string organizationId);
         /// <summary>
             /// List countries
             /// </summary>
@@ -429,10 +429,10 @@ namespace BlueRain.ID4i.Api
             /// 
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>PaginatedCountryResponse</returns>
-        PaginatedCountryResponse ListCountries (int? offset = null, int? limit = null);
+        PaginatedCountryResponse ListCountries (int? limit = null, int? offset = null);
 
         /// <summary>
             /// List countries
@@ -441,10 +441,10 @@ namespace BlueRain.ID4i.Api
             /// 
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>ApiResponse of PaginatedCountryResponse</returns>
-        ApiResponse<PaginatedCountryResponse> ListCountriesWithHttpInfo (int? offset = null, int? limit = null);
+        ApiResponse<PaginatedCountryResponse> ListCountriesWithHttpInfo (int? limit = null, int? offset = null);
         /// <summary>
             /// Remove partner
             /// </summary>
@@ -475,11 +475,11 @@ namespace BlueRain.ID4i.Api
             /// 
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="changeRoleRequest">changeRoleRequest</param>
         /// <param name="organizationId">The namespace of the organization</param>
         /// <param name="username">username</param>
-        /// <param name="changeRoleRequest">changeRoleRequest</param>
         /// <returns></returns>
-        void RemoveUserRoles (string organizationId, string username, ChangeRoleRequest changeRoleRequest);
+        void RemoveUserRoles (ChangeRoleRequest changeRoleRequest, string organizationId, string username);
 
         /// <summary>
             /// Remove role(s) from user
@@ -488,11 +488,11 @@ namespace BlueRain.ID4i.Api
             /// 
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="changeRoleRequest">changeRoleRequest</param>
         /// <param name="organizationId">The namespace of the organization</param>
         /// <param name="username">username</param>
-        /// <param name="changeRoleRequest">changeRoleRequest</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RemoveUserRolesWithHttpInfo (string organizationId, string username, ChangeRoleRequest changeRoleRequest);
+        ApiResponse<Object> RemoveUserRolesWithHttpInfo (ChangeRoleRequest changeRoleRequest, string organizationId, string username);
         /// <summary>
             /// Update organization logo
             /// </summary>
@@ -500,10 +500,10 @@ namespace BlueRain.ID4i.Api
             /// Updating an organization logo using a multipart file upload.
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The namespace of the organization where the logo should be updated.</param>
         /// <param name="file">An image containing the new logo.</param>
+        /// <param name="organizationId">The namespace of the organization where the logo should be updated.</param>
         /// <returns>PublicImagePresentation</returns>
-        PublicImagePresentation SetOrganizationLogo (string organizationId, System.IO.Stream file);
+        PublicImagePresentation SetOrganizationLogo (System.IO.Stream file, string organizationId);
 
         /// <summary>
             /// Update organization logo
@@ -512,10 +512,10 @@ namespace BlueRain.ID4i.Api
             /// Updating an organization logo using a multipart file upload.
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The namespace of the organization where the logo should be updated.</param>
         /// <param name="file">An image containing the new logo.</param>
+        /// <param name="organizationId">The namespace of the organization where the logo should be updated.</param>
         /// <returns>ApiResponse of PublicImagePresentation</returns>
-        ApiResponse<PublicImagePresentation> SetOrganizationLogoWithHttpInfo (string organizationId, System.IO.Stream file);
+        ApiResponse<PublicImagePresentation> SetOrganizationLogoWithHttpInfo (System.IO.Stream file, string organizationId);
         /// <summary>
             /// Update organization
             /// </summary>
@@ -546,10 +546,10 @@ namespace BlueRain.ID4i.Api
             /// 
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">organizationId</param>
         /// <param name="addressResource">addressResource</param>
+        /// <param name="organizationId">organizationId</param>
         /// <returns>OrganizationAddress</returns>
-        OrganizationAddress UpdateOrganizationAddress (string organizationId, OrganizationAddress addressResource);
+        OrganizationAddress UpdateOrganizationAddress (OrganizationAddress addressResource, string organizationId);
 
         /// <summary>
             /// Store address
@@ -558,10 +558,10 @@ namespace BlueRain.ID4i.Api
             /// 
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">organizationId</param>
         /// <param name="addressResource">addressResource</param>
+        /// <param name="organizationId">organizationId</param>
         /// <returns>ApiResponse of OrganizationAddress</returns>
-        ApiResponse<OrganizationAddress> UpdateOrganizationAddressWithHttpInfo (string organizationId, OrganizationAddress addressResource);
+        ApiResponse<OrganizationAddress> UpdateOrganizationAddressWithHttpInfo (OrganizationAddress addressResource, string organizationId);
         /// <summary>
             /// Store billing address
             /// </summary>
@@ -569,10 +569,10 @@ namespace BlueRain.ID4i.Api
             /// 
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">organizationId</param>
         /// <param name="addressResource">addressResource</param>
+        /// <param name="organizationId">organizationId</param>
         /// <returns>OrganizationAddress</returns>
-        OrganizationAddress UpdateOrganizationBillingAddress (string organizationId, OrganizationAddress addressResource);
+        OrganizationAddress UpdateOrganizationBillingAddress (OrganizationAddress addressResource, string organizationId);
 
         /// <summary>
             /// Store billing address
@@ -581,10 +581,10 @@ namespace BlueRain.ID4i.Api
             /// 
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">organizationId</param>
         /// <param name="addressResource">addressResource</param>
+        /// <param name="organizationId">organizationId</param>
         /// <returns>ApiResponse of OrganizationAddress</returns>
-        ApiResponse<OrganizationAddress> UpdateOrganizationBillingAddressWithHttpInfo (string organizationId, OrganizationAddress addressResource);
+        ApiResponse<OrganizationAddress> UpdateOrganizationBillingAddressWithHttpInfo (OrganizationAddress addressResource, string organizationId);
         #endregion Synchronous Operations
             #region Asynchronous Operations
                 /// <summary>
@@ -617,11 +617,11 @@ namespace BlueRain.ID4i.Api
                 /// 
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="changeRoleRequest">changeRoleRequest</param>
             /// <param name="organizationId">The namespace of the organization</param>
             /// <param name="username">username</param>
-            /// <param name="changeRoleRequest">changeRoleRequest</param>
             /// <returns>Task of void</returns>
-            System.Threading.Tasks.Task AddUserRolesAsync (string organizationId, string username, ChangeRoleRequest changeRoleRequest);
+            System.Threading.Tasks.Task AddUserRolesAsync (ChangeRoleRequest changeRoleRequest, string organizationId, string username);
 
                 /// <summary>
                 /// Add role(s) to user
@@ -630,11 +630,11 @@ namespace BlueRain.ID4i.Api
                 /// 
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="changeRoleRequest">changeRoleRequest</param>
             /// <param name="organizationId">The namespace of the organization</param>
             /// <param name="username">username</param>
-            /// <param name="changeRoleRequest">changeRoleRequest</param>
             /// <returns>Task of ApiResponse</returns>
-                System.Threading.Tasks.Task<ApiResponse<Object>> AddUserRolesAsyncWithHttpInfo (string organizationId, string username, ChangeRoleRequest changeRoleRequest);
+                System.Threading.Tasks.Task<ApiResponse<Object>> AddUserRolesAsyncWithHttpInfo (ChangeRoleRequest changeRoleRequest, string organizationId, string username);
                 /// <summary>
                 /// Create organization
                 /// </summary>
@@ -790,13 +790,13 @@ namespace BlueRain.ID4i.Api
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">The namespace of the organization</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <param name="type">Filter by this type (optional)</param>
             /// <param name="label">Filter by this label (optional)</param>
             /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="type">Filter by this type (optional)</param>
             /// <returns>Task of PaginatedGuidCollection</returns>
-            System.Threading.Tasks.Task<PaginatedGuidCollection> GetAllCollectionsOfOrganizationAsync (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null);
+            System.Threading.Tasks.Task<PaginatedGuidCollection> GetAllCollectionsOfOrganizationAsync (string organizationId, string label = null, string labelPrefix = null, int? limit = null, int? offset = null, string type = null);
 
                 /// <summary>
                 /// Get collections of organization
@@ -806,13 +806,13 @@ namespace BlueRain.ID4i.Api
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">The namespace of the organization</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <param name="type">Filter by this type (optional)</param>
             /// <param name="label">Filter by this label (optional)</param>
             /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="type">Filter by this type (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedGuidCollection)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedGuidCollection>> GetAllCollectionsOfOrganizationAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null);
+                System.Threading.Tasks.Task<ApiResponse<PaginatedGuidCollection>> GetAllCollectionsOfOrganizationAsyncWithHttpInfo (string organizationId, string label = null, string labelPrefix = null, int? limit = null, int? offset = null, string type = null);
                 /// <summary>
                 /// List users and their roles
                 /// </summary>
@@ -821,10 +821,10 @@ namespace BlueRain.ID4i.Api
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">organizationId</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of PaginatedUserRolesResponse</returns>
-            System.Threading.Tasks.Task<PaginatedUserRolesResponse> GetAllOrganizationRolesAsync (string organizationId, int? offset = null, int? limit = null);
+            System.Threading.Tasks.Task<PaginatedUserRolesResponse> GetAllOrganizationRolesAsync (string organizationId, int? limit = null, int? offset = null);
 
                 /// <summary>
                 /// List users and their roles
@@ -834,10 +834,10 @@ namespace BlueRain.ID4i.Api
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">organizationId</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedUserRolesResponse)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedUserRolesResponse>> GetAllOrganizationRolesAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null);
+                System.Threading.Tasks.Task<ApiResponse<PaginatedUserRolesResponse>> GetAllOrganizationRolesAsyncWithHttpInfo (string organizationId, int? limit = null, int? offset = null);
                 /// <summary>
                 /// List my privileges
                 /// </summary>
@@ -866,11 +866,11 @@ namespace BlueRain.ID4i.Api
                 /// 
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="role">role (optional)</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="role">role (optional)</param>
             /// <returns>Task of PaginatedOrganizationResponse</returns>
-            System.Threading.Tasks.Task<PaginatedOrganizationResponse> GetOrganizationsOfUserAsync (string role = null, int? offset = null, int? limit = null);
+            System.Threading.Tasks.Task<PaginatedOrganizationResponse> GetOrganizationsOfUserAsync (int? limit = null, int? offset = null, string role = null);
 
                 /// <summary>
                 /// Retrieve organizations of user
@@ -879,11 +879,11 @@ namespace BlueRain.ID4i.Api
                 /// 
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="role">role (optional)</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedOrganizationResponse)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedOrganizationResponse>> GetOrganizationsOfUserAsyncWithHttpInfo (string role = null, int? offset = null, int? limit = null);
+                System.Threading.Tasks.Task<ApiResponse<PaginatedOrganizationResponse>> GetOrganizationsOfUserAsyncWithHttpInfo (int? limit = null, int? offset = null, string role = null);
                 /// <summary>
                 /// Get partners of an organization
                 /// </summary>
@@ -892,10 +892,10 @@ namespace BlueRain.ID4i.Api
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">The namespace of the organization to query partner organizations</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of PaginatedResponseOfPartnerOrganization</returns>
-            System.Threading.Tasks.Task<PaginatedResponseOfPartnerOrganization> GetPartnerOrganizationsAsync (string organizationId, int? offset = null, int? limit = null);
+            System.Threading.Tasks.Task<PaginatedResponseOfPartnerOrganization> GetPartnerOrganizationsAsync (string organizationId, int? limit = null, int? offset = null);
 
                 /// <summary>
                 /// Get partners of an organization
@@ -905,10 +905,10 @@ namespace BlueRain.ID4i.Api
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">The namespace of the organization to query partner organizations</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedResponseOfPartnerOrganization)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfPartnerOrganization>> GetPartnerOrganizationsAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null);
+                System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfPartnerOrganization>> GetPartnerOrganizationsAsyncWithHttpInfo (string organizationId, int? limit = null, int? offset = null);
                 /// <summary>
                 /// Get user roles by username
                 /// </summary>
@@ -918,10 +918,10 @@ namespace BlueRain.ID4i.Api
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">The namespace of the organization</param>
             /// <param name="username">username</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of PaginatedStringResponse</returns>
-            System.Threading.Tasks.Task<PaginatedStringResponse> GetUserRolesAsync (string organizationId, string username, int? offset = null, int? limit = null);
+            System.Threading.Tasks.Task<PaginatedStringResponse> GetUserRolesAsync (string organizationId, string username, int? limit = null, int? offset = null);
 
                 /// <summary>
                 /// Get user roles by username
@@ -932,10 +932,10 @@ namespace BlueRain.ID4i.Api
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">The namespace of the organization</param>
             /// <param name="username">username</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedStringResponse)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedStringResponse>> GetUserRolesAsyncWithHttpInfo (string organizationId, string username, int? offset = null, int? limit = null);
+                System.Threading.Tasks.Task<ApiResponse<PaginatedStringResponse>> GetUserRolesAsyncWithHttpInfo (string organizationId, string username, int? limit = null, int? offset = null);
                 /// <summary>
                 /// Find users in organization
                 /// </summary>
@@ -944,10 +944,10 @@ namespace BlueRain.ID4i.Api
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">organizationId</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of PaginatedUserPresentationResponse</returns>
-            System.Threading.Tasks.Task<PaginatedUserPresentationResponse> GetUsersOfOrganizationAsync (string organizationId, int? offset = null, int? limit = null);
+            System.Threading.Tasks.Task<PaginatedUserPresentationResponse> GetUsersOfOrganizationAsync (string organizationId, int? limit = null, int? offset = null);
 
                 /// <summary>
                 /// Find users in organization
@@ -957,10 +957,10 @@ namespace BlueRain.ID4i.Api
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">organizationId</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedUserPresentationResponse)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedUserPresentationResponse>> GetUsersOfOrganizationAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null);
+                System.Threading.Tasks.Task<ApiResponse<PaginatedUserPresentationResponse>> GetUsersOfOrganizationAsyncWithHttpInfo (string organizationId, int? limit = null, int? offset = null);
                 /// <summary>
                 /// Invite Users
                 /// </summary>
@@ -968,10 +968,10 @@ namespace BlueRain.ID4i.Api
                 /// 
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="organizationId">The namespace of the organization where users should be invited</param>
             /// <param name="invitationList">invitationList</param>
+            /// <param name="organizationId">The namespace of the organization where users should be invited</param>
             /// <returns>Task of void</returns>
-            System.Threading.Tasks.Task InviteUsersAsync (string organizationId, OrganizationUserInvitationListRequest invitationList);
+            System.Threading.Tasks.Task InviteUsersAsync (OrganizationUserInvitationListRequest invitationList, string organizationId);
 
                 /// <summary>
                 /// Invite Users
@@ -980,10 +980,10 @@ namespace BlueRain.ID4i.Api
                 /// 
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="organizationId">The namespace of the organization where users should be invited</param>
             /// <param name="invitationList">invitationList</param>
+            /// <param name="organizationId">The namespace of the organization where users should be invited</param>
             /// <returns>Task of ApiResponse</returns>
-                System.Threading.Tasks.Task<ApiResponse<Object>> InviteUsersAsyncWithHttpInfo (string organizationId, OrganizationUserInvitationListRequest invitationList);
+                System.Threading.Tasks.Task<ApiResponse<Object>> InviteUsersAsyncWithHttpInfo (OrganizationUserInvitationListRequest invitationList, string organizationId);
                 /// <summary>
                 /// List countries
                 /// </summary>
@@ -991,10 +991,10 @@ namespace BlueRain.ID4i.Api
                 /// 
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of PaginatedCountryResponse</returns>
-            System.Threading.Tasks.Task<PaginatedCountryResponse> ListCountriesAsync (int? offset = null, int? limit = null);
+            System.Threading.Tasks.Task<PaginatedCountryResponse> ListCountriesAsync (int? limit = null, int? offset = null);
 
                 /// <summary>
                 /// List countries
@@ -1003,10 +1003,10 @@ namespace BlueRain.ID4i.Api
                 /// 
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedCountryResponse)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedCountryResponse>> ListCountriesAsyncWithHttpInfo (int? offset = null, int? limit = null);
+                System.Threading.Tasks.Task<ApiResponse<PaginatedCountryResponse>> ListCountriesAsyncWithHttpInfo (int? limit = null, int? offset = null);
                 /// <summary>
                 /// Remove partner
                 /// </summary>
@@ -1037,11 +1037,11 @@ namespace BlueRain.ID4i.Api
                 /// 
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="changeRoleRequest">changeRoleRequest</param>
             /// <param name="organizationId">The namespace of the organization</param>
             /// <param name="username">username</param>
-            /// <param name="changeRoleRequest">changeRoleRequest</param>
             /// <returns>Task of void</returns>
-            System.Threading.Tasks.Task RemoveUserRolesAsync (string organizationId, string username, ChangeRoleRequest changeRoleRequest);
+            System.Threading.Tasks.Task RemoveUserRolesAsync (ChangeRoleRequest changeRoleRequest, string organizationId, string username);
 
                 /// <summary>
                 /// Remove role(s) from user
@@ -1050,11 +1050,11 @@ namespace BlueRain.ID4i.Api
                 /// 
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="changeRoleRequest">changeRoleRequest</param>
             /// <param name="organizationId">The namespace of the organization</param>
             /// <param name="username">username</param>
-            /// <param name="changeRoleRequest">changeRoleRequest</param>
             /// <returns>Task of ApiResponse</returns>
-                System.Threading.Tasks.Task<ApiResponse<Object>> RemoveUserRolesAsyncWithHttpInfo (string organizationId, string username, ChangeRoleRequest changeRoleRequest);
+                System.Threading.Tasks.Task<ApiResponse<Object>> RemoveUserRolesAsyncWithHttpInfo (ChangeRoleRequest changeRoleRequest, string organizationId, string username);
                 /// <summary>
                 /// Update organization logo
                 /// </summary>
@@ -1062,10 +1062,10 @@ namespace BlueRain.ID4i.Api
                 /// Updating an organization logo using a multipart file upload.
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="organizationId">The namespace of the organization where the logo should be updated.</param>
             /// <param name="file">An image containing the new logo.</param>
+            /// <param name="organizationId">The namespace of the organization where the logo should be updated.</param>
             /// <returns>Task of PublicImagePresentation</returns>
-            System.Threading.Tasks.Task<PublicImagePresentation> SetOrganizationLogoAsync (string organizationId, System.IO.Stream file);
+            System.Threading.Tasks.Task<PublicImagePresentation> SetOrganizationLogoAsync (System.IO.Stream file, string organizationId);
 
                 /// <summary>
                 /// Update organization logo
@@ -1074,10 +1074,10 @@ namespace BlueRain.ID4i.Api
                 /// Updating an organization logo using a multipart file upload.
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="organizationId">The namespace of the organization where the logo should be updated.</param>
             /// <param name="file">An image containing the new logo.</param>
+            /// <param name="organizationId">The namespace of the organization where the logo should be updated.</param>
             /// <returns>Task of ApiResponse (PublicImagePresentation)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PublicImagePresentation>> SetOrganizationLogoAsyncWithHttpInfo (string organizationId, System.IO.Stream file);
+                System.Threading.Tasks.Task<ApiResponse<PublicImagePresentation>> SetOrganizationLogoAsyncWithHttpInfo (System.IO.Stream file, string organizationId);
                 /// <summary>
                 /// Update organization
                 /// </summary>
@@ -1108,10 +1108,10 @@ namespace BlueRain.ID4i.Api
                 /// 
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="organizationId">organizationId</param>
             /// <param name="addressResource">addressResource</param>
+            /// <param name="organizationId">organizationId</param>
             /// <returns>Task of OrganizationAddress</returns>
-            System.Threading.Tasks.Task<OrganizationAddress> UpdateOrganizationAddressAsync (string organizationId, OrganizationAddress addressResource);
+            System.Threading.Tasks.Task<OrganizationAddress> UpdateOrganizationAddressAsync (OrganizationAddress addressResource, string organizationId);
 
                 /// <summary>
                 /// Store address
@@ -1120,10 +1120,10 @@ namespace BlueRain.ID4i.Api
                 /// 
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="organizationId">organizationId</param>
             /// <param name="addressResource">addressResource</param>
+            /// <param name="organizationId">organizationId</param>
             /// <returns>Task of ApiResponse (OrganizationAddress)</returns>
-                System.Threading.Tasks.Task<ApiResponse<OrganizationAddress>> UpdateOrganizationAddressAsyncWithHttpInfo (string organizationId, OrganizationAddress addressResource);
+                System.Threading.Tasks.Task<ApiResponse<OrganizationAddress>> UpdateOrganizationAddressAsyncWithHttpInfo (OrganizationAddress addressResource, string organizationId);
                 /// <summary>
                 /// Store billing address
                 /// </summary>
@@ -1131,10 +1131,10 @@ namespace BlueRain.ID4i.Api
                 /// 
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="organizationId">organizationId</param>
             /// <param name="addressResource">addressResource</param>
+            /// <param name="organizationId">organizationId</param>
             /// <returns>Task of OrganizationAddress</returns>
-            System.Threading.Tasks.Task<OrganizationAddress> UpdateOrganizationBillingAddressAsync (string organizationId, OrganizationAddress addressResource);
+            System.Threading.Tasks.Task<OrganizationAddress> UpdateOrganizationBillingAddressAsync (OrganizationAddress addressResource, string organizationId);
 
                 /// <summary>
                 /// Store billing address
@@ -1143,10 +1143,10 @@ namespace BlueRain.ID4i.Api
                 /// 
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="organizationId">organizationId</param>
             /// <param name="addressResource">addressResource</param>
+            /// <param name="organizationId">organizationId</param>
             /// <returns>Task of ApiResponse (OrganizationAddress)</returns>
-                System.Threading.Tasks.Task<ApiResponse<OrganizationAddress>> UpdateOrganizationBillingAddressAsyncWithHttpInfo (string organizationId, OrganizationAddress addressResource);
+                System.Threading.Tasks.Task<ApiResponse<OrganizationAddress>> UpdateOrganizationBillingAddressAsyncWithHttpInfo (OrganizationAddress addressResource, string organizationId);
             #endregion Asynchronous Operations
         }
 
@@ -1424,34 +1424,34 @@ namespace BlueRain.ID4i.Api
             /// Add role(s) to user 
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="changeRoleRequest">changeRoleRequest</param>
         /// <param name="organizationId">The namespace of the organization</param>
         /// <param name="username">username</param>
-        /// <param name="changeRoleRequest">changeRoleRequest</param>
         /// <returns></returns>
-            public void AddUserRoles (string organizationId, string username, ChangeRoleRequest changeRoleRequest)
+            public void AddUserRoles (ChangeRoleRequest changeRoleRequest, string organizationId, string username)
             {
-        AddUserRolesWithHttpInfo(organizationId, username, changeRoleRequest);
+        AddUserRolesWithHttpInfo(changeRoleRequest, organizationId, username);
             }
 
             /// <summary>
             /// Add role(s) to user 
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="changeRoleRequest">changeRoleRequest</param>
         /// <param name="organizationId">The namespace of the organization</param>
         /// <param name="username">username</param>
-        /// <param name="changeRoleRequest">changeRoleRequest</param>
         /// <returns>ApiResponse of Object(void)</returns>
-            public ApiResponse<Object> AddUserRolesWithHttpInfo (string organizationId, string username, ChangeRoleRequest changeRoleRequest)
+            public ApiResponse<Object> AddUserRolesWithHttpInfo (ChangeRoleRequest changeRoleRequest, string organizationId, string username)
             {
+                    // verify the required parameter 'changeRoleRequest' is set
+                    if (changeRoleRequest == null)
+                    throw new ApiException(400, "Missing required parameter 'changeRoleRequest' when calling OrganizationsApi->AddUserRoles");
                     // verify the required parameter 'organizationId' is set
                     if (organizationId == null)
                     throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->AddUserRoles");
                     // verify the required parameter 'username' is set
                     if (username == null)
                     throw new ApiException(400, "Missing required parameter 'username' when calling OrganizationsApi->AddUserRoles");
-                    // verify the required parameter 'changeRoleRequest' is set
-                    if (changeRoleRequest == null)
-                    throw new ApiException(400, "Missing required parameter 'changeRoleRequest' when calling OrganizationsApi->AddUserRoles");
 
             var localVarPath = "./api/v1/organizations/{organizationId}/users/{username}/roles";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1516,13 +1516,13 @@ namespace BlueRain.ID4i.Api
                 /// Add role(s) to user 
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="changeRoleRequest">changeRoleRequest</param>
             /// <param name="organizationId">The namespace of the organization</param>
             /// <param name="username">username</param>
-            /// <param name="changeRoleRequest">changeRoleRequest</param>
             /// <returns>Task of void</returns>
-            public async System.Threading.Tasks.Task AddUserRolesAsync (string organizationId, string username, ChangeRoleRequest changeRoleRequest)
+            public async System.Threading.Tasks.Task AddUserRolesAsync (ChangeRoleRequest changeRoleRequest, string organizationId, string username)
                 {
-            await AddUserRolesAsyncWithHttpInfo(organizationId, username, changeRoleRequest);
+            await AddUserRolesAsyncWithHttpInfo(changeRoleRequest, organizationId, username);
 
                 }
 
@@ -1530,21 +1530,21 @@ namespace BlueRain.ID4i.Api
                 /// Add role(s) to user 
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="changeRoleRequest">changeRoleRequest</param>
             /// <param name="organizationId">The namespace of the organization</param>
             /// <param name="username">username</param>
-            /// <param name="changeRoleRequest">changeRoleRequest</param>
             /// <returns>Task of ApiResponse</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<Object>> AddUserRolesAsyncWithHttpInfo (string organizationId, string username, ChangeRoleRequest changeRoleRequest)
+                public async System.Threading.Tasks.Task<ApiResponse<Object>> AddUserRolesAsyncWithHttpInfo (ChangeRoleRequest changeRoleRequest, string organizationId, string username)
                 {
+                        // verify the required parameter 'changeRoleRequest' is set
+                        if (changeRoleRequest == null)
+                        throw new ApiException(400, "Missing required parameter 'changeRoleRequest' when calling OrganizationsApi->AddUserRoles");
                         // verify the required parameter 'organizationId' is set
                         if (organizationId == null)
                         throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->AddUserRoles");
                         // verify the required parameter 'username' is set
                         if (username == null)
                         throw new ApiException(400, "Missing required parameter 'username' when calling OrganizationsApi->AddUserRoles");
-                        // verify the required parameter 'changeRoleRequest' is set
-                        if (changeRoleRequest == null)
-                        throw new ApiException(400, "Missing required parameter 'changeRoleRequest' when calling OrganizationsApi->AddUserRoles");
 
                 var localVarPath = "./api/v1/organizations/{organizationId}/users/{username}/roles";
                 var localVarPathParams = new Dictionary<String, String>();
@@ -2661,15 +2661,15 @@ namespace BlueRain.ID4i.Api
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The namespace of the organization</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <param name="type">Filter by this type (optional)</param>
         /// <param name="label">Filter by this label (optional)</param>
         /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="type">Filter by this type (optional)</param>
         /// <returns>PaginatedGuidCollection</returns>
-            public PaginatedGuidCollection GetAllCollectionsOfOrganization (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null)
+            public PaginatedGuidCollection GetAllCollectionsOfOrganization (string organizationId, string label = null, string labelPrefix = null, int? limit = null, int? offset = null, string type = null)
             {
-        ApiResponse<PaginatedGuidCollection> localVarResponse = GetAllCollectionsOfOrganizationWithHttpInfo(organizationId, offset, limit, type, label, labelPrefix);
+        ApiResponse<PaginatedGuidCollection> localVarResponse = GetAllCollectionsOfOrganizationWithHttpInfo(organizationId, label, labelPrefix, limit, offset, type);
             return localVarResponse.Data;
             }
 
@@ -2678,13 +2678,13 @@ namespace BlueRain.ID4i.Api
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The namespace of the organization</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <param name="type">Filter by this type (optional)</param>
         /// <param name="label">Filter by this label (optional)</param>
         /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="type">Filter by this type (optional)</param>
         /// <returns>ApiResponse of PaginatedGuidCollection</returns>
-            public ApiResponse< PaginatedGuidCollection > GetAllCollectionsOfOrganizationWithHttpInfo (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null)
+            public ApiResponse< PaginatedGuidCollection > GetAllCollectionsOfOrganizationWithHttpInfo (string organizationId, string label = null, string labelPrefix = null, int? limit = null, int? offset = null, string type = null)
             {
                     // verify the required parameter 'organizationId' is set
                     if (organizationId == null)
@@ -2715,11 +2715,11 @@ namespace BlueRain.ID4i.Api
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
                 if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
-                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
-                if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
-                if (type != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "type", type)); // query parameter
                 if (label != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "label", label)); // query parameter
                 if (labelPrefix != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "labelPrefix", labelPrefix)); // query parameter
+                if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+                if (type != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "type", type)); // query parameter
 
                 // authentication (Authorization) required
                         if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2750,15 +2750,15 @@ namespace BlueRain.ID4i.Api
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">The namespace of the organization</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <param name="type">Filter by this type (optional)</param>
             /// <param name="label">Filter by this label (optional)</param>
             /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="type">Filter by this type (optional)</param>
             /// <returns>Task of PaginatedGuidCollection</returns>
-            public async System.Threading.Tasks.Task<PaginatedGuidCollection> GetAllCollectionsOfOrganizationAsync (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null)
+            public async System.Threading.Tasks.Task<PaginatedGuidCollection> GetAllCollectionsOfOrganizationAsync (string organizationId, string label = null, string labelPrefix = null, int? limit = null, int? offset = null, string type = null)
                 {
-            ApiResponse<PaginatedGuidCollection> localVarResponse = await GetAllCollectionsOfOrganizationAsyncWithHttpInfo(organizationId, offset, limit, type, label, labelPrefix);
+            ApiResponse<PaginatedGuidCollection> localVarResponse = await GetAllCollectionsOfOrganizationAsyncWithHttpInfo(organizationId, label, labelPrefix, limit, offset, type);
                 return localVarResponse.Data;
 
                 }
@@ -2768,13 +2768,13 @@ namespace BlueRain.ID4i.Api
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">The namespace of the organization</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <param name="type">Filter by this type (optional)</param>
             /// <param name="label">Filter by this label (optional)</param>
             /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="type">Filter by this type (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedGuidCollection)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedGuidCollection>> GetAllCollectionsOfOrganizationAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null)
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedGuidCollection>> GetAllCollectionsOfOrganizationAsyncWithHttpInfo (string organizationId, string label = null, string labelPrefix = null, int? limit = null, int? offset = null, string type = null)
                 {
                         // verify the required parameter 'organizationId' is set
                         if (organizationId == null)
@@ -2805,11 +2805,11 @@ namespace BlueRain.ID4i.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
                     if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
-                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
-                    if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
-                    if (type != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "type", type)); // query parameter
                     if (label != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "label", label)); // query parameter
                     if (labelPrefix != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "labelPrefix", labelPrefix)); // query parameter
+                    if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+                    if (type != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "type", type)); // query parameter
 
                     // authentication (Authorization) required
                             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2840,12 +2840,12 @@ namespace BlueRain.ID4i.Api
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">organizationId</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>PaginatedUserRolesResponse</returns>
-            public PaginatedUserRolesResponse GetAllOrganizationRoles (string organizationId, int? offset = null, int? limit = null)
+            public PaginatedUserRolesResponse GetAllOrganizationRoles (string organizationId, int? limit = null, int? offset = null)
             {
-        ApiResponse<PaginatedUserRolesResponse> localVarResponse = GetAllOrganizationRolesWithHttpInfo(organizationId, offset, limit);
+        ApiResponse<PaginatedUserRolesResponse> localVarResponse = GetAllOrganizationRolesWithHttpInfo(organizationId, limit, offset);
             return localVarResponse.Data;
             }
 
@@ -2854,10 +2854,10 @@ namespace BlueRain.ID4i.Api
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">organizationId</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>ApiResponse of PaginatedUserRolesResponse</returns>
-            public ApiResponse< PaginatedUserRolesResponse > GetAllOrganizationRolesWithHttpInfo (string organizationId, int? offset = null, int? limit = null)
+            public ApiResponse< PaginatedUserRolesResponse > GetAllOrganizationRolesWithHttpInfo (string organizationId, int? limit = null, int? offset = null)
             {
                     // verify the required parameter 'organizationId' is set
                     if (organizationId == null)
@@ -2888,8 +2888,8 @@ namespace BlueRain.ID4i.Api
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
                 if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
-                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
                 if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
 
                 // authentication (Authorization) required
                         if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2920,12 +2920,12 @@ namespace BlueRain.ID4i.Api
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">organizationId</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of PaginatedUserRolesResponse</returns>
-            public async System.Threading.Tasks.Task<PaginatedUserRolesResponse> GetAllOrganizationRolesAsync (string organizationId, int? offset = null, int? limit = null)
+            public async System.Threading.Tasks.Task<PaginatedUserRolesResponse> GetAllOrganizationRolesAsync (string organizationId, int? limit = null, int? offset = null)
                 {
-            ApiResponse<PaginatedUserRolesResponse> localVarResponse = await GetAllOrganizationRolesAsyncWithHttpInfo(organizationId, offset, limit);
+            ApiResponse<PaginatedUserRolesResponse> localVarResponse = await GetAllOrganizationRolesAsyncWithHttpInfo(organizationId, limit, offset);
                 return localVarResponse.Data;
 
                 }
@@ -2935,10 +2935,10 @@ namespace BlueRain.ID4i.Api
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">organizationId</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedUserRolesResponse)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedUserRolesResponse>> GetAllOrganizationRolesAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null)
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedUserRolesResponse>> GetAllOrganizationRolesAsyncWithHttpInfo (string organizationId, int? limit = null, int? offset = null)
                 {
                         // verify the required parameter 'organizationId' is set
                         if (organizationId == null)
@@ -2969,8 +2969,8 @@ namespace BlueRain.ID4i.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
                     if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
-                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
                     if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
 
                     // authentication (Authorization) required
                             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -3149,13 +3149,13 @@ namespace BlueRain.ID4i.Api
             /// Retrieve organizations of user 
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="role">role (optional)</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="role">role (optional)</param>
         /// <returns>PaginatedOrganizationResponse</returns>
-            public PaginatedOrganizationResponse GetOrganizationsOfUser (string role = null, int? offset = null, int? limit = null)
+            public PaginatedOrganizationResponse GetOrganizationsOfUser (int? limit = null, int? offset = null, string role = null)
             {
-        ApiResponse<PaginatedOrganizationResponse> localVarResponse = GetOrganizationsOfUserWithHttpInfo(role, offset, limit);
+        ApiResponse<PaginatedOrganizationResponse> localVarResponse = GetOrganizationsOfUserWithHttpInfo(limit, offset, role);
             return localVarResponse.Data;
             }
 
@@ -3163,11 +3163,11 @@ namespace BlueRain.ID4i.Api
             /// Retrieve organizations of user 
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="role">role (optional)</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="role">role (optional)</param>
         /// <returns>ApiResponse of PaginatedOrganizationResponse</returns>
-            public ApiResponse< PaginatedOrganizationResponse > GetOrganizationsOfUserWithHttpInfo (string role = null, int? offset = null, int? limit = null)
+            public ApiResponse< PaginatedOrganizationResponse > GetOrganizationsOfUserWithHttpInfo (int? limit = null, int? offset = null, string role = null)
             {
 
             var localVarPath = "./api/v1/user/organizations";
@@ -3194,9 +3194,9 @@ namespace BlueRain.ID4i.Api
             if (localVarHttpHeaderAccept != null)
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-                if (role != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "role", role)); // query parameter
-                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
                 if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+                if (role != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "role", role)); // query parameter
 
                 // authentication (Authorization) required
                         if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -3226,13 +3226,13 @@ namespace BlueRain.ID4i.Api
                 /// Retrieve organizations of user 
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="role">role (optional)</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="role">role (optional)</param>
             /// <returns>Task of PaginatedOrganizationResponse</returns>
-            public async System.Threading.Tasks.Task<PaginatedOrganizationResponse> GetOrganizationsOfUserAsync (string role = null, int? offset = null, int? limit = null)
+            public async System.Threading.Tasks.Task<PaginatedOrganizationResponse> GetOrganizationsOfUserAsync (int? limit = null, int? offset = null, string role = null)
                 {
-            ApiResponse<PaginatedOrganizationResponse> localVarResponse = await GetOrganizationsOfUserAsyncWithHttpInfo(role, offset, limit);
+            ApiResponse<PaginatedOrganizationResponse> localVarResponse = await GetOrganizationsOfUserAsyncWithHttpInfo(limit, offset, role);
                 return localVarResponse.Data;
 
                 }
@@ -3241,11 +3241,11 @@ namespace BlueRain.ID4i.Api
                 /// Retrieve organizations of user 
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="role">role (optional)</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="role">role (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedOrganizationResponse)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedOrganizationResponse>> GetOrganizationsOfUserAsyncWithHttpInfo (string role = null, int? offset = null, int? limit = null)
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedOrganizationResponse>> GetOrganizationsOfUserAsyncWithHttpInfo (int? limit = null, int? offset = null, string role = null)
                 {
 
                 var localVarPath = "./api/v1/user/organizations";
@@ -3272,9 +3272,9 @@ namespace BlueRain.ID4i.Api
                 if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-                    if (role != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "role", role)); // query parameter
-                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
                     if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+                    if (role != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "role", role)); // query parameter
 
                     // authentication (Authorization) required
                             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -3305,12 +3305,12 @@ namespace BlueRain.ID4i.Api
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The namespace of the organization to query partner organizations</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>PaginatedResponseOfPartnerOrganization</returns>
-            public PaginatedResponseOfPartnerOrganization GetPartnerOrganizations (string organizationId, int? offset = null, int? limit = null)
+            public PaginatedResponseOfPartnerOrganization GetPartnerOrganizations (string organizationId, int? limit = null, int? offset = null)
             {
-        ApiResponse<PaginatedResponseOfPartnerOrganization> localVarResponse = GetPartnerOrganizationsWithHttpInfo(organizationId, offset, limit);
+        ApiResponse<PaginatedResponseOfPartnerOrganization> localVarResponse = GetPartnerOrganizationsWithHttpInfo(organizationId, limit, offset);
             return localVarResponse.Data;
             }
 
@@ -3319,10 +3319,10 @@ namespace BlueRain.ID4i.Api
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The namespace of the organization to query partner organizations</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>ApiResponse of PaginatedResponseOfPartnerOrganization</returns>
-            public ApiResponse< PaginatedResponseOfPartnerOrganization > GetPartnerOrganizationsWithHttpInfo (string organizationId, int? offset = null, int? limit = null)
+            public ApiResponse< PaginatedResponseOfPartnerOrganization > GetPartnerOrganizationsWithHttpInfo (string organizationId, int? limit = null, int? offset = null)
             {
                     // verify the required parameter 'organizationId' is set
                     if (organizationId == null)
@@ -3353,8 +3353,8 @@ namespace BlueRain.ID4i.Api
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
                 if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
-                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
                 if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
 
                 // authentication (Authorization) required
                         if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -3385,12 +3385,12 @@ namespace BlueRain.ID4i.Api
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">The namespace of the organization to query partner organizations</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of PaginatedResponseOfPartnerOrganization</returns>
-            public async System.Threading.Tasks.Task<PaginatedResponseOfPartnerOrganization> GetPartnerOrganizationsAsync (string organizationId, int? offset = null, int? limit = null)
+            public async System.Threading.Tasks.Task<PaginatedResponseOfPartnerOrganization> GetPartnerOrganizationsAsync (string organizationId, int? limit = null, int? offset = null)
                 {
-            ApiResponse<PaginatedResponseOfPartnerOrganization> localVarResponse = await GetPartnerOrganizationsAsyncWithHttpInfo(organizationId, offset, limit);
+            ApiResponse<PaginatedResponseOfPartnerOrganization> localVarResponse = await GetPartnerOrganizationsAsyncWithHttpInfo(organizationId, limit, offset);
                 return localVarResponse.Data;
 
                 }
@@ -3400,10 +3400,10 @@ namespace BlueRain.ID4i.Api
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">The namespace of the organization to query partner organizations</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedResponseOfPartnerOrganization)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfPartnerOrganization>> GetPartnerOrganizationsAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null)
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfPartnerOrganization>> GetPartnerOrganizationsAsyncWithHttpInfo (string organizationId, int? limit = null, int? offset = null)
                 {
                         // verify the required parameter 'organizationId' is set
                         if (organizationId == null)
@@ -3434,8 +3434,8 @@ namespace BlueRain.ID4i.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
                     if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
-                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
                     if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
 
                     // authentication (Authorization) required
                             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -3467,12 +3467,12 @@ namespace BlueRain.ID4i.Api
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The namespace of the organization</param>
         /// <param name="username">username</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>PaginatedStringResponse</returns>
-            public PaginatedStringResponse GetUserRoles (string organizationId, string username, int? offset = null, int? limit = null)
+            public PaginatedStringResponse GetUserRoles (string organizationId, string username, int? limit = null, int? offset = null)
             {
-        ApiResponse<PaginatedStringResponse> localVarResponse = GetUserRolesWithHttpInfo(organizationId, username, offset, limit);
+        ApiResponse<PaginatedStringResponse> localVarResponse = GetUserRolesWithHttpInfo(organizationId, username, limit, offset);
             return localVarResponse.Data;
             }
 
@@ -3482,10 +3482,10 @@ namespace BlueRain.ID4i.Api
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The namespace of the organization</param>
         /// <param name="username">username</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>ApiResponse of PaginatedStringResponse</returns>
-            public ApiResponse< PaginatedStringResponse > GetUserRolesWithHttpInfo (string organizationId, string username, int? offset = null, int? limit = null)
+            public ApiResponse< PaginatedStringResponse > GetUserRolesWithHttpInfo (string organizationId, string username, int? limit = null, int? offset = null)
             {
                     // verify the required parameter 'organizationId' is set
                     if (organizationId == null)
@@ -3520,8 +3520,8 @@ namespace BlueRain.ID4i.Api
 
                 if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
                 if (username != null) localVarPathParams.Add("username", Configuration.ApiClient.ParameterToString(username)); // path parameter
-                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
                 if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
 
                 // authentication (Authorization) required
                         if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -3553,12 +3553,12 @@ namespace BlueRain.ID4i.Api
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">The namespace of the organization</param>
             /// <param name="username">username</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of PaginatedStringResponse</returns>
-            public async System.Threading.Tasks.Task<PaginatedStringResponse> GetUserRolesAsync (string organizationId, string username, int? offset = null, int? limit = null)
+            public async System.Threading.Tasks.Task<PaginatedStringResponse> GetUserRolesAsync (string organizationId, string username, int? limit = null, int? offset = null)
                 {
-            ApiResponse<PaginatedStringResponse> localVarResponse = await GetUserRolesAsyncWithHttpInfo(organizationId, username, offset, limit);
+            ApiResponse<PaginatedStringResponse> localVarResponse = await GetUserRolesAsyncWithHttpInfo(organizationId, username, limit, offset);
                 return localVarResponse.Data;
 
                 }
@@ -3569,10 +3569,10 @@ namespace BlueRain.ID4i.Api
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">The namespace of the organization</param>
             /// <param name="username">username</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedStringResponse)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedStringResponse>> GetUserRolesAsyncWithHttpInfo (string organizationId, string username, int? offset = null, int? limit = null)
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedStringResponse>> GetUserRolesAsyncWithHttpInfo (string organizationId, string username, int? limit = null, int? offset = null)
                 {
                         // verify the required parameter 'organizationId' is set
                         if (organizationId == null)
@@ -3607,8 +3607,8 @@ namespace BlueRain.ID4i.Api
 
                     if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
                     if (username != null) localVarPathParams.Add("username", Configuration.ApiClient.ParameterToString(username)); // path parameter
-                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
                     if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
 
                     // authentication (Authorization) required
                             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -3639,12 +3639,12 @@ namespace BlueRain.ID4i.Api
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">organizationId</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>PaginatedUserPresentationResponse</returns>
-            public PaginatedUserPresentationResponse GetUsersOfOrganization (string organizationId, int? offset = null, int? limit = null)
+            public PaginatedUserPresentationResponse GetUsersOfOrganization (string organizationId, int? limit = null, int? offset = null)
             {
-        ApiResponse<PaginatedUserPresentationResponse> localVarResponse = GetUsersOfOrganizationWithHttpInfo(organizationId, offset, limit);
+        ApiResponse<PaginatedUserPresentationResponse> localVarResponse = GetUsersOfOrganizationWithHttpInfo(organizationId, limit, offset);
             return localVarResponse.Data;
             }
 
@@ -3653,10 +3653,10 @@ namespace BlueRain.ID4i.Api
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">organizationId</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>ApiResponse of PaginatedUserPresentationResponse</returns>
-            public ApiResponse< PaginatedUserPresentationResponse > GetUsersOfOrganizationWithHttpInfo (string organizationId, int? offset = null, int? limit = null)
+            public ApiResponse< PaginatedUserPresentationResponse > GetUsersOfOrganizationWithHttpInfo (string organizationId, int? limit = null, int? offset = null)
             {
                     // verify the required parameter 'organizationId' is set
                     if (organizationId == null)
@@ -3687,8 +3687,8 @@ namespace BlueRain.ID4i.Api
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
                 if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
-                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
                 if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
 
                 // authentication (Authorization) required
                         if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -3719,12 +3719,12 @@ namespace BlueRain.ID4i.Api
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">organizationId</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of PaginatedUserPresentationResponse</returns>
-            public async System.Threading.Tasks.Task<PaginatedUserPresentationResponse> GetUsersOfOrganizationAsync (string organizationId, int? offset = null, int? limit = null)
+            public async System.Threading.Tasks.Task<PaginatedUserPresentationResponse> GetUsersOfOrganizationAsync (string organizationId, int? limit = null, int? offset = null)
                 {
-            ApiResponse<PaginatedUserPresentationResponse> localVarResponse = await GetUsersOfOrganizationAsyncWithHttpInfo(organizationId, offset, limit);
+            ApiResponse<PaginatedUserPresentationResponse> localVarResponse = await GetUsersOfOrganizationAsyncWithHttpInfo(organizationId, limit, offset);
                 return localVarResponse.Data;
 
                 }
@@ -3734,10 +3734,10 @@ namespace BlueRain.ID4i.Api
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">organizationId</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedUserPresentationResponse)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedUserPresentationResponse>> GetUsersOfOrganizationAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null)
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedUserPresentationResponse>> GetUsersOfOrganizationAsyncWithHttpInfo (string organizationId, int? limit = null, int? offset = null)
                 {
                         // verify the required parameter 'organizationId' is set
                         if (organizationId == null)
@@ -3768,8 +3768,8 @@ namespace BlueRain.ID4i.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
                     if (organizationId != null) localVarPathParams.Add("organizationId", Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
-                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
                     if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
 
                     // authentication (Authorization) required
                             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -3799,29 +3799,29 @@ namespace BlueRain.ID4i.Api
             /// Invite Users 
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The namespace of the organization where users should be invited</param>
         /// <param name="invitationList">invitationList</param>
+        /// <param name="organizationId">The namespace of the organization where users should be invited</param>
         /// <returns></returns>
-            public void InviteUsers (string organizationId, OrganizationUserInvitationListRequest invitationList)
+            public void InviteUsers (OrganizationUserInvitationListRequest invitationList, string organizationId)
             {
-        InviteUsersWithHttpInfo(organizationId, invitationList);
+        InviteUsersWithHttpInfo(invitationList, organizationId);
             }
 
             /// <summary>
             /// Invite Users 
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The namespace of the organization where users should be invited</param>
         /// <param name="invitationList">invitationList</param>
+        /// <param name="organizationId">The namespace of the organization where users should be invited</param>
         /// <returns>ApiResponse of Object(void)</returns>
-            public ApiResponse<Object> InviteUsersWithHttpInfo (string organizationId, OrganizationUserInvitationListRequest invitationList)
+            public ApiResponse<Object> InviteUsersWithHttpInfo (OrganizationUserInvitationListRequest invitationList, string organizationId)
             {
-                    // verify the required parameter 'organizationId' is set
-                    if (organizationId == null)
-                    throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->InviteUsers");
                     // verify the required parameter 'invitationList' is set
                     if (invitationList == null)
                     throw new ApiException(400, "Missing required parameter 'invitationList' when calling OrganizationsApi->InviteUsers");
+                    // verify the required parameter 'organizationId' is set
+                    if (organizationId == null)
+                    throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->InviteUsers");
 
             var localVarPath = "./api/v1/organizations/{organizationId}/users/invite";
             var localVarPathParams = new Dictionary<String, String>();
@@ -3885,12 +3885,12 @@ namespace BlueRain.ID4i.Api
                 /// Invite Users 
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="organizationId">The namespace of the organization where users should be invited</param>
             /// <param name="invitationList">invitationList</param>
+            /// <param name="organizationId">The namespace of the organization where users should be invited</param>
             /// <returns>Task of void</returns>
-            public async System.Threading.Tasks.Task InviteUsersAsync (string organizationId, OrganizationUserInvitationListRequest invitationList)
+            public async System.Threading.Tasks.Task InviteUsersAsync (OrganizationUserInvitationListRequest invitationList, string organizationId)
                 {
-            await InviteUsersAsyncWithHttpInfo(organizationId, invitationList);
+            await InviteUsersAsyncWithHttpInfo(invitationList, organizationId);
 
                 }
 
@@ -3898,17 +3898,17 @@ namespace BlueRain.ID4i.Api
                 /// Invite Users 
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="organizationId">The namespace of the organization where users should be invited</param>
             /// <param name="invitationList">invitationList</param>
+            /// <param name="organizationId">The namespace of the organization where users should be invited</param>
             /// <returns>Task of ApiResponse</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<Object>> InviteUsersAsyncWithHttpInfo (string organizationId, OrganizationUserInvitationListRequest invitationList)
+                public async System.Threading.Tasks.Task<ApiResponse<Object>> InviteUsersAsyncWithHttpInfo (OrganizationUserInvitationListRequest invitationList, string organizationId)
                 {
-                        // verify the required parameter 'organizationId' is set
-                        if (organizationId == null)
-                        throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->InviteUsers");
                         // verify the required parameter 'invitationList' is set
                         if (invitationList == null)
                         throw new ApiException(400, "Missing required parameter 'invitationList' when calling OrganizationsApi->InviteUsers");
+                        // verify the required parameter 'organizationId' is set
+                        if (organizationId == null)
+                        throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->InviteUsers");
 
                 var localVarPath = "./api/v1/organizations/{organizationId}/users/invite";
                 var localVarPathParams = new Dictionary<String, String>();
@@ -3972,12 +3972,12 @@ namespace BlueRain.ID4i.Api
             /// List countries 
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>PaginatedCountryResponse</returns>
-            public PaginatedCountryResponse ListCountries (int? offset = null, int? limit = null)
+            public PaginatedCountryResponse ListCountries (int? limit = null, int? offset = null)
             {
-        ApiResponse<PaginatedCountryResponse> localVarResponse = ListCountriesWithHttpInfo(offset, limit);
+        ApiResponse<PaginatedCountryResponse> localVarResponse = ListCountriesWithHttpInfo(limit, offset);
             return localVarResponse.Data;
             }
 
@@ -3985,10 +3985,10 @@ namespace BlueRain.ID4i.Api
             /// List countries 
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <returns>ApiResponse of PaginatedCountryResponse</returns>
-            public ApiResponse< PaginatedCountryResponse > ListCountriesWithHttpInfo (int? offset = null, int? limit = null)
+            public ApiResponse< PaginatedCountryResponse > ListCountriesWithHttpInfo (int? limit = null, int? offset = null)
             {
 
             var localVarPath = "./api/v1/countries";
@@ -4015,8 +4015,8 @@ namespace BlueRain.ID4i.Api
             if (localVarHttpHeaderAccept != null)
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
                 if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
 
                 // authentication (Authorization) required
                         if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4046,12 +4046,12 @@ namespace BlueRain.ID4i.Api
                 /// List countries 
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of PaginatedCountryResponse</returns>
-            public async System.Threading.Tasks.Task<PaginatedCountryResponse> ListCountriesAsync (int? offset = null, int? limit = null)
+            public async System.Threading.Tasks.Task<PaginatedCountryResponse> ListCountriesAsync (int? limit = null, int? offset = null)
                 {
-            ApiResponse<PaginatedCountryResponse> localVarResponse = await ListCountriesAsyncWithHttpInfo(offset, limit);
+            ApiResponse<PaginatedCountryResponse> localVarResponse = await ListCountriesAsyncWithHttpInfo(limit, offset);
                 return localVarResponse.Data;
 
                 }
@@ -4060,10 +4060,10 @@ namespace BlueRain.ID4i.Api
                 /// List countries 
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedCountryResponse)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedCountryResponse>> ListCountriesAsyncWithHttpInfo (int? offset = null, int? limit = null)
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedCountryResponse>> ListCountriesAsyncWithHttpInfo (int? limit = null, int? offset = null)
                 {
 
                 var localVarPath = "./api/v1/countries";
@@ -4090,8 +4090,8 @@ namespace BlueRain.ID4i.Api
                 if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
                     if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
 
                     // authentication (Authorization) required
                             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4294,34 +4294,34 @@ namespace BlueRain.ID4i.Api
             /// Remove role(s) from user 
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="changeRoleRequest">changeRoleRequest</param>
         /// <param name="organizationId">The namespace of the organization</param>
         /// <param name="username">username</param>
-        /// <param name="changeRoleRequest">changeRoleRequest</param>
         /// <returns></returns>
-            public void RemoveUserRoles (string organizationId, string username, ChangeRoleRequest changeRoleRequest)
+            public void RemoveUserRoles (ChangeRoleRequest changeRoleRequest, string organizationId, string username)
             {
-        RemoveUserRolesWithHttpInfo(organizationId, username, changeRoleRequest);
+        RemoveUserRolesWithHttpInfo(changeRoleRequest, organizationId, username);
             }
 
             /// <summary>
             /// Remove role(s) from user 
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="changeRoleRequest">changeRoleRequest</param>
         /// <param name="organizationId">The namespace of the organization</param>
         /// <param name="username">username</param>
-        /// <param name="changeRoleRequest">changeRoleRequest</param>
         /// <returns>ApiResponse of Object(void)</returns>
-            public ApiResponse<Object> RemoveUserRolesWithHttpInfo (string organizationId, string username, ChangeRoleRequest changeRoleRequest)
+            public ApiResponse<Object> RemoveUserRolesWithHttpInfo (ChangeRoleRequest changeRoleRequest, string organizationId, string username)
             {
+                    // verify the required parameter 'changeRoleRequest' is set
+                    if (changeRoleRequest == null)
+                    throw new ApiException(400, "Missing required parameter 'changeRoleRequest' when calling OrganizationsApi->RemoveUserRoles");
                     // verify the required parameter 'organizationId' is set
                     if (organizationId == null)
                     throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->RemoveUserRoles");
                     // verify the required parameter 'username' is set
                     if (username == null)
                     throw new ApiException(400, "Missing required parameter 'username' when calling OrganizationsApi->RemoveUserRoles");
-                    // verify the required parameter 'changeRoleRequest' is set
-                    if (changeRoleRequest == null)
-                    throw new ApiException(400, "Missing required parameter 'changeRoleRequest' when calling OrganizationsApi->RemoveUserRoles");
 
             var localVarPath = "./api/v1/organizations/{organizationId}/users/{username}/roles";
             var localVarPathParams = new Dictionary<String, String>();
@@ -4386,13 +4386,13 @@ namespace BlueRain.ID4i.Api
                 /// Remove role(s) from user 
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="changeRoleRequest">changeRoleRequest</param>
             /// <param name="organizationId">The namespace of the organization</param>
             /// <param name="username">username</param>
-            /// <param name="changeRoleRequest">changeRoleRequest</param>
             /// <returns>Task of void</returns>
-            public async System.Threading.Tasks.Task RemoveUserRolesAsync (string organizationId, string username, ChangeRoleRequest changeRoleRequest)
+            public async System.Threading.Tasks.Task RemoveUserRolesAsync (ChangeRoleRequest changeRoleRequest, string organizationId, string username)
                 {
-            await RemoveUserRolesAsyncWithHttpInfo(organizationId, username, changeRoleRequest);
+            await RemoveUserRolesAsyncWithHttpInfo(changeRoleRequest, organizationId, username);
 
                 }
 
@@ -4400,21 +4400,21 @@ namespace BlueRain.ID4i.Api
                 /// Remove role(s) from user 
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="changeRoleRequest">changeRoleRequest</param>
             /// <param name="organizationId">The namespace of the organization</param>
             /// <param name="username">username</param>
-            /// <param name="changeRoleRequest">changeRoleRequest</param>
             /// <returns>Task of ApiResponse</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<Object>> RemoveUserRolesAsyncWithHttpInfo (string organizationId, string username, ChangeRoleRequest changeRoleRequest)
+                public async System.Threading.Tasks.Task<ApiResponse<Object>> RemoveUserRolesAsyncWithHttpInfo (ChangeRoleRequest changeRoleRequest, string organizationId, string username)
                 {
+                        // verify the required parameter 'changeRoleRequest' is set
+                        if (changeRoleRequest == null)
+                        throw new ApiException(400, "Missing required parameter 'changeRoleRequest' when calling OrganizationsApi->RemoveUserRoles");
                         // verify the required parameter 'organizationId' is set
                         if (organizationId == null)
                         throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->RemoveUserRoles");
                         // verify the required parameter 'username' is set
                         if (username == null)
                         throw new ApiException(400, "Missing required parameter 'username' when calling OrganizationsApi->RemoveUserRoles");
-                        // verify the required parameter 'changeRoleRequest' is set
-                        if (changeRoleRequest == null)
-                        throw new ApiException(400, "Missing required parameter 'changeRoleRequest' when calling OrganizationsApi->RemoveUserRoles");
 
                 var localVarPath = "./api/v1/organizations/{organizationId}/users/{username}/roles";
                 var localVarPathParams = new Dictionary<String, String>();
@@ -4479,12 +4479,12 @@ namespace BlueRain.ID4i.Api
             /// Update organization logo Updating an organization logo using a multipart file upload.
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The namespace of the organization where the logo should be updated.</param>
         /// <param name="file">An image containing the new logo.</param>
+        /// <param name="organizationId">The namespace of the organization where the logo should be updated.</param>
         /// <returns>PublicImagePresentation</returns>
-            public PublicImagePresentation SetOrganizationLogo (string organizationId, System.IO.Stream file)
+            public PublicImagePresentation SetOrganizationLogo (System.IO.Stream file, string organizationId)
             {
-        ApiResponse<PublicImagePresentation> localVarResponse = SetOrganizationLogoWithHttpInfo(organizationId, file);
+        ApiResponse<PublicImagePresentation> localVarResponse = SetOrganizationLogoWithHttpInfo(file, organizationId);
             return localVarResponse.Data;
             }
 
@@ -4492,17 +4492,17 @@ namespace BlueRain.ID4i.Api
             /// Update organization logo Updating an organization logo using a multipart file upload.
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">The namespace of the organization where the logo should be updated.</param>
         /// <param name="file">An image containing the new logo.</param>
+        /// <param name="organizationId">The namespace of the organization where the logo should be updated.</param>
         /// <returns>ApiResponse of PublicImagePresentation</returns>
-            public ApiResponse< PublicImagePresentation > SetOrganizationLogoWithHttpInfo (string organizationId, System.IO.Stream file)
+            public ApiResponse< PublicImagePresentation > SetOrganizationLogoWithHttpInfo (System.IO.Stream file, string organizationId)
             {
-                    // verify the required parameter 'organizationId' is set
-                    if (organizationId == null)
-                    throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->SetOrganizationLogo");
                     // verify the required parameter 'file' is set
                     if (file == null)
                     throw new ApiException(400, "Missing required parameter 'file' when calling OrganizationsApi->SetOrganizationLogo");
+                    // verify the required parameter 'organizationId' is set
+                    if (organizationId == null)
+                    throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->SetOrganizationLogo");
 
             var localVarPath = "./api/v1/organizations/{organizationId}/logo";
             var localVarPathParams = new Dictionary<String, String>();
@@ -4558,12 +4558,12 @@ namespace BlueRain.ID4i.Api
                 /// Update organization logo Updating an organization logo using a multipart file upload.
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="organizationId">The namespace of the organization where the logo should be updated.</param>
             /// <param name="file">An image containing the new logo.</param>
+            /// <param name="organizationId">The namespace of the organization where the logo should be updated.</param>
             /// <returns>Task of PublicImagePresentation</returns>
-            public async System.Threading.Tasks.Task<PublicImagePresentation> SetOrganizationLogoAsync (string organizationId, System.IO.Stream file)
+            public async System.Threading.Tasks.Task<PublicImagePresentation> SetOrganizationLogoAsync (System.IO.Stream file, string organizationId)
                 {
-            ApiResponse<PublicImagePresentation> localVarResponse = await SetOrganizationLogoAsyncWithHttpInfo(organizationId, file);
+            ApiResponse<PublicImagePresentation> localVarResponse = await SetOrganizationLogoAsyncWithHttpInfo(file, organizationId);
                 return localVarResponse.Data;
 
                 }
@@ -4572,17 +4572,17 @@ namespace BlueRain.ID4i.Api
                 /// Update organization logo Updating an organization logo using a multipart file upload.
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="organizationId">The namespace of the organization where the logo should be updated.</param>
             /// <param name="file">An image containing the new logo.</param>
+            /// <param name="organizationId">The namespace of the organization where the logo should be updated.</param>
             /// <returns>Task of ApiResponse (PublicImagePresentation)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PublicImagePresentation>> SetOrganizationLogoAsyncWithHttpInfo (string organizationId, System.IO.Stream file)
+                public async System.Threading.Tasks.Task<ApiResponse<PublicImagePresentation>> SetOrganizationLogoAsyncWithHttpInfo (System.IO.Stream file, string organizationId)
                 {
-                        // verify the required parameter 'organizationId' is set
-                        if (organizationId == null)
-                        throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->SetOrganizationLogo");
                         // verify the required parameter 'file' is set
                         if (file == null)
                         throw new ApiException(400, "Missing required parameter 'file' when calling OrganizationsApi->SetOrganizationLogo");
+                        // verify the required parameter 'organizationId' is set
+                        if (organizationId == null)
+                        throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->SetOrganizationLogo");
 
                 var localVarPath = "./api/v1/organizations/{organizationId}/logo";
                 var localVarPathParams = new Dictionary<String, String>();
@@ -4813,12 +4813,12 @@ namespace BlueRain.ID4i.Api
             /// Store address 
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">organizationId</param>
         /// <param name="addressResource">addressResource</param>
+        /// <param name="organizationId">organizationId</param>
         /// <returns>OrganizationAddress</returns>
-            public OrganizationAddress UpdateOrganizationAddress (string organizationId, OrganizationAddress addressResource)
+            public OrganizationAddress UpdateOrganizationAddress (OrganizationAddress addressResource, string organizationId)
             {
-        ApiResponse<OrganizationAddress> localVarResponse = UpdateOrganizationAddressWithHttpInfo(organizationId, addressResource);
+        ApiResponse<OrganizationAddress> localVarResponse = UpdateOrganizationAddressWithHttpInfo(addressResource, organizationId);
             return localVarResponse.Data;
             }
 
@@ -4826,17 +4826,17 @@ namespace BlueRain.ID4i.Api
             /// Store address 
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">organizationId</param>
         /// <param name="addressResource">addressResource</param>
+        /// <param name="organizationId">organizationId</param>
         /// <returns>ApiResponse of OrganizationAddress</returns>
-            public ApiResponse< OrganizationAddress > UpdateOrganizationAddressWithHttpInfo (string organizationId, OrganizationAddress addressResource)
+            public ApiResponse< OrganizationAddress > UpdateOrganizationAddressWithHttpInfo (OrganizationAddress addressResource, string organizationId)
             {
-                    // verify the required parameter 'organizationId' is set
-                    if (organizationId == null)
-                    throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->UpdateOrganizationAddress");
                     // verify the required parameter 'addressResource' is set
                     if (addressResource == null)
                     throw new ApiException(400, "Missing required parameter 'addressResource' when calling OrganizationsApi->UpdateOrganizationAddress");
+                    // verify the required parameter 'organizationId' is set
+                    if (organizationId == null)
+                    throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->UpdateOrganizationAddress");
 
             var localVarPath = "./api/v1/organizations/{organizationId}/addresses/default";
             var localVarPathParams = new Dictionary<String, String>();
@@ -4900,12 +4900,12 @@ namespace BlueRain.ID4i.Api
                 /// Store address 
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="organizationId">organizationId</param>
             /// <param name="addressResource">addressResource</param>
+            /// <param name="organizationId">organizationId</param>
             /// <returns>Task of OrganizationAddress</returns>
-            public async System.Threading.Tasks.Task<OrganizationAddress> UpdateOrganizationAddressAsync (string organizationId, OrganizationAddress addressResource)
+            public async System.Threading.Tasks.Task<OrganizationAddress> UpdateOrganizationAddressAsync (OrganizationAddress addressResource, string organizationId)
                 {
-            ApiResponse<OrganizationAddress> localVarResponse = await UpdateOrganizationAddressAsyncWithHttpInfo(organizationId, addressResource);
+            ApiResponse<OrganizationAddress> localVarResponse = await UpdateOrganizationAddressAsyncWithHttpInfo(addressResource, organizationId);
                 return localVarResponse.Data;
 
                 }
@@ -4914,17 +4914,17 @@ namespace BlueRain.ID4i.Api
                 /// Store address 
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="organizationId">organizationId</param>
             /// <param name="addressResource">addressResource</param>
+            /// <param name="organizationId">organizationId</param>
             /// <returns>Task of ApiResponse (OrganizationAddress)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<OrganizationAddress>> UpdateOrganizationAddressAsyncWithHttpInfo (string organizationId, OrganizationAddress addressResource)
+                public async System.Threading.Tasks.Task<ApiResponse<OrganizationAddress>> UpdateOrganizationAddressAsyncWithHttpInfo (OrganizationAddress addressResource, string organizationId)
                 {
-                        // verify the required parameter 'organizationId' is set
-                        if (organizationId == null)
-                        throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->UpdateOrganizationAddress");
                         // verify the required parameter 'addressResource' is set
                         if (addressResource == null)
                         throw new ApiException(400, "Missing required parameter 'addressResource' when calling OrganizationsApi->UpdateOrganizationAddress");
+                        // verify the required parameter 'organizationId' is set
+                        if (organizationId == null)
+                        throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->UpdateOrganizationAddress");
 
                 var localVarPath = "./api/v1/organizations/{organizationId}/addresses/default";
                 var localVarPathParams = new Dictionary<String, String>();
@@ -4988,12 +4988,12 @@ namespace BlueRain.ID4i.Api
             /// Store billing address 
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">organizationId</param>
         /// <param name="addressResource">addressResource</param>
+        /// <param name="organizationId">organizationId</param>
         /// <returns>OrganizationAddress</returns>
-            public OrganizationAddress UpdateOrganizationBillingAddress (string organizationId, OrganizationAddress addressResource)
+            public OrganizationAddress UpdateOrganizationBillingAddress (OrganizationAddress addressResource, string organizationId)
             {
-        ApiResponse<OrganizationAddress> localVarResponse = UpdateOrganizationBillingAddressWithHttpInfo(organizationId, addressResource);
+        ApiResponse<OrganizationAddress> localVarResponse = UpdateOrganizationBillingAddressWithHttpInfo(addressResource, organizationId);
             return localVarResponse.Data;
             }
 
@@ -5001,17 +5001,17 @@ namespace BlueRain.ID4i.Api
             /// Store billing address 
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="organizationId">organizationId</param>
         /// <param name="addressResource">addressResource</param>
+        /// <param name="organizationId">organizationId</param>
         /// <returns>ApiResponse of OrganizationAddress</returns>
-            public ApiResponse< OrganizationAddress > UpdateOrganizationBillingAddressWithHttpInfo (string organizationId, OrganizationAddress addressResource)
+            public ApiResponse< OrganizationAddress > UpdateOrganizationBillingAddressWithHttpInfo (OrganizationAddress addressResource, string organizationId)
             {
-                    // verify the required parameter 'organizationId' is set
-                    if (organizationId == null)
-                    throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->UpdateOrganizationBillingAddress");
                     // verify the required parameter 'addressResource' is set
                     if (addressResource == null)
                     throw new ApiException(400, "Missing required parameter 'addressResource' when calling OrganizationsApi->UpdateOrganizationBillingAddress");
+                    // verify the required parameter 'organizationId' is set
+                    if (organizationId == null)
+                    throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->UpdateOrganizationBillingAddress");
 
             var localVarPath = "./api/v1/organizations/{organizationId}/addresses/billing";
             var localVarPathParams = new Dictionary<String, String>();
@@ -5075,12 +5075,12 @@ namespace BlueRain.ID4i.Api
                 /// Store billing address 
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="organizationId">organizationId</param>
             /// <param name="addressResource">addressResource</param>
+            /// <param name="organizationId">organizationId</param>
             /// <returns>Task of OrganizationAddress</returns>
-            public async System.Threading.Tasks.Task<OrganizationAddress> UpdateOrganizationBillingAddressAsync (string organizationId, OrganizationAddress addressResource)
+            public async System.Threading.Tasks.Task<OrganizationAddress> UpdateOrganizationBillingAddressAsync (OrganizationAddress addressResource, string organizationId)
                 {
-            ApiResponse<OrganizationAddress> localVarResponse = await UpdateOrganizationBillingAddressAsyncWithHttpInfo(organizationId, addressResource);
+            ApiResponse<OrganizationAddress> localVarResponse = await UpdateOrganizationBillingAddressAsyncWithHttpInfo(addressResource, organizationId);
                 return localVarResponse.Data;
 
                 }
@@ -5089,17 +5089,17 @@ namespace BlueRain.ID4i.Api
                 /// Store billing address 
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="organizationId">organizationId</param>
             /// <param name="addressResource">addressResource</param>
+            /// <param name="organizationId">organizationId</param>
             /// <returns>Task of ApiResponse (OrganizationAddress)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<OrganizationAddress>> UpdateOrganizationBillingAddressAsyncWithHttpInfo (string organizationId, OrganizationAddress addressResource)
+                public async System.Threading.Tasks.Task<ApiResponse<OrganizationAddress>> UpdateOrganizationBillingAddressAsyncWithHttpInfo (OrganizationAddress addressResource, string organizationId)
                 {
-                        // verify the required parameter 'organizationId' is set
-                        if (organizationId == null)
-                        throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->UpdateOrganizationBillingAddress");
                         // verify the required parameter 'addressResource' is set
                         if (addressResource == null)
                         throw new ApiException(400, "Missing required parameter 'addressResource' when calling OrganizationsApi->UpdateOrganizationBillingAddress");
+                        // verify the required parameter 'organizationId' is set
+                        if (organizationId == null)
+                        throw new ApiException(400, "Missing required parameter 'organizationId' when calling OrganizationsApi->UpdateOrganizationBillingAddress");
 
                 var localVarPath = "./api/v1/organizations/{organizationId}/addresses/billing";
                 var localVarPathParams = new Dictionary<String, String>();

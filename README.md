@@ -65,14 +65,14 @@ public void main()
                 // Configuration.Default.ApiKeyPrefix.Add("Authorization", "Bearer");
 
     var apiInstance = new AccountsApi();
+            var changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
             var organizationId = organizationId_example;  // string | The namespace of the organization
             var username = username_example;  // string | username
-            var changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
 
     try
     {
         // Add role(s) to user
-    apiInstance.AddUserRoles(organizationId, username, changeRoleRequest);
+    apiInstance.AddUserRoles(changeRoleRequest, organizationId, username);
     }
     catch (Exception e)
     {
