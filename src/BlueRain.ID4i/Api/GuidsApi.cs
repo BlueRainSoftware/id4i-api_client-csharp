@@ -32,11 +32,11 @@ namespace BlueRain.ID4i.Api
             /// Adds or replaces aliases for single ID4ns (alias type item and mapp) or groups of ID4ns (alias types gtin, ean and article)
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="alias">The alias to add or update</param>
-        /// <param name="aliasType">Alias type, see the corresponding API model</param>
         /// <param name="id4n">The GUID or Collection to operate on</param>
+        /// <param name="aliasType">Alias type, see the corresponding API model</param>
+        /// <param name="alias">The alias to add or update</param>
         /// <returns></returns>
-        void AddGuidAlias (GuidAlias alias, string aliasType, string id4n);
+        void AddGuidAlias (string id4n, string aliasType, GuidAlias alias);
 
         /// <summary>
             /// Add alias for GUID or Collection
@@ -45,11 +45,11 @@ namespace BlueRain.ID4i.Api
             /// Adds or replaces aliases for single ID4ns (alias type item and mapp) or groups of ID4ns (alias types gtin, ean and article)
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="alias">The alias to add or update</param>
-        /// <param name="aliasType">Alias type, see the corresponding API model</param>
         /// <param name="id4n">The GUID or Collection to operate on</param>
+        /// <param name="aliasType">Alias type, see the corresponding API model</param>
+        /// <param name="alias">The alias to add or update</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> AddGuidAliasWithHttpInfo (GuidAlias alias, string aliasType, string id4n);
+        ApiResponse<Object> AddGuidAliasWithHttpInfo (string id4n, string aliasType, GuidAlias alias);
         /// <summary>
             /// Create GUID(s)
             /// </summary>
@@ -79,11 +79,11 @@ namespace BlueRain.ID4i.Api
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">The ID which the collections should contain</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="organizationId">The organization holding the collections. (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>PaginatedGuidCollectionResponse</returns>
-        PaginatedGuidCollectionResponse GetCollections (string id4n, int? limit = null, int? offset = null, string organizationId = null);
+        PaginatedGuidCollectionResponse GetCollections (string id4n, string organizationId = null, int? offset = null, int? limit = null);
 
         /// <summary>
             /// Retrieve collections of an ID
@@ -93,11 +93,11 @@ namespace BlueRain.ID4i.Api
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">The ID which the collections should contain</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="organizationId">The organization holding the collections. (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>ApiResponse of PaginatedGuidCollectionResponse</returns>
-        ApiResponse<PaginatedGuidCollectionResponse> GetCollectionsWithHttpInfo (string id4n, int? limit = null, int? offset = null, string organizationId = null);
+        ApiResponse<PaginatedGuidCollectionResponse> GetCollectionsWithHttpInfo (string id4n, string organizationId = null, int? offset = null, int? limit = null);
         /// <summary>
             /// Retrieve GUID information
             /// </summary>
@@ -148,10 +148,10 @@ namespace BlueRain.ID4i.Api
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The namespace of the organization to search GUIDs for</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>PaginatedResponseOfGuid</returns>
-        PaginatedResponseOfGuid GetGuidsWithoutCollection (string organizationId, int? limit = null, int? offset = null);
+        PaginatedResponseOfGuid GetGuidsWithoutCollection (string organizationId, int? offset = null, int? limit = null);
 
         /// <summary>
             /// Retrieve GUIDs not in any collection
@@ -161,10 +161,10 @@ namespace BlueRain.ID4i.Api
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The namespace of the organization to search GUIDs for</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>ApiResponse of PaginatedResponseOfGuid</returns>
-        ApiResponse<PaginatedResponseOfGuid> GetGuidsWithoutCollectionWithHttpInfo (string organizationId, int? limit = null, int? offset = null);
+        ApiResponse<PaginatedResponseOfGuid> GetGuidsWithoutCollectionWithHttpInfo (string organizationId, int? offset = null, int? limit = null);
         /// <summary>
             /// Retrieve ID4n information
             /// </summary>
@@ -193,10 +193,10 @@ namespace BlueRain.ID4i.Api
             /// Remove the alias of the given type
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="aliasType">Alias type, see the corresponding API model</param>
         /// <param name="id4n">The GUID or Collection to operate on</param>
+        /// <param name="aliasType">Alias type, see the corresponding API model</param>
         /// <returns></returns>
-        void RemoveGuidAlias (string aliasType, string id4n);
+        void RemoveGuidAlias (string id4n, string aliasType);
 
         /// <summary>
             /// Remove aliases from GUID or Collection
@@ -205,10 +205,10 @@ namespace BlueRain.ID4i.Api
             /// Remove the alias of the given type
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="aliasType">Alias type, see the corresponding API model</param>
         /// <param name="id4n">The GUID or Collection to operate on</param>
+        /// <param name="aliasType">Alias type, see the corresponding API model</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RemoveGuidAliasWithHttpInfo (string aliasType, string id4n);
+        ApiResponse<Object> RemoveGuidAliasWithHttpInfo (string id4n, string aliasType);
         /// <summary>
             /// Change GUID information.
             /// </summary>
@@ -241,11 +241,11 @@ namespace BlueRain.ID4i.Api
                 /// Adds or replaces aliases for single ID4ns (alias type item and mapp) or groups of ID4ns (alias types gtin, ean and article)
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="alias">The alias to add or update</param>
-            /// <param name="aliasType">Alias type, see the corresponding API model</param>
             /// <param name="id4n">The GUID or Collection to operate on</param>
+            /// <param name="aliasType">Alias type, see the corresponding API model</param>
+            /// <param name="alias">The alias to add or update</param>
             /// <returns>Task of void</returns>
-            System.Threading.Tasks.Task AddGuidAliasAsync (GuidAlias alias, string aliasType, string id4n);
+            System.Threading.Tasks.Task AddGuidAliasAsync (string id4n, string aliasType, GuidAlias alias);
 
                 /// <summary>
                 /// Add alias for GUID or Collection
@@ -254,11 +254,11 @@ namespace BlueRain.ID4i.Api
                 /// Adds or replaces aliases for single ID4ns (alias type item and mapp) or groups of ID4ns (alias types gtin, ean and article)
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="alias">The alias to add or update</param>
-            /// <param name="aliasType">Alias type, see the corresponding API model</param>
             /// <param name="id4n">The GUID or Collection to operate on</param>
+            /// <param name="aliasType">Alias type, see the corresponding API model</param>
+            /// <param name="alias">The alias to add or update</param>
             /// <returns>Task of ApiResponse</returns>
-                System.Threading.Tasks.Task<ApiResponse<Object>> AddGuidAliasAsyncWithHttpInfo (GuidAlias alias, string aliasType, string id4n);
+                System.Threading.Tasks.Task<ApiResponse<Object>> AddGuidAliasAsyncWithHttpInfo (string id4n, string aliasType, GuidAlias alias);
                 /// <summary>
                 /// Create GUID(s)
                 /// </summary>
@@ -288,11 +288,11 @@ namespace BlueRain.ID4i.Api
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">The ID which the collections should contain</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="organizationId">The organization holding the collections. (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of PaginatedGuidCollectionResponse</returns>
-            System.Threading.Tasks.Task<PaginatedGuidCollectionResponse> GetCollectionsAsync (string id4n, int? limit = null, int? offset = null, string organizationId = null);
+            System.Threading.Tasks.Task<PaginatedGuidCollectionResponse> GetCollectionsAsync (string id4n, string organizationId = null, int? offset = null, int? limit = null);
 
                 /// <summary>
                 /// Retrieve collections of an ID
@@ -302,11 +302,11 @@ namespace BlueRain.ID4i.Api
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">The ID which the collections should contain</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="organizationId">The organization holding the collections. (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedGuidCollectionResponse)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedGuidCollectionResponse>> GetCollectionsAsyncWithHttpInfo (string id4n, int? limit = null, int? offset = null, string organizationId = null);
+                System.Threading.Tasks.Task<ApiResponse<PaginatedGuidCollectionResponse>> GetCollectionsAsyncWithHttpInfo (string id4n, string organizationId = null, int? offset = null, int? limit = null);
                 /// <summary>
                 /// Retrieve GUID information
                 /// </summary>
@@ -357,10 +357,10 @@ namespace BlueRain.ID4i.Api
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">The namespace of the organization to search GUIDs for</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of PaginatedResponseOfGuid</returns>
-            System.Threading.Tasks.Task<PaginatedResponseOfGuid> GetGuidsWithoutCollectionAsync (string organizationId, int? limit = null, int? offset = null);
+            System.Threading.Tasks.Task<PaginatedResponseOfGuid> GetGuidsWithoutCollectionAsync (string organizationId, int? offset = null, int? limit = null);
 
                 /// <summary>
                 /// Retrieve GUIDs not in any collection
@@ -370,10 +370,10 @@ namespace BlueRain.ID4i.Api
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">The namespace of the organization to search GUIDs for</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedResponseOfGuid)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfGuid>> GetGuidsWithoutCollectionAsyncWithHttpInfo (string organizationId, int? limit = null, int? offset = null);
+                System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfGuid>> GetGuidsWithoutCollectionAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null);
                 /// <summary>
                 /// Retrieve ID4n information
                 /// </summary>
@@ -402,10 +402,10 @@ namespace BlueRain.ID4i.Api
                 /// Remove the alias of the given type
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="aliasType">Alias type, see the corresponding API model</param>
             /// <param name="id4n">The GUID or Collection to operate on</param>
+            /// <param name="aliasType">Alias type, see the corresponding API model</param>
             /// <returns>Task of void</returns>
-            System.Threading.Tasks.Task RemoveGuidAliasAsync (string aliasType, string id4n);
+            System.Threading.Tasks.Task RemoveGuidAliasAsync (string id4n, string aliasType);
 
                 /// <summary>
                 /// Remove aliases from GUID or Collection
@@ -414,10 +414,10 @@ namespace BlueRain.ID4i.Api
                 /// Remove the alias of the given type
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="aliasType">Alias type, see the corresponding API model</param>
             /// <param name="id4n">The GUID or Collection to operate on</param>
+            /// <param name="aliasType">Alias type, see the corresponding API model</param>
             /// <returns>Task of ApiResponse</returns>
-                System.Threading.Tasks.Task<ApiResponse<Object>> RemoveGuidAliasAsyncWithHttpInfo (string aliasType, string id4n);
+                System.Threading.Tasks.Task<ApiResponse<Object>> RemoveGuidAliasAsyncWithHttpInfo (string id4n, string aliasType);
                 /// <summary>
                 /// Change GUID information.
                 /// </summary>
@@ -545,34 +545,34 @@ namespace BlueRain.ID4i.Api
             /// Add alias for GUID or Collection Adds or replaces aliases for single ID4ns (alias type item and mapp) or groups of ID4ns (alias types gtin, ean and article)
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="alias">The alias to add or update</param>
-        /// <param name="aliasType">Alias type, see the corresponding API model</param>
         /// <param name="id4n">The GUID or Collection to operate on</param>
+        /// <param name="aliasType">Alias type, see the corresponding API model</param>
+        /// <param name="alias">The alias to add or update</param>
         /// <returns></returns>
-            public void AddGuidAlias (GuidAlias alias, string aliasType, string id4n)
+            public void AddGuidAlias (string id4n, string aliasType, GuidAlias alias)
             {
-        AddGuidAliasWithHttpInfo(alias, aliasType, id4n);
+        AddGuidAliasWithHttpInfo(id4n, aliasType, alias);
             }
 
             /// <summary>
             /// Add alias for GUID or Collection Adds or replaces aliases for single ID4ns (alias type item and mapp) or groups of ID4ns (alias types gtin, ean and article)
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="alias">The alias to add or update</param>
-        /// <param name="aliasType">Alias type, see the corresponding API model</param>
         /// <param name="id4n">The GUID or Collection to operate on</param>
+        /// <param name="aliasType">Alias type, see the corresponding API model</param>
+        /// <param name="alias">The alias to add or update</param>
         /// <returns>ApiResponse of Object(void)</returns>
-            public ApiResponse<Object> AddGuidAliasWithHttpInfo (GuidAlias alias, string aliasType, string id4n)
+            public ApiResponse<Object> AddGuidAliasWithHttpInfo (string id4n, string aliasType, GuidAlias alias)
             {
-                    // verify the required parameter 'alias' is set
-                    if (alias == null)
-                    throw new ApiException(400, "Missing required parameter 'alias' when calling GuidsApi->AddGuidAlias");
-                    // verify the required parameter 'aliasType' is set
-                    if (aliasType == null)
-                    throw new ApiException(400, "Missing required parameter 'aliasType' when calling GuidsApi->AddGuidAlias");
                     // verify the required parameter 'id4n' is set
                     if (id4n == null)
                     throw new ApiException(400, "Missing required parameter 'id4n' when calling GuidsApi->AddGuidAlias");
+                    // verify the required parameter 'aliasType' is set
+                    if (aliasType == null)
+                    throw new ApiException(400, "Missing required parameter 'aliasType' when calling GuidsApi->AddGuidAlias");
+                    // verify the required parameter 'alias' is set
+                    if (alias == null)
+                    throw new ApiException(400, "Missing required parameter 'alias' when calling GuidsApi->AddGuidAlias");
 
             var localVarPath = "./api/v1/id4ns/{id4n}/alias/{aliasType}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -598,8 +598,8 @@ namespace BlueRain.ID4i.Api
             if (localVarHttpHeaderAccept != null)
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-                if (aliasType != null) localVarPathParams.Add("aliasType", Configuration.ApiClient.ParameterToString(aliasType)); // path parameter
                 if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
+                if (aliasType != null) localVarPathParams.Add("aliasType", Configuration.ApiClient.ParameterToString(aliasType)); // path parameter
                 if (alias != null && alias.GetType() != typeof(byte[]))
                 {
                 localVarPostBody = Configuration.ApiClient.Serialize(alias); // http body (model) parameter
@@ -637,13 +637,13 @@ namespace BlueRain.ID4i.Api
                 /// Add alias for GUID or Collection Adds or replaces aliases for single ID4ns (alias type item and mapp) or groups of ID4ns (alias types gtin, ean and article)
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="alias">The alias to add or update</param>
-            /// <param name="aliasType">Alias type, see the corresponding API model</param>
             /// <param name="id4n">The GUID or Collection to operate on</param>
+            /// <param name="aliasType">Alias type, see the corresponding API model</param>
+            /// <param name="alias">The alias to add or update</param>
             /// <returns>Task of void</returns>
-            public async System.Threading.Tasks.Task AddGuidAliasAsync (GuidAlias alias, string aliasType, string id4n)
+            public async System.Threading.Tasks.Task AddGuidAliasAsync (string id4n, string aliasType, GuidAlias alias)
                 {
-            await AddGuidAliasAsyncWithHttpInfo(alias, aliasType, id4n);
+            await AddGuidAliasAsyncWithHttpInfo(id4n, aliasType, alias);
 
                 }
 
@@ -651,21 +651,21 @@ namespace BlueRain.ID4i.Api
                 /// Add alias for GUID or Collection Adds or replaces aliases for single ID4ns (alias type item and mapp) or groups of ID4ns (alias types gtin, ean and article)
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="alias">The alias to add or update</param>
-            /// <param name="aliasType">Alias type, see the corresponding API model</param>
             /// <param name="id4n">The GUID or Collection to operate on</param>
+            /// <param name="aliasType">Alias type, see the corresponding API model</param>
+            /// <param name="alias">The alias to add or update</param>
             /// <returns>Task of ApiResponse</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<Object>> AddGuidAliasAsyncWithHttpInfo (GuidAlias alias, string aliasType, string id4n)
+                public async System.Threading.Tasks.Task<ApiResponse<Object>> AddGuidAliasAsyncWithHttpInfo (string id4n, string aliasType, GuidAlias alias)
                 {
-                        // verify the required parameter 'alias' is set
-                        if (alias == null)
-                        throw new ApiException(400, "Missing required parameter 'alias' when calling GuidsApi->AddGuidAlias");
-                        // verify the required parameter 'aliasType' is set
-                        if (aliasType == null)
-                        throw new ApiException(400, "Missing required parameter 'aliasType' when calling GuidsApi->AddGuidAlias");
                         // verify the required parameter 'id4n' is set
                         if (id4n == null)
                         throw new ApiException(400, "Missing required parameter 'id4n' when calling GuidsApi->AddGuidAlias");
+                        // verify the required parameter 'aliasType' is set
+                        if (aliasType == null)
+                        throw new ApiException(400, "Missing required parameter 'aliasType' when calling GuidsApi->AddGuidAlias");
+                        // verify the required parameter 'alias' is set
+                        if (alias == null)
+                        throw new ApiException(400, "Missing required parameter 'alias' when calling GuidsApi->AddGuidAlias");
 
                 var localVarPath = "./api/v1/id4ns/{id4n}/alias/{aliasType}";
                 var localVarPathParams = new Dictionary<String, String>();
@@ -691,8 +691,8 @@ namespace BlueRain.ID4i.Api
                 if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-                    if (aliasType != null) localVarPathParams.Add("aliasType", Configuration.ApiClient.ParameterToString(aliasType)); // path parameter
                     if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
+                    if (aliasType != null) localVarPathParams.Add("aliasType", Configuration.ApiClient.ParameterToString(aliasType)); // path parameter
                     if (alias != null && alias.GetType() != typeof(byte[]))
                     {
                     localVarPostBody = Configuration.ApiClient.Serialize(alias); // http body (model) parameter
@@ -894,13 +894,13 @@ namespace BlueRain.ID4i.Api
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">The ID which the collections should contain</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="organizationId">The organization holding the collections. (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>PaginatedGuidCollectionResponse</returns>
-            public PaginatedGuidCollectionResponse GetCollections (string id4n, int? limit = null, int? offset = null, string organizationId = null)
+            public PaginatedGuidCollectionResponse GetCollections (string id4n, string organizationId = null, int? offset = null, int? limit = null)
             {
-        ApiResponse<PaginatedGuidCollectionResponse> localVarResponse = GetCollectionsWithHttpInfo(id4n, limit, offset, organizationId);
+        ApiResponse<PaginatedGuidCollectionResponse> localVarResponse = GetCollectionsWithHttpInfo(id4n, organizationId, offset, limit);
             return localVarResponse.Data;
             }
 
@@ -909,11 +909,11 @@ namespace BlueRain.ID4i.Api
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4n">The ID which the collections should contain</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="organizationId">The organization holding the collections. (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>ApiResponse of PaginatedGuidCollectionResponse</returns>
-            public ApiResponse< PaginatedGuidCollectionResponse > GetCollectionsWithHttpInfo (string id4n, int? limit = null, int? offset = null, string organizationId = null)
+            public ApiResponse< PaginatedGuidCollectionResponse > GetCollectionsWithHttpInfo (string id4n, string organizationId = null, int? offset = null, int? limit = null)
             {
                     // verify the required parameter 'id4n' is set
                     if (id4n == null)
@@ -944,9 +944,9 @@ namespace BlueRain.ID4i.Api
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
                 if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
-                if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
-                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
                 if (organizationId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "organizationId", organizationId)); // query parameter
+                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+                if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
 
                 // authentication (Authorization) required
                         if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -977,13 +977,13 @@ namespace BlueRain.ID4i.Api
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">The ID which the collections should contain</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="organizationId">The organization holding the collections. (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of PaginatedGuidCollectionResponse</returns>
-            public async System.Threading.Tasks.Task<PaginatedGuidCollectionResponse> GetCollectionsAsync (string id4n, int? limit = null, int? offset = null, string organizationId = null)
+            public async System.Threading.Tasks.Task<PaginatedGuidCollectionResponse> GetCollectionsAsync (string id4n, string organizationId = null, int? offset = null, int? limit = null)
                 {
-            ApiResponse<PaginatedGuidCollectionResponse> localVarResponse = await GetCollectionsAsyncWithHttpInfo(id4n, limit, offset, organizationId);
+            ApiResponse<PaginatedGuidCollectionResponse> localVarResponse = await GetCollectionsAsyncWithHttpInfo(id4n, organizationId, offset, limit);
                 return localVarResponse.Data;
 
                 }
@@ -993,11 +993,11 @@ namespace BlueRain.ID4i.Api
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4n">The ID which the collections should contain</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="organizationId">The organization holding the collections. (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedGuidCollectionResponse)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedGuidCollectionResponse>> GetCollectionsAsyncWithHttpInfo (string id4n, int? limit = null, int? offset = null, string organizationId = null)
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedGuidCollectionResponse>> GetCollectionsAsyncWithHttpInfo (string id4n, string organizationId = null, int? offset = null, int? limit = null)
                 {
                         // verify the required parameter 'id4n' is set
                         if (id4n == null)
@@ -1028,9 +1028,9 @@ namespace BlueRain.ID4i.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
                     if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
-                    if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
-                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
                     if (organizationId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "organizationId", organizationId)); // query parameter
+                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+                    if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
 
                     // authentication (Authorization) required
                             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1359,12 +1359,12 @@ namespace BlueRain.ID4i.Api
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The namespace of the organization to search GUIDs for</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>PaginatedResponseOfGuid</returns>
-            public PaginatedResponseOfGuid GetGuidsWithoutCollection (string organizationId, int? limit = null, int? offset = null)
+            public PaginatedResponseOfGuid GetGuidsWithoutCollection (string organizationId, int? offset = null, int? limit = null)
             {
-        ApiResponse<PaginatedResponseOfGuid> localVarResponse = GetGuidsWithoutCollectionWithHttpInfo(organizationId, limit, offset);
+        ApiResponse<PaginatedResponseOfGuid> localVarResponse = GetGuidsWithoutCollectionWithHttpInfo(organizationId, offset, limit);
             return localVarResponse.Data;
             }
 
@@ -1373,10 +1373,10 @@ namespace BlueRain.ID4i.Api
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="organizationId">The namespace of the organization to search GUIDs for</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>ApiResponse of PaginatedResponseOfGuid</returns>
-            public ApiResponse< PaginatedResponseOfGuid > GetGuidsWithoutCollectionWithHttpInfo (string organizationId, int? limit = null, int? offset = null)
+            public ApiResponse< PaginatedResponseOfGuid > GetGuidsWithoutCollectionWithHttpInfo (string organizationId, int? offset = null, int? limit = null)
             {
                     // verify the required parameter 'organizationId' is set
                     if (organizationId == null)
@@ -1406,9 +1406,9 @@ namespace BlueRain.ID4i.Api
             if (localVarHttpHeaderAccept != null)
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-                if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
-                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
                 if (organizationId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "organizationId", organizationId)); // query parameter
+                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+                if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
 
                 // authentication (Authorization) required
                         if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1439,12 +1439,12 @@ namespace BlueRain.ID4i.Api
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">The namespace of the organization to search GUIDs for</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of PaginatedResponseOfGuid</returns>
-            public async System.Threading.Tasks.Task<PaginatedResponseOfGuid> GetGuidsWithoutCollectionAsync (string organizationId, int? limit = null, int? offset = null)
+            public async System.Threading.Tasks.Task<PaginatedResponseOfGuid> GetGuidsWithoutCollectionAsync (string organizationId, int? offset = null, int? limit = null)
                 {
-            ApiResponse<PaginatedResponseOfGuid> localVarResponse = await GetGuidsWithoutCollectionAsyncWithHttpInfo(organizationId, limit, offset);
+            ApiResponse<PaginatedResponseOfGuid> localVarResponse = await GetGuidsWithoutCollectionAsyncWithHttpInfo(organizationId, offset, limit);
                 return localVarResponse.Data;
 
                 }
@@ -1454,10 +1454,10 @@ namespace BlueRain.ID4i.Api
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="organizationId">The namespace of the organization to search GUIDs for</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedResponseOfGuid)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfGuid>> GetGuidsWithoutCollectionAsyncWithHttpInfo (string organizationId, int? limit = null, int? offset = null)
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfGuid>> GetGuidsWithoutCollectionAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null)
                 {
                         // verify the required parameter 'organizationId' is set
                         if (organizationId == null)
@@ -1487,9 +1487,9 @@ namespace BlueRain.ID4i.Api
                 if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-                    if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
-                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
                     if (organizationId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "organizationId", organizationId)); // query parameter
+                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+                    if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
 
                     // authentication (Authorization) required
                             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1668,29 +1668,29 @@ namespace BlueRain.ID4i.Api
             /// Remove aliases from GUID or Collection Remove the alias of the given type
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="aliasType">Alias type, see the corresponding API model</param>
         /// <param name="id4n">The GUID or Collection to operate on</param>
+        /// <param name="aliasType">Alias type, see the corresponding API model</param>
         /// <returns></returns>
-            public void RemoveGuidAlias (string aliasType, string id4n)
+            public void RemoveGuidAlias (string id4n, string aliasType)
             {
-        RemoveGuidAliasWithHttpInfo(aliasType, id4n);
+        RemoveGuidAliasWithHttpInfo(id4n, aliasType);
             }
 
             /// <summary>
             /// Remove aliases from GUID or Collection Remove the alias of the given type
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="aliasType">Alias type, see the corresponding API model</param>
         /// <param name="id4n">The GUID or Collection to operate on</param>
+        /// <param name="aliasType">Alias type, see the corresponding API model</param>
         /// <returns>ApiResponse of Object(void)</returns>
-            public ApiResponse<Object> RemoveGuidAliasWithHttpInfo (string aliasType, string id4n)
+            public ApiResponse<Object> RemoveGuidAliasWithHttpInfo (string id4n, string aliasType)
             {
-                    // verify the required parameter 'aliasType' is set
-                    if (aliasType == null)
-                    throw new ApiException(400, "Missing required parameter 'aliasType' when calling GuidsApi->RemoveGuidAlias");
                     // verify the required parameter 'id4n' is set
                     if (id4n == null)
                     throw new ApiException(400, "Missing required parameter 'id4n' when calling GuidsApi->RemoveGuidAlias");
+                    // verify the required parameter 'aliasType' is set
+                    if (aliasType == null)
+                    throw new ApiException(400, "Missing required parameter 'aliasType' when calling GuidsApi->RemoveGuidAlias");
 
             var localVarPath = "./api/v1/id4ns/{id4n}/alias/{aliasType}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1716,8 +1716,8 @@ namespace BlueRain.ID4i.Api
             if (localVarHttpHeaderAccept != null)
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-                if (aliasType != null) localVarPathParams.Add("aliasType", Configuration.ApiClient.ParameterToString(aliasType)); // path parameter
                 if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
+                if (aliasType != null) localVarPathParams.Add("aliasType", Configuration.ApiClient.ParameterToString(aliasType)); // path parameter
 
                 // authentication (Authorization) required
                         if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1747,12 +1747,12 @@ namespace BlueRain.ID4i.Api
                 /// Remove aliases from GUID or Collection Remove the alias of the given type
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="aliasType">Alias type, see the corresponding API model</param>
             /// <param name="id4n">The GUID or Collection to operate on</param>
+            /// <param name="aliasType">Alias type, see the corresponding API model</param>
             /// <returns>Task of void</returns>
-            public async System.Threading.Tasks.Task RemoveGuidAliasAsync (string aliasType, string id4n)
+            public async System.Threading.Tasks.Task RemoveGuidAliasAsync (string id4n, string aliasType)
                 {
-            await RemoveGuidAliasAsyncWithHttpInfo(aliasType, id4n);
+            await RemoveGuidAliasAsyncWithHttpInfo(id4n, aliasType);
 
                 }
 
@@ -1760,17 +1760,17 @@ namespace BlueRain.ID4i.Api
                 /// Remove aliases from GUID or Collection Remove the alias of the given type
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="aliasType">Alias type, see the corresponding API model</param>
             /// <param name="id4n">The GUID or Collection to operate on</param>
+            /// <param name="aliasType">Alias type, see the corresponding API model</param>
             /// <returns>Task of ApiResponse</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<Object>> RemoveGuidAliasAsyncWithHttpInfo (string aliasType, string id4n)
+                public async System.Threading.Tasks.Task<ApiResponse<Object>> RemoveGuidAliasAsyncWithHttpInfo (string id4n, string aliasType)
                 {
-                        // verify the required parameter 'aliasType' is set
-                        if (aliasType == null)
-                        throw new ApiException(400, "Missing required parameter 'aliasType' when calling GuidsApi->RemoveGuidAlias");
                         // verify the required parameter 'id4n' is set
                         if (id4n == null)
                         throw new ApiException(400, "Missing required parameter 'id4n' when calling GuidsApi->RemoveGuidAlias");
+                        // verify the required parameter 'aliasType' is set
+                        if (aliasType == null)
+                        throw new ApiException(400, "Missing required parameter 'aliasType' when calling GuidsApi->RemoveGuidAlias");
 
                 var localVarPath = "./api/v1/id4ns/{id4n}/alias/{aliasType}";
                 var localVarPathParams = new Dictionary<String, String>();
@@ -1796,8 +1796,8 @@ namespace BlueRain.ID4i.Api
                 if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-                    if (aliasType != null) localVarPathParams.Add("aliasType", Configuration.ApiClient.ParameterToString(aliasType)); // path parameter
                     if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
+                    if (aliasType != null) localVarPathParams.Add("aliasType", Configuration.ApiClient.ParameterToString(aliasType)); // path parameter
 
                     // authentication (Authorization) required
                             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))

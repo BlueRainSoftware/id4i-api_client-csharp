@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 <a name="createdocument"></a>
 # **CreateDocument**
-> Document CreateDocument (System.IO.Stream content, string id4n, string organizationId)
+> Document CreateDocument (string organizationId, string id4n, System.IO.Stream content)
 
 Create an empty document for an id4n
 
@@ -46,14 +46,14 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new StorageApi();
-            var content = new System.IO.Stream(); // System.IO.Stream | content
-            var id4n = id4n_example;  // string | id4n
             var organizationId = organizationId_example;  // string | organizationId
+            var id4n = id4n_example;  // string | id4n
+            var content = new System.IO.Stream(); // System.IO.Stream | content
 
             try
             {
                 // Create an empty document for an id4n
-                Document result = apiInstance.CreateDocument(content, id4n, organizationId);
+                Document result = apiInstance.CreateDocument(organizationId, id4n, content);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -69,9 +69,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **content** | **System.IO.Stream**| content | 
- **id4n** | **string**| id4n | 
  **organizationId** | **string**| organizationId | 
+ **id4n** | **string**| id4n | 
+ **content** | **System.IO.Stream**| content | 
 
 ### Return type
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 <a name="deletedocument"></a>
 # **DeleteDocument**
-> void DeleteDocument (string fileName, string id4n, string organizationId)
+> void DeleteDocument (string organizationId, string id4n, string fileName)
 
 Delete a document
 
@@ -114,14 +114,14 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new StorageApi();
-            var fileName = fileName_example;  // string | fileName
-            var id4n = id4n_example;  // string | id4n
             var organizationId = organizationId_example;  // string | organizationId
+            var id4n = id4n_example;  // string | id4n
+            var fileName = fileName_example;  // string | fileName
 
             try
             {
                 // Delete a document
-                apiInstance.DeleteDocument(fileName, id4n, organizationId);
+                apiInstance.DeleteDocument(organizationId, id4n, fileName);
             }
             catch (Exception e)
             {
@@ -136,9 +136,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fileName** | **string**| fileName | 
- **id4n** | **string**| id4n | 
  **organizationId** | **string**| organizationId | 
+ **id4n** | **string**| id4n | 
+ **fileName** | **string**| fileName | 
 
 ### Return type
 
@@ -157,7 +157,7 @@ void (empty response body)
 
 <a name="getdocument"></a>
 # **GetDocument**
-> Document GetDocument (string fileName, string id4n, string organizationId)
+> Document GetDocument (string organizationId, string id4n, string fileName)
 
 Retrieve a document (meta-data only, no content)
 
@@ -181,14 +181,14 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new StorageApi();
-            var fileName = fileName_example;  // string | fileName
-            var id4n = id4n_example;  // string | id4n
             var organizationId = organizationId_example;  // string | organizationId
+            var id4n = id4n_example;  // string | id4n
+            var fileName = fileName_example;  // string | fileName
 
             try
             {
                 // Retrieve a document (meta-data only, no content)
-                Document result = apiInstance.GetDocument(fileName, id4n, organizationId);
+                Document result = apiInstance.GetDocument(organizationId, id4n, fileName);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -204,9 +204,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fileName** | **string**| fileName | 
- **id4n** | **string**| id4n | 
  **organizationId** | **string**| organizationId | 
+ **id4n** | **string**| id4n | 
+ **fileName** | **string**| fileName | 
 
 ### Return type
 
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 
 <a name="getpublicdocument"></a>
 # **GetPublicDocument**
-> Document GetPublicDocument (string fileName, string id4n, string organizationId)
+> Document GetPublicDocument (string organizationId, string id4n, string fileName)
 
 Retrieve a public document (meta-data only, no content)
 
@@ -249,14 +249,14 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new StorageApi();
-            var fileName = fileName_example;  // string | fileName
-            var id4n = id4n_example;  // string | id4n
             var organizationId = organizationId_example;  // string | organizationId
+            var id4n = id4n_example;  // string | id4n
+            var fileName = fileName_example;  // string | fileName
 
             try
             {
                 // Retrieve a public document (meta-data only, no content)
-                Document result = apiInstance.GetPublicDocument(fileName, id4n, organizationId);
+                Document result = apiInstance.GetPublicDocument(organizationId, id4n, fileName);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -272,9 +272,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fileName** | **string**| fileName | 
- **id4n** | **string**| id4n | 
  **organizationId** | **string**| organizationId | 
+ **id4n** | **string**| id4n | 
+ **fileName** | **string**| fileName | 
 
 ### Return type
 
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 
 <a name="listalldocuments"></a>
 # **ListAllDocuments**
-> PaginatedDocumentResponse ListAllDocuments (string id4n, int? limit = null, int? offset = null, string owner = null)
+> PaginatedDocumentResponse ListAllDocuments (string id4n, string owner = null, int? offset = null, int? limit = null)
 
 List documents
 
@@ -320,14 +320,14 @@ namespace Example
 
             var apiInstance = new StorageApi();
             var id4n = id4n_example;  // string | id4n
-            var limit = 100;  // int? | The maximum count of returned elements (optional) 
-            var offset = 0;  // int? | Start with the n-th element (optional) 
             var owner = owner_example;  // string | Filter by owner organization (optional) 
+            var offset = 56;  // int? | Start with the n-th element (optional) 
+            var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
                 // List documents
-                PaginatedDocumentResponse result = apiInstance.ListAllDocuments(id4n, limit, offset, owner);
+                PaginatedDocumentResponse result = apiInstance.ListAllDocuments(id4n, owner, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -344,9 +344,9 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **limit** | **int?**| The maximum count of returned elements | [optional] 
- **offset** | **int?**| Start with the n-th element | [optional] 
  **owner** | **string**| Filter by owner organization | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -365,7 +365,7 @@ Name | Type | Description  | Notes
 
 <a name="listallpublicdocuments"></a>
 # **ListAllPublicDocuments**
-> PaginatedDocumentResponse ListAllPublicDocuments (string id4n, int? limit = null, int? offset = null, string organizationId = null, string owner = null)
+> PaginatedDocumentResponse ListAllPublicDocuments (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null)
 
 List public documents
 
@@ -392,15 +392,15 @@ namespace Example
 
             var apiInstance = new StorageApi();
             var id4n = id4n_example;  // string | id4n
-            var limit = 100;  // int? | The maximum count of returned elements (optional) 
-            var offset = 0;  // int? | Start with the n-th element (optional) 
             var organizationId = organizationId_example;  // string | organizationId (optional) 
             var owner = owner_example;  // string | Filter by owner organization (optional) 
+            var offset = 56;  // int? | Start with the n-th element (optional) 
+            var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
                 // List public documents
-                PaginatedDocumentResponse result = apiInstance.ListAllPublicDocuments(id4n, limit, offset, organizationId, owner);
+                PaginatedDocumentResponse result = apiInstance.ListAllPublicDocuments(id4n, organizationId, owner, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -417,10 +417,10 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **limit** | **int?**| The maximum count of returned elements | [optional] 
- **offset** | **int?**| Start with the n-th element | [optional] 
  **organizationId** | **string**| organizationId | [optional] 
  **owner** | **string**| Filter by owner organization | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -439,7 +439,7 @@ Name | Type | Description  | Notes
 
 <a name="listdocuments"></a>
 # **ListDocuments**
-> PaginatedDocumentResponse ListDocuments (string id4n, string organizationId, int? limit = null, int? offset = null, string owner = null)
+> PaginatedDocumentResponse ListDocuments (string organizationId, string id4n, string owner = null, int? offset = null, int? limit = null)
 
 List organization specific documents
 
@@ -465,16 +465,16 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new StorageApi();
-            var id4n = id4n_example;  // string | id4n
             var organizationId = organizationId_example;  // string | organizationId
-            var limit = 100;  // int? | The maximum count of returned elements (optional) 
-            var offset = 0;  // int? | Start with the n-th element (optional) 
+            var id4n = id4n_example;  // string | id4n
             var owner = owner_example;  // string | Filter by owner organization (optional) 
+            var offset = 56;  // int? | Start with the n-th element (optional) 
+            var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
                 // List organization specific documents
-                PaginatedDocumentResponse result = apiInstance.ListDocuments(id4n, organizationId, limit, offset, owner);
+                PaginatedDocumentResponse result = apiInstance.ListDocuments(organizationId, id4n, owner, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -490,11 +490,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **string**| id4n | 
  **organizationId** | **string**| organizationId | 
- **limit** | **int?**| The maximum count of returned elements | [optional] 
- **offset** | **int?**| Start with the n-th element | [optional] 
+ **id4n** | **string**| id4n | 
  **owner** | **string**| Filter by owner organization | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -513,7 +513,7 @@ Name | Type | Description  | Notes
 
 <a name="readdocument"></a>
 # **ReadDocument**
-> byte[] ReadDocument (string fileName, string id4n, string organizationId)
+> byte[] ReadDocument (string organizationId, string id4n, string fileName)
 
 Read document contents
 
@@ -537,14 +537,14 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new StorageApi();
-            var fileName = fileName_example;  // string | fileName
-            var id4n = id4n_example;  // string | id4n
             var organizationId = organizationId_example;  // string | organizationId
+            var id4n = id4n_example;  // string | id4n
+            var fileName = fileName_example;  // string | fileName
 
             try
             {
                 // Read document contents
-                byte[] result = apiInstance.ReadDocument(fileName, id4n, organizationId);
+                byte[] result = apiInstance.ReadDocument(organizationId, id4n, fileName);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -560,9 +560,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fileName** | **string**| fileName | 
- **id4n** | **string**| id4n | 
  **organizationId** | **string**| organizationId | 
+ **id4n** | **string**| id4n | 
+ **fileName** | **string**| fileName | 
 
 ### Return type
 
@@ -581,7 +581,7 @@ Name | Type | Description  | Notes
 
 <a name="readfrommicrostorage"></a>
 # **ReadFromMicrostorage**
-> byte[] ReadFromMicrostorage (string id4n, string organization)
+> byte[] ReadFromMicrostorage (string organization, string id4n)
 
 Read data from microstorage
 
@@ -605,13 +605,13 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new StorageApi();
-            var id4n = id4n_example;  // string | id4n
             var organization = organization_example;  // string | organization
+            var id4n = id4n_example;  // string | id4n
 
             try
             {
                 // Read data from microstorage
-                byte[] result = apiInstance.ReadFromMicrostorage(id4n, organization);
+                byte[] result = apiInstance.ReadFromMicrostorage(organization, id4n);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -627,8 +627,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **string**| id4n | 
  **organization** | **string**| organization | 
+ **id4n** | **string**| id4n | 
 
 ### Return type
 
@@ -647,7 +647,7 @@ Name | Type | Description  | Notes
 
 <a name="readpublicdocument"></a>
 # **ReadPublicDocument**
-> byte[] ReadPublicDocument (string fileName, string id4n, string organizationId)
+> byte[] ReadPublicDocument (string organizationId, string id4n, string fileName)
 
 Read public document contents
 
@@ -671,14 +671,14 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new StorageApi();
-            var fileName = fileName_example;  // string | fileName
-            var id4n = id4n_example;  // string | id4n
             var organizationId = organizationId_example;  // string | organizationId
+            var id4n = id4n_example;  // string | id4n
+            var fileName = fileName_example;  // string | fileName
 
             try
             {
                 // Read public document contents
-                byte[] result = apiInstance.ReadPublicDocument(fileName, id4n, organizationId);
+                byte[] result = apiInstance.ReadPublicDocument(organizationId, id4n, fileName);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -694,9 +694,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fileName** | **string**| fileName | 
- **id4n** | **string**| id4n | 
  **organizationId** | **string**| organizationId | 
+ **id4n** | **string**| id4n | 
+ **fileName** | **string**| fileName | 
 
 ### Return type
 
@@ -715,7 +715,7 @@ Name | Type | Description  | Notes
 
 <a name="updatedocumentmetadata"></a>
 # **UpdateDocumentMetadata**
-> Document UpdateDocumentMetadata (DocumentUpdate document, string fileName, string id4n, string organizationId)
+> Document UpdateDocumentMetadata (string organizationId, string id4n, string fileName, DocumentUpdate document)
 
 Update a document
 
@@ -739,15 +739,15 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new StorageApi();
-            var document = new DocumentUpdate(); // DocumentUpdate | document
-            var fileName = fileName_example;  // string | fileName
-            var id4n = id4n_example;  // string | id4n
             var organizationId = organizationId_example;  // string | organizationId
+            var id4n = id4n_example;  // string | id4n
+            var fileName = fileName_example;  // string | fileName
+            var document = new DocumentUpdate(); // DocumentUpdate | document
 
             try
             {
                 // Update a document
-                Document result = apiInstance.UpdateDocumentMetadata(document, fileName, id4n, organizationId);
+                Document result = apiInstance.UpdateDocumentMetadata(organizationId, id4n, fileName, document);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -763,10 +763,10 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **document** | [**DocumentUpdate**](DocumentUpdate.md)| document | 
- **fileName** | **string**| fileName | 
- **id4n** | **string**| id4n | 
  **organizationId** | **string**| organizationId | 
+ **id4n** | **string**| id4n | 
+ **fileName** | **string**| fileName | 
+ **document** | [**DocumentUpdate**](DocumentUpdate.md)| document | 
 
 ### Return type
 
@@ -785,7 +785,7 @@ Name | Type | Description  | Notes
 
 <a name="writetomicrostorage"></a>
 # **WriteToMicrostorage**
-> Object WriteToMicrostorage (string id4n, string organization, long? contentLength = null, string contentType = null, byte[] body = null)
+> Object WriteToMicrostorage (string organization, string id4n, string contentType = null, long? contentLength = null, byte[] body = null)
 
 Write data to microstorage
 
@@ -809,16 +809,16 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new StorageApi();
-            var id4n = id4n_example;  // string | id4n
             var organization = organization_example;  // string | organization
-            var contentLength = 789;  // long? | Content-Length (optional) 
+            var id4n = id4n_example;  // string | id4n
             var contentType = contentType_example;  // string | Content-Type (optional) 
+            var contentLength = 789;  // long? | Content-Length (optional) 
             var body = BINARY_DATA_HERE;  // byte[] | body (optional) 
 
             try
             {
                 // Write data to microstorage
-                Object result = apiInstance.WriteToMicrostorage(id4n, organization, contentLength, contentType, body);
+                Object result = apiInstance.WriteToMicrostorage(organization, id4n, contentType, contentLength, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -834,10 +834,10 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **string**| id4n | 
  **organization** | **string**| organization | 
- **contentLength** | **long?**| Content-Length | [optional] 
+ **id4n** | **string**| id4n | 
  **contentType** | **string**| Content-Type | [optional] 
+ **contentLength** | **long?**| Content-Length | [optional] 
  **body** | **byte[]**| body | [optional] 
 
 ### Return type

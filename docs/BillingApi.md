@@ -35,8 +35,8 @@ namespace Example
 
             var apiInstance = new BillingApi();
             var organizationId = organizationId_example;  // string | The organization to compute the billing information for
-            var fromDate = "2018-06-05";  // DateTime? | Billing start date (optional) 
-            var toDate = "2018-06-06";  // DateTime? | Billing end date (optional) 
+            var fromDate = 2013-10-20T19:20:30+01:00;  // DateTime? | Billing start date (optional) 
+            var toDate = 2013-10-20T19:20:30+01:00;  // DateTime? | Billing end date (optional) 
 
             try
             {
@@ -103,8 +103,8 @@ namespace Example
 
             var apiInstance = new BillingApi();
             var organizationId = organizationId_example;  // string | The organization to compute the billing information for
-            var fromDate = "2018-06-05";  // DateTime? | Billing start date (optional) 
-            var toDate = "2018-06-06";  // DateTime? | Billing end date (optional) 
+            var fromDate = 2013-10-20T19:20:30+01:00;  // DateTime? | Billing start date (optional) 
+            var toDate = 2013-10-20T19:20:30+01:00;  // DateTime? | Billing end date (optional) 
 
             try
             {

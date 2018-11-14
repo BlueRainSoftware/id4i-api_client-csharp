@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 <a name="getpublicdocument"></a>
 # **GetPublicDocument**
-> Document GetPublicDocument (string fileName, string id4n, string organizationId)
+> Document GetPublicDocument (string organizationId, string id4n, string fileName)
 
 Retrieve a public document (meta-data only, no content)
 
@@ -41,14 +41,14 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new PublicServicesApi();
-            var fileName = fileName_example;  // string | fileName
-            var id4n = id4n_example;  // string | id4n
             var organizationId = organizationId_example;  // string | organizationId
+            var id4n = id4n_example;  // string | id4n
+            var fileName = fileName_example;  // string | fileName
 
             try
             {
                 // Retrieve a public document (meta-data only, no content)
-                Document result = apiInstance.GetPublicDocument(fileName, id4n, organizationId);
+                Document result = apiInstance.GetPublicDocument(organizationId, id4n, fileName);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -64,9 +64,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fileName** | **string**| fileName | 
- **id4n** | **string**| id4n | 
  **organizationId** | **string**| organizationId | 
+ **id4n** | **string**| id4n | 
+ **fileName** | **string**| fileName | 
 
 ### Return type
 
@@ -213,7 +213,7 @@ No authorization required
 
 <a name="listallpublicdocuments"></a>
 # **ListAllPublicDocuments**
-> PaginatedDocumentResponse ListAllPublicDocuments (string id4n, int? limit = null, int? offset = null, string organizationId = null, string owner = null)
+> PaginatedDocumentResponse ListAllPublicDocuments (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null)
 
 List public documents
 
@@ -240,15 +240,15 @@ namespace Example
 
             var apiInstance = new PublicServicesApi();
             var id4n = id4n_example;  // string | id4n
-            var limit = 100;  // int? | The maximum count of returned elements (optional) 
-            var offset = 0;  // int? | Start with the n-th element (optional) 
             var organizationId = organizationId_example;  // string | organizationId (optional) 
             var owner = owner_example;  // string | Filter by owner organization (optional) 
+            var offset = 56;  // int? | Start with the n-th element (optional) 
+            var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
                 // List public documents
-                PaginatedDocumentResponse result = apiInstance.ListAllPublicDocuments(id4n, limit, offset, organizationId, owner);
+                PaginatedDocumentResponse result = apiInstance.ListAllPublicDocuments(id4n, organizationId, owner, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -265,10 +265,10 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| id4n | 
- **limit** | **int?**| The maximum count of returned elements | [optional] 
- **offset** | **int?**| Start with the n-th element | [optional] 
  **organizationId** | **string**| organizationId | [optional] 
  **owner** | **string**| Filter by owner organization | [optional] 
+ **offset** | **int?**| Start with the n-th element | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -287,7 +287,7 @@ Name | Type | Description  | Notes
 
 <a name="listpublichistory"></a>
 # **ListPublicHistory**
-> PaginatedHistoryItemResponse ListPublicHistory (string id4n, int? limit = null, int? offset = null)
+> PaginatedHistoryItemResponse ListPublicHistory (string id4n, int? offset = null, int? limit = null)
 
 Shows the public history of the given GUID
 
@@ -314,13 +314,13 @@ namespace Example
 
             var apiInstance = new PublicServicesApi();
             var id4n = id4n_example;  // string | GUID to retrieve the history for
-            var limit = 100;  // int? | The maximum count of returned elements (optional) 
-            var offset = 0;  // int? | Start with the n-th element (optional) 
+            var offset = 56;  // int? | Start with the n-th element (optional) 
+            var limit = 56;  // int? | The maximum count of returned elements (optional) 
 
             try
             {
                 // Shows the public history of the given GUID
-                PaginatedHistoryItemResponse result = apiInstance.ListPublicHistory(id4n, limit, offset);
+                PaginatedHistoryItemResponse result = apiInstance.ListPublicHistory(id4n, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -337,8 +337,8 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| GUID to retrieve the history for | 
- **limit** | **int?**| The maximum count of returned elements | [optional] 
  **offset** | **int?**| Start with the n-th element | [optional] 
+ **limit** | **int?**| The maximum count of returned elements | [optional] 
 
 ### Return type
 
@@ -421,7 +421,7 @@ Name | Type | Description  | Notes
 
 <a name="readpublicdocument"></a>
 # **ReadPublicDocument**
-> byte[] ReadPublicDocument (string fileName, string id4n, string organizationId)
+> byte[] ReadPublicDocument (string organizationId, string id4n, string fileName)
 
 Read public document contents
 
@@ -445,14 +445,14 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new PublicServicesApi();
-            var fileName = fileName_example;  // string | fileName
-            var id4n = id4n_example;  // string | id4n
             var organizationId = organizationId_example;  // string | organizationId
+            var id4n = id4n_example;  // string | id4n
+            var fileName = fileName_example;  // string | fileName
 
             try
             {
                 // Read public document contents
-                byte[] result = apiInstance.ReadPublicDocument(fileName, id4n, organizationId);
+                byte[] result = apiInstance.ReadPublicDocument(organizationId, id4n, fileName);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -468,9 +468,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fileName** | **string**| fileName | 
- **id4n** | **string**| id4n | 
  **organizationId** | **string**| organizationId | 
+ **id4n** | **string**| id4n | 
+ **fileName** | **string**| fileName | 
 
 ### Return type
 

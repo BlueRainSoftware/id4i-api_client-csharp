@@ -32,10 +32,10 @@ namespace BlueRain.ID4i.Api
             /// 
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="addApiKeyPrivilegeRequest">addApiKeyPrivilegeRequest</param>
         /// <param name="key">key</param>
+        /// <param name="addApiKeyPrivilegeRequest">addApiKeyPrivilegeRequest</param>
         /// <returns></returns>
-        void AddApiKeyPrivilege (AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest, string key);
+        void AddApiKeyPrivilege (string key, AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest);
 
         /// <summary>
             /// Add privilege
@@ -44,10 +44,10 @@ namespace BlueRain.ID4i.Api
             /// 
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="addApiKeyPrivilegeRequest">addApiKeyPrivilegeRequest</param>
         /// <param name="key">key</param>
+        /// <param name="addApiKeyPrivilegeRequest">addApiKeyPrivilegeRequest</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> AddApiKeyPrivilegeWithHttpInfo (AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest, string key);
+        ApiResponse<Object> AddApiKeyPrivilegeWithHttpInfo (string key, AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest);
         /// <summary>
             /// Add ID4ns of a privilege
             /// </summary>
@@ -55,11 +55,11 @@ namespace BlueRain.ID4i.Api
             /// 
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id4ns">id4ns</param>
         /// <param name="key">key</param>
         /// <param name="privilege">privilege</param>
+        /// <param name="id4ns">id4ns</param>
         /// <returns></returns>
-        void AddApiKeyPrivilegeForId4ns (ListOfId4ns id4ns, string key, string privilege);
+        void AddApiKeyPrivilegeForId4ns (string key, string privilege, ListOfId4ns id4ns);
 
         /// <summary>
             /// Add ID4ns of a privilege
@@ -68,11 +68,11 @@ namespace BlueRain.ID4i.Api
             /// 
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id4ns">id4ns</param>
         /// <param name="key">key</param>
         /// <param name="privilege">privilege</param>
+        /// <param name="id4ns">id4ns</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> AddApiKeyPrivilegeForId4nsWithHttpInfo (ListOfId4ns id4ns, string key, string privilege);
+        ApiResponse<Object> AddApiKeyPrivilegeForId4nsWithHttpInfo (string key, string privilege, ListOfId4ns id4ns);
         /// <summary>
             /// Create API key
             /// </summary>
@@ -144,10 +144,10 @@ namespace BlueRain.ID4i.Api
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4nConcerning">id4nConcerning (optional)</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>ApiKeyPrivilegeInfoResponse</returns>
-        ApiKeyPrivilegeInfoResponse ListAllApiKeyPrivileges (bool? id4nConcerning = null, int? limit = null, int? offset = null);
+        ApiKeyPrivilegeInfoResponse ListAllApiKeyPrivileges (bool? id4nConcerning = null, int? offset = null, int? limit = null);
 
         /// <summary>
             /// List all privileges
@@ -157,10 +157,10 @@ namespace BlueRain.ID4i.Api
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4nConcerning">id4nConcerning (optional)</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>ApiResponse of ApiKeyPrivilegeInfoResponse</returns>
-        ApiResponse<ApiKeyPrivilegeInfoResponse> ListAllApiKeyPrivilegesWithHttpInfo (bool? id4nConcerning = null, int? limit = null, int? offset = null);
+        ApiResponse<ApiKeyPrivilegeInfoResponse> ListAllApiKeyPrivilegesWithHttpInfo (bool? id4nConcerning = null, int? offset = null, int? limit = null);
         /// <summary>
             /// Find API key by organization
             /// </summary>
@@ -168,11 +168,11 @@ namespace BlueRain.ID4i.Api
             /// Finding all API key assigned to the specified organization in a paginated manner.
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="organizationId">The namespace of the organization to search in. (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>PaginatedApiKeyResponse</returns>
-        PaginatedApiKeyResponse ListAllApiKeysOfOrganization (int? limit = null, int? offset = null, string organizationId = null);
+        PaginatedApiKeyResponse ListAllApiKeysOfOrganization (string organizationId = null, int? offset = null, int? limit = null);
 
         /// <summary>
             /// Find API key by organization
@@ -181,11 +181,11 @@ namespace BlueRain.ID4i.Api
             /// Finding all API key assigned to the specified organization in a paginated manner.
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="organizationId">The namespace of the organization to search in. (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>ApiResponse of PaginatedApiKeyResponse</returns>
-        ApiResponse<PaginatedApiKeyResponse> ListAllApiKeysOfOrganizationWithHttpInfo (int? limit = null, int? offset = null, string organizationId = null);
+        ApiResponse<PaginatedApiKeyResponse> ListAllApiKeysOfOrganizationWithHttpInfo (string organizationId = null, int? offset = null, int? limit = null);
         /// <summary>
             /// List privileges
             /// </summary>
@@ -194,10 +194,10 @@ namespace BlueRain.ID4i.Api
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">key</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>ApiKeyPrivilegePaginatedResponse</returns>
-        ApiKeyPrivilegePaginatedResponse ListApiKeyPrivileges (string key, int? limit = null, int? offset = null);
+        ApiKeyPrivilegePaginatedResponse ListApiKeyPrivileges (string key, int? offset = null, int? limit = null);
 
         /// <summary>
             /// List privileges
@@ -207,10 +207,10 @@ namespace BlueRain.ID4i.Api
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">key</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>ApiResponse of ApiKeyPrivilegePaginatedResponse</returns>
-        ApiResponse<ApiKeyPrivilegePaginatedResponse> ListApiKeyPrivilegesWithHttpInfo (string key, int? limit = null, int? offset = null);
+        ApiResponse<ApiKeyPrivilegePaginatedResponse> ListApiKeyPrivilegesWithHttpInfo (string key, int? offset = null, int? limit = null);
         /// <summary>
             /// ID4ns of a privilege
             /// </summary>
@@ -220,10 +220,10 @@ namespace BlueRain.ID4i.Api
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">key</param>
         /// <param name="privilege">privilege</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>Id4nPresentationPaginatedResponse</returns>
-        Id4nPresentationPaginatedResponse ListId4ns (string key, string privilege, int? limit = null, int? offset = null);
+        Id4nPresentationPaginatedResponse ListId4ns (string key, string privilege, int? offset = null, int? limit = null);
 
         /// <summary>
             /// ID4ns of a privilege
@@ -234,10 +234,10 @@ namespace BlueRain.ID4i.Api
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">key</param>
         /// <param name="privilege">privilege</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>ApiResponse of Id4nPresentationPaginatedResponse</returns>
-        ApiResponse<Id4nPresentationPaginatedResponse> ListId4nsWithHttpInfo (string key, string privilege, int? limit = null, int? offset = null);
+        ApiResponse<Id4nPresentationPaginatedResponse> ListId4nsWithHttpInfo (string key, string privilege, int? offset = null, int? limit = null);
         /// <summary>
             /// Remove privilege
             /// </summary>
@@ -268,11 +268,11 @@ namespace BlueRain.ID4i.Api
             /// 
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id4ns">id4ns</param>
         /// <param name="key">key</param>
         /// <param name="privilege">privilege</param>
+        /// <param name="id4ns">id4ns</param>
         /// <returns></returns>
-        void RemoveApiKeyPrivilegeForId4ns (ListOfId4ns id4ns, string key, string privilege);
+        void RemoveApiKeyPrivilegeForId4ns (string key, string privilege, ListOfId4ns id4ns);
 
         /// <summary>
             /// Remove id4ns of a privilege
@@ -281,11 +281,11 @@ namespace BlueRain.ID4i.Api
             /// 
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id4ns">id4ns</param>
         /// <param name="key">key</param>
         /// <param name="privilege">privilege</param>
+        /// <param name="id4ns">id4ns</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RemoveApiKeyPrivilegeForId4nsWithHttpInfo (ListOfId4ns id4ns, string key, string privilege);
+        ApiResponse<Object> RemoveApiKeyPrivilegeForId4nsWithHttpInfo (string key, string privilege, ListOfId4ns id4ns);
         /// <summary>
             /// Update API keys
             /// </summary>
@@ -293,10 +293,10 @@ namespace BlueRain.ID4i.Api
             /// API keys can be updated with new labels, and be activated and deactivated. The secret or UUID cannot be changed.
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiKeyChange">The new values to apply.</param>
         /// <param name="key">The API key to be updated.</param>
+        /// <param name="apiKeyChange">The new values to apply.</param>
         /// <returns></returns>
-        void UpdateApiKey (ApiKeyChangeRequest apiKeyChange, string key);
+        void UpdateApiKey (string key, ApiKeyChangeRequest apiKeyChange);
 
         /// <summary>
             /// Update API keys
@@ -305,10 +305,10 @@ namespace BlueRain.ID4i.Api
             /// API keys can be updated with new labels, and be activated and deactivated. The secret or UUID cannot be changed.
             /// </remarks>
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiKeyChange">The new values to apply.</param>
         /// <param name="key">The API key to be updated.</param>
+        /// <param name="apiKeyChange">The new values to apply.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateApiKeyWithHttpInfo (ApiKeyChangeRequest apiKeyChange, string key);
+        ApiResponse<Object> UpdateApiKeyWithHttpInfo (string key, ApiKeyChangeRequest apiKeyChange);
         #endregion Synchronous Operations
             #region Asynchronous Operations
                 /// <summary>
@@ -318,10 +318,10 @@ namespace BlueRain.ID4i.Api
                 /// 
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="addApiKeyPrivilegeRequest">addApiKeyPrivilegeRequest</param>
             /// <param name="key">key</param>
+            /// <param name="addApiKeyPrivilegeRequest">addApiKeyPrivilegeRequest</param>
             /// <returns>Task of void</returns>
-            System.Threading.Tasks.Task AddApiKeyPrivilegeAsync (AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest, string key);
+            System.Threading.Tasks.Task AddApiKeyPrivilegeAsync (string key, AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest);
 
                 /// <summary>
                 /// Add privilege
@@ -330,10 +330,10 @@ namespace BlueRain.ID4i.Api
                 /// 
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="addApiKeyPrivilegeRequest">addApiKeyPrivilegeRequest</param>
             /// <param name="key">key</param>
+            /// <param name="addApiKeyPrivilegeRequest">addApiKeyPrivilegeRequest</param>
             /// <returns>Task of ApiResponse</returns>
-                System.Threading.Tasks.Task<ApiResponse<Object>> AddApiKeyPrivilegeAsyncWithHttpInfo (AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest, string key);
+                System.Threading.Tasks.Task<ApiResponse<Object>> AddApiKeyPrivilegeAsyncWithHttpInfo (string key, AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest);
                 /// <summary>
                 /// Add ID4ns of a privilege
                 /// </summary>
@@ -341,11 +341,11 @@ namespace BlueRain.ID4i.Api
                 /// 
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="id4ns">id4ns</param>
             /// <param name="key">key</param>
             /// <param name="privilege">privilege</param>
+            /// <param name="id4ns">id4ns</param>
             /// <returns>Task of void</returns>
-            System.Threading.Tasks.Task AddApiKeyPrivilegeForId4nsAsync (ListOfId4ns id4ns, string key, string privilege);
+            System.Threading.Tasks.Task AddApiKeyPrivilegeForId4nsAsync (string key, string privilege, ListOfId4ns id4ns);
 
                 /// <summary>
                 /// Add ID4ns of a privilege
@@ -354,11 +354,11 @@ namespace BlueRain.ID4i.Api
                 /// 
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="id4ns">id4ns</param>
             /// <param name="key">key</param>
             /// <param name="privilege">privilege</param>
+            /// <param name="id4ns">id4ns</param>
             /// <returns>Task of ApiResponse</returns>
-                System.Threading.Tasks.Task<ApiResponse<Object>> AddApiKeyPrivilegeForId4nsAsyncWithHttpInfo (ListOfId4ns id4ns, string key, string privilege);
+                System.Threading.Tasks.Task<ApiResponse<Object>> AddApiKeyPrivilegeForId4nsAsyncWithHttpInfo (string key, string privilege, ListOfId4ns id4ns);
                 /// <summary>
                 /// Create API key
                 /// </summary>
@@ -430,10 +430,10 @@ namespace BlueRain.ID4i.Api
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4nConcerning">id4nConcerning (optional)</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of ApiKeyPrivilegeInfoResponse</returns>
-            System.Threading.Tasks.Task<ApiKeyPrivilegeInfoResponse> ListAllApiKeyPrivilegesAsync (bool? id4nConcerning = null, int? limit = null, int? offset = null);
+            System.Threading.Tasks.Task<ApiKeyPrivilegeInfoResponse> ListAllApiKeyPrivilegesAsync (bool? id4nConcerning = null, int? offset = null, int? limit = null);
 
                 /// <summary>
                 /// List all privileges
@@ -443,10 +443,10 @@ namespace BlueRain.ID4i.Api
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4nConcerning">id4nConcerning (optional)</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of ApiResponse (ApiKeyPrivilegeInfoResponse)</returns>
-                System.Threading.Tasks.Task<ApiResponse<ApiKeyPrivilegeInfoResponse>> ListAllApiKeyPrivilegesAsyncWithHttpInfo (bool? id4nConcerning = null, int? limit = null, int? offset = null);
+                System.Threading.Tasks.Task<ApiResponse<ApiKeyPrivilegeInfoResponse>> ListAllApiKeyPrivilegesAsyncWithHttpInfo (bool? id4nConcerning = null, int? offset = null, int? limit = null);
                 /// <summary>
                 /// Find API key by organization
                 /// </summary>
@@ -454,11 +454,11 @@ namespace BlueRain.ID4i.Api
                 /// Finding all API key assigned to the specified organization in a paginated manner.
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="organizationId">The namespace of the organization to search in. (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of PaginatedApiKeyResponse</returns>
-            System.Threading.Tasks.Task<PaginatedApiKeyResponse> ListAllApiKeysOfOrganizationAsync (int? limit = null, int? offset = null, string organizationId = null);
+            System.Threading.Tasks.Task<PaginatedApiKeyResponse> ListAllApiKeysOfOrganizationAsync (string organizationId = null, int? offset = null, int? limit = null);
 
                 /// <summary>
                 /// Find API key by organization
@@ -467,11 +467,11 @@ namespace BlueRain.ID4i.Api
                 /// Finding all API key assigned to the specified organization in a paginated manner.
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="organizationId">The namespace of the organization to search in. (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedApiKeyResponse)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedApiKeyResponse>> ListAllApiKeysOfOrganizationAsyncWithHttpInfo (int? limit = null, int? offset = null, string organizationId = null);
+                System.Threading.Tasks.Task<ApiResponse<PaginatedApiKeyResponse>> ListAllApiKeysOfOrganizationAsyncWithHttpInfo (string organizationId = null, int? offset = null, int? limit = null);
                 /// <summary>
                 /// List privileges
                 /// </summary>
@@ -480,10 +480,10 @@ namespace BlueRain.ID4i.Api
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="key">key</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of ApiKeyPrivilegePaginatedResponse</returns>
-            System.Threading.Tasks.Task<ApiKeyPrivilegePaginatedResponse> ListApiKeyPrivilegesAsync (string key, int? limit = null, int? offset = null);
+            System.Threading.Tasks.Task<ApiKeyPrivilegePaginatedResponse> ListApiKeyPrivilegesAsync (string key, int? offset = null, int? limit = null);
 
                 /// <summary>
                 /// List privileges
@@ -493,10 +493,10 @@ namespace BlueRain.ID4i.Api
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="key">key</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of ApiResponse (ApiKeyPrivilegePaginatedResponse)</returns>
-                System.Threading.Tasks.Task<ApiResponse<ApiKeyPrivilegePaginatedResponse>> ListApiKeyPrivilegesAsyncWithHttpInfo (string key, int? limit = null, int? offset = null);
+                System.Threading.Tasks.Task<ApiResponse<ApiKeyPrivilegePaginatedResponse>> ListApiKeyPrivilegesAsyncWithHttpInfo (string key, int? offset = null, int? limit = null);
                 /// <summary>
                 /// ID4ns of a privilege
                 /// </summary>
@@ -506,10 +506,10 @@ namespace BlueRain.ID4i.Api
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="key">key</param>
             /// <param name="privilege">privilege</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of Id4nPresentationPaginatedResponse</returns>
-            System.Threading.Tasks.Task<Id4nPresentationPaginatedResponse> ListId4nsAsync (string key, string privilege, int? limit = null, int? offset = null);
+            System.Threading.Tasks.Task<Id4nPresentationPaginatedResponse> ListId4nsAsync (string key, string privilege, int? offset = null, int? limit = null);
 
                 /// <summary>
                 /// ID4ns of a privilege
@@ -520,10 +520,10 @@ namespace BlueRain.ID4i.Api
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="key">key</param>
             /// <param name="privilege">privilege</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of ApiResponse (Id4nPresentationPaginatedResponse)</returns>
-                System.Threading.Tasks.Task<ApiResponse<Id4nPresentationPaginatedResponse>> ListId4nsAsyncWithHttpInfo (string key, string privilege, int? limit = null, int? offset = null);
+                System.Threading.Tasks.Task<ApiResponse<Id4nPresentationPaginatedResponse>> ListId4nsAsyncWithHttpInfo (string key, string privilege, int? offset = null, int? limit = null);
                 /// <summary>
                 /// Remove privilege
                 /// </summary>
@@ -554,11 +554,11 @@ namespace BlueRain.ID4i.Api
                 /// 
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="id4ns">id4ns</param>
             /// <param name="key">key</param>
             /// <param name="privilege">privilege</param>
+            /// <param name="id4ns">id4ns</param>
             /// <returns>Task of void</returns>
-            System.Threading.Tasks.Task RemoveApiKeyPrivilegeForId4nsAsync (ListOfId4ns id4ns, string key, string privilege);
+            System.Threading.Tasks.Task RemoveApiKeyPrivilegeForId4nsAsync (string key, string privilege, ListOfId4ns id4ns);
 
                 /// <summary>
                 /// Remove id4ns of a privilege
@@ -567,11 +567,11 @@ namespace BlueRain.ID4i.Api
                 /// 
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="id4ns">id4ns</param>
             /// <param name="key">key</param>
             /// <param name="privilege">privilege</param>
+            /// <param name="id4ns">id4ns</param>
             /// <returns>Task of ApiResponse</returns>
-                System.Threading.Tasks.Task<ApiResponse<Object>> RemoveApiKeyPrivilegeForId4nsAsyncWithHttpInfo (ListOfId4ns id4ns, string key, string privilege);
+                System.Threading.Tasks.Task<ApiResponse<Object>> RemoveApiKeyPrivilegeForId4nsAsyncWithHttpInfo (string key, string privilege, ListOfId4ns id4ns);
                 /// <summary>
                 /// Update API keys
                 /// </summary>
@@ -579,10 +579,10 @@ namespace BlueRain.ID4i.Api
                 /// API keys can be updated with new labels, and be activated and deactivated. The secret or UUID cannot be changed.
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="apiKeyChange">The new values to apply.</param>
             /// <param name="key">The API key to be updated.</param>
+            /// <param name="apiKeyChange">The new values to apply.</param>
             /// <returns>Task of void</returns>
-            System.Threading.Tasks.Task UpdateApiKeyAsync (ApiKeyChangeRequest apiKeyChange, string key);
+            System.Threading.Tasks.Task UpdateApiKeyAsync (string key, ApiKeyChangeRequest apiKeyChange);
 
                 /// <summary>
                 /// Update API keys
@@ -591,10 +591,10 @@ namespace BlueRain.ID4i.Api
                 /// API keys can be updated with new labels, and be activated and deactivated. The secret or UUID cannot be changed.
                 /// </remarks>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="apiKeyChange">The new values to apply.</param>
             /// <param name="key">The API key to be updated.</param>
+            /// <param name="apiKeyChange">The new values to apply.</param>
             /// <returns>Task of ApiResponse</returns>
-                System.Threading.Tasks.Task<ApiResponse<Object>> UpdateApiKeyAsyncWithHttpInfo (ApiKeyChangeRequest apiKeyChange, string key);
+                System.Threading.Tasks.Task<ApiResponse<Object>> UpdateApiKeyAsyncWithHttpInfo (string key, ApiKeyChangeRequest apiKeyChange);
             #endregion Asynchronous Operations
         }
 
@@ -699,29 +699,29 @@ namespace BlueRain.ID4i.Api
             /// Add privilege 
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="addApiKeyPrivilegeRequest">addApiKeyPrivilegeRequest</param>
         /// <param name="key">key</param>
+        /// <param name="addApiKeyPrivilegeRequest">addApiKeyPrivilegeRequest</param>
         /// <returns></returns>
-            public void AddApiKeyPrivilege (AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest, string key)
+            public void AddApiKeyPrivilege (string key, AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest)
             {
-        AddApiKeyPrivilegeWithHttpInfo(addApiKeyPrivilegeRequest, key);
+        AddApiKeyPrivilegeWithHttpInfo(key, addApiKeyPrivilegeRequest);
             }
 
             /// <summary>
             /// Add privilege 
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="addApiKeyPrivilegeRequest">addApiKeyPrivilegeRequest</param>
         /// <param name="key">key</param>
+        /// <param name="addApiKeyPrivilegeRequest">addApiKeyPrivilegeRequest</param>
         /// <returns>ApiResponse of Object(void)</returns>
-            public ApiResponse<Object> AddApiKeyPrivilegeWithHttpInfo (AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest, string key)
+            public ApiResponse<Object> AddApiKeyPrivilegeWithHttpInfo (string key, AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest)
             {
-                    // verify the required parameter 'addApiKeyPrivilegeRequest' is set
-                    if (addApiKeyPrivilegeRequest == null)
-                    throw new ApiException(400, "Missing required parameter 'addApiKeyPrivilegeRequest' when calling ApiKeysApi->AddApiKeyPrivilege");
                     // verify the required parameter 'key' is set
                     if (key == null)
                     throw new ApiException(400, "Missing required parameter 'key' when calling ApiKeysApi->AddApiKeyPrivilege");
+                    // verify the required parameter 'addApiKeyPrivilegeRequest' is set
+                    if (addApiKeyPrivilegeRequest == null)
+                    throw new ApiException(400, "Missing required parameter 'addApiKeyPrivilegeRequest' when calling ApiKeysApi->AddApiKeyPrivilege");
 
             var localVarPath = "./api/v1/apikeys/{key}/privileges";
             var localVarPathParams = new Dictionary<String, String>();
@@ -785,12 +785,12 @@ namespace BlueRain.ID4i.Api
                 /// Add privilege 
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="addApiKeyPrivilegeRequest">addApiKeyPrivilegeRequest</param>
             /// <param name="key">key</param>
+            /// <param name="addApiKeyPrivilegeRequest">addApiKeyPrivilegeRequest</param>
             /// <returns>Task of void</returns>
-            public async System.Threading.Tasks.Task AddApiKeyPrivilegeAsync (AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest, string key)
+            public async System.Threading.Tasks.Task AddApiKeyPrivilegeAsync (string key, AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest)
                 {
-            await AddApiKeyPrivilegeAsyncWithHttpInfo(addApiKeyPrivilegeRequest, key);
+            await AddApiKeyPrivilegeAsyncWithHttpInfo(key, addApiKeyPrivilegeRequest);
 
                 }
 
@@ -798,17 +798,17 @@ namespace BlueRain.ID4i.Api
                 /// Add privilege 
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="addApiKeyPrivilegeRequest">addApiKeyPrivilegeRequest</param>
             /// <param name="key">key</param>
+            /// <param name="addApiKeyPrivilegeRequest">addApiKeyPrivilegeRequest</param>
             /// <returns>Task of ApiResponse</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<Object>> AddApiKeyPrivilegeAsyncWithHttpInfo (AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest, string key)
+                public async System.Threading.Tasks.Task<ApiResponse<Object>> AddApiKeyPrivilegeAsyncWithHttpInfo (string key, AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest)
                 {
-                        // verify the required parameter 'addApiKeyPrivilegeRequest' is set
-                        if (addApiKeyPrivilegeRequest == null)
-                        throw new ApiException(400, "Missing required parameter 'addApiKeyPrivilegeRequest' when calling ApiKeysApi->AddApiKeyPrivilege");
                         // verify the required parameter 'key' is set
                         if (key == null)
                         throw new ApiException(400, "Missing required parameter 'key' when calling ApiKeysApi->AddApiKeyPrivilege");
+                        // verify the required parameter 'addApiKeyPrivilegeRequest' is set
+                        if (addApiKeyPrivilegeRequest == null)
+                        throw new ApiException(400, "Missing required parameter 'addApiKeyPrivilegeRequest' when calling ApiKeysApi->AddApiKeyPrivilege");
 
                 var localVarPath = "./api/v1/apikeys/{key}/privileges";
                 var localVarPathParams = new Dictionary<String, String>();
@@ -872,34 +872,34 @@ namespace BlueRain.ID4i.Api
             /// Add ID4ns of a privilege 
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id4ns">id4ns</param>
         /// <param name="key">key</param>
         /// <param name="privilege">privilege</param>
+        /// <param name="id4ns">id4ns</param>
         /// <returns></returns>
-            public void AddApiKeyPrivilegeForId4ns (ListOfId4ns id4ns, string key, string privilege)
+            public void AddApiKeyPrivilegeForId4ns (string key, string privilege, ListOfId4ns id4ns)
             {
-        AddApiKeyPrivilegeForId4nsWithHttpInfo(id4ns, key, privilege);
+        AddApiKeyPrivilegeForId4nsWithHttpInfo(key, privilege, id4ns);
             }
 
             /// <summary>
             /// Add ID4ns of a privilege 
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id4ns">id4ns</param>
         /// <param name="key">key</param>
         /// <param name="privilege">privilege</param>
+        /// <param name="id4ns">id4ns</param>
         /// <returns>ApiResponse of Object(void)</returns>
-            public ApiResponse<Object> AddApiKeyPrivilegeForId4nsWithHttpInfo (ListOfId4ns id4ns, string key, string privilege)
+            public ApiResponse<Object> AddApiKeyPrivilegeForId4nsWithHttpInfo (string key, string privilege, ListOfId4ns id4ns)
             {
-                    // verify the required parameter 'id4ns' is set
-                    if (id4ns == null)
-                    throw new ApiException(400, "Missing required parameter 'id4ns' when calling ApiKeysApi->AddApiKeyPrivilegeForId4ns");
                     // verify the required parameter 'key' is set
                     if (key == null)
                     throw new ApiException(400, "Missing required parameter 'key' when calling ApiKeysApi->AddApiKeyPrivilegeForId4ns");
                     // verify the required parameter 'privilege' is set
                     if (privilege == null)
                     throw new ApiException(400, "Missing required parameter 'privilege' when calling ApiKeysApi->AddApiKeyPrivilegeForId4ns");
+                    // verify the required parameter 'id4ns' is set
+                    if (id4ns == null)
+                    throw new ApiException(400, "Missing required parameter 'id4ns' when calling ApiKeysApi->AddApiKeyPrivilegeForId4ns");
 
             var localVarPath = "./api/v1/apikeys/{key}/privileges/{privilege}/id4ns";
             var localVarPathParams = new Dictionary<String, String>();
@@ -964,13 +964,13 @@ namespace BlueRain.ID4i.Api
                 /// Add ID4ns of a privilege 
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="id4ns">id4ns</param>
             /// <param name="key">key</param>
             /// <param name="privilege">privilege</param>
+            /// <param name="id4ns">id4ns</param>
             /// <returns>Task of void</returns>
-            public async System.Threading.Tasks.Task AddApiKeyPrivilegeForId4nsAsync (ListOfId4ns id4ns, string key, string privilege)
+            public async System.Threading.Tasks.Task AddApiKeyPrivilegeForId4nsAsync (string key, string privilege, ListOfId4ns id4ns)
                 {
-            await AddApiKeyPrivilegeForId4nsAsyncWithHttpInfo(id4ns, key, privilege);
+            await AddApiKeyPrivilegeForId4nsAsyncWithHttpInfo(key, privilege, id4ns);
 
                 }
 
@@ -978,21 +978,21 @@ namespace BlueRain.ID4i.Api
                 /// Add ID4ns of a privilege 
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="id4ns">id4ns</param>
             /// <param name="key">key</param>
             /// <param name="privilege">privilege</param>
+            /// <param name="id4ns">id4ns</param>
             /// <returns>Task of ApiResponse</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<Object>> AddApiKeyPrivilegeForId4nsAsyncWithHttpInfo (ListOfId4ns id4ns, string key, string privilege)
+                public async System.Threading.Tasks.Task<ApiResponse<Object>> AddApiKeyPrivilegeForId4nsAsyncWithHttpInfo (string key, string privilege, ListOfId4ns id4ns)
                 {
-                        // verify the required parameter 'id4ns' is set
-                        if (id4ns == null)
-                        throw new ApiException(400, "Missing required parameter 'id4ns' when calling ApiKeysApi->AddApiKeyPrivilegeForId4ns");
                         // verify the required parameter 'key' is set
                         if (key == null)
                         throw new ApiException(400, "Missing required parameter 'key' when calling ApiKeysApi->AddApiKeyPrivilegeForId4ns");
                         // verify the required parameter 'privilege' is set
                         if (privilege == null)
                         throw new ApiException(400, "Missing required parameter 'privilege' when calling ApiKeysApi->AddApiKeyPrivilegeForId4ns");
+                        // verify the required parameter 'id4ns' is set
+                        if (id4ns == null)
+                        throw new ApiException(400, "Missing required parameter 'id4ns' when calling ApiKeysApi->AddApiKeyPrivilegeForId4ns");
 
                 var localVarPath = "./api/v1/apikeys/{key}/privileges/{privilege}/id4ns";
                 var localVarPathParams = new Dictionary<String, String>();
@@ -1517,12 +1517,12 @@ namespace BlueRain.ID4i.Api
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4nConcerning">id4nConcerning (optional)</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>ApiKeyPrivilegeInfoResponse</returns>
-            public ApiKeyPrivilegeInfoResponse ListAllApiKeyPrivileges (bool? id4nConcerning = null, int? limit = null, int? offset = null)
+            public ApiKeyPrivilegeInfoResponse ListAllApiKeyPrivileges (bool? id4nConcerning = null, int? offset = null, int? limit = null)
             {
-        ApiResponse<ApiKeyPrivilegeInfoResponse> localVarResponse = ListAllApiKeyPrivilegesWithHttpInfo(id4nConcerning, limit, offset);
+        ApiResponse<ApiKeyPrivilegeInfoResponse> localVarResponse = ListAllApiKeyPrivilegesWithHttpInfo(id4nConcerning, offset, limit);
             return localVarResponse.Data;
             }
 
@@ -1531,10 +1531,10 @@ namespace BlueRain.ID4i.Api
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id4nConcerning">id4nConcerning (optional)</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>ApiResponse of ApiKeyPrivilegeInfoResponse</returns>
-            public ApiResponse< ApiKeyPrivilegeInfoResponse > ListAllApiKeyPrivilegesWithHttpInfo (bool? id4nConcerning = null, int? limit = null, int? offset = null)
+            public ApiResponse< ApiKeyPrivilegeInfoResponse > ListAllApiKeyPrivilegesWithHttpInfo (bool? id4nConcerning = null, int? offset = null, int? limit = null)
             {
 
             var localVarPath = "./api/v1/apikeys/privileges";
@@ -1562,8 +1562,8 @@ namespace BlueRain.ID4i.Api
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
                 if (id4nConcerning != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "id4nConcerning", id4nConcerning)); // query parameter
-                if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
                 if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+                if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
 
                 // authentication (Authorization) required
                         if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1594,12 +1594,12 @@ namespace BlueRain.ID4i.Api
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4nConcerning">id4nConcerning (optional)</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of ApiKeyPrivilegeInfoResponse</returns>
-            public async System.Threading.Tasks.Task<ApiKeyPrivilegeInfoResponse> ListAllApiKeyPrivilegesAsync (bool? id4nConcerning = null, int? limit = null, int? offset = null)
+            public async System.Threading.Tasks.Task<ApiKeyPrivilegeInfoResponse> ListAllApiKeyPrivilegesAsync (bool? id4nConcerning = null, int? offset = null, int? limit = null)
                 {
-            ApiResponse<ApiKeyPrivilegeInfoResponse> localVarResponse = await ListAllApiKeyPrivilegesAsyncWithHttpInfo(id4nConcerning, limit, offset);
+            ApiResponse<ApiKeyPrivilegeInfoResponse> localVarResponse = await ListAllApiKeyPrivilegesAsyncWithHttpInfo(id4nConcerning, offset, limit);
                 return localVarResponse.Data;
 
                 }
@@ -1609,10 +1609,10 @@ namespace BlueRain.ID4i.Api
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="id4nConcerning">id4nConcerning (optional)</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of ApiResponse (ApiKeyPrivilegeInfoResponse)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<ApiKeyPrivilegeInfoResponse>> ListAllApiKeyPrivilegesAsyncWithHttpInfo (bool? id4nConcerning = null, int? limit = null, int? offset = null)
+                public async System.Threading.Tasks.Task<ApiResponse<ApiKeyPrivilegeInfoResponse>> ListAllApiKeyPrivilegesAsyncWithHttpInfo (bool? id4nConcerning = null, int? offset = null, int? limit = null)
                 {
 
                 var localVarPath = "./api/v1/apikeys/privileges";
@@ -1640,8 +1640,8 @@ namespace BlueRain.ID4i.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
                     if (id4nConcerning != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "id4nConcerning", id4nConcerning)); // query parameter
-                    if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
                     if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+                    if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
 
                     // authentication (Authorization) required
                             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1671,13 +1671,13 @@ namespace BlueRain.ID4i.Api
             /// Find API key by organization Finding all API key assigned to the specified organization in a paginated manner.
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="organizationId">The namespace of the organization to search in. (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>PaginatedApiKeyResponse</returns>
-            public PaginatedApiKeyResponse ListAllApiKeysOfOrganization (int? limit = null, int? offset = null, string organizationId = null)
+            public PaginatedApiKeyResponse ListAllApiKeysOfOrganization (string organizationId = null, int? offset = null, int? limit = null)
             {
-        ApiResponse<PaginatedApiKeyResponse> localVarResponse = ListAllApiKeysOfOrganizationWithHttpInfo(limit, offset, organizationId);
+        ApiResponse<PaginatedApiKeyResponse> localVarResponse = ListAllApiKeysOfOrganizationWithHttpInfo(organizationId, offset, limit);
             return localVarResponse.Data;
             }
 
@@ -1685,11 +1685,11 @@ namespace BlueRain.ID4i.Api
             /// Find API key by organization Finding all API key assigned to the specified organization in a paginated manner.
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="organizationId">The namespace of the organization to search in. (optional)</param>
+        /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>ApiResponse of PaginatedApiKeyResponse</returns>
-            public ApiResponse< PaginatedApiKeyResponse > ListAllApiKeysOfOrganizationWithHttpInfo (int? limit = null, int? offset = null, string organizationId = null)
+            public ApiResponse< PaginatedApiKeyResponse > ListAllApiKeysOfOrganizationWithHttpInfo (string organizationId = null, int? offset = null, int? limit = null)
             {
 
             var localVarPath = "./api/v1/apikeys";
@@ -1716,9 +1716,9 @@ namespace BlueRain.ID4i.Api
             if (localVarHttpHeaderAccept != null)
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-                if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
-                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
                 if (organizationId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "organizationId", organizationId)); // query parameter
+                if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+                if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
 
                 // authentication (Authorization) required
                         if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1748,13 +1748,13 @@ namespace BlueRain.ID4i.Api
                 /// Find API key by organization Finding all API key assigned to the specified organization in a paginated manner.
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="organizationId">The namespace of the organization to search in. (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of PaginatedApiKeyResponse</returns>
-            public async System.Threading.Tasks.Task<PaginatedApiKeyResponse> ListAllApiKeysOfOrganizationAsync (int? limit = null, int? offset = null, string organizationId = null)
+            public async System.Threading.Tasks.Task<PaginatedApiKeyResponse> ListAllApiKeysOfOrganizationAsync (string organizationId = null, int? offset = null, int? limit = null)
                 {
-            ApiResponse<PaginatedApiKeyResponse> localVarResponse = await ListAllApiKeysOfOrganizationAsyncWithHttpInfo(limit, offset, organizationId);
+            ApiResponse<PaginatedApiKeyResponse> localVarResponse = await ListAllApiKeysOfOrganizationAsyncWithHttpInfo(organizationId, offset, limit);
                 return localVarResponse.Data;
 
                 }
@@ -1763,11 +1763,11 @@ namespace BlueRain.ID4i.Api
                 /// Find API key by organization Finding all API key assigned to the specified organization in a paginated manner.
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="organizationId">The namespace of the organization to search in. (optional)</param>
+            /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedApiKeyResponse)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedApiKeyResponse>> ListAllApiKeysOfOrganizationAsyncWithHttpInfo (int? limit = null, int? offset = null, string organizationId = null)
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedApiKeyResponse>> ListAllApiKeysOfOrganizationAsyncWithHttpInfo (string organizationId = null, int? offset = null, int? limit = null)
                 {
 
                 var localVarPath = "./api/v1/apikeys";
@@ -1794,9 +1794,9 @@ namespace BlueRain.ID4i.Api
                 if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-                    if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
-                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
                     if (organizationId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "organizationId", organizationId)); // query parameter
+                    if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+                    if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
 
                     // authentication (Authorization) required
                             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1827,12 +1827,12 @@ namespace BlueRain.ID4i.Api
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">key</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>ApiKeyPrivilegePaginatedResponse</returns>
-            public ApiKeyPrivilegePaginatedResponse ListApiKeyPrivileges (string key, int? limit = null, int? offset = null)
+            public ApiKeyPrivilegePaginatedResponse ListApiKeyPrivileges (string key, int? offset = null, int? limit = null)
             {
-        ApiResponse<ApiKeyPrivilegePaginatedResponse> localVarResponse = ListApiKeyPrivilegesWithHttpInfo(key, limit, offset);
+        ApiResponse<ApiKeyPrivilegePaginatedResponse> localVarResponse = ListApiKeyPrivilegesWithHttpInfo(key, offset, limit);
             return localVarResponse.Data;
             }
 
@@ -1841,10 +1841,10 @@ namespace BlueRain.ID4i.Api
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">key</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>ApiResponse of ApiKeyPrivilegePaginatedResponse</returns>
-            public ApiResponse< ApiKeyPrivilegePaginatedResponse > ListApiKeyPrivilegesWithHttpInfo (string key, int? limit = null, int? offset = null)
+            public ApiResponse< ApiKeyPrivilegePaginatedResponse > ListApiKeyPrivilegesWithHttpInfo (string key, int? offset = null, int? limit = null)
             {
                     // verify the required parameter 'key' is set
                     if (key == null)
@@ -1875,8 +1875,8 @@ namespace BlueRain.ID4i.Api
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
                 if (key != null) localVarPathParams.Add("key", Configuration.ApiClient.ParameterToString(key)); // path parameter
-                if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
                 if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+                if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
 
                 // authentication (Authorization) required
                         if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1907,12 +1907,12 @@ namespace BlueRain.ID4i.Api
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="key">key</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of ApiKeyPrivilegePaginatedResponse</returns>
-            public async System.Threading.Tasks.Task<ApiKeyPrivilegePaginatedResponse> ListApiKeyPrivilegesAsync (string key, int? limit = null, int? offset = null)
+            public async System.Threading.Tasks.Task<ApiKeyPrivilegePaginatedResponse> ListApiKeyPrivilegesAsync (string key, int? offset = null, int? limit = null)
                 {
-            ApiResponse<ApiKeyPrivilegePaginatedResponse> localVarResponse = await ListApiKeyPrivilegesAsyncWithHttpInfo(key, limit, offset);
+            ApiResponse<ApiKeyPrivilegePaginatedResponse> localVarResponse = await ListApiKeyPrivilegesAsyncWithHttpInfo(key, offset, limit);
                 return localVarResponse.Data;
 
                 }
@@ -1922,10 +1922,10 @@ namespace BlueRain.ID4i.Api
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="key">key</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of ApiResponse (ApiKeyPrivilegePaginatedResponse)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<ApiKeyPrivilegePaginatedResponse>> ListApiKeyPrivilegesAsyncWithHttpInfo (string key, int? limit = null, int? offset = null)
+                public async System.Threading.Tasks.Task<ApiResponse<ApiKeyPrivilegePaginatedResponse>> ListApiKeyPrivilegesAsyncWithHttpInfo (string key, int? offset = null, int? limit = null)
                 {
                         // verify the required parameter 'key' is set
                         if (key == null)
@@ -1956,8 +1956,8 @@ namespace BlueRain.ID4i.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
                     if (key != null) localVarPathParams.Add("key", Configuration.ApiClient.ParameterToString(key)); // path parameter
-                    if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
                     if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+                    if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
 
                     // authentication (Authorization) required
                             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1989,12 +1989,12 @@ namespace BlueRain.ID4i.Api
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">key</param>
         /// <param name="privilege">privilege</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>Id4nPresentationPaginatedResponse</returns>
-            public Id4nPresentationPaginatedResponse ListId4ns (string key, string privilege, int? limit = null, int? offset = null)
+            public Id4nPresentationPaginatedResponse ListId4ns (string key, string privilege, int? offset = null, int? limit = null)
             {
-        ApiResponse<Id4nPresentationPaginatedResponse> localVarResponse = ListId4nsWithHttpInfo(key, privilege, limit, offset);
+        ApiResponse<Id4nPresentationPaginatedResponse> localVarResponse = ListId4nsWithHttpInfo(key, privilege, offset, limit);
             return localVarResponse.Data;
             }
 
@@ -2004,10 +2004,10 @@ namespace BlueRain.ID4i.Api
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">key</param>
         /// <param name="privilege">privilege</param>
-        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
+        /// <param name="limit">The maximum count of returned elements (optional)</param>
         /// <returns>ApiResponse of Id4nPresentationPaginatedResponse</returns>
-            public ApiResponse< Id4nPresentationPaginatedResponse > ListId4nsWithHttpInfo (string key, string privilege, int? limit = null, int? offset = null)
+            public ApiResponse< Id4nPresentationPaginatedResponse > ListId4nsWithHttpInfo (string key, string privilege, int? offset = null, int? limit = null)
             {
                     // verify the required parameter 'key' is set
                     if (key == null)
@@ -2042,8 +2042,8 @@ namespace BlueRain.ID4i.Api
 
                 if (key != null) localVarPathParams.Add("key", Configuration.ApiClient.ParameterToString(key)); // path parameter
                 if (privilege != null) localVarPathParams.Add("privilege", Configuration.ApiClient.ParameterToString(privilege)); // path parameter
-                if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
                 if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+                if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
 
                 // authentication (Authorization) required
                         if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2075,12 +2075,12 @@ namespace BlueRain.ID4i.Api
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="key">key</param>
             /// <param name="privilege">privilege</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of Id4nPresentationPaginatedResponse</returns>
-            public async System.Threading.Tasks.Task<Id4nPresentationPaginatedResponse> ListId4nsAsync (string key, string privilege, int? limit = null, int? offset = null)
+            public async System.Threading.Tasks.Task<Id4nPresentationPaginatedResponse> ListId4nsAsync (string key, string privilege, int? offset = null, int? limit = null)
                 {
-            ApiResponse<Id4nPresentationPaginatedResponse> localVarResponse = await ListId4nsAsyncWithHttpInfo(key, privilege, limit, offset);
+            ApiResponse<Id4nPresentationPaginatedResponse> localVarResponse = await ListId4nsAsyncWithHttpInfo(key, privilege, offset, limit);
                 return localVarResponse.Data;
 
                 }
@@ -2091,10 +2091,10 @@ namespace BlueRain.ID4i.Api
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="key">key</param>
             /// <param name="privilege">privilege</param>
-            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
+            /// <param name="limit">The maximum count of returned elements (optional)</param>
             /// <returns>Task of ApiResponse (Id4nPresentationPaginatedResponse)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<Id4nPresentationPaginatedResponse>> ListId4nsAsyncWithHttpInfo (string key, string privilege, int? limit = null, int? offset = null)
+                public async System.Threading.Tasks.Task<ApiResponse<Id4nPresentationPaginatedResponse>> ListId4nsAsyncWithHttpInfo (string key, string privilege, int? offset = null, int? limit = null)
                 {
                         // verify the required parameter 'key' is set
                         if (key == null)
@@ -2129,8 +2129,8 @@ namespace BlueRain.ID4i.Api
 
                     if (key != null) localVarPathParams.Add("key", Configuration.ApiClient.ParameterToString(key)); // path parameter
                     if (privilege != null) localVarPathParams.Add("privilege", Configuration.ApiClient.ParameterToString(privilege)); // path parameter
-                    if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
                     if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+                    if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
 
                     // authentication (Authorization) required
                             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2333,34 +2333,34 @@ namespace BlueRain.ID4i.Api
             /// Remove id4ns of a privilege 
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id4ns">id4ns</param>
         /// <param name="key">key</param>
         /// <param name="privilege">privilege</param>
+        /// <param name="id4ns">id4ns</param>
         /// <returns></returns>
-            public void RemoveApiKeyPrivilegeForId4ns (ListOfId4ns id4ns, string key, string privilege)
+            public void RemoveApiKeyPrivilegeForId4ns (string key, string privilege, ListOfId4ns id4ns)
             {
-        RemoveApiKeyPrivilegeForId4nsWithHttpInfo(id4ns, key, privilege);
+        RemoveApiKeyPrivilegeForId4nsWithHttpInfo(key, privilege, id4ns);
             }
 
             /// <summary>
             /// Remove id4ns of a privilege 
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id4ns">id4ns</param>
         /// <param name="key">key</param>
         /// <param name="privilege">privilege</param>
+        /// <param name="id4ns">id4ns</param>
         /// <returns>ApiResponse of Object(void)</returns>
-            public ApiResponse<Object> RemoveApiKeyPrivilegeForId4nsWithHttpInfo (ListOfId4ns id4ns, string key, string privilege)
+            public ApiResponse<Object> RemoveApiKeyPrivilegeForId4nsWithHttpInfo (string key, string privilege, ListOfId4ns id4ns)
             {
-                    // verify the required parameter 'id4ns' is set
-                    if (id4ns == null)
-                    throw new ApiException(400, "Missing required parameter 'id4ns' when calling ApiKeysApi->RemoveApiKeyPrivilegeForId4ns");
                     // verify the required parameter 'key' is set
                     if (key == null)
                     throw new ApiException(400, "Missing required parameter 'key' when calling ApiKeysApi->RemoveApiKeyPrivilegeForId4ns");
                     // verify the required parameter 'privilege' is set
                     if (privilege == null)
                     throw new ApiException(400, "Missing required parameter 'privilege' when calling ApiKeysApi->RemoveApiKeyPrivilegeForId4ns");
+                    // verify the required parameter 'id4ns' is set
+                    if (id4ns == null)
+                    throw new ApiException(400, "Missing required parameter 'id4ns' when calling ApiKeysApi->RemoveApiKeyPrivilegeForId4ns");
 
             var localVarPath = "./api/v1/apikeys/{key}/privileges/{privilege}/id4ns";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2425,13 +2425,13 @@ namespace BlueRain.ID4i.Api
                 /// Remove id4ns of a privilege 
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="id4ns">id4ns</param>
             /// <param name="key">key</param>
             /// <param name="privilege">privilege</param>
+            /// <param name="id4ns">id4ns</param>
             /// <returns>Task of void</returns>
-            public async System.Threading.Tasks.Task RemoveApiKeyPrivilegeForId4nsAsync (ListOfId4ns id4ns, string key, string privilege)
+            public async System.Threading.Tasks.Task RemoveApiKeyPrivilegeForId4nsAsync (string key, string privilege, ListOfId4ns id4ns)
                 {
-            await RemoveApiKeyPrivilegeForId4nsAsyncWithHttpInfo(id4ns, key, privilege);
+            await RemoveApiKeyPrivilegeForId4nsAsyncWithHttpInfo(key, privilege, id4ns);
 
                 }
 
@@ -2439,21 +2439,21 @@ namespace BlueRain.ID4i.Api
                 /// Remove id4ns of a privilege 
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="id4ns">id4ns</param>
             /// <param name="key">key</param>
             /// <param name="privilege">privilege</param>
+            /// <param name="id4ns">id4ns</param>
             /// <returns>Task of ApiResponse</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<Object>> RemoveApiKeyPrivilegeForId4nsAsyncWithHttpInfo (ListOfId4ns id4ns, string key, string privilege)
+                public async System.Threading.Tasks.Task<ApiResponse<Object>> RemoveApiKeyPrivilegeForId4nsAsyncWithHttpInfo (string key, string privilege, ListOfId4ns id4ns)
                 {
-                        // verify the required parameter 'id4ns' is set
-                        if (id4ns == null)
-                        throw new ApiException(400, "Missing required parameter 'id4ns' when calling ApiKeysApi->RemoveApiKeyPrivilegeForId4ns");
                         // verify the required parameter 'key' is set
                         if (key == null)
                         throw new ApiException(400, "Missing required parameter 'key' when calling ApiKeysApi->RemoveApiKeyPrivilegeForId4ns");
                         // verify the required parameter 'privilege' is set
                         if (privilege == null)
                         throw new ApiException(400, "Missing required parameter 'privilege' when calling ApiKeysApi->RemoveApiKeyPrivilegeForId4ns");
+                        // verify the required parameter 'id4ns' is set
+                        if (id4ns == null)
+                        throw new ApiException(400, "Missing required parameter 'id4ns' when calling ApiKeysApi->RemoveApiKeyPrivilegeForId4ns");
 
                 var localVarPath = "./api/v1/apikeys/{key}/privileges/{privilege}/id4ns";
                 var localVarPathParams = new Dictionary<String, String>();
@@ -2518,29 +2518,29 @@ namespace BlueRain.ID4i.Api
             /// Update API keys API keys can be updated with new labels, and be activated and deactivated. The secret or UUID cannot be changed.
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiKeyChange">The new values to apply.</param>
         /// <param name="key">The API key to be updated.</param>
+        /// <param name="apiKeyChange">The new values to apply.</param>
         /// <returns></returns>
-            public void UpdateApiKey (ApiKeyChangeRequest apiKeyChange, string key)
+            public void UpdateApiKey (string key, ApiKeyChangeRequest apiKeyChange)
             {
-        UpdateApiKeyWithHttpInfo(apiKeyChange, key);
+        UpdateApiKeyWithHttpInfo(key, apiKeyChange);
             }
 
             /// <summary>
             /// Update API keys API keys can be updated with new labels, and be activated and deactivated. The secret or UUID cannot be changed.
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="apiKeyChange">The new values to apply.</param>
         /// <param name="key">The API key to be updated.</param>
+        /// <param name="apiKeyChange">The new values to apply.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-            public ApiResponse<Object> UpdateApiKeyWithHttpInfo (ApiKeyChangeRequest apiKeyChange, string key)
+            public ApiResponse<Object> UpdateApiKeyWithHttpInfo (string key, ApiKeyChangeRequest apiKeyChange)
             {
-                    // verify the required parameter 'apiKeyChange' is set
-                    if (apiKeyChange == null)
-                    throw new ApiException(400, "Missing required parameter 'apiKeyChange' when calling ApiKeysApi->UpdateApiKey");
                     // verify the required parameter 'key' is set
                     if (key == null)
                     throw new ApiException(400, "Missing required parameter 'key' when calling ApiKeysApi->UpdateApiKey");
+                    // verify the required parameter 'apiKeyChange' is set
+                    if (apiKeyChange == null)
+                    throw new ApiException(400, "Missing required parameter 'apiKeyChange' when calling ApiKeysApi->UpdateApiKey");
 
             var localVarPath = "./api/v1/apikeys/{key}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -2604,12 +2604,12 @@ namespace BlueRain.ID4i.Api
                 /// Update API keys API keys can be updated with new labels, and be activated and deactivated. The secret or UUID cannot be changed.
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="apiKeyChange">The new values to apply.</param>
             /// <param name="key">The API key to be updated.</param>
+            /// <param name="apiKeyChange">The new values to apply.</param>
             /// <returns>Task of void</returns>
-            public async System.Threading.Tasks.Task UpdateApiKeyAsync (ApiKeyChangeRequest apiKeyChange, string key)
+            public async System.Threading.Tasks.Task UpdateApiKeyAsync (string key, ApiKeyChangeRequest apiKeyChange)
                 {
-            await UpdateApiKeyAsyncWithHttpInfo(apiKeyChange, key);
+            await UpdateApiKeyAsyncWithHttpInfo(key, apiKeyChange);
 
                 }
 
@@ -2617,17 +2617,17 @@ namespace BlueRain.ID4i.Api
                 /// Update API keys API keys can be updated with new labels, and be activated and deactivated. The secret or UUID cannot be changed.
                 /// </summary>
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
-            /// <param name="apiKeyChange">The new values to apply.</param>
             /// <param name="key">The API key to be updated.</param>
+            /// <param name="apiKeyChange">The new values to apply.</param>
             /// <returns>Task of ApiResponse</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<Object>> UpdateApiKeyAsyncWithHttpInfo (ApiKeyChangeRequest apiKeyChange, string key)
+                public async System.Threading.Tasks.Task<ApiResponse<Object>> UpdateApiKeyAsyncWithHttpInfo (string key, ApiKeyChangeRequest apiKeyChange)
                 {
-                        // verify the required parameter 'apiKeyChange' is set
-                        if (apiKeyChange == null)
-                        throw new ApiException(400, "Missing required parameter 'apiKeyChange' when calling ApiKeysApi->UpdateApiKey");
                         // verify the required parameter 'key' is set
                         if (key == null)
                         throw new ApiException(400, "Missing required parameter 'key' when calling ApiKeysApi->UpdateApiKey");
+                        // verify the required parameter 'apiKeyChange' is set
+                        if (apiKeyChange == null)
+                        throw new ApiException(400, "Missing required parameter 'apiKeyChange' when calling ApiKeysApi->UpdateApiKey");
 
                 var localVarPath = "./api/v1/apikeys/{key}";
                 var localVarPathParams = new Dictionary<String, String>();
