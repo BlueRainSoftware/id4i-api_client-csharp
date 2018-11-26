@@ -895,7 +895,7 @@ Name | Type | Description  | Notes
 
 <a name="getpartnerorganizations"></a>
 # **GetPartnerOrganizations**
-> PaginatedResponseOfPartnerOrganization GetPartnerOrganizations (string organizationId, int? offset = null, int? limit = null)
+> PaginatedResponsePartnerOrganization GetPartnerOrganizations (string organizationId, int? offset = null, int? limit = null)
 
 Get partners of an organization
 
@@ -928,7 +928,7 @@ namespace Example
             try
             {
                 // Get partners of an organization
-                PaginatedResponseOfPartnerOrganization result = apiInstance.GetPartnerOrganizations(organizationId, offset, limit);
+                PaginatedResponsePartnerOrganization result = apiInstance.GetPartnerOrganizations(organizationId, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -950,7 +950,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedResponseOfPartnerOrganization**](PaginatedResponseOfPartnerOrganization.md)
+[**PaginatedResponsePartnerOrganization**](PaginatedResponsePartnerOrganization.md)
 
 ### Authorization
 

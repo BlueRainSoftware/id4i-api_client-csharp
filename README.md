@@ -13,7 +13,7 @@ For additional information, please refer to
 * https://backend.id4i.de/docs/redoc/index.html for API documentation
 * https://github.com/BlueRainSoftware/support for getting additional support
 
-- API version: 0.9.5-SNAPSHOT
+- API version: 0.9.3
 - Package version: 
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
 
@@ -201,6 +201,7 @@ Class | Method | HTTP request | Description
 *StorageApi* | [**ReadPublicDocument**](docs/StorageApi.md#readpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read public document contents
 *StorageApi* | [**UpdateDocumentMetadata**](docs/StorageApi.md#updatedocumentmetadata) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Update a document
 *StorageApi* | [**WriteToMicrostorage**](docs/StorageApi.md#writetomicrostorage) | **PUT** /api/v1/microstorage/{id4n}/{organization} | Write data to microstorage
+*TransferApi* | [**GetReceiveInfo**](docs/TransferApi.md#getreceiveinfo) | **GET** /api/v1/transfers/{id4n}/receiveInfo | Show transfer information
 *TransferApi* | [**GetSendInfo**](docs/TransferApi.md#getsendinfo) | **GET** /api/v1/transfers/{id4n}/sendInfo | Show transfer preparation information
 *TransferApi* | [**Prepare**](docs/TransferApi.md#prepare) | **PUT** /api/v1/transfers/{id4n}/sendInfo | Prepare an object for transfer
 *TransferApi* | [**Receive**](docs/TransferApi.md#receive) | **PUT** /api/v1/transfers/{id4n}/receiveInfo | Transfer a GUID or collection, obtaining it (i.e. becoming the holder) and if allowed also taking ownership
@@ -231,6 +232,7 @@ Class | Method | HTTP request | Description
      - [Model.CreateGuidRequest](docs/CreateGuidRequest.md)
      - [Model.Document](docs/Document.md)
      - [Model.DocumentUpdate](docs/DocumentUpdate.md)
+     - [Model.File](docs/File.md)
      - [Model.Guid](docs/Guid.md)
      - [Model.GuidAlias](docs/GuidAlias.md)
      - [Model.GuidCollection](docs/GuidCollection.md)
@@ -239,6 +241,8 @@ Class | Method | HTTP request | Description
      - [Model.Id4n](docs/Id4n.md)
      - [Model.Id4nPresentation](docs/Id4nPresentation.md)
      - [Model.Id4nPresentationPaginatedResponse](docs/Id4nPresentationPaginatedResponse.md)
+     - [Model.InputStream](docs/InputStream.md)
+     - [Model.InputStreamResource](docs/InputStreamResource.md)
      - [Model.ListOfId4ns](docs/ListOfId4ns.md)
      - [Model.Organization](docs/Organization.md)
      - [Model.OrganizationAddress](docs/OrganizationAddress.md)
@@ -254,22 +258,22 @@ Class | Method | HTTP request | Description
      - [Model.PaginatedGuidResponse](docs/PaginatedGuidResponse.md)
      - [Model.PaginatedHistoryItemResponse](docs/PaginatedHistoryItemResponse.md)
      - [Model.PaginatedOrganizationResponse](docs/PaginatedOrganizationResponse.md)
-     - [Model.PaginatedResponseOfApiKeyPresentation](docs/PaginatedResponseOfApiKeyPresentation.md)
-     - [Model.PaginatedResponseOfApiKeyPrivilege](docs/PaginatedResponseOfApiKeyPrivilege.md)
-     - [Model.PaginatedResponseOfApiKeyPrivilegeInfo](docs/PaginatedResponseOfApiKeyPrivilegeInfo.md)
-     - [Model.PaginatedResponseOfChangeLogEntry](docs/PaginatedResponseOfChangeLogEntry.md)
-     - [Model.PaginatedResponseOfCountry](docs/PaginatedResponseOfCountry.md)
-     - [Model.PaginatedResponseOfDocument](docs/PaginatedResponseOfDocument.md)
-     - [Model.PaginatedResponseOfGuid](docs/PaginatedResponseOfGuid.md)
-     - [Model.PaginatedResponseOfGuidCollection](docs/PaginatedResponseOfGuidCollection.md)
-     - [Model.PaginatedResponseOfHistoryItem](docs/PaginatedResponseOfHistoryItem.md)
-     - [Model.PaginatedResponseOfId4nPresentation](docs/PaginatedResponseOfId4nPresentation.md)
-     - [Model.PaginatedResponseOfOrganization](docs/PaginatedResponseOfOrganization.md)
-     - [Model.PaginatedResponseOfPartnerOrganization](docs/PaginatedResponseOfPartnerOrganization.md)
-     - [Model.PaginatedResponseOfRole](docs/PaginatedResponseOfRole.md)
-     - [Model.PaginatedResponseOfUserPresentation](docs/PaginatedResponseOfUserPresentation.md)
-     - [Model.PaginatedResponseOfUserRoles](docs/PaginatedResponseOfUserRoles.md)
-     - [Model.PaginatedResponseOfstring](docs/PaginatedResponseOfstring.md)
+     - [Model.PaginatedResponseApiKeyPresentation](docs/PaginatedResponseApiKeyPresentation.md)
+     - [Model.PaginatedResponseApiKeyPrivilege](docs/PaginatedResponseApiKeyPrivilege.md)
+     - [Model.PaginatedResponseApiKeyPrivilegeInfo](docs/PaginatedResponseApiKeyPrivilegeInfo.md)
+     - [Model.PaginatedResponseChangeLogEntry](docs/PaginatedResponseChangeLogEntry.md)
+     - [Model.PaginatedResponseCountry](docs/PaginatedResponseCountry.md)
+     - [Model.PaginatedResponseDocument](docs/PaginatedResponseDocument.md)
+     - [Model.PaginatedResponseGuid](docs/PaginatedResponseGuid.md)
+     - [Model.PaginatedResponseGuidCollection](docs/PaginatedResponseGuidCollection.md)
+     - [Model.PaginatedResponseHistoryItem](docs/PaginatedResponseHistoryItem.md)
+     - [Model.PaginatedResponseId4nPresentation](docs/PaginatedResponseId4nPresentation.md)
+     - [Model.PaginatedResponseOrganization](docs/PaginatedResponseOrganization.md)
+     - [Model.PaginatedResponsePartnerOrganization](docs/PaginatedResponsePartnerOrganization.md)
+     - [Model.PaginatedResponseRole](docs/PaginatedResponseRole.md)
+     - [Model.PaginatedResponseUserPresentation](docs/PaginatedResponseUserPresentation.md)
+     - [Model.PaginatedResponseUserRoles](docs/PaginatedResponseUserRoles.md)
+     - [Model.PaginatedResponsestring](docs/PaginatedResponsestring.md)
      - [Model.PaginatedStringResponse](docs/PaginatedStringResponse.md)
      - [Model.PaginatedUserPresentationResponse](docs/PaginatedUserPresentationResponse.md)
      - [Model.PaginatedUserRolesResponse](docs/PaginatedUserRolesResponse.md)
@@ -280,6 +284,7 @@ Class | Method | HTTP request | Description
      - [Model.RegistrationVerificationTokenPresentation](docs/RegistrationVerificationTokenPresentation.md)
      - [Model.RemoveApiKeyPrivilegeRequest](docs/RemoveApiKeyPrivilegeRequest.md)
      - [Model.RemovePartnerRequest](docs/RemovePartnerRequest.md)
+     - [Model.ResponseEntity](docs/ResponseEntity.md)
      - [Model.Role](docs/Role.md)
      - [Model.RoleResponse](docs/RoleResponse.md)
      - [Model.Route](docs/Route.md)
@@ -288,8 +293,11 @@ Class | Method | HTTP request | Description
      - [Model.RoutingOptions](docs/RoutingOptions.md)
      - [Model.ServiceCosts](docs/ServiceCosts.md)
      - [Model.SimpleMessageResponse](docs/SimpleMessageResponse.md)
+     - [Model.Timestamp](docs/Timestamp.md)
      - [Model.TransferReceiveInfo](docs/TransferReceiveInfo.md)
      - [Model.TransferSendInfo](docs/TransferSendInfo.md)
+     - [Model.URI](docs/URI.md)
+     - [Model.URL](docs/URL.md)
      - [Model.UserPresentation](docs/UserPresentation.md)
      - [Model.UserRegistrationRequest](docs/UserRegistrationRequest.md)
      - [Model.UserRegistrationResponse](docs/UserRegistrationResponse.md)

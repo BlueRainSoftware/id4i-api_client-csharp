@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 <a name="deletedocument"></a>
 # **DeleteDocument**
-> void DeleteDocument (string organizationId, string id4n, string fileName)
+> ResponseEntity DeleteDocument (string organizationId, string id4n, string fileName)
 
 Delete a document
 
@@ -121,7 +121,8 @@ namespace Example
             try
             {
                 // Delete a document
-                apiInstance.DeleteDocument(organizationId, id4n, fileName);
+                ResponseEntity result = apiInstance.DeleteDocument(organizationId, id4n, fileName);
+                Debug.WriteLine(result);
             }
             catch (Exception e)
             {
@@ -142,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**ResponseEntity**](ResponseEntity.md)
 
 ### Authorization
 

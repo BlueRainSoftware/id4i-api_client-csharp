@@ -3,12 +3,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CreatedTimestamp** | **long?** | The UTC unix timestamp of when this ID has been created | [optional] 
+**CreatedTimestamp** | **long?** | The UTC unix timestamp of when this ID has been created | 
 **HolderOrganizationId** | **string** | Organization namespace of the holder of the ID | [optional] 
-**Id4n** | **string** | The ID | [optional] 
+**Id4n** | **string** | The ID | 
 **Label** | **string** |  | [optional] 
 **OwnerOrganizationId** | **string** | Organization namespace of the ID owner | [optional] 
-**Type** | **string** | The type of ID | [optional] 
+**Type** | **string** | The type of ID | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

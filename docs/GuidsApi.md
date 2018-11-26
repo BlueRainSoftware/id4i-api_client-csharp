@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 <a name="getguidswithoutcollection"></a>
 # **GetGuidsWithoutCollection**
-> PaginatedResponseOfGuid GetGuidsWithoutCollection (string organizationId, int? offset = null, int? limit = null)
+> PaginatedResponseGuid GetGuidsWithoutCollection (string organizationId, int? offset = null, int? limit = null)
 
 Retrieve GUIDs not in any collection
 
@@ -385,7 +385,7 @@ namespace Example
             try
             {
                 // Retrieve GUIDs not in any collection
-                PaginatedResponseOfGuid result = apiInstance.GetGuidsWithoutCollection(organizationId, offset, limit);
+                PaginatedResponseGuid result = apiInstance.GetGuidsWithoutCollection(organizationId, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -407,7 +407,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedResponseOfGuid**](PaginatedResponseOfGuid.md)
+[**PaginatedResponseGuid**](PaginatedResponseGuid.md)
 
 ### Authorization
 
