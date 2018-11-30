@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 <a name="getcollections"></a>
 # **GetCollections**
-> PaginatedGuidCollectionResponse GetCollections (string id4n, string organizationId = null, int? offset = null, int? limit = null)
+> PaginatedResponseOfGuidCollection GetCollections (string id4n, string organizationId = null, int? offset = null, int? limit = null)
 
 Retrieve collections of an ID
 
@@ -186,7 +186,7 @@ namespace Example
             try
             {
                 // Retrieve collections of an ID
-                PaginatedGuidCollectionResponse result = apiInstance.GetCollections(id4n, organizationId, offset, limit);
+                PaginatedResponseOfGuidCollection result = apiInstance.GetCollections(id4n, organizationId, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedGuidCollectionResponse**](PaginatedGuidCollectionResponse.md)
+[**PaginatedResponseOfGuidCollection**](PaginatedResponseOfGuidCollection.md)
 
 ### Authorization
 

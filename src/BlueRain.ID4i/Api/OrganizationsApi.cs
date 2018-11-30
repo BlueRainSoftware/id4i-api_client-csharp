@@ -233,8 +233,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="type">Filter by this type (optional)</param>
         /// <param name="label">Filter by this label (optional)</param>
         /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
-        /// <returns>PaginatedGuidCollection</returns>
-        PaginatedGuidCollection GetAllCollectionsOfOrganization (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null);
+        /// <returns>PaginatedResponseOfGuidCollection</returns>
+        PaginatedResponseOfGuidCollection GetAllCollectionsOfOrganization (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null);
 
         /// <summary>
             /// Get collections of organization
@@ -249,8 +249,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="type">Filter by this type (optional)</param>
         /// <param name="label">Filter by this label (optional)</param>
         /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
-        /// <returns>ApiResponse of PaginatedGuidCollection</returns>
-        ApiResponse<PaginatedGuidCollection> GetAllCollectionsOfOrganizationWithHttpInfo (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null);
+        /// <returns>ApiResponse of PaginatedResponseOfGuidCollection</returns>
+        ApiResponse<PaginatedResponseOfGuidCollection> GetAllCollectionsOfOrganizationWithHttpInfo (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null);
         /// <summary>
             /// List users and their roles
             /// </summary>
@@ -261,8 +261,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">organizationId</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>PaginatedUserRolesResponse</returns>
-        PaginatedUserRolesResponse GetAllOrganizationRoles (string organizationId, int? offset = null, int? limit = null);
+        /// <returns>PaginatedResponseOfUserRoles</returns>
+        PaginatedResponseOfUserRoles GetAllOrganizationRoles (string organizationId, int? offset = null, int? limit = null);
 
         /// <summary>
             /// List users and their roles
@@ -274,8 +274,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">organizationId</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiResponse of PaginatedUserRolesResponse</returns>
-        ApiResponse<PaginatedUserRolesResponse> GetAllOrganizationRolesWithHttpInfo (string organizationId, int? offset = null, int? limit = null);
+        /// <returns>ApiResponse of PaginatedResponseOfUserRoles</returns>
+        ApiResponse<PaginatedResponseOfUserRoles> GetAllOrganizationRolesWithHttpInfo (string organizationId, int? offset = null, int? limit = null);
         /// <summary>
             /// List my privileges
             /// </summary>
@@ -307,8 +307,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="role">role (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>PaginatedOrganizationResponse</returns>
-        PaginatedOrganizationResponse GetOrganizationsOfUser (string role = null, int? offset = null, int? limit = null);
+        /// <returns>PaginatedResponseOfOrganization</returns>
+        PaginatedResponseOfOrganization GetOrganizationsOfUser (string role = null, int? offset = null, int? limit = null);
 
         /// <summary>
             /// Retrieve organizations of user
@@ -320,8 +320,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="role">role (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiResponse of PaginatedOrganizationResponse</returns>
-        ApiResponse<PaginatedOrganizationResponse> GetOrganizationsOfUserWithHttpInfo (string role = null, int? offset = null, int? limit = null);
+        /// <returns>ApiResponse of PaginatedResponseOfOrganization</returns>
+        ApiResponse<PaginatedResponseOfOrganization> GetOrganizationsOfUserWithHttpInfo (string role = null, int? offset = null, int? limit = null);
         /// <summary>
             /// Get partners of an organization
             /// </summary>
@@ -358,8 +358,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="username">username</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>PaginatedStringResponse</returns>
-        PaginatedStringResponse GetUserRoles (string organizationId, string username, int? offset = null, int? limit = null);
+        /// <returns>PaginatedResponseOfstring</returns>
+        PaginatedResponseOfstring GetUserRoles (string organizationId, string username, int? offset = null, int? limit = null);
 
         /// <summary>
             /// Get user roles by username
@@ -372,8 +372,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="username">username</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiResponse of PaginatedStringResponse</returns>
-        ApiResponse<PaginatedStringResponse> GetUserRolesWithHttpInfo (string organizationId, string username, int? offset = null, int? limit = null);
+        /// <returns>ApiResponse of PaginatedResponseOfstring</returns>
+        ApiResponse<PaginatedResponseOfstring> GetUserRolesWithHttpInfo (string organizationId, string username, int? offset = null, int? limit = null);
         /// <summary>
             /// Find users in organization
             /// </summary>
@@ -384,8 +384,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">organizationId</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>PaginatedUserPresentationResponse</returns>
-        PaginatedUserPresentationResponse GetUsersOfOrganization (string organizationId, int? offset = null, int? limit = null);
+        /// <returns>PaginatedResponseOfUserPresentation</returns>
+        PaginatedResponseOfUserPresentation GetUsersOfOrganization (string organizationId, int? offset = null, int? limit = null);
 
         /// <summary>
             /// Find users in organization
@@ -397,8 +397,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">organizationId</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiResponse of PaginatedUserPresentationResponse</returns>
-        ApiResponse<PaginatedUserPresentationResponse> GetUsersOfOrganizationWithHttpInfo (string organizationId, int? offset = null, int? limit = null);
+        /// <returns>ApiResponse of PaginatedResponseOfUserPresentation</returns>
+        ApiResponse<PaginatedResponseOfUserPresentation> GetUsersOfOrganizationWithHttpInfo (string organizationId, int? offset = null, int? limit = null);
         /// <summary>
             /// Invite Users
             /// </summary>
@@ -431,8 +431,8 @@ namespace BlueRain.ID4i.Api
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>PaginatedCountryResponse</returns>
-        PaginatedCountryResponse ListCountries (int? offset = null, int? limit = null);
+        /// <returns>PaginatedResponseOfCountry</returns>
+        PaginatedResponseOfCountry ListCountries (int? offset = null, int? limit = null);
 
         /// <summary>
             /// List countries
@@ -443,8 +443,8 @@ namespace BlueRain.ID4i.Api
         /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiResponse of PaginatedCountryResponse</returns>
-        ApiResponse<PaginatedCountryResponse> ListCountriesWithHttpInfo (int? offset = null, int? limit = null);
+        /// <returns>ApiResponse of PaginatedResponseOfCountry</returns>
+        ApiResponse<PaginatedResponseOfCountry> ListCountriesWithHttpInfo (int? offset = null, int? limit = null);
         /// <summary>
             /// Remove partner
             /// </summary>
@@ -795,8 +795,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="type">Filter by this type (optional)</param>
             /// <param name="label">Filter by this label (optional)</param>
             /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
-            /// <returns>Task of PaginatedGuidCollection</returns>
-            System.Threading.Tasks.Task<PaginatedGuidCollection> GetAllCollectionsOfOrganizationAsync (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null);
+            /// <returns>Task of PaginatedResponseOfGuidCollection</returns>
+            System.Threading.Tasks.Task<PaginatedResponseOfGuidCollection> GetAllCollectionsOfOrganizationAsync (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null);
 
                 /// <summary>
                 /// Get collections of organization
@@ -811,8 +811,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="type">Filter by this type (optional)</param>
             /// <param name="label">Filter by this label (optional)</param>
             /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
-            /// <returns>Task of ApiResponse (PaginatedGuidCollection)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedGuidCollection>> GetAllCollectionsOfOrganizationAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null);
+            /// <returns>Task of ApiResponse (PaginatedResponseOfGuidCollection)</returns>
+                System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfGuidCollection>> GetAllCollectionsOfOrganizationAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null);
                 /// <summary>
                 /// List users and their roles
                 /// </summary>
@@ -823,8 +823,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="organizationId">organizationId</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of PaginatedUserRolesResponse</returns>
-            System.Threading.Tasks.Task<PaginatedUserRolesResponse> GetAllOrganizationRolesAsync (string organizationId, int? offset = null, int? limit = null);
+            /// <returns>Task of PaginatedResponseOfUserRoles</returns>
+            System.Threading.Tasks.Task<PaginatedResponseOfUserRoles> GetAllOrganizationRolesAsync (string organizationId, int? offset = null, int? limit = null);
 
                 /// <summary>
                 /// List users and their roles
@@ -836,8 +836,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="organizationId">organizationId</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiResponse (PaginatedUserRolesResponse)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedUserRolesResponse>> GetAllOrganizationRolesAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null);
+            /// <returns>Task of ApiResponse (PaginatedResponseOfUserRoles)</returns>
+                System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfUserRoles>> GetAllOrganizationRolesAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null);
                 /// <summary>
                 /// List my privileges
                 /// </summary>
@@ -869,8 +869,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="role">role (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of PaginatedOrganizationResponse</returns>
-            System.Threading.Tasks.Task<PaginatedOrganizationResponse> GetOrganizationsOfUserAsync (string role = null, int? offset = null, int? limit = null);
+            /// <returns>Task of PaginatedResponseOfOrganization</returns>
+            System.Threading.Tasks.Task<PaginatedResponseOfOrganization> GetOrganizationsOfUserAsync (string role = null, int? offset = null, int? limit = null);
 
                 /// <summary>
                 /// Retrieve organizations of user
@@ -882,8 +882,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="role">role (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiResponse (PaginatedOrganizationResponse)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedOrganizationResponse>> GetOrganizationsOfUserAsyncWithHttpInfo (string role = null, int? offset = null, int? limit = null);
+            /// <returns>Task of ApiResponse (PaginatedResponseOfOrganization)</returns>
+                System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfOrganization>> GetOrganizationsOfUserAsyncWithHttpInfo (string role = null, int? offset = null, int? limit = null);
                 /// <summary>
                 /// Get partners of an organization
                 /// </summary>
@@ -920,8 +920,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="username">username</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of PaginatedStringResponse</returns>
-            System.Threading.Tasks.Task<PaginatedStringResponse> GetUserRolesAsync (string organizationId, string username, int? offset = null, int? limit = null);
+            /// <returns>Task of PaginatedResponseOfstring</returns>
+            System.Threading.Tasks.Task<PaginatedResponseOfstring> GetUserRolesAsync (string organizationId, string username, int? offset = null, int? limit = null);
 
                 /// <summary>
                 /// Get user roles by username
@@ -934,8 +934,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="username">username</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiResponse (PaginatedStringResponse)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedStringResponse>> GetUserRolesAsyncWithHttpInfo (string organizationId, string username, int? offset = null, int? limit = null);
+            /// <returns>Task of ApiResponse (PaginatedResponseOfstring)</returns>
+                System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfstring>> GetUserRolesAsyncWithHttpInfo (string organizationId, string username, int? offset = null, int? limit = null);
                 /// <summary>
                 /// Find users in organization
                 /// </summary>
@@ -946,8 +946,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="organizationId">organizationId</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of PaginatedUserPresentationResponse</returns>
-            System.Threading.Tasks.Task<PaginatedUserPresentationResponse> GetUsersOfOrganizationAsync (string organizationId, int? offset = null, int? limit = null);
+            /// <returns>Task of PaginatedResponseOfUserPresentation</returns>
+            System.Threading.Tasks.Task<PaginatedResponseOfUserPresentation> GetUsersOfOrganizationAsync (string organizationId, int? offset = null, int? limit = null);
 
                 /// <summary>
                 /// Find users in organization
@@ -959,8 +959,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="organizationId">organizationId</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiResponse (PaginatedUserPresentationResponse)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedUserPresentationResponse>> GetUsersOfOrganizationAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null);
+            /// <returns>Task of ApiResponse (PaginatedResponseOfUserPresentation)</returns>
+                System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfUserPresentation>> GetUsersOfOrganizationAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null);
                 /// <summary>
                 /// Invite Users
                 /// </summary>
@@ -993,8 +993,8 @@ namespace BlueRain.ID4i.Api
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of PaginatedCountryResponse</returns>
-            System.Threading.Tasks.Task<PaginatedCountryResponse> ListCountriesAsync (int? offset = null, int? limit = null);
+            /// <returns>Task of PaginatedResponseOfCountry</returns>
+            System.Threading.Tasks.Task<PaginatedResponseOfCountry> ListCountriesAsync (int? offset = null, int? limit = null);
 
                 /// <summary>
                 /// List countries
@@ -1005,8 +1005,8 @@ namespace BlueRain.ID4i.Api
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiResponse (PaginatedCountryResponse)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedCountryResponse>> ListCountriesAsyncWithHttpInfo (int? offset = null, int? limit = null);
+            /// <returns>Task of ApiResponse (PaginatedResponseOfCountry)</returns>
+                System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfCountry>> ListCountriesAsyncWithHttpInfo (int? offset = null, int? limit = null);
                 /// <summary>
                 /// Remove partner
                 /// </summary>
@@ -2666,10 +2666,10 @@ namespace BlueRain.ID4i.Api
         /// <param name="type">Filter by this type (optional)</param>
         /// <param name="label">Filter by this label (optional)</param>
         /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
-        /// <returns>PaginatedGuidCollection</returns>
-            public PaginatedGuidCollection GetAllCollectionsOfOrganization (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null)
+        /// <returns>PaginatedResponseOfGuidCollection</returns>
+            public PaginatedResponseOfGuidCollection GetAllCollectionsOfOrganization (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null)
             {
-        ApiResponse<PaginatedGuidCollection> localVarResponse = GetAllCollectionsOfOrganizationWithHttpInfo(organizationId, offset, limit, type, label, labelPrefix);
+        ApiResponse<PaginatedResponseOfGuidCollection> localVarResponse = GetAllCollectionsOfOrganizationWithHttpInfo(organizationId, offset, limit, type, label, labelPrefix);
             return localVarResponse.Data;
             }
 
@@ -2683,8 +2683,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="type">Filter by this type (optional)</param>
         /// <param name="label">Filter by this label (optional)</param>
         /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
-        /// <returns>ApiResponse of PaginatedGuidCollection</returns>
-            public ApiResponse< PaginatedGuidCollection > GetAllCollectionsOfOrganizationWithHttpInfo (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null)
+        /// <returns>ApiResponse of PaginatedResponseOfGuidCollection</returns>
+            public ApiResponse< PaginatedResponseOfGuidCollection > GetAllCollectionsOfOrganizationWithHttpInfo (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null)
             {
                     // verify the required parameter 'organizationId' is set
                     if (organizationId == null)
@@ -2740,9 +2740,9 @@ namespace BlueRain.ID4i.Api
             if (exception != null) throw exception;
             }
 
-                return new ApiResponse<PaginatedGuidCollection>(localVarStatusCode,
+                return new ApiResponse<PaginatedResponseOfGuidCollection>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (PaginatedGuidCollection) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedGuidCollection)));
+                (PaginatedResponseOfGuidCollection) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseOfGuidCollection)));
             }
 
                 /// <summary>
@@ -2755,10 +2755,10 @@ namespace BlueRain.ID4i.Api
             /// <param name="type">Filter by this type (optional)</param>
             /// <param name="label">Filter by this label (optional)</param>
             /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
-            /// <returns>Task of PaginatedGuidCollection</returns>
-            public async System.Threading.Tasks.Task<PaginatedGuidCollection> GetAllCollectionsOfOrganizationAsync (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null)
+            /// <returns>Task of PaginatedResponseOfGuidCollection</returns>
+            public async System.Threading.Tasks.Task<PaginatedResponseOfGuidCollection> GetAllCollectionsOfOrganizationAsync (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null)
                 {
-            ApiResponse<PaginatedGuidCollection> localVarResponse = await GetAllCollectionsOfOrganizationAsyncWithHttpInfo(organizationId, offset, limit, type, label, labelPrefix);
+            ApiResponse<PaginatedResponseOfGuidCollection> localVarResponse = await GetAllCollectionsOfOrganizationAsyncWithHttpInfo(organizationId, offset, limit, type, label, labelPrefix);
                 return localVarResponse.Data;
 
                 }
@@ -2773,8 +2773,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="type">Filter by this type (optional)</param>
             /// <param name="label">Filter by this label (optional)</param>
             /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
-            /// <returns>Task of ApiResponse (PaginatedGuidCollection)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedGuidCollection>> GetAllCollectionsOfOrganizationAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null)
+            /// <returns>Task of ApiResponse (PaginatedResponseOfGuidCollection)</returns>
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfGuidCollection>> GetAllCollectionsOfOrganizationAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null)
                 {
                         // verify the required parameter 'organizationId' is set
                         if (organizationId == null)
@@ -2830,9 +2830,9 @@ namespace BlueRain.ID4i.Api
                 if (exception != null) throw exception;
                 }
 
-                    return new ApiResponse<PaginatedGuidCollection>(localVarStatusCode,
+                    return new ApiResponse<PaginatedResponseOfGuidCollection>(localVarStatusCode,
                     localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                    (PaginatedGuidCollection) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedGuidCollection)));
+                    (PaginatedResponseOfGuidCollection) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseOfGuidCollection)));
                 }
 
             /// <summary>
@@ -2842,10 +2842,10 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">organizationId</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>PaginatedUserRolesResponse</returns>
-            public PaginatedUserRolesResponse GetAllOrganizationRoles (string organizationId, int? offset = null, int? limit = null)
+        /// <returns>PaginatedResponseOfUserRoles</returns>
+            public PaginatedResponseOfUserRoles GetAllOrganizationRoles (string organizationId, int? offset = null, int? limit = null)
             {
-        ApiResponse<PaginatedUserRolesResponse> localVarResponse = GetAllOrganizationRolesWithHttpInfo(organizationId, offset, limit);
+        ApiResponse<PaginatedResponseOfUserRoles> localVarResponse = GetAllOrganizationRolesWithHttpInfo(organizationId, offset, limit);
             return localVarResponse.Data;
             }
 
@@ -2856,8 +2856,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">organizationId</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiResponse of PaginatedUserRolesResponse</returns>
-            public ApiResponse< PaginatedUserRolesResponse > GetAllOrganizationRolesWithHttpInfo (string organizationId, int? offset = null, int? limit = null)
+        /// <returns>ApiResponse of PaginatedResponseOfUserRoles</returns>
+            public ApiResponse< PaginatedResponseOfUserRoles > GetAllOrganizationRolesWithHttpInfo (string organizationId, int? offset = null, int? limit = null)
             {
                     // verify the required parameter 'organizationId' is set
                     if (organizationId == null)
@@ -2910,9 +2910,9 @@ namespace BlueRain.ID4i.Api
             if (exception != null) throw exception;
             }
 
-                return new ApiResponse<PaginatedUserRolesResponse>(localVarStatusCode,
+                return new ApiResponse<PaginatedResponseOfUserRoles>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (PaginatedUserRolesResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedUserRolesResponse)));
+                (PaginatedResponseOfUserRoles) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseOfUserRoles)));
             }
 
                 /// <summary>
@@ -2922,10 +2922,10 @@ namespace BlueRain.ID4i.Api
             /// <param name="organizationId">organizationId</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of PaginatedUserRolesResponse</returns>
-            public async System.Threading.Tasks.Task<PaginatedUserRolesResponse> GetAllOrganizationRolesAsync (string organizationId, int? offset = null, int? limit = null)
+            /// <returns>Task of PaginatedResponseOfUserRoles</returns>
+            public async System.Threading.Tasks.Task<PaginatedResponseOfUserRoles> GetAllOrganizationRolesAsync (string organizationId, int? offset = null, int? limit = null)
                 {
-            ApiResponse<PaginatedUserRolesResponse> localVarResponse = await GetAllOrganizationRolesAsyncWithHttpInfo(organizationId, offset, limit);
+            ApiResponse<PaginatedResponseOfUserRoles> localVarResponse = await GetAllOrganizationRolesAsyncWithHttpInfo(organizationId, offset, limit);
                 return localVarResponse.Data;
 
                 }
@@ -2937,8 +2937,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="organizationId">organizationId</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiResponse (PaginatedUserRolesResponse)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedUserRolesResponse>> GetAllOrganizationRolesAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null)
+            /// <returns>Task of ApiResponse (PaginatedResponseOfUserRoles)</returns>
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfUserRoles>> GetAllOrganizationRolesAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null)
                 {
                         // verify the required parameter 'organizationId' is set
                         if (organizationId == null)
@@ -2991,9 +2991,9 @@ namespace BlueRain.ID4i.Api
                 if (exception != null) throw exception;
                 }
 
-                    return new ApiResponse<PaginatedUserRolesResponse>(localVarStatusCode,
+                    return new ApiResponse<PaginatedResponseOfUserRoles>(localVarStatusCode,
                     localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                    (PaginatedUserRolesResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedUserRolesResponse)));
+                    (PaginatedResponseOfUserRoles) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseOfUserRoles)));
                 }
 
             /// <summary>
@@ -3152,10 +3152,10 @@ namespace BlueRain.ID4i.Api
         /// <param name="role">role (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>PaginatedOrganizationResponse</returns>
-            public PaginatedOrganizationResponse GetOrganizationsOfUser (string role = null, int? offset = null, int? limit = null)
+        /// <returns>PaginatedResponseOfOrganization</returns>
+            public PaginatedResponseOfOrganization GetOrganizationsOfUser (string role = null, int? offset = null, int? limit = null)
             {
-        ApiResponse<PaginatedOrganizationResponse> localVarResponse = GetOrganizationsOfUserWithHttpInfo(role, offset, limit);
+        ApiResponse<PaginatedResponseOfOrganization> localVarResponse = GetOrganizationsOfUserWithHttpInfo(role, offset, limit);
             return localVarResponse.Data;
             }
 
@@ -3166,8 +3166,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="role">role (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiResponse of PaginatedOrganizationResponse</returns>
-            public ApiResponse< PaginatedOrganizationResponse > GetOrganizationsOfUserWithHttpInfo (string role = null, int? offset = null, int? limit = null)
+        /// <returns>ApiResponse of PaginatedResponseOfOrganization</returns>
+            public ApiResponse< PaginatedResponseOfOrganization > GetOrganizationsOfUserWithHttpInfo (string role = null, int? offset = null, int? limit = null)
             {
 
             var localVarPath = "./api/v1/user/organizations";
@@ -3217,9 +3217,9 @@ namespace BlueRain.ID4i.Api
             if (exception != null) throw exception;
             }
 
-                return new ApiResponse<PaginatedOrganizationResponse>(localVarStatusCode,
+                return new ApiResponse<PaginatedResponseOfOrganization>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (PaginatedOrganizationResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedOrganizationResponse)));
+                (PaginatedResponseOfOrganization) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseOfOrganization)));
             }
 
                 /// <summary>
@@ -3229,10 +3229,10 @@ namespace BlueRain.ID4i.Api
             /// <param name="role">role (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of PaginatedOrganizationResponse</returns>
-            public async System.Threading.Tasks.Task<PaginatedOrganizationResponse> GetOrganizationsOfUserAsync (string role = null, int? offset = null, int? limit = null)
+            /// <returns>Task of PaginatedResponseOfOrganization</returns>
+            public async System.Threading.Tasks.Task<PaginatedResponseOfOrganization> GetOrganizationsOfUserAsync (string role = null, int? offset = null, int? limit = null)
                 {
-            ApiResponse<PaginatedOrganizationResponse> localVarResponse = await GetOrganizationsOfUserAsyncWithHttpInfo(role, offset, limit);
+            ApiResponse<PaginatedResponseOfOrganization> localVarResponse = await GetOrganizationsOfUserAsyncWithHttpInfo(role, offset, limit);
                 return localVarResponse.Data;
 
                 }
@@ -3244,8 +3244,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="role">role (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiResponse (PaginatedOrganizationResponse)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedOrganizationResponse>> GetOrganizationsOfUserAsyncWithHttpInfo (string role = null, int? offset = null, int? limit = null)
+            /// <returns>Task of ApiResponse (PaginatedResponseOfOrganization)</returns>
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfOrganization>> GetOrganizationsOfUserAsyncWithHttpInfo (string role = null, int? offset = null, int? limit = null)
                 {
 
                 var localVarPath = "./api/v1/user/organizations";
@@ -3295,9 +3295,9 @@ namespace BlueRain.ID4i.Api
                 if (exception != null) throw exception;
                 }
 
-                    return new ApiResponse<PaginatedOrganizationResponse>(localVarStatusCode,
+                    return new ApiResponse<PaginatedResponseOfOrganization>(localVarStatusCode,
                     localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                    (PaginatedOrganizationResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedOrganizationResponse)));
+                    (PaginatedResponseOfOrganization) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseOfOrganization)));
                 }
 
             /// <summary>
@@ -3469,10 +3469,10 @@ namespace BlueRain.ID4i.Api
         /// <param name="username">username</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>PaginatedStringResponse</returns>
-            public PaginatedStringResponse GetUserRoles (string organizationId, string username, int? offset = null, int? limit = null)
+        /// <returns>PaginatedResponseOfstring</returns>
+            public PaginatedResponseOfstring GetUserRoles (string organizationId, string username, int? offset = null, int? limit = null)
             {
-        ApiResponse<PaginatedStringResponse> localVarResponse = GetUserRolesWithHttpInfo(organizationId, username, offset, limit);
+        ApiResponse<PaginatedResponseOfstring> localVarResponse = GetUserRolesWithHttpInfo(organizationId, username, offset, limit);
             return localVarResponse.Data;
             }
 
@@ -3484,8 +3484,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="username">username</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiResponse of PaginatedStringResponse</returns>
-            public ApiResponse< PaginatedStringResponse > GetUserRolesWithHttpInfo (string organizationId, string username, int? offset = null, int? limit = null)
+        /// <returns>ApiResponse of PaginatedResponseOfstring</returns>
+            public ApiResponse< PaginatedResponseOfstring > GetUserRolesWithHttpInfo (string organizationId, string username, int? offset = null, int? limit = null)
             {
                     // verify the required parameter 'organizationId' is set
                     if (organizationId == null)
@@ -3542,9 +3542,9 @@ namespace BlueRain.ID4i.Api
             if (exception != null) throw exception;
             }
 
-                return new ApiResponse<PaginatedStringResponse>(localVarStatusCode,
+                return new ApiResponse<PaginatedResponseOfstring>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (PaginatedStringResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedStringResponse)));
+                (PaginatedResponseOfstring) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseOfstring)));
             }
 
                 /// <summary>
@@ -3555,10 +3555,10 @@ namespace BlueRain.ID4i.Api
             /// <param name="username">username</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of PaginatedStringResponse</returns>
-            public async System.Threading.Tasks.Task<PaginatedStringResponse> GetUserRolesAsync (string organizationId, string username, int? offset = null, int? limit = null)
+            /// <returns>Task of PaginatedResponseOfstring</returns>
+            public async System.Threading.Tasks.Task<PaginatedResponseOfstring> GetUserRolesAsync (string organizationId, string username, int? offset = null, int? limit = null)
                 {
-            ApiResponse<PaginatedStringResponse> localVarResponse = await GetUserRolesAsyncWithHttpInfo(organizationId, username, offset, limit);
+            ApiResponse<PaginatedResponseOfstring> localVarResponse = await GetUserRolesAsyncWithHttpInfo(organizationId, username, offset, limit);
                 return localVarResponse.Data;
 
                 }
@@ -3571,8 +3571,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="username">username</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiResponse (PaginatedStringResponse)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedStringResponse>> GetUserRolesAsyncWithHttpInfo (string organizationId, string username, int? offset = null, int? limit = null)
+            /// <returns>Task of ApiResponse (PaginatedResponseOfstring)</returns>
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfstring>> GetUserRolesAsyncWithHttpInfo (string organizationId, string username, int? offset = null, int? limit = null)
                 {
                         // verify the required parameter 'organizationId' is set
                         if (organizationId == null)
@@ -3629,9 +3629,9 @@ namespace BlueRain.ID4i.Api
                 if (exception != null) throw exception;
                 }
 
-                    return new ApiResponse<PaginatedStringResponse>(localVarStatusCode,
+                    return new ApiResponse<PaginatedResponseOfstring>(localVarStatusCode,
                     localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                    (PaginatedStringResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedStringResponse)));
+                    (PaginatedResponseOfstring) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseOfstring)));
                 }
 
             /// <summary>
@@ -3641,10 +3641,10 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">organizationId</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>PaginatedUserPresentationResponse</returns>
-            public PaginatedUserPresentationResponse GetUsersOfOrganization (string organizationId, int? offset = null, int? limit = null)
+        /// <returns>PaginatedResponseOfUserPresentation</returns>
+            public PaginatedResponseOfUserPresentation GetUsersOfOrganization (string organizationId, int? offset = null, int? limit = null)
             {
-        ApiResponse<PaginatedUserPresentationResponse> localVarResponse = GetUsersOfOrganizationWithHttpInfo(organizationId, offset, limit);
+        ApiResponse<PaginatedResponseOfUserPresentation> localVarResponse = GetUsersOfOrganizationWithHttpInfo(organizationId, offset, limit);
             return localVarResponse.Data;
             }
 
@@ -3655,8 +3655,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">organizationId</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiResponse of PaginatedUserPresentationResponse</returns>
-            public ApiResponse< PaginatedUserPresentationResponse > GetUsersOfOrganizationWithHttpInfo (string organizationId, int? offset = null, int? limit = null)
+        /// <returns>ApiResponse of PaginatedResponseOfUserPresentation</returns>
+            public ApiResponse< PaginatedResponseOfUserPresentation > GetUsersOfOrganizationWithHttpInfo (string organizationId, int? offset = null, int? limit = null)
             {
                     // verify the required parameter 'organizationId' is set
                     if (organizationId == null)
@@ -3709,9 +3709,9 @@ namespace BlueRain.ID4i.Api
             if (exception != null) throw exception;
             }
 
-                return new ApiResponse<PaginatedUserPresentationResponse>(localVarStatusCode,
+                return new ApiResponse<PaginatedResponseOfUserPresentation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (PaginatedUserPresentationResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedUserPresentationResponse)));
+                (PaginatedResponseOfUserPresentation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseOfUserPresentation)));
             }
 
                 /// <summary>
@@ -3721,10 +3721,10 @@ namespace BlueRain.ID4i.Api
             /// <param name="organizationId">organizationId</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of PaginatedUserPresentationResponse</returns>
-            public async System.Threading.Tasks.Task<PaginatedUserPresentationResponse> GetUsersOfOrganizationAsync (string organizationId, int? offset = null, int? limit = null)
+            /// <returns>Task of PaginatedResponseOfUserPresentation</returns>
+            public async System.Threading.Tasks.Task<PaginatedResponseOfUserPresentation> GetUsersOfOrganizationAsync (string organizationId, int? offset = null, int? limit = null)
                 {
-            ApiResponse<PaginatedUserPresentationResponse> localVarResponse = await GetUsersOfOrganizationAsyncWithHttpInfo(organizationId, offset, limit);
+            ApiResponse<PaginatedResponseOfUserPresentation> localVarResponse = await GetUsersOfOrganizationAsyncWithHttpInfo(organizationId, offset, limit);
                 return localVarResponse.Data;
 
                 }
@@ -3736,8 +3736,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="organizationId">organizationId</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiResponse (PaginatedUserPresentationResponse)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedUserPresentationResponse>> GetUsersOfOrganizationAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null)
+            /// <returns>Task of ApiResponse (PaginatedResponseOfUserPresentation)</returns>
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfUserPresentation>> GetUsersOfOrganizationAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null)
                 {
                         // verify the required parameter 'organizationId' is set
                         if (organizationId == null)
@@ -3790,9 +3790,9 @@ namespace BlueRain.ID4i.Api
                 if (exception != null) throw exception;
                 }
 
-                    return new ApiResponse<PaginatedUserPresentationResponse>(localVarStatusCode,
+                    return new ApiResponse<PaginatedResponseOfUserPresentation>(localVarStatusCode,
                     localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                    (PaginatedUserPresentationResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedUserPresentationResponse)));
+                    (PaginatedResponseOfUserPresentation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseOfUserPresentation)));
                 }
 
             /// <summary>
@@ -3974,10 +3974,10 @@ namespace BlueRain.ID4i.Api
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>PaginatedCountryResponse</returns>
-            public PaginatedCountryResponse ListCountries (int? offset = null, int? limit = null)
+        /// <returns>PaginatedResponseOfCountry</returns>
+            public PaginatedResponseOfCountry ListCountries (int? offset = null, int? limit = null)
             {
-        ApiResponse<PaginatedCountryResponse> localVarResponse = ListCountriesWithHttpInfo(offset, limit);
+        ApiResponse<PaginatedResponseOfCountry> localVarResponse = ListCountriesWithHttpInfo(offset, limit);
             return localVarResponse.Data;
             }
 
@@ -3987,8 +3987,8 @@ namespace BlueRain.ID4i.Api
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiResponse of PaginatedCountryResponse</returns>
-            public ApiResponse< PaginatedCountryResponse > ListCountriesWithHttpInfo (int? offset = null, int? limit = null)
+        /// <returns>ApiResponse of PaginatedResponseOfCountry</returns>
+            public ApiResponse< PaginatedResponseOfCountry > ListCountriesWithHttpInfo (int? offset = null, int? limit = null)
             {
 
             var localVarPath = "./api/v1/countries";
@@ -4037,9 +4037,9 @@ namespace BlueRain.ID4i.Api
             if (exception != null) throw exception;
             }
 
-                return new ApiResponse<PaginatedCountryResponse>(localVarStatusCode,
+                return new ApiResponse<PaginatedResponseOfCountry>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (PaginatedCountryResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedCountryResponse)));
+                (PaginatedResponseOfCountry) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseOfCountry)));
             }
 
                 /// <summary>
@@ -4048,10 +4048,10 @@ namespace BlueRain.ID4i.Api
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of PaginatedCountryResponse</returns>
-            public async System.Threading.Tasks.Task<PaginatedCountryResponse> ListCountriesAsync (int? offset = null, int? limit = null)
+            /// <returns>Task of PaginatedResponseOfCountry</returns>
+            public async System.Threading.Tasks.Task<PaginatedResponseOfCountry> ListCountriesAsync (int? offset = null, int? limit = null)
                 {
-            ApiResponse<PaginatedCountryResponse> localVarResponse = await ListCountriesAsyncWithHttpInfo(offset, limit);
+            ApiResponse<PaginatedResponseOfCountry> localVarResponse = await ListCountriesAsyncWithHttpInfo(offset, limit);
                 return localVarResponse.Data;
 
                 }
@@ -4062,8 +4062,8 @@ namespace BlueRain.ID4i.Api
                 /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiResponse (PaginatedCountryResponse)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedCountryResponse>> ListCountriesAsyncWithHttpInfo (int? offset = null, int? limit = null)
+            /// <returns>Task of ApiResponse (PaginatedResponseOfCountry)</returns>
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfCountry>> ListCountriesAsyncWithHttpInfo (int? offset = null, int? limit = null)
                 {
 
                 var localVarPath = "./api/v1/countries";
@@ -4112,9 +4112,9 @@ namespace BlueRain.ID4i.Api
                 if (exception != null) throw exception;
                 }
 
-                    return new ApiResponse<PaginatedCountryResponse>(localVarStatusCode,
+                    return new ApiResponse<PaginatedResponseOfCountry>(localVarStatusCode,
                     localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                    (PaginatedCountryResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedCountryResponse)));
+                    (PaginatedResponseOfCountry) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseOfCountry)));
                 }
 
             /// <summary>

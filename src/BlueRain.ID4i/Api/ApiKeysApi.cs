@@ -146,8 +146,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="id4nConcerning">id4nConcerning (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiKeyPrivilegeInfoResponse</returns>
-        ApiKeyPrivilegeInfoResponse ListAllApiKeyPrivileges (bool? id4nConcerning = null, int? offset = null, int? limit = null);
+        /// <returns>PaginatedResponseOfApiKeyPrivilegeInfo</returns>
+        PaginatedResponseOfApiKeyPrivilegeInfo ListAllApiKeyPrivileges (bool? id4nConcerning = null, int? offset = null, int? limit = null);
 
         /// <summary>
             /// List all privileges
@@ -159,8 +159,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="id4nConcerning">id4nConcerning (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiResponse of ApiKeyPrivilegeInfoResponse</returns>
-        ApiResponse<ApiKeyPrivilegeInfoResponse> ListAllApiKeyPrivilegesWithHttpInfo (bool? id4nConcerning = null, int? offset = null, int? limit = null);
+        /// <returns>ApiResponse of PaginatedResponseOfApiKeyPrivilegeInfo</returns>
+        ApiResponse<PaginatedResponseOfApiKeyPrivilegeInfo> ListAllApiKeyPrivilegesWithHttpInfo (bool? id4nConcerning = null, int? offset = null, int? limit = null);
         /// <summary>
             /// Find API key by organization
             /// </summary>
@@ -171,8 +171,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">The namespace of the organization to search in. (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>PaginatedApiKeyResponse</returns>
-        PaginatedApiKeyResponse ListAllApiKeysOfOrganization (string organizationId = null, int? offset = null, int? limit = null);
+        /// <returns>PaginatedResponseOfApiKeyPresentation</returns>
+        PaginatedResponseOfApiKeyPresentation ListAllApiKeysOfOrganization (string organizationId = null, int? offset = null, int? limit = null);
 
         /// <summary>
             /// Find API key by organization
@@ -184,8 +184,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">The namespace of the organization to search in. (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiResponse of PaginatedApiKeyResponse</returns>
-        ApiResponse<PaginatedApiKeyResponse> ListAllApiKeysOfOrganizationWithHttpInfo (string organizationId = null, int? offset = null, int? limit = null);
+        /// <returns>ApiResponse of PaginatedResponseOfApiKeyPresentation</returns>
+        ApiResponse<PaginatedResponseOfApiKeyPresentation> ListAllApiKeysOfOrganizationWithHttpInfo (string organizationId = null, int? offset = null, int? limit = null);
         /// <summary>
             /// List privileges
             /// </summary>
@@ -196,8 +196,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="key">key</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiKeyPrivilegePaginatedResponse</returns>
-        ApiKeyPrivilegePaginatedResponse ListApiKeyPrivileges (string key, int? offset = null, int? limit = null);
+        /// <returns>PaginatedResponseOfApiKeyPrivilege</returns>
+        PaginatedResponseOfApiKeyPrivilege ListApiKeyPrivileges (string key, int? offset = null, int? limit = null);
 
         /// <summary>
             /// List privileges
@@ -209,8 +209,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="key">key</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiResponse of ApiKeyPrivilegePaginatedResponse</returns>
-        ApiResponse<ApiKeyPrivilegePaginatedResponse> ListApiKeyPrivilegesWithHttpInfo (string key, int? offset = null, int? limit = null);
+        /// <returns>ApiResponse of PaginatedResponseOfApiKeyPrivilege</returns>
+        ApiResponse<PaginatedResponseOfApiKeyPrivilege> ListApiKeyPrivilegesWithHttpInfo (string key, int? offset = null, int? limit = null);
         /// <summary>
             /// ID4ns of a privilege
             /// </summary>
@@ -222,8 +222,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="privilege">privilege</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>Id4nPresentationPaginatedResponse</returns>
-        Id4nPresentationPaginatedResponse ListId4ns (string key, string privilege, int? offset = null, int? limit = null);
+        /// <returns>PaginatedResponseOfId4nPresentation</returns>
+        PaginatedResponseOfId4nPresentation ListId4ns (string key, string privilege, int? offset = null, int? limit = null);
 
         /// <summary>
             /// ID4ns of a privilege
@@ -236,8 +236,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="privilege">privilege</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiResponse of Id4nPresentationPaginatedResponse</returns>
-        ApiResponse<Id4nPresentationPaginatedResponse> ListId4nsWithHttpInfo (string key, string privilege, int? offset = null, int? limit = null);
+        /// <returns>ApiResponse of PaginatedResponseOfId4nPresentation</returns>
+        ApiResponse<PaginatedResponseOfId4nPresentation> ListId4nsWithHttpInfo (string key, string privilege, int? offset = null, int? limit = null);
         /// <summary>
             /// Remove privilege
             /// </summary>
@@ -432,8 +432,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="id4nConcerning">id4nConcerning (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiKeyPrivilegeInfoResponse</returns>
-            System.Threading.Tasks.Task<ApiKeyPrivilegeInfoResponse> ListAllApiKeyPrivilegesAsync (bool? id4nConcerning = null, int? offset = null, int? limit = null);
+            /// <returns>Task of PaginatedResponseOfApiKeyPrivilegeInfo</returns>
+            System.Threading.Tasks.Task<PaginatedResponseOfApiKeyPrivilegeInfo> ListAllApiKeyPrivilegesAsync (bool? id4nConcerning = null, int? offset = null, int? limit = null);
 
                 /// <summary>
                 /// List all privileges
@@ -445,8 +445,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="id4nConcerning">id4nConcerning (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiResponse (ApiKeyPrivilegeInfoResponse)</returns>
-                System.Threading.Tasks.Task<ApiResponse<ApiKeyPrivilegeInfoResponse>> ListAllApiKeyPrivilegesAsyncWithHttpInfo (bool? id4nConcerning = null, int? offset = null, int? limit = null);
+            /// <returns>Task of ApiResponse (PaginatedResponseOfApiKeyPrivilegeInfo)</returns>
+                System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfApiKeyPrivilegeInfo>> ListAllApiKeyPrivilegesAsyncWithHttpInfo (bool? id4nConcerning = null, int? offset = null, int? limit = null);
                 /// <summary>
                 /// Find API key by organization
                 /// </summary>
@@ -457,8 +457,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="organizationId">The namespace of the organization to search in. (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of PaginatedApiKeyResponse</returns>
-            System.Threading.Tasks.Task<PaginatedApiKeyResponse> ListAllApiKeysOfOrganizationAsync (string organizationId = null, int? offset = null, int? limit = null);
+            /// <returns>Task of PaginatedResponseOfApiKeyPresentation</returns>
+            System.Threading.Tasks.Task<PaginatedResponseOfApiKeyPresentation> ListAllApiKeysOfOrganizationAsync (string organizationId = null, int? offset = null, int? limit = null);
 
                 /// <summary>
                 /// Find API key by organization
@@ -470,8 +470,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="organizationId">The namespace of the organization to search in. (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiResponse (PaginatedApiKeyResponse)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedApiKeyResponse>> ListAllApiKeysOfOrganizationAsyncWithHttpInfo (string organizationId = null, int? offset = null, int? limit = null);
+            /// <returns>Task of ApiResponse (PaginatedResponseOfApiKeyPresentation)</returns>
+                System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfApiKeyPresentation>> ListAllApiKeysOfOrganizationAsyncWithHttpInfo (string organizationId = null, int? offset = null, int? limit = null);
                 /// <summary>
                 /// List privileges
                 /// </summary>
@@ -482,8 +482,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="key">key</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiKeyPrivilegePaginatedResponse</returns>
-            System.Threading.Tasks.Task<ApiKeyPrivilegePaginatedResponse> ListApiKeyPrivilegesAsync (string key, int? offset = null, int? limit = null);
+            /// <returns>Task of PaginatedResponseOfApiKeyPrivilege</returns>
+            System.Threading.Tasks.Task<PaginatedResponseOfApiKeyPrivilege> ListApiKeyPrivilegesAsync (string key, int? offset = null, int? limit = null);
 
                 /// <summary>
                 /// List privileges
@@ -495,8 +495,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="key">key</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiResponse (ApiKeyPrivilegePaginatedResponse)</returns>
-                System.Threading.Tasks.Task<ApiResponse<ApiKeyPrivilegePaginatedResponse>> ListApiKeyPrivilegesAsyncWithHttpInfo (string key, int? offset = null, int? limit = null);
+            /// <returns>Task of ApiResponse (PaginatedResponseOfApiKeyPrivilege)</returns>
+                System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfApiKeyPrivilege>> ListApiKeyPrivilegesAsyncWithHttpInfo (string key, int? offset = null, int? limit = null);
                 /// <summary>
                 /// ID4ns of a privilege
                 /// </summary>
@@ -508,8 +508,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="privilege">privilege</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of Id4nPresentationPaginatedResponse</returns>
-            System.Threading.Tasks.Task<Id4nPresentationPaginatedResponse> ListId4nsAsync (string key, string privilege, int? offset = null, int? limit = null);
+            /// <returns>Task of PaginatedResponseOfId4nPresentation</returns>
+            System.Threading.Tasks.Task<PaginatedResponseOfId4nPresentation> ListId4nsAsync (string key, string privilege, int? offset = null, int? limit = null);
 
                 /// <summary>
                 /// ID4ns of a privilege
@@ -522,8 +522,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="privilege">privilege</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiResponse (Id4nPresentationPaginatedResponse)</returns>
-                System.Threading.Tasks.Task<ApiResponse<Id4nPresentationPaginatedResponse>> ListId4nsAsyncWithHttpInfo (string key, string privilege, int? offset = null, int? limit = null);
+            /// <returns>Task of ApiResponse (PaginatedResponseOfId4nPresentation)</returns>
+                System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfId4nPresentation>> ListId4nsAsyncWithHttpInfo (string key, string privilege, int? offset = null, int? limit = null);
                 /// <summary>
                 /// Remove privilege
                 /// </summary>
@@ -1519,10 +1519,10 @@ namespace BlueRain.ID4i.Api
         /// <param name="id4nConcerning">id4nConcerning (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiKeyPrivilegeInfoResponse</returns>
-            public ApiKeyPrivilegeInfoResponse ListAllApiKeyPrivileges (bool? id4nConcerning = null, int? offset = null, int? limit = null)
+        /// <returns>PaginatedResponseOfApiKeyPrivilegeInfo</returns>
+            public PaginatedResponseOfApiKeyPrivilegeInfo ListAllApiKeyPrivileges (bool? id4nConcerning = null, int? offset = null, int? limit = null)
             {
-        ApiResponse<ApiKeyPrivilegeInfoResponse> localVarResponse = ListAllApiKeyPrivilegesWithHttpInfo(id4nConcerning, offset, limit);
+        ApiResponse<PaginatedResponseOfApiKeyPrivilegeInfo> localVarResponse = ListAllApiKeyPrivilegesWithHttpInfo(id4nConcerning, offset, limit);
             return localVarResponse.Data;
             }
 
@@ -1533,8 +1533,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="id4nConcerning">id4nConcerning (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiResponse of ApiKeyPrivilegeInfoResponse</returns>
-            public ApiResponse< ApiKeyPrivilegeInfoResponse > ListAllApiKeyPrivilegesWithHttpInfo (bool? id4nConcerning = null, int? offset = null, int? limit = null)
+        /// <returns>ApiResponse of PaginatedResponseOfApiKeyPrivilegeInfo</returns>
+            public ApiResponse< PaginatedResponseOfApiKeyPrivilegeInfo > ListAllApiKeyPrivilegesWithHttpInfo (bool? id4nConcerning = null, int? offset = null, int? limit = null)
             {
 
             var localVarPath = "./api/v1/apikeys/privileges";
@@ -1584,9 +1584,9 @@ namespace BlueRain.ID4i.Api
             if (exception != null) throw exception;
             }
 
-                return new ApiResponse<ApiKeyPrivilegeInfoResponse>(localVarStatusCode,
+                return new ApiResponse<PaginatedResponseOfApiKeyPrivilegeInfo>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (ApiKeyPrivilegeInfoResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApiKeyPrivilegeInfoResponse)));
+                (PaginatedResponseOfApiKeyPrivilegeInfo) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseOfApiKeyPrivilegeInfo)));
             }
 
                 /// <summary>
@@ -1596,10 +1596,10 @@ namespace BlueRain.ID4i.Api
             /// <param name="id4nConcerning">id4nConcerning (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiKeyPrivilegeInfoResponse</returns>
-            public async System.Threading.Tasks.Task<ApiKeyPrivilegeInfoResponse> ListAllApiKeyPrivilegesAsync (bool? id4nConcerning = null, int? offset = null, int? limit = null)
+            /// <returns>Task of PaginatedResponseOfApiKeyPrivilegeInfo</returns>
+            public async System.Threading.Tasks.Task<PaginatedResponseOfApiKeyPrivilegeInfo> ListAllApiKeyPrivilegesAsync (bool? id4nConcerning = null, int? offset = null, int? limit = null)
                 {
-            ApiResponse<ApiKeyPrivilegeInfoResponse> localVarResponse = await ListAllApiKeyPrivilegesAsyncWithHttpInfo(id4nConcerning, offset, limit);
+            ApiResponse<PaginatedResponseOfApiKeyPrivilegeInfo> localVarResponse = await ListAllApiKeyPrivilegesAsyncWithHttpInfo(id4nConcerning, offset, limit);
                 return localVarResponse.Data;
 
                 }
@@ -1611,8 +1611,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="id4nConcerning">id4nConcerning (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiResponse (ApiKeyPrivilegeInfoResponse)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<ApiKeyPrivilegeInfoResponse>> ListAllApiKeyPrivilegesAsyncWithHttpInfo (bool? id4nConcerning = null, int? offset = null, int? limit = null)
+            /// <returns>Task of ApiResponse (PaginatedResponseOfApiKeyPrivilegeInfo)</returns>
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfApiKeyPrivilegeInfo>> ListAllApiKeyPrivilegesAsyncWithHttpInfo (bool? id4nConcerning = null, int? offset = null, int? limit = null)
                 {
 
                 var localVarPath = "./api/v1/apikeys/privileges";
@@ -1662,9 +1662,9 @@ namespace BlueRain.ID4i.Api
                 if (exception != null) throw exception;
                 }
 
-                    return new ApiResponse<ApiKeyPrivilegeInfoResponse>(localVarStatusCode,
+                    return new ApiResponse<PaginatedResponseOfApiKeyPrivilegeInfo>(localVarStatusCode,
                     localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                    (ApiKeyPrivilegeInfoResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApiKeyPrivilegeInfoResponse)));
+                    (PaginatedResponseOfApiKeyPrivilegeInfo) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseOfApiKeyPrivilegeInfo)));
                 }
 
             /// <summary>
@@ -1674,10 +1674,10 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">The namespace of the organization to search in. (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>PaginatedApiKeyResponse</returns>
-            public PaginatedApiKeyResponse ListAllApiKeysOfOrganization (string organizationId = null, int? offset = null, int? limit = null)
+        /// <returns>PaginatedResponseOfApiKeyPresentation</returns>
+            public PaginatedResponseOfApiKeyPresentation ListAllApiKeysOfOrganization (string organizationId = null, int? offset = null, int? limit = null)
             {
-        ApiResponse<PaginatedApiKeyResponse> localVarResponse = ListAllApiKeysOfOrganizationWithHttpInfo(organizationId, offset, limit);
+        ApiResponse<PaginatedResponseOfApiKeyPresentation> localVarResponse = ListAllApiKeysOfOrganizationWithHttpInfo(organizationId, offset, limit);
             return localVarResponse.Data;
             }
 
@@ -1688,8 +1688,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="organizationId">The namespace of the organization to search in. (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiResponse of PaginatedApiKeyResponse</returns>
-            public ApiResponse< PaginatedApiKeyResponse > ListAllApiKeysOfOrganizationWithHttpInfo (string organizationId = null, int? offset = null, int? limit = null)
+        /// <returns>ApiResponse of PaginatedResponseOfApiKeyPresentation</returns>
+            public ApiResponse< PaginatedResponseOfApiKeyPresentation > ListAllApiKeysOfOrganizationWithHttpInfo (string organizationId = null, int? offset = null, int? limit = null)
             {
 
             var localVarPath = "./api/v1/apikeys";
@@ -1739,9 +1739,9 @@ namespace BlueRain.ID4i.Api
             if (exception != null) throw exception;
             }
 
-                return new ApiResponse<PaginatedApiKeyResponse>(localVarStatusCode,
+                return new ApiResponse<PaginatedResponseOfApiKeyPresentation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (PaginatedApiKeyResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedApiKeyResponse)));
+                (PaginatedResponseOfApiKeyPresentation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseOfApiKeyPresentation)));
             }
 
                 /// <summary>
@@ -1751,10 +1751,10 @@ namespace BlueRain.ID4i.Api
             /// <param name="organizationId">The namespace of the organization to search in. (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of PaginatedApiKeyResponse</returns>
-            public async System.Threading.Tasks.Task<PaginatedApiKeyResponse> ListAllApiKeysOfOrganizationAsync (string organizationId = null, int? offset = null, int? limit = null)
+            /// <returns>Task of PaginatedResponseOfApiKeyPresentation</returns>
+            public async System.Threading.Tasks.Task<PaginatedResponseOfApiKeyPresentation> ListAllApiKeysOfOrganizationAsync (string organizationId = null, int? offset = null, int? limit = null)
                 {
-            ApiResponse<PaginatedApiKeyResponse> localVarResponse = await ListAllApiKeysOfOrganizationAsyncWithHttpInfo(organizationId, offset, limit);
+            ApiResponse<PaginatedResponseOfApiKeyPresentation> localVarResponse = await ListAllApiKeysOfOrganizationAsyncWithHttpInfo(organizationId, offset, limit);
                 return localVarResponse.Data;
 
                 }
@@ -1766,8 +1766,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="organizationId">The namespace of the organization to search in. (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiResponse (PaginatedApiKeyResponse)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedApiKeyResponse>> ListAllApiKeysOfOrganizationAsyncWithHttpInfo (string organizationId = null, int? offset = null, int? limit = null)
+            /// <returns>Task of ApiResponse (PaginatedResponseOfApiKeyPresentation)</returns>
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfApiKeyPresentation>> ListAllApiKeysOfOrganizationAsyncWithHttpInfo (string organizationId = null, int? offset = null, int? limit = null)
                 {
 
                 var localVarPath = "./api/v1/apikeys";
@@ -1817,9 +1817,9 @@ namespace BlueRain.ID4i.Api
                 if (exception != null) throw exception;
                 }
 
-                    return new ApiResponse<PaginatedApiKeyResponse>(localVarStatusCode,
+                    return new ApiResponse<PaginatedResponseOfApiKeyPresentation>(localVarStatusCode,
                     localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                    (PaginatedApiKeyResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedApiKeyResponse)));
+                    (PaginatedResponseOfApiKeyPresentation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseOfApiKeyPresentation)));
                 }
 
             /// <summary>
@@ -1829,10 +1829,10 @@ namespace BlueRain.ID4i.Api
         /// <param name="key">key</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiKeyPrivilegePaginatedResponse</returns>
-            public ApiKeyPrivilegePaginatedResponse ListApiKeyPrivileges (string key, int? offset = null, int? limit = null)
+        /// <returns>PaginatedResponseOfApiKeyPrivilege</returns>
+            public PaginatedResponseOfApiKeyPrivilege ListApiKeyPrivileges (string key, int? offset = null, int? limit = null)
             {
-        ApiResponse<ApiKeyPrivilegePaginatedResponse> localVarResponse = ListApiKeyPrivilegesWithHttpInfo(key, offset, limit);
+        ApiResponse<PaginatedResponseOfApiKeyPrivilege> localVarResponse = ListApiKeyPrivilegesWithHttpInfo(key, offset, limit);
             return localVarResponse.Data;
             }
 
@@ -1843,8 +1843,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="key">key</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiResponse of ApiKeyPrivilegePaginatedResponse</returns>
-            public ApiResponse< ApiKeyPrivilegePaginatedResponse > ListApiKeyPrivilegesWithHttpInfo (string key, int? offset = null, int? limit = null)
+        /// <returns>ApiResponse of PaginatedResponseOfApiKeyPrivilege</returns>
+            public ApiResponse< PaginatedResponseOfApiKeyPrivilege > ListApiKeyPrivilegesWithHttpInfo (string key, int? offset = null, int? limit = null)
             {
                     // verify the required parameter 'key' is set
                     if (key == null)
@@ -1897,9 +1897,9 @@ namespace BlueRain.ID4i.Api
             if (exception != null) throw exception;
             }
 
-                return new ApiResponse<ApiKeyPrivilegePaginatedResponse>(localVarStatusCode,
+                return new ApiResponse<PaginatedResponseOfApiKeyPrivilege>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (ApiKeyPrivilegePaginatedResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApiKeyPrivilegePaginatedResponse)));
+                (PaginatedResponseOfApiKeyPrivilege) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseOfApiKeyPrivilege)));
             }
 
                 /// <summary>
@@ -1909,10 +1909,10 @@ namespace BlueRain.ID4i.Api
             /// <param name="key">key</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiKeyPrivilegePaginatedResponse</returns>
-            public async System.Threading.Tasks.Task<ApiKeyPrivilegePaginatedResponse> ListApiKeyPrivilegesAsync (string key, int? offset = null, int? limit = null)
+            /// <returns>Task of PaginatedResponseOfApiKeyPrivilege</returns>
+            public async System.Threading.Tasks.Task<PaginatedResponseOfApiKeyPrivilege> ListApiKeyPrivilegesAsync (string key, int? offset = null, int? limit = null)
                 {
-            ApiResponse<ApiKeyPrivilegePaginatedResponse> localVarResponse = await ListApiKeyPrivilegesAsyncWithHttpInfo(key, offset, limit);
+            ApiResponse<PaginatedResponseOfApiKeyPrivilege> localVarResponse = await ListApiKeyPrivilegesAsyncWithHttpInfo(key, offset, limit);
                 return localVarResponse.Data;
 
                 }
@@ -1924,8 +1924,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="key">key</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiResponse (ApiKeyPrivilegePaginatedResponse)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<ApiKeyPrivilegePaginatedResponse>> ListApiKeyPrivilegesAsyncWithHttpInfo (string key, int? offset = null, int? limit = null)
+            /// <returns>Task of ApiResponse (PaginatedResponseOfApiKeyPrivilege)</returns>
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfApiKeyPrivilege>> ListApiKeyPrivilegesAsyncWithHttpInfo (string key, int? offset = null, int? limit = null)
                 {
                         // verify the required parameter 'key' is set
                         if (key == null)
@@ -1978,9 +1978,9 @@ namespace BlueRain.ID4i.Api
                 if (exception != null) throw exception;
                 }
 
-                    return new ApiResponse<ApiKeyPrivilegePaginatedResponse>(localVarStatusCode,
+                    return new ApiResponse<PaginatedResponseOfApiKeyPrivilege>(localVarStatusCode,
                     localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                    (ApiKeyPrivilegePaginatedResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApiKeyPrivilegePaginatedResponse)));
+                    (PaginatedResponseOfApiKeyPrivilege) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseOfApiKeyPrivilege)));
                 }
 
             /// <summary>
@@ -1991,10 +1991,10 @@ namespace BlueRain.ID4i.Api
         /// <param name="privilege">privilege</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>Id4nPresentationPaginatedResponse</returns>
-            public Id4nPresentationPaginatedResponse ListId4ns (string key, string privilege, int? offset = null, int? limit = null)
+        /// <returns>PaginatedResponseOfId4nPresentation</returns>
+            public PaginatedResponseOfId4nPresentation ListId4ns (string key, string privilege, int? offset = null, int? limit = null)
             {
-        ApiResponse<Id4nPresentationPaginatedResponse> localVarResponse = ListId4nsWithHttpInfo(key, privilege, offset, limit);
+        ApiResponse<PaginatedResponseOfId4nPresentation> localVarResponse = ListId4nsWithHttpInfo(key, privilege, offset, limit);
             return localVarResponse.Data;
             }
 
@@ -2006,8 +2006,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="privilege">privilege</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiResponse of Id4nPresentationPaginatedResponse</returns>
-            public ApiResponse< Id4nPresentationPaginatedResponse > ListId4nsWithHttpInfo (string key, string privilege, int? offset = null, int? limit = null)
+        /// <returns>ApiResponse of PaginatedResponseOfId4nPresentation</returns>
+            public ApiResponse< PaginatedResponseOfId4nPresentation > ListId4nsWithHttpInfo (string key, string privilege, int? offset = null, int? limit = null)
             {
                     // verify the required parameter 'key' is set
                     if (key == null)
@@ -2064,9 +2064,9 @@ namespace BlueRain.ID4i.Api
             if (exception != null) throw exception;
             }
 
-                return new ApiResponse<Id4nPresentationPaginatedResponse>(localVarStatusCode,
+                return new ApiResponse<PaginatedResponseOfId4nPresentation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (Id4nPresentationPaginatedResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Id4nPresentationPaginatedResponse)));
+                (PaginatedResponseOfId4nPresentation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseOfId4nPresentation)));
             }
 
                 /// <summary>
@@ -2077,10 +2077,10 @@ namespace BlueRain.ID4i.Api
             /// <param name="privilege">privilege</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of Id4nPresentationPaginatedResponse</returns>
-            public async System.Threading.Tasks.Task<Id4nPresentationPaginatedResponse> ListId4nsAsync (string key, string privilege, int? offset = null, int? limit = null)
+            /// <returns>Task of PaginatedResponseOfId4nPresentation</returns>
+            public async System.Threading.Tasks.Task<PaginatedResponseOfId4nPresentation> ListId4nsAsync (string key, string privilege, int? offset = null, int? limit = null)
                 {
-            ApiResponse<Id4nPresentationPaginatedResponse> localVarResponse = await ListId4nsAsyncWithHttpInfo(key, privilege, offset, limit);
+            ApiResponse<PaginatedResponseOfId4nPresentation> localVarResponse = await ListId4nsAsyncWithHttpInfo(key, privilege, offset, limit);
                 return localVarResponse.Data;
 
                 }
@@ -2093,8 +2093,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="privilege">privilege</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiResponse (Id4nPresentationPaginatedResponse)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<Id4nPresentationPaginatedResponse>> ListId4nsAsyncWithHttpInfo (string key, string privilege, int? offset = null, int? limit = null)
+            /// <returns>Task of ApiResponse (PaginatedResponseOfId4nPresentation)</returns>
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfId4nPresentation>> ListId4nsAsyncWithHttpInfo (string key, string privilege, int? offset = null, int? limit = null)
                 {
                         // verify the required parameter 'key' is set
                         if (key == null)
@@ -2151,9 +2151,9 @@ namespace BlueRain.ID4i.Api
                 if (exception != null) throw exception;
                 }
 
-                    return new ApiResponse<Id4nPresentationPaginatedResponse>(localVarStatusCode,
+                    return new ApiResponse<PaginatedResponseOfId4nPresentation>(localVarStatusCode,
                     localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                    (Id4nPresentationPaginatedResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Id4nPresentationPaginatedResponse)));
+                    (PaginatedResponseOfId4nPresentation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseOfId4nPresentation)));
                 }
 
             /// <summary>

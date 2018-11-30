@@ -136,8 +136,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="owner">Filter by owner organization (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>PaginatedDocumentResponse</returns>
-        PaginatedDocumentResponse ListAllDocuments (string id4n, string owner = null, int? offset = null, int? limit = null);
+        /// <returns>PaginatedResponseOfDocument</returns>
+        PaginatedResponseOfDocument ListAllDocuments (string id4n, string owner = null, int? offset = null, int? limit = null);
 
         /// <summary>
             /// List documents
@@ -150,8 +150,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="owner">Filter by owner organization (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiResponse of PaginatedDocumentResponse</returns>
-        ApiResponse<PaginatedDocumentResponse> ListAllDocumentsWithHttpInfo (string id4n, string owner = null, int? offset = null, int? limit = null);
+        /// <returns>ApiResponse of PaginatedResponseOfDocument</returns>
+        ApiResponse<PaginatedResponseOfDocument> ListAllDocumentsWithHttpInfo (string id4n, string owner = null, int? offset = null, int? limit = null);
         /// <summary>
             /// List public documents
             /// </summary>
@@ -164,8 +164,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="owner">Filter by owner organization (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>PaginatedDocumentResponse</returns>
-        PaginatedDocumentResponse ListAllPublicDocuments (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null);
+        /// <returns>PaginatedResponseOfDocument</returns>
+        PaginatedResponseOfDocument ListAllPublicDocuments (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null);
 
         /// <summary>
             /// List public documents
@@ -179,8 +179,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="owner">Filter by owner organization (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiResponse of PaginatedDocumentResponse</returns>
-        ApiResponse<PaginatedDocumentResponse> ListAllPublicDocumentsWithHttpInfo (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null);
+        /// <returns>ApiResponse of PaginatedResponseOfDocument</returns>
+        ApiResponse<PaginatedResponseOfDocument> ListAllPublicDocumentsWithHttpInfo (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null);
         /// <summary>
             /// List organization specific documents
             /// </summary>
@@ -193,8 +193,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="owner">Filter by owner organization (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>PaginatedDocumentResponse</returns>
-        PaginatedDocumentResponse ListDocuments (string organizationId, string id4n, string owner = null, int? offset = null, int? limit = null);
+        /// <returns>PaginatedResponseOfDocument</returns>
+        PaginatedResponseOfDocument ListDocuments (string organizationId, string id4n, string owner = null, int? offset = null, int? limit = null);
 
         /// <summary>
             /// List organization specific documents
@@ -208,8 +208,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="owner">Filter by owner organization (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiResponse of PaginatedDocumentResponse</returns>
-        ApiResponse<PaginatedDocumentResponse> ListDocumentsWithHttpInfo (string organizationId, string id4n, string owner = null, int? offset = null, int? limit = null);
+        /// <returns>ApiResponse of PaginatedResponseOfDocument</returns>
+        ApiResponse<PaginatedResponseOfDocument> ListDocumentsWithHttpInfo (string organizationId, string id4n, string owner = null, int? offset = null, int? limit = null);
         /// <summary>
             /// Read document contents
             /// </summary>
@@ -452,8 +452,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="owner">Filter by owner organization (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of PaginatedDocumentResponse</returns>
-            System.Threading.Tasks.Task<PaginatedDocumentResponse> ListAllDocumentsAsync (string id4n, string owner = null, int? offset = null, int? limit = null);
+            /// <returns>Task of PaginatedResponseOfDocument</returns>
+            System.Threading.Tasks.Task<PaginatedResponseOfDocument> ListAllDocumentsAsync (string id4n, string owner = null, int? offset = null, int? limit = null);
 
                 /// <summary>
                 /// List documents
@@ -466,8 +466,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="owner">Filter by owner organization (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiResponse (PaginatedDocumentResponse)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedDocumentResponse>> ListAllDocumentsAsyncWithHttpInfo (string id4n, string owner = null, int? offset = null, int? limit = null);
+            /// <returns>Task of ApiResponse (PaginatedResponseOfDocument)</returns>
+                System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfDocument>> ListAllDocumentsAsyncWithHttpInfo (string id4n, string owner = null, int? offset = null, int? limit = null);
                 /// <summary>
                 /// List public documents
                 /// </summary>
@@ -480,8 +480,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="owner">Filter by owner organization (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of PaginatedDocumentResponse</returns>
-            System.Threading.Tasks.Task<PaginatedDocumentResponse> ListAllPublicDocumentsAsync (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null);
+            /// <returns>Task of PaginatedResponseOfDocument</returns>
+            System.Threading.Tasks.Task<PaginatedResponseOfDocument> ListAllPublicDocumentsAsync (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null);
 
                 /// <summary>
                 /// List public documents
@@ -495,8 +495,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="owner">Filter by owner organization (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiResponse (PaginatedDocumentResponse)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedDocumentResponse>> ListAllPublicDocumentsAsyncWithHttpInfo (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null);
+            /// <returns>Task of ApiResponse (PaginatedResponseOfDocument)</returns>
+                System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfDocument>> ListAllPublicDocumentsAsyncWithHttpInfo (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null);
                 /// <summary>
                 /// List organization specific documents
                 /// </summary>
@@ -509,8 +509,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="owner">Filter by owner organization (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of PaginatedDocumentResponse</returns>
-            System.Threading.Tasks.Task<PaginatedDocumentResponse> ListDocumentsAsync (string organizationId, string id4n, string owner = null, int? offset = null, int? limit = null);
+            /// <returns>Task of PaginatedResponseOfDocument</returns>
+            System.Threading.Tasks.Task<PaginatedResponseOfDocument> ListDocumentsAsync (string organizationId, string id4n, string owner = null, int? offset = null, int? limit = null);
 
                 /// <summary>
                 /// List organization specific documents
@@ -524,8 +524,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="owner">Filter by owner organization (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiResponse (PaginatedDocumentResponse)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedDocumentResponse>> ListDocumentsAsyncWithHttpInfo (string organizationId, string id4n, string owner = null, int? offset = null, int? limit = null);
+            /// <returns>Task of ApiResponse (PaginatedResponseOfDocument)</returns>
+                System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfDocument>> ListDocumentsAsyncWithHttpInfo (string organizationId, string id4n, string owner = null, int? offset = null, int? limit = null);
                 /// <summary>
                 /// Read document contents
                 /// </summary>
@@ -1451,10 +1451,10 @@ namespace BlueRain.ID4i.Api
         /// <param name="owner">Filter by owner organization (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>PaginatedDocumentResponse</returns>
-            public PaginatedDocumentResponse ListAllDocuments (string id4n, string owner = null, int? offset = null, int? limit = null)
+        /// <returns>PaginatedResponseOfDocument</returns>
+            public PaginatedResponseOfDocument ListAllDocuments (string id4n, string owner = null, int? offset = null, int? limit = null)
             {
-        ApiResponse<PaginatedDocumentResponse> localVarResponse = ListAllDocumentsWithHttpInfo(id4n, owner, offset, limit);
+        ApiResponse<PaginatedResponseOfDocument> localVarResponse = ListAllDocumentsWithHttpInfo(id4n, owner, offset, limit);
             return localVarResponse.Data;
             }
 
@@ -1466,8 +1466,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="owner">Filter by owner organization (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiResponse of PaginatedDocumentResponse</returns>
-            public ApiResponse< PaginatedDocumentResponse > ListAllDocumentsWithHttpInfo (string id4n, string owner = null, int? offset = null, int? limit = null)
+        /// <returns>ApiResponse of PaginatedResponseOfDocument</returns>
+            public ApiResponse< PaginatedResponseOfDocument > ListAllDocumentsWithHttpInfo (string id4n, string owner = null, int? offset = null, int? limit = null)
             {
                     // verify the required parameter 'id4n' is set
                     if (id4n == null)
@@ -1521,9 +1521,9 @@ namespace BlueRain.ID4i.Api
             if (exception != null) throw exception;
             }
 
-                return new ApiResponse<PaginatedDocumentResponse>(localVarStatusCode,
+                return new ApiResponse<PaginatedResponseOfDocument>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (PaginatedDocumentResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedDocumentResponse)));
+                (PaginatedResponseOfDocument) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseOfDocument)));
             }
 
                 /// <summary>
@@ -1534,10 +1534,10 @@ namespace BlueRain.ID4i.Api
             /// <param name="owner">Filter by owner organization (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of PaginatedDocumentResponse</returns>
-            public async System.Threading.Tasks.Task<PaginatedDocumentResponse> ListAllDocumentsAsync (string id4n, string owner = null, int? offset = null, int? limit = null)
+            /// <returns>Task of PaginatedResponseOfDocument</returns>
+            public async System.Threading.Tasks.Task<PaginatedResponseOfDocument> ListAllDocumentsAsync (string id4n, string owner = null, int? offset = null, int? limit = null)
                 {
-            ApiResponse<PaginatedDocumentResponse> localVarResponse = await ListAllDocumentsAsyncWithHttpInfo(id4n, owner, offset, limit);
+            ApiResponse<PaginatedResponseOfDocument> localVarResponse = await ListAllDocumentsAsyncWithHttpInfo(id4n, owner, offset, limit);
                 return localVarResponse.Data;
 
                 }
@@ -1550,8 +1550,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="owner">Filter by owner organization (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiResponse (PaginatedDocumentResponse)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedDocumentResponse>> ListAllDocumentsAsyncWithHttpInfo (string id4n, string owner = null, int? offset = null, int? limit = null)
+            /// <returns>Task of ApiResponse (PaginatedResponseOfDocument)</returns>
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfDocument>> ListAllDocumentsAsyncWithHttpInfo (string id4n, string owner = null, int? offset = null, int? limit = null)
                 {
                         // verify the required parameter 'id4n' is set
                         if (id4n == null)
@@ -1605,9 +1605,9 @@ namespace BlueRain.ID4i.Api
                 if (exception != null) throw exception;
                 }
 
-                    return new ApiResponse<PaginatedDocumentResponse>(localVarStatusCode,
+                    return new ApiResponse<PaginatedResponseOfDocument>(localVarStatusCode,
                     localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                    (PaginatedDocumentResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedDocumentResponse)));
+                    (PaginatedResponseOfDocument) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseOfDocument)));
                 }
 
             /// <summary>
@@ -1619,10 +1619,10 @@ namespace BlueRain.ID4i.Api
         /// <param name="owner">Filter by owner organization (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>PaginatedDocumentResponse</returns>
-            public PaginatedDocumentResponse ListAllPublicDocuments (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null)
+        /// <returns>PaginatedResponseOfDocument</returns>
+            public PaginatedResponseOfDocument ListAllPublicDocuments (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null)
             {
-        ApiResponse<PaginatedDocumentResponse> localVarResponse = ListAllPublicDocumentsWithHttpInfo(id4n, organizationId, owner, offset, limit);
+        ApiResponse<PaginatedResponseOfDocument> localVarResponse = ListAllPublicDocumentsWithHttpInfo(id4n, organizationId, owner, offset, limit);
             return localVarResponse.Data;
             }
 
@@ -1635,8 +1635,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="owner">Filter by owner organization (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiResponse of PaginatedDocumentResponse</returns>
-            public ApiResponse< PaginatedDocumentResponse > ListAllPublicDocumentsWithHttpInfo (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null)
+        /// <returns>ApiResponse of PaginatedResponseOfDocument</returns>
+            public ApiResponse< PaginatedResponseOfDocument > ListAllPublicDocumentsWithHttpInfo (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null)
             {
                     // verify the required parameter 'id4n' is set
                     if (id4n == null)
@@ -1691,9 +1691,9 @@ namespace BlueRain.ID4i.Api
             if (exception != null) throw exception;
             }
 
-                return new ApiResponse<PaginatedDocumentResponse>(localVarStatusCode,
+                return new ApiResponse<PaginatedResponseOfDocument>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (PaginatedDocumentResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedDocumentResponse)));
+                (PaginatedResponseOfDocument) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseOfDocument)));
             }
 
                 /// <summary>
@@ -1705,10 +1705,10 @@ namespace BlueRain.ID4i.Api
             /// <param name="owner">Filter by owner organization (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of PaginatedDocumentResponse</returns>
-            public async System.Threading.Tasks.Task<PaginatedDocumentResponse> ListAllPublicDocumentsAsync (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null)
+            /// <returns>Task of PaginatedResponseOfDocument</returns>
+            public async System.Threading.Tasks.Task<PaginatedResponseOfDocument> ListAllPublicDocumentsAsync (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null)
                 {
-            ApiResponse<PaginatedDocumentResponse> localVarResponse = await ListAllPublicDocumentsAsyncWithHttpInfo(id4n, organizationId, owner, offset, limit);
+            ApiResponse<PaginatedResponseOfDocument> localVarResponse = await ListAllPublicDocumentsAsyncWithHttpInfo(id4n, organizationId, owner, offset, limit);
                 return localVarResponse.Data;
 
                 }
@@ -1722,8 +1722,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="owner">Filter by owner organization (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiResponse (PaginatedDocumentResponse)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedDocumentResponse>> ListAllPublicDocumentsAsyncWithHttpInfo (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null)
+            /// <returns>Task of ApiResponse (PaginatedResponseOfDocument)</returns>
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfDocument>> ListAllPublicDocumentsAsyncWithHttpInfo (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null)
                 {
                         // verify the required parameter 'id4n' is set
                         if (id4n == null)
@@ -1778,9 +1778,9 @@ namespace BlueRain.ID4i.Api
                 if (exception != null) throw exception;
                 }
 
-                    return new ApiResponse<PaginatedDocumentResponse>(localVarStatusCode,
+                    return new ApiResponse<PaginatedResponseOfDocument>(localVarStatusCode,
                     localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                    (PaginatedDocumentResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedDocumentResponse)));
+                    (PaginatedResponseOfDocument) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseOfDocument)));
                 }
 
             /// <summary>
@@ -1792,10 +1792,10 @@ namespace BlueRain.ID4i.Api
         /// <param name="owner">Filter by owner organization (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>PaginatedDocumentResponse</returns>
-            public PaginatedDocumentResponse ListDocuments (string organizationId, string id4n, string owner = null, int? offset = null, int? limit = null)
+        /// <returns>PaginatedResponseOfDocument</returns>
+            public PaginatedResponseOfDocument ListDocuments (string organizationId, string id4n, string owner = null, int? offset = null, int? limit = null)
             {
-        ApiResponse<PaginatedDocumentResponse> localVarResponse = ListDocumentsWithHttpInfo(organizationId, id4n, owner, offset, limit);
+        ApiResponse<PaginatedResponseOfDocument> localVarResponse = ListDocumentsWithHttpInfo(organizationId, id4n, owner, offset, limit);
             return localVarResponse.Data;
             }
 
@@ -1808,8 +1808,8 @@ namespace BlueRain.ID4i.Api
         /// <param name="owner">Filter by owner organization (optional)</param>
         /// <param name="offset">Start with the n-th element (optional)</param>
         /// <param name="limit">The maximum count of returned elements (optional)</param>
-        /// <returns>ApiResponse of PaginatedDocumentResponse</returns>
-            public ApiResponse< PaginatedDocumentResponse > ListDocumentsWithHttpInfo (string organizationId, string id4n, string owner = null, int? offset = null, int? limit = null)
+        /// <returns>ApiResponse of PaginatedResponseOfDocument</returns>
+            public ApiResponse< PaginatedResponseOfDocument > ListDocumentsWithHttpInfo (string organizationId, string id4n, string owner = null, int? offset = null, int? limit = null)
             {
                     // verify the required parameter 'organizationId' is set
                     if (organizationId == null)
@@ -1867,9 +1867,9 @@ namespace BlueRain.ID4i.Api
             if (exception != null) throw exception;
             }
 
-                return new ApiResponse<PaginatedDocumentResponse>(localVarStatusCode,
+                return new ApiResponse<PaginatedResponseOfDocument>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (PaginatedDocumentResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedDocumentResponse)));
+                (PaginatedResponseOfDocument) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseOfDocument)));
             }
 
                 /// <summary>
@@ -1881,10 +1881,10 @@ namespace BlueRain.ID4i.Api
             /// <param name="owner">Filter by owner organization (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of PaginatedDocumentResponse</returns>
-            public async System.Threading.Tasks.Task<PaginatedDocumentResponse> ListDocumentsAsync (string organizationId, string id4n, string owner = null, int? offset = null, int? limit = null)
+            /// <returns>Task of PaginatedResponseOfDocument</returns>
+            public async System.Threading.Tasks.Task<PaginatedResponseOfDocument> ListDocumentsAsync (string organizationId, string id4n, string owner = null, int? offset = null, int? limit = null)
                 {
-            ApiResponse<PaginatedDocumentResponse> localVarResponse = await ListDocumentsAsyncWithHttpInfo(organizationId, id4n, owner, offset, limit);
+            ApiResponse<PaginatedResponseOfDocument> localVarResponse = await ListDocumentsAsyncWithHttpInfo(organizationId, id4n, owner, offset, limit);
                 return localVarResponse.Data;
 
                 }
@@ -1898,8 +1898,8 @@ namespace BlueRain.ID4i.Api
             /// <param name="owner">Filter by owner organization (optional)</param>
             /// <param name="offset">Start with the n-th element (optional)</param>
             /// <param name="limit">The maximum count of returned elements (optional)</param>
-            /// <returns>Task of ApiResponse (PaginatedDocumentResponse)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedDocumentResponse>> ListDocumentsAsyncWithHttpInfo (string organizationId, string id4n, string owner = null, int? offset = null, int? limit = null)
+            /// <returns>Task of ApiResponse (PaginatedResponseOfDocument)</returns>
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfDocument>> ListDocumentsAsyncWithHttpInfo (string organizationId, string id4n, string owner = null, int? offset = null, int? limit = null)
                 {
                         // verify the required parameter 'organizationId' is set
                         if (organizationId == null)
@@ -1957,9 +1957,9 @@ namespace BlueRain.ID4i.Api
                 if (exception != null) throw exception;
                 }
 
-                    return new ApiResponse<PaginatedDocumentResponse>(localVarStatusCode,
+                    return new ApiResponse<PaginatedResponseOfDocument>(localVarStatusCode,
                     localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                    (PaginatedDocumentResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedDocumentResponse)));
+                    (PaginatedResponseOfDocument) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PaginatedResponseOfDocument)));
                 }
 
             /// <summary>

@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 
 <a name="listalldocuments"></a>
 # **ListAllDocuments**
-> PaginatedDocumentResponse ListAllDocuments (string id4n, string owner = null, int? offset = null, int? limit = null)
+> PaginatedResponseOfDocument ListAllDocuments (string id4n, string owner = null, int? offset = null, int? limit = null)
 
 List documents
 
@@ -327,7 +327,7 @@ namespace Example
             try
             {
                 // List documents
-                PaginatedDocumentResponse result = apiInstance.ListAllDocuments(id4n, owner, offset, limit);
+                PaginatedResponseOfDocument result = apiInstance.ListAllDocuments(id4n, owner, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedDocumentResponse**](PaginatedDocumentResponse.md)
+[**PaginatedResponseOfDocument**](PaginatedResponseOfDocument.md)
 
 ### Authorization
 
@@ -365,7 +365,7 @@ Name | Type | Description  | Notes
 
 <a name="listallpublicdocuments"></a>
 # **ListAllPublicDocuments**
-> PaginatedDocumentResponse ListAllPublicDocuments (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null)
+> PaginatedResponseOfDocument ListAllPublicDocuments (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null)
 
 List public documents
 
@@ -400,7 +400,7 @@ namespace Example
             try
             {
                 // List public documents
-                PaginatedDocumentResponse result = apiInstance.ListAllPublicDocuments(id4n, organizationId, owner, offset, limit);
+                PaginatedResponseOfDocument result = apiInstance.ListAllPublicDocuments(id4n, organizationId, owner, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -424,7 +424,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedDocumentResponse**](PaginatedDocumentResponse.md)
+[**PaginatedResponseOfDocument**](PaginatedResponseOfDocument.md)
 
 ### Authorization
 
@@ -439,7 +439,7 @@ Name | Type | Description  | Notes
 
 <a name="listdocuments"></a>
 # **ListDocuments**
-> PaginatedDocumentResponse ListDocuments (string organizationId, string id4n, string owner = null, int? offset = null, int? limit = null)
+> PaginatedResponseOfDocument ListDocuments (string organizationId, string id4n, string owner = null, int? offset = null, int? limit = null)
 
 List organization specific documents
 
@@ -474,7 +474,7 @@ namespace Example
             try
             {
                 // List organization specific documents
-                PaginatedDocumentResponse result = apiInstance.ListDocuments(organizationId, id4n, owner, offset, limit);
+                PaginatedResponseOfDocument result = apiInstance.ListDocuments(organizationId, id4n, owner, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -498,7 +498,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedDocumentResponse**](PaginatedDocumentResponse.md)
+[**PaginatedResponseOfDocument**](PaginatedResponseOfDocument.md)
 
 ### Authorization
 
