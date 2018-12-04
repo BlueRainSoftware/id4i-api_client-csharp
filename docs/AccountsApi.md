@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 
 <a name="findusers"></a>
 # **FindUsers**
-> PaginatedUserPresentationResponse FindUsers (string usernamePrefix = null, int? offset = null, int? limit = null)
+> PaginatedResponseOfUserPresentation FindUsers (string usernamePrefix = null, int? offset = null, int? limit = null)
 
 Find users
 
@@ -246,7 +246,7 @@ namespace Example
             try
             {
                 // Find users
-                PaginatedUserPresentationResponse result = apiInstance.FindUsers(usernamePrefix, offset, limit);
+                PaginatedResponseOfUserPresentation result = apiInstance.FindUsers(usernamePrefix, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedUserPresentationResponse**](PaginatedUserPresentationResponse.md)
+[**PaginatedResponseOfUserPresentation**](PaginatedResponseOfUserPresentation.md)
 
 ### Authorization
 
@@ -283,7 +283,7 @@ Name | Type | Description  | Notes
 
 <a name="getallorganizationroles"></a>
 # **GetAllOrganizationRoles**
-> PaginatedUserRolesResponse GetAllOrganizationRoles (string organizationId, int? offset = null, int? limit = null)
+> PaginatedResponseOfUserRoles GetAllOrganizationRoles (string organizationId, int? offset = null, int? limit = null)
 
 List users and their roles
 
@@ -316,7 +316,7 @@ namespace Example
             try
             {
                 // List users and their roles
-                PaginatedUserRolesResponse result = apiInstance.GetAllOrganizationRoles(organizationId, offset, limit);
+                PaginatedResponseOfUserRoles result = apiInstance.GetAllOrganizationRoles(organizationId, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedUserRolesResponse**](PaginatedUserRolesResponse.md)
+[**PaginatedResponseOfUserRoles**](PaginatedResponseOfUserRoles.md)
 
 ### Authorization
 
@@ -353,7 +353,7 @@ Name | Type | Description  | Notes
 
 <a name="getorganizationsofuser"></a>
 # **GetOrganizationsOfUser**
-> PaginatedOrganizationResponse GetOrganizationsOfUser (string role = null, int? offset = null, int? limit = null)
+> PaginatedResponseOfOrganization GetOrganizationsOfUser (string role = null, int? offset = null, int? limit = null)
 
 Retrieve organizations of user
 
@@ -384,7 +384,7 @@ namespace Example
             try
             {
                 // Retrieve organizations of user
-                PaginatedOrganizationResponse result = apiInstance.GetOrganizationsOfUser(role, offset, limit);
+                PaginatedResponseOfOrganization result = apiInstance.GetOrganizationsOfUser(role, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -406,7 +406,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedOrganizationResponse**](PaginatedOrganizationResponse.md)
+[**PaginatedResponseOfOrganization**](PaginatedResponseOfOrganization.md)
 
 ### Authorization
 
@@ -421,7 +421,7 @@ Name | Type | Description  | Notes
 
 <a name="getuserroles"></a>
 # **GetUserRoles**
-> PaginatedStringResponse GetUserRoles (string organizationId, string username, int? offset = null, int? limit = null)
+> PaginatedResponseOfstring GetUserRoles (string organizationId, string username, int? offset = null, int? limit = null)
 
 Get user roles by username
 
@@ -453,7 +453,7 @@ namespace Example
             try
             {
                 // Get user roles by username
-                PaginatedStringResponse result = apiInstance.GetUserRoles(organizationId, username, offset, limit);
+                PaginatedResponseOfstring result = apiInstance.GetUserRoles(organizationId, username, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -476,7 +476,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedStringResponse**](PaginatedStringResponse.md)
+[**PaginatedResponseOfstring**](PaginatedResponseOfstring.md)
 
 ### Authorization
 
@@ -491,7 +491,7 @@ Name | Type | Description  | Notes
 
 <a name="getusersoforganization"></a>
 # **GetUsersOfOrganization**
-> PaginatedUserPresentationResponse GetUsersOfOrganization (string organizationId, int? offset = null, int? limit = null)
+> PaginatedResponseOfUserPresentation GetUsersOfOrganization (string organizationId, int? offset = null, int? limit = null)
 
 Find users in organization
 
@@ -524,7 +524,7 @@ namespace Example
             try
             {
                 // Find users in organization
-                PaginatedUserPresentationResponse result = apiInstance.GetUsersOfOrganization(organizationId, offset, limit);
+                PaginatedResponseOfUserPresentation result = apiInstance.GetUsersOfOrganization(organizationId, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -546,7 +546,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedUserPresentationResponse**](PaginatedUserPresentationResponse.md)
+[**PaginatedResponseOfUserPresentation**](PaginatedResponseOfUserPresentation.md)
 
 ### Authorization
 
@@ -626,7 +626,7 @@ void (empty response body)
 
 <a name="listallroles"></a>
 # **ListAllRoles**
-> RoleResponse ListAllRoles (string privilege = null, int? offset = null, int? limit = null)
+> PaginatedResponseOfRole ListAllRoles (string privilege = null, int? offset = null, int? limit = null)
 
 List roles
 
@@ -659,7 +659,7 @@ namespace Example
             try
             {
                 // List roles
-                RoleResponse result = apiInstance.ListAllRoles(privilege, offset, limit);
+                PaginatedResponseOfRole result = apiInstance.ListAllRoles(privilege, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -681,7 +681,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RoleResponse**](RoleResponse.md)
+[**PaginatedResponseOfRole**](PaginatedResponseOfRole.md)
 
 ### Authorization
 

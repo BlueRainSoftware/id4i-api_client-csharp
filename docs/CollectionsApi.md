@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
 
 <a name="getallcollectionsoforganization"></a>
 # **GetAllCollectionsOfOrganization**
-> PaginatedGuidCollection GetAllCollectionsOfOrganization (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null)
+> PaginatedResponseOfGuidCollection GetAllCollectionsOfOrganization (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null)
 
 Get collections of organization
 
@@ -308,7 +308,7 @@ namespace Example
             try
             {
                 // Get collections of organization
-                PaginatedGuidCollection result = apiInstance.GetAllCollectionsOfOrganization(organizationId, offset, limit, type, label, labelPrefix);
+                PaginatedResponseOfGuidCollection result = apiInstance.GetAllCollectionsOfOrganization(organizationId, offset, limit, type, label, labelPrefix);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedGuidCollection**](PaginatedGuidCollection.md)
+[**PaginatedResponseOfGuidCollection**](PaginatedResponseOfGuidCollection.md)
 
 ### Authorization
 
@@ -348,7 +348,7 @@ Name | Type | Description  | Notes
 
 <a name="listelementsofcollection"></a>
 # **ListElementsOfCollection**
-> PaginatedGuidResponse ListElementsOfCollection (string id4n, int? offset = null, int? limit = null)
+> PaginatedResponseOfGuid ListElementsOfCollection (string id4n, int? offset = null, int? limit = null)
 
 List contents of the collection
 
@@ -379,7 +379,7 @@ namespace Example
             try
             {
                 // List contents of the collection
-                PaginatedGuidResponse result = apiInstance.ListElementsOfCollection(id4n, offset, limit);
+                PaginatedResponseOfGuid result = apiInstance.ListElementsOfCollection(id4n, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -401,7 +401,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedGuidResponse**](PaginatedGuidResponse.md)
+[**PaginatedResponseOfGuid**](PaginatedResponseOfGuid.md)
 
 ### Authorization
 

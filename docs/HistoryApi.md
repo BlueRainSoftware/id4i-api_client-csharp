@@ -81,7 +81,7 @@ void (empty response body)
 
 <a name="filteredlist"></a>
 # **FilteredList**
-> PaginatedHistoryItemResponse FilteredList (string id4n, bool? includePrivate = null, string organization = null, List<string> type = null, List<string> qualifier = null, DateTime? fromDate = null, DateTime? toDate = null, int? offset = null, int? limit = null)
+> PaginatedResponseOfHistoryItem FilteredList (string id4n, bool? includePrivate = null, string organization = null, List<string> type = null, List<string> qualifier = null, DateTime? fromDate = null, DateTime? toDate = null, int? offset = null, int? limit = null)
 
 List history
 
@@ -120,7 +120,7 @@ namespace Example
             try
             {
                 // List history
-                PaginatedHistoryItemResponse result = apiInstance.FilteredList(id4n, includePrivate, organization, type, qualifier, fromDate, toDate, offset, limit);
+                PaginatedResponseOfHistoryItem result = apiInstance.FilteredList(id4n, includePrivate, organization, type, qualifier, fromDate, toDate, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedHistoryItemResponse**](PaginatedHistoryItemResponse.md)
+[**PaginatedResponseOfHistoryItem**](PaginatedResponseOfHistoryItem.md)
 
 ### Authorization
 
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 <a name="list"></a>
 # **List**
-> PaginatedHistoryItemResponse List (string id4n, string organizationId, bool? includePrivate = null, int? offset = null, int? limit = null)
+> PaginatedResponseOfHistoryItem List (string id4n, string organizationId, bool? includePrivate = null, int? offset = null, int? limit = null)
 
 DEPRECATED - List history
 
@@ -198,7 +198,7 @@ namespace Example
             try
             {
                 // DEPRECATED - List history
-                PaginatedHistoryItemResponse result = apiInstance.List(id4n, organizationId, includePrivate, offset, limit);
+                PaginatedResponseOfHistoryItem result = apiInstance.List(id4n, organizationId, includePrivate, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedHistoryItemResponse**](PaginatedHistoryItemResponse.md)
+[**PaginatedResponseOfHistoryItem**](PaginatedResponseOfHistoryItem.md)
 
 ### Authorization
 
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 
 <a name="retrieveitem"></a>
 # **RetrieveItem**
-> PaginatedHistoryItemResponse RetrieveItem (string id4n, string organizationId, int? sequenceId)
+> HistoryItem RetrieveItem (string id4n, string organizationId, int? sequenceId)
 
 Get history item
 
@@ -268,7 +268,7 @@ namespace Example
             try
             {
                 // Get history item
-                PaginatedHistoryItemResponse result = apiInstance.RetrieveItem(id4n, organizationId, sequenceId);
+                HistoryItem result = apiInstance.RetrieveItem(id4n, organizationId, sequenceId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -290,7 +290,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedHistoryItemResponse**](PaginatedHistoryItemResponse.md)
+[**HistoryItem**](HistoryItem.md)
 
 ### Authorization
 

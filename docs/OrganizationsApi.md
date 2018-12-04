@@ -615,7 +615,7 @@ Name | Type | Description  | Notes
 
 <a name="getallcollectionsoforganization"></a>
 # **GetAllCollectionsOfOrganization**
-> PaginatedGuidCollection GetAllCollectionsOfOrganization (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null)
+> PaginatedResponseOfGuidCollection GetAllCollectionsOfOrganization (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null)
 
 Get collections of organization
 
@@ -651,7 +651,7 @@ namespace Example
             try
             {
                 // Get collections of organization
-                PaginatedGuidCollection result = apiInstance.GetAllCollectionsOfOrganization(organizationId, offset, limit, type, label, labelPrefix);
+                PaginatedResponseOfGuidCollection result = apiInstance.GetAllCollectionsOfOrganization(organizationId, offset, limit, type, label, labelPrefix);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -676,7 +676,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedGuidCollection**](PaginatedGuidCollection.md)
+[**PaginatedResponseOfGuidCollection**](PaginatedResponseOfGuidCollection.md)
 
 ### Authorization
 
@@ -691,7 +691,7 @@ Name | Type | Description  | Notes
 
 <a name="getallorganizationroles"></a>
 # **GetAllOrganizationRoles**
-> PaginatedUserRolesResponse GetAllOrganizationRoles (string organizationId, int? offset = null, int? limit = null)
+> PaginatedResponseOfUserRoles GetAllOrganizationRoles (string organizationId, int? offset = null, int? limit = null)
 
 List users and their roles
 
@@ -724,7 +724,7 @@ namespace Example
             try
             {
                 // List users and their roles
-                PaginatedUserRolesResponse result = apiInstance.GetAllOrganizationRoles(organizationId, offset, limit);
+                PaginatedResponseOfUserRoles result = apiInstance.GetAllOrganizationRoles(organizationId, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -746,7 +746,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedUserRolesResponse**](PaginatedUserRolesResponse.md)
+[**PaginatedResponseOfUserRoles**](PaginatedResponseOfUserRoles.md)
 
 ### Authorization
 
@@ -827,7 +827,7 @@ Name | Type | Description  | Notes
 
 <a name="getorganizationsofuser"></a>
 # **GetOrganizationsOfUser**
-> PaginatedOrganizationResponse GetOrganizationsOfUser (string role = null, int? offset = null, int? limit = null)
+> PaginatedResponseOfOrganization GetOrganizationsOfUser (string role = null, int? offset = null, int? limit = null)
 
 Retrieve organizations of user
 
@@ -858,7 +858,7 @@ namespace Example
             try
             {
                 // Retrieve organizations of user
-                PaginatedOrganizationResponse result = apiInstance.GetOrganizationsOfUser(role, offset, limit);
+                PaginatedResponseOfOrganization result = apiInstance.GetOrganizationsOfUser(role, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -880,7 +880,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedOrganizationResponse**](PaginatedOrganizationResponse.md)
+[**PaginatedResponseOfOrganization**](PaginatedResponseOfOrganization.md)
 
 ### Authorization
 
@@ -895,7 +895,7 @@ Name | Type | Description  | Notes
 
 <a name="getpartnerorganizations"></a>
 # **GetPartnerOrganizations**
-> PaginatedResponsePartnerOrganization GetPartnerOrganizations (string organizationId, int? offset = null, int? limit = null)
+> PaginatedResponseOfPartnerOrganization GetPartnerOrganizations (string organizationId, int? offset = null, int? limit = null)
 
 Get partners of an organization
 
@@ -928,7 +928,7 @@ namespace Example
             try
             {
                 // Get partners of an organization
-                PaginatedResponsePartnerOrganization result = apiInstance.GetPartnerOrganizations(organizationId, offset, limit);
+                PaginatedResponseOfPartnerOrganization result = apiInstance.GetPartnerOrganizations(organizationId, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -950,7 +950,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedResponsePartnerOrganization**](PaginatedResponsePartnerOrganization.md)
+[**PaginatedResponseOfPartnerOrganization**](PaginatedResponseOfPartnerOrganization.md)
 
 ### Authorization
 
@@ -965,7 +965,7 @@ Name | Type | Description  | Notes
 
 <a name="getuserroles"></a>
 # **GetUserRoles**
-> PaginatedStringResponse GetUserRoles (string organizationId, string username, int? offset = null, int? limit = null)
+> PaginatedResponseOfstring GetUserRoles (string organizationId, string username, int? offset = null, int? limit = null)
 
 Get user roles by username
 
@@ -997,7 +997,7 @@ namespace Example
             try
             {
                 // Get user roles by username
-                PaginatedStringResponse result = apiInstance.GetUserRoles(organizationId, username, offset, limit);
+                PaginatedResponseOfstring result = apiInstance.GetUserRoles(organizationId, username, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1020,7 +1020,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedStringResponse**](PaginatedStringResponse.md)
+[**PaginatedResponseOfstring**](PaginatedResponseOfstring.md)
 
 ### Authorization
 
@@ -1035,7 +1035,7 @@ Name | Type | Description  | Notes
 
 <a name="getusersoforganization"></a>
 # **GetUsersOfOrganization**
-> PaginatedUserPresentationResponse GetUsersOfOrganization (string organizationId, int? offset = null, int? limit = null)
+> PaginatedResponseOfUserPresentation GetUsersOfOrganization (string organizationId, int? offset = null, int? limit = null)
 
 Find users in organization
 
@@ -1068,7 +1068,7 @@ namespace Example
             try
             {
                 // Find users in organization
-                PaginatedUserPresentationResponse result = apiInstance.GetUsersOfOrganization(organizationId, offset, limit);
+                PaginatedResponseOfUserPresentation result = apiInstance.GetUsersOfOrganization(organizationId, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1090,7 +1090,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedUserPresentationResponse**](PaginatedUserPresentationResponse.md)
+[**PaginatedResponseOfUserPresentation**](PaginatedResponseOfUserPresentation.md)
 
 ### Authorization
 
@@ -1170,7 +1170,7 @@ void (empty response body)
 
 <a name="listcountries"></a>
 # **ListCountries**
-> PaginatedCountryResponse ListCountries (int? offset = null, int? limit = null)
+> PaginatedResponseOfCountry ListCountries (int? offset = null, int? limit = null)
 
 List countries
 
@@ -1200,7 +1200,7 @@ namespace Example
             try
             {
                 // List countries
-                PaginatedCountryResponse result = apiInstance.ListCountries(offset, limit);
+                PaginatedResponseOfCountry result = apiInstance.ListCountries(offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -1221,7 +1221,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedCountryResponse**](PaginatedCountryResponse.md)
+[**PaginatedResponseOfCountry**](PaginatedResponseOfCountry.md)
 
 ### Authorization
 
