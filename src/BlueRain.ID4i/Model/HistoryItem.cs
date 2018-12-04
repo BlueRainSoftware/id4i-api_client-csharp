@@ -268,6 +268,13 @@ namespace BlueRain.ID4i.Model
         public string OrganizationId { get; set; }
 
         /// <summary>
+        /// Owner of the history item
+        /// </summary>
+        /// <value>Owner of the history item</value>
+        [DataMember(Name="ownerOrganizationId", EmitDefaultValue=false)]
+        public string OwnerOrganizationId { get; private set; }
+
+        /// <summary>
         /// Forms the primary key of the history item together with the GUID and the organizationId
         /// </summary>
         /// <value>Forms the primary key of the history item together with the GUID and the organizationId</value>
@@ -299,6 +306,7 @@ namespace BlueRain.ID4i.Model
             sb.Append("class HistoryItem {\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
+            sb.Append("  OwnerOrganizationId: ").Append(OwnerOrganizationId).Append("\n");
             sb.Append("  SequenceId: ").Append(SequenceId).Append("\n");
             sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
@@ -348,6 +356,11 @@ namespace BlueRain.ID4i.Model
                     this.OrganizationId.Equals(input.OrganizationId))
                 ) && 
                 (
+                    this.OwnerOrganizationId == input.OwnerOrganizationId ||
+                    (this.OwnerOrganizationId != null &&
+                    this.OwnerOrganizationId.Equals(input.OwnerOrganizationId))
+                ) && 
+                (
                     this.SequenceId == input.SequenceId ||
                     (this.SequenceId != null &&
                     this.SequenceId.Equals(input.SequenceId))
@@ -382,6 +395,8 @@ namespace BlueRain.ID4i.Model
                     hashCode = hashCode * 59 + this.AdditionalProperties.GetHashCode();
                 if (this.OrganizationId != null)
                     hashCode = hashCode * 59 + this.OrganizationId.GetHashCode();
+                if (this.OwnerOrganizationId != null)
+                    hashCode = hashCode * 59 + this.OwnerOrganizationId.GetHashCode();
                 if (this.SequenceId != null)
                     hashCode = hashCode * 59 + this.SequenceId.GetHashCode();
                 if (this.Timestamp != null)
