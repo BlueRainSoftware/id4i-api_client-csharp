@@ -277,7 +277,7 @@ void (empty response body)
 
 <a name="searchbyalias"></a>
 # **SearchByAlias**
-> PaginatedGuidResponse SearchByAlias (string alias, string aliasType, int? offset = null, int? limit = null)
+> PaginatedResponseOfGuid SearchByAlias (string alias, string aliasType, int? offset = null, int? limit = null)
 
 Search for GUIDs by alias
 
@@ -309,7 +309,7 @@ namespace Example
             try
             {
                 // Search for GUIDs by alias
-                PaginatedGuidResponse result = apiInstance.SearchByAlias(alias, aliasType, offset, limit);
+                PaginatedResponseOfGuid result = apiInstance.SearchByAlias(alias, aliasType, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedGuidResponse**](PaginatedGuidResponse.md)
+[**PaginatedResponseOfGuid**](PaginatedResponseOfGuid.md)
 
 ### Authorization
 

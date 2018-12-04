@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="listorganizationchangelog"></a>
 # **ListOrganizationChangeLog**
-> PaginatedChangeLogEntryResponse ListOrganizationChangeLog (string organizationId, string messageMimeType = null, DateTime? fromDate = null, DateTime? toDate = null, int? offset = null, int? limit = null)
+> PaginatedResponseOfChangeLogEntry ListOrganizationChangeLog (string organizationId, string messageMimeType = null, DateTime? fromDate = null, DateTime? toDate = null, int? offset = null, int? limit = null)
 
 List change log entries of an organization
 
@@ -45,7 +45,7 @@ namespace Example
             try
             {
                 // List change log entries of an organization
-                PaginatedChangeLogEntryResponse result = apiInstance.ListOrganizationChangeLog(organizationId, messageMimeType, fromDate, toDate, offset, limit);
+                PaginatedResponseOfChangeLogEntry result = apiInstance.ListOrganizationChangeLog(organizationId, messageMimeType, fromDate, toDate, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedChangeLogEntryResponse**](PaginatedChangeLogEntryResponse.md)
+[**PaginatedResponseOfChangeLogEntry**](PaginatedResponseOfChangeLogEntry.md)
 
 ### Authorization
 
