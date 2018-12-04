@@ -349,7 +349,7 @@ Name | Type | Description  | Notes
 
 <a name="listallapikeyprivileges"></a>
 # **ListAllApiKeyPrivileges**
-> ApiKeyPrivilegeInfoResponse ListAllApiKeyPrivileges (bool? id4nConcerning = null, int? offset = null, int? limit = null)
+> PaginatedResponseOfApiKeyPrivilegeInfo ListAllApiKeyPrivileges (bool? id4nConcerning = null, int? offset = null, int? limit = null)
 
 List all privileges
 
@@ -382,7 +382,7 @@ namespace Example
             try
             {
                 // List all privileges
-                ApiKeyPrivilegeInfoResponse result = apiInstance.ListAllApiKeyPrivileges(id4nConcerning, offset, limit);
+                PaginatedResponseOfApiKeyPrivilegeInfo result = apiInstance.ListAllApiKeyPrivileges(id4nConcerning, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -404,7 +404,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiKeyPrivilegeInfoResponse**](ApiKeyPrivilegeInfoResponse.md)
+[**PaginatedResponseOfApiKeyPrivilegeInfo**](PaginatedResponseOfApiKeyPrivilegeInfo.md)
 
 ### Authorization
 
@@ -419,7 +419,7 @@ Name | Type | Description  | Notes
 
 <a name="listallapikeysoforganization"></a>
 # **ListAllApiKeysOfOrganization**
-> PaginatedApiKeyResponse ListAllApiKeysOfOrganization (string organizationId = null, int? offset = null, int? limit = null)
+> PaginatedResponseOfApiKeyPresentation ListAllApiKeysOfOrganization (string organizationId = null, int? offset = null, int? limit = null)
 
 Find API key by organization
 
@@ -452,7 +452,7 @@ namespace Example
             try
             {
                 // Find API key by organization
-                PaginatedApiKeyResponse result = apiInstance.ListAllApiKeysOfOrganization(organizationId, offset, limit);
+                PaginatedResponseOfApiKeyPresentation result = apiInstance.ListAllApiKeysOfOrganization(organizationId, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -474,7 +474,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedApiKeyResponse**](PaginatedApiKeyResponse.md)
+[**PaginatedResponseOfApiKeyPresentation**](PaginatedResponseOfApiKeyPresentation.md)
 
 ### Authorization
 
@@ -489,7 +489,7 @@ Name | Type | Description  | Notes
 
 <a name="listapikeyprivileges"></a>
 # **ListApiKeyPrivileges**
-> ApiKeyPrivilegePaginatedResponse ListApiKeyPrivileges (string key, int? offset = null, int? limit = null)
+> PaginatedResponseOfApiKeyPrivilege ListApiKeyPrivileges (string key, int? offset = null, int? limit = null)
 
 List privileges
 
@@ -520,7 +520,7 @@ namespace Example
             try
             {
                 // List privileges
-                ApiKeyPrivilegePaginatedResponse result = apiInstance.ListApiKeyPrivileges(key, offset, limit);
+                PaginatedResponseOfApiKeyPrivilege result = apiInstance.ListApiKeyPrivileges(key, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -542,7 +542,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiKeyPrivilegePaginatedResponse**](ApiKeyPrivilegePaginatedResponse.md)
+[**PaginatedResponseOfApiKeyPrivilege**](PaginatedResponseOfApiKeyPrivilege.md)
 
 ### Authorization
 
@@ -557,7 +557,7 @@ Name | Type | Description  | Notes
 
 <a name="listid4ns"></a>
 # **ListId4ns**
-> Id4nPresentationPaginatedResponse ListId4ns (string key, string privilege, int? offset = null, int? limit = null)
+> PaginatedResponseOfId4nPresentation ListId4ns (string key, string privilege, int? offset = null, int? limit = null)
 
 ID4ns of a privilege
 
@@ -591,7 +591,7 @@ namespace Example
             try
             {
                 // ID4ns of a privilege
-                Id4nPresentationPaginatedResponse result = apiInstance.ListId4ns(key, privilege, offset, limit);
+                PaginatedResponseOfId4nPresentation result = apiInstance.ListId4ns(key, privilege, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -614,7 +614,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Id4nPresentationPaginatedResponse**](Id4nPresentationPaginatedResponse.md)
+[**PaginatedResponseOfId4nPresentation**](PaginatedResponseOfId4nPresentation.md)
 
 ### Authorization
 

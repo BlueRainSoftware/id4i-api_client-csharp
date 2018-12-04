@@ -213,7 +213,7 @@ No authorization required
 
 <a name="listallpublicdocuments"></a>
 # **ListAllPublicDocuments**
-> PaginatedDocumentResponse ListAllPublicDocuments (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null)
+> PaginatedResponseOfDocument ListAllPublicDocuments (string id4n, string organizationId = null, string owner = null, int? offset = null, int? limit = null)
 
 List public documents
 
@@ -248,7 +248,7 @@ namespace Example
             try
             {
                 // List public documents
-                PaginatedDocumentResponse result = apiInstance.ListAllPublicDocuments(id4n, organizationId, owner, offset, limit);
+                PaginatedResponseOfDocument result = apiInstance.ListAllPublicDocuments(id4n, organizationId, owner, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedDocumentResponse**](PaginatedDocumentResponse.md)
+[**PaginatedResponseOfDocument**](PaginatedResponseOfDocument.md)
 
 ### Authorization
 
@@ -287,7 +287,7 @@ Name | Type | Description  | Notes
 
 <a name="listpublichistory"></a>
 # **ListPublicHistory**
-> PaginatedHistoryItemResponse ListPublicHistory (string id4n, int? offset = null, int? limit = null)
+> PaginatedResponseOfHistoryItem ListPublicHistory (string id4n, int? offset = null, int? limit = null)
 
 Shows the public history of the given GUID
 
@@ -320,7 +320,7 @@ namespace Example
             try
             {
                 // Shows the public history of the given GUID
-                PaginatedHistoryItemResponse result = apiInstance.ListPublicHistory(id4n, offset, limit);
+                PaginatedResponseOfHistoryItem result = apiInstance.ListPublicHistory(id4n, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -342,7 +342,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedHistoryItemResponse**](PaginatedHistoryItemResponse.md)
+[**PaginatedResponseOfHistoryItem**](PaginatedResponseOfHistoryItem.md)
 
 ### Authorization
 
