@@ -321,7 +321,37 @@ namespace BlueRain.ID4i.Model
             /// Enum ORGACANNOTBEOWNPARTNER for value: ERR_ORGA_CANNOT_BE_OWN_PARTNER
             /// </summary>
             [EnumMember(Value = "ERR_ORGA_CANNOT_BE_OWN_PARTNER")]
-            ORGACANNOTBEOWNPARTNER = 48
+            ORGACANNOTBEOWNPARTNER = 48,
+            
+            /// <summary>
+            /// Enum INVALIDGS1CODE for value: ERR_INVALID_GS1_CODE
+            /// </summary>
+            [EnumMember(Value = "ERR_INVALID_GS1_CODE")]
+            INVALIDGS1CODE = 49,
+            
+            /// <summary>
+            /// Enum INVALIDGS1CHARINCODE for value: ERR_INVALID_GS1_CHAR_IN_CODE
+            /// </summary>
+            [EnumMember(Value = "ERR_INVALID_GS1_CHAR_IN_CODE")]
+            INVALIDGS1CHARINCODE = 50,
+            
+            /// <summary>
+            /// Enum INVALIDGS1CODENOTUNIQUE for value: ERR_INVALID_GS1_CODE_NOT_UNIQUE
+            /// </summary>
+            [EnumMember(Value = "ERR_INVALID_GS1_CODE_NOT_UNIQUE")]
+            INVALIDGS1CODENOTUNIQUE = 51,
+            
+            /// <summary>
+            /// Enum INVALIDGS1GTIN for value: ERR_INVALID_GS1_GTIN
+            /// </summary>
+            [EnumMember(Value = "ERR_INVALID_GS1_GTIN")]
+            INVALIDGS1GTIN = 52,
+            
+            /// <summary>
+            /// Enum GS1CODECURRENTLYUNSUPPORTED for value: ERR_GS1_CODE_CURRENTLY_UNSUPPORTED
+            /// </summary>
+            [EnumMember(Value = "ERR_GS1_CODE_CURRENTLY_UNSUPPORTED")]
+            GS1CODECURRENTLYUNSUPPORTED = 53
         }
 
         /// <summary>

@@ -142,6 +142,7 @@ Class | Method | HTTP request | Description
 *GuidsApi* | [**GetGuidAliases**](docs/GuidsApi.md#getguidaliases) | **GET** /api/v1/id4ns/{id4n}/alias | Get all aliases for the given GUID or Collection.
 *GuidsApi* | [**GetGuidsWithoutCollection**](docs/GuidsApi.md#getguidswithoutcollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 *GuidsApi* | [**GetId4n**](docs/GuidsApi.md#getid4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
+*GuidsApi* | [**ImportGS1Codes**](docs/GuidsApi.md#importgs1codes) | **POST** /api/v1/import/gs1 | Import GS1/MAPP codes
 *GuidsApi* | [**RemoveGuidAlias**](docs/GuidsApi.md#removeguidalias) | **DELETE** /api/v1/id4ns/{id4n}/alias/{aliasType} | Remove aliases from GUID or Collection
 *GuidsApi* | [**UpdateGuid**](docs/GuidsApi.md#updateguid) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 *HistoryApi* | [**AddItem**](docs/HistoryApi.md#additem) | **POST** /api/v1/history/{id4n} | Add history item
@@ -238,6 +239,8 @@ Class | Method | HTTP request | Description
      - [Model.HistoryItemUpdate](docs/HistoryItemUpdate.md)
      - [Model.Id4n](docs/Id4n.md)
      - [Model.Id4nPresentation](docs/Id4nPresentation.md)
+     - [Model.ImportGS1CodesRequest](docs/ImportGS1CodesRequest.md)
+     - [Model.ListOfGS1s](docs/ListOfGS1s.md)
      - [Model.ListOfId4ns](docs/ListOfId4ns.md)
      - [Model.Organization](docs/Organization.md)
      - [Model.OrganizationAddress](docs/OrganizationAddress.md)
