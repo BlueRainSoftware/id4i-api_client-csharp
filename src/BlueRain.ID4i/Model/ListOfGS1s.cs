@@ -23,39 +23,26 @@ using SwaggerDateConverter = BlueRain.ID4i.Client.SwaggerDateConverter;
 namespace BlueRain.ID4i.Model
 {
     /// <summary>
-    /// AddPartnerRequest
+    /// A list of GS1/MAPP codes
     /// </summary>
     [DataContract]
-    public partial class AddPartnerRequest :  IEquatable<AddPartnerRequest>
+    public partial class ListOfGS1s :  IEquatable<ListOfGS1s>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AddPartnerRequest" /> class.
+        /// Initializes a new instance of the <see cref="ListOfGS1s" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected AddPartnerRequest() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AddPartnerRequest" /> class.
-        /// </summary>
-        /// <param name="OrganizationId">The namespace of the partner organization to add (required).</param>
-        public AddPartnerRequest(string OrganizationId = default(string))
+        /// <param name="Codes">A list of GS1/MAPP codes..</param>
+        public ListOfGS1s(List<string> Codes = default(List<string>))
         {
-            // to ensure "OrganizationId" is required (not null)
-            if (OrganizationId == null)
-            {
-                throw new InvalidDataException("OrganizationId is a required property for AddPartnerRequest and cannot be null");
-            }
-            else
-            {
-                this.OrganizationId = OrganizationId;
-            }
+            this.Codes = Codes;
         }
         
         /// <summary>
-        /// The namespace of the partner organization to add
+        /// A list of GS1/MAPP codes.
         /// </summary>
-        /// <value>The namespace of the partner organization to add</value>
-        [DataMember(Name="organizationId", EmitDefaultValue=false)]
-        public string OrganizationId { get; set; }
+        /// <value>A list of GS1/MAPP codes.</value>
+        [DataMember(Name="codes", EmitDefaultValue=false)]
+        public List<string> Codes { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -64,8 +51,8 @@ namespace BlueRain.ID4i.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class AddPartnerRequest {\n");
-            sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
+            sb.Append("class ListOfGS1s {\n");
+            sb.Append("  Codes: ").Append(Codes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -86,24 +73,24 @@ namespace BlueRain.ID4i.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AddPartnerRequest);
+            return this.Equals(input as ListOfGS1s);
         }
 
         /// <summary>
-        /// Returns true if AddPartnerRequest instances are equal
+        /// Returns true if ListOfGS1s instances are equal
         /// </summary>
-        /// <param name="input">Instance of AddPartnerRequest to be compared</param>
+        /// <param name="input">Instance of ListOfGS1s to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(AddPartnerRequest input)
+        public bool Equals(ListOfGS1s input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.OrganizationId == input.OrganizationId ||
-                    (this.OrganizationId != null &&
-                    this.OrganizationId.Equals(input.OrganizationId))
+                    this.Codes == input.Codes ||
+                    this.Codes != null &&
+                    this.Codes.SequenceEqual(input.Codes)
                 );
         }
 
@@ -116,8 +103,8 @@ namespace BlueRain.ID4i.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.OrganizationId != null)
-                    hashCode = hashCode * 59 + this.OrganizationId.GetHashCode();
+                if (this.Codes != null)
+                    hashCode = hashCode * 59 + this.Codes.GetHashCode();
                 return hashCode;
             }
         }

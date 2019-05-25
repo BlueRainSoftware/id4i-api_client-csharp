@@ -23,44 +23,54 @@ using SwaggerDateConverter = BlueRain.ID4i.Client.SwaggerDateConverter;
 namespace BlueRain.ID4i.Model
 {
     /// <summary>
-    /// RoutingFileRequest
+    /// GS1/MAPP codes import information
     /// </summary>
     [DataContract]
-    public partial class RoutingFileRequest :  IEquatable<RoutingFileRequest>
+    public partial class ImportGS1CodesRequest :  IEquatable<ImportGS1CodesRequest>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="RoutingFileRequest" /> class.
+        /// Initializes a new instance of the <see cref="ImportGS1CodesRequest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected RoutingFileRequest() { }
+        protected ImportGS1CodesRequest() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="RoutingFileRequest" /> class.
+        /// Initializes a new instance of the <see cref="ImportGS1CodesRequest" /> class.
         /// </summary>
-        /// <param name="Routing">Routing (required).</param>
-        /// <param name="OrganizationId">OrganizationId.</param>
-        public RoutingFileRequest(RoutingFile Routing = default(RoutingFile), string OrganizationId = default(string))
+        /// <param name="ListOfGS1s">The list of GS1/Mapp codes to be imported (required).</param>
+        /// <param name="OrganizationId">The organization where the GS1/Mapp code is imported. (required).</param>
+        public ImportGS1CodesRequest(ListOfGS1s ListOfGS1s = default(ListOfGS1s), string OrganizationId = default(string))
         {
-            // to ensure "Routing" is required (not null)
-            if (Routing == null)
+            // to ensure "ListOfGS1s" is required (not null)
+            if (ListOfGS1s == null)
             {
-                throw new InvalidDataException("Routing is a required property for RoutingFileRequest and cannot be null");
+                throw new InvalidDataException("ListOfGS1s is a required property for ImportGS1CodesRequest and cannot be null");
             }
             else
             {
-                this.Routing = Routing;
+                this.ListOfGS1s = ListOfGS1s;
             }
-            this.OrganizationId = OrganizationId;
+            // to ensure "OrganizationId" is required (not null)
+            if (OrganizationId == null)
+            {
+                throw new InvalidDataException("OrganizationId is a required property for ImportGS1CodesRequest and cannot be null");
+            }
+            else
+            {
+                this.OrganizationId = OrganizationId;
+            }
         }
         
         /// <summary>
-        /// Gets or Sets Routing
+        /// The list of GS1/Mapp codes to be imported
         /// </summary>
-        [DataMember(Name="routing", EmitDefaultValue=false)]
-        public RoutingFile Routing { get; set; }
+        /// <value>The list of GS1/Mapp codes to be imported</value>
+        [DataMember(Name="listOfGS1s", EmitDefaultValue=false)]
+        public ListOfGS1s ListOfGS1s { get; set; }
 
         /// <summary>
-        /// Gets or Sets OrganizationId
+        /// The organization where the GS1/Mapp code is imported.
         /// </summary>
+        /// <value>The organization where the GS1/Mapp code is imported.</value>
         [DataMember(Name="organizationId", EmitDefaultValue=false)]
         public string OrganizationId { get; set; }
 
@@ -71,8 +81,8 @@ namespace BlueRain.ID4i.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class RoutingFileRequest {\n");
-            sb.Append("  Routing: ").Append(Routing).Append("\n");
+            sb.Append("class ImportGS1CodesRequest {\n");
+            sb.Append("  ListOfGS1s: ").Append(ListOfGS1s).Append("\n");
             sb.Append("  OrganizationId: ").Append(OrganizationId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -94,24 +104,24 @@ namespace BlueRain.ID4i.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as RoutingFileRequest);
+            return this.Equals(input as ImportGS1CodesRequest);
         }
 
         /// <summary>
-        /// Returns true if RoutingFileRequest instances are equal
+        /// Returns true if ImportGS1CodesRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of RoutingFileRequest to be compared</param>
+        /// <param name="input">Instance of ImportGS1CodesRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(RoutingFileRequest input)
+        public bool Equals(ImportGS1CodesRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Routing == input.Routing ||
-                    (this.Routing != null &&
-                    this.Routing.Equals(input.Routing))
+                    this.ListOfGS1s == input.ListOfGS1s ||
+                    (this.ListOfGS1s != null &&
+                    this.ListOfGS1s.Equals(input.ListOfGS1s))
                 ) && 
                 (
                     this.OrganizationId == input.OrganizationId ||
@@ -129,8 +139,8 @@ namespace BlueRain.ID4i.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Routing != null)
-                    hashCode = hashCode * 59 + this.Routing.GetHashCode();
+                if (this.ListOfGS1s != null)
+                    hashCode = hashCode * 59 + this.ListOfGS1s.GetHashCode();
                 if (this.OrganizationId != null)
                     hashCode = hashCode * 59 + this.OrganizationId.GetHashCode();
                 return hashCode;
