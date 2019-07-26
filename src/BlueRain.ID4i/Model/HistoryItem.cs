@@ -91,124 +91,130 @@ namespace BlueRain.ID4i.Model
             RECEIVED = 9,
             
             /// <summary>
+            /// Enum DELIVERYREFUSED for value: DELIVERY_REFUSED
+            /// </summary>
+            [EnumMember(Value = "DELIVERY_REFUSED")]
+            DELIVERYREFUSED = 10,
+            
+            /// <summary>
             /// Enum REPROCESSINGSTARTED for value: REPROCESSING_STARTED
             /// </summary>
             [EnumMember(Value = "REPROCESSING_STARTED")]
-            REPROCESSINGSTARTED = 10,
+            REPROCESSINGSTARTED = 11,
             
             /// <summary>
             /// Enum REPROCESSINGSTEPSTARTED for value: REPROCESSING_STEP_STARTED
             /// </summary>
             [EnumMember(Value = "REPROCESSING_STEP_STARTED")]
-            REPROCESSINGSTEPSTARTED = 11,
+            REPROCESSINGSTEPSTARTED = 12,
             
             /// <summary>
             /// Enum REPROCESSINGSTEPCANCELLED for value: REPROCESSING_STEP_CANCELLED
             /// </summary>
             [EnumMember(Value = "REPROCESSING_STEP_CANCELLED")]
-            REPROCESSINGSTEPCANCELLED = 12,
+            REPROCESSINGSTEPCANCELLED = 13,
             
             /// <summary>
             /// Enum REPROCESSINGSTEPFINISHED for value: REPROCESSING_STEP_FINISHED
             /// </summary>
             [EnumMember(Value = "REPROCESSING_STEP_FINISHED")]
-            REPROCESSINGSTEPFINISHED = 13,
+            REPROCESSINGSTEPFINISHED = 14,
             
             /// <summary>
             /// Enum REPROCESSINGCANCELLED for value: REPROCESSING_CANCELLED
             /// </summary>
             [EnumMember(Value = "REPROCESSING_CANCELLED")]
-            REPROCESSINGCANCELLED = 14,
+            REPROCESSINGCANCELLED = 15,
             
             /// <summary>
             /// Enum REPROCESSINGFINISHED for value: REPROCESSING_FINISHED
             /// </summary>
             [EnumMember(Value = "REPROCESSING_FINISHED")]
-            REPROCESSINGFINISHED = 15,
+            REPROCESSINGFINISHED = 16,
             
             /// <summary>
             /// Enum DISASSEMBLED for value: DISASSEMBLED
             /// </summary>
             [EnumMember(Value = "DISASSEMBLED")]
-            DISASSEMBLED = 16,
+            DISASSEMBLED = 17,
             
             /// <summary>
             /// Enum MAINTENANCESTARTED for value: MAINTENANCE_STARTED
             /// </summary>
             [EnumMember(Value = "MAINTENANCE_STARTED")]
-            MAINTENANCESTARTED = 17,
+            MAINTENANCESTARTED = 18,
             
             /// <summary>
             /// Enum MAINTENANCESTEPSTARTED for value: MAINTENANCE_STEP_STARTED
             /// </summary>
             [EnumMember(Value = "MAINTENANCE_STEP_STARTED")]
-            MAINTENANCESTEPSTARTED = 18,
+            MAINTENANCESTEPSTARTED = 19,
             
             /// <summary>
             /// Enum MAINTENANCESTEPCANCELLED for value: MAINTENANCE_STEP_CANCELLED
             /// </summary>
             [EnumMember(Value = "MAINTENANCE_STEP_CANCELLED")]
-            MAINTENANCESTEPCANCELLED = 19,
+            MAINTENANCESTEPCANCELLED = 20,
             
             /// <summary>
             /// Enum MAINTENANCESTEPFINISHED for value: MAINTENANCE_STEP_FINISHED
             /// </summary>
             [EnumMember(Value = "MAINTENANCE_STEP_FINISHED")]
-            MAINTENANCESTEPFINISHED = 20,
+            MAINTENANCESTEPFINISHED = 21,
             
             /// <summary>
             /// Enum MAINTENANCECANCELLED for value: MAINTENANCE_CANCELLED
             /// </summary>
             [EnumMember(Value = "MAINTENANCE_CANCELLED")]
-            MAINTENANCECANCELLED = 21,
+            MAINTENANCECANCELLED = 22,
             
             /// <summary>
             /// Enum MAINTENANCEFINISHED for value: MAINTENANCE_FINISHED
             /// </summary>
             [EnumMember(Value = "MAINTENANCE_FINISHED")]
-            MAINTENANCEFINISHED = 22,
+            MAINTENANCEFINISHED = 23,
             
             /// <summary>
             /// Enum PRODUCTIONSTARTED for value: PRODUCTION_STARTED
             /// </summary>
             [EnumMember(Value = "PRODUCTION_STARTED")]
-            PRODUCTIONSTARTED = 23,
+            PRODUCTIONSTARTED = 24,
             
             /// <summary>
             /// Enum PRODUCTIONCANCELLED for value: PRODUCTION_CANCELLED
             /// </summary>
             [EnumMember(Value = "PRODUCTION_CANCELLED")]
-            PRODUCTIONCANCELLED = 24,
+            PRODUCTIONCANCELLED = 25,
             
             /// <summary>
             /// Enum PRODUCTIONFINISHED for value: PRODUCTION_FINISHED
             /// </summary>
             [EnumMember(Value = "PRODUCTION_FINISHED")]
-            PRODUCTIONFINISHED = 25,
+            PRODUCTIONFINISHED = 26,
             
             /// <summary>
             /// Enum PRODUCTIONSTEPSTARTED for value: PRODUCTION_STEP_STARTED
             /// </summary>
             [EnumMember(Value = "PRODUCTION_STEP_STARTED")]
-            PRODUCTIONSTEPSTARTED = 26,
+            PRODUCTIONSTEPSTARTED = 27,
             
             /// <summary>
             /// Enum PRODUCTIONSTEPCANCELLED for value: PRODUCTION_STEP_CANCELLED
             /// </summary>
             [EnumMember(Value = "PRODUCTION_STEP_CANCELLED")]
-            PRODUCTIONSTEPCANCELLED = 27,
+            PRODUCTIONSTEPCANCELLED = 28,
             
             /// <summary>
             /// Enum PRODUCTIONSTEPFINISHED for value: PRODUCTION_STEP_FINISHED
             /// </summary>
             [EnumMember(Value = "PRODUCTION_STEP_FINISHED")]
-            PRODUCTIONSTEPFINISHED = 28,
+            PRODUCTIONSTEPFINISHED = 29,
             
             /// <summary>
             /// Enum QUALITYCHECKPERFORMED for value: QUALITY_CHECK_PERFORMED
             /// </summary>
             [EnumMember(Value = "QUALITY_CHECK_PERFORMED")]
-            QUALITYCHECKPERFORMED = 29
+            QUALITYCHECKPERFORMED = 30
         }
 
         /// <summary>
