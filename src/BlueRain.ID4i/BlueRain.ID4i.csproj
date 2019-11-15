@@ -12,7 +12,7 @@ Contact: info@bluerain.de
     <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{25A7A745-9AA6-4305-B9AE-A9E19AF2F2E1}</ProjectGuid>
+    <ProjectGuid>{9A583255-FAC6-4042-8F9E-1F57F6C56ECE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BlueRain.ID4i</RootNamespace>
