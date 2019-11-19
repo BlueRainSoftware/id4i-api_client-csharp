@@ -72,6 +72,31 @@ namespace BlueRain.ID4i.Api
         /// <returns>ApiResponse of ListOfId4ns</returns>
         ApiResponse<ListOfId4ns> CreateGuidWithHttpInfo (CreateGuidRequest createGUIDInfo);
         /// <summary>
+            /// Delete ID4n properties
+            /// </summary>
+        /// <remarks>
+            /// Partial deletion of id4n properties. If the property does not exist, it will be ignored.
+            /// </remarks>
+        /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id4n">The id4n</param>
+        /// <param name="organizationId">The organization namespace to work on while deleting the properties.</param>
+        /// <param name="properties">A set of property keys to delete.</param>
+        /// <returns></returns>
+        void DeleteProperties (string id4n, string organizationId, List<string> properties);
+
+        /// <summary>
+            /// Delete ID4n properties
+            /// </summary>
+        /// <remarks>
+            /// Partial deletion of id4n properties. If the property does not exist, it will be ignored.
+            /// </remarks>
+        /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id4n">The id4n</param>
+        /// <param name="organizationId">The organization namespace to work on while deleting the properties.</param>
+        /// <param name="properties">A set of property keys to delete.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DeletePropertiesWithHttpInfo (string id4n, string organizationId, List<string> properties);
+        /// <summary>
             /// Retrieve collections of an ID
             /// </summary>
         /// <remarks>
@@ -187,6 +212,29 @@ namespace BlueRain.ID4i.Api
         /// <returns>ApiResponse of Id4nPresentation</returns>
         ApiResponse<Id4nPresentation> GetId4nWithHttpInfo (string id4n);
         /// <summary>
+            /// Retrieve ID4n properties
+            /// </summary>
+        /// <remarks>
+            /// List all properties of an id4n.
+            /// </remarks>
+        /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id4n">The id4n</param>
+        /// <param name="organizationId">The organization namespace. (optional)</param>
+        /// <returns>Dictionary&lt;string, string&gt;</returns>
+        Dictionary<string, string> GetProperties (string id4n, string organizationId = null);
+
+        /// <summary>
+            /// Retrieve ID4n properties
+            /// </summary>
+        /// <remarks>
+            /// List all properties of an id4n.
+            /// </remarks>
+        /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id4n">The id4n</param>
+        /// <param name="organizationId">The organization namespace. (optional)</param>
+        /// <returns>ApiResponse of Dictionary&lt;string, string&gt;</returns>
+        ApiResponse<Dictionary<string, string>> GetPropertiesWithHttpInfo (string id4n, string organizationId = null);
+        /// <summary>
             /// Import GS1/MAPP codes
             /// </summary>
         /// <remarks>
@@ -207,6 +255,31 @@ namespace BlueRain.ID4i.Api
         /// <param name="importGS1CodesRequest">The information how the MAPP codes should be imported and the list of MAPP codes</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ImportGS1CodesWithHttpInfo (ImportGS1CodesRequest importGS1CodesRequest);
+        /// <summary>
+            /// Patch ID4n properties
+            /// </summary>
+        /// <remarks>
+            /// Partial updating of id4n properties. If a property contains a null value the property will be deleted other values will be saved and overwritten if they already exist.
+            /// </remarks>
+        /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id4n">The id4n</param>
+        /// <param name="organizationId">The organization namespace to work on while patching the properties.</param>
+        /// <param name="properties">The properties to update.</param>
+        /// <returns></returns>
+        void PatchProperties (string id4n, string organizationId, Object properties);
+
+        /// <summary>
+            /// Patch ID4n properties
+            /// </summary>
+        /// <remarks>
+            /// Partial updating of id4n properties. If a property contains a null value the property will be deleted other values will be saved and overwritten if they already exist.
+            /// </remarks>
+        /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id4n">The id4n</param>
+        /// <param name="organizationId">The organization namespace to work on while patching the properties.</param>
+        /// <param name="properties">The properties to update.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> PatchPropertiesWithHttpInfo (string id4n, string organizationId, Object properties);
         /// <summary>
             /// Remove aliases from GUID or Collection
             /// </summary>
@@ -301,6 +374,31 @@ namespace BlueRain.ID4i.Api
             /// <param name="createGUIDInfo">GUID creation model</param>
             /// <returns>Task of ApiResponse (ListOfId4ns)</returns>
                 System.Threading.Tasks.Task<ApiResponse<ListOfId4ns>> CreateGuidAsyncWithHttpInfo (CreateGuidRequest createGUIDInfo);
+                /// <summary>
+                /// Delete ID4n properties
+                /// </summary>
+                /// <remarks>
+                /// Partial deletion of id4n properties. If the property does not exist, it will be ignored.
+                /// </remarks>
+                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="id4n">The id4n</param>
+            /// <param name="organizationId">The organization namespace to work on while deleting the properties.</param>
+            /// <param name="properties">A set of property keys to delete.</param>
+            /// <returns>Task of void</returns>
+            System.Threading.Tasks.Task DeletePropertiesAsync (string id4n, string organizationId, List<string> properties);
+
+                /// <summary>
+                /// Delete ID4n properties
+                /// </summary>
+                /// <remarks>
+                /// Partial deletion of id4n properties. If the property does not exist, it will be ignored.
+                /// </remarks>
+                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="id4n">The id4n</param>
+            /// <param name="organizationId">The organization namespace to work on while deleting the properties.</param>
+            /// <param name="properties">A set of property keys to delete.</param>
+            /// <returns>Task of ApiResponse</returns>
+                System.Threading.Tasks.Task<ApiResponse<Object>> DeletePropertiesAsyncWithHttpInfo (string id4n, string organizationId, List<string> properties);
                 /// <summary>
                 /// Retrieve collections of an ID
                 /// </summary>
@@ -417,6 +515,29 @@ namespace BlueRain.ID4i.Api
             /// <returns>Task of ApiResponse (Id4nPresentation)</returns>
                 System.Threading.Tasks.Task<ApiResponse<Id4nPresentation>> GetId4nAsyncWithHttpInfo (string id4n);
                 /// <summary>
+                /// Retrieve ID4n properties
+                /// </summary>
+                /// <remarks>
+                /// List all properties of an id4n.
+                /// </remarks>
+                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="id4n">The id4n</param>
+            /// <param name="organizationId">The organization namespace. (optional)</param>
+            /// <returns>Task of Dictionary&lt;string, string&gt;</returns>
+            System.Threading.Tasks.Task<Dictionary<string, string>> GetPropertiesAsync (string id4n, string organizationId = null);
+
+                /// <summary>
+                /// Retrieve ID4n properties
+                /// </summary>
+                /// <remarks>
+                /// List all properties of an id4n.
+                /// </remarks>
+                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="id4n">The id4n</param>
+            /// <param name="organizationId">The organization namespace. (optional)</param>
+            /// <returns>Task of ApiResponse (Dictionary&lt;string, string&gt;)</returns>
+                System.Threading.Tasks.Task<ApiResponse<Dictionary<string, string>>> GetPropertiesAsyncWithHttpInfo (string id4n, string organizationId = null);
+                /// <summary>
                 /// Import GS1/MAPP codes
                 /// </summary>
                 /// <remarks>
@@ -437,6 +558,31 @@ namespace BlueRain.ID4i.Api
             /// <param name="importGS1CodesRequest">The information how the MAPP codes should be imported and the list of MAPP codes</param>
             /// <returns>Task of ApiResponse</returns>
                 System.Threading.Tasks.Task<ApiResponse<Object>> ImportGS1CodesAsyncWithHttpInfo (ImportGS1CodesRequest importGS1CodesRequest);
+                /// <summary>
+                /// Patch ID4n properties
+                /// </summary>
+                /// <remarks>
+                /// Partial updating of id4n properties. If a property contains a null value the property will be deleted other values will be saved and overwritten if they already exist.
+                /// </remarks>
+                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="id4n">The id4n</param>
+            /// <param name="organizationId">The organization namespace to work on while patching the properties.</param>
+            /// <param name="properties">The properties to update.</param>
+            /// <returns>Task of void</returns>
+            System.Threading.Tasks.Task PatchPropertiesAsync (string id4n, string organizationId, Object properties);
+
+                /// <summary>
+                /// Patch ID4n properties
+                /// </summary>
+                /// <remarks>
+                /// Partial updating of id4n properties. If a property contains a null value the property will be deleted other values will be saved and overwritten if they already exist.
+                /// </remarks>
+                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="id4n">The id4n</param>
+            /// <param name="organizationId">The organization namespace to work on while patching the properties.</param>
+            /// <param name="properties">The properties to update.</param>
+            /// <returns>Task of ApiResponse</returns>
+                System.Threading.Tasks.Task<ApiResponse<Object>> PatchPropertiesAsyncWithHttpInfo (string id4n, string organizationId, Object properties);
                 /// <summary>
                 /// Remove aliases from GUID or Collection
                 /// </summary>
@@ -929,6 +1075,191 @@ namespace BlueRain.ID4i.Api
                     return new ApiResponse<ListOfId4ns>(localVarStatusCode,
                     localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                     (ListOfId4ns) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ListOfId4ns)));
+                }
+
+            /// <summary>
+            /// Delete ID4n properties Partial deletion of id4n properties. If the property does not exist, it will be ignored.
+            /// </summary>
+            /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id4n">The id4n</param>
+        /// <param name="organizationId">The organization namespace to work on while deleting the properties.</param>
+        /// <param name="properties">A set of property keys to delete.</param>
+        /// <returns></returns>
+            public void DeleteProperties (string id4n, string organizationId, List<string> properties)
+            {
+        DeletePropertiesWithHttpInfo(id4n, organizationId, properties);
+            }
+
+            /// <summary>
+            /// Delete ID4n properties Partial deletion of id4n properties. If the property does not exist, it will be ignored.
+            /// </summary>
+            /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id4n">The id4n</param>
+        /// <param name="organizationId">The organization namespace to work on while deleting the properties.</param>
+        /// <param name="properties">A set of property keys to delete.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+            public ApiResponse<Object> DeletePropertiesWithHttpInfo (string id4n, string organizationId, List<string> properties)
+            {
+                    // verify the required parameter 'id4n' is set
+                    if (id4n == null)
+                    throw new ApiException(400, "Missing required parameter 'id4n' when calling GuidsApi->DeleteProperties");
+                    // verify the required parameter 'organizationId' is set
+                    if (organizationId == null)
+                    throw new ApiException(400, "Missing required parameter 'organizationId' when calling GuidsApi->DeleteProperties");
+                    // verify the required parameter 'properties' is set
+                    if (properties == null)
+                    throw new ApiException(400, "Missing required parameter 'properties' when calling GuidsApi->DeleteProperties");
+
+            var localVarPath = "./api/v1/id4ns/{id4n}/properties";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/xml", 
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/xml",
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+                if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
+                if (organizationId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "organizationId", organizationId)); // query parameter
+                if (properties != null && properties.GetType() != typeof(byte[]))
+                {
+                localVarPostBody = Configuration.ApiClient.Serialize(properties); // http body (model) parameter
+                }
+                else
+                {
+                localVarPostBody = properties; // byte array
+                }
+
+                // authentication (Authorization) required
+                        if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+                        {
+                        localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+                        }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+            Exception exception = ExceptionFactory("DeleteProperties", localVarResponse);
+            if (exception != null) throw exception;
+            }
+
+                return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+            }
+
+                /// <summary>
+                /// Delete ID4n properties Partial deletion of id4n properties. If the property does not exist, it will be ignored.
+                /// </summary>
+                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="id4n">The id4n</param>
+            /// <param name="organizationId">The organization namespace to work on while deleting the properties.</param>
+            /// <param name="properties">A set of property keys to delete.</param>
+            /// <returns>Task of void</returns>
+            public async System.Threading.Tasks.Task DeletePropertiesAsync (string id4n, string organizationId, List<string> properties)
+                {
+            await DeletePropertiesAsyncWithHttpInfo(id4n, organizationId, properties);
+
+                }
+
+                /// <summary>
+                /// Delete ID4n properties Partial deletion of id4n properties. If the property does not exist, it will be ignored.
+                /// </summary>
+                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="id4n">The id4n</param>
+            /// <param name="organizationId">The organization namespace to work on while deleting the properties.</param>
+            /// <param name="properties">A set of property keys to delete.</param>
+            /// <returns>Task of ApiResponse</returns>
+                public async System.Threading.Tasks.Task<ApiResponse<Object>> DeletePropertiesAsyncWithHttpInfo (string id4n, string organizationId, List<string> properties)
+                {
+                        // verify the required parameter 'id4n' is set
+                        if (id4n == null)
+                        throw new ApiException(400, "Missing required parameter 'id4n' when calling GuidsApi->DeleteProperties");
+                        // verify the required parameter 'organizationId' is set
+                        if (organizationId == null)
+                        throw new ApiException(400, "Missing required parameter 'organizationId' when calling GuidsApi->DeleteProperties");
+                        // verify the required parameter 'properties' is set
+                        if (properties == null)
+                        throw new ApiException(400, "Missing required parameter 'properties' when calling GuidsApi->DeleteProperties");
+
+                var localVarPath = "./api/v1/id4ns/{id4n}/properties";
+                var localVarPathParams = new Dictionary<String, String>();
+                var localVarQueryParams = new List<KeyValuePair<String, String>>();
+                var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+                var localVarFormParams = new Dictionary<String, String>();
+                var localVarFileParams = new Dictionary<String, FileParameter>();
+                Object localVarPostBody = null;
+
+                // to determine the Content-Type header
+                String[] localVarHttpContentTypes = new String[] {
+                    "application/xml", 
+                    "application/json"
+                };
+                String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+                // to determine the Accept header
+                String[] localVarHttpHeaderAccepts = new String[] {
+                    "application/xml",
+                    "application/json"
+                };
+                String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+                if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+                    if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
+                    if (organizationId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "organizationId", organizationId)); // query parameter
+                    if (properties != null && properties.GetType() != typeof(byte[]))
+                    {
+                    localVarPostBody = Configuration.ApiClient.Serialize(properties); // http body (model) parameter
+                    }
+                    else
+                    {
+                    localVarPostBody = properties; // byte array
+                    }
+
+                    // authentication (Authorization) required
+                            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+                            {
+                            localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+                            }
+
+                // make the HTTP request
+                IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+                int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+                if (ExceptionFactory != null)
+                {
+                Exception exception = ExceptionFactory("DeleteProperties", localVarResponse);
+                if (exception != null) throw exception;
+                }
+
+                    return new ApiResponse<Object>(localVarStatusCode,
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                    null);
                 }
 
             /// <summary>
@@ -1707,6 +2038,161 @@ namespace BlueRain.ID4i.Api
                 }
 
             /// <summary>
+            /// Retrieve ID4n properties List all properties of an id4n.
+            /// </summary>
+            /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id4n">The id4n</param>
+        /// <param name="organizationId">The organization namespace. (optional)</param>
+        /// <returns>Dictionary&lt;string, string&gt;</returns>
+            public Dictionary<string, string> GetProperties (string id4n, string organizationId = null)
+            {
+        ApiResponse<Dictionary<string, string>> localVarResponse = GetPropertiesWithHttpInfo(id4n, organizationId);
+            return localVarResponse.Data;
+            }
+
+            /// <summary>
+            /// Retrieve ID4n properties List all properties of an id4n.
+            /// </summary>
+            /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id4n">The id4n</param>
+        /// <param name="organizationId">The organization namespace. (optional)</param>
+        /// <returns>ApiResponse of Dictionary&lt;string, string&gt;</returns>
+            public ApiResponse< Dictionary<string, string> > GetPropertiesWithHttpInfo (string id4n, string organizationId = null)
+            {
+                    // verify the required parameter 'id4n' is set
+                    if (id4n == null)
+                    throw new ApiException(400, "Missing required parameter 'id4n' when calling GuidsApi->GetProperties");
+
+            var localVarPath = "./api/v1/id4ns/{id4n}/properties";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/xml", 
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/xml",
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+                if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
+                if (organizationId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "organizationId", organizationId)); // query parameter
+
+                // authentication (Authorization) required
+                        if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+                        {
+                        localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+                        }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+            Exception exception = ExceptionFactory("GetProperties", localVarResponse);
+            if (exception != null) throw exception;
+            }
+
+                return new ApiResponse<Dictionary<string, string>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (Dictionary<string, string>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, string>)));
+            }
+
+                /// <summary>
+                /// Retrieve ID4n properties List all properties of an id4n.
+                /// </summary>
+                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="id4n">The id4n</param>
+            /// <param name="organizationId">The organization namespace. (optional)</param>
+            /// <returns>Task of Dictionary&lt;string, string&gt;</returns>
+            public async System.Threading.Tasks.Task<Dictionary<string, string>> GetPropertiesAsync (string id4n, string organizationId = null)
+                {
+            ApiResponse<Dictionary<string, string>> localVarResponse = await GetPropertiesAsyncWithHttpInfo(id4n, organizationId);
+                return localVarResponse.Data;
+
+                }
+
+                /// <summary>
+                /// Retrieve ID4n properties List all properties of an id4n.
+                /// </summary>
+                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="id4n">The id4n</param>
+            /// <param name="organizationId">The organization namespace. (optional)</param>
+            /// <returns>Task of ApiResponse (Dictionary&lt;string, string&gt;)</returns>
+                public async System.Threading.Tasks.Task<ApiResponse<Dictionary<string, string>>> GetPropertiesAsyncWithHttpInfo (string id4n, string organizationId = null)
+                {
+                        // verify the required parameter 'id4n' is set
+                        if (id4n == null)
+                        throw new ApiException(400, "Missing required parameter 'id4n' when calling GuidsApi->GetProperties");
+
+                var localVarPath = "./api/v1/id4ns/{id4n}/properties";
+                var localVarPathParams = new Dictionary<String, String>();
+                var localVarQueryParams = new List<KeyValuePair<String, String>>();
+                var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+                var localVarFormParams = new Dictionary<String, String>();
+                var localVarFileParams = new Dictionary<String, FileParameter>();
+                Object localVarPostBody = null;
+
+                // to determine the Content-Type header
+                String[] localVarHttpContentTypes = new String[] {
+                    "application/xml", 
+                    "application/json"
+                };
+                String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+                // to determine the Accept header
+                String[] localVarHttpHeaderAccepts = new String[] {
+                    "application/xml",
+                    "application/json"
+                };
+                String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+                if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+                    if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
+                    if (organizationId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "organizationId", organizationId)); // query parameter
+
+                    // authentication (Authorization) required
+                            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+                            {
+                            localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+                            }
+
+                // make the HTTP request
+                IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+                int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+                if (ExceptionFactory != null)
+                {
+                Exception exception = ExceptionFactory("GetProperties", localVarResponse);
+                if (exception != null) throw exception;
+                }
+
+                    return new ApiResponse<Dictionary<string, string>>(localVarStatusCode,
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                    (Dictionary<string, string>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, string>)));
+                }
+
+            /// <summary>
             /// Import GS1/MAPP codes Importing GS1/MAPP codes that contain unique components.
             /// </summary>
             /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
@@ -1859,6 +2345,191 @@ namespace BlueRain.ID4i.Api
                 if (ExceptionFactory != null)
                 {
                 Exception exception = ExceptionFactory("ImportGS1Codes", localVarResponse);
+                if (exception != null) throw exception;
+                }
+
+                    return new ApiResponse<Object>(localVarStatusCode,
+                    localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                    null);
+                }
+
+            /// <summary>
+            /// Patch ID4n properties Partial updating of id4n properties. If a property contains a null value the property will be deleted other values will be saved and overwritten if they already exist.
+            /// </summary>
+            /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id4n">The id4n</param>
+        /// <param name="organizationId">The organization namespace to work on while patching the properties.</param>
+        /// <param name="properties">The properties to update.</param>
+        /// <returns></returns>
+            public void PatchProperties (string id4n, string organizationId, Object properties)
+            {
+        PatchPropertiesWithHttpInfo(id4n, organizationId, properties);
+            }
+
+            /// <summary>
+            /// Patch ID4n properties Partial updating of id4n properties. If a property contains a null value the property will be deleted other values will be saved and overwritten if they already exist.
+            /// </summary>
+            /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id4n">The id4n</param>
+        /// <param name="organizationId">The organization namespace to work on while patching the properties.</param>
+        /// <param name="properties">The properties to update.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+            public ApiResponse<Object> PatchPropertiesWithHttpInfo (string id4n, string organizationId, Object properties)
+            {
+                    // verify the required parameter 'id4n' is set
+                    if (id4n == null)
+                    throw new ApiException(400, "Missing required parameter 'id4n' when calling GuidsApi->PatchProperties");
+                    // verify the required parameter 'organizationId' is set
+                    if (organizationId == null)
+                    throw new ApiException(400, "Missing required parameter 'organizationId' when calling GuidsApi->PatchProperties");
+                    // verify the required parameter 'properties' is set
+                    if (properties == null)
+                    throw new ApiException(400, "Missing required parameter 'properties' when calling GuidsApi->PatchProperties");
+
+            var localVarPath = "./api/v1/id4ns/{id4n}/properties";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/xml", 
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/xml",
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+                if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
+                if (organizationId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "organizationId", organizationId)); // query parameter
+                if (properties != null && properties.GetType() != typeof(byte[]))
+                {
+                localVarPostBody = Configuration.ApiClient.Serialize(properties); // http body (model) parameter
+                }
+                else
+                {
+                localVarPostBody = properties; // byte array
+                }
+
+                // authentication (Authorization) required
+                        if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+                        {
+                        localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+                        }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            Method.PATCH, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+            Exception exception = ExceptionFactory("PatchProperties", localVarResponse);
+            if (exception != null) throw exception;
+            }
+
+                return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+            }
+
+                /// <summary>
+                /// Patch ID4n properties Partial updating of id4n properties. If a property contains a null value the property will be deleted other values will be saved and overwritten if they already exist.
+                /// </summary>
+                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="id4n">The id4n</param>
+            /// <param name="organizationId">The organization namespace to work on while patching the properties.</param>
+            /// <param name="properties">The properties to update.</param>
+            /// <returns>Task of void</returns>
+            public async System.Threading.Tasks.Task PatchPropertiesAsync (string id4n, string organizationId, Object properties)
+                {
+            await PatchPropertiesAsyncWithHttpInfo(id4n, organizationId, properties);
+
+                }
+
+                /// <summary>
+                /// Patch ID4n properties Partial updating of id4n properties. If a property contains a null value the property will be deleted other values will be saved and overwritten if they already exist.
+                /// </summary>
+                /// <exception cref="BlueRain.ID4i.Client.ApiException">Thrown when fails to make API call</exception>
+            /// <param name="id4n">The id4n</param>
+            /// <param name="organizationId">The organization namespace to work on while patching the properties.</param>
+            /// <param name="properties">The properties to update.</param>
+            /// <returns>Task of ApiResponse</returns>
+                public async System.Threading.Tasks.Task<ApiResponse<Object>> PatchPropertiesAsyncWithHttpInfo (string id4n, string organizationId, Object properties)
+                {
+                        // verify the required parameter 'id4n' is set
+                        if (id4n == null)
+                        throw new ApiException(400, "Missing required parameter 'id4n' when calling GuidsApi->PatchProperties");
+                        // verify the required parameter 'organizationId' is set
+                        if (organizationId == null)
+                        throw new ApiException(400, "Missing required parameter 'organizationId' when calling GuidsApi->PatchProperties");
+                        // verify the required parameter 'properties' is set
+                        if (properties == null)
+                        throw new ApiException(400, "Missing required parameter 'properties' when calling GuidsApi->PatchProperties");
+
+                var localVarPath = "./api/v1/id4ns/{id4n}/properties";
+                var localVarPathParams = new Dictionary<String, String>();
+                var localVarQueryParams = new List<KeyValuePair<String, String>>();
+                var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+                var localVarFormParams = new Dictionary<String, String>();
+                var localVarFileParams = new Dictionary<String, FileParameter>();
+                Object localVarPostBody = null;
+
+                // to determine the Content-Type header
+                String[] localVarHttpContentTypes = new String[] {
+                    "application/xml", 
+                    "application/json"
+                };
+                String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+                // to determine the Accept header
+                String[] localVarHttpHeaderAccepts = new String[] {
+                    "application/xml",
+                    "application/json"
+                };
+                String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+                if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+                    if (id4n != null) localVarPathParams.Add("id4n", Configuration.ApiClient.ParameterToString(id4n)); // path parameter
+                    if (organizationId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "organizationId", organizationId)); // query parameter
+                    if (properties != null && properties.GetType() != typeof(byte[]))
+                    {
+                    localVarPostBody = Configuration.ApiClient.Serialize(properties); // http body (model) parameter
+                    }
+                    else
+                    {
+                    localVarPostBody = properties; // byte array
+                    }
+
+                    // authentication (Authorization) required
+                            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
+                            {
+                            localVarHeaderParams["Authorization"] = Configuration.GetApiKeyWithPrefix("Authorization");
+                            }
+
+                // make the HTTP request
+                IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PATCH, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+                int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+                if (ExceptionFactory != null)
+                {
+                Exception exception = ExceptionFactory("PatchProperties", localVarResponse);
                 if (exception != null) throw exception;
                 }
 

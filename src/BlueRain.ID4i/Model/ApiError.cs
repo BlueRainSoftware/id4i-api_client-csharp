@@ -282,76 +282,82 @@ namespace BlueRain.ID4i.Model
             INVALIDNAMESPACE = 41,
             
             /// <summary>
+            /// Enum INVALIDPROPERTYKEY for value: ERR_INVALID_PROPERTY_KEY
+            /// </summary>
+            [EnumMember(Value = "ERR_INVALID_PROPERTY_KEY")]
+            INVALIDPROPERTYKEY = 42,
+            
+            /// <summary>
             /// Enum NAMESPACEALREADYEXISTS for value: ERR_NAMESPACE_ALREADY_EXISTS
             /// </summary>
             [EnumMember(Value = "ERR_NAMESPACE_ALREADY_EXISTS")]
-            NAMESPACEALREADYEXISTS = 42,
+            NAMESPACEALREADYEXISTS = 43,
             
             /// <summary>
             /// Enum INSECUREPASSWORD for value: ERR_INSECURE_PASSWORD
             /// </summary>
             [EnumMember(Value = "ERR_INSECURE_PASSWORD")]
-            INSECUREPASSWORD = 43,
+            INSECUREPASSWORD = 44,
             
             /// <summary>
             /// Enum TRANSFERDENIED for value: ERR_TRANSFER_DENIED
             /// </summary>
             [EnumMember(Value = "ERR_TRANSFER_DENIED")]
-            TRANSFERDENIED = 44,
+            TRANSFERDENIED = 45,
             
             /// <summary>
             /// Enum INVALIDPHYSICALSTATE for value: ERR_INVALID_PHYSICAL_STATE
             /// </summary>
             [EnumMember(Value = "ERR_INVALID_PHYSICAL_STATE")]
-            INVALIDPHYSICALSTATE = 45,
+            INVALIDPHYSICALSTATE = 46,
             
             /// <summary>
             /// Enum INVALIDHISTORYPROPERTYNAMESPACE for value: ERR_INVALID_HISTORY_PROPERTY_NAMESPACE
             /// </summary>
             [EnumMember(Value = "ERR_INVALID_HISTORY_PROPERTY_NAMESPACE")]
-            INVALIDHISTORYPROPERTYNAMESPACE = 46,
+            INVALIDHISTORYPROPERTYNAMESPACE = 47,
             
             /// <summary>
             /// Enum INVALIDHISTORYPROPERTYVALUE for value: ERR_INVALID_HISTORY_PROPERTY_VALUE
             /// </summary>
             [EnumMember(Value = "ERR_INVALID_HISTORY_PROPERTY_VALUE")]
-            INVALIDHISTORYPROPERTYVALUE = 47,
+            INVALIDHISTORYPROPERTYVALUE = 48,
             
             /// <summary>
             /// Enum ORGACANNOTBEOWNPARTNER for value: ERR_ORGA_CANNOT_BE_OWN_PARTNER
             /// </summary>
             [EnumMember(Value = "ERR_ORGA_CANNOT_BE_OWN_PARTNER")]
-            ORGACANNOTBEOWNPARTNER = 48,
+            ORGACANNOTBEOWNPARTNER = 49,
             
             /// <summary>
             /// Enum INVALIDGS1CODE for value: ERR_INVALID_GS1_CODE
             /// </summary>
             [EnumMember(Value = "ERR_INVALID_GS1_CODE")]
-            INVALIDGS1CODE = 49,
+            INVALIDGS1CODE = 50,
             
             /// <summary>
             /// Enum INVALIDGS1CHARINCODE for value: ERR_INVALID_GS1_CHAR_IN_CODE
             /// </summary>
             [EnumMember(Value = "ERR_INVALID_GS1_CHAR_IN_CODE")]
-            INVALIDGS1CHARINCODE = 50,
+            INVALIDGS1CHARINCODE = 51,
             
             /// <summary>
             /// Enum INVALIDGS1CODENOTUNIQUE for value: ERR_INVALID_GS1_CODE_NOT_UNIQUE
             /// </summary>
             [EnumMember(Value = "ERR_INVALID_GS1_CODE_NOT_UNIQUE")]
-            INVALIDGS1CODENOTUNIQUE = 51,
+            INVALIDGS1CODENOTUNIQUE = 52,
             
             /// <summary>
             /// Enum INVALIDGS1GTIN for value: ERR_INVALID_GS1_GTIN
             /// </summary>
             [EnumMember(Value = "ERR_INVALID_GS1_GTIN")]
-            INVALIDGS1GTIN = 52,
+            INVALIDGS1GTIN = 53,
             
             /// <summary>
             /// Enum GS1CODECURRENTLYUNSUPPORTED for value: ERR_GS1_CODE_CURRENTLY_UNSUPPORTED
             /// </summary>
             [EnumMember(Value = "ERR_GS1_CODE_CURRENTLY_UNSUPPORTED")]
-            GS1CODECURRENTLYUNSUPPORTED = 53
+            GS1CODECURRENTLYUNSUPPORTED = 54
         }
 
         /// <summary>

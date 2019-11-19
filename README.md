@@ -130,19 +130,25 @@ Class | Method | HTTP request | Description
 *CollectionsApi* | [**AddElementsToCollection**](docs/CollectionsApi.md#addelementstocollection) | **POST** /api/v1/collections/{id4n}/elements | Add elements to collection
 *CollectionsApi* | [**CreateCollection**](docs/CollectionsApi.md#createcollection) | **POST** /api/v1/collections | Create collection
 *CollectionsApi* | [**DeleteCollection**](docs/CollectionsApi.md#deletecollection) | **DELETE** /api/v1/collections/{id4n} | Delete collection
+*CollectionsApi* | [**DeleteProperties**](docs/CollectionsApi.md#deleteproperties) | **DELETE** /api/v1/id4ns/{id4n}/properties | Delete ID4n properties
 *CollectionsApi* | [**FindCollection**](docs/CollectionsApi.md#findcollection) | **GET** /api/v1/collections/{id4n} | Find collection
 *CollectionsApi* | [**GetAllCollectionsOfOrganization**](docs/CollectionsApi.md#getallcollectionsoforganization) | **GET** /api/v1/organizations/{organizationId}/collections | Get collections of organization
+*CollectionsApi* | [**GetProperties**](docs/CollectionsApi.md#getproperties) | **GET** /api/v1/id4ns/{id4n}/properties | Retrieve ID4n properties
 *CollectionsApi* | [**ListElementsOfCollection**](docs/CollectionsApi.md#listelementsofcollection) | **GET** /api/v1/collections/{id4n}/elements | List contents of the collection
+*CollectionsApi* | [**PatchProperties**](docs/CollectionsApi.md#patchproperties) | **PATCH** /api/v1/id4ns/{id4n}/properties | Patch ID4n properties
 *CollectionsApi* | [**RemoveElementsFromCollection**](docs/CollectionsApi.md#removeelementsfromcollection) | **DELETE** /api/v1/collections/{id4n}/elements | Remove elements from collection
 *CollectionsApi* | [**UpdateCollection**](docs/CollectionsApi.md#updatecollection) | **PATCH** /api/v1/collections/{id4n} | Update collection
 *GuidsApi* | [**AddGuidAlias**](docs/GuidsApi.md#addguidalias) | **POST** /api/v1/id4ns/{id4n}/alias/{aliasType} | Add alias for GUID or Collection
 *GuidsApi* | [**CreateGuid**](docs/GuidsApi.md#createguid) | **POST** /api/v1/guids | Create GUID(s)
+*GuidsApi* | [**DeleteProperties**](docs/GuidsApi.md#deleteproperties) | **DELETE** /api/v1/id4ns/{id4n}/properties | Delete ID4n properties
 *GuidsApi* | [**GetCollections**](docs/GuidsApi.md#getcollections) | **GET** /api/v1/id4ns/{id4n}/collections | Retrieve collections of an ID
 *GuidsApi* | [**GetGuid**](docs/GuidsApi.md#getguid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
 *GuidsApi* | [**GetGuidAliases**](docs/GuidsApi.md#getguidaliases) | **GET** /api/v1/id4ns/{id4n}/alias | Get all aliases for the given GUID or Collection.
 *GuidsApi* | [**GetGuidsWithoutCollection**](docs/GuidsApi.md#getguidswithoutcollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 *GuidsApi* | [**GetId4n**](docs/GuidsApi.md#getid4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
+*GuidsApi* | [**GetProperties**](docs/GuidsApi.md#getproperties) | **GET** /api/v1/id4ns/{id4n}/properties | Retrieve ID4n properties
 *GuidsApi* | [**ImportGS1Codes**](docs/GuidsApi.md#importgs1codes) | **POST** /api/v1/import/gs1 | Import GS1/MAPP codes
+*GuidsApi* | [**PatchProperties**](docs/GuidsApi.md#patchproperties) | **PATCH** /api/v1/id4ns/{id4n}/properties | Patch ID4n properties
 *GuidsApi* | [**RemoveGuidAlias**](docs/GuidsApi.md#removeguidalias) | **DELETE** /api/v1/id4ns/{id4n}/alias/{aliasType} | Remove aliases from GUID or Collection
 *GuidsApi* | [**UpdateGuid**](docs/GuidsApi.md#updateguid) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 *HistoryApi* | [**AddItem**](docs/HistoryApi.md#additem) | **POST** /api/v1/history/{id4n} | Add history item
