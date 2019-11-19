@@ -7,9 +7,12 @@ Method | HTTP request | Description
 [**AddElementsToCollection**](CollectionsApi.md#addelementstocollection) | **POST** /api/v1/collections/{id4n}/elements | Add elements to collection
 [**CreateCollection**](CollectionsApi.md#createcollection) | **POST** /api/v1/collections | Create collection
 [**DeleteCollection**](CollectionsApi.md#deletecollection) | **DELETE** /api/v1/collections/{id4n} | Delete collection
+[**DeleteProperties**](CollectionsApi.md#deleteproperties) | **DELETE** /api/v1/id4ns/{id4n}/properties | Delete ID4n properties
 [**FindCollection**](CollectionsApi.md#findcollection) | **GET** /api/v1/collections/{id4n} | Find collection
 [**GetAllCollectionsOfOrganization**](CollectionsApi.md#getallcollectionsoforganization) | **GET** /api/v1/organizations/{organizationId}/collections | Get collections of organization
+[**GetProperties**](CollectionsApi.md#getproperties) | **GET** /api/v1/id4ns/{id4n}/properties | Retrieve ID4n properties
 [**ListElementsOfCollection**](CollectionsApi.md#listelementsofcollection) | **GET** /api/v1/collections/{id4n}/elements | List contents of the collection
+[**PatchProperties**](CollectionsApi.md#patchproperties) | **PATCH** /api/v1/id4ns/{id4n}/properties | Patch ID4n properties
 [**RemoveElementsFromCollection**](CollectionsApi.md#removeelementsfromcollection) | **DELETE** /api/v1/collections/{id4n}/elements | Remove elements from collection
 [**UpdateCollection**](CollectionsApi.md#updatecollection) | **PATCH** /api/v1/collections/{id4n} | Update collection
 
@@ -206,6 +209,75 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="deleteproperties"></a>
+# **DeleteProperties**
+> void DeleteProperties (string id4n, string organizationId, List<string> properties)
+
+Delete ID4n properties
+
+Partial deletion of id4n properties. If the property does not exist, it will be ignored.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
+
+namespace Example
+{
+    public class DeletePropertiesExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: Authorization
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new CollectionsApi();
+            var id4n = id4n_example;  // string | The id4n
+            var organizationId = organizationId_example;  // string | The organization namespace to work on while deleting the properties.
+            var properties = ;  // List<string> | A set of property keys to delete.
+
+            try
+            {
+                // Delete ID4n properties
+                apiInstance.DeleteProperties(id4n, organizationId, properties);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling CollectionsApi.DeleteProperties: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| The id4n | 
+ **organizationId** | **string**| The organization namespace to work on while deleting the properties. | 
+ **properties** | **List&lt;string&gt;**| A set of property keys to delete. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="findcollection"></a>
 # **FindCollection**
 > GuidCollection FindCollection (string id4n)
@@ -276,7 +348,7 @@ Name | Type | Description  | Notes
 
 Get collections of organization
 
-Retrieving all collections of an organization in a paginated manner.
+Retrieving all collections of an organization in a paginated manner. You may filter the results by specifying id4n properties with filter operations (eq, in, ne) in the query parameters. e.g. `com.yourcompany.orderId.eq=1234`  
 
 ### Example
 ```csharp
@@ -346,6 +418,74 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="getproperties"></a>
+# **GetProperties**
+> Dictionary<string, string> GetProperties (string id4n, string organizationId = null)
+
+Retrieve ID4n properties
+
+List all properties of an id4n.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
+
+namespace Example
+{
+    public class GetPropertiesExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: Authorization
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new CollectionsApi();
+            var id4n = id4n_example;  // string | The id4n
+            var organizationId = organizationId_example;  // string | The organization namespace. (optional) 
+
+            try
+            {
+                // Retrieve ID4n properties
+                Dictionary&lt;string, string&gt; result = apiInstance.GetProperties(id4n, organizationId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling CollectionsApi.GetProperties: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| The id4n | 
+ **organizationId** | **string**| The organization namespace. | [optional] 
+
+### Return type
+
+**Dictionary<string, string>**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="listelementsofcollection"></a>
 # **ListElementsOfCollection**
 > PaginatedResponseOfGuid ListElementsOfCollection (string id4n, int? offset = null, int? limit = null)
@@ -402,6 +542,75 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PaginatedResponseOfGuid**](PaginatedResponseOfGuid.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="patchproperties"></a>
+# **PatchProperties**
+> void PatchProperties (string id4n, string organizationId, Object properties)
+
+Patch ID4n properties
+
+Partial updating of id4n properties. If a property contains a null value the property will be deleted other values will be saved and overwritten if they already exist.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using BlueRain.ID4i.Api;
+using BlueRain.ID4i.Client;
+using BlueRain.ID4i.Model;
+
+namespace Example
+{
+    public class PatchPropertiesExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: Authorization
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new CollectionsApi();
+            var id4n = id4n_example;  // string | The id4n
+            var organizationId = organizationId_example;  // string | The organization namespace to work on while patching the properties.
+            var properties = ;  // Object | The properties to update.
+
+            try
+            {
+                // Patch ID4n properties
+                apiInstance.PatchProperties(id4n, organizationId, properties);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling CollectionsApi.PatchProperties: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **string**| The id4n | 
+ **organizationId** | **string**| The organization namespace to work on while patching the properties. | 
+ **properties** | **Object**| The properties to update. | 
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 

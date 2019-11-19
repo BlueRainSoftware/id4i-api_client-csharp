@@ -619,7 +619,7 @@ Name | Type | Description  | Notes
 
 Get collections of organization
 
-Retrieving all collections of an organization in a paginated manner.
+Retrieving all collections of an organization in a paginated manner. You may filter the results by specifying id4n properties with filter operations (eq, in, ne) in the query parameters. e.g. `com.yourcompany.orderId.eq=1234`  
 
 ### Example
 ```csharp
