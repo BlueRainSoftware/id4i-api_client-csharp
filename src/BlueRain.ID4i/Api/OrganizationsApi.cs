@@ -233,8 +233,9 @@ namespace BlueRain.ID4i.Api
         /// <param name="type">Filter by this type (optional)</param>
         /// <param name="label">Filter by this label (optional)</param>
         /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
+        /// <param name="property">List of i4dn property filter. e.g. \&quot;com.myorga.state:IN:waiting|processing\&quot; or \&quot;com.myorga.orderId:EQ:SAP001\&quot; (optional)</param>
         /// <returns>PaginatedResponseOfGuidCollection</returns>
-        PaginatedResponseOfGuidCollection GetAllCollectionsOfOrganization (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null);
+        PaginatedResponseOfGuidCollection GetAllCollectionsOfOrganization (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null, List<string> property = null);
 
         /// <summary>
             /// Get collections of organization
@@ -249,8 +250,9 @@ namespace BlueRain.ID4i.Api
         /// <param name="type">Filter by this type (optional)</param>
         /// <param name="label">Filter by this label (optional)</param>
         /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
+        /// <param name="property">List of i4dn property filter. e.g. \&quot;com.myorga.state:IN:waiting|processing\&quot; or \&quot;com.myorga.orderId:EQ:SAP001\&quot; (optional)</param>
         /// <returns>ApiResponse of PaginatedResponseOfGuidCollection</returns>
-        ApiResponse<PaginatedResponseOfGuidCollection> GetAllCollectionsOfOrganizationWithHttpInfo (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null);
+        ApiResponse<PaginatedResponseOfGuidCollection> GetAllCollectionsOfOrganizationWithHttpInfo (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null, List<string> property = null);
         /// <summary>
             /// List users and their roles
             /// </summary>
@@ -795,8 +797,9 @@ namespace BlueRain.ID4i.Api
             /// <param name="type">Filter by this type (optional)</param>
             /// <param name="label">Filter by this label (optional)</param>
             /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
+            /// <param name="property">List of i4dn property filter. e.g. \&quot;com.myorga.state:IN:waiting|processing\&quot; or \&quot;com.myorga.orderId:EQ:SAP001\&quot; (optional)</param>
             /// <returns>Task of PaginatedResponseOfGuidCollection</returns>
-            System.Threading.Tasks.Task<PaginatedResponseOfGuidCollection> GetAllCollectionsOfOrganizationAsync (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null);
+            System.Threading.Tasks.Task<PaginatedResponseOfGuidCollection> GetAllCollectionsOfOrganizationAsync (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null, List<string> property = null);
 
                 /// <summary>
                 /// Get collections of organization
@@ -811,8 +814,9 @@ namespace BlueRain.ID4i.Api
             /// <param name="type">Filter by this type (optional)</param>
             /// <param name="label">Filter by this label (optional)</param>
             /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
+            /// <param name="property">List of i4dn property filter. e.g. \&quot;com.myorga.state:IN:waiting|processing\&quot; or \&quot;com.myorga.orderId:EQ:SAP001\&quot; (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedResponseOfGuidCollection)</returns>
-                System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfGuidCollection>> GetAllCollectionsOfOrganizationAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null);
+                System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfGuidCollection>> GetAllCollectionsOfOrganizationAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null, List<string> property = null);
                 /// <summary>
                 /// List users and their roles
                 /// </summary>
@@ -2666,10 +2670,11 @@ namespace BlueRain.ID4i.Api
         /// <param name="type">Filter by this type (optional)</param>
         /// <param name="label">Filter by this label (optional)</param>
         /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
+        /// <param name="property">List of i4dn property filter. e.g. \&quot;com.myorga.state:IN:waiting|processing\&quot; or \&quot;com.myorga.orderId:EQ:SAP001\&quot; (optional)</param>
         /// <returns>PaginatedResponseOfGuidCollection</returns>
-            public PaginatedResponseOfGuidCollection GetAllCollectionsOfOrganization (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null)
+            public PaginatedResponseOfGuidCollection GetAllCollectionsOfOrganization (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null, List<string> property = null)
             {
-        ApiResponse<PaginatedResponseOfGuidCollection> localVarResponse = GetAllCollectionsOfOrganizationWithHttpInfo(organizationId, offset, limit, type, label, labelPrefix);
+        ApiResponse<PaginatedResponseOfGuidCollection> localVarResponse = GetAllCollectionsOfOrganizationWithHttpInfo(organizationId, offset, limit, type, label, labelPrefix, property);
             return localVarResponse.Data;
             }
 
@@ -2683,8 +2688,9 @@ namespace BlueRain.ID4i.Api
         /// <param name="type">Filter by this type (optional)</param>
         /// <param name="label">Filter by this label (optional)</param>
         /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
+        /// <param name="property">List of i4dn property filter. e.g. \&quot;com.myorga.state:IN:waiting|processing\&quot; or \&quot;com.myorga.orderId:EQ:SAP001\&quot; (optional)</param>
         /// <returns>ApiResponse of PaginatedResponseOfGuidCollection</returns>
-            public ApiResponse< PaginatedResponseOfGuidCollection > GetAllCollectionsOfOrganizationWithHttpInfo (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null)
+            public ApiResponse< PaginatedResponseOfGuidCollection > GetAllCollectionsOfOrganizationWithHttpInfo (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null, List<string> property = null)
             {
                     // verify the required parameter 'organizationId' is set
                     if (organizationId == null)
@@ -2720,6 +2726,7 @@ namespace BlueRain.ID4i.Api
                 if (type != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "type", type)); // query parameter
                 if (label != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "label", label)); // query parameter
                 if (labelPrefix != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "labelPrefix", labelPrefix)); // query parameter
+                if (property != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "property", property)); // query parameter
 
                 // authentication (Authorization) required
                         if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2755,10 +2762,11 @@ namespace BlueRain.ID4i.Api
             /// <param name="type">Filter by this type (optional)</param>
             /// <param name="label">Filter by this label (optional)</param>
             /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
+            /// <param name="property">List of i4dn property filter. e.g. \&quot;com.myorga.state:IN:waiting|processing\&quot; or \&quot;com.myorga.orderId:EQ:SAP001\&quot; (optional)</param>
             /// <returns>Task of PaginatedResponseOfGuidCollection</returns>
-            public async System.Threading.Tasks.Task<PaginatedResponseOfGuidCollection> GetAllCollectionsOfOrganizationAsync (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null)
+            public async System.Threading.Tasks.Task<PaginatedResponseOfGuidCollection> GetAllCollectionsOfOrganizationAsync (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null, List<string> property = null)
                 {
-            ApiResponse<PaginatedResponseOfGuidCollection> localVarResponse = await GetAllCollectionsOfOrganizationAsyncWithHttpInfo(organizationId, offset, limit, type, label, labelPrefix);
+            ApiResponse<PaginatedResponseOfGuidCollection> localVarResponse = await GetAllCollectionsOfOrganizationAsyncWithHttpInfo(organizationId, offset, limit, type, label, labelPrefix, property);
                 return localVarResponse.Data;
 
                 }
@@ -2773,8 +2781,9 @@ namespace BlueRain.ID4i.Api
             /// <param name="type">Filter by this type (optional)</param>
             /// <param name="label">Filter by this label (optional)</param>
             /// <param name="labelPrefix">Filter by this label prefix (optional)</param>
+            /// <param name="property">List of i4dn property filter. e.g. \&quot;com.myorga.state:IN:waiting|processing\&quot; or \&quot;com.myorga.orderId:EQ:SAP001\&quot; (optional)</param>
             /// <returns>Task of ApiResponse (PaginatedResponseOfGuidCollection)</returns>
-                public async System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfGuidCollection>> GetAllCollectionsOfOrganizationAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null)
+                public async System.Threading.Tasks.Task<ApiResponse<PaginatedResponseOfGuidCollection>> GetAllCollectionsOfOrganizationAsyncWithHttpInfo (string organizationId, int? offset = null, int? limit = null, string type = null, string label = null, string labelPrefix = null, List<string> property = null)
                 {
                         // verify the required parameter 'organizationId' is set
                         if (organizationId == null)
@@ -2810,6 +2819,7 @@ namespace BlueRain.ID4i.Api
                     if (type != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "type", type)); // query parameter
                     if (label != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "label", label)); // query parameter
                     if (labelPrefix != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "labelPrefix", labelPrefix)); // query parameter
+                    if (property != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "property", property)); // query parameter
 
                     // authentication (Authorization) required
                             if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Authorization")))
