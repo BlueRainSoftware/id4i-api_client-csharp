@@ -13,7 +13,7 @@ For additional information, please refer to
 * https://backend.id4i.de/docs/redoc/index.html for API documentation
 * https://github.com/BlueRainSoftware/support for getting additional support
 
-- API version: 0.9.6
+- API version: 0.9.7
 - Package version: 
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
 
@@ -130,19 +130,25 @@ Class | Method | HTTP request | Description
 *CollectionsApi* | [**AddElementsToCollection**](docs/CollectionsApi.md#addelementstocollection) | **POST** /api/v1/collections/{id4n}/elements | Add elements to collection
 *CollectionsApi* | [**CreateCollection**](docs/CollectionsApi.md#createcollection) | **POST** /api/v1/collections | Create collection
 *CollectionsApi* | [**DeleteCollection**](docs/CollectionsApi.md#deletecollection) | **DELETE** /api/v1/collections/{id4n} | Delete collection
+*CollectionsApi* | [**DeleteProperties**](docs/CollectionsApi.md#deleteproperties) | **DELETE** /api/v1/id4ns/{id4n}/properties | Delete ID4n properties
 *CollectionsApi* | [**FindCollection**](docs/CollectionsApi.md#findcollection) | **GET** /api/v1/collections/{id4n} | Find collection
 *CollectionsApi* | [**GetAllCollectionsOfOrganization**](docs/CollectionsApi.md#getallcollectionsoforganization) | **GET** /api/v1/organizations/{organizationId}/collections | Get collections of organization
+*CollectionsApi* | [**GetProperties**](docs/CollectionsApi.md#getproperties) | **GET** /api/v1/id4ns/{id4n}/properties | Retrieve ID4n properties
 *CollectionsApi* | [**ListElementsOfCollection**](docs/CollectionsApi.md#listelementsofcollection) | **GET** /api/v1/collections/{id4n}/elements | List contents of the collection
+*CollectionsApi* | [**PatchProperties**](docs/CollectionsApi.md#patchproperties) | **PATCH** /api/v1/id4ns/{id4n}/properties | Patch ID4n properties
 *CollectionsApi* | [**RemoveElementsFromCollection**](docs/CollectionsApi.md#removeelementsfromcollection) | **DELETE** /api/v1/collections/{id4n}/elements | Remove elements from collection
 *CollectionsApi* | [**UpdateCollection**](docs/CollectionsApi.md#updatecollection) | **PATCH** /api/v1/collections/{id4n} | Update collection
 *GuidsApi* | [**AddGuidAlias**](docs/GuidsApi.md#addguidalias) | **POST** /api/v1/id4ns/{id4n}/alias/{aliasType} | Add alias for GUID or Collection
 *GuidsApi* | [**CreateGuid**](docs/GuidsApi.md#createguid) | **POST** /api/v1/guids | Create GUID(s)
+*GuidsApi* | [**DeleteProperties**](docs/GuidsApi.md#deleteproperties) | **DELETE** /api/v1/id4ns/{id4n}/properties | Delete ID4n properties
 *GuidsApi* | [**GetCollections**](docs/GuidsApi.md#getcollections) | **GET** /api/v1/id4ns/{id4n}/collections | Retrieve collections of an ID
 *GuidsApi* | [**GetGuid**](docs/GuidsApi.md#getguid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
 *GuidsApi* | [**GetGuidAliases**](docs/GuidsApi.md#getguidaliases) | **GET** /api/v1/id4ns/{id4n}/alias | Get all aliases for the given GUID or Collection.
 *GuidsApi* | [**GetGuidsWithoutCollection**](docs/GuidsApi.md#getguidswithoutcollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 *GuidsApi* | [**GetId4n**](docs/GuidsApi.md#getid4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
+*GuidsApi* | [**GetProperties**](docs/GuidsApi.md#getproperties) | **GET** /api/v1/id4ns/{id4n}/properties | Retrieve ID4n properties
 *GuidsApi* | [**ImportGS1Codes**](docs/GuidsApi.md#importgs1codes) | **POST** /api/v1/import/gs1 | Import GS1/MAPP codes
+*GuidsApi* | [**PatchProperties**](docs/GuidsApi.md#patchproperties) | **PATCH** /api/v1/id4ns/{id4n}/properties | Patch ID4n properties
 *GuidsApi* | [**RemoveGuidAlias**](docs/GuidsApi.md#removeguidalias) | **DELETE** /api/v1/id4ns/{id4n}/alias/{aliasType} | Remove aliases from GUID or Collection
 *GuidsApi* | [**UpdateGuid**](docs/GuidsApi.md#updateguid) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 *HistoryApi* | [**AddItem**](docs/HistoryApi.md#additem) | **POST** /api/v1/history/{id4n} | Add history item
@@ -192,13 +198,14 @@ Class | Method | HTTP request | Description
 *RoutingApi* | [**GetRoute**](docs/RoutingApi.md#getroute) | **GET** /api/v1/routingfiles/{id4n}/route/{type} | Retrieve current route of a GUID (or ID4N)
 *RoutingApi* | [**GetRoutingFile**](docs/RoutingApi.md#getroutingfile) | **GET** /api/v1/routingfiles/{id4n} | Retrieve routing file
 *RoutingApi* | [**UpdateRoutingFile**](docs/RoutingApi.md#updateroutingfile) | **PUT** /api/v1/routingfiles/{id4n} | Store routing file
-*StorageApi* | [**CreateDocument**](docs/StorageApi.md#createdocument) | **PUT** /api/v1/documents/{id4n}/{organizationId} | Create an document for an id4n
+*StorageApi* | [**CreateDocument**](docs/StorageApi.md#createdocument) | **POST** /api/v1/documents/{id4n}/{organizationId} | Create an document for an id4n
 *StorageApi* | [**DeleteDocument**](docs/StorageApi.md#deletedocument) | **DELETE** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Delete a document
 *StorageApi* | [**GetDocument**](docs/StorageApi.md#getdocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
 *StorageApi* | [**GetPublicDocument**](docs/StorageApi.md#getpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a public document (meta-data only, no content)
 *StorageApi* | [**ListAllDocuments**](docs/StorageApi.md#listalldocuments) | **GET** /api/v1/documents/{id4n} | List documents
 *StorageApi* | [**ListAllPublicDocuments**](docs/StorageApi.md#listallpublicdocuments) | **GET** /api/v1/public/documents/{id4n} | List public documents
 *StorageApi* | [**ListDocuments**](docs/StorageApi.md#listdocuments) | **GET** /api/v1/documents/{id4n}/{organizationId} | List organization specific documents
+*StorageApi* | [**PutDocument**](docs/StorageApi.md#putdocument) | **PUT** /api/v1/documents/{id4n}/{organizationId} | Put an document for an id4n
 *StorageApi* | [**ReadDocument**](docs/StorageApi.md#readdocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Read document contents
 *StorageApi* | [**ReadFromMicrostorage**](docs/StorageApi.md#readfrommicrostorage) | **GET** /api/v1/microstorage/{id4n}/{organization} | Read data from microstorage
 *StorageApi* | [**ReadPublicDocument**](docs/StorageApi.md#readpublicdocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read public document contents
