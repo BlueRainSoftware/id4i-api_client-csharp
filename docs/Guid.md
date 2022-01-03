@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Id4n** | **string** | The ID | [optional] 
 **OwnerOrganizationId** | **string** | Organization namespace of the GUID owner | [optional] 
 **PhysicalState** | **string** | Physical attachment state of the GUID | [optional] 
+**Properties** | **Dictionary&lt;string, string&gt;** | The properties of the organization | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

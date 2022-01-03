@@ -297,7 +297,7 @@ Name | Type | Description  | Notes
 
 <a name="getguid"></a>
 # **GetGuid**
-> Guid GetGuid (string id4n)
+> Guid GetGuid (string id4n, string organizationId = null)
 
 Retrieve GUID information
 
@@ -322,11 +322,12 @@ namespace Example
 
             var apiInstance = new GuidsApi();
             var id4n = id4n_example;  // string | The GUID number
+            var organizationId = organizationId_example;  // string | The organization namespace to resolve. (optional) 
 
             try
             {
                 // Retrieve GUID information
-                Guid result = apiInstance.GetGuid(id4n);
+                Guid result = apiInstance.GetGuid(id4n, organizationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -343,6 +344,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| The GUID number | 
+ **organizationId** | **string**| The organization namespace to resolve. | [optional] 
 
 ### Return type
 
@@ -495,7 +497,7 @@ Name | Type | Description  | Notes
 
 <a name="getid4n"></a>
 # **GetId4n**
-> Id4nPresentation GetId4n (string id4n)
+> Id4nPresentation GetId4n (string id4n, string organizationId = null)
 
 Retrieve ID4n information
 
@@ -522,11 +524,12 @@ namespace Example
 
             var apiInstance = new GuidsApi();
             var id4n = id4n_example;  // string | The ID to resolve to
+            var organizationId = organizationId_example;  // string | The organization namespace to resolve. (optional) 
 
             try
             {
                 // Retrieve ID4n information
-                Id4nPresentation result = apiInstance.GetId4n(id4n);
+                Id4nPresentation result = apiInstance.GetId4n(id4n, organizationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -543,6 +546,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **string**| The ID to resolve to | 
+ **organizationId** | **string**| The organization namespace to resolve. | [optional] 
 
 ### Return type
 

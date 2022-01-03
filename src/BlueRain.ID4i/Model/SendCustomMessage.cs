@@ -23,24 +23,54 @@ using SwaggerDateConverter = BlueRain.ID4i.Client.SwaggerDateConverter;
 namespace BlueRain.ID4i.Model
 {
     /// <summary>
-    /// An organization
+    /// SendCustomMessage
     /// </summary>
     [DataContract]
-    public partial class OrganizationUpdate :  IEquatable<OrganizationUpdate>
+    public partial class SendCustomMessage :  IEquatable<SendCustomMessage>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="OrganizationUpdate" /> class.
+        /// Initializes a new instance of the <see cref="SendCustomMessage" /> class.
         /// </summary>
-        /// <param name="Name">The name of the organization.</param>
-        public OrganizationUpdate(string Name = default(string))
+        [JsonConstructorAttribute]
+        protected SendCustomMessage() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SendCustomMessage" /> class.
+        /// </summary>
+        /// <param name="Data">Custom data in a map. You may use JSON content (required).</param>
+        /// <param name="Name">The name of the message (organisation specific) (required).</param>
+        public SendCustomMessage(Dictionary<string, string> Data = default(Dictionary<string, string>), string Name = default(string))
         {
-            this.Name = Name;
+            // to ensure "Data" is required (not null)
+            if (Data == null)
+            {
+                throw new InvalidDataException("Data is a required property for SendCustomMessage and cannot be null");
+            }
+            else
+            {
+                this.Data = Data;
+            }
+            // to ensure "Name" is required (not null)
+            if (Name == null)
+            {
+                throw new InvalidDataException("Name is a required property for SendCustomMessage and cannot be null");
+            }
+            else
+            {
+                this.Name = Name;
+            }
         }
         
         /// <summary>
-        /// The name of the organization
+        /// Custom data in a map. You may use JSON content
         /// </summary>
-        /// <value>The name of the organization</value>
+        /// <value>Custom data in a map. You may use JSON content</value>
+        [DataMember(Name="data", EmitDefaultValue=false)]
+        public Dictionary<string, string> Data { get; set; }
+
+        /// <summary>
+        /// The name of the message (organisation specific)
+        /// </summary>
+        /// <value>The name of the message (organisation specific)</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
 
@@ -51,7 +81,8 @@ namespace BlueRain.ID4i.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class OrganizationUpdate {\n");
+            sb.Append("class SendCustomMessage {\n");
+            sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -73,20 +104,25 @@ namespace BlueRain.ID4i.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as OrganizationUpdate);
+            return this.Equals(input as SendCustomMessage);
         }
 
         /// <summary>
-        /// Returns true if OrganizationUpdate instances are equal
+        /// Returns true if SendCustomMessage instances are equal
         /// </summary>
-        /// <param name="input">Instance of OrganizationUpdate to be compared</param>
+        /// <param name="input">Instance of SendCustomMessage to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(OrganizationUpdate input)
+        public bool Equals(SendCustomMessage input)
         {
             if (input == null)
                 return false;
 
             return 
+                (
+                    this.Data == input.Data ||
+                    this.Data != null &&
+                    this.Data.SequenceEqual(input.Data)
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
@@ -103,6 +139,8 @@ namespace BlueRain.ID4i.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Data != null)
+                    hashCode = hashCode * 59 + this.Data.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 return hashCode;

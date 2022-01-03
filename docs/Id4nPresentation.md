@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Id4n** | **string** | The ID | [optional] 
 **Label** | **string** |  | [optional] 
 **OwnerOrganizationId** | **string** | Organization namespace of the ID owner | [optional] 
+**Properties** | **Dictionary&lt;string, string&gt;** | The properties of the organization | [optional] 
 **Type** | **string** | The type of ID | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

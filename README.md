@@ -13,7 +13,7 @@ For additional information, please refer to
 * https://backend.id4i.de/docs/redoc/index.html for API documentation
 * https://github.com/BlueRainSoftware/support for getting additional support
 
-- API version: 0.9.7
+- API version: 1.0.0
 - Package version: 
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
 
@@ -158,6 +158,7 @@ Class | Method | HTTP request | Description
 *HistoryApi* | [**UpdateItem**](docs/HistoryApi.md#updateitem) | **PATCH** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | Update history item
 *HistoryApi* | [**UpdateItemVisibility**](docs/HistoryApi.md#updateitemvisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequenceId}/visibility | Set history item visibility
 *ImagesApi* | [**ResolveImageUsingGET**](docs/ImagesApi.md#resolveimageusingget) | **GET** /api/v1/public/image/{imageID} | Resolve image
+*MessagingApi* | [**EnqueueCustomMessage**](docs/MessagingApi.md#enqueuecustommessage) | **POST** /api/v1/organizations/{organizationId}/messaging/enqueueCustomMessage | Enqueue a custom message
 *MessagingApi* | [**GetDefaultQueue**](docs/MessagingApi.md#getdefaultqueue) | **GET** /api/v1/organizations/{organizationId}/messaging | 
 *MessagingApi* | [**PatchDefaultQueue**](docs/MessagingApi.md#patchdefaultqueue) | **PATCH** /api/v1/organizations/{organizationId}/messaging | 
 *MetaInformationApi* | [**ApplicationInfo**](docs/MetaInformationApi.md#applicationinfo) | **GET** /api/v1/info | Retrieve version information about ID4i
@@ -284,6 +285,7 @@ Class | Method | HTTP request | Description
      - [Model.RoutingFile](docs/RoutingFile.md)
      - [Model.RoutingFileRequest](docs/RoutingFileRequest.md)
      - [Model.RoutingOptions](docs/RoutingOptions.md)
+     - [Model.SendCustomMessage](docs/SendCustomMessage.md)
      - [Model.ServiceCosts](docs/ServiceCosts.md)
      - [Model.SimpleMessageResponse](docs/SimpleMessageResponse.md)
      - [Model.TransferReceiveInfo](docs/TransferReceiveInfo.md)

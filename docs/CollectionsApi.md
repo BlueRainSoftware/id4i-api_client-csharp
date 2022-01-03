@@ -490,7 +490,7 @@ Name | Type | Description  | Notes
 
 <a name="listelementsofcollection"></a>
 # **ListElementsOfCollection**
-> PaginatedResponseOfGuid ListElementsOfCollection (string id4n, int? offset = null, int? limit = null)
+> PaginatedResponseOfGuid ListElementsOfCollection (string id4n, int? offset = null, int? limit = null, string organizationId = null)
 
 List contents of the collection
 
@@ -517,11 +517,12 @@ namespace Example
             var id4n = id4n_example;  // string | id4n
             var offset = 56;  // int? | Start with the n-th element (optional) 
             var limit = 56;  // int? | The maximum count of returned elements (optional) 
+            var organizationId = organizationId_example;  // string | The organization namespace. (optional) 
 
             try
             {
                 // List contents of the collection
-                PaginatedResponseOfGuid result = apiInstance.ListElementsOfCollection(id4n, offset, limit);
+                PaginatedResponseOfGuid result = apiInstance.ListElementsOfCollection(id4n, offset, limit, organizationId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -540,6 +541,7 @@ Name | Type | Description  | Notes
  **id4n** | **string**| id4n | 
  **offset** | **int?**| Start with the n-th element | [optional] 
  **limit** | **int?**| The maximum count of returned elements | [optional] 
+ **organizationId** | **string**| The organization namespace. | [optional] 
 
 ### Return type
 
